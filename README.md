@@ -4,6 +4,6 @@
 
 ## Membres du groupe :
 Bruneau Antoine <br />
-Descomps Max
-Despert Ange
-Doneau Rafaël
+Descomps Max <br />
+Despert Ange <br />
+Doneau Rafaël <br />
