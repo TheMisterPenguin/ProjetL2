@@ -48,3 +48,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 .vscode/
+share/
+lib/cmake
+lib/pkgconfig
+
+*.a
