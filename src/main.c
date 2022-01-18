@@ -1,4 +1,4 @@
-#include <SDL2/SDL.h>
+#include "../include/SDL2/SDL.h"
 
 #include <stdio.h>
 
@@ -7,7 +7,7 @@ int main(int argc, char** argv)
     /* Initialisation simple */
     if (SDL_Init(SDL_INIT_VIDEO) != 0 )
     {
-        fprintf(stdout,"Échec de l'initialisation de la SDL (%s)\n",SDL_GetError());
+        fprintf(stderr,"Échec de l'initialisation de la SDL (%s)\n",SDL_GetError());
         return -1;
     }
 
@@ -22,6 +22,10 @@ int main(int argc, char** argv)
 
         if( pWindow )
         {
+            SDL_Delay(3000);
+            SDL_MinimizeWindow(pWindow);
+            SDL_Delay(3000);
+            SDL_MaximizeWindow(pWindow);
             SDL_Delay(3000); /* Attendre trois secondes, que l'utilisateur voie la fenêtre */
 
             SDL_DestroyWindow(pWindow);
