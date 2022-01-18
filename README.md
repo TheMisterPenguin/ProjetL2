@@ -1,4 +1,4 @@
-# ProjetL2
+# ProjetL2 Bloody Sanada
 
 ## Projet de jeu vidéo RPG dans le cadre de notre cursus en licence Informatique
 
