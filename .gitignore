@@ -20,9 +20,6 @@
 *.lo
 
 # Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
 *.dylib
 
 # Executables
@@ -51,5 +48,3 @@ dkms.conf
 share/
 lib/cmake
 lib/pkgconfig
-
-*.a
