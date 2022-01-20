@@ -1,0 +1,1 @@
+#define SDL_ERREUR 1
