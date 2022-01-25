@@ -1,10 +1,10 @@
 CC = gcc # Nom du compilateur.
 CFLAGS =-Wall -I include # Options de compilation.
 LDFLAGS = -L lib -lSDL2 # Options d'édition de liens. 
-ODIR = obj/ # Répertoire des fichiers objets
-SRC = src/ # Répertoire des fichiers sources
-BINDIR = bin/ # Répertoire des exécutables
-OBJ = $(addprefix $(ODIR), main.o init.o close.o) # Fichiers à compiler
+ODIR = obj/# Répertoire des fichiers objets
+SRC = src/# Répertoire des fichiers sources
+BINDIR = bin/# Répertoire des exécutables
+OBJ = $(addprefix $(ODIR), main.o init.o close.o)# Fichiers à compiler
 GEN = jeux.prog # Executables
 
 
@@ -15,7 +15,7 @@ $(BINDIR)jeux.prog : $(OBJ)
 
 # Compilation de tout les fichiers source
 
-$(ODIR)%.o: $(SRC)%.c
+$(ODIR)%.o : $(SRC)%.c
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 # Nettoyage
