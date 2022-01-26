@@ -11,3 +11,9 @@ extern SDL_Window *fenetre_Principale; /**
  * \brief Pointeur vers fenêtre global pointant sur la fenêtre principal du programme
  * \author Ange Despert
  */
+#ifndef FENETRE_LONGUEUR
+    #define FENETRE_LONGUER 640
+#endif
+#ifndef FENETRE_LARGEUR
+    #define FENETRE_LARGEUR 480
+#endif

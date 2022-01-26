@@ -26,8 +26,8 @@ void init_SDL(){
     fenetre_Principale = SDL_CreateWindow("Bloody Sanada",
                                             SDL_WINDOWPOS_UNDEFINED,
                                             SDL_WINDOWPOS_UNDEFINED,
-                                            640,
-                                            480,
+                                            FENETRE_LONGUER,
+                                            FENETRE_LARGEUR,
                                             SDL_WINDOW_SHOWN);
 
     if(! fenetre_Principale){
