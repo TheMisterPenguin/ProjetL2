@@ -14,7 +14,7 @@
  * \brief Fonction qui démarre la SDL et créer la fenêtre principale
  * \author Ange Despert
  */
-void init_SDL(){
+static void init_SDL(){
 
     if (SDL_Init(SDL_INIT_VIDEO) != 0 ){ 
         fprintf(stderr,"Échec de l'initialisation de la SDL (%s)\n",SDL_GetError());
@@ -26,7 +26,7 @@ void init_SDL(){
     fenetre_Principale = SDL_CreateWindow("Bloody Sanada",
                                             SDL_WINDOWPOS_UNDEFINED,
                                             SDL_WINDOWPOS_UNDEFINED,
-                                            FENETRE_LONGUER,
+                                            FENETRE_LONGUEUR,
                                             FENETRE_LARGEUR,
                                             SDL_WINDOW_SHOWN);
 

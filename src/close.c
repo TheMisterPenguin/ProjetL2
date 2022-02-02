@@ -14,7 +14,7 @@
  * \brief Fonction qui détruit la fenêtre principale et ferme la SDL
  * \author Ange Despert
  */
-void fermer_SDL(void){
+static void fermer_SDL(void){
 
     SDL_DestroyWindow(fenetre_Principale);
     printf("Destruction de la fenêtre !\n");
