@@ -9,6 +9,10 @@ int main(int argc, char** argv)
     /* Initialisation simple */
     init();
 
+    while(SDL_TRUE){
+        jeu_event();
+    }
+
     terminate();
 
     return 0;
