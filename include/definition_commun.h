@@ -7,13 +7,11 @@
  * \date 20/01/22
  */
 
-extern SDL_Window *fenetre_Principale; /**
- * \brief Pointeur vers fenêtre global pointant sur la fenêtre principal du programme
- * \author Ange Despert
- */
-#ifndef FENETRE_LONGUEUR
-    #define FENETRE_LONGUER 640
-#endif
-#ifndef FENETRE_LARGEUR
-    #define FENETRE_LARGEUR 480
+#ifndef H_DEF_COMMUN
+#define H_DEF_COMMUN
+extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre global pointant sur la fenêtre principal du programme*/
+
+#define FENETRE_LONGUEUR 640
+
+#define FENETRE_LARGEUR 480
 #endif
