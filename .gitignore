@@ -5,6 +5,7 @@
 *.ko
 *.obj
 *.elf
+*.o
 
 # Linker output
 *.ilk
@@ -20,9 +21,6 @@
 *.lo
 
 # Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
 *.dylib
 
 # Executables
@@ -48,3 +46,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 .vscode/
+share/
+lib/cmake
+lib/pkgconfig
+
+*.prog
