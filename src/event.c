@@ -11,13 +11,14 @@
 #include <commun.h>
 
 
-void jeu(void){
+
+void jeu_event(void){
     SDL_Event lastEvent;
 
     while(SDL_PollEvent(&lastEvent)){
         switch(lastEvent.type){
             case SDL_QUIT : terminate();
-            
+
         }
     }
 }
