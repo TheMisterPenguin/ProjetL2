@@ -7,13 +7,13 @@
  * \date 20/01/22
  */
 
-#ifndef H_DEF_COMMUN
-#define H_DEF_COMMUN
-extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre global pointant sur la fenêtre principal du programme*/
+#ifndef __H_DEF_COMMUN__
+#define __H_DEF_COMMUN__
+extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre globale pointant sur la fenêtre principale du programme*/
 extern SDL_Renderer *rendu_principal;
 #define FENETRE_LONGUEUR 640
-
 #define FENETRE_LARGEUR 480
+
 typedef struct {
     void (*getKeyboardInput)(SDL_KeyboardEvent *);
     void (*init)(void);

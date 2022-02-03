@@ -9,8 +9,8 @@
  * 
  */
 
-#ifndef H_FONCTION
-#define H_FONCTION
+#ifndef __H_FONCTION__
+#define __H_FONCTION__
 
 /**
  * \fn void init(void);

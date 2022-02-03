@@ -1,5 +1,4 @@
 #include <commun.h>
-#include <fonctions.h>
 #include <stdio.h>
 
 SDL_Window *fenetre_Principale = NULL;

@@ -22,4 +22,7 @@ struct joueur
 	int xp; /**<Le nombre de points d'expérience que possède le joueur */
 	long trigger; /**<Une variable contenant des triggers logiques concernant le personnage */
 	/** TODO : créer un type énuméré map*/
+	int attaque; /**<attaque du joueur*/
+    int defense; /**<defense du joueur*/
+    int vitesse; /**<vitesse de déplacement du joueur*/
 };
