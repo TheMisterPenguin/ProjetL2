@@ -4,7 +4,7 @@ LDFLAGS = -L lib -lSDL2 # Options d'édition de liens.
 ODIR = obj/# Répertoire des fichiers objets
 SRC = src/# Répertoire des fichiers sources
 BINDIR = bin/# Répertoire des exécutables
-OBJ = $(addprefix $(ODIR), main.o init.o close.o)# Fichiers à compiler
+OBJ = $(addprefix $(ODIR), main.o init.o close.o event.o)# Fichiers à compiler
 GEN = jeux.prog # Executables
 
 
