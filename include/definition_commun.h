@@ -12,8 +12,8 @@
 extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre global pointant sur la fenêtre principal du programme*/
 
 #define FENETRE_LONGUEUR 640
-
 #define FENETRE_LARGEUR 480
+
 typedef struct {
     void (*getKeyboardInput)(SDL_KeyboardEvent *);
     void (*init)(void);
