@@ -15,11 +15,11 @@
  * 
  * \author Descomps Max
  */
-struct monstre
+typedef struct monstre_s
 {
 	char nom_monstre[20]; /**<Le nom du monstre*/
 	short int niveau; /**<Le niveau du monstre*/
     int attaque; /**<attaque du monstre*/
     int defense; /**<defense du monstre*/
     int vitesse; /**<vitesse de déplacement du monstre*/
-};
+} monstre_t;
