@@ -20,6 +20,7 @@ static void fermer_SDL(void){
     printf("Destruction de la fenêtre !\n");
 
     SDL_Quit();
+    printf("Fermeture de la SDL\n");
 }
 
 /**
@@ -30,5 +31,5 @@ static void fermer_SDL(void){
 void terminate(void){
     fermer_SDL();
 
-    
+    exit(0);
 }
