@@ -7,10 +7,30 @@
  * \author Ange Despert
  * \version 0.1
  * \date 10/01/22
- */ 
+ */
+
+/**
+ * \fn void fermer_SDL(void);
+ * \brief Fonction qui détruit la fenêtre principale et ferme la SDL
+ * \author Ange Despert
+ */
+static void fermer_SDL(void)
+{
+
+    SDL_DestroyWindow(fenetre_Principale);
+    printf("Destruction de la fenêtre !\n");
+
+    SDL_Quit();
+    printf("Fermeture de la SDL\n");
+}
+
+static void detruire_renderer(void)
+{
+
+    SDL_DestroyRenderer(rendu_principal);
+}
 
 static void init_sGame(){
-    game.stop = terminate;
 
     init_event();
 }
@@ -44,6 +64,17 @@ static void init_SDL(){
     printf("Fenêtre crée !\n");
 }
 
+static void init_rc_commun(void){
+    rendu_principal =    SDL_CreateRenderer(fenetre_Principale,
+                                            -1, SDL_RENDERER_ACCELERATED);
+    if (rendu_principal == NULL){
+        fprintf(stderr, "Échec de l'initialisation du rendu (%s)\n", SDL_GetError());
+        exit(SDL_ERREUR);
+    }
+
+
+}
+
 /**
  * \fn void init();
  * \brief Fonction qui initialise le Programme
@@ -51,5 +82,8 @@ static void init_SDL(){
  */
 void init(){
     init_SDL();
+    atexit(fermer_SDL);
     init_sGame();
+    init_rc_commun();
+    atexit(detruire_renderer);
 }

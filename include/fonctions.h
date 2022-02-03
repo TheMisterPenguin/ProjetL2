@@ -24,7 +24,7 @@ extern void init(void);
  * \brief Fonction qui appelle les fonctions pour terminer le programme
  * \author Ange Despert
  */
-extern void terminate(void);
+extern void terminate_init(void);
 
 /**
  * \fn void jeu_event(void)

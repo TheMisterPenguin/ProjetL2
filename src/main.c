@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 SDL_Window *fenetre_Principale = NULL;
+SDL_Renderer *rendu_principal = NULL;
 t_game game;
 
 
