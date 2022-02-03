@@ -9,8 +9,11 @@
  * 
  */
 
+#ifndef __PERSONNAGE_H__
+#define __PERSONNAGE_H__
+
 /**
- * \struct struct joueur
+ * \struct struct joueur_s
  * \brief Structure non manipulable hors des fonctions du personnage contenant les informations sur le joueur
  * 
  * \author Despert Ange
@@ -29,4 +32,7 @@ typedef struct joueur_s
     int vitesse; /**<vitesse de déplacement du joueur*/
 }joueur_t;
 
-joueur_t * creer_personnage(char * nom);
+extern joueur_t * creer_joueur(const char * nom);
+extern void detruire_joueur(joueur_t *j);
+extern joueur_t * charger_sauvegarde_joueur(void);
+#endif
