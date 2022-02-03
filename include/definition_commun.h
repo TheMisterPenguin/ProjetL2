@@ -10,7 +10,7 @@
 #ifndef H_DEF_COMMUN
 #define H_DEF_COMMUN
 extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre global pointant sur la fenêtre principal du programme*/
-
+extern SDL_Renderer *rendu_principal;
 #define FENETRE_LONGUEUR 640
 
 #define FENETRE_LARGEUR 480
