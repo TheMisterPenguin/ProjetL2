@@ -11,14 +11,18 @@
 
 /**
  * \struct struct monstre
- * \brief Structure non manipulable hors des fonctions de monstre contenant ses informations
+ * \brief Structure monstre
  * 
  * \author Descomps Max
  */
+
+
+
 typedef struct monstre_s
 {
 	char nom_monstre[20]; /**<Le nom du monstre*/
 	short int niveau; /**<Le niveau du monstre*/
+    int pdv;
     int attaque; /**<attaque du monstre*/
     int defense; /**<defense du monstre*/
     int vitesse; /**<vitesse de déplacement du monstre*/

@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include "personnage.h"
+
 /**
  * \file personnage.c
  * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
@@ -9,20 +12,9 @@
  * 
  */
 
-/**
- * \struct struct joueur
- * \brief Structure non manipulable hors des fonctions du personnage contenant les informations sur le joueur
- * 
- * \author Despert Ange
- */
-struct joueur
-{
-	char nom_pers[20]; /**<Le nom du personnage*/
-	short int niveau; /**<Le niveau du joueur*/
-	int xp; /**<Le nombre de points d'expérience que possède le joueur */
-	long trigger; /**<Une variable contenant des triggers logiques concernant le personnage */
-	/** TODO : créer un type énuméré map*/
-	int attaque; /**<attaque du joueur*/
-    int defense; /**<defense du joueur*/
-    int vitesse; /**<vitesse de déplacement du joueur*/
-};
+
+
+joueur_t * creer_personnage(char * nom){
+	joueur_t * perso = malloc(sizeof(joueur_t));
+	perso->nom_pers = malloc(sizeof(char) * strlen(nom));
+}
