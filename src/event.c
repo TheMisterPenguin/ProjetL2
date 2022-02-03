@@ -9,9 +9,18 @@
  * 
  */
 #include <commun.h>
+#include <event.h>
 
 static void keyIn(SDL_KeyboardEvent * ev){
-    printf("Touche enclenchée !\n");
+
+    switch(ev->keysym.sym){
+        case TOUCHE_BAS : printf("On se déplace vers le bas\n");break;
+        case TOUCHE_HAUT : printf("On se déplace vers le haut\n");break;
+        case TOUCHE_DROITE : printf("On se déplace vers la droite\n");break;
+        case TOUCHE_GAUCHE : printf("On se déplace vers la gauche\n");break;
+        default : printf("Touche enclenchée !\n");
+    }
+    
 }
 
 void jeu_event(void){

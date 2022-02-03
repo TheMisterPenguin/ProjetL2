@@ -7,8 +7,8 @@
  * \date 20/01/22
  */
 
-#ifndef H_DEF_COMMUN
-#define H_DEF_COMMUN
+#ifndef __H_DEF_COMMUN__
+#define __H_DEF_COMMUN__
 extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre global pointant sur la fenêtre principal du programme*/
 
 #define FENETRE_LONGUEUR 640

@@ -9,8 +9,8 @@
  * 
  */
 
-#ifndef H_CODE_ERREUR
-#define H_CODE_ERREUR
+#ifndef __H_CODE_ERREUR__
+#define __H_CODE_ERREUR__
 
 #define SDL_ERREUR 1
 
