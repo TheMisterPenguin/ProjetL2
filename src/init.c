@@ -9,6 +9,12 @@
  * \date 10/01/22
  */ 
 
+static void init_sGame(){
+    game.stop = terminate;
+
+    init_event();
+}
+
 /**
  * \fn void init_SDL(void);
  * \brief Fonction qui démarre la SDL et créer la fenêtre principale
@@ -45,4 +51,5 @@ static void init_SDL(){
  */
 void init(){
     init_SDL();
+    init_sGame();
 }
