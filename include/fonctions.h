@@ -32,4 +32,11 @@ extern void terminate(void);
  * 
  */
 extern void jeu_event(void);
+
+/**
+ * \fn init_event(void)
+ * \brief Fonction qui initialise les fonctions liées aux évenements
+ * 
+ */
+void init_event(void);
 #endif
