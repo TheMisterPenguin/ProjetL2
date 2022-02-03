@@ -1,0 +1,25 @@
+/**
+ * \file monstre.c
+ * \author Descomps Max (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Fichier contenant toutes les fonctions concernant les monstres
+ * \version 0.1
+ * \date 01/02/2022
+ * 
+ * \copyright Copyright (c) 2022
+ * 
+ */
+
+/**
+ * \struct struct monstre
+ * \brief Structure non manipulable hors des fonctions de monstre contenant ses informations
+ * 
+ * \author Descomps Max
+ */
+struct monstre
+{
+	char nom_monstre[20]; /**<Le nom du monstre*/
+	short int niveau; /**<Le niveau du monstre*/
+    int attaque; /**<attaque du monstre*/
+    int defense; /**<defense du monstre*/
+    int vitesse; /**<vitesse de déplacement du monstre*/
+};
