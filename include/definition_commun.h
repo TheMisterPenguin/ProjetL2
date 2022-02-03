@@ -9,7 +9,7 @@
 
 #ifndef __H_DEF_COMMUN__
 #define __H_DEF_COMMUN__
-extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre global pointant sur la fenêtre principal du programme*/
+extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre globale pointant sur la fenêtre principal du programme*/
 
 #define FENETRE_LONGUEUR 640
 #define FENETRE_LARGEUR 480
