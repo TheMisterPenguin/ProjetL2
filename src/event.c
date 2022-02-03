@@ -10,15 +10,23 @@
  */
 #include <commun.h>
 
-
+static void keyIn(SDL_KeyboardEvent * ev){
+    printf("Touche enclenchée !\n");
+}
 
 void jeu_event(void){
     SDL_Event lastEvent;
 
     while(SDL_PollEvent(&lastEvent)){
         switch(lastEvent.type){
-            case SDL_QUIT : terminate();
+            case SDL_QUIT : game.stop();
+            case SDL_KEYDOWN : game.getKeyboardInput((SDL_KeyboardEvent*)&lastEvent);
 
         }
     }
+}
+
+void init_event(void){
+
+    game.getKeyboardInput = keyIn;
 }
