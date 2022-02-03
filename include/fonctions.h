@@ -11,12 +11,13 @@
 
 #ifndef H_FONCTION
 #define H_FONCTION
-extern void init(void);
+
 /**
  * \fn void init(void);
  * \brief Fonction qui initialise le Programme
  * \author Ange Despert
  */
+extern void init(void);
 
 /**
  * \fn void terminate(void);
