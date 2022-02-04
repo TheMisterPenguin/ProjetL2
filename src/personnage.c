@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <commun.h>
 #include <personnage.h>
 #include <string.h>
 
@@ -13,11 +14,20 @@
  * 
  */
 
+FILE * sauv_existe(char *nom_sauv){
+	FILE * f = fopen(nom_sauv,"r+");
+}
 
+joueur_t *charger_sauvegarde_joueur(FILE *sauvegarde){
+	
+}
 
-joueur_t * creer_joueur(const char * nom){
+joueur_t *creer_joueur(const char *nom)
+{
+
 	joueur_t * perso = malloc(sizeof(joueur_t));
 	perso->nom_pers = malloc(sizeof(char) * (strlen(nom) + 1));
+	perso->trigger = malloc(sizeof(byte) * TAILLE_TRIGGER);
 	strcpy(perso->nom_pers, nom);
 	
 	return perso;
@@ -26,5 +36,6 @@ joueur_t * creer_joueur(const char * nom){
 void detruire_joueur(joueur_t *j){
 
 	free(j->nom_pers);
+	free(j->trigger);
 	free(j);
 }
