@@ -24,6 +24,8 @@ typedef struct {
     void (*crash)(/*TODO*/);
 }t_game;
 
+typedef unsigned char byte;
+
 extern t_game game;
 
 #define SAVE_PATH "~/Games/Bloody Satana/"

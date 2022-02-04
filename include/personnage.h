@@ -19,12 +19,11 @@
  * \author Despert Ange
  */
 
-typedef struct joueur_s
-{
+typedef struct joueur_s {
 	char * nom_pers; /**<Le nom du personnage*/
 	short int niveau; /**<Le niveau du joueur*/
 	int xp; /**<Le nombre de points d'expérience que possède le joueur */
-	long trigger; /**<Une variable contenant des triggers logiques concernant le personnage */
+	byte *trigger; /**<Une variable contenant des triggers logiques concernant le personnage */
 	/** TODO : créer un type énuméré map*/
 	int pdv;
 	int attaque; /**<attaque du joueur*/
@@ -32,7 +31,9 @@ typedef struct joueur_s
     int vitesse; /**<vitesse de déplacement du joueur*/
 }joueur_t;
 
+#define TAILLE_TRIGGER 200
+
 extern joueur_t * creer_joueur(const char * nom);
 extern void detruire_joueur(joueur_t *j);
-extern joueur_t * charger_sauvegarde_joueur(void);
+extern joueur_t * charger_sauvegarde_joueur(FILE *sauvegarde);
 #endif
