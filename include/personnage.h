@@ -9,6 +9,7 @@
  * 
  */
 
+
 #ifndef __PERSONNAGE_H__
 #define __PERSONNAGE_H__
 
@@ -19,6 +20,7 @@
  * \author Despert Ange
  */
 
+typedef unsigned char byte;
 typedef struct joueur_s {
 	char * nom_pers; /**<Le nom du personnage*/
 	short int niveau; /**<Le niveau du joueur*/
