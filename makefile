@@ -1,16 +1,20 @@
+ifeq ($(OS),Windows_NT)
+include win.mk
+else 
+include gnuL.mk
+endif
+
 CC = gcc # Nom du compilateur.
-CFLAGS =-Wall -I include # Options de compilation.
-LDFLAGS = -L lib -lSDL2 # Options d'édition de liens. 
+CFLAGS =-Wall $(INCLUDE) # Options de compilation.
 ODIR = obj/# Répertoire des fichiers objets
 SRC = src/# Répertoire des fichiers sources
 BINDIR = bin/# Répertoire des exécutables
-OBJ = $(addprefix $(ODIR), main.o init.o close.o event.o)# Fichiers à compiler
-GEN = jeux.prog # Executables
+OBJ = $(addprefix $(ODIR), main.o init_close.o event.o monstre.o personnage.o)# Fichiers à compiler
 
 
 all : $(BINDIR)$(GEN)
 
-$(BINDIR)jeux.prog : $(OBJ)
+$(BINDIR)$(GEN) : $(OBJ)
 	$(CC) $^ -o $@ $(LDFLAGS)
 
 # Compilation de tout les fichiers source
@@ -18,9 +22,5 @@ $(BINDIR)jeux.prog : $(OBJ)
 $(ODIR)%.o : $(SRC)%.c
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-# Nettoyage
-clean : 
-	rm -rf $(ODIR)*.o
 
-mrproper : clean
-	rm -rf $(BINDIR)*
+
