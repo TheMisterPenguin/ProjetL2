@@ -9,10 +9,10 @@ t_game game;
 
 int main(int argc, char** argv)
 {
-    game.init = init;
     /* Initialisation simple */
     
-    game.init();
+    printf("test\n");
+    init();
 
     while(SDL_TRUE){
         jeu_event();

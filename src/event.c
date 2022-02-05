@@ -28,7 +28,7 @@ void jeu_event(void){
 
     while(SDL_PollEvent(&lastEvent)){
         switch(lastEvent.type){
-            case SDL_QUIT : exit(EXIT_SUCCESS);
+            case SDL_QUIT : printf("Détection de la fermeture de la fenêtre\n");exit(EXIT_SUCCESS);
             case SDL_KEYDOWN : game.getKeyboardInput((SDL_KeyboardEvent*)&lastEvent);
 
         }

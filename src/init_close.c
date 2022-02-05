@@ -84,6 +84,6 @@ void init(){
     init_SDL();
     atexit(fermer_SDL);
     init_sGame();
-    init_rc_commun();
-    atexit(detruire_renderer);
+    //init_rc_commun();
+    //atexit(detruire_renderer);
 }
