@@ -14,13 +14,11 @@
 static void keyIn(SDL_KeyboardEvent * ev){
 
     switch(ev->keysym.sym){
-        case TOUCHE_BAS : printf("On se déplace vers le bas\n");break;
-        case TOUCHE_HAUT : printf("On se déplace vers le haut\n");break;
-        case TOUCHE_DROITE : printf("On se déplace vers la droite\n");break;
-        case TOUCHE_GAUCHE : printf("On se déplace vers la gauche\n");break;
-        default : printf("Touche enclenchée !\n");
+        case TOUCHE_BAS : perso_principal->orientation = SUD;break;
+        case TOUCHE_HAUT : perso_principal->orientation = NORD;break;
+        case TOUCHE_DROITE : perso_principal->orientation = EST;break;
+        case TOUCHE_GAUCHE : perso_principal->orientation = OUEST;break;
     }
-    
 }
 
 void jeu_event(void){

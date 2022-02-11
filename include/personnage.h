@@ -21,6 +21,9 @@
  */
 
 typedef unsigned char byte;
+
+typedef enum{SUD = 1, NORD, EST, OUEST}t_direction;
+
 typedef struct joueur_s {
 	char * nom_pers; /**<Le nom du personnage*/
 	short int niveau; /**<Le niveau du joueur*/
@@ -31,7 +34,10 @@ typedef struct joueur_s {
 	int attaque; /**<attaque du joueur*/
     int defense; /**<defense du joueur*/
     int vitesse; /**<vitesse de déplacement du joueur*/
+	t_direction orientation; /**<orientation du joueur*/
 }joueur_t;
+
+extern joueur_t *perso_principal;
 
 #define TAILLE_TRIGGER 200
 
