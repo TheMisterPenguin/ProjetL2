@@ -9,7 +9,7 @@ CFLAGS =-Wall $(INCLUDE) # Options de compilation.
 ODIR = obj/# Répertoire des fichiers objets
 SRC = src/# Répertoire des fichiers sources
 BINDIR = bin/# Répertoire des exécutables
-OBJ = $(addprefix $(ODIR), main.o init_close.o event.o monstre.o personnage.o)# Fichiers à compiler
+OBJ = $(addprefix $(ODIR), main.o init_close.o event.o monstre.o personnage.o affichage.o)# Fichiers à compiler
 
 
 all : $(BINDIR)$(GEN)
