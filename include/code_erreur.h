@@ -12,6 +12,6 @@
 #ifndef __H_CODE_ERREUR__
 #define __H_CODE_ERREUR__
 
-#define SDL_ERREUR 1
+enum{AUCUNE_ERREUR, SDL_ERREUR, ERREUR_TEXTURE};
 
 #endif
