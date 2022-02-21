@@ -2,3 +2,4 @@
 #include "definition_commun.h"
 #include "fonctions.h"
 #include "personnage.h"
+#include "affichage.h"

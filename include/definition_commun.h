@@ -25,7 +25,11 @@ typedef struct {
 }t_game;
 
 typedef unsigned char byte;
+typedef int err_t;
 
+#define bool _Bool
+#define vrai 1
+#define faux 0
 extern t_game game;
 
 #define SAVE_PATH "~/Games/Bloody Satana/"

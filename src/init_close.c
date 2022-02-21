@@ -74,6 +74,13 @@ static void init_rc_commun(void){
 
 
 }
+/**
+ * \brief Fonction ajoutée à la liste de atexit() afin de libérer toute la mémoire allouée
+ */
+void aff_cleanup(void)
+{
+    detruire_liste_textures(&listeDeTextures);
+}
 
 /**
  * \fn void init();
