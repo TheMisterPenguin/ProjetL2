@@ -14,6 +14,8 @@
  * 
  */
 
+joueur_t *perso_principal;
+
 FILE * sauv_existe(char *nom_sauv){
 	FILE * f = fopen(nom_sauv,"r+");
 }
