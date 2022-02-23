@@ -15,9 +15,17 @@
 
 objet_t *creer_objet(const char * nom, const short int niveau, const int att, const int def, const int vit)
 {
-
+    objet_t *obj = malloc(sizeof(objet_t));
+    obj->nom = malloc(sizeof(char) * strlen(nom) + 1);
+    
+    strcpy(obj->nom, nom);
+    obj->niveau = niveau;
+    obj->attaque = att;
+    obj->defense = def;
+    obj->vitesse = vit;
 }
 
 void detruire_objet(objet_t *obj){
-
+    free(obj->nom);
+    free(obj);
 }

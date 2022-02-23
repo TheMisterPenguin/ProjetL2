@@ -20,7 +20,7 @@
  */
 
 typedef struct objet_s {
-	char * nom_obj; /**<Le nom de l'objet*/
+	char * nom; /**<Le nom de l'objet*/
 	short int niveau; /**<Le niveau necessaire pour équiper l'objet*/
 	int attaque; /**<modificateur d'attaque de l'objet*/
     int defense; /**<modificateur de defense de l'objet*/
