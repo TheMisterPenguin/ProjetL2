@@ -55,6 +55,49 @@ bool rect_correct_texture(const SDL_Rect * const to_verify, const int width, con
     
 }
 
+err_t update_frame_texture(t_aff *texture, const int x, const int y){
+    SDL_Rect temp = *(texture->frame_anim);
+
+    temp.x = x;
+    temp.y = y;
+
+    if(rect_correct_texture(&temp, texture->width, texture->height)){
+        *(texture->frame_anim) = temp;
+
+        return EXIT_SUCCESS;
+    }
+
+    return EXIT_FAILURE;
+}
+
+void next_frame_x(t_aff *texture){
+    
+    texture->frame_anim->x += (texture->frame_anim->w);
+
+    if (!rect_correct_texture(texture->frame_anim, texture->width, texture->height)) /* Si l'on dépasse la texture */
+        texture->frame_anim->x = 0;
+}   
+
+void next_frame_y(t_aff *texture){
+    texture->frame_anim->y += (texture->frame_anim->h);
+
+    if (!rect_correct_texture(texture->frame_anim, texture->width, texture->height)) /* Si l'on dépasse la texture */
+        texture->frame_anim->y = 0;
+}
+
+err_t next_frame_y_indice(t_aff *texture, const unsigned int indice)
+{
+    int temp = texture->frame_anim->y;
+    texture->frame_anim->y = (texture->frame_anim->h) * indice; /* On mets à jour */
+
+    if (!rect_correct_texture(texture->frame_anim, texture->width, texture->height)){ /* Indice trop grand */
+        texture->frame_anim->y = temp;
+        return EXIT_FAILURE;
+    }
+
+    return EXIT_SUCCESS;
+}
+
 t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multpilicateur_taille){
     SDL_Surface * chargement;
     t_aff *texture = NULL;
@@ -78,7 +121,7 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
 
     SDL_FreeSurface(chargement); 
 
-    SDL_QueryTexture(texture->texture, NULL, NULL, texture->width, texture->height);
+    SDL_QueryTexture(texture->texture, NULL, NULL, &texture->width, &texture->height);
 
     texture->frame_anim = malloc(sizeof(SDL_Rect));
 
@@ -108,10 +151,6 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
     listeDeTextures->liste[listeDeTextures->nb_valeurs++] = texture;
 
     return texture;
-}
-
-err_t afficher_texture_emp(t_aff *texture, SDL_Renderer *rendu, const int x, const int y){
-    return SDL_RenderCopy(rendu, texture->texture, texture->frame_anim, (SDL_Rect *) {x,y,texture->aff_fenetre->w,texture->aff_fenetre->h});
 }
 
 err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
