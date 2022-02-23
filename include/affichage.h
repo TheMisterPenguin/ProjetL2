@@ -18,7 +18,7 @@ typedef struct s_aff{
 }t_aff;
 
 /**
- * \brief Structure contenant la list edes textures crées par le programme
+ * \brief Structure contenant la liste des textures créées par le programme
  * 
  */
 typedef struct s_l_aff{
@@ -32,11 +32,11 @@ extern t_l_aff *listeDeTextures;
 
 /**
  * \fn void detruire_texture(t_aff **texture)
- * \brief Fonction qui detruit une structure d'affichage de texture passée en paramètres
+ * \brief Fonction qui détruit une structure d'affichage de texture passée en paramètre
  * \author Despert Ange
  * \param texture L'adresse du pointeur sur la structure à détruire
  */
-extern void detruire_texture(t_aff **texture); /**<La liste des textures crées */
+extern void detruire_texture(t_aff **texture); /**<La liste des textures créées */
 /**
  * \brief Fonction qui détruit une liste de textures
  *
@@ -54,7 +54,7 @@ extern void detruire_liste_textures(t_l_aff **l_texture);
 extern bool rect_correct_texture(const SDL_Rect *const to_verify, const int width, const int height);
 /**
  * \fn t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const int multpilicateur_taille)
- * \brief Fonction qui renvoie charge une texture et la prépare à ce faire afficher
+ * \brief Fonction qui renvoie, charge une texture et la prépare à se faire afficher
  *
  * \param nom_fichier Le nom du fichier contenant la texture
  * \param taille_t_x La longueur de la texture à montrer
@@ -66,7 +66,7 @@ extern bool rect_correct_texture(const SDL_Rect *const to_verify, const int widt
  */
 extern t_aff *creer_texture(const char *nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multpilicateur_taille);
 /**
- * \brief Affiche la texture donné en paramètre aux coordonnées donneés
+ * \brief Affiche la texture donnée en paramètre aux coordonnées donneés
  *
  * \param texture La texture à afficher
  * \param rendu Le rendu sur lequel afficher la texture
@@ -76,7 +76,7 @@ extern t_aff *creer_texture(const char *nom_fichier, const int taille_t_x, const
  */
 extern err_t afficher_texture_emp(t_aff *texture, SDL_Renderer *rendu, const int x, const int y);
 /**
- * \brief Affiche la texgture donnée en paramètres à l'écran
+ * \brief Affiche la texture donnée en paramètre à l'écran
  *
  * \param texture La texture à afficher
  * \param rendu Le rendu sur lequel afficher la texture à l'écran
