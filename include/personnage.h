@@ -30,6 +30,7 @@ typedef struct joueur_s {
 	int xp; /**<Le nombre de points d'expérience que possède le joueur */
 	byte *trigger; /**<Une variable contenant des triggers logiques concernant le personnage */
 	/** TODO : créer un type énuméré map*/
+	int maxPdv;
 	int pdv;
 	int attaque; /**<attaque du joueur*/
     int defense; /**<defense du joueur*/

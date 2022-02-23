@@ -28,8 +28,16 @@ joueur_t *creer_joueur(const char *nom)
 
 	joueur_t * perso = malloc(sizeof(joueur_t));
 	perso->nom_pers = malloc(sizeof(char) * (strlen(nom) + 1));
-	perso->trigger = malloc(sizeof(byte) * TAILLE_TRIGGER);
+	
 	strcpy(perso->nom_pers, nom);
+	perso->niveau = 0;
+	perso->xp = 0;
+	perso->maxPdv = 20;
+	perso->pdv = 20;
+	perso->attaque = 1;
+	perso->defense = 1;
+	perso->vitesse = 1;
+	perso->trigger = malloc(sizeof(byte) * TAILLE_TRIGGER);
 	perso->orientation = 0;
 	
 	return perso;

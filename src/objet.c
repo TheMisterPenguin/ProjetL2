@@ -23,6 +23,8 @@ objet_t *creer_objet(const char * nom, const short int niveau, const int att, co
     obj->attaque = att;
     obj->defense = def;
     obj->vitesse = vit;
+
+    return obj;
 }
 
 void detruire_objet(objet_t *obj){
