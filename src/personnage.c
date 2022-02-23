@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <commun.h>
-#include <personnage.h>
 #include <string.h>
 
 /**

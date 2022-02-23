@@ -1,7 +1,7 @@
 /**
  * \file personnage.h
  * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
- * \brief Fichier contenant toutes les fonctions concernant le personnage
+ * \brief Fichier contenant toutes les définitions concernant le personnage
  * \version 0.1
  * \date 01/02/2022
  * 
