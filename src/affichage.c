@@ -110,7 +110,7 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
     }
 
     texture = malloc(sizeof(t_aff));
-
+ 
     /* Copie de la ressource dans une structure SDL_Texture */
     texture->texture = SDL_CreateTextureFromSurface(rendu_principal, chargement);
     if(! texture->texture){
@@ -146,7 +146,7 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
     texture->aff_fenetre->h = (int) taille_t_y * multpilicateur_taille;
     texture->aff_fenetre->w = (int) taille_t_x * multpilicateur_taille;
 
-    listeDeTextures = realloc(listeDeTextures->liste, sizeof(t_aff) * (listeDeTextures->nb_valeurs + 1));
+    listeDeTextures->liste = realloc(listeDeTextures->liste, sizeof(t_aff) * (listeDeTextures->nb_valeurs + 1));
 
     listeDeTextures->liste[listeDeTextures->nb_valeurs++] = texture;
 
