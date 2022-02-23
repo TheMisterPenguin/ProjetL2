@@ -83,7 +83,7 @@ void aff_cleanup(void)
 }
 
 void init_affichage(){
-    listeDeTextures = malloc(sizeof(t_aff *));
+    listeDeTextures = malloc(sizeof(t_aff *)); 
     listeDeTextures->liste = malloc(sizeof(t_aff));
     listeDeTextures->nb_valeurs = 0;
 }

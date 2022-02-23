@@ -82,7 +82,7 @@ void next_frame_y(t_aff *texture){
     texture->frame_anim->y += (texture->frame_anim->h);
 
     if (!rect_correct_texture(texture->frame_anim, texture->width, texture->height)) /* Si l'on dépasse la texture */
-        texture->frame_anim->y = 0;
+        texture->frame_anim->y = 0; 
 }
 
 err_t next_frame_y_indice(t_aff *texture, const unsigned int indice)

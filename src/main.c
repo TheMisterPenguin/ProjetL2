@@ -30,7 +30,7 @@ int main(int argc, char** argv)
     init();
 
     t_aff *text = creer_texture(N_T_PLAYER_WALK, 14, 21, 50,50,10);
-
+ 
     if(! text) 
         exit(EXIT_FAILURE);
     

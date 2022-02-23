@@ -29,7 +29,7 @@ void jeu_event(void){
             case SDL_QUIT : printf("Détection de la fermeture de la fenêtre\n");exit(EXIT_SUCCESS);
             case SDL_KEYDOWN : keyIn((SDL_KeyboardEvent*)&lastEvent);
 
-        }
+        } 
     }
 }
 
