@@ -29,21 +29,23 @@ int main(int argc, char** argv)
     printf("test\n");
     init();
 
-    t_aff *text = creer_texture(N_T_PLAYER_WALK, 14, 21, 50,50,10);
+    t_aff *text = creer_texture(N_T_PLAYER_WALK, 14, 21, 150,150,10);
  
     if(! text) 
         exit(EXIT_FAILURE);
+    perso_principal = creer_joueur("test");
     
-    next_frame_y_indice(text, 2);
     while (SDL_TRUE)
     {
+        next_frame_y_indice(text, perso_principal->orientation);
         SDL_RenderClear(rendu_principal);
         afficher_texture(text, rendu_principal);
         SDL_RenderPresent(rendu_principal);
         next_frame_x(text);
         jeu_event();
+
+        SDL_Delay(100);
     }
-    
     
 
 }

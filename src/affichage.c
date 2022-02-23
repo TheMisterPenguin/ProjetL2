@@ -74,14 +74,14 @@ void next_frame_x(t_aff *texture){
     
     texture->frame_anim->x += (texture->frame_anim->w);
 
-    if (!rect_correct_texture(texture->frame_anim, texture->width, texture->height)) /* Si l'on dépasse la texture */
+    if (!rect_correct_texture(texture->frame_anim, texture->width - 1, texture->height)) /* Si l'on dépasse la texture */
         texture->frame_anim->x = 0;
 }   
 
 void next_frame_y(t_aff *texture){
     texture->frame_anim->y += (texture->frame_anim->h);
 
-    if (!rect_correct_texture(texture->frame_anim, texture->width, texture->height)) /* Si l'on dépasse la texture */
+    if (!rect_correct_texture(texture->frame_anim, texture->width, texture->height - 1)) /* Si l'on dépasse la texture */
         texture->frame_anim->y = 0; 
 }
 

@@ -30,6 +30,7 @@ joueur_t *creer_joueur(const char *nom)
 	perso->nom_pers = malloc(sizeof(char) * (strlen(nom) + 1));
 	perso->trigger = malloc(sizeof(byte) * TAILLE_TRIGGER);
 	strcpy(perso->nom_pers, nom);
+	perso->orientation = 0;
 	
 	return perso;
 }

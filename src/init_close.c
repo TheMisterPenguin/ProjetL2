@@ -80,6 +80,7 @@ static void init_rc_commun(void){
 void aff_cleanup(void)
 {
     detruire_liste_textures(&listeDeTextures);
+    detruire_joueur(perso_principal);
 }
 
 void init_affichage(){
