@@ -22,7 +22,7 @@
 
 typedef unsigned char byte;
 
-typedef enum{SUD = 1, NORD, EST, OUEST}t_direction;
+typedef enum{SUD, NORD, EST, OUEST}t_direction;
 
 typedef struct joueur_s {
 	char * nom_pers; /**<Le nom du personnage*/
