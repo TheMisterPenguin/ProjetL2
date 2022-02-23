@@ -66,7 +66,7 @@ static void init_SDL(){
 
 static void init_rc_commun(void){
     rendu_principal =    SDL_CreateRenderer(fenetre_Principale,
-                                            -1, SDL_RENDERER_ACCELERATED);
+                                            -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED);
     if (rendu_principal == NULL){
         fprintf(stderr, "Échec de l'initialisation du rendu (%s)\n", SDL_GetError());
         exit(SDL_ERREUR);
@@ -82,6 +82,12 @@ void aff_cleanup(void)
     detruire_liste_textures(&listeDeTextures);
 }
 
+void init_affichage(){
+    listeDeTextures = malloc(sizeof(t_aff *)); 
+    listeDeTextures->liste = malloc(sizeof(t_aff));
+    listeDeTextures->nb_valeurs = 0;
+}
+
 /**
  * \fn void init();
  * \brief Fonction qui initialise le Programme
@@ -90,7 +96,9 @@ void aff_cleanup(void)
 void init(){
     init_SDL();
     atexit(fermer_SDL);
-    init_sGame();
-    //init_rc_commun();
-    //atexit(detruire_renderer);
+    //init_sGame();
+    init_rc_commun();
+    atexit(detruire_renderer);
+    init_affichage();
+    atexit(aff_cleanup);
 }
