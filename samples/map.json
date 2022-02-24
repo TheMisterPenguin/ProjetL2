@@ -1,0 +1,19 @@
+{
+    "type" : "map",
+    "id" : 1,
+    "width" : 15,
+    "height" : 30,
+    "starting-point" : [5, 5],
+    "monsters" : [
+        {"type" : 5,
+        "level" : 1,
+        "position" : [1,6]}
+    ],
+    "title-entities" : [
+        {"type" : 1,
+        "wall" : 1,
+        "position" : [5,9]}
+    ]
+}
+
+
