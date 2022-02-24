@@ -99,26 +99,3 @@ void init(){
     init_affichage();
     atexit(aff_cleanup);
 }
-
-void init_objet(){
-    FILE * obj;
-    t_item type;
-    char nom[50];
-    int niveau;
-    int att;
-    int def;
-    int vit;
-
-    obj = fopen("ressource/objet.txt", "r");
-
-    if(obj == NULL){
-        printf("erreur, fichier objet inaccessible\n");
-        return;
-    }
-    
-    while(fscanf(obj, "%i%50[^:]:%i%i%i%i", (int *)&type, nom, &niveau, &att, &def, &vit) == 6){
-        printf("%i %s %i %i %i %i\n", type, nom, niveau, att, def, vit);
-    }
-
-    fclose(obj);
-}

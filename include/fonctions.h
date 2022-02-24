@@ -40,7 +40,4 @@ extern void jeu_event(void);
  * 
  */
 void init_event(void);
-
-//a mettre dans objet.h? mais dans ce cas le programme principal ne le voit pas?
-void init_objet(void);
 #endif
