@@ -25,9 +25,9 @@ typedef enum{quete, arme, protection, amulette, consommable}t_item;
  */
 
 typedef struct lobjet_s {
-    int nbobj;
+    int nb;
     objet_t ** liste;
 }lobjet_t;
 
-extern objet_t ** init_objet(void);
+extern lobjet_t * creer_liste_objet(void);
 #endif
