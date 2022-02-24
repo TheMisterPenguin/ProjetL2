@@ -4,3 +4,4 @@
 #include "personnage.h"
 #include "affichage.h"
 #include "objet.h"
+#include "liste_objet.h"
