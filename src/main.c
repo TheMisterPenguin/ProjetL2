@@ -19,7 +19,7 @@ int main(int argc, char** argv)
     int val_retour;
 
     p_t_affichage = SDL_CreateThread(t_affichage, "Gestion de l'affichage du programme", NULL);
-    /* Initialisation simple 
+    // Initialisation simple 
     
     for(int i = 0; i < 15; i++)
         printf("%i\n", i);
@@ -27,6 +27,7 @@ int main(int argc, char** argv)
     SDL_WaitThread(p_t_affichage, &val_retour);*/
 
     printf("test\n");
+    init_objet();
     init();
 
     t_aff *text = creer_texture(N_T_PLAYER_WALK, 14, 21, 150,150,10);
