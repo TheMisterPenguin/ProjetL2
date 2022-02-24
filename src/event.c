@@ -32,8 +32,3 @@ void jeu_event(void){
         } 
     }
 }
-
-void init_event(void){
-
-    game.getKeyboardInput = keyIn;
-}
