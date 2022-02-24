@@ -86,5 +86,5 @@ extern err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu);
 
 extern void next_frame_x(t_aff *texture);
 extern err_t next_frame_y_indice(t_aff *texture, const unsigned int indice); 
-#define N_T_PLAYER_WALK "main_caracter.bmp"
+#define N_T_PLAYER_WALK "ressources/sprite/main_character.bmp"
 #endif

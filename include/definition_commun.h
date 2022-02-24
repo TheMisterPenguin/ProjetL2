@@ -10,9 +10,6 @@
 
 #ifndef __H_DEF_COMMUN__
 #define __H_DEF_COMMUN__
-extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre globale pointant sur la fenêtre principale du programme*/
-extern SDL_Renderer *rendu_principal;
-extern joueur_t *joueur; /**<Pointeur vers la structure du joueur principal*/
 
 #define FENETRE_LONGUEUR 640
 #define FENETRE_LARGEUR 480
@@ -31,6 +28,9 @@ typedef int err_t;
 #define vrai 1
 #define faux 0
 extern t_game game;
-
+extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre globale pointant sur la fenêtre principale du programme*/
+extern SDL_Renderer *rendu_principal;
+extern joueur_t *joueur; /**<Pointeur vers la structure du joueur principal*/
+extern bool running;
 #define SAVE_PATH "~/Games/Bloody Satana/"
 #endif

@@ -30,11 +30,6 @@ static void detruire_renderer(void)
     SDL_DestroyRenderer(rendu_principal);
 }
 
-static void init_sGame(){
-
-    init_event();
-}
-
 /**
  * \fn void init_SDL(void);
  * \brief Fonction qui démarre la SDL et créer la fenêtre principale
@@ -79,6 +74,7 @@ static void init_rc_commun(void){
  */
 void aff_cleanup(void)
 {
+    running = faux;
     detruire_liste_textures(&listeDeTextures);
     detruire_joueur(perso_principal);
 }
