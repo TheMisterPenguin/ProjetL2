@@ -41,7 +41,7 @@ lobjet_t * creer_liste_objet(){
 
     if( nb_obj > 0 ){
         if( (liste_obj->liste = malloc(sizeof(objet_t*) * nb_obj)) == NULL ){
-            fprintf( stderr , "init_objet: debordement memoire lors de la creation d'une liste de [%d] obj1s\n",
+            fprintf( stderr , "init_objet: debordement memoire lors de la creation d'une liste de [%d] liste_obj\n",
                 nb_obj ) ;
             return((lobjet_t*)NULL);
         }
@@ -57,4 +57,59 @@ lobjet_t * creer_liste_objet(){
     fclose(obj);
 
     return liste_obj;
+}
+
+/*
+ * Destruction d'une liste d'objets
+ */
+
+void detruire_liste_objet( lobjet_t ** liste_obj)
+{
+     int i = 0;
+
+    /*on detruit les objet_t de la liste lobjet_t*/
+    while(i < (*liste_obj)->nb){
+        detruire_objet((*liste_obj)->liste[i]);
+    i++;
+    }
+
+    free((*liste_obj)->liste);
+    (*liste_obj)->liste = NULL;
+
+    /*on detruit lobjet_t*/
+    free(*liste_obj);
+    *liste_obj = NULL;
+}
+
+/*
+ * Affichage d'une liste contenue dans une structure lobjet_t
+ */
+
+void afficher_liste_objet( lobjet_t * const liste_obj )
+{
+    int i ;
+    int nb_obj ;
+
+    if( liste_obj == NULL )
+    {
+        printf("(liste d'objets inexistante)\n" );
+        return ;
+    }
+
+    nb_obj = liste_obj->nb ;
+
+    if( nb_obj == 0 )
+    {
+        printf("(liste d'objets vide)\n" );
+        return ;
+    }
+
+    printf( "Nombre d'objets: %d\n" , nb_obj );
+    printf( "{ " ) ;
+    for( i=0 ; i<nb_obj ; i++ )
+    {
+        afficher_objet(liste_obj->liste[i]);
+        printf("\n");
+    }
+    printf( " }\n" ) ;
 }

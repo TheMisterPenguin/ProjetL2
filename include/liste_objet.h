@@ -15,8 +15,6 @@
 
 #include "objet.h"
 
-typedef enum{quete, arme, protection, amulette, consommable}t_item;
-
 /**
  * \struct struct lobjet
  * \brief Structure de liste d'objets
@@ -29,5 +27,7 @@ typedef struct lobjet_s {
     objet_t ** liste;
 }lobjet_t;
 
-extern lobjet_t * creer_liste_objet(void);
+lobjet_t * creer_liste_objet(void);
+void detruire_liste_objet( lobjet_t ** liste_obj);
+void afficher_liste_objet( lobjet_t * const liste_obj );
 #endif
