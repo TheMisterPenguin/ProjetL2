@@ -1,4 +1,3 @@
-#include "SDL2/SDL.h"
 #include "definition_commun.h"
 #ifndef __AFFICHAGE_H__
 #define __AFFICHAGE_H__
