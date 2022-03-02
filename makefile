@@ -10,17 +10,22 @@ ODIR = obj/# Répertoire des fichiers objets
 SRC = src/# Répertoire des fichiers sources
 BINDIR = bin/# Répertoire des exécutables
 OBJ = $(addprefix $(ODIR), main.o init_close.o event.o monstre.o personnage.o affichage.o objet.o liste_objet.o)# Fichiers à compiler
+OBJTEST = $(addprefix $(ODIR), monstre.o test_monstres.o)
 
+all : $(GEN)
 
-all : $(BINDIR)$(GEN)
-
-$(BINDIR)$(GEN) : $(OBJ)
+$(BINDIR)jeux.prog : $(OBJ)
 	$(CC) $^ -o $@ $(LDFLAGS)
 
+$(BINDIR)test_monstres : $(OBJTEST)
+	$(CC) $^ -o $@ $(LDFLAGS)
 # Compilation de tout les fichiers source
 
 $(ODIR)%.o : $(SRC)%.c
 	$(CC) $(CFLAGS) -o $@ -c $<
+
+# Génération des tests
+
 
 
 
