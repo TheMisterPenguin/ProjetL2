@@ -72,3 +72,11 @@ joueur_t *levelup(joueur_t* perso){
 	caracteristiques(perso);
 	return perso;
 }
+
+joueur_t *gain_xp(joueur_t* perso){
+	while(perso->xp >= 150+100*perso->niveau){
+		perso->xp = (perso->xp)-(150+100*(perso->niveau));
+		levelup(perso);		
+	}
+	return perso;
+}
