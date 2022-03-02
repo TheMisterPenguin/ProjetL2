@@ -1,4 +1,6 @@
 #include "code_erreur.h"
+#include "definition_commun.h"
 #include "fonctions.h"
+#include "personnage.h"
 #include "affichage.h"
-#include "liste_objet.h"
+#include "monstres.h"
