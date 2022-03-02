@@ -1,5 +1,5 @@
 #include "SDL2/SDL.h"
-#include "personnage.h"
+
 /** 
  * \file definition_commun.h
  * \brief Contient toutes les définitions communes à tout les fichiers
@@ -14,7 +14,6 @@
 #define FENETRE_LONGUEUR 1920
 #define FENETRE_LARGEUR 1078
 
-
 typedef unsigned char byte;
 typedef int err_t;
 
@@ -24,7 +23,6 @@ typedef int err_t;
 
 extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre globale pointant sur la fenêtre principale du programme*/
 extern SDL_Renderer *rendu_principal;
-extern joueur_t *joueur; /**<Pointeur vers la structure du joueur principal*/
 extern bool running;
 #define SAVE_PATH "~/Games/Bloody Satana/"
 #endif

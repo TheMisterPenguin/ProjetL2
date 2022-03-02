@@ -88,7 +88,7 @@ void next_frame_y(t_aff *texture){
 err_t next_frame_y_indice(t_aff *texture, const unsigned int indice)
 {
     int temp = texture->frame_anim->y;
-    texture->frame_anim->y = (texture->frame_anim->h) * indice; /* On mets à jour */
+    texture->frame_anim->y = (texture->frame_anim->h) * indice; /* On met à jour */
 
     if (!rect_correct_texture(texture->frame_anim, texture->width, texture->height)){ /* Indice trop grand */
         texture->frame_anim->y = temp;
@@ -99,7 +99,7 @@ err_t next_frame_y_indice(t_aff *texture, const unsigned int indice)
 }
 
 t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multpilicateur_taille){
-    SDL_Surface * chargement;
+    SDL_Surface * chargement = NULL;
     t_aff *texture = NULL;
 
     /* Chargement de la texture dans une surface */
