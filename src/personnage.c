@@ -57,3 +57,18 @@ joueur_t *caracteristiques(joueur_t* perso){
 	perso->pdv = perso->maxPdv;
 	return perso;
 }
+
+void afficher_statistiques(joueur_t* perso){
+	if(perso != NULL){
+		printf("Nom : %s\nNiveau : %d\nExpérience : %d\nPoints de vie max : %d\nPoints de vie actuels : %d\nAttaque : %d\nDéfense : %d\nVitesse : %d\n",
+		perso->nom_pers,perso->niveau,perso->xp,perso->maxPdv,perso->pdv,perso->attaque,perso->defense,perso->vitesse);
+	} else {
+		printf("Pas de perso\n");
+	}	
+}
+
+joueur_t *levelup(joueur_t* perso){
+	perso->niveau += 1;
+	caracteristiques(perso);
+	return perso;
+}

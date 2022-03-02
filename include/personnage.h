@@ -46,5 +46,7 @@ extern joueur_t * creer_joueur(const char * nom);
 extern void detruire_joueur(joueur_t *j);
 extern joueur_t * charger_sauvegarde_joueur(FILE *sauvegarde);
 extern joueur_t * caracteristiques(joueur_t* perso);
+extern void afficher_statistiques(joueur_t* perso);
+extern joueur_t * levelup(joueur_t* perso);
 
 #endif
