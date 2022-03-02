@@ -49,7 +49,7 @@ static void init_SDL(){
                                           5,
                                           FENETRE_LONGUEUR,
                                           FENETRE_LARGEUR,
-                                          SDL_WINDOW_SHOWN | SDL_WINDOW_BORDERLESS | SDL_WINDOW_OPENGL);
+                                          SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_OPENGL);
 
     if(! fenetre_Principale){
         fprintf(stderr,"Erreur lors de la création de la fenêtre : (%s)\n", SDL_GetError());
