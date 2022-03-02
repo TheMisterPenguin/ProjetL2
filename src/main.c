@@ -36,7 +36,7 @@ int t_affichage(void *ptr){
 
     int debut, fin; /* le temps pour calculer les performances */
 
-    t_aff *text = creer_texture(N_T_PLAYER_WALK, 14, 21, 150, 150, 10);
+    t_aff *text = creer_texture(N_T_PLAYER_WALK, 14, 21, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 14 * 3);
 
     if (!text)
         exit(EXIT_FAILURE);
@@ -53,8 +53,8 @@ int t_affichage(void *ptr){
 
         fin = SDL_GetPerformanceCounter();
 
-        float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency() * 1000.0f;
-        SDL_Delay(floor(32.666f - temps_passe));
+        //float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency() * 1000.0f;
+        //SDL_Delay(floor(32.666f - temps_passe));
     }
     return 0;
 }

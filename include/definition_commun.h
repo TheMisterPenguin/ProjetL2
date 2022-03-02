@@ -11,8 +11,8 @@
 #ifndef __H_DEF_COMMUN__
 #define __H_DEF_COMMUN__
 
-#define FENETRE_LONGUEUR 640
-#define FENETRE_LARGEUR 480
+#define FENETRE_LONGUEUR 1920
+#define FENETRE_LARGEUR 1078
 
 typedef struct {
     void (*getKeyboardInput)(SDL_KeyboardEvent *);

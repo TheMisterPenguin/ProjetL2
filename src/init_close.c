@@ -45,11 +45,11 @@ static void init_SDL(){
     printf("SDL initialisée !\n");
 
     fenetre_Principale = SDL_CreateWindow("Bloody Sanada",
-                                            SDL_WINDOWPOS_UNDEFINED,
-                                            SDL_WINDOWPOS_UNDEFINED,
-                                            FENETRE_LONGUEUR,
-                                            FENETRE_LARGEUR,
-                                            SDL_WINDOW_SHOWN);
+                                          5,
+                                          5,
+                                          FENETRE_LONGUEUR,
+                                          FENETRE_LARGEUR,
+                                          SDL_WINDOW_SHOWN | SDL_WINDOW_BORDERLESS | SDL_WINDOW_OPENGL);
 
     if(! fenetre_Principale){
         fprintf(stderr,"Erreur lors de la création de la fenêtre : (%s)\n", SDL_GetError());
@@ -61,7 +61,7 @@ static void init_SDL(){
 
 static void init_rc_commun(void){
     rendu_principal =    SDL_CreateRenderer(fenetre_Principale,
-                                            -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED);
+                                            -1,  SDL_RENDERER_ACCELERATED);
     if (rendu_principal == NULL){
         fprintf(stderr, "Échec de l'initialisation du rendu (%s)\n", SDL_GetError());
         exit(SDL_ERREUR);
