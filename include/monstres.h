@@ -13,8 +13,6 @@
 #define __MONSTRES_H__
 
 
-typedef enum{SUD, NORD, EST, OUEST}t_direction;
-
 /**
  * \struct struct position
  * \brief Structure regroupant les coordonnées

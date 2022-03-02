@@ -74,6 +74,6 @@ int main(int argc, char** argv)
     {   
         jeu_event();
     }
-    
+
 
 }
