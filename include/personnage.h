@@ -22,8 +22,6 @@
 
 typedef unsigned char byte;
 
-typedef enum{SUD, NORD, EST, OUEST}t_direction;
-
 typedef struct joueur_s {
 	char * nom_pers; /**<Le nom du personnage*/
 	short int niveau; /**<Le niveau du joueur*/
