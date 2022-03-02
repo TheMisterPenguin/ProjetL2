@@ -22,7 +22,7 @@ $(BINDIR)test_monstres : $(OBJTEST)
 # Compilation de tout les fichiers source
 
 $(ODIR)%.o : $(SRC)%.c
-	$(CC) $(CFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) -o $@ -c $< -O3
 
 # Génération des tests
 

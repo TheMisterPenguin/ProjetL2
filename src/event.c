@@ -18,6 +18,7 @@ static void keyIn(SDL_KeyboardEvent * ev){
         case TOUCHE_HAUT : perso_principal->orientation = NORD;break;
         case TOUCHE_DROITE : perso_principal->orientation = EST;break;
         case TOUCHE_GAUCHE : perso_principal->orientation = OUEST;break;
+        case SDLK_ESCAPE : exit(EXIT_SUCCESS);
     }
 }
 
