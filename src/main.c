@@ -73,6 +73,10 @@ int main(int argc, char** argv)
     afficher_intro();
 
     f_t_aff = SDL_CreateThread(t_affichage,"thread affichage", NULL);
+    if(f_t_aff == NULL){
+        fprintf(stderr,"Erreur : le thread n'a pas pus être créer : %s\n", SDL_GetError());
+        exit(SDL_ERREUR);
+    }
     SDL_DetachThread(f_t_aff);
 
     while (running)
