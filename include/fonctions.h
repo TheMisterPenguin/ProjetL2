@@ -26,13 +26,7 @@ extern void init(void);
  */
 extern void terminate_init(void);
 
-/**
- * \fn void jeu_event(void)
- * \brief Fonction qui gère les événements
- * \author Despert Ange
- * 
- */
-extern void jeu_event(void);
+
 
 /**
  * \fn init_event(void)

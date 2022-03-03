@@ -1,17 +1,19 @@
 /**
  * \file personnage.h
  * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
- * \brief Fichier contenant toutes les fonctions concernant le personnage
+ * \brief Fichier contenant toutes les définitions concernant le personnage
  * \version 0.1
  * \date 01/02/2022
  * 
  * \copyright Copyright (c) 2022
- * 
+ *  
  */
 
 
 #ifndef __PERSONNAGE_H__
 #define __PERSONNAGE_H__
+
+#include "definition_commun.h"
 
 /**
  * \struct struct joueur_s
@@ -22,14 +24,13 @@
 
 typedef unsigned char byte;
 
-typedef enum{SUD = 1, NORD, EST, OUEST}t_direction;
-
 typedef struct joueur_s {
 	char * nom_pers; /**<Le nom du personnage*/
 	short int niveau; /**<Le niveau du joueur*/
 	int xp; /**<Le nombre de points d'expérience que possède le joueur */
 	byte *trigger; /**<Une variable contenant des triggers logiques concernant le personnage */
 	/** TODO : créer un type énuméré map*/
+	int maxPdv;
 	int pdv;
 	int attaque; /**<attaque du joueur*/
     int defense; /**<defense du joueur*/
@@ -44,4 +45,9 @@ extern joueur_t *perso_principal;
 extern joueur_t * creer_joueur(const char * nom);
 extern void detruire_joueur(joueur_t *j);
 extern joueur_t * charger_sauvegarde_joueur(FILE *sauvegarde);
+extern joueur_t * caracteristiques(joueur_t* perso);
+extern void afficher_statistiques(joueur_t* perso);
+extern joueur_t * levelup(joueur_t* perso);
+extern joueur_t * gain_xp(joueur_t* perso);
+
 #endif

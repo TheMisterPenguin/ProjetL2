@@ -30,11 +30,6 @@ static void detruire_renderer(void)
     SDL_DestroyRenderer(rendu_principal);
 }
 
-static void init_sGame(){
-
-    init_event();
-}
-
 /**
  * \fn void init_SDL(void);
  * \brief Fonction qui démarre la SDL et créer la fenêtre principale
@@ -50,11 +45,11 @@ static void init_SDL(){
     printf("SDL initialisée !\n");
 
     fenetre_Principale = SDL_CreateWindow("Bloody Sanada",
-                                            SDL_WINDOWPOS_UNDEFINED,
-                                            SDL_WINDOWPOS_UNDEFINED,
-                                            FENETRE_LONGUEUR,
-                                            FENETRE_LARGEUR,
-                                            SDL_WINDOW_SHOWN);
+                                          5,
+                                          5,
+                                          FENETRE_LONGUEUR,
+                                          FENETRE_LARGEUR,
+                                          SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_OPENGL);
 
     if(! fenetre_Principale){
         fprintf(stderr,"Erreur lors de la création de la fenêtre : (%s)\n", SDL_GetError());
@@ -66,13 +61,28 @@ static void init_SDL(){
 
 static void init_rc_commun(void){
     rendu_principal =    SDL_CreateRenderer(fenetre_Principale,
-                                            -1, SDL_RENDERER_ACCELERATED);
+                                            -1,  SDL_RENDERER_ACCELERATED);
     if (rendu_principal == NULL){
         fprintf(stderr, "Échec de l'initialisation du rendu (%s)\n", SDL_GetError());
         exit(SDL_ERREUR);
     }
 
 
+}
+/**
+ * \brief Fonction ajoutée à la liste de atexit() afin de libérer toute la mémoire allouée
+ */
+void aff_cleanup(void)
+{
+    running = faux;
+    detruire_liste_textures(&listeDeTextures);
+    detruire_joueur(perso_principal);
+}
+
+void init_affichage(){
+    listeDeTextures = malloc(sizeof(t_aff *)); 
+    listeDeTextures->liste = malloc(sizeof(t_aff));
+    listeDeTextures->nb_valeurs = 0;
 }
 
 /**
@@ -83,7 +93,9 @@ static void init_rc_commun(void){
 void init(){
     init_SDL();
     atexit(fermer_SDL);
-    init_sGame();
-    //init_rc_commun();
-    //atexit(detruire_renderer);
+    //init_sGame();
+    init_rc_commun();
+    atexit(detruire_renderer);
+    init_affichage();
+    atexit(aff_cleanup);
 }
