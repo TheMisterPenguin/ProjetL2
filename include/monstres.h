@@ -12,6 +12,8 @@
 #ifndef __MONSTRES_H__
 #define __MONSTRES_H__
 
+#include "direction.h"
+#include "texture_struct.h"
 
 /**
  * \struct struct position
@@ -64,7 +66,7 @@ typedef struct base_monstres_s
  * \brief Fonction qui désalloue la structure base_monstres
  * \param base_monstres structure base_monstres_t à détruire
  */
-void detuire_base_monstres(base_monstres_t** base_monstres);
+void detruire_base_monstres(base_monstres_t** base_monstres);
 
 /**
  * \fn base_monstres_t* charger_monstres(char* nom_fichier)

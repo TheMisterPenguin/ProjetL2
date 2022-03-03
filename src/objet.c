@@ -47,10 +47,10 @@ void afficher_objet(objet_t * obj){
     else printf("afficher_objet: objet vide\n");
 }
 
-void detruire_objet(objet_t *obj){
-    free(obj->nom);
-    obj->nom = NULL;
+void detruire_objet(objet_t **obj){
+    free((*obj)->nom);
+    (*obj)->nom = NULL;
 
-    free(obj);
-    obj = NULL;
+    free(*obj);
+    *obj = NULL;
 }

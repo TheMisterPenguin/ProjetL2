@@ -33,7 +33,7 @@ typedef struct objet_s {
 
 
 extern objet_t * creer_objet(const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit);
-extern void detruire_objet(objet_t *obj);
+extern void detruire_objet(objet_t **obj);
 extern objet_t ** init_objet(void);
 extern void afficher_objet(objet_t * obj);
 #endif

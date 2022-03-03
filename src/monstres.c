@@ -1,12 +1,12 @@
-#include <commun.h>
+#include <monstres.h>
 #include <string.h>
 
 /**
  * \file monstre.c
- * \author Bruneau Antoine (Max.Descomps.Etu@univ-lemans.fr)
+ * \author Bruneau Antoine (Antoine.Bruneau.Etu@univ-lemans.fr)
  * \brief Fichier contenant toutes les fonctions concernant les monstres
  * \version 0.1
- * \date 01/02/2022
+ * \date 03/03/2022
  * 
  * \copyright Copyright (c) 2022
  * 
@@ -18,7 +18,7 @@ void detruire_monstre(monstre_t** monstre){
     *monstre = NULL;
 }
 
-void detuire_base_monstres(base_monstres_t** base_monstres){
+void detruire_base_monstres(base_monstres_t** base_monstres){
     int i;
     for(i=0; i < (**base_monstres).nb_monstre; i++){
         detruire_monstre((**base_monstres).tab + i);
@@ -40,7 +40,7 @@ base_monstres_t* charger_monstres(char* nom_fichier){
     monstre_t* monstre;
 
     if(!fichier){
-        fprintf(stderr,"Erreur lors de l'ouverture du fichier : %s\n");
+        fprintf(stderr,"Erreur lors de l'ouverture du fichier : %s\n", nom_fichier);
         return NULL;
     }
 

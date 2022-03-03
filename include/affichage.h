@@ -2,19 +2,7 @@
 #ifndef __AFFICHAGE_H__
 #define __AFFICHAGE_H__
 
-/**
- * \struct s_aff
- * \brief Structure qui permet l'affichage d'une texture à l'écran de manière précise
- * 
- * 
- */
-typedef struct s_aff{
-    SDL_Texture *texture; /**<Texture utilisée*/
-    SDL_Rect *frame_anim; /**<Désigne la zone de la texture à afficher*/
-    SDL_Rect *aff_fenetre; /**<Désigne l'emplacement et la taille de l'objet à l'écran */
-    int width;
-    int height;
-}t_aff;
+#include "texture_struct.h"
 
 /**
  * \brief Structure contenant la liste des textures créées par le programme

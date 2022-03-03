@@ -13,6 +13,8 @@
 #ifndef __PERSONNAGE_H__
 #define __PERSONNAGE_H__
 
+#include "direction.h"
+
 /**
  * \struct struct joueur_s
  * \brief Structure non manipulable hors des fonctions du personnage contenant les informations sur le joueur

@@ -50,7 +50,7 @@ lobjet_t * creer_liste_objet(){
             liste_obj->liste[i++] = creer_objet(type, nom, niveau, att, def, vit);
         }
 
-        liste_obj->nb = i;
+        liste_obj->nb = nb_obj;
     }
 
 
@@ -69,7 +69,7 @@ void detruire_liste_objet( lobjet_t ** liste_obj)
 
     /*on detruit les objet_t de la liste lobjet_t*/
     while(i < (*liste_obj)->nb){
-        detruire_objet((*liste_obj)->liste[i]);
+        detruire_objet((*liste_obj)->liste+i);
     i++;
     }
 
