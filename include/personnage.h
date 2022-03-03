@@ -13,7 +13,7 @@
 #ifndef __PERSONNAGE_H__
 #define __PERSONNAGE_H__
 
-#include "direction.h"
+#include "definition_commun.h"
 
 /**
  * \struct struct joueur_s

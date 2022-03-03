@@ -1,4 +1,4 @@
-#include "SDL2/SDL.h"
+
 
 /** 
  * \file definition_commun.h
@@ -11,12 +11,23 @@
 #ifndef __H_DEF_COMMUN__
 #define __H_DEF_COMMUN__
 
+#include "SDL2/SDL.h"
+
 #define FENETRE_LONGUEUR 1920
 #define FENETRE_LARGEUR 1078
 
 typedef unsigned char byte;
 typedef int err_t;
 typedef struct point {int x,y;}point;
+typedef enum
+{
+    SUD,
+    NORD,
+    EST,
+    OUEST
+} t_direction;
+
+typedef struct s_aff t_aff;
 
 #define bool _Bool
 #define vrai 1

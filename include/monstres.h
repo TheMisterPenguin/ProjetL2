@@ -12,8 +12,7 @@
 #ifndef __MONSTRES_H__
 #define __MONSTRES_H__
 
-#include "direction.h"
-#include "texture_struct.h"
+#include "definition_commun.h"
 
 /**
  * \struct struct position
@@ -21,11 +20,7 @@
  * 
  * \author Bruneau Antoine
  */
-typedef struct position_s
-{
-    int x;
-    int y;
-}position_t;
+typedef point position_t;
 
 
 /**

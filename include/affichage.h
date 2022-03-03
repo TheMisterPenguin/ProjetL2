@@ -1,9 +1,22 @@
-#include "definition_commun.h"
 #ifndef __AFFICHAGE_H__
 #define __AFFICHAGE_H__
+#include "SDL2/SDL.h"
+#include "definition_commun.h"
+/**
+ * \struct s_aff
+ * \brief Structure qui permet l'affichage d'une texture à l'écran de manière précise
+ *
+ *
+ */
 
-#include "texture_struct.h"
-
+typedef struct s_aff
+{
+    SDL_Texture *texture;  /**<Texture utilisée*/
+    SDL_Rect *frame_anim;  /**<Désigne la zone de la texture à afficher*/
+    SDL_Rect *aff_fenetre; /**<Désigne l'emplacement et la taille de l'objet à l'écran */
+    int width;
+    int height;
+} t_aff;
 /**
  * \brief Structure contenant la liste des textures créées par le programme
  * 
@@ -38,7 +51,7 @@ extern void detruire_liste_textures(t_l_aff **l_texture);
  * \param height La largeur de la texture
  * \return vrai Si tout est OK, faux sinon.
  */
-extern bool rect_correct_texture(const SDL_Rect *const to_verify, const int width, const int height);
+extern _Bool rect_correct_texture(const SDL_Rect *const to_verify, const int width, const int height);
 /**
  * \fn t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const int multpilicateur_taille)
  * \brief Fonction qui renvoie, charge une texture et la prépare à se faire afficher
