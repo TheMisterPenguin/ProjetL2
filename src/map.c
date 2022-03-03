@@ -1,6 +1,8 @@
 #include <json-c/json.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include <commun.h>
 
 void charger_map(const char const * nom_map){
     FILE * fp;
@@ -30,7 +32,12 @@ void charger_map(const char const * nom_map){
 
     json_object_object_get_ex(json_entree,"type", &type); /* On récupère les données associés à la clef */
 
-    printf("Le type du fichier est : %s \n", json_object_get_string(type)); /* On récupère les données sous forme d'une chaine de caractères */
+    if (strcmp(json_object_get_string(type), "map") != 0){
+        fprintf(stderr,"Le fichier donné n'est pas un fichier map !\n");
+        exit(EXIT_FAILURE);
+    }
+
+    
 
     free(file_buffer);
 }
