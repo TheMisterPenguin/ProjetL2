@@ -17,7 +17,8 @@ void afficher_intro(void){
             return;
         SDL_SetTextureAlphaMod(text_intro->texture, i);
         SDL_RenderClear(rendu_principal);
-        afficher_texture(text_intro, rendu_principal);
+        if (afficher_texture(text_intro, rendu_principal) =! 0)
+            fprintf(stderr,"Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
         SDL_RenderPresent(rendu_principal);
         SDL_Delay(50);
     }
