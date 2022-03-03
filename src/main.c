@@ -5,6 +5,7 @@
 SDL_Window *fenetre_Principale = NULL;
 SDL_Renderer *rendu_principal = NULL;
 bool running = vrai;
+#define NB_FPS 15
 
 void afficher_intro(void){
     int i;
@@ -58,8 +59,9 @@ int t_affichage(void *ptr){
 
         fin = SDL_GetPerformanceCounter();
 
-        //float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency() * 1000.0f;
-        //SDL_Delay(floor(32.666f - temps_passe));
+        float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
+        SDL_Delay(floor((1000 / (float) NB_FPS) - temps_passe));
+        printf("On attend %f ms\n", floor((1000 / (float)NB_FPS) - temps_passe));
     }
     return 0;
 }
