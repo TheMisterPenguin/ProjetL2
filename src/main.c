@@ -8,9 +8,12 @@ bool running = vrai;
 
 void afficher_intro(void){
     int i;
+    
     t_aff *text_intro = creer_texture("ressources/background/logo.bmp",640,480,0,0,1);
 
     for(i = 0; i < 256; i += 5 ){ /* Fondu (apparition du logo) */
+        if (logo_passer())
+            return;
         SDL_SetTextureAlphaMod(text_intro->texture, i);
         SDL_RenderClear(rendu_principal);
         afficher_texture(text_intro, rendu_principal);
@@ -22,6 +25,8 @@ void afficher_intro(void){
 
     for (i = 255; i > 0; i -= 5) /* Fondu (disparition du logo) */
     {
+        if (logo_passer())
+            return;
         SDL_SetTextureAlphaMod(text_intro->texture, i);
         SDL_RenderClear(rendu_principal);
         afficher_texture(text_intro, rendu_principal);
