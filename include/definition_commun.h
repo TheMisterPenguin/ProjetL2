@@ -16,6 +16,7 @@
 
 typedef unsigned char byte;
 typedef int err_t;
+typedef struct point {int x,y;}point;
 
 #define bool _Bool
 #define vrai 1
