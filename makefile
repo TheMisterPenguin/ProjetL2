@@ -10,7 +10,7 @@ ODIR = obj/# Répertoire des fichiers objets
 SRC = src/# Répertoire des fichiers sources
 BINDIR = bin/# Répertoire des exécutables
 OBJ = $(addprefix $(ODIR), main.o init_close.o event.o monstre.o personnage.o affichage.o objet.o liste_objet.o)# Fichiers à compiler
-OBJTEST = $(addprefix $(ODIR), monstres.o test_monstres.o)
+OBJTEST = $(addprefix $(ODIR), monstres.o test_monstre.o)
 
 all : $(GEN)
 
