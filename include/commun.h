@@ -4,3 +4,4 @@
 #include "personnage.h"
 #include "affichage.h"
 #include "monstres.h"
+#include "event.h"
