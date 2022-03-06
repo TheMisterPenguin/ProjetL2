@@ -13,6 +13,8 @@
 #ifndef __OBJET_H__
 #define __OBJET_H__
 
+#include "definition_commun.h"
+
 typedef enum{quete, arme, protection, amulette, consommable}t_item;
 
 /**
@@ -23,6 +25,8 @@ typedef enum{quete, arme, protection, amulette, consommable}t_item;
  */
 
 typedef struct objet_s {
+    t_aff * texture; /**<Image de l'objet*/
+    char * texture_src;
     t_item type; /**<Le type d'objet permet de contrôler sa bonne utilisation*/
 	char * nom; /**<Le nom de l'objet*/
 	short int niveau; /**<Le niveau necessaire pour équiper l'objet*/
@@ -31,8 +35,9 @@ typedef struct objet_s {
     int vitesse; /**<modificateur de vitesse de l'objet*/
 }objet_t;
 
+void detruire_texture(t_aff **texture);
 
-extern objet_t * creer_objet(const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit);
+extern objet_t * creer_objet(const char * const texture_src, const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit);
 extern void detruire_objet(objet_t **obj);
 extern objet_t ** init_objet(void);
 extern void afficher_objet(objet_t * obj);

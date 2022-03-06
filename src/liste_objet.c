@@ -15,6 +15,7 @@ lobjet_t * creer_liste_objet(){
     int niveau, att, def, vit;
     char c;
     int nb_obj = 0; //nombre d'objets dans le fichier source
+    char imgsrc[100];
 
     if(( liste_obj= malloc(sizeof(lobjet_t))) == NULL )
     {
@@ -34,7 +35,7 @@ lobjet_t * creer_liste_objet(){
 
     //compte les objets (1 par ligne)
     while(fscanf(obj, "%c", &c) == 1){
-        if(c == '\n') nb_obj++;
+        if(c == ';') nb_obj++;
     }
 
     fseek(obj,0,SEEK_SET); // le pointeur du fichier pointe à son début
@@ -46,8 +47,10 @@ lobjet_t * creer_liste_objet(){
             return((lobjet_t*)NULL);
         }
 
-        while(fscanf(obj, "%d%50[^:]:%d%d%d%d", (int *)&type, nom, &niveau, &att, &def, &vit) == 6){
-            liste_obj->liste[i++] = creer_objet(type, nom, niveau, att, def, vit);
+
+        while(fscanf(obj, "%s%d%49[^:]:%d%d%d%d;", imgsrc, (int *)&type, nom, &niveau, &att, &def, &vit) == 7){
+            liste_obj->liste[i] = creer_objet(imgsrc, type, nom, niveau, att, def, vit);
+            i++;
         }
 
         liste_obj->nb = nb_obj;

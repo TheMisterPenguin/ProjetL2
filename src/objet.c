@@ -14,7 +14,7 @@
  * 
  */
 
-objet_t *creer_objet(const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit)
+objet_t *creer_objet(const char * const texture_src, const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit)
 {
     objet_t *obj = NULL;
     
@@ -22,14 +22,22 @@ objet_t *creer_objet(const t_item type, const char * nom, const short int niveau
       fprintf( stderr , "creer_objet: debordement memoire lors de la creation d'un objet de type objet_t\n");
       return((objet_t *)NULL);
     }
-    
+
     if((obj->nom = malloc(sizeof(char) * strlen(nom) + 1)) == NULL )
     {
       fprintf( stderr , "creer_objet: debordement memoire lors de la creation du nom d'un objet_t") ;
       return((objet_t *)NULL);
     }
-
     strcpy(obj->nom, nom);
+
+    if((obj->texture_src = malloc(sizeof(char) * strlen(texture_src) + 1)) == NULL )
+    {
+      fprintf( stderr , "creer_objet: debordement memoire lors de l'allocation de texture_src") ;
+      return((objet_t *)NULL);
+    }
+    strcpy(obj->texture_src, texture_src);
+
+    obj->texture = NULL;
     obj->type = type;
     obj->niveau = niveau;
     obj->attaque = att;
@@ -41,15 +49,19 @@ objet_t *creer_objet(const t_item type, const char * nom, const short int niveau
 
 void afficher_objet(objet_t * obj){
     if(obj != NULL){
-    printf("type: %d\nnom: %s\nniveau: %d\nattaque: %d\ndefense: %d\nvitesse: %d\n",
-    obj->type, obj->nom, obj->niveau, obj->attaque, obj->defense, obj->vitesse);
+    printf("type: %d\nnom: %s\ntexture_src: %s\nniveau: %d\nattaque: %d\ndefense: %d\nvitesse: %d\n",
+    obj->type, obj->nom, obj->texture_src, obj->niveau, obj->attaque, obj->defense, obj->vitesse);
     }
     else printf("afficher_objet: objet vide\n");
 }
 
 void detruire_objet(objet_t **obj){
+    if((*obj)->texture != NULL)
+        detruire_texture(&(*obj)->texture);
+    
+    free((*obj)->texture_src);
+
     free((*obj)->nom);
-    (*obj)->nom = NULL;
 
     free(*obj);
     *obj = NULL;
