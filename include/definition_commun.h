@@ -27,8 +27,6 @@ typedef enum
     OUEST
 } t_direction;
 
-typedef struct s_aff t_aff;
-
 #define bool _Bool
 #define vrai 1
 #define faux 0
