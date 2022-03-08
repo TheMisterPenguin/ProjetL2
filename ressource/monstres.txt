@@ -2,8 +2,8 @@
 demon
 50
 10
-1.0
-20
+1.0 
+20 
 
 [demons_alpha.bmp]
 demon_alpha
