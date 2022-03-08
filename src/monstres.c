@@ -1,12 +1,12 @@
-#include <commun.h>
+#include <monstres.h>
 #include <string.h>
 
 /**
  * \file monstre.c
- * \author Bruneau Antoine (Max.Descomps.Etu@univ-lemans.fr)
+ * \author Bruneau Antoine (Antoine.Bruneau.Etu@univ-lemans.fr)
  * \brief Fichier contenant toutes les fonctions concernant les monstres
  * \version 0.1
- * \date 01/02/2022
+ * \date 03/03/2022
  * 
  * \copyright Copyright (c) 2022
  * 
@@ -19,6 +19,7 @@ void detruire_monstre(monstre_t** monstre){
 }
 
 void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres){
+
     int i;
     for(i=0; i < (**liste_base_monstres).nb_monstre; i++){
         free((**liste_base_monstres).tab[i]);

@@ -1,4 +1,4 @@
-#include "SDL2/SDL.h"
+
 
 /** 
  * \file definition_commun.h
@@ -11,27 +11,28 @@
 #ifndef __H_DEF_COMMUN__
 #define __H_DEF_COMMUN__
 
-#define FENETRE_LONGUEUR 640
-#define FENETRE_LARGEUR 480
+#include "SDL2/SDL.h"
 
-typedef enum{SUD, NORD, EST, OUEST}t_direction;
-
-typedef struct {
-    void (*getKeyboardInput)(SDL_KeyboardEvent *);
-    void (*init)(void);
-    void (*stop)(void);
-    void (*crash)(/*TODO*/);
-}t_game;
+#define FENETRE_LONGUEUR 1920
+#define FENETRE_LARGEUR 1078
 
 typedef unsigned char byte;
 typedef int err_t;
+typedef struct point {int x,y;}point;
+typedef enum
+{
+    SUD,
+    NORD,
+    EST,
+    OUEST
+} t_direction;
 
 #define bool _Bool
 #define vrai 1
 #define faux 0
-extern t_game game;
+
 extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre globale pointant sur la fenêtre principale du programme*/
 extern SDL_Renderer *rendu_principal;
 extern bool running;
-#define SAVE_PATH "~/Games/Bloody Satana/"
+#define SAVE_PATH "~/Games/Bloody Sanada/"
 #endif

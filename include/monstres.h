@@ -12,17 +12,15 @@
 #ifndef __MONSTRES_H__
 #define __MONSTRES_H__
 
+#include "definition_commun.h"
+#include <affichage.h>
 
 /**
  * \struct struct position
  * \brief Structure regroupant les coordonnées
  * \author Bruneau Antoine
  */
-typedef struct position_s
-{
-    int x;
-    int y;
-}position_t;
+typedef point position_t;
 
 
 /**
@@ -77,6 +75,7 @@ typedef struct liste_base_monstres_s
  * \brief Fonction qui désalloue la structure liste_base_monstres
  * \param base_monstres structure base_monstres_t à détruire
  */
+
 void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres);
 
 
@@ -86,6 +85,7 @@ void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres);
  * \param base_monstres structure monstre_t à détruire
  */
 void detruire_monstre(monstre_t** monstre);
+
 
 /**
  * \fn liste_base_monstres_t* charger_monstres(char* nom_fichier)

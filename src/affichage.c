@@ -1,4 +1,5 @@
 #include <affichage.h>
+#include <commun.h>
 /**
  * \file affichage.c
  * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
@@ -52,7 +53,6 @@ bool rect_correct_texture(const SDL_Rect * const to_verify, const int width, con
         return faux;
     
     return vrai;
-    
 }
 
 err_t update_frame_texture(t_aff *texture, const int x, const int y){

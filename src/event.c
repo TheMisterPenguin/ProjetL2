@@ -18,6 +18,7 @@ static void keyIn(SDL_KeyboardEvent * ev){
         case TOUCHE_HAUT : perso_principal->orientation = NORD;break;
         case TOUCHE_DROITE : perso_principal->orientation = EST;break;
         case TOUCHE_GAUCHE : perso_principal->orientation = OUEST;break;
+        case SDLK_ESCAPE : exit(EXIT_SUCCESS);
     }
 }
 
@@ -27,8 +28,25 @@ void jeu_event(void){
     while(SDL_PollEvent(&lastEvent)){
         switch(lastEvent.type){
             case SDL_QUIT : printf("Détection de la fermeture de la fenêtre\n");exit(EXIT_SUCCESS);
-            case SDL_KEYDOWN : keyIn((SDL_KeyboardEvent*)&lastEvent);
+            case SDL_KEYDOWN : keyIn((SDL_KeyboardEvent*)&lastEvent.key);
 
         } 
     }
+}
+
+bool logo_passer(void){
+    SDL_Event lastEvent;
+
+    while (SDL_PollEvent(&lastEvent))
+    {
+        switch (lastEvent.type){
+        case SDL_QUIT:
+            printf("Détection de la fermeture de la fenêtre\n");
+            exit(EXIT_SUCCESS);
+        case SDL_KEYDOWN:
+            return vrai;
+        }
+    }
+
+    return faux;
 }
