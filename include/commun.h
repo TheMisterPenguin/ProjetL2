@@ -6,3 +6,4 @@
 #include "affichage.h"
 #include "liste_objet.h"
 #include "event.h"
+#include "inventaire.h"
