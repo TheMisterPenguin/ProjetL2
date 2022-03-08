@@ -14,6 +14,7 @@
 #define __OBJET_H__
 
 #include "definition_commun.h"
+#include "affichage.h"
 
 typedef enum{quete, arme, protection, amulette, consommable}t_item;
 
