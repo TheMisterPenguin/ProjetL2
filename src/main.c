@@ -5,19 +5,37 @@
 SDL_Window *fenetre_Principale = NULL;
 SDL_Renderer *rendu_principal = NULL;
 bool running = vrai;
-#define NB_FPS 15
+#define NB_FPS 30
 
 void afficher_intro(void){
     int i;
-    
-    t_aff *text_intro = creer_texture("ressources/background/logo.bmp",640,480,0,0,1);
+    SDL_Rect aff_logo = {0,0,FENETRE_LONGUEUR,FENETRE_LARGEUR};
+
+    SDL_Surface *temp = SDL_LoadBMP("ressources/background/logo.bmp");
+    if (!temp)
+    {
+        fprintf(stderr, "Erreur lors du chargement de la texture : %s\n", SDL_GetError());
+        return;
+    }
+
+    SDL_Texture *text = SDL_CreateTextureFromSurface(rendu_principal, temp);
+    if (!text)
+    {
+        fprintf(stderr, "Erreur lors de la convertion de la surface : %s\n", SDL_GetError());
+        return;
+    }
+
+    SDL_FreeSurface(temp);
+
+    if(SDL_SetTextureAlphaMod(text, 0))
+        fprintf(stderr,"Erreur : impossible de régler l'alpha de la texture : %s\n", SDL_GetError());
 
     for(i = 0; i < 256; i += 5 ){ /* Fondu (apparition du logo) */
         if (logo_passer())
             return;
-        SDL_SetTextureAlphaMod(text_intro->texture, i);
+        SDL_SetTextureAlphaMod(text, i);
         SDL_RenderClear(rendu_principal);
-        if (afficher_texture(text_intro, rendu_principal) =! 0)
+        if (SDL_RenderCopy(rendu_principal, text, NULL, &aff_logo) != 0)
             fprintf(stderr,"Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
         SDL_RenderPresent(rendu_principal);
         SDL_Delay(50);
@@ -29,10 +47,10 @@ void afficher_intro(void){
     {
         if (logo_passer())
             return;
-        SDL_SetTextureAlphaMod(text_intro->texture, i);
+        SDL_SetTextureAlphaMod(text, i);
         SDL_RenderClear(rendu_principal);
-        afficher_texture(text_intro, rendu_principal);
-        SDL_RenderPresent(rendu_principal);
+        if (SDL_RenderCopy(rendu_principal, text, NULL, &aff_logo) != 0)
+            SDL_RenderPresent(rendu_principal);
         SDL_Delay(50);
     }
 
@@ -62,7 +80,6 @@ int t_affichage(void *ptr){
 
         float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
         SDL_Delay(floor((1000 / (float) NB_FPS) - temps_passe));
-        printf("On attend %f ms\n", floor((1000 / (float)NB_FPS) - temps_passe));
     }
     return 0;
 }
