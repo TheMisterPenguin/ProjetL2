@@ -6,7 +6,7 @@
     "height" : 24,
     "starting-point" : [5, 5],
     "monsters" : [
-        {"type" : 5,
+        {"type" : "demon_alpha",
         "level" : 1,
         "position" : [1,6]}
     ],

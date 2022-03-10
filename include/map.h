@@ -11,9 +11,10 @@ typedef struct {
     point dest; /*< Les coordonnées du point d'apparition sur la map */
 }zone_tp;
 
-typedef struct map {
+typedef struct t_map {
     t_aff * text_map;
-
-}map;
+    unsigned int width, height;
+    
+}t_map;
 
 #endif
