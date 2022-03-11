@@ -84,7 +84,26 @@ extern err_t afficher_texture_emp(t_aff *texture, SDL_Renderer *rendu, const int
  */
 extern err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu);
 
+/**
+ * \fn t_l_aff* init_textures_joueur()
+ * \brief Fonction qui creer et renvoie une liste de textures pour le personnage (joueur)
+ *
+ * \return t_l_aff* Une liste de textures
+ */
+extern t_l_aff* init_textures_joueur();
+extern t_aff * next_frame_joueur(t_l_aff* textures_joueur);
+
+
+
 extern void next_frame_x(t_aff *texture);
 extern err_t next_frame_y_indice(t_aff *texture, const unsigned int indice); 
-#define N_T_PLAYER_WALK "ressources/sprite/main_character.bmp"
+
+typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TEXT_MARCHER_BOUCLIER}t_texture;
+#define NB_SPRITE_JOUEUR 5
+#define N_T_MARCHER "ressources/sprite/marcher.bmp"
+#define N_T_ATTAQUE "ressources/sprite/attaque.bmp"
+#define N_T_ATTAQUE_CHARGEE "ressources/sprite/attaque_charger.bmp"
+#define N_T_CHARGER "ressources/sprite/charger.bmp"
+#define N_T_MARCHER_BOUCLIER "ressources/sprite/marcher_bouclier.bmp"
+
 #endif

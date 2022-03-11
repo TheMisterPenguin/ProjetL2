@@ -157,6 +157,40 @@ err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
     return SDL_RenderCopy(rendu,texture->texture, texture->frame_anim, texture->aff_fenetre);
 }
 
+ t_l_aff* init_textures_joueur(){
+    t_l_aff* textures_joueur = malloc(sizeof(t_l_aff));
+    textures_joueur->nb_valeurs = NB_SPRITE_JOUEUR;
+    textures_joueur->liste = malloc(sizeof(t_aff)*NB_SPRITE_JOUEUR);
+    textures_joueur->liste[0] = creer_texture(N_T_MARCHER, 48, 48, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    textures_joueur->liste[1] = creer_texture(N_T_ATTAQUE, 48, 48, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    textures_joueur->liste[2] = creer_texture(N_T_ATTAQUE_CHARGEE, 48, 48, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    textures_joueur->liste[3] = creer_texture(N_T_CHARGER, 48, 48, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    textures_joueur->liste[4] = creer_texture(N_T_MARCHER_BOUCLIER, 48, 48, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    return textures_joueur;
+}
+
+t_aff * next_frame_joueur(t_l_aff* textures_joueur){
+    if(perso_principal->statut->action == RIEN){
+        if(!perso_principal->statut->en_mouvement)
+            if(perso_principal->statut->bouclier_equipe)
+                return textures_joueur->liste[TEXT_MARCHER_BOUCLIER];
+            else
+                return textures_joueur->liste[TEXT_MARCHER];
+        else{
+            if(perso_principal->statut->bouclier_equipe){
+                next_frame_y(textures_joueur->liste[TEXT_MARCHER_BOUCLIER]);
+                next_frame_x(textures_joueur->liste[TEXT_MARCHER_BOUCLIER]);
+                return textures_joueur->liste[TEXT_MARCHER_BOUCLIER];
+            }
+            else{
+                next_frame_y(textures_joueur->liste[TEXT_MARCHER]);
+                next_frame_x(textures_joueur->liste[TEXT_MARCHER]);
+                return textures_joueur->liste[TEXT_MARCHER];
+            }
+        }
+    }
+    
+}
 
 
 

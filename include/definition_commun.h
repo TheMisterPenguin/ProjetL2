@@ -21,9 +21,9 @@ typedef int err_t;
 typedef struct point {int x,y;}point;
 typedef enum
 {
-    SUD,
     NORD,
     EST,
+    SUD,
     OUEST
 } t_direction;
 

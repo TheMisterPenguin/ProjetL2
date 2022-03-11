@@ -15,6 +15,28 @@
 
 #include "definition_commun.h"
 
+
+
+/**
+ * \struct struct statut_s
+ * \brief Structure contenant les éléments nécéssaires au choix de l'affichage des sprites du personnage
+ * 
+ * \author Bruneau Antoine
+ */
+typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGER,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER}action_t;
+
+typedef struct statut_s {
+	bool en_mouvement;
+	t_direction	orientation;
+	bool bouclier_equipe;
+	int duree;
+	action_t action;
+}statut_t;
+
+
+
+
+
 /**
  * \struct struct joueur_s
  * \brief Structure non manipulable hors des fonctions du personnage contenant les informations sur le joueur
@@ -35,8 +57,11 @@ typedef struct joueur_s {
 	int attaque; /**<attaque du joueur*/
     int defense; /**<defense du joueur*/
     int vitesse; /**<vitesse de déplacement du joueur*/
-	t_direction orientation; /**<orientation du joueur*/
+	statut_t *statut; /**<statut du joueur*/
 }joueur_t;
+
+
+
 
 extern joueur_t *perso_principal;
 

@@ -60,21 +60,25 @@ void afficher_intro(void){
 int t_affichage(void *ptr){
 
     int debut, fin; /* le temps pour calculer les performances */
+    int i;
+    
+    t_l_aff* textures_joueur = init_textures_joueur();
+    t_aff* next_texture_joueur;
 
-    t_aff *text = creer_texture(N_T_PLAYER_WALK, 14, 21, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 14 * 3);
-
-    if (!text)
-        exit(EXIT_FAILURE);
+    for(i=0; i<textures_joueur->nb_valeurs; i++)
+        if(textures_joueur->liste == NULL)
+            exit(EXIT_FAILURE);
     perso_principal = creer_joueur("test");
 
     while (running)
     {
         debut = SDL_GetPerformanceCounter();
-        next_frame_y_indice(text, perso_principal->orientation);
+        next_texture_joueur = next_frame_joueur(textures_joueur);
+        //next_frame_y_indice(text, perso_principal->orientation);
         SDL_RenderClear(rendu_principal);
-        afficher_texture(text, rendu_principal);
+        afficher_texture(next_texture_joueur, rendu_principal);
         SDL_RenderPresent(rendu_principal);
-        next_frame_x(text);
+        //next_frame_x(text);
 
         fin = SDL_GetPerformanceCounter();
 
@@ -87,11 +91,9 @@ int t_affichage(void *ptr){
 int main(int argc, char** argv)
 {
     SDL_Thread *f_t_aff;
-
+    printf("bonjour\n\n");
     init();
-
     afficher_intro();
-
     f_t_aff = SDL_CreateThread(t_affichage,"thread affichage", NULL);
     if(f_t_aff == NULL){
         fprintf(stderr,"Erreur : le thread n'a pas pus être créer : %s\n", SDL_GetError());
