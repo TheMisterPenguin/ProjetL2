@@ -70,10 +70,12 @@ int t_affichage(void *ptr){
             exit(EXIT_FAILURE);
     perso_principal = creer_joueur("test");
 
+    i=0;
     while (running)
-    {
+    {   
         debut = SDL_GetPerformanceCounter();
-        next_texture_joueur = next_frame_joueur(textures_joueur);
+        if(i%5 == 0)
+            next_texture_joueur = next_frame_joueur(textures_joueur);
         //next_frame_y_indice(text, perso_principal->orientation);
         SDL_RenderClear(rendu_principal);
         afficher_texture(next_texture_joueur, rendu_principal);
@@ -84,6 +86,7 @@ int t_affichage(void *ptr){
 
         float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
         SDL_Delay(floor((1000 / (float) NB_FPS) - temps_passe));
+        i++;
     }
     return 0;
 }

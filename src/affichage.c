@@ -178,12 +178,12 @@ t_aff * next_frame_joueur(t_l_aff* textures_joueur){
                 return textures_joueur->liste[TEXT_MARCHER];
         else{
             if(perso_principal->statut->bouclier_equipe){
-                next_frame_y(textures_joueur->liste[TEXT_MARCHER_BOUCLIER]);
+                next_frame_y_indice(textures_joueur->liste[TEXT_MARCHER_BOUCLIER], perso_principal->statut->orientation);
                 next_frame_x(textures_joueur->liste[TEXT_MARCHER_BOUCLIER]);
                 return textures_joueur->liste[TEXT_MARCHER_BOUCLIER];
             }
             else{
-                next_frame_y(textures_joueur->liste[TEXT_MARCHER]);
+                next_frame_y_indice(textures_joueur->liste[TEXT_MARCHER], perso_principal->statut->orientation);
                 next_frame_x(textures_joueur->liste[TEXT_MARCHER]);
                 return textures_joueur->liste[TEXT_MARCHER];
             }

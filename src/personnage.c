@@ -39,6 +39,7 @@ joueur_t *creer_joueur(const char *nom)
 	perso->vitesse = 1;
 	perso->trigger = malloc(sizeof(byte) * TAILLE_TRIGGER);
 	perso->statut = malloc(sizeof(statut_t));
+	perso->statut->duree = 0;
 	perso->statut->en_mouvement = 0;
 	perso->statut->orientation = SUD;
 	perso->statut->bouclier_equipe = 0;
