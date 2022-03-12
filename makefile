@@ -15,7 +15,7 @@ OBJ_TEST_MONSTRES = $(addprefix $(ODIR), test_monstres.o monstres.o)
 rm        = rm -f
 
 
-all : $(GEN)
+all : makedir $(GEN) 
 
 $(BINDIR)jeux.prog : $(OBJ)
 	$(CC) $^ -o $@ $(LDFLAGS)
@@ -31,6 +31,12 @@ $(ODIR)%.o : $(SRC)%.c
 
 # Génération des tests
 
+
+# Création de l'arboressence 
+.PHONY: makedir
+makedir :
+	@chmod a+x $(DIRMAKE)
+	@./$(DIRMAKE)
 #options de suppression
 
 .PHONY: clean
