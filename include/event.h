@@ -17,7 +17,7 @@
 #define TOUCHE_GAUCHE SDLK_q
 #define TOUCHE_DROITE SDLK_d
 
-extern bool logo_passer(void);
+extern _Bool logo_passer(void);
 
 /**
  * \fn void jeu_event(void)
