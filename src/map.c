@@ -1,16 +1,12 @@
 #include <json-c/json.h>
+#include <affichage.h>
 #include <map.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <commun.h>
+#include <code_erreur.h>
 
-/**
- * \brief Fonction qui charge le contenu du fichier dont le nom est donné en paramètre dans un buffer de caractères
- * 
- * \param nom_map Le nom du fichier map à charger
- * \return Un buffer de caractères contenant l'intégralité du fichier
- */
+
 char * charger_f_map(const char * const nom_map){
     FILE * fp;
     char *file_buffer;
@@ -42,6 +38,36 @@ char * charger_f_map(const char * const nom_map){
 
 t_map * charger_s_map(const char * const buffer){
     t_map *m;
+    json_object *fichier;
+    json_object *texture_map;
+    json_object *width;
+    json_object *height;
+    json_object *tbl_monstre;
+    json_object *monstre;
 
+
+    fichier = json_tokener_parse(buffer);
     m = malloc(sizeof(t_map));
+    m->liste_monstres =  init_liste(NULL,NULL);
+
+    json_object_object_get_ex(fichier, "file-path", &texture_map);
+    json_object_object_get_ex(fichier, "width", &width);
+    json_object_object_get_ex(fichier, "height", &height);
+    json_object_object_get_ex(fichier, "monsters", &tbl_monstre);
+
+    m->text_map = creer_texture(json_object_get_string(texture_map),
+                                -1, -1, 0, 0, FENETRE_LARGEUR );
+    m->height = json_object_get_int(height);
+    m->width = json_object_get_int(width);
+
+    for(unsigned int i = 0; i < json_object_array_length(tbl_monstre); i++){
+        monstre = json_object_array_get_idx(tbl_monstre,i);
+        /* Fonction qui permet de creer un monstre */
+    }
+
+    return m;
+}
+
+t_aff * texture_map(const t_map * map){
+    return map->text_map;
 }
