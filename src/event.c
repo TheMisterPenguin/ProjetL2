@@ -11,47 +11,84 @@
 #include <commun.h>
 #include <event.h>
 
-
+/**
+ * \fn void keyDown(SDL_KeyboardEvent * ev)
+ * \brief Fonction qui gère les événements quand une touche du clavier est pressée
+ * \author Antoine Bruneau
+ * \param SDL_KeyboardEvent* une structure contenant l'évênement
+ */
 static void keyDown(SDL_KeyboardEvent * ev){
-    perso_principal->statut->en_mouvement = vrai;
-    switch(ev->keysym.sym){
-        case TOUCHE_BAS : perso_principal->statut->orientation = SUD;break;
-        case TOUCHE_HAUT : perso_principal->statut->orientation = NORD;break;
-        case TOUCHE_DROITE : perso_principal->statut->orientation = EST;break;
-        case TOUCHE_GAUCHE : perso_principal->statut->orientation = OUEST;break;
-        case SDLK_ESCAPE : exit(EXIT_SUCCESS);
-    }
+    statut_t* statut = perso_principal->statut;
+
+    if (ev->keysym.sym == SDLK_ESCAPE)
+        exit(EXIT_SUCCESS);
+    if(statut->action == RIEN || statut->action == CHARGER)
+        switch(ev->keysym.sym){
+            case TOUCHE_BAS : statut->orientation = SUD;  statut->en_mouvement = vrai; break;
+            case TOUCHE_HAUT : statut->orientation = NORD;  statut->en_mouvement = vrai; break;
+            case TOUCHE_DROITE : statut->orientation = EST;  statut->en_mouvement = vrai; break;
+            case TOUCHE_GAUCHE : statut->orientation = OUEST;  statut->en_mouvement = vrai; break;
+        }
 }
 
+/**
+ * \fn void keyUp(SDL_KeyboardEvent * ev)
+ * \brief Fonction qui gère les événements quand une touche du clavier est relachée
+ * \author Antoine Bruneau
+ * \param SDL_KeyboardEvent* une structure contenant l'évênement
+ */
 static void keyUp(SDL_KeyboardEvent * ev){
-    if(ev->keysym.sym == TOUCHE_BAS || ev->keysym.sym == TOUCHE_DROITE || ev->keysym.sym == TOUCHE_GAUCHE || ev->keysym.sym == TOUCHE_HAUT)
+    t_direction orientation = perso_principal->statut->orientation;
+
+    if( (ev->keysym.sym == TOUCHE_BAS && orientation == SUD) || (ev->keysym.sym == TOUCHE_DROITE && orientation == EST) || (ev->keysym.sym == TOUCHE_GAUCHE && orientation == OUEST) || (ev->keysym.sym == TOUCHE_HAUT && orientation == NORD) )
         perso_principal->statut->en_mouvement = faux;
 }
 
+/**
+ * \fn void mouseButtonDown(SDL_MouseButtonEvent * ev)
+ * \brief Fonction qui gère les événements quand un bouton de la souris est pressée
+ * \author Antoine Bruneau
+ * \param SDL_KeyboardEvent* une structure contenant l'évênement
+ */
 static void mouseButtonDown(SDL_MouseButtonEvent * ev){
-    if(ev->button == SDL_BUTTON_LEFT && perso_principal->statut->action == RIEN){
-        perso_principal->statut->action = ATTAQUE_OU_CHARGER;
-        perso_principal->statut->duree = 30;
+    statut_t* statut = perso_principal->statut;
+
+    if(statut->action == RIEN && statut->duree == 0){
+        if(ev->button == SDL_BUTTON_LEFT){
+            statut->action = ATTAQUE_OU_CHARGER;
+            statut->duree = DUREE_ATTAQUE_OU_CHARGEE;
+        }
+        else if(ev->button == SDL_BUTTON_RIGHT && statut->bouclier_equipe){
+            statut->action = BLOQUER;
+            statut->duree = DUREE_BLOQUER;
+        }
     }
-    if(ev->button == SDL_BUTTON_RIGHT && perso_principal->statut->bouclier_equipe && perso_principal->statut->action == RIEN){
-        perso_principal->statut->action = BLOQUER;
-        perso_principal->statut->duree = 50;
-    }
-        
 }
 
+/**
+ * \fn void mouseButtonUp(SDL_MouseButtonEvent * ev)
+ * \brief Fonction qui gère les événements quand un bouton de la souris est relachée
+ * \author Antoine Bruneau
+ * \param SDL_KeyboardEvent* une structure contenant l'évênement
+ */
 static void mouseButtonUp(SDL_MouseButtonEvent * ev){
-    if(ev->button == SDL_BUTTON_LEFT)
-        if(perso_principal->statut->action == CHARGER){
-            perso_principal->statut->action = ATTAQUE_CHARGER;
-            perso_principal->statut->duree = 150;
-        }
-        else if(perso_principal->statut->action == ATTAQUE)
-            perso_principal->statut->action = RIEN;
+    statut_t* statut = perso_principal->statut;
 
-    if(ev->button == SDL_BUTTON_RIGHT && perso_principal->statut->action == BLOQUER)
+    if(ev->button == SDL_BUTTON_LEFT){
+        if(statut->action == CHARGER){
+            statut->action = ATTAQUE_CHARGEE;
+            statut->en_mouvement = faux;
+            statut->duree = DUREE_ATTAQUE_CHARGEE;
+        }
+        else if(statut->action == ATTAQUE_OU_CHARGER){
+            statut->action = ATTAQUE;
+            statut->duree = DUREE_ATTAQUE;
+        }
+    }
+    else if( ev->button == SDL_BUTTON_RIGHT && (statut->action == BLOQUER || statut->action == CHARGER) )
         perso_principal->statut->action = RIEN;    
 }
+
 
 void jeu_event(void){
     SDL_Event lastEvent;

@@ -17,6 +17,11 @@
 #define TOUCHE_GAUCHE SDLK_q
 #define TOUCHE_DROITE SDLK_d
 
+#define DUREE_ATTAQUE_OU_CHARGEE 4
+#define DUREE_ATTAQUE 6
+#define DUREE_ATTAQUE_CHARGEE 10
+#define DUREE_BLOQUER 3
+
 extern bool logo_passer(void);
 
 /**
@@ -26,4 +31,6 @@ extern bool logo_passer(void);
  *
  */
 extern void jeu_event(void);
+
+
 #endif
