@@ -17,25 +17,20 @@
 
 
 
+typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER}action_t; /**<l'action qu'est en train de faire le personnage*/
 /**
  * \struct struct statut_s
  * \brief Structure contenant les éléments nécéssaires au choix de l'affichage des sprites du personnage
  * 
  * \author Bruneau Antoine
  */
-typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGER,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER}action_t;
-
 typedef struct statut_s {
-	bool en_mouvement;
-	t_direction	orientation;
-	bool bouclier_equipe;
-	int duree;
-	action_t action;
+	bool en_mouvement; /**<personnage en mouvement*/
+	t_direction	orientation;/**<ordientation du personnage*/
+	bool bouclier_equipe; /**<personnage à un bouclier d'équipé*/
+	int duree; /**<duree de l'action à réaliser*/
+	action_t action; /**<l'action du personnage*/
 }statut_t;
-
-
-
-
 
 /**
  * \struct struct joueur_s
