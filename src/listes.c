@@ -1,104 +1,142 @@
-// Mise en oeuvre par pointeurs de listes de base_monstre
 #include <stdlib.h>
-#include <listes.h>
-#include <commun.h>
+#include <stdio.h>
 
+typedef struct element
+{
+    void *valeur;
+    struct element *pred;
+    struct element *succ;
+} t_element;
 
-// Primitives de listes 
+typedef struct list{
+    t_element *flag;
+    t_element *ec;
+    unsigned int nb_elem;
+    void * (*ajout)(void *);
+    void (*del)(void *);
+}list;
 
-void init_liste(t_liste *l) {
-	l->drapeau = (t_element*)malloc(sizeof(t_element));
+list * init_liste(void *(*fonction_ajout)(void *), void (*fonction_suppresion)(void *)){
+    if(fonction_ajout == NULL)
+        if(fonction_suppresion != NULL)
+            return NULL;
+    if(fonction_suppresion == NULL)
+        if(fonction_ajout != NULL)
+            return NULL;
 
-	l->drapeau->pred = l->drapeau;
-	l->drapeau->succ = l->drapeau;
-	l->ec = l->drapeau;
+    list *new = malloc(sizeof(list));
+    new->flag = malloc(sizeof(t_element));
+    new->flag->pred = new->flag;
+    new->flag->succ = new->flag;
+    new->ec = new->flag;
+    new->nb_elem = 0;
+    new->ajout = fonction_ajout;
+    new->del = fonction_suppresion;
+
+    return new;
 }
 
-int liste_vide(t_liste *l) {
-	return ((l->drapeau->pred == l->drapeau) && (l->drapeau->succ == l->drapeau));
+_Bool liste_vide(const list * const to_verify) {return (to_verify->flag->pred == to_verify->flag);}
+
+_Bool hors_liste(const list * const to_verify) {return to_verify->ec == to_verify->flag;}
+
+void en_tete(list *mylist){
+    if (!liste_vide(mylist))
+        mylist->ec = mylist->flag->succ;
 }
 
-int hors_liste(t_liste *l) {
-	return (l->ec == l->drapeau);
+void en_queue(list *mylist){
+    if (!liste_vide(mylist))
+        mylist->ec = mylist->flag->pred;
 }
 
-void en_tete(t_liste *l) {
-	if(!liste_vide(l))
-		l->ec = l->drapeau->succ;
+void suivant(list *mylist){
+    if (!hors_liste(mylist))
+        mylist->ec = mylist->ec->succ;
 }
 
-void en_queue(t_liste *l) {
-	if(!liste_vide(l))
-		l->ec = l->drapeau->pred;
+void precedent(list *mylist){
+    if (!hors_liste(mylist))
+        mylist->ec = mylist->ec->pred;
 }
 
-void suivant(t_liste *l) {
-	if(!hors_liste(l))
-		l->ec = l->ec->succ;
+void * valeur_elt(const list * const mylist){
+    if (!hors_liste(mylist))
+        return (mylist->ec->valeur);
+
+    return NULL;
 }
 
-void precedent(t_liste *l) {
-	if(!hors_liste(l))
-		l->ec = l->ec->pred;
+void modif_elt(list *mylist, void * v)
+{
+    if (!hors_liste(mylist)){
+            if(mylist->del == NULL){
+                free(mylist->ec->valeur);
+                mylist->ec->valeur = v;
+            }
+            else{
+                mylist->del(&mylist->ec->valeur);
+                mylist->ajout(mylist->ec->valeur);
+            }
+    }
+        else
+            mylist->ec->valeur = mylist->ajout(v);
 }
 
-void valeur_elt(t_liste *l, base_monstre_t* f) {
-	if(!hors_liste(l))
-		*f = l->ec->f;
+void oter_elt(list *mylist){
+    t_element *t;
+
+    if (!hors_liste(mylist))
+    {
+        t = mylist->ec;
+        precedent(mylist);
+        mylist->ec->succ = t->succ;
+        (t->succ)->pred = mylist->ec;
+        if(mylist->del == NULL)
+            free(t);
+        else
+            mylist->del(&t);
+        (mylist->nb_elem)--;
+    }
 }
 
-void modif_elt(t_liste *l, base_monstre_t f) {
-	if(!hors_liste(l))
-		l->ec->f = f;
+void ajout_droit(list *mylist, void * v){
+    t_element *t;
+
+    t = malloc(sizeof(t_element));
+    if(mylist->ajout == NULL)
+        t->valeur = v;
+    else
+        t->valeur = mylist->ajout(v);
+    t->pred = mylist->ec;
+    t->succ = mylist->ec->succ;
+    (mylist->ec->succ)->pred = t;
+    mylist->ec->succ = t;
+    mylist->ec = t;
+    (mylist->nb_elem)++;
 }
 
-void oter_elt(t_liste *l) {
-	if(!hors_liste(l)) {
-		t_element* p;
+void ajout_gauche(list *mylist, void * v){
+    t_element *t;
 
-		(l->ec->pred)->succ = l->ec->succ;
-		(l->ec->succ)->pred = l->ec->pred;
-		p = l->ec;
-		precedent(l);
-		free(p);
-	}
+    t = malloc(sizeof(t_element));
+    if (mylist->ajout == NULL)
+        t->valeur = v;
+    else
+        t->valeur = mylist->ajout(v);
+    t->succ = mylist->ec;
+    t->pred = mylist->ec->pred;
+    (mylist->ec->pred)->succ = t;
+    mylist->ec->pred = t;
+    mylist->ec = t;
+    (mylist->nb_elem)++;
 }
 
-void ajout_droit(t_liste *l, base_monstre_t f) {
-	if(liste_vide(l) || !hors_liste(l)) {
-		t_element* nouv;
+unsigned int taille_liste(const list * const mylist){return mylist->nb_elem;}
 
-		nouv = (t_element*)malloc(sizeof(t_element));
-		nouv->f = f;
-		nouv->pred = l->ec;
-		nouv->succ = l->ec->succ;
-		//Mise a jour des chainages des voisins
-		(l->ec->succ)->pred = nouv;
-		l->ec->succ = nouv;
-		//On se positionne sur le nouvel ?lement
-		l->ec = nouv;
-	}
-}
-
-void ajout_gauche(t_liste *l, base_monstre_t f) {
-	if(liste_vide(l) || !hors_liste(l)) {
-		t_element* nouv;
-
-		nouv = (t_element*)malloc(sizeof(t_element));
-		nouv->f = f;
-		nouv->pred = l->ec->pred;
-		nouv->succ = l->ec;
-		//Mise a jour des chainages des voisins
-		(l->ec->pred)->succ = nouv;
-		l->ec->pred = nouv;
-		//On se positionne sur le nouvel element
-		l->ec = nouv;
-	}
-}
-
-int taille(t_liste* l){
-	int t=0;
-	for(en_tete(l);!hors_liste(l);suivant(l))
-		t++;
-	return t;
+void vider_liste(list *mylist){
+    en_tete(mylist);
+    for(unsigned int i = 0; i < mylist->nb_elem; i++){
+        oter_elt(mylist);
+    }
 }

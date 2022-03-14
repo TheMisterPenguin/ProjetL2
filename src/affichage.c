@@ -1,5 +1,6 @@
 #include <affichage.h>
-#include <commun.h>
+#include <listes.h>
+#include <code_erreur.h>
 /**
  * \file affichage.c
  * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
@@ -11,12 +12,16 @@
  * 
  */
 
-t_l_aff *listeDeTextures; 
+list *listeDeTextures; 
+list *buffer_affichage;
+
+void * ajout_text_liste(void * t){return t;}
 
 void detruire_texture(t_aff **texture){
 
     free((*texture)->aff_fenetre);
-    free((*texture)->frame_anim);
+    if((*texture)->frame_anim != NULL)
+        free((*texture)->frame_anim);
 
     SDL_DestroyTexture((*texture)->texture);
 
@@ -136,39 +141,53 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
 
     SDL_QueryTexture(texture->texture, NULL, NULL, &texture->width, &texture->height);
 
-    texture->frame_anim = malloc(sizeof(SDL_Rect));
+    if(taille_t_x > -1 && taille_t_y > -1){
+        texture->frame_anim = malloc(sizeof(SDL_Rect));
 
-    /* Création de la vue d'animation */
-    texture->frame_anim->w = taille_t_x;
-    texture->frame_anim->h = taille_t_y;
-    texture->frame_anim->x = 0;
-    texture->frame_anim->y = 0;
+        /* Création de la vue d'animation */
+        texture->frame_anim->w = taille_t_x;
+        texture->frame_anim->h = taille_t_y;
+        texture->frame_anim->x = 0;
+        texture->frame_anim->y = 0;
 
-    if(! rect_correct_texture(texture->frame_anim, texture->width, texture->height)){
-        fprintf(stderr, "Erreur lors de la création de la texture : taille de la zone affichée supérieure à la texture !\n");
-        free(texture->frame_anim);
-        free(texture);
-        return NULL;
+        if (!rect_correct_texture(texture->frame_anim, texture->width, texture->height))
+        {
+            fprintf(stderr, "Erreur lors de la création de la texture : taille de la zone affichée supérieure à la texture !\n");
+            free(texture->frame_anim);
+            free(texture);
+            return NULL;
+        }
     }
+    else
+        texture->frame_anim = NULL;
+
 
     texture->aff_fenetre = malloc(sizeof(SDL_Rect));
 
     /* Création de la vue de la fenêtre */
     texture->aff_fenetre->x = x;
     texture->aff_fenetre->y = y;
-    texture->aff_fenetre->h = (int) taille_t_y * multpilicateur_taille;
-    texture->aff_fenetre->w = (int) taille_t_x * multpilicateur_taille;
 
-    listeDeTextures->liste = realloc(listeDeTextures->liste, sizeof(t_aff) * (listeDeTextures->nb_valeurs + 1));
+    if (taille_t_x > -1 && taille_t_y > -1){
+        texture->aff_fenetre->h = (int)taille_t_y * multpilicateur_taille;
+        texture->aff_fenetre->w = (int)taille_t_x * multpilicateur_taille;
+    }
+    else {
+        texture->aff_fenetre->h = (int)texture->height * multpilicateur_taille;
+        texture->aff_fenetre->w = (int)texture->width * multpilicateur_taille;
+    }
+        ajout_droit(listeDeTextures, texture);
 
-    listeDeTextures->liste[listeDeTextures->nb_valeurs++] = texture;
-
-    return texture;
-}
+        return texture;
+    }
 
 err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
-    return SDL_RenderCopy(rendu,texture->texture, texture->frame_anim, texture->aff_fenetre);
+    if(texture->frame_anim != NULL)
+        return SDL_RenderCopy(rendu,texture->texture, texture->frame_anim, texture->aff_fenetre);
+    else
+        return SDL_RenderCopy(rendu, texture->texture, NULL, texture->aff_fenetre);
 }
+
 
  t_l_aff* init_textures_joueur(){
     t_l_aff* textures_joueur = malloc(sizeof(t_l_aff));
@@ -270,5 +289,25 @@ t_aff* next_frame_joueur(t_l_aff* textures_joueur){
         return textures[TEXT_MARCHER];
 }
 
+err_t afficher_buffer(const list * const buffer, SDL_Renderer *rendu){
+
+    if(liste_vide(buffer))
+        return BUFFER_EMPTY;
+    
+    en_tete(buffer);
+
+    while(!hors_liste(buffer)){
+
+
+        if(afficher_texture(valeur_elt(buffer), rendu) < 0){ /* On affiche la texture actuelle à l'écran */
+            fprintf(stderr,"Erreur lors de l'affichage de la texture : %s\n", SDL_GetError());
+            return SDL_ERREUR;
+        }
+
+        suivant(buffer);
+    }
+
+    return AUCUNE_ERREUR;
+}
 
 

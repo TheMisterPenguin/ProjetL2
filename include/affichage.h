@@ -1,8 +1,19 @@
+/**
+ * \file affichage.h
+ * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
+ * \brief 
+ * \version 0.1
+ * \date 12/03/2022
+ * 
+ * \copyright Copyright (c) 2022
+ * 
+ */
+
 #ifndef __AFFICHAGE_H__
 #define __AFFICHAGE_H__
 #include "SDL2/SDL.h"
 #include "definition_commun.h"
-
+#include "listes.h"
 
 typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TEXT_MARCHER_BOUCLIER}t_texture_perso;
 
@@ -22,7 +33,6 @@ typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TE
  * \brief Structure qui permet l'affichage d'une texture à l'écran de manière précise
  *
  */
-
 typedef struct s_aff
 {
     SDL_Texture *texture;  /**<Texture utilisée*/
@@ -40,7 +50,9 @@ typedef struct s_l_aff{
     unsigned int nb_valeurs;
 }t_l_aff;
 
-extern t_l_aff *listeDeTextures; 
+/* Variables globales */
+extern list *listeDeTextures;
+extern list *buffer_affichage; /*<Buffer contenant toutes les textures à afficher */
 
 /* Définition des fonctions */
 
@@ -160,5 +172,17 @@ extern err_t next_frame_x_indice(t_aff *texture, const unsigned int indice);
  */
 extern err_t next_frame_y_indice(t_aff *texture, const unsigned int indice); 
 
+void *ajout_text_liste(void *t);
+
+/**
+ * Fonction qui affiche les textures contenues dans la liste en paramètre. 
+ * 
+ * Les premiers éléments seront en arrière plan et les derniers seront en 1er plan.
+ * 
+ * \param buffer La liste de textures que l'on veut afficher
+ * \param rendu Le rendu sur lequel on veut afficher ces textures
+ * \return Une valeur différente à 0 lors d'une erreur
+ */
+err_t afficher_buffer(const list *const buffer, SDL_Renderer *rendu);
 
 #endif

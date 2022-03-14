@@ -1,6 +1,6 @@
 #include <commun.h>
 #include <stdio.h>
-
+#include <listes.h>
 /** 
  * \file init.c
  * \brief Contient toutes les fonctions pour initialiser le programme
@@ -75,14 +75,12 @@ static void init_rc_commun(void){
 void aff_cleanup(void)
 {
     running = faux;
-    detruire_liste_textures(&listeDeTextures);
-    detruire_joueur(perso_principal);
+    vider_liste(listeDeTextures);
 }
 
 void init_affichage(){
-    listeDeTextures = malloc(sizeof(t_aff *)); 
-    listeDeTextures->liste = malloc(sizeof(t_aff));
-    listeDeTextures->nb_valeurs = 0;
+    listeDeTextures = init_liste(ajout_text_liste, detruire_texture);
+    atexit(aff_cleanup);
 }
 
 /**
@@ -97,5 +95,4 @@ void init(){
     init_rc_commun();
     atexit(detruire_renderer);
     init_affichage();
-    atexit(aff_cleanup);
 }

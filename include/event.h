@@ -22,7 +22,7 @@
 #define DUREE_ATTAQUE_CHARGEE 10
 #define DUREE_BLOQUER 3
 
-extern bool logo_passer(void);
+extern _Bool logo_passer(void);
 
 /**
  * \fn void jeu_event(void)
