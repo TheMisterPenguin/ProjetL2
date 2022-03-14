@@ -15,6 +15,23 @@
 
 #include "definition_commun.h"
 
+
+
+typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER}action_t; /**<l'action qu'est en train de faire le personnage*/
+/**
+ * \struct struct statut_s
+ * \brief Structure contenant les éléments nécéssaires au choix de l'affichage des sprites du personnage
+ * 
+ * \author Bruneau Antoine
+ */
+typedef struct statut_s {
+	bool en_mouvement; /**<personnage en mouvement*/
+	t_direction	orientation;/**<ordientation du personnage*/
+	bool bouclier_equipe; /**<personnage à un bouclier d'équipé*/
+	int duree; /**<duree de l'action à réaliser*/
+	action_t action; /**<l'action du personnage*/
+}statut_t;
+
 /**
  * \struct struct joueur_s
  * \brief Structure non manipulable hors des fonctions du personnage contenant les informations sur le joueur
@@ -35,8 +52,11 @@ typedef struct joueur_s {
 	int attaque; /**<attaque du joueur*/
     int defense; /**<defense du joueur*/
     int vitesse; /**<vitesse de déplacement du joueur*/
-	t_direction orientation; /**<orientation du joueur*/
+	statut_t *statut; /**<statut du joueur*/
 }joueur_t;
+
+
+
 
 extern joueur_t *perso_principal;
 
