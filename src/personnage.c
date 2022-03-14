@@ -38,7 +38,12 @@ joueur_t *creer_joueur(const char *nom)
 	perso->defense = 10;
 	perso->vitesse = 1;
 	perso->trigger = malloc(sizeof(byte) * TAILLE_TRIGGER);
-	perso->orientation = 0;
+	perso->statut = malloc(sizeof(statut_t));
+	perso->statut->duree = 0;
+	perso->statut->en_mouvement = 0;
+	perso->statut->orientation = SUD;
+	perso->statut->bouclier_equipe = 0;
+	perso->statut->action = RIEN;
 	
 	return perso;
 }
@@ -47,6 +52,7 @@ void detruire_joueur(joueur_t *j){
 
 	free(j->nom_pers);
 	free(j->trigger);
+	free(j->statut);
 	free(j);
 }
 

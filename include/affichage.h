@@ -14,10 +14,23 @@
 #include "SDL2/SDL.h"
 #include "definition_commun.h"
 #include "listes.h"
+
+typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TEXT_MARCHER_BOUCLIER}t_texture_perso;
+
+#define NB_SPRITE_JOUEUR 5
+//fichiers images personnage
+#define N_T_MARCHER "ressources/sprite/marcher.bmp"
+#define N_T_ATTAQUE "ressources/sprite/attaque.bmp"
+#define N_T_ATTAQUE_CHARGEE "ressources/sprite/attaque_chargee.bmp"
+#define N_T_CHARGER "ressources/sprite/charger.bmp"
+#define N_T_MARCHER_BOUCLIER "ressources/sprite/marcher_bouclier.bmp"
+
+#define LONGUEUR_PERSONNAGE 48
+#define LARGEUR_PERSONNAGE 48
+
 /**
  * \struct s_aff
  * \brief Structure qui permet l'affichage d'une texture à l'écran de manière précise
- *
  *
  */
 typedef struct s_aff
@@ -97,8 +110,68 @@ extern err_t afficher_texture_emp(t_aff *texture, SDL_Renderer *rendu, const int
  */
 extern err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu);
 
+/**
+ * \fn t_l_aff* init_textures_joueur()
+ * \brief Fonction qui creer et renvoie une liste de textures pour le personnage (joueur)
+ * \author Antoine Bruneau
+ * \return t_l_aff* Une liste de textures
+ */
+extern t_l_aff* init_textures_joueur();
+
+/**
+ * \fn t_aff* init_texture_joueur(t_l_aff* textures_joueur)
+ * \brief Fonction qui renvoie la texture de départ du personnage (joueur)
+ * \author Antoine Bruneau
+ * \param t_l_aff* la liste de textures personnage
+ * \return t_aff* Une textures personnage
+ */
+extern t_aff* init_texture_joueur(t_l_aff* textures_joueur);
+
+/**
+ * \fn t_aff * next_frame_joueur(t_l_aff* textures_joueur);
+ * \brief Fonction qui modifie et renvoie une textures en fonction des évênements (clics, touches claviers). Cette texture renvoyée sera par la suite affichée.
+ * \author Antoine Bruneau
+ * \param t_l_aff* un structure contenant un tableau de textures joueur
+ * \return t_aff* Une texture joueur
+ */
+extern t_aff * next_frame_joueur(t_l_aff* textures_joueur);
+
+/**
+ * \fn void next_frame_y(t_aff *texture);
+ * \brief Fonction qui positionne la texture au sprite d'après sur l'axe des y
+ *
+ * \param t_aff* une texture joueur
+ */
+extern void next_frame_y(t_aff* texture);
+
+/**
+ * \fn void next_frame_x(t_aff *texture);
+ * \brief Fonction qui positionne la texture au sprite d'après sur l'axe des x
+ *
+ * \param t_aff* une texture joueur
+ */
 extern void next_frame_x(t_aff *texture);
-extern err_t next_frame_y_indice(t_aff *texture, const unsigned int indice);
+
+/**
+ * \fn void next_frame_x_indice(t_aff *texture, const unsigned int indice);
+ * \brief Fonction qui positionne la texture au n-ème sprite sur l'axe des x
+ *
+ * \param t_aff* une texture joueur
+ * \param const unsigned int qui correspond au n-ème sprite sur l'axe des x ou l'on souhaite positionner la texture
+ * \return err_t un entier pour savoir si il y a eu une erreur
+ */
+extern err_t next_frame_x_indice(t_aff *texture, const unsigned int indice);
+
+/**
+ * \fn void next_frame_y_indice(t_aff *texture, const unsigned int indice);
+ * \brief Fonction qui positionne la texture au n-ème sprite sur l'axe des y
+ *
+ * \param t_aff* une texture joueur
+ * \param const unsigned int qui correspond au n-ème sprite sur l'axe des y ou l'on souhaite positionner la texture
+ * \return err_t un entier pour savoir si il y a eu une erreur
+ */
+extern err_t next_frame_y_indice(t_aff *texture, const unsigned int indice); 
+
 void *ajout_text_liste(void *t);
 
 /**
@@ -112,5 +185,4 @@ void *ajout_text_liste(void *t);
  */
 err_t afficher_buffer(const list *const buffer, SDL_Renderer *rendu);
 
-#define N_T_PLAYER_WALK "ressources/sprite/main_character.bmp"
 #endif
