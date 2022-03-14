@@ -56,7 +56,7 @@ t_map * charger_s_map(const char * const buffer){
     json_object_object_get_ex(fichier, "monsters", &tbl_monstre);
 
     m->text_map = creer_texture(json_object_get_string(texture_map),
-                                -1, -1, 0, 0, FENETRE_LARGEUR );
+                                -1, -1, 0, 0, 5 );
     m->height = json_object_get_int(height);
     m->width = json_object_get_int(width);
 
