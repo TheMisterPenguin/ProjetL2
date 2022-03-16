@@ -25,6 +25,10 @@ void equiper_objet(joueur_t *j,objet_t **objet,inventaire_t *inventaire){
     inventaire->equipe->liste[(*objet)->type] = temp;
 
     changement_statistiques(j,inventaire->equipe);
+
+    if((*objet)->type == bouclier){
+        j->statut->bouclier_equipe = 1;
+    }
 /*
 on clique sur un item de l'inventaire (sac) qui s'équipe automatiquement
 on clique sur un item de l'inventaire (équipé) qui s'enlève automatiquement
@@ -35,6 +39,10 @@ void desequiper(objet_t **objet,inventaire_t *inventaire,joueur_t *j){
     inventaire->sac->liste[inventaire->sac->liste->nb] = *objet;
     *objet = NULL;
     changement_statistiques(j,inventaire->equipe);
+
+    if((*objet)->type == bouclier){
+        j->statut->bouclier_equipe = 0;
+    }
     /* 
     on n'utilise pas de liste pour les objets de l'inventaire (sac) car on équipe beaucoup plus souvent qu'on deséquipe donc on préfère profiter
     de la rapidité de l'indexage plutôt que de parcourir la liste à chaque équipement pour trouver l'objet équipé. 
