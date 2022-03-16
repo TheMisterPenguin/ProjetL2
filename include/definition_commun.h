@@ -33,7 +33,6 @@ typedef enum
 
 extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre globale pointant sur la fenêtre principale du programme*/
 extern SDL_Renderer *rendu_principal;
-extern long int compteur; /*compteur utilisé pour gérer la vitesse d'affichage (fps)*/
 extern bool running;
 #define SAVE_PATH "~/Games/Bloody Sanada/"
 #endif

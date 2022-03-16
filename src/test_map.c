@@ -7,6 +7,7 @@
 
 SDL_Window *fenetre_Principale = NULL;
 SDL_Renderer *rendu_principal = NULL;
+long int compteur;
 bool running = vrai;
 
 int main(int argc, char **argv){

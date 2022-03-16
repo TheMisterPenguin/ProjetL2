@@ -7,6 +7,7 @@ SDL_Renderer *rendu_principal = NULL;
 bool running = vrai;
 long int compteur;
 
+
 #define NB_FPS 30
 
 void afficher_intro(void){
