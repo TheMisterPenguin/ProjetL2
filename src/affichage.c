@@ -1,6 +1,7 @@
 #include <affichage.h>
 #include <listes.h>
 #include <code_erreur.h>
+#include <personnage.h>
 /**
  * \file affichage.c
  * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)

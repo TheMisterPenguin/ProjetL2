@@ -55,8 +55,10 @@ typedef struct joueur_s {
 	statut_t *statut; /**<statut du joueur*/
 }joueur_t;
 
-
-
+#define DUREE_ATTAQUE_OU_CHARGEE 4
+#define DUREE_ATTAQUE 6
+#define DUREE_ATTAQUE_CHARGEE 10
+#define DUREE_BLOQUER 3
 
 extern joueur_t *perso_principal;
 

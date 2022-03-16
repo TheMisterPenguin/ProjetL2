@@ -10,6 +10,7 @@
  */
 #include <commun.h>
 #include <event.h>
+#include <personnage.h>
 
 /**
  * \fn void keyDown(SDL_KeyboardEvent * ev)
