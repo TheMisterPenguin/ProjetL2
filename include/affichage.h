@@ -53,6 +53,7 @@ typedef struct s_l_aff{
 /* Variables globales */
 extern list *listeDeTextures;
 extern list *buffer_affichage; /*<Buffer contenant toutes les textures à afficher */
+extern long int compteur;      /*compteur utilisé pour gérer la vitesse d'affichage (fps)*/
 
 /* Définition des fonctions */
 
