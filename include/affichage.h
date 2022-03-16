@@ -240,8 +240,8 @@ void deplacer_texture_bas_droit(t_aff *texture, int x, int y);
  */
 void modif_affichage_rect(t_aff *texture, SDL_Rect r);
 
-void deplacement_x(t_aff *texture, int x);
+void deplacement_x_pers(t_aff *texture, t_aff *pers, int x);
 
-void deplacement_y(t_aff *texture, int y);
+void deplacement_y_pers(t_aff *texture, t_aff *pers, int y);
 
 #endif

@@ -334,6 +334,13 @@ point get_screen_center(){
     return p;
 }
 
+bool point_in_rect(SDL_Rect r, point p){
+    SDL_Rect p2r = {.x = p.x, .y = p.y, .w = 1, .h = 1};
+
+    return SDL_IntersectRect(&r, &p2r, NULL);
+
+}
+
 void deplacer_texture_centre(t_aff *texture, int x, int y){
     point centre = get_screen_center();
     
@@ -433,10 +440,40 @@ void modif_affichage_rect(t_aff *texture, SDL_Rect r){
     texture->frame_anim->w = r.w;
 }
 
-void deplacement_x(t_aff *texture, int x){
-    texture->frame_anim->x += x;
+void deplacement_x_pers(t_aff *texture, t_aff *pers, int x){
+
+    if (texture->frame_anim->x + x < 0){
+        pers->aff_fenetre->x += x * floor(FENETRE_LONGUEUR / (float)texture->width);
+        return;
+    }
+    //printf("%d , %d \n", texture->frame_anim->x + x + (get_screen_center().x / 3), texture->width);
+    if (texture->frame_anim->x + x > (texture->width - (get_screen_center().x / 3))){
+        pers->aff_fenetre->x += x * floor(FENETRE_LONGUEUR / (float)texture->width);
+        return;
+    }
+    if((pers->aff_fenetre->x > (get_screen_center().x - texture->frame_anim->w / 2)) && (pers->aff_fenetre->x > (get_screen_center().x - texture->frame_anim->w / 2 + 16 * pers->multipli_taille)))
+        texture->frame_anim->x += x;
+    else
+        pers->aff_fenetre->x += x * floor(FENETRE_LARGEUR / (float)texture->height);
 }
 
-void deplacement_y(t_aff *texture, int y){
-    texture->frame_anim->y += y;
+void deplacement_y_pers(t_aff *texture, t_aff *pers, int y){
+
+    if (texture->frame_anim->y + y < 0){
+        pers->aff_fenetre->y += y * floor(FENETRE_LARGEUR / (float) texture->height);
+        return;
+    }
+    if (texture->frame_anim->y + y > (texture->height - (get_screen_center().y / 3))){
+        pers->aff_fenetre->y += y * floor(FENETRE_LARGEUR / (float)texture->height);
+        return;
+    }
+
+    printf("%d, %d\n", pers->aff_fenetre->y, (get_screen_center().y - texture->frame_anim->h / 2));
+    if ((pers->aff_fenetre->y > (get_screen_center().y - texture->frame_anim->h / 2)) && (pers->aff_fenetre->y > (get_screen_center().y - texture->frame_anim->h / 2 + 16 * pers->multipli_taille)))
+    { /* Personnage au centre de l'écran */
+        texture->frame_anim->y += y;
+    }
+    else {
+        pers->aff_fenetre->y += y * floor(FENETRE_LARGEUR / (float)texture->height);
+    }
 }

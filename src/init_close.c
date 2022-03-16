@@ -75,11 +75,13 @@ static void init_rc_commun(void){
 void aff_cleanup(void)
 {
     running = faux;
+    vider_liste(buffer_affichage);
     vider_liste(listeDeTextures);
 }
 
 void init_affichage(){
     listeDeTextures = init_liste(ajout_text_liste, detruire_texture);
+    buffer_affichage = init_liste(NULL,NULL);
     atexit(aff_cleanup);
 }
 

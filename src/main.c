@@ -83,24 +83,37 @@ int t_affichage(void *ptr){
     {   
         debut = SDL_GetPerformanceCounter();
 
+        //en_tete(buffer_affichage);
+
+        if (perso_principal->statut->en_mouvement){ /* Déplacement map */
+            switch (perso_principal->statut->orientation){
+            case NORD:
+                deplacement_y_pers(text, next_texture_joueur, -3);
+                break;
+            case SUD:
+                deplacement_y_pers(text, next_texture_joueur, 3);
+                break;
+            case OUEST:
+                deplacement_x_pers(text, next_texture_joueur, -3);
+                break;
+            case EST:
+                deplacement_x_pers(text, next_texture_joueur, 3);
+                break;
+            }
+        }
+
         texture_temp = next_frame_joueur(textures_joueur);
         if(texture_temp)
             next_texture_joueur = texture_temp;
 
-        if(perso_principal->statut->en_mouvement){
-            switch(perso_principal->statut->orientation){
-                case NORD : deplacement_y(text, -3); break;
-                case SUD : deplacement_y(text, 3);break;
-                case OUEST : deplacement_x(text, -3);break;
-                case EST : deplacement_x(text, 3); break;
-            }
-        }
-
         SDL_RenderClear(rendu_principal);
         afficher_texture(text, rendu_principal);
         afficher_texture(next_texture_joueur, rendu_principal);
+        //afficher_buffer(buffer_affichage, rendu_principal);
         SDL_RenderPresent(rendu_principal);
 
+
+        //vider_liste(buffer_affichage);
         fin = SDL_GetPerformanceCounter();
 
         float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
