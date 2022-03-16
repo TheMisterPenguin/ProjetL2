@@ -169,14 +169,19 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
     /* Création de la vue de la fenêtre */
     texture->aff_fenetre->x = x;
     texture->aff_fenetre->y = y;
-
-    if (taille_t_x > -1 && taille_t_y > -1){
-        texture->aff_fenetre->h = (int)taille_t_y * multpilicateur_taille;
-        texture->aff_fenetre->w = (int)taille_t_x * multpilicateur_taille;
+    if(multpilicateur_taille != 0){
+        if (taille_t_x > -1 && taille_t_y > -1){
+            texture->aff_fenetre->h = (int)taille_t_y * multpilicateur_taille;
+            texture->aff_fenetre->w = (int)taille_t_x * multpilicateur_taille;
+        }
+        else {
+            texture->aff_fenetre->h = (int)texture->height * multpilicateur_taille;
+            texture->aff_fenetre->w = (int)texture->width * multpilicateur_taille;
+        }
     }
-    else {
-        texture->aff_fenetre->h = (int)texture->height * multpilicateur_taille;
-        texture->aff_fenetre->w = (int)texture->width * multpilicateur_taille;
+    else{
+        texture->aff_fenetre->h = FENETRE_LARGEUR;
+        texture->aff_fenetre->w = FENETRE_LONGUEUR;
     }
         ajout_droit(listeDeTextures, texture);
 
@@ -421,4 +426,17 @@ void deplacer_texture_bas_droit(t_aff *texture, int x, int y)
 
     texture->aff_fenetre->x += x;
     texture->aff_fenetre->y += y;
+}
+
+void modif_affichage_rect(t_aff *texture, SDL_Rect r){
+    texture->frame_anim->h = r.h;
+    texture->frame_anim->w = r.w;
+}
+
+void deplacement_x(t_aff *texture, int x){
+    texture->frame_anim->x += x;
+}
+
+void deplacement_y(t_aff *texture, int y){
+    texture->frame_anim->y += y;
 }

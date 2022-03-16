@@ -1,11 +1,13 @@
 #include <commun.h>
 #include <stdio.h>
 #include <math.h>
+#include <map.h>
 
 SDL_Window *fenetre_Principale = NULL;
 SDL_Renderer *rendu_principal = NULL;
 bool running = vrai;
 long int compteur;
+t_map *test_map;
 
 
 #define NB_FPS 30
@@ -66,7 +68,7 @@ int t_affichage(void *ptr){
     int i;
     
     perso_principal = creer_joueur("test");
-    
+    t_aff *text = texture_map(test_map);
     t_l_aff* textures_joueur = init_textures_joueur();  /* initialise la liste de textures joueur*/
     t_aff* next_texture_joueur = init_texture_joueur(textures_joueur); /* initialise la texture joueur à afficher*/
     t_aff* texture_temp;
@@ -85,7 +87,17 @@ int t_affichage(void *ptr){
         if(texture_temp)
             next_texture_joueur = texture_temp;
 
+        if(perso_principal->statut->en_mouvement){
+            switch(perso_principal->statut->orientation){
+                case NORD : deplacement_y(text, -3); break;
+                case SUD : deplacement_y(text, 3);break;
+                case OUEST : deplacement_x(text, -3);break;
+                case EST : deplacement_x(text, 3); break;
+            }
+        }
+
         SDL_RenderClear(rendu_principal);
+        afficher_texture(text, rendu_principal);
         afficher_texture(next_texture_joueur, rendu_principal);
         SDL_RenderPresent(rendu_principal);
 
@@ -103,6 +115,9 @@ int main(int argc, char** argv)
     SDL_Thread *f_t_aff;
     init();
     afficher_intro();
+    char *fichier_map = charger_f_map("map.json");
+    test_map = charger_s_map(fichier_map);
+    
     f_t_aff = SDL_CreateThread(t_affichage,"thread affichage", NULL);
     if(f_t_aff == NULL){
         fprintf(stderr,"Erreur : le thread n'a pas pus être créer : %s\n", SDL_GetError());

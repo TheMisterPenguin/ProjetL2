@@ -5,7 +5,21 @@
 #include <stdio.h>
 #include <string.h>
 #include <code_erreur.h>
+#include <math.h>
 
+SDL_Rect taille_ecran_cases(){
+    SDL_Rect p;
+
+    int taille_case = TAILLE_CASE * 6;
+    
+    p.w = FENETRE_LONGUEUR / taille_case;
+    p.h = FENETRE_LARGEUR / taille_case;
+    p.x = 0;
+    p.y = 0;
+
+
+    return p;
+}
 
 char * charger_f_map(const char * const nom_map){
     FILE * fp;
@@ -45,6 +59,7 @@ t_map * charger_s_map(const char * const buffer){
     json_object *tbl_monstre;
     json_object *monstre;
 
+    SDL_Rect s = taille_ecran_cases();
 
     fichier = json_tokener_parse(buffer);
     m = malloc(sizeof(t_map));
@@ -56,8 +71,8 @@ t_map * charger_s_map(const char * const buffer){
     json_object_object_get_ex(fichier, "monsters", &tbl_monstre);
 
     m->text_map = creer_texture(json_object_get_string(texture_map),
-                                -1, -1, 0, 0, 5 );
-    m->height = json_object_get_int(height);
+                                s.w * 16, s.h * 16, 0, 0, 0);
+        m->height = json_object_get_int(height);
     m->width = json_object_get_int(width);
 
     for(unsigned int i = 0; i < json_object_array_length(tbl_monstre); i++){

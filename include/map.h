@@ -5,6 +5,7 @@
 #include "definition_commun.h"
 #include "listes.h"
 
+#define TAILLE_CASE 16
 
 typedef struct {
     point p1,p2; /*< Rectangle représentant la zone de tp */

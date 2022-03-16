@@ -231,4 +231,17 @@ void deplacer_texture_bas_gauche(t_aff *texture, int x, int y);
  * @param y Coordonnée y du coin supérieur gauche de la texture.
  */
 void deplacer_texture_bas_droit(t_aff *texture, int x, int y);
+
+/**
+ * Modifie le rectangle qui définit la zone de l'écran qui sera utilisée pour le rendu de la texture
+ *
+ * @param texture La texture à modifier.
+ * @param r Le rectangle à appliquer.
+ */
+void modif_affichage_rect(t_aff *texture, SDL_Rect r);
+
+void deplacement_x(t_aff *texture, int x);
+
+void deplacement_y(t_aff *texture, int y);
+
 #endif
