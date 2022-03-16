@@ -29,6 +29,7 @@ static void keyDown(SDL_KeyboardEvent * ev){
             case TOUCHE_HAUT : statut->orientation = NORD;  statut->en_mouvement = vrai; break;
             case TOUCHE_DROITE : statut->orientation = EST;  statut->en_mouvement = vrai; break;
             case TOUCHE_GAUCHE : statut->orientation = OUEST;  statut->en_mouvement = vrai; break;
+            /*case TOUCHE_TAB : ; break; A décommenter quand la texture inventaire sera faite */
         }
 }
 
