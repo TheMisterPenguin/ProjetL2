@@ -40,6 +40,7 @@ typedef struct s_aff
     SDL_Rect *aff_fenetre; /**<Désigne l'emplacement et la taille de l'objet à l'écran */
     int width;
     int height;
+    float multipli_taille; /**<Sauvegarde du multiplicateur de taille de la texture*/
 } t_aff;
 /**
  * \brief Structure contenant la liste des textures créées par le programme
@@ -186,4 +187,48 @@ void *ajout_text_liste(void *t);
  */
 err_t afficher_buffer(const list *const buffer, SDL_Renderer *rendu);
 
+/**
+ * Déplacez la texture pour que son centre soit au centre de l'écran
+ *
+ * @param texture la texture à déplacer
+ * @param x La coordonnée x du centre de la texture.
+ * @param y La coordonnée y du centre de la texture.
+ */
+void deplacer_texture_centre(t_aff *texture, int x, int y);
+
+/**
+ * Déplacez l'origine de la texture aux coordonnées données.
+ *
+ * @param texture la texture à déplacer
+ * @param x La coordonnée x de l'origine de la texture.
+ * @param y La coordonnée y de l'origine de la texture.
+ */
+void deplacer_texture_origine(t_aff *texture, int x, int y);
+
+/**
+ * La texture est déplacée vers la droite et vers le haut
+ *
+ * @param texture la texture à déplacer
+ * @param x La coordonnée x du coin supérieur gauche de la texture.
+ * @param y Coordonnée y du coin supérieur gauche du rectangle.
+ */
+void deplacer_texture_haut_droit(t_aff *texture, int x, int y);
+
+/**
+ * La texture est déplacée vers le coin inférieur gauche de l'écran
+ *
+ * @param texture la texture à déplacer
+ * @param x La coordonnée x du coin supérieur gauche de la texture.
+ * @param y Coordonnée y du coin supérieur gauche de la texture.
+ */
+void deplacer_texture_bas_gauche(t_aff *texture, int x, int y);
+
+/**
+ * La texture est déplacée vers le coin inférieur droit de la fenêtre
+ *
+ * @param texture la texture à déplacer
+ * @param x Coordonnée x du coin supérieur gauche de la texture.
+ * @param y Coordonnée y du coin supérieur gauche de la texture.
+ */
+void deplacer_texture_bas_droit(t_aff *texture, int x, int y);
 #endif

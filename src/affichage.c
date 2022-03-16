@@ -2,6 +2,7 @@
 #include <listes.h>
 #include <code_erreur.h>
 #include <personnage.h>
+#include <math.h>
 /**
  * \file affichage.c
  * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
@@ -194,11 +195,19 @@ err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
     t_l_aff* textures_joueur = malloc(sizeof(t_l_aff));
     textures_joueur->nb_valeurs = NB_SPRITE_JOUEUR;
     textures_joueur->liste = malloc(sizeof(t_aff)*NB_SPRITE_JOUEUR);
+/* Création d'une nouvelle liste de textures pour le joueur. */
     textures_joueur->liste[TEXT_MARCHER] = creer_texture(N_T_MARCHER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
     textures_joueur->liste[TEXT_ATTAQUE] = creer_texture(N_T_ATTAQUE, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
     textures_joueur->liste[TEXT_ATTAQUE_CHARGEE] = creer_texture(N_T_ATTAQUE_CHARGEE, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
     textures_joueur->liste[TEXT_CHARGER] = creer_texture(N_T_CHARGER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
     textures_joueur->liste[TEXT_MARCHER_BOUCLIER] = creer_texture(N_T_MARCHER_BOUCLIER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    
+/* Déplacement des textures au centre de l'écran. */
+    deplacer_texture_centre(textures_joueur->liste[TEXT_MARCHER], 0, 0);
+    deplacer_texture_centre(textures_joueur->liste[TEXT_ATTAQUE], 0, 0);
+    deplacer_texture_centre(textures_joueur->liste[TEXT_ATTAQUE_CHARGEE], 0, 0);
+    deplacer_texture_centre(textures_joueur->liste[TEXT_CHARGER], 0, 0);
+    deplacer_texture_centre(textures_joueur->liste[TEXT_MARCHER_BOUCLIER], 0, 0);
     /* positionnement au dernier sprite*/
     next_frame_x_indice(textures_joueur->liste[TEXT_CHARGER], 2);
     return textures_joueur;
@@ -311,4 +320,105 @@ err_t afficher_buffer(const list * const buffer, SDL_Renderer *rendu){
     return AUCUNE_ERREUR;
 }
 
+point get_screen_center(){
+    point p;
 
+    p.x = FENETRE_LONGUEUR / 2;
+    p.y = FENETRE_LARGEUR / 2;
+
+    return p;
+}
+
+void deplacer_texture_centre(t_aff *texture, int x, int y){
+    point centre = get_screen_center();
+    
+    x = floor(x * texture->multipli_taille);
+    y = floor(y * texture->multipli_taille);
+     
+    texture->aff_fenetre->x = centre.x;
+
+    if(texture->aff_fenetre->w % 2){
+        texture->aff_fenetre->x -= texture->aff_fenetre->w / 2 + 1;
+    }
+    else{
+        texture->aff_fenetre->x -= texture->aff_fenetre->w / 2;
+    }
+
+    texture->aff_fenetre->y = centre.y;
+
+    if (texture->aff_fenetre->h % 2)
+    {
+        texture->aff_fenetre->y -= texture->aff_fenetre->h / 2 + 1;
+    }
+    else
+    {
+        texture->aff_fenetre->y -= texture->aff_fenetre->h / 2;
+    }
+
+    texture->aff_fenetre->x += x;
+    texture->aff_fenetre->y += y; 
+}
+
+void deplacer_texture_origine(t_aff *texture, int x, int y)
+{
+    x = floor(x * texture->multipli_taille);
+    y = floor(y * texture->multipli_taille);
+
+
+
+    texture->aff_fenetre->x += x;
+    texture->aff_fenetre->y += y;
+}
+
+
+void deplacer_texture_haut_droit(t_aff *texture, int x, int y)
+{
+    x = floor(x * texture->multipli_taille);
+    y = floor(y * texture->multipli_taille);
+
+    texture->aff_fenetre->x = FENETRE_LONGUEUR;
+
+    texture->aff_fenetre->x -= texture->aff_fenetre->w;
+
+    texture->aff_fenetre->y = 0;
+
+    texture->aff_fenetre->y -= texture->aff_fenetre->h;
+
+
+    texture->aff_fenetre->x += x;
+    texture->aff_fenetre->y += y;
+}
+
+void deplacer_texture_bas_gauche(t_aff *texture, int x, int y)
+{
+    x = floor(x * texture->multipli_taille);
+    y = floor(y * texture->multipli_taille);
+
+    texture->aff_fenetre->x = 0;
+
+    texture->aff_fenetre->x -= texture->aff_fenetre->w;
+
+    texture->aff_fenetre->y = FENETRE_LARGEUR;
+
+    texture->aff_fenetre->y -= texture->aff_fenetre->h;
+
+    texture->aff_fenetre->x += x;
+    texture->aff_fenetre->y += y;
+}
+
+void deplacer_texture_bas_droit(t_aff *texture, int x, int y)
+{
+    x = floor(x * texture->multipli_taille);
+    y = floor(y * texture->multipli_taille);
+
+    texture->aff_fenetre->x = FENETRE_LONGUEUR;
+
+    texture->aff_fenetre->x -= texture->aff_fenetre->w;
+
+    texture->aff_fenetre->y = FENETRE_LARGEUR;
+
+    texture->aff_fenetre->y -= texture->aff_fenetre->h;
+
+    texture->aff_fenetre->x += x;
+    texture->aff_fenetre->y += y;
+}
