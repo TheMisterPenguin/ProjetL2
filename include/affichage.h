@@ -244,4 +244,5 @@ void deplacement_x_pers(t_aff *texture, t_aff *pers, int x);
 
 void deplacement_y_pers(t_aff *texture, t_aff *pers, int y);
 
+void def_texture_taille(t_aff *a_modifier, const int longueur, const int largeur);
 #endif

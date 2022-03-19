@@ -118,6 +118,11 @@ err_t next_frame_y_indice(t_aff *texture, const unsigned int indice)
     return EXIT_SUCCESS;
 }
 
+void def_texture_taille(t_aff * a_modifier, const int longueur, const int largeur){
+    a_modifier->aff_fenetre->w = longueur;
+    a_modifier->aff_fenetre->h = largeur;
+}
+
 t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multpilicateur_taille){
     SDL_Surface * chargement = NULL;
     t_aff *texture = NULL;
