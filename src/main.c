@@ -74,8 +74,6 @@ int t_affichage(void *ptr){
     {   
         debut = SDL_GetPerformanceCounter();
 
-        if (texture_temp)
-            next_texture_joueur = texture_temp;
         //en_tete(buffer_affichage);
 
         if (perso_principal->statut->en_mouvement){ /* Déplacement map */
@@ -96,6 +94,8 @@ int t_affichage(void *ptr){
         }
 
         texture_temp = next_frame_joueur(textures_joueur);
+        if (texture_temp)
+            next_texture_joueur = texture_temp;
 
         SDL_RenderClear(rendu_principal);
         afficher_texture(text, rendu_principal);
@@ -110,6 +110,7 @@ int t_affichage(void *ptr){
         float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
         SDL_Delay(floor((1000 / (float) 60) - temps_passe));
         compteur++;
+
     }
     return 0;
 }

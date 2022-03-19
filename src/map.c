@@ -39,8 +39,7 @@ char * charger_f_map(const char * const nom_map){
     fseek(fp, (long)0, SEEK_END); /* On parcourt le fichier afin de connaitre sa taille */
     taille_fichier = ftell(fp) + 1;
 
-    file_buffer = malloc(sizeof(char) * (taille_fichier)); /* On alloue d'ynamiquement en fonction de la taille du fichier */
-
+    file_buffer = calloc((taille_fichier) + 1, sizeof(char)); /* On alloue d'ynamiquement en fonction de la taille du fichier */
     if(!file_buffer){
         fprintf(stderr, "Erreur : plus de mémoire disponible !\n");
         exit(OUT_OF_MEM);
@@ -48,13 +47,15 @@ char * charger_f_map(const char * const nom_map){
 
     rewind(fp); /* On revient au début du fichier */
 
-    fread(file_buffer, taille_fichier, 1, fp); /* On lit le fichier */
+    fread(file_buffer, 1, taille_fichier, fp); /* On lit le fichier */
     fclose(fp); /* On a plus besoin du fichier */
+
+    file_buffer[taille_fichier] = '\0';
 
     return file_buffer;
 }
 
-t_map * charger_s_map(const char * const buffer){
+t_map * charger_s_map(char * buffer){
     t_map *m;
     json_object *fichier;
     json_object *texture_map;
@@ -84,6 +85,7 @@ t_map * charger_s_map(const char * const buffer){
         /* Fonction qui permet de creer un monstre */
     }
 
+    free(buffer);
     return m;
 }
 

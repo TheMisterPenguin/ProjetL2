@@ -93,16 +93,7 @@ extern _Bool rect_correct_texture(const SDL_Rect *const to_verify, const int wid
  * \return t_aff* Une structure qui permet l'affichage de la texture à l'écran ou NULL s'il y a eu une érreur
  */
 extern t_aff *creer_texture(const char *nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multpilicateur_taille);
-/**
- * \brief Affiche la texture donnée en paramètre aux coordonnées donneés
- *
- * \param texture La texture à afficher
- * \param rendu Le rendu sur lequel afficher la texture
- * \param x La coordonnée x ou afficher la texture à l'écran
- * \param y La coordonnée y ou afficher la texture à l'écran
- * \return 0 s'il n'y a pas eu d'erreur
- */
-extern err_t afficher_texture_emp(t_aff *texture, SDL_Renderer *rendu, const int x, const int y);
+
 /**
  * \brief Affiche la texture donnée en paramètre à l'écran
  *
