@@ -185,6 +185,8 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
     }
         ajout_droit(listeDeTextures, texture);
 
+        texture->multipli_taille = multpilicateur_taille;
+
         return texture;
     }
 
