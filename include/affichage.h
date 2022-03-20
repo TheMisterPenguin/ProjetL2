@@ -231,9 +231,30 @@ void deplacer_texture_bas_droit(t_aff *texture, int x, int y);
  */
 void modif_affichage_rect(t_aff *texture, SDL_Rect r);
 
-void deplacement_x_pers(t_aff *texture, t_aff *pers, int x);
+/**
+ * Permet de déplacer le personnage de x unités sur la map
+ * 
+ * \param map La map sur laquelle le personnage ce déplace
+ * \param pers La texture du personnage elle même
+ * \param x Le nombre d'unités de déplacements
+ */
+void deplacement_x_pers(t_aff *map, t_aff *pers, int x);
 
-void deplacement_y_pers(t_aff *texture, t_aff *pers, int y);
+/**
+ * Permet de déplacer le personnage de y unités sur la map
+ *
+ * \param map La map sur laquelle le personnage ce déplace
+ * \param pers La texture du personnage elle même
+ * \param y Le nombre d'unités de déplacements
+ */
+void deplacement_y_pers(t_aff *map, t_aff *pers, int y);
 
+/**
+ * Fonction qui permet de définir exactement la taille de la texture à affichar sur l'écran
+ * 
+ * \param a_modifier La texture à modifier
+ * \param longueur La nouvelle longueure en pixel à appliquer
+ * \param largeur La nouvelle largeur en pixel à appliquer
+ */
 void def_texture_taille(t_aff *a_modifier, const int longueur, const int largeur);
 #endif

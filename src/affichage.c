@@ -184,14 +184,18 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
             texture->aff_fenetre->h = (int)texture->height * multpilicateur_taille;
             texture->aff_fenetre->w = (int)texture->width * multpilicateur_taille;
         }
+
+        texture->multipli_taille = multpilicateur_taille;
     }
     else{
         texture->aff_fenetre->h = FENETRE_LARGEUR;
         texture->aff_fenetre->w = FENETRE_LONGUEUR;
+
+        texture->multipli_taille = (float)FENETRE_LONGUEUR / texture->width;
     }
         ajout_droit(listeDeTextures, texture);
 
-        texture->multipli_taille = multpilicateur_taille;
+
 
         return texture;
     }
@@ -450,41 +454,46 @@ void modif_affichage_rect(t_aff *texture, SDL_Rect r){
 
 void deplacement_x_pers(t_aff *map, t_aff *pers, int x){
 
-    const int x_map = map->frame_anim->x; /* La coordonné x actuelle de la map */
+    int *x_map = &(map->frame_anim->x); /* La coordonnée x actuelle de la map */
+    int *x_pers = &(pers->aff_fenetre->x); /* La coordonnée x actuelle du joueur */
     const long int taille_unite = floor(FENETRE_LONGUEUR / (float)map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
+    const int pers_x_milieu = floor(get_screen_center().x - 8 * pers->multipli_taille);
+    const int map_milieu = floor(get_screen_center().x / map->multipli_taille);
 
-    if (x_map + x < 0){ /* La map ne peut pas plus aller à gauche */
-        pers->aff_fenetre->x += x * taille_unite; /* On déplace le personnage de x unités */
+    if (*x_map + x < 0) { /* La map ne peut pas plus aller à gauche */
+            // printf("La map ne peut plus aller à gauche, déplacement du personnage\n");
+            *x_pers += x * taille_unite; /* On déplace le personnage de x unités */
+            return;
+        }
+    if (*x_map + x > (map->width - map_milieu)){ /* L'écran est en bordure de map droite */
+        *x_pers += x * taille_unite;
         return;
     }
-    //printf("%d , %d \n", texture->frame_anim->x + x + (get_screen_center().x / 3), texture->width);
-    if (x_map + x > (map->width - (get_screen_center().x / 3))){ /* L'écran est en bordure de map droite */
-        pers->aff_fenetre->x += x * taille_unite;
-        return;
-    }
-    if((pers->aff_fenetre->x > (get_screen_center().x - x_map / 2)) && (pers->aff_fenetre->x > (get_screen_center().x - map->frame_anim->w / 2 + 16 * pers->multipli_taille))) /* On se trouve dans l'intervalle normal */
-        map->frame_anim->x += x; /* On déplace la map en fond */
+    if(*x_pers == pers_x_milieu ) /* On se trouve dans l'intervalle normal */
+        *x_map += x; /* On déplace la map en fond */
     else
-        pers->aff_fenetre->x += x * taille_unite;
+        *x_pers += x * taille_unite;
+
 }
 
-void deplacement_y_pers(t_aff *texture, t_aff *pers, int y){
+void deplacement_y_pers(t_aff *map, t_aff *pers, int y){
 
-    if (texture->frame_anim->y + y < 0){
-        pers->aff_fenetre->y += y * floor(FENETRE_LARGEUR / (float) texture->height);
+    int *y_map = &(map->frame_anim->y);                                        /* La coordonnée x actuelle de la map */
+    int *y_pers = &(pers->aff_fenetre->y);                                     /* La coordonnée x actuelle du joueur */
+    const long int taille_unite = floor(FENETRE_LONGUEUR / (float)map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
+    const int pers_y_milieu = floor(get_screen_center().y - 8 * pers->multipli_taille);
+    const int map_milieu = floor(get_screen_center().y / map->multipli_taille);
+
+    if (*y_map + y < 0) { /* La map ne peut pas plus aller à haut */
+        *y_pers += y * taille_unite; /* On déplace le personnage de x unités */
         return;
     }
-    if (texture->frame_anim->y + y > (texture->height - (get_screen_center().y / 3))){
-        pers->aff_fenetre->y += y * floor(FENETRE_LARGEUR / (float)texture->height);
+    if (*y_map + y > (map->height - map_milieu)) { /* L'écran est en bordure de map bas */
+        *y_pers += y * taille_unite;
         return;
     }
-
-    printf("%d, %d\n", pers->aff_fenetre->y, (get_screen_center().y - texture->frame_anim->h / 2));
-    if ((pers->aff_fenetre->y > (get_screen_center().y - texture->frame_anim->h / 2)) && (pers->aff_fenetre->y > (get_screen_center().y - texture->frame_anim->h / 2 + 16 * pers->multipli_taille)))
-    { /* Personnage au centre de l'écran */
-        texture->frame_anim->y += y;
-    }
-    else {
-        pers->aff_fenetre->y += y * floor(FENETRE_LARGEUR / (float)texture->height);
-    }
+    if (*y_pers == pers_y_milieu) /* On se trouve dans l'intervalle normal */
+        *y_map += y;              /* On déplace la map en fond */
+    else
+        *y_pers += y * taille_unite;
 }
