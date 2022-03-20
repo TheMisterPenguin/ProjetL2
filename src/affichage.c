@@ -461,6 +461,11 @@ void deplacement_x_pers(t_aff *map, t_aff *pers, int x){
     const int pers_x_milieu = floor(get_screen_center().x - 8 * pers->multipli_taille);
     const int map_milieu = floor(get_screen_center().x / map->multipli_taille);
 
+    if((*x_pers +  18 * pers->multipli_taille) + x * taille_unite < 0)
+        return;
+    if((*x_pers + 31 * pers->multipli_taille) + x * taille_unite > FENETRE_LONGUEUR)
+        return;
+
     if (*x_map + x < 0) { /* La map ne peut pas plus aller à gauche */
             // printf("La map ne peut plus aller à gauche, déplacement du personnage\n");
             *x_pers += x * taille_unite; /* On déplace le personnage de x unités */
@@ -484,6 +489,11 @@ void deplacement_y_pers(t_aff *map, t_aff *pers, int y){
     const long int taille_unite = floor(FENETRE_LONGUEUR / (float)map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
     const int pers_y_milieu = floor(get_screen_center().y - 8 * pers->multipli_taille);
     const int map_milieu = floor(get_screen_center().y / map->multipli_taille);
+
+    if ((*y_pers + 18 * pers->multipli_taille) + y * taille_unite < 0)
+        return;
+    if ((*y_pers + 31 * pers->multipli_taille) + y * taille_unite > FENETRE_LARGEUR)
+        return;
 
     if (*y_map + y < 0) { /* La map ne peut pas plus aller à haut */
         *y_pers += y * taille_unite; /* On déplace le personnage de x unités */
