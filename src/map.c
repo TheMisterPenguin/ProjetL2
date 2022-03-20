@@ -77,7 +77,7 @@ t_map * charger_s_map(char * buffer){
 
     m->text_map = creer_texture(json_object_get_string(texture_map),
                                 s.w * 16, s.h * 16, 0, 0, 0);
-        m->height = json_object_get_int(height);
+    m->height = json_object_get_int(height);
     m->width = json_object_get_int(width);
 
     for(unsigned int i = 0; i < json_object_array_length(tbl_monstre); i++){
