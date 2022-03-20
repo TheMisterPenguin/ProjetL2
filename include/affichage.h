@@ -257,4 +257,12 @@ void deplacement_y_pers(t_aff *map, t_aff *pers, int y);
  * \param largeur La nouvelle largeur en pixel à appliquer
  */
 void def_texture_taille(t_aff *a_modifier, const int longueur, const int largeur);
+
+/**
+ * Fonction qui permet de placer 2 textures aux mêmes endroit à l'écran
+ * 
+ * \param a_modifier La texture dont on veut modifier la position
+ * \param original La texture dont on veut copier la position
+ */
+void text_copier_position(t_aff *a_modifier, const t_aff *const original);
 #endif

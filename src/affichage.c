@@ -497,3 +497,8 @@ void deplacement_y_pers(t_aff *map, t_aff *pers, int y){
     else
         *y_pers += y * taille_unite;
 }
+
+void text_copier_position(t_aff * a_modifier, const t_aff * const original){
+    a_modifier->aff_fenetre->x = original->aff_fenetre->x;
+    a_modifier->aff_fenetre->y = original->aff_fenetre->y;
+}
