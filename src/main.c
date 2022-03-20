@@ -14,36 +14,23 @@ t_map *test_map;
 
 void afficher_intro(void){
     int i;
-    SDL_Rect aff_logo = {0,0,FENETRE_LONGUEUR,FENETRE_LARGEUR};
+    
+    t_aff * text = creer_texture("ressources/background/logo.bmp", -1, -1, 0, 0, 1);
 
-    SDL_Surface *temp = SDL_LoadBMP("ressources/background/logo.bmp");
-    if (!temp)
-    {
-        fprintf(stderr, "Erreur lors du chargement de la texture : %s\n", SDL_GetError());
-        return;
-    }
-
-    SDL_Texture *text = SDL_CreateTextureFromSurface(rendu_principal, temp);
-    if (!text)
-    {
-        fprintf(stderr, "Erreur lors de la convertion de la surface : %s\n", SDL_GetError());
-        return;
-    }
-
-    SDL_FreeSurface(temp);
-
-    if(SDL_SetTextureAlphaMod(text, 0))
-        fprintf(stderr,"Erreur : impossible de régler l'alpha de la texture : %s\n", SDL_GetError());
+    def_texture_taille(text, FENETRE_LONGUEUR, FENETRE_LARGEUR);
 
     for(i = 0; i < 256; i += 5 ){ /* Fondu (apparition du logo) */
         if (logo_passer())
             return;
-        SDL_SetTextureAlphaMod(text, i);
-        SDL_RenderClear(rendu_principal);
-        if (SDL_RenderCopy(rendu_principal, text, NULL, &aff_logo) != 0)
+        SDL_SetTextureBlendMode(text->texture, SDL_BLENDMODE_BLEND);
+        if (SDL_SetTextureAlphaMod(text->texture, i) < 0)
+            fprintf(stderr, "Erreur lors de la modification de l'alpha : %s\n", SDL_GetError());
+        if(SDL_RenderClear(rendu_principal) < 0)
+            fprintf(stderr, "Erreur : le buffer d'affichage n'a pas pu être vidé : %s\n", SDL_GetError());
+        if (afficher_texture(text, rendu_principal) != 0)
             fprintf(stderr,"Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
         SDL_RenderPresent(rendu_principal);
-        SDL_Delay(50);
+        SDL_Delay(25);
     }
 
     SDL_Delay(1500); /* Temps pendant lequel le logo rest à l'écran */
@@ -52,11 +39,15 @@ void afficher_intro(void){
     {
         if (logo_passer())
             return;
-        SDL_SetTextureAlphaMod(text, i);
-        SDL_RenderClear(rendu_principal);
-        if (SDL_RenderCopy(rendu_principal, text, NULL, &aff_logo) != 0)
-            SDL_RenderPresent(rendu_principal);
-        SDL_Delay(50);
+        SDL_SetTextureBlendMode(text->texture, SDL_BLENDMODE_BLEND);
+        if (SDL_SetTextureAlphaMod(text->texture, i) < 0)
+            fprintf(stderr, "Erreur lors de la modification de l'alpha : %s\n", SDL_GetError());
+        if (SDL_RenderClear(rendu_principal) < 0)
+            fprintf(stderr, "Erreur : le buffer d'affichage n'a pas pu être vidé : %s\n", SDL_GetError());
+        if (afficher_texture(text, rendu_principal) != 0)
+            fprintf(stderr, "Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
+        SDL_RenderPresent(rendu_principal);
+        SDL_Delay(25);
     }
 
     SDL_Delay(150);
@@ -103,7 +94,7 @@ int t_affichage(void *ptr){
         }
 
         texture_temp = next_frame_joueur(textures_joueur);
-        if(texture_temp)
+        if (texture_temp)
             next_texture_joueur = texture_temp;
 
         SDL_RenderClear(rendu_principal);
@@ -119,6 +110,7 @@ int t_affichage(void *ptr){
         float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
         SDL_Delay(floor((1000 / (float) 60) - temps_passe));
         compteur++;
+
     }
     return 0;
 }
