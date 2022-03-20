@@ -27,6 +27,7 @@ void detruire_texture(t_aff **texture){
 
     SDL_DestroyTexture((*texture)->texture);
 
+    free(*texture);
     *texture = NULL;
 }
 
@@ -440,21 +441,24 @@ void modif_affichage_rect(t_aff *texture, SDL_Rect r){
     texture->frame_anim->w = r.w;
 }
 
-void deplacement_x_pers(t_aff *texture, t_aff *pers, int x){
+void deplacement_x_pers(t_aff *map, t_aff *pers, int x){
 
-    if (texture->frame_anim->x + x < 0){
-        pers->aff_fenetre->x += x * floor(FENETRE_LONGUEUR / (float)texture->width);
+    const int x_map = map->frame_anim->x; /* La coordonné x actuelle de la map */
+    const long int taille_unite = floor(FENETRE_LONGUEUR / (float)map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
+
+    if (x_map + x < 0){ /* La map ne peut pas plus aller à gauche */
+        pers->aff_fenetre->x += x * taille_unite; /* On déplace le personnage de x unités */
         return;
     }
     //printf("%d , %d \n", texture->frame_anim->x + x + (get_screen_center().x / 3), texture->width);
-    if (texture->frame_anim->x + x > (texture->width - (get_screen_center().x / 3))){
-        pers->aff_fenetre->x += x * floor(FENETRE_LONGUEUR / (float)texture->width);
+    if (x_map + x > (map->width - (get_screen_center().x / 3))){ /* L'écran est en bordure de map droite */
+        pers->aff_fenetre->x += x * taille_unite;
         return;
     }
-    if((pers->aff_fenetre->x > (get_screen_center().x - texture->frame_anim->w / 2)) && (pers->aff_fenetre->x > (get_screen_center().x - texture->frame_anim->w / 2 + 16 * pers->multipli_taille)))
-        texture->frame_anim->x += x;
+    if((pers->aff_fenetre->x > (get_screen_center().x - x_map / 2)) && (pers->aff_fenetre->x > (get_screen_center().x - map->frame_anim->w / 2 + 16 * pers->multipli_taille))) /* On se trouve dans l'intervalle normal */
+        map->frame_anim->x += x; /* On déplace la map en fond */
     else
-        pers->aff_fenetre->x += x * floor(FENETRE_LARGEUR / (float)texture->height);
+        pers->aff_fenetre->x += x * taille_unite;
 }
 
 void deplacement_y_pers(t_aff *texture, t_aff *pers, int y){
