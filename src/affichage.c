@@ -207,7 +207,6 @@ err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
         return SDL_RenderCopy(rendu, texture->texture, NULL, texture->aff_fenetre);
 }
 
-
  t_l_aff* init_textures_joueur(){
     t_l_aff* textures_joueur = malloc(sizeof(t_l_aff));
     textures_joueur->nb_valeurs = NB_SPRITE_JOUEUR;
@@ -246,6 +245,8 @@ t_aff* next_frame_joueur(t_l_aff* textures_joueur){
     if(statut->duree>0 && (compteur%5) == 0)
         (statut->duree)--;
 
+    for(unsigned i = TEXT_MARCHER; i < NB_SPRITE_JOUEUR; i++)
+        text_copier_position(textures_joueur->liste[i], textures_joueur->liste[TEXT_MARCHER]);
 
     if(statut->action == ATTAQUE_OU_CHARGER && statut->duree == 0)
                 statut->action = CHARGER;
