@@ -459,7 +459,7 @@ void deplacement_x_pers(t_aff *map, t_aff *pers, int x){
     int *x_pers = &(pers->aff_fenetre->x); /* La coordonnée x actuelle du joueur */
     const long int taille_unite = floor(FENETRE_LONGUEUR / (float)map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
     const int pers_x_milieu = floor(get_screen_center().x - 8 * pers->multipli_taille);
-    const int map_milieu = floor(get_screen_center().x / map->multipli_taille);
+    const int map_milieu = floor(get_screen_center().x / map->multipli_taille - 5);
 
     if((*x_pers +  18 * pers->multipli_taille) + x * taille_unite < 0)
         return;
@@ -488,7 +488,7 @@ void deplacement_y_pers(t_aff *map, t_aff *pers, int y){
     int *y_pers = &(pers->aff_fenetre->y);                                     /* La coordonnée x actuelle du joueur */
     const long int taille_unite = floor(FENETRE_LONGUEUR / (float)map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
     const int pers_y_milieu = floor(get_screen_center().y - 8 * pers->multipli_taille);
-    const int map_milieu = floor(get_screen_center().y / map->multipli_taille);
+    const int map_milieu = floor(get_screen_center().y / map->multipli_taille - 5);
 
     if ((*y_pers + 18 * pers->multipli_taille) + y * taille_unite < 0)
         return;
