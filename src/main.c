@@ -8,14 +8,15 @@ SDL_Renderer *rendu_principal = NULL;
 bool running = vrai;
 long int compteur;
 t_map *test_map;
-
+unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 
 #define NB_FPS 30
 
-void afficher_intro(void){
+    void
+    afficher_intro(void){
     int i;
     
-    t_aff * text = creer_texture("ressources/background/logo.bmp", -1, -1, 0, 0, 1);
+    t_aff * text = creer_texture("ressources/background/logo.bmp", -1, -1, 0, 0, 0);
 
     def_texture_taille(text, FENETRE_LONGUEUR, FENETRE_LARGEUR);
 
@@ -118,6 +119,12 @@ int t_affichage(void *ptr){
 int main(int argc, char** argv)
 {
     SDL_Thread *f_t_aff;
+    SDL_DisplayMode m;
+    
+    SDL_GetCurrentDisplayMode(0, &m);
+    FENETRE_LONGUEUR = m.w;
+    FENETRE_LARGEUR = m.h;
+
     init();
     afficher_intro();
     char *fichier_map = charger_f_map("map.json");
