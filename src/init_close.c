@@ -44,6 +44,16 @@ static void init_SDL(){
 
     printf("SDL initialisée !\n");
 
+    SDL_DisplayMode m;
+
+    if (SDL_GetCurrentDisplayMode(0, &m))
+    {
+        fprintf(stderr, "Erreur : impossible de récupérer la taille de l'écran : %s\n", SDL_GetError());
+        exit(SDL_ERREUR);
+    }
+    FENETRE_LONGUEUR = m.w;
+    FENETRE_LARGEUR = m.h;
+
     fenetre_Principale = SDL_CreateWindow("Bloody Sanada",
                                           5,
                                           5,
