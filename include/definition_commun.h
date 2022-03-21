@@ -13,8 +13,7 @@
 
 #include "SDL2/SDL.h"
 
-#define FENETRE_LONGUEUR 1920
-#define FENETRE_LARGEUR 1078
+extern unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 
 typedef unsigned char byte;
 typedef int err_t;

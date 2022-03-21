@@ -16,7 +16,7 @@
 #include "definition_commun.h"
 #include "affichage.h"
 
-typedef enum{quete, arme, protection, amulette, consommable}t_item;
+typedef enum{quete, arme, bouclier, protection, amulette, consommable}t_item;
 
 /**
  * \struct struct objet

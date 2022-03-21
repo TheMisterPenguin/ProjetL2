@@ -41,7 +41,7 @@ joueur_t *creer_joueur(const char *nom)
 	perso->statut = malloc(sizeof(statut_t));
 	perso->statut->duree = 0;
 	perso->statut->en_mouvement = 0;
-	perso->statut->orientation = SUD;
+	perso->statut->orientation = NORD;
 	perso->statut->bouclier_equipe = 0;
 	perso->statut->action = RIEN;
 	

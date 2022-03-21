@@ -5,6 +5,7 @@
 #include "definition_commun.h"
 #include "listes.h"
 
+#define TAILLE_CASE 16
 
 typedef struct {
     point p1,p2; /*< Rectangle représentant la zone de tp */
@@ -32,7 +33,7 @@ char *charger_f_map(const char *const nom_map);
  * \param buffer Le buffeur qui contient les informations
  * \return Une map initialisée avec toutes les informations dedans;
  */
-t_map *charger_s_map(const char *const buffer);
+t_map *charger_s_map(char * buffer);
 
 t_aff *texture_map(const t_map *map);
 

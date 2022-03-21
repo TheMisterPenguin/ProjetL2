@@ -7,3 +7,4 @@
 #include "liste_objet.h"
 #include "event.h"
 #include "inventaire.h"
+#include "menus.h"

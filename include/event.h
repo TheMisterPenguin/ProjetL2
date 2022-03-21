@@ -16,6 +16,7 @@
 #define TOUCHE_BAS SDLK_s
 #define TOUCHE_GAUCHE SDLK_q
 #define TOUCHE_DROITE SDLK_d
+#define TOUCHE_TAB SDLK_TAB
 
 
 

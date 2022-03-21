@@ -1,0 +1,88 @@
+{
+   <test>
+   Memcheck:Param
+   ioctl(generic)
+   fun:ioctl
+   fun:D3DKMTQueryAdapterInfo
+   obj:/usr/lib/wsl/lib/libd3d12core.so
+   obj:/usr/lib/wsl/drivers/u0372326.inf_amd64_*.so
+   ...
+   obj:/usr/lib/wsl/lib/libd3d12core.so
+}
+{
+   <test1>
+   Memcheck:Cond
+   obj:/usr/lib/wsl/drivers/u0372326.inf_amd64_*.so
+   ...
+   obj:/usr/lib/wsl/lib/libd3d12core.so
+   ...
+}
+{
+   <test2>
+   Memcheck:Cond
+   obj:/usr/lib/wsl/drivers/u0372326.inf_amd64_*.so
+   ...
+   obj:/usr/lib/wsl/lib/libd3d12core.so
+   ...
+   fun:D3D12CreateDevice
+   obj:/usr/lib/x86_64-linux-gnu/dri/swrast_dri.so
+   ...
+}
+{
+   <test3>
+   Memcheck:Cond
+   obj:/usr/lib/wsl/drivers/u0372326.inf_amd64_*.so
+   ...
+} 
+{
+   <test4>
+   Memcheck:Addr4
+   obj:/usr/lib/wsl/drivers/u0372326.inf_amd64*.so
+   ...
+}
+{
+   <test5>
+   Memcheck:Param
+   ioctl(generic)
+   fun:ioctl
+   fun:D3DKMTLock2
+   obj:/usr/lib/wsl/lib/libd3d12core.so
+   obj:/usr/lib/wsl/drivers/u0372326.inf_amd64_b91ab8cfa797c6df/B372145/amdxc64.so
+   ...
+}
+{
+   <test6>
+   Memcheck:Addr4
+   obj:/usr/lib/wsl/drivers/u0372326.inf_amd64_b91ab8cfa797c6df/B372145/amdxc64.so
+   ...
+   obj:/usr/lib/wsl/lib/libd3d12core.so
+   ...
+   obj:/usr/lib/wsl/lib/libd3d12.so
+}
+{
+   <test7>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:memalign
+   fun:posix_memalign
+   obj:*
+   ...
+}
+{
+   <test8>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:memalign
+   obj:*
+   ...
+}
+{
+   <test9>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   obj:*
+   ...
+   fun:creer_texture
+   fun:init_textures_joueur
+}

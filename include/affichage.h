@@ -40,6 +40,7 @@ typedef struct s_aff
     SDL_Rect *aff_fenetre; /**<Désigne l'emplacement et la taille de l'objet à l'écran */
     int width;
     int height;
+    float multipli_taille; /**<Sauvegarde du multiplicateur de taille de la texture*/
 } t_aff;
 /**
  * \brief Structure contenant la liste des textures créées par le programme
@@ -92,16 +93,7 @@ extern _Bool rect_correct_texture(const SDL_Rect *const to_verify, const int wid
  * \return t_aff* Une structure qui permet l'affichage de la texture à l'écran ou NULL s'il y a eu une érreur
  */
 extern t_aff *creer_texture(const char *nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multpilicateur_taille);
-/**
- * \brief Affiche la texture donnée en paramètre aux coordonnées donneés
- *
- * \param texture La texture à afficher
- * \param rendu Le rendu sur lequel afficher la texture
- * \param x La coordonnée x ou afficher la texture à l'écran
- * \param y La coordonnée y ou afficher la texture à l'écran
- * \return 0 s'il n'y a pas eu d'erreur
- */
-extern err_t afficher_texture_emp(t_aff *texture, SDL_Renderer *rendu, const int x, const int y);
+
 /**
  * \brief Affiche la texture donnée en paramètre à l'écran
  *
@@ -186,4 +178,91 @@ void *ajout_text_liste(void *t);
  */
 err_t afficher_buffer(const list *const buffer, SDL_Renderer *rendu);
 
+/**
+ * Déplacez la texture pour que son centre soit au centre de l'écran
+ *
+ * @param texture la texture à déplacer
+ * @param x La coordonnée x du centre de la texture.
+ * @param y La coordonnée y du centre de la texture.
+ */
+void deplacer_texture_centre(t_aff *texture, int x, int y);
+
+/**
+ * Déplacez l'origine de la texture aux coordonnées données.
+ *
+ * @param texture la texture à déplacer
+ * @param x La coordonnée x de l'origine de la texture.
+ * @param y La coordonnée y de l'origine de la texture.
+ */
+void deplacer_texture_origine(t_aff *texture, int x, int y);
+
+/**
+ * La texture est déplacée vers la droite et vers le haut
+ *
+ * @param texture la texture à déplacer
+ * @param x La coordonnée x du coin supérieur gauche de la texture.
+ * @param y Coordonnée y du coin supérieur gauche du rectangle.
+ */
+void deplacer_texture_haut_droit(t_aff *texture, int x, int y);
+
+/**
+ * La texture est déplacée vers le coin inférieur gauche de l'écran
+ *
+ * @param texture la texture à déplacer
+ * @param x La coordonnée x du coin supérieur gauche de la texture.
+ * @param y Coordonnée y du coin supérieur gauche de la texture.
+ */
+void deplacer_texture_bas_gauche(t_aff *texture, int x, int y);
+
+/**
+ * La texture est déplacée vers le coin inférieur droit de la fenêtre
+ *
+ * @param texture la texture à déplacer
+ * @param x Coordonnée x du coin supérieur gauche de la texture.
+ * @param y Coordonnée y du coin supérieur gauche de la texture.
+ */
+void deplacer_texture_bas_droit(t_aff *texture, int x, int y);
+
+/**
+ * Modifie le rectangle qui définit la zone de l'écran qui sera utilisée pour le rendu de la texture
+ *
+ * @param texture La texture à modifier.
+ * @param r Le rectangle à appliquer.
+ */
+void modif_affichage_rect(t_aff *texture, SDL_Rect r);
+
+/**
+ * Permet de déplacer le personnage de x unités sur la map
+ * 
+ * \param map La map sur laquelle le personnage ce déplace
+ * \param pers La texture du personnage elle même
+ * \param x Le nombre d'unités de déplacements
+ */
+void deplacement_x_pers(t_aff *map, t_aff *pers, int x);
+
+/**
+ * Permet de déplacer le personnage de y unités sur la map
+ *
+ * \param map La map sur laquelle le personnage ce déplace
+ * \param pers La texture du personnage elle même
+ * \param y Le nombre d'unités de déplacements
+ */
+void deplacement_y_pers(t_aff *map, t_aff *pers, int y);
+
+/**
+ * Fonction qui permet de définir exactement la taille de la texture à affichar sur l'écran
+ * 
+ * \param a_modifier La texture à modifier
+ * \param longueur La nouvelle longueure en pixel à appliquer
+ * \param largeur La nouvelle largeur en pixel à appliquer
+ */
+void def_texture_taille(t_aff *a_modifier, const int longueur, const int largeur);
+
+/**
+ * Fonction qui permet de placer 2 textures aux mêmes endroit à l'écran
+ * 
+ * \param a_modifier La texture dont on veut modifier la position
+ * \param original La texture dont on veut copier la position
+ */
+void text_copier_position(t_aff *a_modifier, const t_aff *const original);
 #endif

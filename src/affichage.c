@@ -2,6 +2,7 @@
 #include <listes.h>
 #include <code_erreur.h>
 #include <personnage.h>
+#include <math.h>
 /**
  * \file affichage.c
  * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
@@ -26,6 +27,7 @@ void detruire_texture(t_aff **texture){
 
     SDL_DestroyTexture((*texture)->texture);
 
+    free(*texture);
     *texture = NULL;
 }
 
@@ -117,6 +119,11 @@ err_t next_frame_y_indice(t_aff *texture, const unsigned int indice)
     return EXIT_SUCCESS;
 }
 
+void def_texture_taille(t_aff * a_modifier, const int longueur, const int largeur){
+    a_modifier->aff_fenetre->w = longueur;
+    a_modifier->aff_fenetre->h = largeur;
+}
+
 t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multpilicateur_taille){
     SDL_Surface * chargement = NULL;
     t_aff *texture = NULL;
@@ -168,16 +175,27 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
     /* Création de la vue de la fenêtre */
     texture->aff_fenetre->x = x;
     texture->aff_fenetre->y = y;
+    if(multpilicateur_taille != 0){
+        if (taille_t_x > -1 && taille_t_y > -1){
+            texture->aff_fenetre->h = (int)taille_t_y * multpilicateur_taille;
+            texture->aff_fenetre->w = (int)taille_t_x * multpilicateur_taille;
+        }
+        else {
+            texture->aff_fenetre->h = (int)texture->height * multpilicateur_taille;
+            texture->aff_fenetre->w = (int)texture->width * multpilicateur_taille;
+        }
 
-    if (taille_t_x > -1 && taille_t_y > -1){
-        texture->aff_fenetre->h = (int)taille_t_y * multpilicateur_taille;
-        texture->aff_fenetre->w = (int)taille_t_x * multpilicateur_taille;
+        texture->multipli_taille = multpilicateur_taille;
     }
-    else {
-        texture->aff_fenetre->h = (int)texture->height * multpilicateur_taille;
-        texture->aff_fenetre->w = (int)texture->width * multpilicateur_taille;
+    else{
+        texture->aff_fenetre->h = FENETRE_LARGEUR;
+        texture->aff_fenetre->w = FENETRE_LONGUEUR;
+
+        texture->multipli_taille = (float)FENETRE_LONGUEUR / texture->width;
     }
         ajout_droit(listeDeTextures, texture);
+
+
 
         return texture;
     }
@@ -189,16 +207,23 @@ err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
         return SDL_RenderCopy(rendu, texture->texture, NULL, texture->aff_fenetre);
 }
 
-
  t_l_aff* init_textures_joueur(){
     t_l_aff* textures_joueur = malloc(sizeof(t_l_aff));
     textures_joueur->nb_valeurs = NB_SPRITE_JOUEUR;
     textures_joueur->liste = malloc(sizeof(t_aff)*NB_SPRITE_JOUEUR);
+/* Création d'une nouvelle liste de textures pour le joueur. */
     textures_joueur->liste[TEXT_MARCHER] = creer_texture(N_T_MARCHER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
     textures_joueur->liste[TEXT_ATTAQUE] = creer_texture(N_T_ATTAQUE, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
     textures_joueur->liste[TEXT_ATTAQUE_CHARGEE] = creer_texture(N_T_ATTAQUE_CHARGEE, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
     textures_joueur->liste[TEXT_CHARGER] = creer_texture(N_T_CHARGER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
     textures_joueur->liste[TEXT_MARCHER_BOUCLIER] = creer_texture(N_T_MARCHER_BOUCLIER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    
+/* Déplacement des textures au centre de l'écran. */
+    deplacer_texture_centre(textures_joueur->liste[TEXT_MARCHER], 0, 0);
+    deplacer_texture_centre(textures_joueur->liste[TEXT_ATTAQUE], 0, 0);
+    deplacer_texture_centre(textures_joueur->liste[TEXT_ATTAQUE_CHARGEE], 0, 0);
+    deplacer_texture_centre(textures_joueur->liste[TEXT_CHARGER], 0, 0);
+    deplacer_texture_centre(textures_joueur->liste[TEXT_MARCHER_BOUCLIER], 0, 0);
     /* positionnement au dernier sprite*/
     next_frame_x_indice(textures_joueur->liste[TEXT_CHARGER], 2);
     return textures_joueur;
@@ -220,7 +245,6 @@ t_aff* next_frame_joueur(t_l_aff* textures_joueur){
     if(statut->duree>0 && (compteur%5) == 0)
         (statut->duree)--;
 
-
     if(statut->action == ATTAQUE_OU_CHARGER && statut->duree == 0)
                 statut->action = CHARGER;
     if( (statut->action == RIEN  || statut->action == ATTAQUE_OU_CHARGER) && statut->en_mouvement){
@@ -231,6 +255,8 @@ t_aff* next_frame_joueur(t_l_aff* textures_joueur){
                 return textures[TEXT_MARCHER_BOUCLIER];
             }
             else{
+                for(unsigned i = TEXT_MARCHER; i < NB_SPRITE_JOUEUR; i++)
+                    text_copier_position(textures_joueur->liste[i], textures_joueur->liste[TEXT_MARCHER]);
                 next_frame_y_indice(textures[TEXT_MARCHER], statut->orientation);
                 next_frame_x(textures[TEXT_MARCHER]);
                 return textures[TEXT_MARCHER];
@@ -267,6 +293,11 @@ t_aff* next_frame_joueur(t_l_aff* textures_joueur){
                 pause = 1;
         }
         else if(statut->action == ATTAQUE_CHARGEE){
+            for(unsigned i = 0; i < NB_SPRITE_JOUEUR; i++){
+                if(i != TEXT_ATTAQUE_CHARGEE)
+                    text_copier_position(textures_joueur->liste[i], textures_joueur->liste[TEXT_ATTAQUE_CHARGEE]);
+
+            }
             if( (compteur%3) == 0){ /*compteur%3 pour la vitesse d'affichage*/
                 //lorseque l'on rentre pour la première fois dans cette phase d'attaque chargée
                 if(statut->duree == (DUREE_ATTAQUE_CHARGEE-1))
@@ -311,4 +342,178 @@ err_t afficher_buffer(const list * const buffer, SDL_Renderer *rendu){
     return AUCUNE_ERREUR;
 }
 
+point get_screen_center(){
+    point p;
 
+    p.x = FENETRE_LONGUEUR / 2;
+    p.y = FENETRE_LARGEUR / 2;
+
+    return p;
+}
+
+bool point_in_rect(SDL_Rect r, point p){
+    SDL_Rect p2r = {.x = p.x, .y = p.y, .w = 1, .h = 1};
+
+    return SDL_IntersectRect(&r, &p2r, NULL);
+
+}
+
+void deplacer_texture_centre(t_aff *texture, int x, int y){
+    point centre = get_screen_center();
+    
+    x = floor(x * texture->multipli_taille);
+    y = floor(y * texture->multipli_taille);
+     
+    texture->aff_fenetre->x = centre.x;
+
+    if(texture->aff_fenetre->w % 2){
+        texture->aff_fenetre->x -= texture->aff_fenetre->w / 2 + 1;
+    }
+    else{
+        texture->aff_fenetre->x -= texture->aff_fenetre->w / 2;
+    }
+
+    texture->aff_fenetre->y = centre.y;
+
+    if (texture->aff_fenetre->h % 2)
+    {
+        texture->aff_fenetre->y -= texture->aff_fenetre->h / 2 + 1;
+    }
+    else
+    {
+        texture->aff_fenetre->y -= texture->aff_fenetre->h / 2;
+    }
+
+    texture->aff_fenetre->x += x;
+    texture->aff_fenetre->y += y; 
+}
+
+void deplacer_texture_origine(t_aff *texture, int x, int y)
+{
+    x = floor(x * texture->multipli_taille);
+    y = floor(y * texture->multipli_taille);
+
+
+
+    texture->aff_fenetre->x += x;
+    texture->aff_fenetre->y += y;
+}
+
+
+void deplacer_texture_haut_droit(t_aff *texture, int x, int y)
+{
+    x = floor(x * texture->multipli_taille);
+    y = floor(y * texture->multipli_taille);
+
+    texture->aff_fenetre->x = FENETRE_LONGUEUR;
+
+    texture->aff_fenetre->x -= texture->aff_fenetre->w;
+
+    texture->aff_fenetre->y = 0;
+
+    texture->aff_fenetre->y -= texture->aff_fenetre->h;
+
+
+    texture->aff_fenetre->x += x;
+    texture->aff_fenetre->y += y;
+}
+
+void deplacer_texture_bas_gauche(t_aff *texture, int x, int y)
+{
+    x = floor(x * texture->multipli_taille);
+    y = floor(y * texture->multipli_taille);
+
+    texture->aff_fenetre->x = 0;
+
+    texture->aff_fenetre->x -= texture->aff_fenetre->w;
+
+    texture->aff_fenetre->y = FENETRE_LARGEUR;
+
+    texture->aff_fenetre->y -= texture->aff_fenetre->h;
+
+    texture->aff_fenetre->x += x;
+    texture->aff_fenetre->y += y;
+}
+
+void deplacer_texture_bas_droit(t_aff *texture, int x, int y)
+{
+    x = floor(x * texture->multipli_taille);
+    y = floor(y * texture->multipli_taille);
+
+    texture->aff_fenetre->x = FENETRE_LONGUEUR;
+
+    texture->aff_fenetre->x -= texture->aff_fenetre->w;
+
+    texture->aff_fenetre->y = FENETRE_LARGEUR;
+
+    texture->aff_fenetre->y -= texture->aff_fenetre->h;
+
+    texture->aff_fenetre->x += x;
+    texture->aff_fenetre->y += y;
+}
+
+void modif_affichage_rect(t_aff *texture, SDL_Rect r){
+    texture->frame_anim->h = r.h;
+    texture->frame_anim->w = r.w;
+}
+
+void deplacement_x_pers(t_aff *map, t_aff *pers, int x){
+
+    int *x_map = &(map->frame_anim->x); /* La coordonnée x actuelle de la map */
+    int *x_pers = &(pers->aff_fenetre->x); /* La coordonnée x actuelle du joueur */
+    const long int taille_unite = floor(FENETRE_LONGUEUR / (float)map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
+    const int pers_x_milieu = floor(get_screen_center().x - 8 * pers->multipli_taille);
+    const int map_milieu = floor(get_screen_center().x / map->multipli_taille - 5);
+
+    if((*x_pers +  18 * pers->multipli_taille) + x * taille_unite < 0)
+        return;
+    if((*x_pers + 31 * pers->multipli_taille) + x * taille_unite > FENETRE_LONGUEUR)
+        return;
+
+    if (*x_map + x < 0) { /* La map ne peut pas plus aller à gauche */
+            // printf("La map ne peut plus aller à gauche, déplacement du personnage\n");
+            *x_pers += x * taille_unite; /* On déplace le personnage de x unités */
+            return;
+        }
+    if (*x_map + x > (map->width - map_milieu)){ /* L'écran est en bordure de map droite */
+        *x_pers += x * taille_unite;
+        return;
+    }
+    if(*x_pers == pers_x_milieu ) /* On se trouve dans l'intervalle normal */
+        *x_map += x; /* On déplace la map en fond */
+    else
+        *x_pers += x * taille_unite;
+
+}
+
+void deplacement_y_pers(t_aff *map, t_aff *pers, int y){
+
+    int *y_map = &(map->frame_anim->y);                                        /* La coordonnée x actuelle de la map */
+    int *y_pers = &(pers->aff_fenetre->y);                                     /* La coordonnée x actuelle du joueur */
+    const long int taille_unite = floor(FENETRE_LONGUEUR / (float)map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
+    const int pers_y_milieu = floor(get_screen_center().y - 8 * pers->multipli_taille);
+    const int map_milieu = floor(get_screen_center().y / map->multipli_taille - 5);
+
+    if ((*y_pers + 18 * pers->multipli_taille) + y * taille_unite < 0)
+        return;
+    if ((*y_pers + 31 * pers->multipli_taille) + y * taille_unite > FENETRE_LARGEUR)
+        return;
+
+    if (*y_map + y < 0) { /* La map ne peut pas plus aller à haut */
+        *y_pers += y * taille_unite; /* On déplace le personnage de x unités */
+        return;
+    }
+    if (*y_map + y > (map->height - map_milieu)) { /* L'écran est en bordure de map bas */
+        *y_pers += y * taille_unite;
+        return;
+    }
+    if (*y_pers == pers_y_milieu) /* On se trouve dans l'intervalle normal */
+        *y_map += y;              /* On déplace la map en fond */
+    else
+        *y_pers += y * taille_unite;
+}
+
+void text_copier_position(t_aff * a_modifier, const t_aff * const original){
+    a_modifier->aff_fenetre->x = original->aff_fenetre->x;
+    a_modifier->aff_fenetre->y = original->aff_fenetre->y;
+}
