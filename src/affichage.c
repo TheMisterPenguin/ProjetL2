@@ -245,9 +245,6 @@ t_aff* next_frame_joueur(t_l_aff* textures_joueur){
     if(statut->duree>0 && (compteur%5) == 0)
         (statut->duree)--;
 
-    for(unsigned i = TEXT_MARCHER; i < NB_SPRITE_JOUEUR; i++)
-        text_copier_position(textures_joueur->liste[i], textures_joueur->liste[TEXT_MARCHER]);
-
     if(statut->action == ATTAQUE_OU_CHARGER && statut->duree == 0)
                 statut->action = CHARGER;
     if( (statut->action == RIEN  || statut->action == ATTAQUE_OU_CHARGER) && statut->en_mouvement){
@@ -258,6 +255,8 @@ t_aff* next_frame_joueur(t_l_aff* textures_joueur){
                 return textures[TEXT_MARCHER_BOUCLIER];
             }
             else{
+                for(unsigned i = TEXT_MARCHER; i < NB_SPRITE_JOUEUR; i++)
+                    text_copier_position(textures_joueur->liste[i], textures_joueur->liste[TEXT_MARCHER]);
                 next_frame_y_indice(textures[TEXT_MARCHER], statut->orientation);
                 next_frame_x(textures[TEXT_MARCHER]);
                 return textures[TEXT_MARCHER];
@@ -294,6 +293,11 @@ t_aff* next_frame_joueur(t_l_aff* textures_joueur){
                 pause = 1;
         }
         else if(statut->action == ATTAQUE_CHARGEE){
+            for(unsigned i = 0; i < NB_SPRITE_JOUEUR; i++){
+                if(i != TEXT_ATTAQUE_CHARGEE)
+                    text_copier_position(textures_joueur->liste[i], textures_joueur->liste[TEXT_ATTAQUE_CHARGEE]);
+
+            }
             if( (compteur%3) == 0){ /*compteur%3 pour la vitesse d'affichage*/
                 //lorseque l'on rentre pour la première fois dans cette phase d'attaque chargée
                 if(statut->duree == (DUREE_ATTAQUE_CHARGEE-1))
