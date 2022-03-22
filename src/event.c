@@ -21,7 +21,6 @@
 static void keyDown(SDL_KeyboardEvent * ev){
     statut_t* statut = perso_principal->statut;
     int x, y;
-    Uint32 buttons;
 
     if (ev->keysym.sym == SDLK_ESCAPE)
         exit(EXIT_SUCCESS);
@@ -33,13 +32,13 @@ static void keyDown(SDL_KeyboardEvent * ev){
             case TOUCHE_GAUCHE : statut->orientation = OUEST;  statut->en_mouvement = vrai; break;
             case TOUCHE_TAB :
                 SDL_ShowCursor(SDL_ENABLE);
-                SDL_PumpEvents();
-                buttons = SDL_GetMouseState(&x, &y);
+                SDL_GetMouseState(&x, &y);
                 SDL_Log("Mouse cursor is at %d, %d", x, y);
-                SDL_Delay(1000);/*A enlever quand le sprite sera affiché*/
-                SDL_ShowCursor(SDL_DISABLE);
+                if(x <= FENETRE_LONGUEUR/2+50 && x >= FENETRE_LONGUEUR/2-50 && y <= FENETRE_LARGEUR/2+10 && y >= FENETRE_LARGEUR/2-10){ /*Coordonnées à modifier une fois le sprite affiché (actuellement case bleue à côté du perso*/
+                    SDL_ShowCursor(SDL_DISABLE);
+                }
                 break;
-            /*case TOUCHE_ECHAP : 
+            /*case TOUCHE_RETOUR : 
             if(menus == PAUSE){
                 menus = JEU;
             } else {
