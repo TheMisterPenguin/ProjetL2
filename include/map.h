@@ -7,6 +7,8 @@
 
 #define TAILLE_CASE 16
 
+typedef struct s_aff t_aff;
+
 typedef struct {
     point p1,p2; /*< Rectangle représentant la zone de tp */
     unsigned int id_map; /*< l'id de la map de destination */

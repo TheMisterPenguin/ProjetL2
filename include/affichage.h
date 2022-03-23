@@ -14,6 +14,8 @@
 #include "SDL2/SDL.h"
 #include "definition_commun.h"
 #include "listes.h"
+#include "map.h"
+#include "personnage.h"
 
 typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TEXT_MARCHER_BOUCLIER}t_texture_perso;
 
@@ -41,6 +43,7 @@ typedef struct s_aff
     int width;
     int height;
     float multipli_taille; /**<Sauvegarde du multiplicateur de taille de la texture*/
+    unsigned int duree_frame_anim;
 } t_aff;
 /**
  * \brief Structure contenant la liste des textures créées par le programme
@@ -55,6 +58,7 @@ typedef struct s_l_aff{
 extern list *listeDeTextures;
 extern list *buffer_affichage; /*<Buffer contenant toutes les textures à afficher */
 extern long int compteur;      /*compteur utilisé pour gérer la vitesse d'affichage (fps)*/
+extern SDL_Rect tx, ty;
 
 /* Définition des fonctions */
 
@@ -102,32 +106,6 @@ extern t_aff *creer_texture(const char *nom_fichier, const int taille_t_x, const
  * \return 0 s'il n'y a pas eu d'erreur
  */
 extern err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu);
-
-/**
- * \fn t_l_aff* init_textures_joueur()
- * \brief Fonction qui creer et renvoie une liste de textures pour le personnage (joueur)
- * \author Antoine Bruneau
- * \return t_l_aff* Une liste de textures
- */
-extern t_l_aff* init_textures_joueur();
-
-/**
- * \fn t_aff* init_texture_joueur(t_l_aff* textures_joueur)
- * \brief Fonction qui renvoie la texture de départ du personnage (joueur)
- * \author Antoine Bruneau
- * \param t_l_aff* la liste de textures personnage
- * \return t_aff* Une textures personnage
- */
-extern t_aff* init_texture_joueur(t_l_aff* textures_joueur);
-
-/**
- * \fn t_aff * next_frame_joueur(t_l_aff* textures_joueur);
- * \brief Fonction qui modifie et renvoie une textures en fonction des évênements (clics, touches claviers). Cette texture renvoyée sera par la suite affichée.
- * \author Antoine Bruneau
- * \param t_l_aff* un structure contenant un tableau de textures joueur
- * \return t_aff* Une texture joueur
- */
-extern t_aff * next_frame_joueur(t_l_aff* textures_joueur);
 
 /**
  * \fn void next_frame_y(t_aff *texture);
@@ -238,7 +216,33 @@ void modif_affichage_rect(t_aff *texture, SDL_Rect r);
  * \param pers La texture du personnage elle même
  * \param x Le nombre d'unités de déplacements
  */
-void deplacement_x_pers(t_aff *map, t_aff *pers, int x);
+void deplacement_x_pers(t_map *m, joueur_t *j, int x);
+
+/**
+ * \fn t_l_aff* init_textures_joueur()
+ * \brief Fonction qui creer et renvoie une liste de textures pour le personnage (joueur)
+ * \author Antoine Bruneau
+ * \return t_l_aff* Une liste de textures
+ */
+extern t_l_aff *init_textures_joueur(joueur_t *j);
+
+/**
+ * \fn t_aff* init_texture_joueur(t_l_aff* textures_joueur)
+ * \brief Fonction qui renvoie la texture de départ du personnage (joueur)
+ * \author Antoine Bruneau
+ * \param t_l_aff* la liste de textures personnage
+ * \return t_aff* Une textures personnage
+ */
+extern t_aff *init_texture_joueur(t_l_aff *textures_joueur);
+
+/**
+ * \fn t_aff * next_frame_joueur(t_l_aff* textures_joueur);
+ * \brief Fonction qui modifie et renvoie une textures en fonction des évênements (clics, touches claviers). Cette texture renvoyée sera par la suite affichée.
+ * \author Antoine Bruneau
+ * \param t_l_aff* un structure contenant un tableau de textures joueur
+ * \return t_aff* Une texture joueur
+ */
+extern t_aff *next_frame_joueur(joueur_t *j);
 
 /**
  * Permet de déplacer le personnage de y unités sur la map
@@ -247,7 +251,7 @@ void deplacement_x_pers(t_aff *map, t_aff *pers, int x);
  * \param pers La texture du personnage elle même
  * \param y Le nombre d'unités de déplacements
  */
-void deplacement_y_pers(t_aff *map, t_aff *pers, int y);
+void deplacement_y_pers(t_map *m, joueur_t *j, int y);
 
 /**
  * Fonction qui permet de définir exactement la taille de la texture à affichar sur l'écran
@@ -265,4 +269,14 @@ void def_texture_taille(t_aff *a_modifier, const int longueur, const int largeur
  * \param original La texture dont on veut copier la position
  */
 void text_copier_position(t_aff *a_modifier, const t_aff *const original);
+
+void rect_centre_x(SDL_Rect *rectangle);
+
+void rect_centre_y(SDL_Rect *rectangle);
+
+void rect_centre(SDL_Rect *rectangle);
+
+bool rects_egal_x(const SDL_Rect *const r1, SDL_Rect const *const r2);
+
+bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2);
 #endif

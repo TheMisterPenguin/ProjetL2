@@ -15,7 +15,7 @@
 
 #include "definition_commun.h"
 
-
+typedef struct s_l_aff t_l_aff;
 
 typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER}action_t; /**<l'action qu'est en train de faire le personnage*/
 /**
@@ -30,6 +30,7 @@ typedef struct statut_s {
 	bool bouclier_equipe; /**<personnage à un bouclier d'équipé*/
 	int duree; /**<duree de l'action à réaliser*/
 	action_t action; /**<l'action du personnage*/
+	SDL_Rect zone_colision; /**<zone de colision du personnage*/
 }statut_t;
 
 /**
@@ -53,12 +54,15 @@ typedef struct joueur_s {
     int defense; /**<defense du joueur*/
     int vitesse; /**<vitesse de déplacement du joueur*/
 	statut_t *statut; /**<statut du joueur*/
+	t_l_aff *textures_joueur; /**<Tableau contenant toutes les textures du joueur*/
 }joueur_t;
 
 #define DUREE_ATTAQUE_OU_CHARGEE 4
 #define DUREE_ATTAQUE 6
 #define DUREE_ATTAQUE_CHARGEE 10
 #define DUREE_BLOQUER 3
+
+#define TAILLE_PERSONNAGE 16 /*La taille du personnage en pixels*/
 
 extern joueur_t *perso_principal;
 

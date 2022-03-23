@@ -55,8 +55,8 @@ static void init_SDL(){
     FENETRE_LARGEUR = m.h;
 
     fenetre_Principale = SDL_CreateWindow("Bloody Sanada",
-                                          5,
-                                          5,
+                                          0,
+                                          0,
                                           FENETRE_LONGUEUR,
                                           FENETRE_LARGEUR,
                                           SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_OPENGL);
@@ -91,6 +91,11 @@ void aff_cleanup(void)
 
 void init_affichage(){
     listeDeTextures = init_liste(ajout_text_liste, detruire_texture);
+    SDL_Rect t1 = {.h = FENETRE_LARGEUR, .w = 16 * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3)};
+    SDL_Rect t2 = {.w = FENETRE_LONGUEUR, .h = 16 * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3)};
+    ty = t2;
+    tx = t1;
+
     buffer_affichage = init_liste(NULL,NULL);
     atexit(aff_cleanup);
 }
