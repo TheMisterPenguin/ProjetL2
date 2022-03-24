@@ -20,6 +20,7 @@
  */
 static void keyDown(SDL_KeyboardEvent * ev){
     statut_t* statut = perso_principal->statut;
+    int x, y;
 
     if (ev->keysym.sym == SDLK_ESCAPE)
         exit(EXIT_SUCCESS);
@@ -29,7 +30,20 @@ static void keyDown(SDL_KeyboardEvent * ev){
             case TOUCHE_HAUT : statut->orientation = NORD;  statut->en_mouvement = vrai; break;
             case TOUCHE_DROITE : statut->orientation = EST;  statut->en_mouvement = vrai; break;
             case TOUCHE_GAUCHE : statut->orientation = OUEST;  statut->en_mouvement = vrai; break;
-            /*case TOUCHE_TAB : ; break; A décommenter quand la texture inventaire sera faite */
+            case TOUCHE_TAB :
+                SDL_ShowCursor(SDL_ENABLE);
+                SDL_GetMouseState(&x, &y);
+                SDL_Log("Mouse cursor is at %d, %d", x, y);
+                if(x <= FENETRE_LONGUEUR/2+50 && x >= FENETRE_LONGUEUR/2-50 && y <= FENETRE_LARGEUR/2+10 && y >= FENETRE_LARGEUR/2-10){ /*Coordonnées à modifier une fois le sprite affiché (actuellement case bleue à côté du perso*/
+                    SDL_ShowCursor(SDL_DISABLE);
+                }
+                break;
+            /*case TOUCHE_RETOUR : 
+            if(menus == PAUSE){
+                menus = JEU;
+            } else {
+                menus = PAUSE;
+            }; break; A décommenter quand la texture menu pause sera faite*/
         }
 }
 
