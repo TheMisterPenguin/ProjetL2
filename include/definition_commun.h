@@ -33,5 +33,10 @@ typedef enum
 extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre globale pointant sur la fenêtre principale du programme*/
 extern SDL_Renderer *rendu_principal;
 extern bool running;
-#define SAVE_PATH "~/Games/Bloody Sanada/"
+
+#ifndef _WIN32
+#define SAVE_PATH "Bloody_Sanada"
+#else
+#define SAVE_PATH "%LocalAppData%/Bloody Sanada"
+#endif
 #endif

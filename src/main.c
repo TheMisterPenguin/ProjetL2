@@ -84,14 +84,16 @@ int main(int argc, char** argv)
     rect_centre_x(&tx);
     rect_centre_y(&ty);
 
-    rect_centre(&(perso_principal->statut->zone_colision));
+    check_repertoire_jeux();
+
+        rect_centre(&(perso_principal->statut->zone_colision));
     compteur = 0;
     while (running)
     {
         debut = SDL_GetPerformanceCounter();
         jeu_event();
         // en_tete(buffer_affichage);
-
+        //creer_sauvegarde_json(perso_principal);
         if (perso_principal->statut->en_mouvement)
         { /* Déplacement map */
             switch (perso_principal->statut->orientation)
