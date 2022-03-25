@@ -59,7 +59,6 @@ void afficher_intro(void){
 
 int main(int argc, char** argv)
 {
-    SDL_Thread *f_t_aff;
 
     init();
     afficher_intro();
