@@ -85,6 +85,9 @@ t_map * charger_s_map(char * buffer){
         /* Fonction qui permet de creer un monstre */
     }
 
+    m->unite_dep_x = floor(FENETRE_LONGUEUR / (float)m->text_map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
+    m->unite_dep_y = floor(FENETRE_LARGEUR / (float)m->text_map->height); /* Calcul en nombre de pixels d'une unité de déplacement */
+
     free(buffer);
     return m;
 }

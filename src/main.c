@@ -7,7 +7,7 @@ SDL_Window *fenetre_Principale = NULL;
 SDL_Renderer *rendu_principal = NULL;
 bool running = vrai;
 long int compteur;
-t_map *test_map;
+t_map *map;
 unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 
 #define NB_FPS 30

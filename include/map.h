@@ -19,6 +19,8 @@ typedef struct {
     t_aff * text_map;
     unsigned int width, height;
     list *liste_monstres;
+    int unite_dep_x;
+    int unite_dep_y; 
 }t_map;
 
 /**
