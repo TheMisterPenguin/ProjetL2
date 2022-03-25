@@ -144,13 +144,13 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
  
     /* Copie de la ressource dans une structure SDL_Texture */
     texture->texture = SDL_CreateTextureFromSurface(rendu_principal, chargement);
+    SDL_FreeSurface(chargement); 
     if(! texture->texture){
         fprintf(stderr,"Erreur lors de la convertion de la surface : %s\n", SDL_GetError());
         free(texture);
         return NULL;
     }
 
-    SDL_FreeSurface(chargement); 
 
     SDL_QueryTexture(texture->texture, NULL, NULL, &texture->width, &texture->height);
 

@@ -13,7 +13,7 @@ BINDIR = bin/# Répertoire des exécutables
 OBJ = $(addprefix $(ODIR), main.o init_close.o event.o monstres.o personnage.o affichage.o objet.o liste_objet.o listes.o map.o)# Fichiers à compiler
 OBJ_TEST_MONSTRES = $(addprefix $(ODIR), test_monstres.o monstres.o)
 OBJ_TEST_MAP = $(addprefix $(ODIR), test_map.o map.o affichage.o init_close.o event.o listes.o personnage.o)
-OBJ_TEST_LISTE_OBJET = $(addprefix $(ODIR), test_liste_objet.o)
+OBJ_TEST_LISTE_OBJET = $(addprefix $(ODIR), test_liste_objet.o liste_objet.o objet.o affichage.o listes.o personnage.o)
 rm        = rm -f
 
 default : makedir $(BINDIR)jeux.prog # Génération par défault
@@ -39,7 +39,7 @@ $(BINDIR)test_monstres : $(OBJ_TEST_MONSTRES)
 	$(CC) $^ -o $@ $(LDFLAGS)
 
 $(BINDIR)test_liste_objet : $(OBJ_TEST_LISTE_OBJET)
-	$(CC) $^ -o $@ $(LDFLAGS)
+	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
 
 # Création de l'arboressence 
 .PHONY: makedir
