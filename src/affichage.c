@@ -212,11 +212,11 @@ err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
     textures_joueur->nb_valeurs = NB_SPRITE_JOUEUR;
     textures_joueur->liste = malloc(sizeof(t_aff)*NB_SPRITE_JOUEUR);
 /* Création d'une nouvelle liste de textures pour le joueur. */
-    textures_joueur->liste[TEXT_MARCHER] = creer_texture(N_T_MARCHER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
-    textures_joueur->liste[TEXT_ATTAQUE] = creer_texture(N_T_ATTAQUE, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
-    textures_joueur->liste[TEXT_ATTAQUE_CHARGEE] = creer_texture(N_T_ATTAQUE_CHARGEE, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
-    textures_joueur->liste[TEXT_CHARGER] = creer_texture(N_T_CHARGER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
-    textures_joueur->liste[TEXT_MARCHER_BOUCLIER] = creer_texture(N_T_MARCHER_BOUCLIER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    textures_joueur->liste[TEXT_MARCHER] = creer_texture(N_T_MARCHER, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    textures_joueur->liste[TEXT_ATTAQUE] = creer_texture(N_T_ATTAQUE, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    textures_joueur->liste[TEXT_ATTAQUE_CHARGEE] = creer_texture(N_T_ATTAQUE_CHARGEE, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    textures_joueur->liste[TEXT_CHARGER] = creer_texture(N_T_CHARGER, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    textures_joueur->liste[TEXT_MARCHER_BOUCLIER] = creer_texture(N_T_MARCHER_BOUCLIER, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
     
 /* Déplacement des textures au centre de l'écran. */
     deplacer_texture_centre(textures_joueur->liste[TEXT_MARCHER], 0, 0);
@@ -272,7 +272,7 @@ t_aff* next_frame_joueur(t_l_aff* textures_joueur){
             if((compteur%5) == 0){ /*compteur%5 pour la vitesse d'affichage*/
                 next_frame_x(textures[TEXT_CHARGER]);
                 if(statut->en_mouvement)
-                    next_frame_y_indice(textures[TEXT_CHARGER], 2 * (statut->orientation) + (textures[TEXT_CHARGER]->frame_anim->x) / (int) LONGUEUR_PERSONNAGE );
+                    next_frame_y_indice(textures[TEXT_CHARGER], 2 * (statut->orientation) + (textures[TEXT_CHARGER]->frame_anim->x) / (int) LONGUEUR_ENTITE );
                 else
                     next_frame_y_indice(textures[TEXT_CHARGER], 2 * (statut->orientation) );
                 return textures[TEXT_CHARGER];
@@ -285,7 +285,7 @@ t_aff* next_frame_joueur(t_l_aff* textures_joueur){
                 next_frame_x(textures[TEXT_ATTAQUE]);
                 next_frame_y_indice(textures[TEXT_ATTAQUE], statut->orientation);
                 /*si il a fait le tour du fichier sprite attaque, l'action est terminée*/
-                if( (textures[TEXT_ATTAQUE]->frame_anim->x) == (LONGUEUR_PERSONNAGE*2) )
+                if( (textures[TEXT_ATTAQUE]->frame_anim->x) == (LONGUEUR_ENTITE*2) )
                     statut->action = RIEN;
                 return textures[TEXT_ATTAQUE];
             }
@@ -304,7 +304,7 @@ t_aff* next_frame_joueur(t_l_aff* textures_joueur){
                     next_frame_x_indice(textures[TEXT_ATTAQUE_CHARGEE], (statut->orientation)*2 - 1 );
                 next_frame_x(textures[TEXT_ATTAQUE_CHARGEE]);
                 /*si il a fait le tour du fichier sprite attaque, l'action est terminée*/
-                if( ( (textures[TEXT_ATTAQUE_CHARGEE]->frame_anim->x) == (statut->orientation)*2*LONGUEUR_PERSONNAGE) && (statut->duree != (DUREE_ATTAQUE_CHARGEE-1) ) )
+                if( ( (textures[TEXT_ATTAQUE_CHARGEE]->frame_anim->x) == (statut->orientation)*2*LONGUEUR_ENTITE) && (statut->duree != (DUREE_ATTAQUE_CHARGEE-1) ) )
                     statut->action = RIEN;
                 return textures[TEXT_ATTAQUE_CHARGEE];
             }
@@ -516,4 +516,12 @@ void deplacement_y_pers(t_aff *map, t_aff *pers, int y){
 void text_copier_position(t_aff * a_modifier, const t_aff * const original){
     a_modifier->aff_fenetre->x = original->aff_fenetre->x;
     a_modifier->aff_fenetre->y = original->aff_fenetre->y;
+}
+
+int current_frame_x(t_aff * texture){
+    return texture->frame_anim->x / LARGEUR_ENTITE;
+}
+
+int current_frame_y(t_aff * texture){
+    return texture->frame_anim->y / LONGUEUR_ENTITE;
 }

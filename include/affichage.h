@@ -25,8 +25,8 @@ typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TE
 #define N_T_CHARGER "ressources/sprite/charger.bmp"
 #define N_T_MARCHER_BOUCLIER "ressources/sprite/marcher_bouclier.bmp"
 
-#define LONGUEUR_PERSONNAGE 48
-#define LARGEUR_PERSONNAGE 48
+#define LONGUEUR_ENTITE 48
+#define LARGEUR_ENTITE 48
 
 /**
  * \struct s_aff
@@ -265,4 +265,27 @@ void def_texture_taille(t_aff *a_modifier, const int longueur, const int largeur
  * \param original La texture dont on veut copier la position
  */
 void text_copier_position(t_aff *a_modifier, const t_aff *const original);
+
+
+/**
+* \fn extern int current_frame_x(t_aff * texture);
+ * \brief Fonction qui donne l'indice sur l'axe des abscisses actuelle de la texture 
+ *
+ * \param t_aff* une texture
+ * \return un entier correspondant à l'indice
+ */
+extern int current_frame_x(t_aff * texture);
+
+/**
+* \fn extern int current_frame_y(t_aff * texture);
+ * \brief Fonction qui donne l'indice sur l'axe des ordonnées actuelle de la texture 
+ *
+ * \param t_aff* une texture
+ * \return un entier correspondant à l'indice
+ */
+extern int current_frame_y(t_aff * texture);
+
+
+
+
 #endif
