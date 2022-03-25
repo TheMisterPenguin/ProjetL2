@@ -21,8 +21,11 @@
 static void keyDown(SDL_KeyboardEvent * ev){
     statut_t* statut = perso_principal->statut;
 
-    if (ev->keysym.sym == SDLK_ESCAPE)
-        exit(EXIT_SUCCESS);
+    if (ev->keysym.sym == SDLK_ESCAPE){ /* On affiche le menu de pause si on appuye sur echap */
+        SDL_ShowCursor(SDL_ENABLE);
+        afficher_menu_pause();
+    }
+        
     if(statut->action == RIEN || statut->action == CHARGER)
         switch(ev->keysym.sym){
             case TOUCHE_BAS : statut->orientation = SUD;  statut->en_mouvement = vrai; break;
@@ -30,8 +33,7 @@ static void keyDown(SDL_KeyboardEvent * ev){
             case TOUCHE_DROITE : statut->orientation = EST;  statut->en_mouvement = vrai; break;
             case TOUCHE_GAUCHE : statut->orientation = OUEST;  statut->en_mouvement = vrai; break;
             case TOUCHE_TAB :
-                SDL_ShowCursor(SDL_ENABLE);
-                afficher_menu_pause();
+                
                 break;
             /*case TOUCHE_RETOUR : 
             if(menus == PAUSE){

@@ -108,12 +108,13 @@ void creer_sauvegarde_json(joueur_t *j){
 	json_object_object_add(sauvegarde, "Statut", statut);
 	json_object_object_add(sauvegarde, "Triggers", trigger);
 
-	char *path = calloc(strlen(save_path + 15), sizeof(char));
+	char *path = calloc(strlen(save_path) + 15, sizeof(char));
 
 	sprintf(path,"%s/perso.sav", save_path);
 
 	//json_object_to_file(path, sauvegarde);
 
+	printf("%s\n", path);
 
 	FILE * sauv = fopen(path, "w");
 
@@ -124,7 +125,9 @@ void creer_sauvegarde_json(joueur_t *j){
 
 	const char * json = json_object_to_json_string(sauvegarde);
 
-	fwrite(json,strlen(json),1, sauv);
+	fwrite(json,sizeof(char),strlen(json), sauv);
+
+	fclose(sauv);
 
 	free(path);
 

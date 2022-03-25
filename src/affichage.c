@@ -21,6 +21,7 @@ list *buffer_affichage;
 
 SDL_Rect tx,ty;
 
+float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépendent de la résolution */
 
 void * ajout_text_liste(void * t){return t;}
 
@@ -435,15 +436,31 @@ void deplacer_texture_centre(t_aff *texture, int x, int y){
     texture->aff_fenetre->y += y; 
 }
 
-void deplacer_texture_origine(t_aff *texture, int x, int y)
-{
+void deplacer_rect_origine(SDL_Rect *r, int x, int y){
+
+    r->x += x;
+    r->y += y;
+}
+
+void deplacer_texture_origine(t_aff *texture, int x, int y){
     x = floor(x * texture->multipli_taille);
     y = floor(y * texture->multipli_taille);
 
 
 
-    texture->aff_fenetre->x += x;
-    texture->aff_fenetre->y += y;
+    deplacer_rect_origine(texture->aff_fenetre, x, y);
+}
+
+void deplacer_rect_haut_droit(SDL_Rect *r, int x, int y)
+{
+    r->x = FENETRE_LONGUEUR;
+
+    r->x -= r->w;
+
+    r->y = 0;
+
+    r->x += x;
+    r->y += y;
 }
 
 void deplacer_texture_haut_droit(t_aff *texture, int x, int y)
@@ -469,16 +486,7 @@ void deplacer_texture_bas_gauche(t_aff *texture, int x, int y)
     x = floor(x * texture->multipli_taille);
     y = floor(y * texture->multipli_taille);
 
-    texture->aff_fenetre->x = 0;
-
-    texture->aff_fenetre->x -= texture->aff_fenetre->w;
-
-    texture->aff_fenetre->y = FENETRE_LARGEUR;
-
-    texture->aff_fenetre->y -= texture->aff_fenetre->h;
-
-    texture->aff_fenetre->x += x;
-    texture->aff_fenetre->y += y;
+    deplacer_rect_haut_droit(texture->aff_fenetre, x, y);
 }
 
 void deplacer_texture_bas_droit(t_aff *texture, int x, int y)
@@ -514,7 +522,6 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
     if(*x_pers + j->statut->zone_colision.w + x * taille_unite > FENETRE_LONGUEUR)
         return;
     if (*x_map + x < 0) { /* La map ne peut pas plus aller à gauche */
-            printf("La map ne peut plus aller à gauche, déplacement du personnage\n");
             *x_pers += x * taille_unite; /* On déplace le personnage de x unités */
             return;
         }
@@ -541,7 +548,6 @@ void deplacement_y_pers(t_map *m, joueur_t *j, int y){
         return;
     if (*y_map + y < 0)
     { /* La map ne peut pas plus aller à gauche */
-        printf("La map ne peut plus aller à gauche, déplacement du personnage\n");
         *y_pers += y * taille_unite; /* On déplace le personnage de x unités */
         return;
     }

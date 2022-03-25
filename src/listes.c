@@ -93,9 +93,9 @@ void oter_elt(list *mylist){
         mylist->ec->succ = t->succ;
         (t->succ)->pred = mylist->ec;
         if(mylist->del == NULL)
-            free(t);
+            free(t->valeur);
         else
-            mylist->del(&t);
+            mylist->del(&t->valeur);
         (mylist->nb_elem)--;
     }
 }

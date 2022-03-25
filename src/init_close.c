@@ -96,6 +96,10 @@ void init_affichage(){
     ty = t2;
     tx = t1;
 
+    multiplicateur_x = (float) FENETRE_LONGUEUR / 1920;
+    multiplicateur_y = (float) FENETRE_LARGEUR / 1080;
+
+    printf("multix : %f, multi_y %f\n", multiplicateur_x, multiplicateur_y);
     buffer_affichage = init_liste(NULL,NULL);
     atexit(aff_cleanup);
 }

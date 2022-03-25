@@ -59,6 +59,7 @@ extern list *listeDeTextures;
 extern list *buffer_affichage; /*<Buffer contenant toutes les textures à afficher */
 extern long int compteur;      /*compteur utilisé pour gérer la vitesse d'affichage (fps)*/
 extern SDL_Rect tx, ty;
+extern float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépendent de la résolution */
 
 /* Définition des fonctions */
 
@@ -165,6 +166,8 @@ extern err_t afficher_buffer(list *buffer, SDL_Renderer *rendu);
  */
 void deplacer_texture_centre(t_aff *texture, int x, int y);
 
+extern void deplacer_rect_origine(SDL_Rect *r, int x, int y);
+
 /**
  * Déplacez l'origine de la texture aux coordonnées données.
  *
@@ -173,6 +176,8 @@ void deplacer_texture_centre(t_aff *texture, int x, int y);
  * @param y La coordonnée y de l'origine de la texture.
  */
 void deplacer_texture_origine(t_aff *texture, int x, int y);
+
+void deplacer_rect_haut_droit(SDL_Rect *r, int x, int y);
 
 /**
  * La texture est déplacée vers la droite et vers le haut
