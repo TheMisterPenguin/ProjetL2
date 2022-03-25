@@ -69,7 +69,7 @@ int main(int argc, char** argv)
     int debut, fin; /* le temps pour calculer les performances */
     int i;
 
-    perso_principal = creer_joueur("test");
+    perso_principal = new_joueur("test");
     t_aff *text = texture_map(test_map);
     //t_l_aff *textures_joueur = init_textures_joueur(perso_principal);                 /* initialise la liste de textures joueur*/
     //t_aff *next_texture_joueur = init_texture_joueur(perso_principal->textures_joueur); /* initialise la texture joueur à afficher*/
@@ -121,7 +121,7 @@ int main(int argc, char** argv)
         afficher_texture(text, rendu_principal);
         SDL_RenderDrawRect(rendu_principal, &tx);
         SDL_RenderDrawRect(rendu_principal, &(perso_principal->statut->zone_colision));
-        //SDL_RenderDrawRect(rendu_principal, &ty);
+        SDL_RenderDrawRect(rendu_principal, &ty);
         afficher_texture(next_texture_joueur, rendu_principal);
         // afficher_buffer(buffer_affichage, rendu_principal);
         SDL_RenderPresent(rendu_principal);
