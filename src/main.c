@@ -63,13 +63,13 @@ int main(int argc, char** argv)
     init();
     afficher_intro();
     char *fichier_map = charger_f_map("map.json");
-    test_map = charger_s_map(fichier_map);
+    map = charger_s_map(fichier_map);
 
     int debut, fin; /* le temps pour calculer les performances */
     int i;
 
     perso_principal = new_joueur("test");
-    t_aff *text = texture_map(test_map);
+    t_aff *text = texture_map(map);
     //t_l_aff *textures_joueur = init_textures_joueur(perso_principal);                 /* initialise la liste de textures joueur*/
     //t_aff *next_texture_joueur = init_texture_joueur(perso_principal->textures_joueur); /* initialise la texture joueur à afficher*/
     t_aff *next_texture_joueur = perso_principal->textures_joueur->liste[TEXT_MARCHER];
@@ -85,7 +85,7 @@ int main(int argc, char** argv)
 
     check_repertoire_jeux();
 
-        rect_centre(&(perso_principal->statut->zone_colision));
+    rect_centre(&(perso_principal->statut->zone_colision));
     compteur = 0;
     while (running)
     {
@@ -98,16 +98,16 @@ int main(int argc, char** argv)
             switch (perso_principal->statut->orientation)
             {
             case NORD:
-                deplacement_y_pers(test_map, perso_principal, -3);
+                deplacement_y_pers(map, perso_principal, -3);
                 break;
             case SUD:
-                deplacement_y_pers(test_map, perso_principal, 3);
+                deplacement_y_pers(map, perso_principal, 3);
                 break;
             case OUEST:
-                deplacement_x_pers(test_map, perso_principal, -3);
+                deplacement_x_pers(map, perso_principal, -3);
                 break;
             case EST:
-                deplacement_x_pers(test_map, perso_principal, 3);
+                deplacement_x_pers(map, perso_principal, 3);
                 break;
             }
         }
