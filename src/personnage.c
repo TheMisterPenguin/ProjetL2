@@ -94,7 +94,7 @@ void creer_sauvegarde_json(joueur_t *j){
 	}
 
 	json_object_object_add(statut, "Orientation", orientation);
-	json_object_object_add(statut, "Bouclie equipee", bouclier_equipe);
+	json_object_object_add(statut, "Bouclie equipe", bouclier_equipe);
 	json_object_object_add(statut, "x map", x_map);
 	json_object_object_add(statut, "y map", y_map);
 
@@ -170,6 +170,12 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 		return NULL;
 	}
 
+	json_object *Pdv = json_object_object_get(sauvegarde, "Pv");
+	if (!Pdv){
+		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+		return NULL;
+	}
+
 	json_object *maxPdv = json_object_object_get(sauvegarde, "Points de vie Max");
 	if (!maxPdv)
 	{
@@ -180,6 +186,12 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 	json_object *attaque = json_object_object_get(sauvegarde, "Attaque");
 	if (!attaque)
 	{
+		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+		return NULL;
+	}
+
+	json_object *vitesse = json_object_object_get(sauvegarde, "Vitesse");
+	if (!vitesse){
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
@@ -198,7 +210,66 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 		return NULL;
 	}
 
+	json_object *trigger = json_object_object_get(sauvegarde, "Triggers");
+	if (!trigger){
+		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+		return NULL;
+	}
 
+	json_object *orientation = json_object_object_get(statut, "Orientation");
+	if (!orientation){
+		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+		return NULL;
+	}
+
+	json_object *bouclier_equipe = json_object_object_get(statut, "Bouclie equipe");
+	if (!bouclier_equipe){
+		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+		return NULL;
+	}
+
+	json_object *x_map = json_object_object_get(statut, "x_map");
+	if (!x_map){
+		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+		return NULL;
+	}
+
+	json_object *y_map = json_object_object_get(statut, "y_map");
+	if (!y_map){
+		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+		return NULL;
+	}
+
+	byte *trigger_tab = calloc(TAILLE_TRIGGER, sizeof(byte));
+
+	if(!trigger_tab){
+		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur lors du chargement de la sauvegarde", "Plus assez de mémoire !\n", NULL);
+		exit(OUT_OF_MEM);
+	}
+
+	json_object *element_trig;
+
+	for(unsigned int i = 0; i < TAILLE_TRIGGER; i++){
+		element_trig = json_object_array_get_idx(trigger, i);
+		trigger_tab[i] = (byte) json_object_get_int(element_trig);
+	}
+
+	joueur_t * j = creer_joueur(
+		json_object_get_string(nom_joueur),
+		json_object_get_int(niveau),
+		json_object_get_int(xp),
+		json_object_get_int(maxPdv),
+		json_object_get_int(Pdv),
+		json_object_get_int(attaque),
+		json_object_get_int(defense),
+		json_object_get_int(vitesse),
+		trigger_tab,
+		json_object_get_int(orientation),
+		json_object_get_boolean(bouclier_equipe)
+	);
+	free(trigger_tab);
+
+	return j;
 }
 
 joueur_t *new_joueur(const char* nom){
@@ -243,6 +314,7 @@ void detruire_joueur(joueur_t *j){
 	free(j->nom_pers);
 	free(j->trigger);
 	free(j->statut);
+	detruire_liste_textures(&(j->textures_joueur));
 	free(j);
 }
 

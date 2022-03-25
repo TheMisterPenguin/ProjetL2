@@ -66,9 +66,12 @@ typedef struct joueur_s {
 
 extern joueur_t *perso_principal;
 
+char save_path[500];
+
 #define TAILLE_TRIGGER 200
 
-extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction orientation, const bool bouclier_equipe);
+	extern joueur_t *
+	creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction orientation, const bool bouclier_equipe);
 extern joueur_t *new_joueur(const char *nom);
 extern void detruire_joueur(joueur_t *j);
 extern joueur_t *charger_sauvegarde_joueur(char *nom_sauv);

@@ -104,10 +104,6 @@ void init_affichage(){
     atexit(aff_cleanup);
 }
 
-void sauvegarder(){
-    creer_sauvegarde_json(perso_principal);
-}
-
 /**
  * \fn void init();
  * \brief Fonction qui initialise le Programme
@@ -120,6 +116,4 @@ void init(){
     atexit(detruire_renderer);
     SDL_ShowCursor(SDL_DISABLE);
     init_affichage();
-
-    atexit(sauvegarder);
 }

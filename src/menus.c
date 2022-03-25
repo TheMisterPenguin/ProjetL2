@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <affichage.h>
+#include <personnage.h>
 
 /*void afficher_menu(menus_t * menu){
     switch (menu) {
@@ -22,11 +23,15 @@ void afficher_menu_pause(){
 
     SDL_Rect boutton_quitter = {.h = floor(136 * multiplicateur_y), .w = floor(1064 * multiplicateur_x)};
     SDL_Rect boutton_reprendre = {.h = floor(136 * multiplicateur_y), .w = floor(1064 * multiplicateur_x)};
+    SDL_Rect boutton_sauvegarder = {.h = floor(136 * multiplicateur_y), .w = floor(1064 * multiplicateur_x)};
+    SDL_Rect boutton_charger = {.h = floor(136 * multiplicateur_y), .w = floor(1064 * multiplicateur_x)};
 
     deplacer_rect_haut_droit(&boutton_sortie, floor(-9 * multiplicateur_x), floor(7 * multiplicateur_y));
 
     deplacer_rect_origine(&boutton_quitter, floor(427 * multiplicateur_x), floor(836 * multiplicateur_y));
     deplacer_rect_origine(&boutton_reprendre, floor(427 * multiplicateur_x), floor(108 * multiplicateur_y));
+    deplacer_rect_origine(&boutton_charger, floor(427 * multiplicateur_x), floor(590 * multiplicateur_y));
+    deplacer_rect_origine(&boutton_sauvegarder, floor(427 * multiplicateur_x), floor(348 * multiplicateur_y));
 
     if(!text_pause){
         return;
@@ -64,6 +69,17 @@ void afficher_menu_pause(){
                     return;
                 if(SDL_PointInRect(&coord_souris, &boutton_quitter))
                     exit(0);
+                if (SDL_PointInRect(&coord_souris, &boutton_sauvegarder)){
+                    creer_sauvegarde_json(perso_principal);
+                    SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "Sauvegarde", "La sauvegarde a été effectuée avec succès\n", NULL);
+                    break;
+                }
+                if (SDL_PointInRect(&coord_souris, &boutton_charger)){
+                    char temp[510];
+                    sprintf(temp,"%s/perso.sav", save_path);
+                    detruire_joueur(perso_principal);
+                    perso_principal = charger_sauvegarde_joueur(temp);
+                }
                 break;
             }
         }
