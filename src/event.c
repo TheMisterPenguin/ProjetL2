@@ -28,9 +28,13 @@ static void keyDown(SDL_KeyboardEvent * ev){
         
     if(statut->action == RIEN || statut->action == CHARGER)
         switch(ev->keysym.sym){
+            case SDLK_DOWN :
             case TOUCHE_BAS : statut->orientation = SUD;  statut->en_mouvement = vrai; break;
+            case SDLK_UP :
             case TOUCHE_HAUT : statut->orientation = NORD;  statut->en_mouvement = vrai; break;
+            case SDLK_RIGHT :
             case TOUCHE_DROITE : statut->orientation = EST;  statut->en_mouvement = vrai; break;
+            case SDLK_LEFT :
             case TOUCHE_GAUCHE : statut->orientation = OUEST;  statut->en_mouvement = vrai; break;
             case TOUCHE_TAB :
                 
@@ -53,8 +57,28 @@ static void keyDown(SDL_KeyboardEvent * ev){
 static void keyUp(SDL_KeyboardEvent * ev){
     t_direction orientation = perso_principal->statut->orientation;
 
-    if( (ev->keysym.sym == TOUCHE_BAS && orientation == SUD) || (ev->keysym.sym == TOUCHE_DROITE && orientation == EST) || (ev->keysym.sym == TOUCHE_GAUCHE && orientation == OUEST) || (ev->keysym.sym == TOUCHE_HAUT && orientation == NORD) )
-        perso_principal->statut->en_mouvement = faux;
+    switch(ev->keysym.sym){
+        case TOUCHE_BAS :
+        case SDLK_DOWN : 
+            if(orientation == SUD)
+                perso_principal->statut->en_mouvement = faux;
+            break;
+        case TOUCHE_HAUT :
+        case SDLK_UP :
+            if (orientation == NORD)
+                perso_principal->statut->en_mouvement = faux;
+            break;
+        case TOUCHE_DROITE :
+        case SDLK_RIGHT :
+            if (orientation == EST)
+                perso_principal->statut->en_mouvement = faux;
+            break;
+        case TOUCHE_GAUCHE :
+        case SDLK_LEFT :
+            if (orientation == OUEST)
+                perso_principal->statut->en_mouvement = faux;
+            break;
+    }
 }
 
 /**
