@@ -76,7 +76,7 @@ extern joueur_t * caracteristiques(joueur_t* perso);
 extern void afficher_statistiques(joueur_t* perso);
 extern joueur_t * levelup(joueur_t* perso);
 extern joueur_t * gain_xp(joueur_t* perso);
-extern char * creer_sauvegarde_json(joueur_t *j);
+extern void creer_sauvegarde_json(joueur_t *j);
 void check_repertoire_jeux();
 
 #endif

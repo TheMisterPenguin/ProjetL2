@@ -154,7 +154,7 @@ void *ajout_text_liste(void *t);
  * \param rendu Le rendu sur lequel on veut afficher ces textures
  * \return Une valeur différente à 0 lors d'une erreur
  */
-err_t afficher_buffer(const list *const buffer, SDL_Renderer *rendu);
+extern err_t afficher_buffer(list *buffer, SDL_Renderer *rendu);
 
 /**
  * Déplacez la texture pour que son centre soit au centre de l'écran

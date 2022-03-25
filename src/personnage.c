@@ -6,13 +6,14 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <string.h>
+#include <code_erreur.h>
 
 #ifndef _WIN32
 	#include <pwd.h>
 	#include <unistd.h>
 #endif
 
-void copy(byte * origin, byte *out, size_t size){
+void copy(const byte * origin, byte *out, size_t size){
 	for(unsigned int i = 0; i < size; i++)
 		out[i] = origin[i];
 }
@@ -65,7 +66,7 @@ void check_repertoire_jeux(){
 
 joueur_t *perso_principal;
 
-char * creer_sauvegarde_json(joueur_t *j){
+void creer_sauvegarde_json(joueur_t *j){
 	/* Object JSON principal */
 	json_object *sauvegarde = json_object_new_object();
 
@@ -100,6 +101,7 @@ char * creer_sauvegarde_json(joueur_t *j){
 	json_object_object_add(sauvegarde, "Nom Joueur", nom_joueur);
 	json_object_object_add(sauvegarde, "Niveau", niveau);
 	json_object_object_add(sauvegarde, "Points d'experience", xp);
+	json_object_object_add(sauvegarde, "Pv", pdv);
 	json_object_object_add(sauvegarde, "Points de vie Max", maxPdv);
 	json_object_object_add(sauvegarde, "Attaque", attaque);
 	json_object_object_add(sauvegarde, "Defense", defense);
@@ -110,14 +112,29 @@ char * creer_sauvegarde_json(joueur_t *j){
 
 	sprintf(path,"%s/perso.sav", save_path);
 
-	json_object_to_file(path, sauvegarde);
+	//json_object_to_file(path, sauvegarde);
+
+
+	FILE * sauv = fopen(path, "w");
+
+	if(!sauv){
+		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur lors de la sauvegarde", "Imposible de créer le fichier de la sauvegarde \n", NULL);
+		exit(ERREUR_FICHIER);
+	}
+
+	const char * json = json_object_to_json_string(sauvegarde);
+
+	fwrite(json,strlen(json),1, sauv);
 
 	free(path);
 
 }
 
-FILE * sauv_existe(char *nom_sauv){
-	FILE * f = fopen(nom_sauv,"r+");
+bool sauv_existe(char *nom_sauv){
+	if(fopen(nom_sauv,"r"))
+		return vrai;
+
+	return faux;
 }
 
 joueur_t *charger_sauvegarde_joueur(char *nom_sauv){

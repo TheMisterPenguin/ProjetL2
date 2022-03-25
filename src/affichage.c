@@ -350,7 +350,7 @@ t_aff *next_frame_joueur(joueur_t *j)
         return textures[TEXT_MARCHER];
 }
 
-err_t afficher_buffer(const list * const buffer, SDL_Renderer *rendu){
+err_t afficher_buffer(list *buffer, SDL_Renderer *rendu){
 
     if(liste_vide(buffer))
         return BUFFER_EMPTY;
@@ -508,8 +508,6 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
     int *x_map = &(m->text_map->frame_anim->x); /* La coordonnée x actuelle de la map */
     int *x_pers = &(j->statut->zone_colision.x); /* La coordonnée x actuelle du joueur */
     const long int taille_unite = floor(FENETRE_LONGUEUR / (float)m->text_map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
-    const int pers_x_milieu = floor(get_screen_center().x - j->statut->zone_colision.w / 2);
-    const int map_milieu = floor(get_screen_center().x / m->text_map->multipli_taille - 5);
 
     if(*x_pers  + x * taille_unite < 0)
         return;
@@ -536,8 +534,6 @@ void deplacement_y_pers(t_map *m, joueur_t *j, int y){
     int *y_map = &(m->text_map->frame_anim->y);                                        /* La coordonnée y actuelle de la map */
     int *y_pers = &(j->statut->zone_colision.y);                                       /* La coordonnée y actuelle du joueur */
     const long int taille_unite = floor(FENETRE_LARGEUR / (float)m->text_map->height); /* Calcul en nombre de pixels d'une unité de déplacement */
-    const int pers_y_milieu = floor(get_screen_center().y - j->statut->zone_colision.h / 2);
-    const int map_milieu = floor(get_screen_center().y / m->text_map->multipli_taille - 5);
 
     if (*y_pers + y * taille_unite < 0)
         return;
