@@ -77,6 +77,7 @@ void creer_sauvegarde_json(joueur_t *j){
 	json_object *pdv = json_object_new_int(j->pdv);
 	json_object *attaque = json_object_new_int(j->attaque);
 	json_object *defense = json_object_new_int(j->defense);
+	json_object *vitesse = json_object_new_int(j->vitesse);
 	json_object *orientation = json_object_new_int(j->statut->orientation);
 	json_object *bouclier_equipe = json_object_new_boolean(j->statut->bouclier_equipe);
 	json_object *x_map = json_object_new_int(j->statut->zone_colision.x);
@@ -105,6 +106,7 @@ void creer_sauvegarde_json(joueur_t *j){
 	json_object_object_add(sauvegarde, "Points de vie Max", maxPdv);
 	json_object_object_add(sauvegarde, "Attaque", attaque);
 	json_object_object_add(sauvegarde, "Defense", defense);
+	json_object_object_add(sauvegarde, "Vitesse", vitesse);
 	json_object_object_add(sauvegarde, "Statut", statut);
 	json_object_object_add(sauvegarde, "Triggers", trigger);
 
@@ -228,13 +230,13 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 		return NULL;
 	}
 
-	json_object *x_map = json_object_object_get(statut, "x_map");
+	json_object *x_map = json_object_object_get(statut, "x map");
 	if (!x_map){
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
-	json_object *y_map = json_object_object_get(statut, "y_map");
+	json_object *y_map = json_object_object_get(statut, "y map");
 	if (!y_map){
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
@@ -269,6 +271,9 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 	);
 	free(trigger_tab);
 
+	j->statut->zone_colision.x = json_object_get_int(x_map);
+	j->statut->zone_colision.y = json_object_get_int(y_map);
+
 	return j;
 }
 
@@ -277,6 +282,9 @@ joueur_t *new_joueur(const char* nom){
 
 	joueur_t *j = creer_joueur(nom, 0, 0, 10, 10, 10, 10, 1, trig, NORD, faux);
 	free(trig);
+
+	j->statut->zone_colision.x = 0;
+	j->statut->zone_colision.y = 0;
 
 	return j;
 }
