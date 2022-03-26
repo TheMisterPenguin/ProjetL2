@@ -586,3 +586,8 @@ bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2){
 
     return faux;
 }
+
+SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
+   SDL_Color col = {r,g,b,a};
+   return col;
+}

@@ -74,6 +74,7 @@ static void init_rc_commun(void){
                                             -1,  SDL_RENDERER_ACCELERATED);
     if (rendu_principal == NULL){
         fprintf(stderr, "Échec de l'initialisation du rendu (%s)\n", SDL_GetError());
+        SDL_DestroyWindow(fenetre_Principale);
         exit(SDL_ERREUR);
     }
 

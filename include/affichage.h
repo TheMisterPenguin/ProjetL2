@@ -284,4 +284,16 @@ void rect_centre(SDL_Rect *rectangle);
 bool rects_egal_x(const SDL_Rect *const r1, SDL_Rect const *const r2);
 
 bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2);
+
+/**
+ * \fn SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+ * \brief Fonction qui permet de choisir une couleur SDL
+ * \param r niveau de rouge
+ * \param g niveau de vert
+ * \param b niveau de bleu
+ * \param a niveau d'opacité
+ * \return SDL_Color une couleur SDL
+ */
+SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
+
 #endif
