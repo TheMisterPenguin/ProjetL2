@@ -53,7 +53,8 @@ void afficher_menu_pause(){
             switch (lastEvent.type)
             {
             case SDL_QUIT:
-                printf("Détection de la fermeture de la fenêtre\n");
+
+                SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Détection de la fermeture de la fenêtre\n");
                 fermer_programme(EXIT_SUCCESS);
             case SDL_KEYDOWN:
                 if (lastEvent.key.keysym.sym == SDLK_ESCAPE)

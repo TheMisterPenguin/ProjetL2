@@ -42,10 +42,10 @@ static void fermer_SDL(void)
 {
 
     SDL_DestroyWindow(fenetre_Principale);
-    printf("Destruction de la fenêtre !\n");
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Fenêtre principale détruite");
 
     SDL_Quit();
-    printf("Fermeture de la SDL\n");
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "SDL Arrêtée");
 }
 
 static void detruire_renderer(void)
@@ -61,6 +61,8 @@ static void detruire_renderer(void)
  */
 static void init_SDL(){
 
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Démarrage de la SDL");
+
     if (SDL_Init(SDL_INIT_EVERYTHING) ){
         char *msp = malloc(sizeof(char) * (500));
 
@@ -71,7 +73,7 @@ static void init_SDL(){
         fermer_programme(SDL_ERREUR);
     }
 
-    printf("SDL initialisée !\n");
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "SDL initialisée !");
 
     SDL_DisplayMode m;
 
@@ -88,6 +90,8 @@ static void init_SDL(){
 
     FENETRE_LONGUEUR = m.w; // On récupère la largeur de l'écran
     FENETRE_LARGEUR = m.h; // On récupère la hauteur de l'écran
+
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Résolution de l'écran : %dx%d", FENETRE_LONGUEUR, FENETRE_LARGEUR);
 
     // On crée la fenêtre principale
     fenetre_Principale = SDL_CreateWindow("Bloody Sanada",
@@ -107,10 +111,13 @@ static void init_SDL(){
         fermer_programme(SDL_ERREUR);
     }
 
-    printf("Fenêtre crée !\n");
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Fenêtre principale créée");
 }
 
 static void init_rc_commun(void){
+
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Création du rendu principal");
+
     rendu_principal =    SDL_CreateRenderer(fenetre_Principale,
                                             -1,  SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE);
     if (rendu_principal == NULL){
@@ -122,6 +129,7 @@ static void init_rc_commun(void){
         fermer_programme(SDL_ERREUR);
     }
 
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Rendu principal créé");
 }
 /**
  * \brief Fonction ajoutée à la liste de atexit() afin de libérer toute la mémoire allouée
@@ -144,15 +152,20 @@ void init_affichage(){
         free(msp);
         fermer_programme(ERREUR_LISTE);
     }
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Liste de textures initialisée");
+
     SDL_Rect t1 = {.h = FENETRE_LARGEUR, .w = 16 * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3)};
     SDL_Rect t2 = {.w = FENETRE_LONGUEUR, .h = 16 * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3)};
     ty = t2;
     tx = t1;
 
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Rectangle de texture initialisé");
+
     multiplicateur_x = (float) FENETRE_LONGUEUR / 1920;
     multiplicateur_y = (float) FENETRE_LARGEUR / 1080;
 
-    printf("multix : %f, multi_y %f\n", multiplicateur_x, multiplicateur_y);
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Multiplicateur initialisés : %f, %f", multiplicateur_x, multiplicateur_y);
+
     buffer_affichage = init_liste(NULL,NULL,NULL);
 }
 
