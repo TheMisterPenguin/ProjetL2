@@ -3,3 +3,6 @@ GEN = $(addprefix $(BINDIR), jeux.prog test_listes.bin test_affichage.bin test_p
 LDFLAGS = -L lib -lSDL2 -l m# Options d'édition de liens. 
 ODIRCMD = obj/
 DIRMAKE = gen_dos.sh
+JSON-LIB-PATH = lib/libjson-c.a
+EXT = .bin
+
