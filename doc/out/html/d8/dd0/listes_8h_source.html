@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Bloody Sanada:  Fichier source de listes.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Bloody Sanada
+   </div>
+   <div id="projectbrief">Projet de L2 Informatique</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">listes.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/dd0/listes_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef __LISTE_H__</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define __LISTE_H__</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d8/dd0/listes_8h_aa295f649a192b2bcdc06effc2f71dde4.html#aa295f649a192b2bcdc06effc2f71dde4">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="../../d8/d10/structlist.html">list</a> <a class="code" href="../../d8/d10/structlist.html">list</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> <a class="code" href="../../d8/d10/structlist.html">list</a> *<a class="code" href="../../d8/dd0/listes_8h_addcfa9533b97c83cd4901a146cefba9c.html#addcfa9533b97c83cd4901a146cefba9c">init_liste</a>(<span class="keywordtype">void</span> *(*fonction_ajout)(<span class="keywordtype">void</span> *), <span class="keywordtype">void</span> (*f_suppresion)(<span class="keywordtype">void</span> *), <span class="keywordtype">void</span> (*fonction_affichage)(<span class="keywordtype">void</span> *));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">extern</span> _Bool <a class="code" href="../../d8/dd0/listes_8h_abe07097bbae832dce242428fdb1d95b4.html#abe07097bbae832dce242428fdb1d95b4">liste_vide</a>(<span class="keyword">const</span> <a class="code" href="../../d8/d10/structlist.html">list</a> * <span class="keyword">const</span> to_verify);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">extern</span> _Bool <a class="code" href="../../d8/dd0/listes_8h_a0636ccaaa4306ef8525a26cadc4a4805.html#a0636ccaaa4306ef8525a26cadc4a4805">hors_liste</a>(<span class="keyword">const</span> <a class="code" href="../../d8/d10/structlist.html">list</a> * <span class="keyword">const</span> to_verify);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h_a9c780173ba80450b8a01ba4c14963437.html#a9c780173ba80450b8a01ba4c14963437">en_tete</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h_adce0cb151a53ff2182012642c95262be.html#adce0cb151a53ff2182012642c95262be">en_queue</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h_ad6061cfcccc3fe717413526943f7bddc.html#ad6061cfcccc3fe717413526943f7bddc">suivant</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h_a2afbd9c9fde39b0f0c20e628718b7576.html#a2afbd9c9fde39b0f0c20e628718b7576">precedent</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> * <a class="code" href="../../d8/dd0/listes_8h_a37afb4f802843bd21792cd494296d9dc.html#a37afb4f802843bd21792cd494296d9dc">valeur_elt</a>(<span class="keyword">const</span> <a class="code" href="../../d8/d10/structlist.html">list</a> *<span class="keyword">const</span> mylist);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h_ac553c0418726475fa46b69b1aaaec8f9.html#ac553c0418726475fa46b69b1aaaec8f9">modif_elt</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist, <span class="keywordtype">void</span> *v);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h_a59c2257ab1cda9f78444e6b71a8a0c8d.html#a59c2257ab1cda9f78444e6b71a8a0c8d">oter_elt</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h_a5460022305fdfacd6e0864968fea1841.html#a5460022305fdfacd6e0864968fea1841">ajout_droit</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist, <span class="keywordtype">void</span> *v);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h_afec29ddee61034f0def935f3a556a53e.html#afec29ddee61034f0def935f3a556a53e">ajout_gauche</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist, <span class="keywordtype">void</span> *v);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../d8/dd0/listes_8h_ad4603e6751766ee0c8ef54c5240e4c5c.html#ad4603e6751766ee0c8ef54c5240e4c5c">taille_liste</a>(<span class="keyword">const</span> <a class="code" href="../../d8/d10/structlist.html">list</a> *<span class="keyword">const</span> mylist);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h_af234a65d00ef1f963f212d6761636941.html#af234a65d00ef1f963f212d6761636941">vider_liste</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h_a4597d1c1550e48dc54b54b240ab3c0e9.html#a4597d1c1550e48dc54b54b240ab3c0e9">detruire_liste</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> ** liste);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h_a68be9a4fdaac39551f98573ba4041fec.html#a68be9a4fdaac39551f98573ba4041fec">afficher_liste</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> * liste);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="alistes_8h_ad6061cfcccc3fe717413526943f7bddc_html_ad6061cfcccc3fe717413526943f7bddc"><div class="ttname"><a href="../../d8/dd0/listes_8h_ad6061cfcccc3fe717413526943f7bddc.html#ad6061cfcccc3fe717413526943f7bddc">suivant</a></div><div class="ttdeci">void suivant(list *mylist)</div><div class="ttdef"><b>Definition:</b> listes.c:56</div></div>
+<div class="ttc" id="alistes_8h_abe07097bbae832dce242428fdb1d95b4_html_abe07097bbae832dce242428fdb1d95b4"><div class="ttname"><a href="../../d8/dd0/listes_8h_abe07097bbae832dce242428fdb1d95b4.html#abe07097bbae832dce242428fdb1d95b4">liste_vide</a></div><div class="ttdeci">_Bool liste_vide(const list *const to_verify)</div><div class="ttdef"><b>Definition:</b> listes.c:42</div></div>
+<div class="ttc" id="alistes_8h_af234a65d00ef1f963f212d6761636941_html_af234a65d00ef1f963f212d6761636941"><div class="ttname"><a href="../../d8/dd0/listes_8h_af234a65d00ef1f963f212d6761636941.html#af234a65d00ef1f963f212d6761636941">vider_liste</a></div><div class="ttdeci">void vider_liste(list *mylist)</div><div class="ttdef"><b>Definition:</b> listes.c:146</div></div>
+<div class="ttc" id="alistes_8h_a37afb4f802843bd21792cd494296d9dc_html_a37afb4f802843bd21792cd494296d9dc"><div class="ttname"><a href="../../d8/dd0/listes_8h_a37afb4f802843bd21792cd494296d9dc.html#a37afb4f802843bd21792cd494296d9dc">valeur_elt</a></div><div class="ttdeci">void * valeur_elt(const list *const mylist)</div><div class="ttdef"><b>Definition:</b> listes.c:66</div></div>
+<div class="ttc" id="alistes_8h_addcfa9533b97c83cd4901a146cefba9c_html_addcfa9533b97c83cd4901a146cefba9c"><div class="ttname"><a href="../../d8/dd0/listes_8h_addcfa9533b97c83cd4901a146cefba9c.html#addcfa9533b97c83cd4901a146cefba9c">init_liste</a></div><div class="ttdeci">list * init_liste(void *(*fonction_ajout)(void *), void(*f_suppresion)(void *), void(*fonction_affichage)(void *))</div><div class="ttdef"><b>Definition:</b> listes.c:20</div></div>
+<div class="ttc" id="alistes_8h_a59c2257ab1cda9f78444e6b71a8a0c8d_html_a59c2257ab1cda9f78444e6b71a8a0c8d"><div class="ttname"><a href="../../d8/dd0/listes_8h_a59c2257ab1cda9f78444e6b71a8a0c8d.html#a59c2257ab1cda9f78444e6b71a8a0c8d">oter_elt</a></div><div class="ttdeci">void oter_elt(list *mylist)</div><div class="ttdef"><b>Definition:</b> listes.c:89</div></div>
+<div class="ttc" id="alistes_8h_a0636ccaaa4306ef8525a26cadc4a4805_html_a0636ccaaa4306ef8525a26cadc4a4805"><div class="ttname"><a href="../../d8/dd0/listes_8h_a0636ccaaa4306ef8525a26cadc4a4805.html#a0636ccaaa4306ef8525a26cadc4a4805">hors_liste</a></div><div class="ttdeci">_Bool hors_liste(const list *const to_verify)</div><div class="ttdef"><b>Definition:</b> listes.c:44</div></div>
+<div class="ttc" id="alistes_8h_afec29ddee61034f0def935f3a556a53e_html_afec29ddee61034f0def935f3a556a53e"><div class="ttname"><a href="../../d8/dd0/listes_8h_afec29ddee61034f0def935f3a556a53e.html#afec29ddee61034f0def935f3a556a53e">ajout_gauche</a></div><div class="ttdeci">void ajout_gauche(list *mylist, void *v)</div><div class="ttdef"><b>Definition:</b> listes.c:128</div></div>
+<div class="ttc" id="alistes_8h_a4597d1c1550e48dc54b54b240ab3c0e9_html_a4597d1c1550e48dc54b54b240ab3c0e9"><div class="ttname"><a href="../../d8/dd0/listes_8h_a4597d1c1550e48dc54b54b240ab3c0e9.html#a4597d1c1550e48dc54b54b240ab3c0e9">detruire_liste</a></div><div class="ttdeci">void detruire_liste(list **liste)</div><div class="ttdoc">Détruit une structure liste.</div><div class="ttdef"><b>Definition:</b> listes.c:154</div></div>
+<div class="ttc" id="alistes_8h_ad4603e6751766ee0c8ef54c5240e4c5c_html_ad4603e6751766ee0c8ef54c5240e4c5c"><div class="ttname"><a href="../../d8/dd0/listes_8h_ad4603e6751766ee0c8ef54c5240e4c5c.html#ad4603e6751766ee0c8ef54c5240e4c5c">taille_liste</a></div><div class="ttdeci">unsigned int taille_liste(const list *const mylist)</div><div class="ttdef"><b>Definition:</b> listes.c:144</div></div>
+<div class="ttc" id="alistes_8h_a2afbd9c9fde39b0f0c20e628718b7576_html_a2afbd9c9fde39b0f0c20e628718b7576"><div class="ttname"><a href="../../d8/dd0/listes_8h_a2afbd9c9fde39b0f0c20e628718b7576.html#a2afbd9c9fde39b0f0c20e628718b7576">precedent</a></div><div class="ttdeci">void precedent(list *mylist)</div><div class="ttdef"><b>Definition:</b> listes.c:61</div></div>
+<div class="ttc" id="alistes_8h_a68be9a4fdaac39551f98573ba4041fec_html_a68be9a4fdaac39551f98573ba4041fec"><div class="ttname"><a href="../../d8/dd0/listes_8h_a68be9a4fdaac39551f98573ba4041fec.html#a68be9a4fdaac39551f98573ba4041fec">afficher_liste</a></div><div class="ttdeci">void afficher_liste(list *liste)</div><div class="ttdoc">Affiche une liste d'objets génériques.</div><div class="ttdef"><b>Definition:</b> listes.c:163</div></div>
+<div class="ttc" id="alistes_8h_ac553c0418726475fa46b69b1aaaec8f9_html_ac553c0418726475fa46b69b1aaaec8f9"><div class="ttname"><a href="../../d8/dd0/listes_8h_ac553c0418726475fa46b69b1aaaec8f9.html#ac553c0418726475fa46b69b1aaaec8f9">modif_elt</a></div><div class="ttdeci">void modif_elt(list *mylist, void *v)</div><div class="ttdef"><b>Definition:</b> listes.c:73</div></div>
+<div class="ttc" id="alistes_8h_a9c780173ba80450b8a01ba4c14963437_html_a9c780173ba80450b8a01ba4c14963437"><div class="ttname"><a href="../../d8/dd0/listes_8h_a9c780173ba80450b8a01ba4c14963437.html#a9c780173ba80450b8a01ba4c14963437">en_tete</a></div><div class="ttdeci">void en_tete(list *mylist)</div><div class="ttdef"><b>Definition:</b> listes.c:46</div></div>
+<div class="ttc" id="alistes_8h_a5460022305fdfacd6e0864968fea1841_html_a5460022305fdfacd6e0864968fea1841"><div class="ttname"><a href="../../d8/dd0/listes_8h_a5460022305fdfacd6e0864968fea1841.html#a5460022305fdfacd6e0864968fea1841">ajout_droit</a></div><div class="ttdeci">void ajout_droit(list *mylist, void *v)</div><div class="ttdef"><b>Definition:</b> listes.c:112</div></div>
+<div class="ttc" id="alistes_8h_adce0cb151a53ff2182012642c95262be_html_adce0cb151a53ff2182012642c95262be"><div class="ttname"><a href="../../d8/dd0/listes_8h_adce0cb151a53ff2182012642c95262be.html#adce0cb151a53ff2182012642c95262be">en_queue</a></div><div class="ttdeci">void en_queue(list *mylist)</div><div class="ttdef"><b>Definition:</b> listes.c:51</div></div>
+<div class="ttc" id="astructlist_html"><div class="ttname"><a href="../../d8/d10/structlist.html">list</a></div><div class="ttdef"><b>Definition:</b> listes.c:11</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
