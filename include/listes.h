@@ -31,6 +31,7 @@ typedef struct list list;
  * 
  * \param fonction_ajout La fonction qui permet d'intertion des objets, NULL sinon
  * \param f_suppresion La fonction qui permet la suppresion des objets, NULL sinon
+ * \param fonction_affichage La fonction qui permet d'afficher les objets de la liste, NULL sinon
  * \return La liste qui vient d'être crée, NULL s'il y a eu une erreur
  */
 extern list *init_liste(void *(*fonction_ajout)(void *), void (*f_suppresion)(void *), void (*fonction_affichage)(void *));
