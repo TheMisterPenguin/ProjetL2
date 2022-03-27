@@ -5,9 +5,6 @@
 #include <map.h>
 #include <stdio.h>
 
-SDL_Window *fenetre_Principale = NULL;
-SDL_Renderer *rendu_principal = NULL;
-bool running = vrai;
 long int compteur;
 t_map *test_map;
 unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;

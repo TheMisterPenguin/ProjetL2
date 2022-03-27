@@ -127,7 +127,7 @@ void init_affichage(){
         free(msp);
         exit(ERREUR_LISTE);
     }
-    listeDeTextures = init_liste(ajout_text_liste, (void (*)(void *)) detruire_texture,;
+    listeDeTextures = init_liste(ajout_text_liste, (void (*)(void *)) detruire_texture,(void (*)(void *))info_texture);
     SDL_Rect t1 = {.h = FENETRE_LARGEUR, .w = 16 * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3)};
     SDL_Rect t2 = {.w = FENETRE_LONGUEUR, .h = 16 * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3)};
     ty = t2;
@@ -147,8 +147,8 @@ SDL_Texture* init_sousbuffer(t_map *map){
     floor(map->text_map->width * map->text_map->multipli_taille),
     floor(map->text_map->height * map->text_map->multipli_taille), 
     SDL_WINDOW_HIDDEN | SDL_WINDOW_OPENGL,
-    fenetre_sous_rendu,
-    sous_rendu))
+    &fenetre_sous_rendu,
+    &sous_rendu))
     {
         char *msp = malloc(sizeof(char) * (500));
         sprintf(msp, "Erreur lors de la création du sous rendu: %s\n Erreur : 0x%X\n", SDL_GetError(), SDL_ERREUR);
@@ -169,6 +169,7 @@ SDL_Texture* init_sousbuffer(t_map *map){
         free(msp);
         exit(SDL_ERREUR);
     }
+    return sous_buffer;
 }
 
 /**
