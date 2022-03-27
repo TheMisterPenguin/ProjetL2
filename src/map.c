@@ -60,7 +60,7 @@ t_map * charger_s_map(char * buffer){
     json_object *width;
     json_object *height;
     json_object *tbl_monstre;
-    json_object *monstre;
+    /*json_object *monstre; */
 
     SDL_Rect s = taille_ecran_cases();
 
@@ -79,7 +79,7 @@ t_map * charger_s_map(char * buffer){
     m->width = json_object_get_int(width);
 
     for(unsigned int i = 0; i < json_object_array_length(tbl_monstre); i++){
-        monstre = json_object_array_get_idx(tbl_monstre,i);
+        /*monstre = json_object_array_get_idx(tbl_monstre,i);*/
         /* Fonction qui permet de creer un monstre */
     }
 
