@@ -155,9 +155,14 @@ void afficher_inventaire()
                 SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Détection de la fermeture de la fenêtre\n");
                 fermer_programme(EXIT_SUCCESS);
             case SDL_KEYDOWN:
-                if (lastEvent.key.keysym.sym == SDLK_TAB)
+                if(lastEvent.key.keysym.sym == SDLK_TAB){
                     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "On quitte l'inventaire\n");
                     return;
+                }
+                if(lastEvent.key.keysym.sym == SDLK_ESCAPE){
+                    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "On quitte l'inventaire\n");
+                    return;
+                }
                 break;
             case SDL_MOUSEBUTTONUP:
                 coord_souris.x = lastEvent.button.x;
