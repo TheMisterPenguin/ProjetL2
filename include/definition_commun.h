@@ -37,6 +37,6 @@ extern bool running;
 #ifndef _WIN32
 #define SAVE_PATH "Bloody_Sanada"
 #else
-#define SAVE_PATH "%LocalAppData%/Bloody Sanada"
+#define SAVE_PATH "Bloody_Sanada"
 #endif
 #endif
