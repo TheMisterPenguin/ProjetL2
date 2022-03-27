@@ -10,7 +10,8 @@ CFLAGS =-Wall $(INCLUDE) # Options de compilation.
 ODIR = obj/# Répertoire des fichiers objets
 SRC = src/# Répertoire des fichiers sources
 BINDIR = bin/# Répertoire des exécutables
-OBJ = $(addprefix $(ODIR), main.o init_close.o event.o monstres.o personnage.o affichage.o objet.o liste_objet.o listes.o map.o menus.o interface.o)# Fichiers à compiler
+ALLOBJ = $(addprefix $(ODIR), main.o init_close.o event.o monstres.o personnage.o affichage.o objet.o liste_objet.o listes.o map.o menus.o interface.o inventaire.o test_affichage.o test_inventaire.o test_liste_objet.o test_listes.o test_map.o test_monstre.o test_personnage.o)
+OBJ = $(addprefix $(ODIR), main.o init_close.o event.o monstres.o personnage.o affichage.o objet.o liste_objet.o listes.o map.o menus.o interface.o)
 OBJ_TEST_MONSTRES = $(addprefix $(ODIR), test_monstres.o monstres.o)
 OBJ_TEST_MAP = $(addprefix $(ODIR), test_map.o map.o affichage.o init_close.o event.o listes.o personnage.o)
 OBJ_TEST_LISTE_OBJET = $(addprefix $(ODIR), test_liste_objet.o liste_objet.o objet.o affichage.o listes.o personnage.o)
@@ -24,10 +25,10 @@ default : makedir $(BINDIR)jeux.prog # Génération par défault
 
 all : makedir $(GEN) # Génération de tout les fichiers
 
+#programme principal
+
 $(BINDIR)jeux.prog : $(OBJ)
 	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS) 
-
-
 	
 # Compilation de tout les fichiers source
 
@@ -36,25 +37,25 @@ $(ODIR)%.o : $(SRC)%.c
 
 # Génération des tests
 
-$(BINDIR)test_map : $(OBJ_TEST_MAP)
+$(BINDIR)test_map.bin : $(OBJ_TEST_MAP)
 	$(CC) $^ -o $@  lib/libjson-c.a $(LDFLAGS)
 
-$(BINDIR)test_monstres : $(OBJ_TEST_MONSTRES)
+$(BINDIR)test_monstres.bin : $(OBJ_TEST_MONSTRES)
 	$(CC) $^ -o $@ $(LDFLAGS)
 
-$(BINDIR)test_liste_objet : $(OBJ_TEST_LISTE_OBJET)
+$(BINDIR)test_liste_objet.bin : $(OBJ_TEST_LISTE_OBJET)
 	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
 
-$(BINDIR)test_inventaire : $(OBJ_TEST_INVENTAIRE)
+$(BINDIR)test_inventaire.bin : $(OBJ_TEST_INVENTAIRE)
 	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
 
-$(BINDIR)test_personnage : $(OBJ_TEST_PERSONNAGE)
+$(BINDIR)test_personnage.bin : $(OBJ_TEST_PERSONNAGE)
 	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
 
-$(BINDIR)test_affichage : $(OBJ_TEST_AFFICHAGE)
+$(BINDIR)test_affichage.bin : $(OBJ_TEST_AFFICHAGE)
 	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
 
-$(BINDIR)test_listes : $(OBJ_TEST_LISTES)
+$(BINDIR)test_listes.bin : $(OBJ_TEST_LISTES)
 	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
 
 # Création de l'arboressence 
@@ -66,7 +67,7 @@ makedir :
 
 .PHONY: clean
 clean:
-	@$(rm) $(OBJ)
+	@$(rm) $(ALLOBJ)
 	@echo "Cleanup complete!"
 
 .PHONY: mrproper
