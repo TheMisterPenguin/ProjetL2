@@ -15,6 +15,15 @@
 #include "definition_commun.h"
 #include <affichage.h>
 
+#define DISTANCE_AGRO 500
+#define DUREE_MONSTRE_MARCHER 150
+#define DUREE_MONSTRE_EN_GARDE 300
+#define DUREE_RUSH_OU_FUITE 150
+#define DUREE_MONSTRE_ATTAQUE 100
+
+typedef enum {WITCHER,KNIGHT,BOSS}type_monstre_t;
+typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE}action_monstre_t;
+
 /**
  * \struct struct position
  * \brief Structure regroupant les coordonnées
@@ -34,9 +43,13 @@ typedef struct monstre_s
     int pdv; /**<points de vie*/
     int attaque; /**<attaque*/
     float vitesse; /**<vitesse de déplacement*/
-    position_t position; /**<coordonnées*/
     int gainXp; /**<gain d'xp pour le joueur*/
-    t_direction orientation; /**<orientation*/
+
+    t_direction orientation;
+    int duree; /*duree de l'action*/
+    action_monstre_t action; /*action en cours par le monstre*/
+
+    SDL_Rect collision; /**<coordonnées*/
     t_aff* texture; /**<texture*/
     /*short int niveau;*/ /**<Le niveau du monstre*/
 } monstre_t;
@@ -94,5 +107,7 @@ void detruire_monstre(monstre_t** monstre);
  * \return liste_base_monstres_t* une structure contenant la liste des monstres
  */
 liste_base_monstres_t* charger_monstres(char* nom_fichier);
+
+
 
 #endif
