@@ -99,7 +99,7 @@ static void init_SDL(){
                                           0,
                                           FENETRE_LONGUEUR,
                                           FENETRE_LARGEUR,
-                                          SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_OPENGL);
+                                          SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
 
     if(! fenetre_Principale){
         char *msp = malloc(sizeof(char) * (500));
