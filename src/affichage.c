@@ -347,7 +347,7 @@ t_aff *next_frame_joueur(joueur_t *j)
         return textures[TEXT_MARCHER];
 }
 
-void affiche_monstres(list * liste_monstre){
+void afficher_monstres(list * liste_monstre){
     monstre_t * monstre;
 
     if(liste_vide(liste_monstre))

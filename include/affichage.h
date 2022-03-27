@@ -322,11 +322,11 @@ extern int current_frame_x(t_aff * texture);
 extern int current_frame_y(t_aff * texture);
 
 /**
-* \fn extern void affiche_monstres(list * liste_monstre);
+* \fn extern void afficher_monstres(list * liste_monstre);
  * \brief Fonction qui affiche les monstres
  * \param liste_monstre une liste de monstre
  */
-extern void affiche_monstres(list * liste_monstre);
+extern void afficher_monstres(list * liste_monstre);
 
 
 #endif
