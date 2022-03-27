@@ -24,6 +24,7 @@ static void keyDown(SDL_KeyboardEvent * ev){
     if (ev->keysym.sym == SDLK_ESCAPE){ /* On affiche le menu de pause si on appuye sur echap */
         SDL_ShowCursor(SDL_ENABLE);
         afficher_menu_pause();
+        SDL_ShowCursor(SDL_DISABLE);
     }
 
     int flags;
@@ -39,7 +40,9 @@ static void keyDown(SDL_KeyboardEvent * ev){
             case SDLK_LEFT :
             case TOUCHE_GAUCHE : statut->orientation = OUEST;  statut->en_mouvement = vrai; break;
             case TOUCHE_TAB :
+                SDL_ShowCursor(SDL_ENABLE);
                 afficher_inventaire();
+                SDL_ShowCursor(SDL_DISABLE);
                 break;
             case SDLK_F11 :
                 flags = SDL_GetWindowFlags(fenetre_Principale);
