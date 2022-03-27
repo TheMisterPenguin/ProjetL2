@@ -35,7 +35,7 @@ void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres){
     *liste_base_monstres = NULL;
 }
 
-monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, position_t position){
+monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, SDL_Rect collision){
     int i;
     base_monstre_t* base_monstre;
     /* allocation monstre_t*/
@@ -43,9 +43,16 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_mo
     
     for(i=0; i<liste_base_monstre->nb_monstre; i++){
         if(strcmp(liste_base_monstre->tab[i]->nom_monstre,nom_monstre) == 0){
-            strcpy(monstre->nom_monstre,nom_monstre);
-            monstre->position = position;
-            monstre->texture = //cree_texture
+            monstre->type = nom_monstre_to_type_monstre(nom_monstre);
+            monstre->collision = collision; // ?
+
+            sprintf(chemin_texture, "%s/%s" , CHEMIN_TEXTURE, base_monstre->fichier_image);
+            monstre->texture = creer_texture(chemin_texture, LARGEUR_ENTITE, LONGUEUR_ENTITE, ?, ?, ?)
+
+            monstre->orientation = NORD;
+            monstre->duree = 0;
+            monstre->action = MONSTRE_EN_GARDE;
+
             /*copie les informations de base_monstre dans monstre*/
             base_monstre = liste_base_monstre->tab[i];
             monstre->pdv = base_monstre->pdv;
@@ -94,15 +101,14 @@ liste_base_monstres_t* charger_monstres(char* nom_fichier){
     while(strcmp(tampon,"END")){
         if(tampon[0] == '['){
             base_monstre = malloc(sizeof(base_monstre_t));
-            //inserrer les caractèristiques dans base_monstre_t
+            /*inserrer les caractèristiques dans base_monstre_t*/
             strcpy(base_monstre->fichier_image,tampon);
             fscanf(fichier, "%s", base_monstre->nom_monstre);
             fscanf(fichier, "%d", &(base_monstre->pdv));
             fscanf(fichier, "%d", &(base_monstre->attaque));
             fscanf(fichier, "%f", &(base_monstre->vitesse));
             fscanf(fichier, "%d", &(base_monstre->gainXp));
-            //inserrer monstre_t dans liste_base_monstre_t
-            liste_base_monstres->tab[i++] = base_monstre;
+            liste_base_monstres->tab[i++] = base_monstre; //inserrer monstre_t dans liste_base_monstre_t
         }
         fscanf(fichier, "%s", tampon);
     }
@@ -119,7 +125,18 @@ liste_base_monstres_t* charger_monstres(char* nom_fichier){
 
 
 
-
+type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre){
+    if(strcmp(nom_monstre,"witcher") == 0)
+        return WITCHER;
+    else if(strcmp(nom_monstre,"knight") == 0)
+        return KNIGHT;
+    else if(strcmp(nom_monstre,"boss") == 0)
+        return BOSS;
+    else{
+        fprintf(stderr,"Erreur, nom du monstre incorrect\n");
+        return NULL;
+    }
+}
 
 int distance_joueur(monstre_t * monstre){
     int x = distance_x_joueur(monstre);

@@ -39,19 +39,18 @@ typedef point position_t;
  */
 typedef struct monstre_s
 {
-	char nom_monstre[20]; /**<nom du monstre*/
+	type_monstre_t type; /**<type de monstre*/
     int pdv; /**<points de vie*/
     int attaque; /**<attaque*/
     float vitesse; /**<vitesse de déplacement*/
     int gainXp; /**<gain d'xp pour le joueur*/
 
-    t_direction orientation;
+    t_direction orientation; /*orientation du monstre*/
     int duree; /*duree de l'action*/
     action_monstre_t action; /*action en cours par le monstre*/
 
     SDL_Rect collision; /**<coordonnées*/
     t_aff* texture; /**<texture*/
-    /*short int niveau;*/ /**<Le niveau du monstre*/
 } monstre_t;
 
 
@@ -63,11 +62,12 @@ typedef struct monstre_s
 typedef struct base_monstre_s
 {
     char fichier_image[20]; /**<nom fichier image*/
-    char nom_monstre[20]; /**<nom du monstre*/
+    char * nom_monstre; /**<nom du monstre*/
     int pdv; /**<points de vie*/
     int attaque; /**<attaque*/
     float vitesse; /**<vitesse de déplacement*/
     int gainXp; /**<gain d'xp pour le joueur*/
+    SDL_Rect hitbox; 
 }base_monstre_t;
 
 
