@@ -1,7 +1,10 @@
+#define SDL_MAIN_HANDLED
+
 #include <commun.h>
 #include <stdio.h>
 #include <math.h>
 #include <map.h>
+
 
 
 void afficher_intro(void){
@@ -51,7 +54,7 @@ void afficher_intro(void){
 
 int main(int argc, char** argv)
 {
-
+    SDL_SetMainReady();
     init();
     afficher_intro();
     char *fichier_map = charger_f_map("map.json");
@@ -126,4 +129,6 @@ int main(int argc, char** argv)
             compteur = 0;
         compteur++;
     }
+
+    return AUCUNE_ERREUR;
 }
