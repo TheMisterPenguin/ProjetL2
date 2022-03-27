@@ -17,13 +17,13 @@
 *.pch
 
 # Libraries
-*.lib
 *.lo
 
 # Shared objects (inc. Windows DLLs)
 *.dylib
 
 # Executables
+*.bin
 *.exe
 *.out
 *.app

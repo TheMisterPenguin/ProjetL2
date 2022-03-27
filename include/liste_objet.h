@@ -28,6 +28,9 @@ typedef struct lobjet_s {
 }lobjet_t;
 
 lobjet_t * creer_liste_objet(void);
+lobjet_t * creer_liste_objet_vide(void);
 void detruire_liste_objet( lobjet_t ** liste_obj);
 void afficher_liste_objet( lobjet_t * const liste_obj );
+lobjet_t * creer_liste_objet_equipe();
+void effacer_liste_objet( lobjet_t ** liste_obj);
 #endif

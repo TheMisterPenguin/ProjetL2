@@ -66,7 +66,7 @@ typedef struct joueur_s {
 
 extern joueur_t *perso_principal;
 
-char save_path[500];
+extern char save_path[500];
 
 #define TAILLE_TRIGGER 200
 
