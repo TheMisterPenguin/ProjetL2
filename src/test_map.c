@@ -7,8 +7,10 @@
 
 SDL_Window *fenetre_Principale = NULL;
 SDL_Renderer *rendu_principal = NULL;
-long int compteur;
 bool running = vrai;
+long int compteur;
+t_map *test_map;
+unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 
 int main(int argc, char **argv){
     SDL_Event e;

@@ -8,3 +8,5 @@
 #include "event.h"
 #include "inventaire.h"
 #include "menus.h"
+#include "map.h"
+#include "interface.h"

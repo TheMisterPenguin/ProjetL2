@@ -56,8 +56,81 @@ lobjet_t * creer_liste_objet(){
         liste_obj->nb = nb_obj;
     }
 
-
     fclose(obj);
+
+    return liste_obj;
+}
+
+//creer une structure lobjet_t vide d'objets
+lobjet_t * creer_liste_objet_vide(){
+    lobjet_t * liste_obj; //le pointeur sur structure contenant la liste d'objets que la fonction retourne
+    FILE * obj; //fichier source contenant les objets
+
+    int i;
+    char c;
+    int nb_obj = 0; //nombre d'objets dans le fichier source
+
+    if(( liste_obj= malloc(sizeof(lobjet_t))) == NULL )
+    {
+      fprintf( stderr , "creer_liste_objet: debordement memoire lors de la creation d'une structure lobjet_t\n");
+      return((lobjet_t *)NULL);
+    }
+
+    obj = fopen("../ressource/objet.txt", "r");
+
+    if(obj == NULL){
+        fprintf( stderr, "fichier source objet inaccessible\n") ;
+        return((lobjet_t*)NULL);
+    }
+
+    liste_obj->nb = 0;
+    liste_obj->liste = (objet_t **)NULL ;
+
+    //compte les objets (1 par ligne)
+    while(fscanf(obj, "%c", &c) == 1){
+        if(c == ';') nb_obj++;
+    }
+    fclose(obj);
+
+    if( nb_obj > 0 ){
+        if( (liste_obj->liste = malloc(sizeof(objet_t*) * nb_obj)) == NULL ){
+            fprintf( stderr , "init_objet: debordement memoire lors de la creation d'une liste de [%d] liste_obj\n",
+                nb_obj ) ;
+            return((lobjet_t*)NULL);
+        }
+
+        for(i=0; i<nb_obj; i++){
+            liste_obj->liste[i] = NULL;
+        }
+    }
+    return liste_obj;
+}
+
+//creer une structure lobjet_t de 5 objets (un de chaque type)
+lobjet_t * creer_liste_objet_equipe(){
+    lobjet_t * liste_obj; //le pointeur sur structure contenant la liste d'objets que la fonction retourne
+
+    int i;
+    int nb_obj = 5; //nombre d'objets à contenir
+
+    if(( liste_obj= malloc(sizeof(lobjet_t))) == NULL )
+    {
+      fprintf( stderr , "creer_liste_objet: debordement memoire lors de la creation d'une structure lobjet_t\n");
+      return((lobjet_t *)NULL);
+    }
+
+    liste_obj->nb = 0;
+    liste_obj->liste = (objet_t **)NULL ;
+
+    if( (liste_obj->liste = malloc(sizeof(objet_t*) * nb_obj)) == NULL ){
+            fprintf( stderr , "init_objet: debordement memoire lors de la creation d'une liste de [%d] liste_obj\n",
+                nb_obj ) ;
+            return((lobjet_t*)NULL);
+        }
+
+        for(i=0; i<nb_obj; i++){
+            liste_obj->liste[i] = NULL;
+        }
 
     return liste_obj;
 }
@@ -76,6 +149,20 @@ void detruire_liste_objet( lobjet_t ** liste_obj)
     i++;
     }
 
+    free((*liste_obj)->liste);
+    (*liste_obj)->liste = NULL;
+
+    /*on detruit lobjet_t*/
+    free(*liste_obj);
+    *liste_obj = NULL;
+}
+
+/*
+ * Effacement d'une liste d'objets vide (destruction superficielle)
+ */
+
+void effacer_liste_objet( lobjet_t ** liste_obj)
+{
     free((*liste_obj)->liste);
     (*liste_obj)->liste = NULL;
 
@@ -111,6 +198,8 @@ void afficher_liste_objet( lobjet_t * const liste_obj )
     printf( "{ " ) ;
     for( i=0 ; i<nb_obj ; i++ )
     {
+        while(liste_obj->liste[i] == NULL)
+            i++;
         afficher_objet(liste_obj->liste[i]);
         printf("\n");
     }

@@ -15,7 +15,7 @@
 
 #include "definition_commun.h"
 
-
+typedef struct s_l_aff t_l_aff;
 
 typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER}action_t; /**<l'action qu'est en train de faire le personnage*/
 /**
@@ -30,6 +30,7 @@ typedef struct statut_s {
 	bool bouclier_equipe; /**<personnage à un bouclier d'équipé*/
 	int duree; /**<duree de l'action à réaliser*/
 	action_t action; /**<l'action du personnage*/
+	SDL_Rect zone_colision; /**<zone de colision du personnage*/
 }statut_t;
 
 /**
@@ -53,6 +54,7 @@ typedef struct joueur_s {
     int defense; /**<defense du joueur*/
     int vitesse; /**<vitesse de déplacement du joueur*/
 	statut_t *statut; /**<statut du joueur*/
+	t_l_aff *textures_joueur; /**<Tableau contenant toutes les textures du joueur*/
 }joueur_t;
 
 #define DUREE_ATTAQUE_OU_CHARGEE 4
@@ -60,16 +62,24 @@ typedef struct joueur_s {
 #define DUREE_ATTAQUE_CHARGEE 10
 #define DUREE_BLOQUER 3
 
+#define TAILLE_PERSONNAGE 16 /*La taille du personnage en pixels*/
+
 extern joueur_t *perso_principal;
+
+char save_path[500];
 
 #define TAILLE_TRIGGER 200
 
-extern joueur_t * creer_joueur(const char * nom);
+	extern joueur_t *
+	creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction orientation, const bool bouclier_equipe);
+extern joueur_t *new_joueur(const char *nom);
 extern void detruire_joueur(joueur_t *j);
-extern joueur_t * charger_sauvegarde_joueur(FILE *sauvegarde);
+extern joueur_t *charger_sauvegarde_joueur(char *nom_sauv);
 extern joueur_t * caracteristiques(joueur_t* perso);
 extern void afficher_statistiques(joueur_t* perso);
 extern joueur_t * levelup(joueur_t* perso);
 extern joueur_t * gain_xp(joueur_t* perso);
+extern void creer_sauvegarde_json(joueur_t *j);
+void check_repertoire_jeux();
 
 #endif

@@ -7,7 +7,7 @@ SDL_Window *fenetre_Principale = NULL;
 SDL_Renderer *rendu_principal = NULL;
 bool running = vrai;
 long int compteur;
-t_map *test_map;
+t_map *map;
 unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 
 #define NB_FPS 30
@@ -59,60 +59,71 @@ void afficher_intro(void){
 
 int main(int argc, char** argv)
 {
-    SDL_Thread *f_t_aff;
 
     init();
     afficher_intro();
     char *fichier_map = charger_f_map("map.json");
-    test_map = charger_s_map(fichier_map);
+    map = charger_s_map(fichier_map);
 
     int debut, fin; /* le temps pour calculer les performances */
     int i;
 
-    perso_principal = creer_joueur("test");
-    t_aff *text = texture_map(test_map);
-    t_l_aff *textures_joueur = init_textures_joueur();                 /* initialise la liste de textures joueur*/
-    t_aff *next_texture_joueur = init_texture_joueur(textures_joueur); /* initialise la texture joueur à afficher*/
+    perso_principal = new_joueur("test");
+    t_aff *text = texture_map(map);
+    //t_l_aff *textures_joueur = init_textures_joueur(perso_principal);                 /* initialise la liste de textures joueur*/
+    //t_aff *next_texture_joueur = init_texture_joueur(perso_principal->textures_joueur); /* initialise la texture joueur à afficher*/
+    t_aff *next_texture_joueur = perso_principal->textures_joueur->liste[TEXT_MARCHER];
     t_aff *texture_temp;
 
     /*test de l'allocation des textures*/
-    for (i = 0; i < textures_joueur->nb_valeurs; i++)
-        if (textures_joueur->liste == NULL)
+    for (i = 0; i < perso_principal->textures_joueur->nb_valeurs; i++)
+        if (perso_principal->textures_joueur->liste == NULL)
             exit(EXIT_FAILURE);
 
+    rect_centre_x(&tx);
+    rect_centre_y(&ty);
+
+    check_repertoire_jeux();
+
+    rect_centre(&(perso_principal->statut->zone_colision));
     compteur = 0;
     while (running)
     {
         debut = SDL_GetPerformanceCounter();
         jeu_event();
         // en_tete(buffer_affichage);
-
+        //creer_sauvegarde_json(perso_principal);
         if (perso_principal->statut->en_mouvement)
         { /* Déplacement map */
             switch (perso_principal->statut->orientation)
             {
             case NORD:
-                deplacement_y_pers(text, next_texture_joueur, -3);
+                deplacement_y_pers(map, perso_principal, -3);
                 break;
             case SUD:
-                deplacement_y_pers(text, next_texture_joueur, 3);
+                deplacement_y_pers(map, perso_principal, 3);
                 break;
             case OUEST:
-                deplacement_x_pers(text, next_texture_joueur, -3);
+                deplacement_x_pers(map, perso_principal, -3);
                 break;
             case EST:
-                deplacement_x_pers(text, next_texture_joueur, 3);
+                deplacement_x_pers(map, perso_principal, 3);
                 break;
             }
         }
 
-        texture_temp = next_frame_joueur(textures_joueur);
+        texture_temp = next_frame_joueur(perso_principal);
         if (texture_temp)
             next_texture_joueur = texture_temp;
 
         SDL_RenderClear(rendu_principal);
         afficher_texture(text, rendu_principal);
+        SDL_RenderDrawRect(rendu_principal, &tx);
+        SDL_RenderDrawRect(rendu_principal, &(perso_principal->statut->zone_colision));
+        SDL_RenderDrawRect(rendu_principal, &ty);
         afficher_texture(next_texture_joueur, rendu_principal);
+        RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
+            ((float)perso_principal->pdv/perso_principal->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
         // afficher_buffer(buffer_affichage, rendu_principal);
         SDL_RenderPresent(rendu_principal);
 
