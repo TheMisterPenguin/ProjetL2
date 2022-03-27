@@ -307,7 +307,7 @@ extern void info_texture(t_aff * texture);
 * \fn extern int current_frame_x(t_aff * texture);
  * \brief Fonction qui donne l'indice sur l'axe des abscisses actuelle de la texture 
  *
- * \param t_aff* une texture
+ * \param texture une texture
  * \return un entier correspondant à l'indice
  */
 extern int current_frame_x(t_aff * texture);
@@ -316,10 +316,17 @@ extern int current_frame_x(t_aff * texture);
 * \fn extern int current_frame_y(t_aff * texture);
  * \brief Fonction qui donne l'indice sur l'axe des ordonnées actuelle de la texture 
  *
- * \param t_aff* une texture
+ * \param texture une texture
  * \return un entier correspondant à l'indice
  */
 extern int current_frame_y(t_aff * texture);
+
+/**
+* \fn extern void affiche_monstres(list * liste_monstre);
+ * \brief Fonction qui affiche les monstres
+ * \param liste_monstre une liste de monstre
+ */
+extern void affiche_monstres(list * liste_monstre);
 
 
 #endif

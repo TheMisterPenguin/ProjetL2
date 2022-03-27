@@ -2,6 +2,7 @@
 #include <listes.h>
 #include <code_erreur.h>
 #include <personnage.h>
+#include <monstres.h>
 #include <math.h>
 #include <map.h>
 #include <definition_commun.h>
@@ -346,6 +347,25 @@ t_aff *next_frame_joueur(joueur_t *j)
         return textures[TEXT_MARCHER];
 }
 
+void affiche_monstres(list * liste_monstre){
+    monstre_t * monstre;
+
+    if(liste_vide(liste_monstre))
+        return;
+
+    en_tete(liste_monstre);
+    while(!hors_liste(liste_monstre)){
+        monstre = valeur_elt(liste_monstre);
+        if(/* !en dehors de l'écran*/){
+            action_monstre(monstre);
+            afficher_texture(monstre->texture ,rendu_principal);
+        }
+        suivant(liste_monstre);
+    }
+}
+
+
+
 err_t afficher_buffer(list *buffer, SDL_Renderer *rendu){
 
     if(liste_vide(buffer))
@@ -588,6 +608,7 @@ bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2){
 SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
    SDL_Color col = {r,g,b,a};
    return col;
+}
 
 int current_frame_x(t_aff * texture){
     return texture->frame_anim->x / LARGEUR_ENTITE;
