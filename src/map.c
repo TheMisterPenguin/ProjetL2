@@ -7,6 +7,8 @@
 #include <code_erreur.h>
 #include <math.h>
 
+t_map *map;
+
 bool bord_map(t_direction orientation){
     
 }

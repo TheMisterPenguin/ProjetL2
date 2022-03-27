@@ -21,14 +21,14 @@ OBJ_TEST_AFFICHAGE = $(addprefix $(ODIR), test_affichage.o affichage.o listes.o 
 OBJ_TEST_LISTES = $(addprefix $(ODIR), test_listes.o listes.o affichage.o personnage.o init_close.o)
 rm = rm -f
 
-default : makedir $(BINDIR)jeux.prog # Génération par défault
+default : $(BINDIR)jeux$(EXT) # Génération par défault
 
 all : makedir $(GEN) # Génération de tout les fichiers
 
 #programme principal
 
-$(BINDIR)jeux.prog : $(OBJ)
-	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS) 
+$(BINDIR)jeux$(EXT) : $(OBJ)
+	$(CC) $^ $(JSON-LIB-PATH) -o $@  $(LDFLAGS) 
 	
 # Compilation de tout les fichiers source
 

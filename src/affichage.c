@@ -19,6 +19,8 @@
 list *listeDeTextures; 
 list *buffer_affichage;
 
+long int compteur;
+unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 SDL_Rect tx,ty;
 
 float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépendent de la résolution */

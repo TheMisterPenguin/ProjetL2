@@ -1,4 +1,6 @@
-INCLUDE = $(addprefix -I , include SDL_win/include)
+INCLUDE = $(addprefix -I , include)
 GEN = jeux.exe # Executables
-LDFLAGS = -L SDL_win/lib -lmingw32 -lSDL2main -lSDL2# Options d'édition de liens. 
+LDFLAGS = -L lib_win -l json-c -lmingw32 -lSDL2main -lSDL2# Options d'édition de liens. 
 ODIRCMD = obj/
+EXT = .exe
+JSON-LIB-PATH = 
