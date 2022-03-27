@@ -3,6 +3,7 @@
 #include <personnage.h>
 #include <time.h>
 #include <stdlib.h>
+#include <map.h>
 #include <math.h>
 
 /**
@@ -15,8 +16,6 @@
  * \copyright Copyright (c) 2022
  * 
  */
-
-srand(time(NULL)); //initialisation des nombres aléatoires
 
 void detruire_monstre(monstre_t** monstre){
     free((**monstre).texture);
@@ -35,8 +34,9 @@ void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres){
     *liste_base_monstres = NULL;
 }
 
-monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, SDL_Rect collision){
+monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, position_t position){
     int i;
+    char * chemin_texture;
     base_monstre_t* base_monstre;
     /* allocation monstre_t*/
     monstre_t* monstre = malloc(sizeof(monstre_t));
@@ -44,10 +44,13 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_mo
     for(i=0; i<liste_base_monstre->nb_monstre; i++){
         if(strcmp(liste_base_monstre->tab[i]->nom_monstre,nom_monstre) == 0){
             monstre->type = nom_monstre_to_type_monstre(nom_monstre);
-            monstre->collision = collision; // ?
+            monstre->collision.x = position.x;
+            monstre->collision.y = position.y;
+            monstre->collision.w = base_monstre->hitbox.w * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+            monstre->collision.h = base_monstre->hitbox.h * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3);
 
             sprintf(chemin_texture, "%s/%s" , CHEMIN_TEXTURE, base_monstre->fichier_image);
-            monstre->texture = creer_texture(chemin_texture, LARGEUR_ENTITE, LONGUEUR_ENTITE, ?, ?, ?)
+            monstre->texture = creer_texture(chemin_texture, LARGEUR_ENTITE, LONGUEUR_ENTITE, -100, -100, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
 
             monstre->orientation = NORD;
             monstre->duree = 0;
@@ -66,7 +69,7 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_mo
     return NULL;
 }
 
-liste_base_monstres_t* charger_monstres(char* nom_fichier){
+void charger_monstres(char* nom_fichier){
     FILE* fichier = fopen(nom_fichier, "r");
     char tampon[30];
     int i;
@@ -108,6 +111,7 @@ liste_base_monstres_t* charger_monstres(char* nom_fichier){
             fscanf(fichier, "%d", &(base_monstre->attaque));
             fscanf(fichier, "%f", &(base_monstre->vitesse));
             fscanf(fichier, "%d", &(base_monstre->gainXp));
+            fscanf(fichier, "%d%d", &(base_monstre->hitbox.w), &(base_monstre->hitbox.h) );
             liste_base_monstres->tab[i++] = base_monstre; //inserrer monstre_t dans liste_base_monstre_t
         }
         fscanf(fichier, "%s", tampon);
@@ -146,11 +150,11 @@ int distance_joueur(monstre_t * monstre){
 }
 
 int distance_x_joeur(monstre_t * monstre){
-    return monstre->collision.x - perso_principal->zone_collision.x;
+    return monstre->collision.x - perso_principal->statut->zone_colision.x;
 }
 
 int distance_y_joeur(monstre_t * monstre){
-    return monstre->collision.y - perso_principal->zone_collision.y;
+    return monstre->collision.y - perso_principal->statut->zone_colision.y;
 }
 
 
