@@ -3,14 +3,8 @@
 #include <math.h>
 #include <map.h>
 
-SDL_Window *fenetre_Principale = NULL;
-SDL_Renderer *rendu_principal = NULL;
-bool running = vrai;
-long int compteur;
-t_map *map;
-unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 
-#define NB_FPS 30
+#define NB_FPS 60
 
 void afficher_intro(void){
     int i;
@@ -92,9 +86,7 @@ int main(int argc, char** argv)
         debut = SDL_GetPerformanceCounter();
         jeu_event();
         // en_tete(buffer_affichage);
-        //creer_sauvegarde_json(perso_principal);
-        if (perso_principal->statut->en_mouvement)
-        { /* Déplacement map */
+        if (perso_principal->statut->en_mouvement){ /* Déplacement map */
             switch (perso_principal->statut->orientation)
             {
             case NORD:
@@ -129,7 +121,9 @@ int main(int argc, char** argv)
         fin = SDL_GetPerformanceCounter();
 
         float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
-        SDL_Delay(floor((1000 / (float)60) - temps_passe));
+        SDL_Delay(floor((1000 / (float) NB_FPS) - temps_passe));
+        if(compteur == NB_FPS)
+            compteur = 0;
         compteur++;
     }
 }
