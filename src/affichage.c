@@ -26,27 +26,22 @@ float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépendent de l
 void * ajout_text_liste(void * t){return t;}
 
 void detruire_texture(t_aff **texture){
+    if(texture == NULL)
+        return;
+    
+    if((*texture)->aff_fenetre != NULL)
+        free((*texture)->aff_fenetre);
 
-    free((*texture)->aff_fenetre);
     if((*texture)->frame_anim != NULL)
         free((*texture)->frame_anim);
 
-    SDL_DestroyTexture((*texture)->texture);
+    // ne pas faire SDL_DestroyTexture (deja dans atexit(SDL_DestroyRenderer))
 
     free(*texture);
     *texture = NULL;
 }
 
 void detruire_liste_textures(t_l_aff **l_texture){
-    int i;
-    const unsigned int nb_val = (*l_texture)->nb_valeurs;
-
-    /* Destruction des textures */
-    for(i = 0; i < nb_val; i++){
-
-        if ((*l_texture)->liste[i] != NULL)
-            detruire_texture(&(*l_texture)->liste[i]);
-    }
 
     /* Destruction de la liste */
     free((*l_texture)->liste);
@@ -130,7 +125,11 @@ void def_texture_taille(t_aff * a_modifier, const int longueur, const int largeu
     a_modifier->aff_fenetre->h = largeur;
 }
 
-t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multpilicateur_taille){
+void info_texture(t_aff * texture){
+    printf("texture width: %d, height: %d\n", texture->width, texture->height);
+}
+
+t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multiplicateur_taille){
     SDL_Surface * chargement = NULL;
     t_aff *texture = NULL;
 
@@ -181,17 +180,17 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
     /* Création de la vue de la fenêtre */
     texture->aff_fenetre->x = x;
     texture->aff_fenetre->y = y;
-    if(multpilicateur_taille != 0){
+    if(multiplicateur_taille != 0){
         if (taille_t_x > -1 && taille_t_y > -1){
-            texture->aff_fenetre->h = (int)taille_t_y * multpilicateur_taille;
-            texture->aff_fenetre->w = (int)taille_t_x * multpilicateur_taille;
+            texture->aff_fenetre->h = (int)taille_t_y * multiplicateur_taille;
+            texture->aff_fenetre->w = (int)taille_t_x * multiplicateur_taille;
         }
         else {
-            texture->aff_fenetre->h = (int)texture->height * multpilicateur_taille;
-            texture->aff_fenetre->w = (int)texture->width * multpilicateur_taille;
+            texture->aff_fenetre->h = (int)texture->height * multiplicateur_taille;
+            texture->aff_fenetre->w = (int)texture->width * multiplicateur_taille;
         }
 
-        texture->multipli_taille = multpilicateur_taille;
+        texture->multipli_taille = multiplicateur_taille;
     }
     else{
         texture->aff_fenetre->h = FENETRE_LARGEUR;
@@ -200,8 +199,6 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
         texture->multipli_taille = (float)FENETRE_LONGUEUR / texture->width;
     }
         ajout_droit(listeDeTextures, texture);
-
-
 
         return texture;
     }

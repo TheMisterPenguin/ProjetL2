@@ -2,8 +2,8 @@
  * \file liste.h
  * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
  * \brief 
- * \version 1.0
- * \date 10/03/2022
+ * \version 2.0
+ * \date 27/03/2022
  * 
  * \copyright Copyright (c) 2022
  * 
@@ -33,7 +33,7 @@ typedef struct list list;
  * \param f_suppresion La fonction qui permet la suppresion des objets, NULL sinon
  * \return La liste qui vient d'être crée, NULL s'il y a eu une erreur
  */
-extern list *init_liste(void *(*fonction_ajout)(void *), void (*f_suppresion)(void *));
+extern list *init_liste(void *(*fonction_ajout)(void *), void (*f_suppresion)(void *), void (*fonction_affichage)(void *));
 
 /**
  * Fonction booléenne qui permet de savoir si la liste est vide.
@@ -142,4 +142,18 @@ extern unsigned int taille_liste(const list *const mylist);
  * \param mylist La liste que l'on veut vider
  */
 extern void vider_liste(list *mylist);
+
+/**
+ * \fn void detruire_liste(list ** liste)
+ * \brief Détruit une structure liste
+ * \param liste Adresse du pointeur sur la liste
+ */
+extern void detruire_liste(list ** liste);
+
+/**
+ * \fn void afficher_liste(list * liste)
+ * \brief Affiche une liste d'objets génériques
+ * \param liste Pointeur sur la liste
+ */
+void afficher_liste(list * liste);
 #endif

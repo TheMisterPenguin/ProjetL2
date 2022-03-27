@@ -86,12 +86,12 @@ static void init_rc_commun(void){
 void aff_cleanup(void)
 {
     running = faux;
-    vider_liste(buffer_affichage);
-    vider_liste(listeDeTextures);
+    detruire_liste(&buffer_affichage);
+    detruire_liste(&listeDeTextures);
 }
 
 void init_affichage(){
-    listeDeTextures = init_liste(ajout_text_liste, (void (*)(void *)) detruire_texture);
+    listeDeTextures = init_liste(ajout_text_liste, (void (*)(void *)) detruire_texture, (void (*)(void *))info_texture);
     SDL_Rect t1 = {.h = FENETRE_LARGEUR, .w = 16 * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3)};
     SDL_Rect t2 = {.w = FENETRE_LONGUEUR, .h = 16 * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3)};
     ty = t2;
@@ -101,7 +101,7 @@ void init_affichage(){
     multiplicateur_y = (float) FENETRE_LARGEUR / 1080;
 
     printf("multix : %f, multi_y %f\n", multiplicateur_x, multiplicateur_y);
-    buffer_affichage = init_liste(NULL,NULL);
+    buffer_affichage = init_liste(NULL,NULL,NULL);
     atexit(aff_cleanup);
 }
 

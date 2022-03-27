@@ -86,7 +86,7 @@ extern void detruire_liste_textures(t_l_aff **l_texture);
  */
 extern _Bool rect_correct_texture(const SDL_Rect *const to_verify, const int width, const int height);
 /**
- * \fn t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const int multpilicateur_taille)
+ * \fn t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const int multiplicateur_taille)
  * \brief Fonction qui renvoie, charge une texture et la prépare à se faire afficher
  *
  * \param nom_fichier Le nom du fichier contenant la texture
@@ -94,10 +94,10 @@ extern _Bool rect_correct_texture(const SDL_Rect *const to_verify, const int wid
  * \param taille_t_y La largeur de la texture à montrer
  * \param x La coordonnée x où afficher la texture à l'écran
  * \param y La coordonnée y où afficher la texture à l'écran
- * \param multpilicateur_taille Une valeur par laquelle multiplier la taille de la texture
+ * \param multiplicateur_taille Une valeur par laquelle multiplier la taille de la texture
  * \return t_aff* Une structure qui permet l'affichage de la texture à l'écran ou NULL s'il y a eu une érreur
  */
-extern t_aff *creer_texture(const char *nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multpilicateur_taille);
+extern t_aff *creer_texture(const char *nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multiplicateur_taille);
 
 /**
  * \brief Affiche la texture donnée en paramètre à l'écran
@@ -295,5 +295,12 @@ bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2);
  * \return SDL_Color une couleur SDL
  */
 SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
+
+/**
+ * \fn void info_texture(t_aff * texture)
+ * \brief Affiche des informations sur une texture
+ * \param texture la texture sur laquelle on se renseigne
+ */
+void info_texture(t_aff * texture);
 
 #endif

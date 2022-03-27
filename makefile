@@ -14,7 +14,11 @@ OBJ = $(addprefix $(ODIR), main.o init_close.o event.o monstres.o personnage.o a
 OBJ_TEST_MONSTRES = $(addprefix $(ODIR), test_monstres.o monstres.o)
 OBJ_TEST_MAP = $(addprefix $(ODIR), test_map.o map.o affichage.o init_close.o event.o listes.o personnage.o)
 OBJ_TEST_LISTE_OBJET = $(addprefix $(ODIR), test_liste_objet.o liste_objet.o objet.o affichage.o listes.o personnage.o)
-rm        = rm -f
+OBJ_TEST_INVENTAIRE = $(addprefix $(ODIR), test_inventaire.o inventaire.o liste_objet.o objet.o personnage.o affichage.o listes.o init_close.o)
+OBJ_TEST_PERSONNAGE = $(addprefix $(ODIR), test_personnage.o personnage.o affichage.o listes.o init_close.o)
+OBJ_TEST_AFFICHAGE = $(addprefix $(ODIR), test_affichage.o affichage.o listes.o init_close.o personnage.o)
+OBJ_TEST_LISTES = $(addprefix $(ODIR), test_listes.o listes.o affichage.o personnage.o init_close.o)
+rm = rm -f
 
 default : makedir $(BINDIR)jeux.prog # Génération par défault
 
@@ -39,6 +43,18 @@ $(BINDIR)test_monstres : $(OBJ_TEST_MONSTRES)
 	$(CC) $^ -o $@ $(LDFLAGS)
 
 $(BINDIR)test_liste_objet : $(OBJ_TEST_LISTE_OBJET)
+	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
+
+$(BINDIR)test_inventaire : $(OBJ_TEST_INVENTAIRE)
+	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
+
+$(BINDIR)test_personnage : $(OBJ_TEST_PERSONNAGE)
+	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
+
+$(BINDIR)test_affichage : $(OBJ_TEST_AFFICHAGE)
+	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
+
+$(BINDIR)test_listes : $(OBJ_TEST_LISTES)
 	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
 
 # Création de l'arboressence 

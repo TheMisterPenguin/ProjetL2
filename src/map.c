@@ -68,7 +68,7 @@ t_map * charger_s_map(char * buffer){
 
     fichier = json_tokener_parse(buffer);
     m = malloc(sizeof(t_map));
-    m->liste_monstres =  init_liste(NULL,NULL);
+    m->liste_monstres =  init_liste(NULL,NULL,NULL);
 
     json_object_object_get_ex(fichier, "file-path", &texture_map);
     json_object_object_get_ex(fichier, "width", &width);
