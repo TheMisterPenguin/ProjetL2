@@ -111,6 +111,7 @@ void init_affichage(){
  * \author Ange Despert
  */
 void init(){
+    srand(time(NULL)); //initialisation des nombres aléatoires
     init_SDL();
     atexit(fermer_SDL);
     init_rc_commun();
