@@ -36,5 +36,6 @@ int main(int argc, char **argv){
     }
 
     printf("OK\n");
+    fermer_programme(EXIT_SUCCESS);
     return 0;
 }

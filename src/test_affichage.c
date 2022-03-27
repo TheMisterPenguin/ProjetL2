@@ -11,6 +11,6 @@ int main(){
     init();
     text = creer_texture("ressources/background/logo.bmp", -1, -1, 0, 0, 0);
     
-    //atexit détruit le renderer et ses textures
+    fermer_programme(EXIT_SUCCESS);
     return 0;
 }

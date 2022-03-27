@@ -114,6 +114,7 @@ void ajout_droit(list *mylist, void * v){
         t->valeur = v;
     else
         t->valeur = mylist->ajout(v);
+
     t->pred = mylist->ec;
     t->succ = mylist->ec->succ;
     (mylist->ec->succ)->pred = t;
@@ -165,7 +166,7 @@ void afficher_liste(list * liste){
         en_tete(liste);
 
         while(!hors_liste(liste)){
-            liste->aff(liste->ec);
+            liste->aff(liste->ec->valeur);
             suivant(liste);
         }
     }

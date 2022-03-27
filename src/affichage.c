@@ -218,10 +218,10 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
 
         texture->multipli_taille = (float)FENETRE_LONGUEUR / texture->width;
     }
-        ajout_droit(listeDeTextures, texture);
+    ajout_droit(listeDeTextures, texture);
 
-        return texture;
-    }
+    return texture;
+}
 
 err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
     if(texture->frame_anim != NULL)

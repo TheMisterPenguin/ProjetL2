@@ -16,5 +16,6 @@ int main(){
     printf("----- Destruction de la liste d'objets -----\n\n");
     detruire_liste_objet(&liste_obj);
 
+    fermer_programme(EXIT_SUCCESS);
     return 0;
 }
