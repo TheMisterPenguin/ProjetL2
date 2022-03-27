@@ -127,7 +127,6 @@ void init_affichage(){
         free(msp);
         exit(ERREUR_LISTE);
     }
-    listeDeTextures = init_liste(ajout_text_liste, (void (*)(void *)) detruire_texture,;
     SDL_Rect t1 = {.h = FENETRE_LARGEUR, .w = 16 * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3)};
     SDL_Rect t2 = {.w = FENETRE_LONGUEUR, .h = 16 * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3)};
     ty = t2;
