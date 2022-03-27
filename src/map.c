@@ -7,9 +7,6 @@
 #include <code_erreur.h>
 #include <math.h>
 
-bool bord_map(t_direction orientation){
-    
-}
 
 SDL_Rect taille_ecran_cases(){
     SDL_Rect p;
