@@ -11,6 +11,9 @@
 #ifndef _WIN32
 	#include <pwd.h>
 	#include <unistd.h>
+#else
+	#include <direct.h>
+	#include <windows.h>
 #endif
 
 void copy(const byte * origin, byte *out, size_t size){
@@ -34,9 +37,15 @@ char save_path[500];
 void check_repertoire_jeux(){
 	struct stat stats;
 
+	#ifndef _WIN32
 	struct passwd *pw = getpwuid(getuid());
-
 	sprintf(save_path, "%s/%s", pw->pw_dir, SAVE_PATH); /* On récupère le répertoire home */
+	#else
+	char *home = getenv("HOMEPATH");
+	printf("%s\n", home);
+	sprintf(save_path, "%s\\AppData\\Local\\%s", home ,SAVE_PATH);
+	printf("%s\n", save_path);
+	#endif
 
 	stat(save_path, &stats);
 	if (S_ISDIR(stats.st_mode)){ /* Si le repertoire existe */
@@ -44,7 +53,12 @@ void check_repertoire_jeux(){
 		return;
 	}
 
-	int err = mkdir(save_path, S_IRWXU); /* On créer le répertoire */
+	/* On créer le répertoire */
+	#ifdef _WIN32
+		int err = mkdir(save_path);
+	#else
+		int err = mkdir(save_path, S_IRWXU);
+	#endif
 
 	printf("Création du répertoire de sauvegarde : %s\n", save_path);
 
@@ -85,7 +99,7 @@ void creer_sauvegarde_json(joueur_t *j){
 
 	/* Création des tableaux */
 	json_object *statut = json_object_new_object();
-	json_object *trigger = json_object_new_array_ext(TAILLE_TRIGGER);
+	json_object *trigger = json_object_new_array();
 
 	json_object *trigger_value;
 
