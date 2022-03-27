@@ -1,5 +1,5 @@
 INCLUDE = $(addprefix -I , include)
-GEN = $(addprefix $(BINDIR), jeux.prog test_map.bin test_listes.bin test_affichage.bin test_personnage.bin test_liste_objet.bin test_inventaire.bin) # Executables
+GEN = $(addsuffix .bin, $(addprefix $(BINDIR), jeux test_map test_listes test_affichage test_personnage test_liste_objet test_inventaire))
 LDFLAGS = -L lib -lSDL2 -l m# Options d'édition de liens. 
 ODIRCMD = obj/
 DIRMAKE = gen_dos.sh

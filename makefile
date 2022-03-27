@@ -10,15 +10,15 @@ CFLAGS =-Wall $(INCLUDE) # Options de compilation.
 ODIR = obj/# Répertoire des fichiers objets
 SRC = src/# Répertoire des fichiers sources
 BINDIR = bin/# Répertoire des exécutables
-ALLOBJ = $(addprefix $(ODIR), main.o init_close.o event.o monstres.o personnage.o affichage.o objet.o liste_objet.o listes.o map.o menus.o interface.o inventaire.o test_affichage.o test_inventaire.o test_liste_objet.o test_listes.o test_map.o test_monstre.o test_personnage.o)
-OBJ = $(addprefix $(ODIR), main.o init_close.o event.o monstres.o personnage.o affichage.o objet.o liste_objet.o listes.o map.o menus.o interface.o)
-OBJ_TEST_MONSTRES = $(addprefix $(ODIR), test_monstres.o monstres.o)
-OBJ_TEST_MAP = $(addprefix $(ODIR), test_map.o map.o affichage.o init_close.o event.o listes.o personnage.o menus.o)
-OBJ_TEST_LISTE_OBJET = $(addprefix $(ODIR), test_liste_objet.o liste_objet.o objet.o affichage.o listes.o personnage.o)
-OBJ_TEST_INVENTAIRE = $(addprefix $(ODIR), test_inventaire.o inventaire.o liste_objet.o objet.o personnage.o affichage.o listes.o init_close.o)
-OBJ_TEST_PERSONNAGE = $(addprefix $(ODIR), test_personnage.o personnage.o affichage.o listes.o init_close.o)
-OBJ_TEST_AFFICHAGE = $(addprefix $(ODIR), test_affichage.o affichage.o listes.o init_close.o personnage.o)
-OBJ_TEST_LISTES = $(addprefix $(ODIR), test_listes.o listes.o affichage.o personnage.o init_close.o)
+ALLOBJ = $(addsuffix .o, $(addprefix $(ODIR), main init_close event monstres personnage affichage objet liste_objet listes map menus interface inventaire test_affichage test_inventaire test_liste_objet test_listes test_map test_monstre test_personnage))
+OBJ = $(addsuffix .o, $(addprefix $(ODIR), main init_close event monstres personnage affichage objet liste_objet listes map menus interface))
+OBJ_TEST_MONSTRES = $(addsuffix .o, $(addprefix $(ODIR), test_monstres monstres))
+OBJ_TEST_MAP = $(addsuffix .o, $(addprefix $(ODIR), test_map map affichage init_close event listes personnage menus))
+OBJ_TEST_LISTE_OBJET = $(addsuffix .o, $(addprefix $(ODIR), test_liste_objet liste_objet objet affichage listes personnage))
+OBJ_TEST_INVENTAIRE = $(addsuffix .o, $(addprefix $(ODIR), test_inventaire inventaire liste_objet objet personnage affichage listes init_close))
+OBJ_TEST_PERSONNAGE = $(addsuffix .o, $(addprefix $(ODIR), test_personnage personnage affichage listes init_close))
+OBJ_TEST_AFFICHAGE = $(addsuffix .o, $(addprefix $(ODIR), test_affichage affichage listes init_close personnage))
+OBJ_TEST_LISTES = $(addsuffix .o, $(addprefix $(ODIR), test_listes listes affichage personnage init_close))
 rm = rm -f
 
 default : $(BINDIR)jeux$(EXT) # Génération par défault
@@ -38,25 +38,25 @@ $(ODIR)%.o : $(SRC)%.c
 # Génération des tests
 
 $(BINDIR)test_map.bin : $(OBJ_TEST_MAP)
-	$(CC) $^ -o $@  lib/libjson-c.a $(LDFLAGS)
+	$(CC) $^ -o $@  $(JSON-LIB-PATH) $(LDFLAGS)
 
 $(BINDIR)test_monstres.bin : $(OBJ_TEST_MONSTRES)
 	$(CC) $^ -o $@ $(LDFLAGS)
 
 $(BINDIR)test_liste_objet.bin : $(OBJ_TEST_LISTE_OBJET)
-	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
+	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
 
 $(BINDIR)test_inventaire.bin : $(OBJ_TEST_INVENTAIRE)
-	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
+	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
 
 $(BINDIR)test_personnage.bin : $(OBJ_TEST_PERSONNAGE)
-	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
+	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
 
 $(BINDIR)test_affichage.bin : $(OBJ_TEST_AFFICHAGE)
-	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
+	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
 
 $(BINDIR)test_listes.bin : $(OBJ_TEST_LISTES)
-	$(CC) $^ -o $@ lib/libjson-c.a $(LDFLAGS)
+	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
 
 # Création de l'arboressence 
 .PHONY: makedir

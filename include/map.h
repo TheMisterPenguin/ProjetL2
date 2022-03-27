@@ -23,6 +23,8 @@ typedef struct {
     int unite_dep_y; 
 }t_map;
 
+extern t_map *map;
+
 /**
  * \brief Fonction qui charge le contenu du fichier dont le nom est donné en paramètre dans un buffer de caractères
  *

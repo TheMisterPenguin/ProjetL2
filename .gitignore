@@ -50,6 +50,4 @@ share/
 lib/cmake
 lib/pkgconfig
 
-*.prog
-
 doc/out

@@ -144,11 +144,9 @@ void ajout_gauche(list *mylist, void * v){
 unsigned int taille_liste(const list * const mylist){return mylist->nb_elem;}
 
 void vider_liste(list *mylist){
-    unsigned int i;
-    int nb_elem = mylist->nb_elem;
 
     en_tete(mylist);
-    for(i = 0; i < nb_elem; i++){
+    while(!hors_liste(mylist)){
         oter_elt(mylist);
     }
 }
@@ -163,11 +161,15 @@ void detruire_liste(list ** liste){
 }
 
 void afficher_liste(list * liste){
+    if(liste->aff == NULL){
+        printf("Pas de fonction d'affichage pour cette liste\n");
+    }
+    else{
+        en_tete(liste);
 
-    en_tete(liste);
-
-    while(!hors_liste(liste)){
-        liste->aff(liste->ec);
-        suivant(liste);
+        while(!hors_liste(liste)){
+            liste->aff(liste->ec);
+            suivant(liste);
+        }
     }
 }

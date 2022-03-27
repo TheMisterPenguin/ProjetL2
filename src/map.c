@@ -7,6 +7,7 @@
 #include <code_erreur.h>
 #include <math.h>
 
+t_map *map;
 
 SDL_Rect taille_ecran_cases(){
     SDL_Rect p;
