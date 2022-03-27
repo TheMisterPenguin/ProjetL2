@@ -21,15 +21,30 @@
 static void keyDown(SDL_KeyboardEvent * ev){
     statut_t* statut = perso_principal->statut;
 
-    if (ev->keysym.sym == SDLK_ESCAPE)
-        exit(EXIT_SUCCESS);
+    if (ev->keysym.sym == SDLK_ESCAPE){ /* On affiche le menu de pause si on appuye sur echap */
+        SDL_ShowCursor(SDL_ENABLE);
+        afficher_menu_pause();
+    }
+        
     if(statut->action == RIEN || statut->action == CHARGER)
         switch(ev->keysym.sym){
+            case SDLK_DOWN :
             case TOUCHE_BAS : statut->orientation = SUD;  statut->en_mouvement = vrai; break;
+            case SDLK_UP :
             case TOUCHE_HAUT : statut->orientation = NORD;  statut->en_mouvement = vrai; break;
+            case SDLK_RIGHT :
             case TOUCHE_DROITE : statut->orientation = EST;  statut->en_mouvement = vrai; break;
+            case SDLK_LEFT :
             case TOUCHE_GAUCHE : statut->orientation = OUEST;  statut->en_mouvement = vrai; break;
-            /*case TOUCHE_TAB : ; break; A décommenter quand la texture inventaire sera faite */
+            case TOUCHE_TAB :
+                
+                break;
+            /*case TOUCHE_RETOUR : 
+            if(menus == PAUSE){
+                menus = JEU;
+            } else {
+                menus = PAUSE;
+            }; break; A décommenter quand la texture menu pause sera faite*/
         }
 }
 
@@ -42,8 +57,28 @@ static void keyDown(SDL_KeyboardEvent * ev){
 static void keyUp(SDL_KeyboardEvent * ev){
     t_direction orientation = perso_principal->statut->orientation;
 
-    if( (ev->keysym.sym == TOUCHE_BAS && orientation == SUD) || (ev->keysym.sym == TOUCHE_DROITE && orientation == EST) || (ev->keysym.sym == TOUCHE_GAUCHE && orientation == OUEST) || (ev->keysym.sym == TOUCHE_HAUT && orientation == NORD) )
-        perso_principal->statut->en_mouvement = faux;
+    switch(ev->keysym.sym){
+        case TOUCHE_BAS :
+        case SDLK_DOWN : 
+            if(orientation == SUD)
+                perso_principal->statut->en_mouvement = faux;
+            break;
+        case TOUCHE_HAUT :
+        case SDLK_UP :
+            if (orientation == NORD)
+                perso_principal->statut->en_mouvement = faux;
+            break;
+        case TOUCHE_DROITE :
+        case SDLK_RIGHT :
+            if (orientation == EST)
+                perso_principal->statut->en_mouvement = faux;
+            break;
+        case TOUCHE_GAUCHE :
+        case SDLK_LEFT :
+            if (orientation == OUEST)
+                perso_principal->statut->en_mouvement = faux;
+            break;
+    }
 }
 
 /**

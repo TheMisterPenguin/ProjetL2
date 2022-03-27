@@ -68,7 +68,7 @@ t_map * charger_s_map(char * buffer){
 
     fichier = json_tokener_parse(buffer);
     m = malloc(sizeof(t_map));
-    m->liste_monstres =  init_liste(NULL,NULL);
+    m->liste_monstres =  init_liste(NULL,NULL,NULL);
 
     json_object_object_get_ex(fichier, "file-path", &texture_map);
     json_object_object_get_ex(fichier, "width", &width);
@@ -84,6 +84,9 @@ t_map * charger_s_map(char * buffer){
         monstre = json_object_array_get_idx(tbl_monstre,i);
         /* Fonction qui permet de creer un monstre */
     }
+
+    m->unite_dep_x = floor(FENETRE_LONGUEUR / (float)m->text_map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
+    m->unite_dep_y = floor(FENETRE_LARGEUR / (float)m->text_map->height); /* Calcul en nombre de pixels d'une unité de déplacement */
 
     free(buffer);
     return m;

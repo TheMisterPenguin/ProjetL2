@@ -14,9 +14,11 @@ typedef struct list{
     unsigned int nb_elem;
     void * (*ajout)(void *);
     void (*del)(void *);
+    void (*aff)(void *);
 }list;
 
-list * init_liste(void *(*fonction_ajout)(void *), void (*fonction_suppresion)(void *)){
+list * init_liste(void *(*fonction_ajout)(void *), void (*fonction_suppresion)(void *),
+    void (*fonction_affichage)(void *)){
     if(fonction_ajout == NULL)
         if(fonction_suppresion != NULL)
             return NULL;
@@ -32,6 +34,7 @@ list * init_liste(void *(*fonction_ajout)(void *), void (*fonction_suppresion)(v
     new->nb_elem = 0;
     new->ajout = fonction_ajout;
     new->del = fonction_suppresion;
+    new->aff = fonction_affichage;
 
     return new;
 }
@@ -89,15 +92,21 @@ void oter_elt(list *mylist){
     if (!hors_liste(mylist))
     {
         t = mylist->ec;
-        precedent(mylist);
-        mylist->ec->succ = t->succ;
-        (t->succ)->pred = mylist->ec;
-        if(mylist->del == NULL)
-            free(t);
-        else
-            mylist->del(&t);
+        suivant(mylist);
+        mylist->ec->pred = t->pred;
+        t->pred->succ = mylist->ec;
+        if(mylist->del == NULL){
+            free(t->valeur);
+        }
+        else{
+            mylist->del(&t->valeur);
+        }
         (mylist->nb_elem)--;
+
+        free(t);
     }
+    else
+        printf("hors liste\n");
 }
 
 void ajout_droit(list *mylist, void * v){
@@ -135,8 +144,30 @@ void ajout_gauche(list *mylist, void * v){
 unsigned int taille_liste(const list * const mylist){return mylist->nb_elem;}
 
 void vider_liste(list *mylist){
+    unsigned int i;
+    int nb_elem = mylist->nb_elem;
+
     en_tete(mylist);
-    for(unsigned int i = 0; i < mylist->nb_elem; i++){
+    for(i = 0; i < nb_elem; i++){
         oter_elt(mylist);
+    }
+}
+
+void detruire_liste(list ** liste){
+    vider_liste(*liste);
+
+    free((*liste)->flag);
+
+    free(*liste);
+    *liste = NULL;
+}
+
+void afficher_liste(list * liste){
+
+    en_tete(liste);
+
+    while(!hors_liste(liste)){
+        liste->aff(liste->ec);
+        suivant(liste);
     }
 }

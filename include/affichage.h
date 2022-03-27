@@ -14,6 +14,8 @@
 #include "SDL2/SDL.h"
 #include "definition_commun.h"
 #include "listes.h"
+#include "map.h"
+#include "personnage.h"
 
 typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TEXT_MARCHER_BOUCLIER}t_texture_perso;
 
@@ -41,6 +43,7 @@ typedef struct s_aff
     int width;
     int height;
     float multipli_taille; /**<Sauvegarde du multiplicateur de taille de la texture*/
+    unsigned int duree_frame_anim;
 } t_aff;
 /**
  * \brief Structure contenant la liste des textures créées par le programme
@@ -55,6 +58,8 @@ typedef struct s_l_aff{
 extern list *listeDeTextures;
 extern list *buffer_affichage; /*<Buffer contenant toutes les textures à afficher */
 extern long int compteur;      /*compteur utilisé pour gérer la vitesse d'affichage (fps)*/
+extern SDL_Rect tx, ty;
+extern float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépendent de la résolution */
 
 /* Définition des fonctions */
 
@@ -81,7 +86,7 @@ extern void detruire_liste_textures(t_l_aff **l_texture);
  */
 extern _Bool rect_correct_texture(const SDL_Rect *const to_verify, const int width, const int height);
 /**
- * \fn t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const int multpilicateur_taille)
+ * \fn t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const int multiplicateur_taille)
  * \brief Fonction qui renvoie, charge une texture et la prépare à se faire afficher
  *
  * \param nom_fichier Le nom du fichier contenant la texture
@@ -89,10 +94,10 @@ extern _Bool rect_correct_texture(const SDL_Rect *const to_verify, const int wid
  * \param taille_t_y La largeur de la texture à montrer
  * \param x La coordonnée x où afficher la texture à l'écran
  * \param y La coordonnée y où afficher la texture à l'écran
- * \param multpilicateur_taille Une valeur par laquelle multiplier la taille de la texture
+ * \param multiplicateur_taille Une valeur par laquelle multiplier la taille de la texture
  * \return t_aff* Une structure qui permet l'affichage de la texture à l'écran ou NULL s'il y a eu une érreur
  */
-extern t_aff *creer_texture(const char *nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multpilicateur_taille);
+extern t_aff *creer_texture(const char *nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multiplicateur_taille);
 
 /**
  * \brief Affiche la texture donnée en paramètre à l'écran
@@ -102,32 +107,6 @@ extern t_aff *creer_texture(const char *nom_fichier, const int taille_t_x, const
  * \return 0 s'il n'y a pas eu d'erreur
  */
 extern err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu);
-
-/**
- * \fn t_l_aff* init_textures_joueur()
- * \brief Fonction qui creer et renvoie une liste de textures pour le personnage (joueur)
- * \author Antoine Bruneau
- * \return t_l_aff* Une liste de textures
- */
-extern t_l_aff* init_textures_joueur();
-
-/**
- * \fn t_aff* init_texture_joueur(t_l_aff* textures_joueur)
- * \brief Fonction qui renvoie la texture de départ du personnage (joueur)
- * \author Antoine Bruneau
- * \param t_l_aff* la liste de textures personnage
- * \return t_aff* Une textures personnage
- */
-extern t_aff* init_texture_joueur(t_l_aff* textures_joueur);
-
-/**
- * \fn t_aff * next_frame_joueur(t_l_aff* textures_joueur);
- * \brief Fonction qui modifie et renvoie une textures en fonction des évênements (clics, touches claviers). Cette texture renvoyée sera par la suite affichée.
- * \author Antoine Bruneau
- * \param t_l_aff* un structure contenant un tableau de textures joueur
- * \return t_aff* Une texture joueur
- */
-extern t_aff * next_frame_joueur(t_l_aff* textures_joueur);
 
 /**
  * \fn void next_frame_y(t_aff *texture);
@@ -176,7 +155,7 @@ void *ajout_text_liste(void *t);
  * \param rendu Le rendu sur lequel on veut afficher ces textures
  * \return Une valeur différente à 0 lors d'une erreur
  */
-err_t afficher_buffer(const list *const buffer, SDL_Renderer *rendu);
+extern err_t afficher_buffer(list *buffer, SDL_Renderer *rendu);
 
 /**
  * Déplacez la texture pour que son centre soit au centre de l'écran
@@ -187,6 +166,8 @@ err_t afficher_buffer(const list *const buffer, SDL_Renderer *rendu);
  */
 void deplacer_texture_centre(t_aff *texture, int x, int y);
 
+extern void deplacer_rect_origine(SDL_Rect *r, int x, int y);
+
 /**
  * Déplacez l'origine de la texture aux coordonnées données.
  *
@@ -195,6 +176,8 @@ void deplacer_texture_centre(t_aff *texture, int x, int y);
  * @param y La coordonnée y de l'origine de la texture.
  */
 void deplacer_texture_origine(t_aff *texture, int x, int y);
+
+void deplacer_rect_haut_droit(SDL_Rect *r, int x, int y);
 
 /**
  * La texture est déplacée vers la droite et vers le haut
@@ -238,7 +221,33 @@ void modif_affichage_rect(t_aff *texture, SDL_Rect r);
  * \param pers La texture du personnage elle même
  * \param x Le nombre d'unités de déplacements
  */
-void deplacement_x_pers(t_aff *map, t_aff *pers, int x);
+void deplacement_x_pers(t_map *m, joueur_t *j, int x);
+
+/**
+ * \fn t_l_aff* init_textures_joueur()
+ * \brief Fonction qui creer et renvoie une liste de textures pour le personnage (joueur)
+ * \author Antoine Bruneau
+ * \return t_l_aff* Une liste de textures
+ */
+extern t_l_aff *init_textures_joueur(joueur_t *j);
+
+/**
+ * \fn t_aff* init_texture_joueur(t_l_aff* textures_joueur)
+ * \brief Fonction qui renvoie la texture de départ du personnage (joueur)
+ * \author Antoine Bruneau
+ * \param t_l_aff* la liste de textures personnage
+ * \return t_aff* Une textures personnage
+ */
+extern t_aff *init_texture_joueur(t_l_aff *textures_joueur);
+
+/**
+ * \fn t_aff * next_frame_joueur(t_l_aff* textures_joueur);
+ * \brief Fonction qui modifie et renvoie une textures en fonction des évênements (clics, touches claviers). Cette texture renvoyée sera par la suite affichée.
+ * \author Antoine Bruneau
+ * \param t_l_aff* un structure contenant un tableau de textures joueur
+ * \return t_aff* Une texture joueur
+ */
+extern t_aff *next_frame_joueur(joueur_t *j);
 
 /**
  * Permet de déplacer le personnage de y unités sur la map
@@ -247,7 +256,7 @@ void deplacement_x_pers(t_aff *map, t_aff *pers, int x);
  * \param pers La texture du personnage elle même
  * \param y Le nombre d'unités de déplacements
  */
-void deplacement_y_pers(t_aff *map, t_aff *pers, int y);
+void deplacement_y_pers(t_map *m, joueur_t *j, int y);
 
 /**
  * Fonction qui permet de définir exactement la taille de la texture à affichar sur l'écran
@@ -266,6 +275,33 @@ void def_texture_taille(t_aff *a_modifier, const int longueur, const int largeur
  */
 void text_copier_position(t_aff *a_modifier, const t_aff *const original);
 
+void rect_centre_x(SDL_Rect *rectangle);
+
+void rect_centre_y(SDL_Rect *rectangle);
+
+void rect_centre(SDL_Rect *rectangle);
+
+bool rects_egal_x(const SDL_Rect *const r1, SDL_Rect const *const r2);
+
+bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2);
+
+/**
+ * \fn SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+ * \brief Fonction qui permet de choisir une couleur SDL
+ * \param r niveau de rouge
+ * \param g niveau de vert
+ * \param b niveau de bleu
+ * \param a niveau d'opacité
+ * \return SDL_Color une couleur SDL
+ */
+extern SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
+
+/**
+ * \fn void info_texture(t_aff * texture)
+ * \brief Affiche des informations sur une texture
+ * \param texture la texture sur laquelle on se renseigne
+ */
+extern void info_texture(t_aff * texture);
 
 /**
 * \fn extern int current_frame_x(t_aff * texture);
@@ -284,8 +320,6 @@ extern int current_frame_x(t_aff * texture);
  * \return un entier correspondant à l'indice
  */
 extern int current_frame_y(t_aff * texture);
-
-
 
 
 #endif
