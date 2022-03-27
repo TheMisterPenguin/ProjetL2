@@ -1,0 +1,13 @@
+digraph "joueur_s"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="joueur_s",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" textures_joueur" ,fontname="Helvetica"];
+  Node2 [label="s_l_aff",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d62/structs__l__aff.html",tooltip="Structure contenant la liste des textures créées par le programme."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" liste" ,fontname="Helvetica"];
+  Node3 [label="s_aff",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d5b/structs__aff.html",tooltip="Structure qui permet l'affichage d'une texture à l'écran de manière précise."];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" statut" ,fontname="Helvetica"];
+  Node4 [label="statut_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d33/structstatut__s.html",tooltip=" "];
+}

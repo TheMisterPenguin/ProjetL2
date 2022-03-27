@@ -1,0 +1,101 @@
+\hypertarget{map_8c}{}\doxysection{Référence du fichier map.\+c}
+\label{map_8c}\index{map.c@{map.c}}
+{\ttfamily \#include $<$json-\/c/json.\+h$>$}\newline
+{\ttfamily \#include $<$affichage.\+h$>$}\newline
+{\ttfamily \#include $<$map.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$code\+\_\+erreur.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Graphe des dépendances par inclusion de map.\+c\+:
+% FIG 0
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{map_8c_a7ea38c5f7f7daf29e01fbc3a4d560a0a_a7ea38c5f7f7daf29e01fbc3a4d560a0a}{taille\+\_\+ecran\+\_\+cases}} ()
+\item 
+char $\ast$ \mbox{\hyperlink{map_8c_a7c30bc495bad0cbcfe07c02d01d636a2_a7c30bc495bad0cbcfe07c02d01d636a2}{charger\+\_\+f\+\_\+map}} (const char $\ast$const nom\+\_\+map)
+\begin{DoxyCompactList}\small\item\em Fonction qui charge le contenu du fichier dont le nom est donné en paramètre dans un buffer de caractères. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$ \mbox{\hyperlink{map_8c_ab600cf609ed952e35c2bd6dae616313d_ab600cf609ed952e35c2bd6dae616313d}{charger\+\_\+s\+\_\+map}} (char $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Fonction qui récupère les informations stockées dans le buffer en entrée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$ \mbox{\hyperlink{map_8c_abd78a434afc7dae4de6de6e0b879ccb8_abd78a434afc7dae4de6de6e0b879ccb8}{texture\+\_\+map}} (const \mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
+\begin{DoxyCompactList}\small\item\em Fonction qui renvoie la texture de la map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$ \mbox{\hyperlink{map_8c_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{map_8c_a7c30bc495bad0cbcfe07c02d01d636a2_a7c30bc495bad0cbcfe07c02d01d636a2}\label{map_8c_a7c30bc495bad0cbcfe07c02d01d636a2_a7c30bc495bad0cbcfe07c02d01d636a2}} 
+\index{map.c@{map.c}!charger\_f\_map@{charger\_f\_map}}
+\index{charger\_f\_map@{charger\_f\_map}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{charger\_f\_map()}{charger\_f\_map()}}
+{\footnotesize\ttfamily char$\ast$ charger\+\_\+f\+\_\+map (\begin{DoxyParamCaption}\item[{const char $\ast$const}]{nom\+\_\+map }\end{DoxyParamCaption})}
+
+
+
+Fonction qui charge le contenu du fichier dont le nom est donné en paramètre dans un buffer de caractères. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\+\_\+map} & Le nom du fichier map à charger \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un buffer de caractères contenant l\textquotesingle{}intégralité du fichier 
+\end{DoxyReturn}
+\mbox{\Hypertarget{map_8c_ab600cf609ed952e35c2bd6dae616313d_ab600cf609ed952e35c2bd6dae616313d}\label{map_8c_ab600cf609ed952e35c2bd6dae616313d_ab600cf609ed952e35c2bd6dae616313d}} 
+\index{map.c@{map.c}!charger\_s\_map@{charger\_s\_map}}
+\index{charger\_s\_map@{charger\_s\_map}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{charger\_s\_map()}{charger\_s\_map()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structt__map}{t\+\_\+map}}$\ast$ charger\+\_\+s\+\_\+map (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Fonction qui récupère les informations stockées dans le buffer en entrée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em buffer} & Le buffeur qui contient les informations \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Une map initialisée avec toutes les informations dedans; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{map_8c_a7ea38c5f7f7daf29e01fbc3a4d560a0a_a7ea38c5f7f7daf29e01fbc3a4d560a0a}\label{map_8c_a7ea38c5f7f7daf29e01fbc3a4d560a0a_a7ea38c5f7f7daf29e01fbc3a4d560a0a}} 
+\index{map.c@{map.c}!taille\_ecran\_cases@{taille\_ecran\_cases}}
+\index{taille\_ecran\_cases@{taille\_ecran\_cases}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{taille\_ecran\_cases()}{taille\_ecran\_cases()}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Rect taille\+\_\+ecran\+\_\+cases (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{map_8c_abd78a434afc7dae4de6de6e0b879ccb8_abd78a434afc7dae4de6de6e0b879ccb8}\label{map_8c_abd78a434afc7dae4de6de6e0b879ccb8_abd78a434afc7dae4de6de6e0b879ccb8}} 
+\index{map.c@{map.c}!texture\_map@{texture\_map}}
+\index{texture\_map@{texture\_map}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{texture\_map()}{texture\_map()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}}$\ast$ texture\+\_\+map (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$}]{map }\end{DoxyParamCaption})}
+
+
+
+Fonction qui renvoie la texture de la map. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em map} & La map dont on veut la texture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La texture de la map 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\Hypertarget{map_8c_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}\label{map_8c_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}} 
+\index{map.c@{map.c}!map@{map}}
+\index{map@{map}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structt__map}{t\+\_\+map}}$\ast$ map}
+
+La map courante 
