@@ -37,7 +37,7 @@ void detruire_texture(t_aff **texture){
     if((*texture)->frame_anim != NULL)
         free((*texture)->frame_anim);
 
-    // ne pas faire SDL_DestroyTexture (deja dans atexit(SDL_DestroyRenderer))
+    // ne pas faire SDL_DestroyTexture (deja dans f_close(SDL_DestroyRenderer))
 
     free(*texture);
     *texture = NULL;
