@@ -19,7 +19,7 @@ OBJ_TEST_INVENTAIRE = $(addsuffix .o, $(addprefix $(ODIR), test_inventaire inven
 OBJ_TEST_PERSONNAGE = $(addsuffix .o, $(addprefix $(ODIR), test_personnage personnage affichage listes init_close))
 OBJ_TEST_AFFICHAGE = $(addsuffix .o, $(addprefix $(ODIR), test_affichage affichage listes init_close personnage))
 OBJ_TEST_LISTES = $(addsuffix .o, $(addprefix $(ODIR), test_listes listes affichage personnage init_close))
-rm = rm -f
+
 
 default : $(BINDIR)jeux$(EXT) # Génération par défault
 
@@ -33,7 +33,7 @@ $(BINDIR)jeux$(EXT) : $(OBJ)
 # Compilation de tout les fichiers source
 
 $(ODIR)%.o : $(SRC)%.c
-	$(CC) $(CFLAGS) -o $@ -c $< -g
+	$(CC) $(CFLAGS) -o $@ -c $< -g -D __LOG
 
 # Génération des tests
 
@@ -67,7 +67,7 @@ makedir :
 
 .PHONY: clean
 clean:
-	@$(rm) $(ALLOBJ)
+	@$(rm) 
 	@echo "Cleanup complete!"
 
 .PHONY: mrproper
