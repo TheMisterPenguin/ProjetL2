@@ -19,6 +19,7 @@
 
 typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TEXT_MARCHER_BOUCLIER}t_texture_perso;
 
+#define NB_FPS 60
 #define NB_SPRITE_JOUEUR 5
 //fichiers images personnage
 #define N_T_MARCHER "ressources/sprite/marcher.bmp"

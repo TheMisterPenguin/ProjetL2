@@ -4,8 +4,6 @@
 #include <map.h>
 
 
-#define NB_FPS 60
-
 void afficher_intro(void){
     int i;
     
