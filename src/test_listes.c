@@ -31,5 +31,7 @@ int main(){
     printf("----- destruction d'une liste vide -----\n\n");
     detruire_liste(&liste_int);
 
+    fermer_programme(EXIT_SUCCESS);
+
     return 0;
 }
