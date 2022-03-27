@@ -16,10 +16,13 @@ int main(int argc, char **argv){
     SDL_Event e;
     init();
 
+    printf("----- Analyse du fichier json -----\n");
     char * fichier_map = charger_f_map("map.json");
+
+    printf("----- Création de texture map et traitement des informations json -----\n");
     t_map *test_map = charger_s_map(fichier_map);
+
     t_aff *text = texture_map(test_map);
-        free(fichier_map);
 
     while (vrai){
         if (!text)
@@ -35,5 +38,6 @@ int main(int argc, char **argv){
             exit(EXIT_SUCCESS);
     }
 
+    printf("OK\n");
     return 0;
 }
