@@ -31,7 +31,7 @@ char * charger_f_map(const char * const nom_map){
     fp = fopen(nom_map,"r");
     if(! fp){
         fprintf(stderr, "Erreur : impossible de charge la map, fichier \"%s\" introuvable !\n", nom_map);
-        exit(EXIT_FAILURE);
+        fermer_programme(EXIT_FAILURE);
     }
 
     fseek(fp, (long)0, SEEK_END); /* On parcourt le fichier afin de connaitre sa taille */
@@ -40,7 +40,7 @@ char * charger_f_map(const char * const nom_map){
     file_buffer = calloc((taille_fichier) + 1, sizeof(char)); /* On alloue d'ynamiquement en fonction de la taille du fichier */
     if(!file_buffer){
         fprintf(stderr, "Erreur : plus de mémoire disponible !\n");
-        exit(OUT_OF_MEM);
+        fermer_programme(OUT_OF_MEM);
     }
 
     rewind(fp); /* On revient au début du fichier */

@@ -67,13 +67,13 @@ void check_repertoire_jeux(){
 		{
 		case EACCES:
 			printf("Le dossier parent n'autorise pas l'écriture\n");
-			exit(EXIT_FAILURE);
+			fermer_programme(EXIT_FAILURE);
 		case ENOENT :
 			printf("Le dossier spécifié est introuvable !\n");
-			exit(EXIT_FAILURE);
+			fermer_programme(EXIT_FAILURE);
 		default:
 			perror("mkdir");
-			exit(EXIT_FAILURE);
+			fermer_programme(EXIT_FAILURE);
 		}
 	}
 }
@@ -136,7 +136,7 @@ void creer_sauvegarde_json(joueur_t *j){
 
 	if(!sauv){
 		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur lors de la sauvegarde", "Imposible de créer le fichier de la sauvegarde \n", NULL);
-		exit(ERREUR_FICHIER);
+		fermer_programme(ERREUR_FICHIER);
 	}
 
 	const char * json = json_object_to_json_string(sauvegarde);
@@ -260,7 +260,7 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 
 	if(!trigger_tab){
 		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur lors du chargement de la sauvegarde", "Plus assez de mémoire !\n", NULL);
-		exit(OUT_OF_MEM);
+		fermer_programme(OUT_OF_MEM);
 	}
 
 	json_object *element_trig;

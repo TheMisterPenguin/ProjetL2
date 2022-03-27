@@ -16,6 +16,23 @@ SDL_Window *fenetre_sous_rendu = NULL;
 SDL_Renderer *sous_rendu = NULL;
 bool running = vrai;
 
+
+list *f_close = NULL; /**< Liste des fonctions à appeler lors de la fermeture du programme*/
+
+void fermer_programme(int code_erreur){
+    en_queue(f_close);
+
+    while(!hors_liste(f_close)){
+        void (*fonction)(void) =  valeur_elt(f_close);
+        fonction();
+        precedent(f_close);
+    }
+
+    detruire_liste(&f_close);
+
+    exit(code_erreur);
+}
+
 /**
  * \fn void fermer_SDL(void);
  * \brief Fonction qui détruit la fenêtre principale et ferme la SDL
@@ -51,7 +68,7 @@ static void init_SDL(){
         SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
 
         free(msp);
-        exit(SDL_ERREUR);
+        fermer_programme(SDL_ERREUR);
     }
 
     printf("SDL initialisée !\n");
@@ -66,7 +83,7 @@ static void init_SDL(){
         SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
 
         free(msp);
-        exit(SDL_ERREUR);
+        fermer_programme(SDL_ERREUR);
     }
 
     FENETRE_LONGUEUR = m.w; // On récupère la largeur de l'écran
@@ -87,7 +104,7 @@ static void init_SDL(){
         SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
 
         free(msp);
-        exit(SDL_ERREUR);
+        fermer_programme(SDL_ERREUR);
     }
 
     printf("Fenêtre crée !\n");
@@ -102,7 +119,7 @@ static void init_rc_commun(void){
         SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
         free(msp);
         SDL_DestroyWindow(fenetre_Principale);
-        exit(SDL_ERREUR);
+        fermer_programme(SDL_ERREUR);
     }
 
 }
@@ -125,7 +142,7 @@ void init_affichage(){
         sprintf(msp, "Erreur lors de l'initialisation de la liste de textures : %s\n Erreur : 0x%X\n", SDL_GetError(), ERREUR_LISTE);
         SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
         free(msp);
-        exit(ERREUR_LISTE);
+        fermer_programme(ERREUR_LISTE);
     }
     SDL_Rect t1 = {.h = FENETRE_LARGEUR, .w = 16 * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3)};
     SDL_Rect t2 = {.w = FENETRE_LONGUEUR, .h = 16 * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3)};
@@ -137,7 +154,6 @@ void init_affichage(){
 
     printf("multix : %f, multi_y %f\n", multiplicateur_x, multiplicateur_y);
     buffer_affichage = init_liste(NULL,NULL,NULL);
-    atexit(aff_cleanup);
 }
 
 SDL_Texture* init_sousbuffer(t_map *map){
@@ -153,7 +169,7 @@ SDL_Texture* init_sousbuffer(t_map *map){
         sprintf(msp, "Erreur lors de la création du sous rendu: %s\n Erreur : 0x%X\n", SDL_GetError(), SDL_ERREUR);
         SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
         free(msp);
-        exit(SDL_ERREUR);
+        fermer_programme(SDL_ERREUR);
     }
 
     SDL_Texture *sous_buffer = SDL_CreateTexture(rendu_principal,
@@ -166,7 +182,7 @@ SDL_Texture* init_sousbuffer(t_map *map){
         sprintf(msp, "Erreur lors de la création du sous buffer : %s\n Erreur : 0x%X\n", SDL_GetError(), SDL_ERREUR);
         SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
         free(msp);
-        exit(SDL_ERREUR);
+        fermer_programme(SDL_ERREUR);
     }
     return sous_buffer;
 }
@@ -177,10 +193,28 @@ SDL_Texture* init_sousbuffer(t_map *map){
  * \author Ange Despert
  */
 void init(){
+
+    f_close = init_liste(NULL, NULL, NULL); 
+
+    if(!f_close){
+        char *msp = malloc(sizeof(char) * (500));
+        sprintf(msp, "Erreur lors de l'initialisation de la liste de fermeture : %s\n Erreur : 0x%X\n", SDL_GetError(), ERREUR_LISTE);
+        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+        free(msp);
+        exit(ERREUR_LISTE);
+    }
+
     init_SDL();
-    atexit(fermer_SDL);
+
+    ajout_droit(f_close, fermer_SDL); 
+
     init_rc_commun();
-    atexit(detruire_renderer);
-    SDL_ShowCursor(SDL_DISABLE);
+
+    ajout_droit(f_close, detruire_renderer); //Ajout de la fonction de destruction du rendu principal
+
+    SDL_ShowCursor(SDL_DISABLE); // On cache le curseur
+
     init_affichage();
+
+    ajout_droit(f_close, aff_cleanup); //Ajout de la fonction de destruction de l'affichage
 }

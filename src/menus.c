@@ -54,7 +54,7 @@ void afficher_menu_pause(){
             {
             case SDL_QUIT:
                 printf("Détection de la fermeture de la fenêtre\n");
-                exit(EXIT_SUCCESS);
+                fermer_programme(EXIT_SUCCESS);
             case SDL_KEYDOWN:
                 if (lastEvent.key.keysym.sym == SDLK_ESCAPE)
                     return;
@@ -68,7 +68,7 @@ void afficher_menu_pause(){
                 if(SDL_PointInRect(&coord_souris, &boutton_reprendre))
                     return;
                 if(SDL_PointInRect(&coord_souris, &boutton_quitter))
-                    exit(0);
+                    fermer_programme(0);
                 if (SDL_PointInRect(&coord_souris, &boutton_sauvegarder)){
                     creer_sauvegarde_json(perso_principal);
                     SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "Sauvegarde", "La sauvegarde a été effectuée avec succès\n", NULL);

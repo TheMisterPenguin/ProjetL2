@@ -25,7 +25,9 @@ static void keyDown(SDL_KeyboardEvent * ev){
         SDL_ShowCursor(SDL_ENABLE);
         afficher_menu_pause();
     }
-        
+
+    int flags;
+
     if(statut->action == RIEN || statut->action == CHARGER)
         switch(ev->keysym.sym){
             case SDLK_DOWN :
@@ -38,6 +40,33 @@ static void keyDown(SDL_KeyboardEvent * ev){
             case TOUCHE_GAUCHE : statut->orientation = OUEST;  statut->en_mouvement = vrai; break;
             case TOUCHE_TAB :
                 
+                break;
+            case SDLK_F11 :
+                flags = SDL_GetWindowFlags(fenetre_Principale);
+
+                if(flags & SDL_WINDOW_FULLSCREEN_DESKTOP){
+                    if(SDL_SetWindowFullscreen(fenetre_Principale, 0)){
+                        char *msp = malloc(sizeof(char) * (500));
+
+                        sprintf(msp, "Erreur lors du changement d'état de la fenêtre : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_WINDOW);
+                        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+                        free(msp);
+                        fermer_programme(ERREUR_SDL_WINDOW);
+                    }
+
+                }
+                else{
+                    if(SDL_SetWindowFullscreen(fenetre_Principale, SDL_WINDOW_FULLSCREEN)){
+                        char *msp = malloc(sizeof(char) * (500));
+
+                        sprintf(msp, "Erreur lors du changement d'état de la fenêtre : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_WINDOW);
+                        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+                        free(msp);
+                        fermer_programme(ERREUR_SDL_WINDOW);
+                    }
+                }
                 break;
             /*case TOUCHE_RETOUR : 
             if(menus == PAUSE){
@@ -149,7 +178,7 @@ bool logo_passer(void){
         switch (lastEvent.type){
         case SDL_QUIT:
             printf("Détection de la fermeture de la fenêtre\n");
-            exit(EXIT_SUCCESS);
+            fermer_programme(EXIT_SUCCESS);
         case SDL_KEYDOWN:
             return vrai;
         }

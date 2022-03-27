@@ -72,7 +72,7 @@ int main(int argc, char** argv)
     /*test de l'allocation des textures*/
     for (i = 0; i < perso_principal->textures_joueur->nb_valeurs; i++)
         if (perso_principal->textures_joueur->liste == NULL)
-            exit(EXIT_FAILURE);
+            fermer_programme(EXIT_FAILURE);
 
     rect_centre_x(&tx);
     rect_centre_y(&ty);
