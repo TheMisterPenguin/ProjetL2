@@ -10,4 +10,5 @@ extern menus_t menus;
 //extern void afficher_menu(menus_t * menu);
 
 extern void afficher_menu_pause();
+extern void afficher_inventaire();
 #endif

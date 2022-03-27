@@ -39,7 +39,7 @@ static void keyDown(SDL_KeyboardEvent * ev){
             case SDLK_LEFT :
             case TOUCHE_GAUCHE : statut->orientation = OUEST;  statut->en_mouvement = vrai; break;
             case TOUCHE_TAB :
-                
+                afficher_inventaire();
                 break;
             case SDLK_F11 :
                 flags = SDL_GetWindowFlags(fenetre_Principale);
