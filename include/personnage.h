@@ -50,9 +50,12 @@ typedef struct joueur_s {
 	/** TODO : créer un type énuméré map*/
 	int maxPdv;
 	int pdv;
-	int attaque; /**<attaque du joueur*/
-    int defense; /**<defense du joueur*/
-    int vitesse; /**<vitesse de déplacement du joueur*/
+	int attaque; /**<attaque de base du joueur*/
+    int defense; /**<defense de base du joueur*/
+    int vitesse; /**<vitesse de déplacement de base du joueur*/
+    int attaque_actif; /**<attaque du joueur avec bonus d'equipement*/
+    int defense_actif; /**<defense du joueur avec bonus d'equipement*/
+    int vitesse_actif; /**<vitesse du joueur avec bonus d'equipement*/
 	statut_t *statut; /**<statut du joueur*/
 	t_l_aff *textures_joueur; /**<Tableau contenant toutes les textures du joueur*/
 }joueur_t;

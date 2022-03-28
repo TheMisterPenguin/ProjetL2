@@ -63,6 +63,7 @@ t_map * charger_s_map(char * buffer){
     json_object *tbl_monstre;
 
     json_object *monstre; 
+    json_object *taille_case;
 
     json_object *nom_monstre;
     json_object *position;
@@ -81,9 +82,12 @@ t_map * charger_s_map(char * buffer){
     json_object_object_get_ex(fichier, "width", &width);
     json_object_object_get_ex(fichier, "height", &height);
     json_object_object_get_ex(fichier, "monsters", &tbl_monstre);
+    json_object_object_get_ex(fichier, "taille case", &taille_case);
 
-    m->text_map = creer_texture(json_object_get_string(texture_map),
-                                s.w * 16, s.h * 16, 0, 0, 0);
+    int taille_case_val = json_object_get_int(taille_case);
+
+    m->text_sol = creer_texture(json_object_get_string(texture_map),
+                                -1, -1, 0, 0, 1);
     m->height = json_object_get_int(height);
     m->width = json_object_get_int(width);
 
@@ -100,8 +104,8 @@ t_map * charger_s_map(char * buffer){
         ajout_droit(m->liste_monstres, inserer);
     }
 
-    m->unite_dep_x = floor(FENETRE_LONGUEUR / (float)m->text_map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
-    m->unite_dep_y = floor(FENETRE_LARGEUR / (float)m->text_map->height); /* Calcul en nombre de pixels d'une unité de déplacement */
+    m->unite_dep_x = floor(FENETRE_LONGUEUR / (float)m->text_sol->width); /* Calcul en nombre de pixels d'une unité de déplacement */
+    m->unite_dep_y = floor(FENETRE_LARGEUR / (float)m->text_sol->height); /* Calcul en nombre de pixels d'une unité de déplacement */
 
     free(buffer);
     json_object_put(fichier); //libération mémoire de l'objet json
@@ -109,5 +113,5 @@ t_map * charger_s_map(char * buffer){
 }
 
 t_aff * texture_map(const t_map * map){
-    return map->text_map;
+    return map->text_sol;
 }

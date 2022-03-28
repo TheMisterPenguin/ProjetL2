@@ -6,7 +6,13 @@
 {\ttfamily \#include \char`\"{}map.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}personnage.\+h\char`\"{}}\newline
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dd6/affichage_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -122,7 +128,9 @@ void \mbox{\hyperlink{affichage_8h_a508ce5ebec0cacf99a3bbddd33d6880f_a508ce5ebec
 S\+D\+L\+\_\+\+Color \mbox{\hyperlink{affichage_8h_a07753dec9b0d8ad58944ccd3f7406ce3_a07753dec9b0d8ad58944ccd3f7406ce3}{color}} (Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 \begin{DoxyCompactList}\small\item\em Fonction qui permet de choisir une couleur S\+DL. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8h_a833a9e3f93662a67ba30a73d64435286_a833a9e3f93662a67ba30a73d64435286}{info\+\_\+texture}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture)
-\begin{DoxyCompactList}\small\item\em Affiche des informations sur une texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Affiche des informations sur une texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{affichage_8h_aef15da3b25d6635d91fa9e09f0bd4c70_aef15da3b25d6635d91fa9e09f0bd4c70}{placer\+\_\+texture}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture, int x, int y)
+\begin{DoxyCompactList}\small\item\em Place une texture sur l\textquotesingle{}écran. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -206,13 +214,13 @@ Copyright (c) 2022
 \doxysubsubsection{\texorpdfstring{NB\_FPS}{NB\_FPS}}
 {\footnotesize\ttfamily \#define N\+B\+\_\+\+F\+PS~60}
 
-\mbox{\Hypertarget{affichage_8h_a7869c12ae30d77a3467571e1f82722e7_a7869c12ae30d77a3467571e1f82722e7}\label{affichage_8h_a7869c12ae30d77a3467571e1f82722e7_a7869c12ae30d77a3467571e1f82722e7}} 
+Le nombre maximum de F\+PS \mbox{\Hypertarget{affichage_8h_a7869c12ae30d77a3467571e1f82722e7_a7869c12ae30d77a3467571e1f82722e7}\label{affichage_8h_a7869c12ae30d77a3467571e1f82722e7_a7869c12ae30d77a3467571e1f82722e7}} 
 \index{affichage.h@{affichage.h}!NB\_SPRITE\_JOUEUR@{NB\_SPRITE\_JOUEUR}}
 \index{NB\_SPRITE\_JOUEUR@{NB\_SPRITE\_JOUEUR}!affichage.h@{affichage.h}}
 \doxysubsubsection{\texorpdfstring{NB\_SPRITE\_JOUEUR}{NB\_SPRITE\_JOUEUR}}
 {\footnotesize\ttfamily \#define N\+B\+\_\+\+S\+P\+R\+I\+T\+E\+\_\+\+J\+O\+U\+E\+UR~5}
 
-
+Le nombre de sprites différents du joueur 
 
 \doxysubsection{Documentation des définitions de type}
 \mbox{\Hypertarget{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}\label{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}} 
@@ -657,6 +665,25 @@ Fonction qui positionne la texture au n-\/ème sprite sur l\textquotesingle{}axe
 \begin{DoxyReturn}{Renvoie}
 err\+\_\+t un entier pour savoir si il y a eu une erreur 
 \end{DoxyReturn}
+\mbox{\Hypertarget{affichage_8h_aef15da3b25d6635d91fa9e09f0bd4c70_aef15da3b25d6635d91fa9e09f0bd4c70}\label{affichage_8h_aef15da3b25d6635d91fa9e09f0bd4c70_aef15da3b25d6635d91fa9e09f0bd4c70}} 
+\index{affichage.h@{affichage.h}!placer\_texture@{placer\_texture}}
+\index{placer\_texture@{placer\_texture}!affichage.h@{affichage.h}}
+\doxysubsubsection{\texorpdfstring{placer\_texture()}{placer\_texture()}}
+{\footnotesize\ttfamily void placer\+\_\+texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Place une texture sur l\textquotesingle{}écran. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em texture} & Texture à placer \\
+\hline
+{\em x} & Position horizontale \\
+\hline
+{\em y} & Position verticale \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{affichage_8h_a508ce5ebec0cacf99a3bbddd33d6880f_a508ce5ebec0cacf99a3bbddd33d6880f}\label{affichage_8h_a508ce5ebec0cacf99a3bbddd33d6880f_a508ce5ebec0cacf99a3bbddd33d6880f}} 
 \index{affichage.h@{affichage.h}!rect\_centre@{rect\_centre}}
 \index{rect\_centre@{rect\_centre}!affichage.h@{affichage.h}}

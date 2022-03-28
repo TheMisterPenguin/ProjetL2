@@ -41,6 +41,7 @@ typedef struct {
     list *liste_monstres; /*< La liste des monstres de la map */
     int unite_dep_x; /**< L'unité de déplacement en x */
     int unite_dep_y; /**< L'unité de déplacement en y */
+    t_aff * text_sol; /**< La texture du sol */
 }t_map;
 
 extern t_map *map; /**< La map courante */
