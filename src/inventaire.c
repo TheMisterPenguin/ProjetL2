@@ -45,12 +45,16 @@ on clique sur un item de l'inventaire (équipé) qui s'enlève automatiquement
 }
 
 void desequiper(joueur_t *j, objet_t **objet,inventaire_t *inventaire){
-    inventaire->sac->liste[inventaire->sac->nb] = *objet;
-    *objet = NULL;
-    changement_statistiques(j,inventaire->equipe);
+    if(*objet != NULL){
+        inventaire->sac->liste[inventaire->sac->nb] = *objet;
+        *objet = NULL;
+        changement_statistiques(j,inventaire->equipe);
 
-    if((*objet)->type == bouclier){
-        j->statut->bouclier_equipe = 0;
+        if((*objet)->type == bouclier){
+            j->statut->bouclier_equipe = 0;
+        }
+        inventaire->sac->nb++;
+        inventaire->equipe->nb--;
     }
     /* 
     on n'utilise pas de liste pour les objets de l'inventaire (sac) car on équipe beaucoup plus souvent qu'on deséquipe donc on préfère profiter
@@ -104,22 +108,24 @@ void tout_ramasser(lobjet_t * objets, inventaire_t * inventaire){
 void equiper_sac_slot( int slot )
 {
     int i, j ;
-    int nb_obj ;
+    int tt_obj ;
 
-    nb_obj = inventaire->sac->nb ;
+    tt_obj = inventaire->sac->nb ;
 
-    if( slot >= nb_obj )
+    if( slot >= tt_obj )
     {
         return ;
     }
 
-    for( i=0, j=0 ; i<nb_obj ; i++, j++)
+    for( i=0, j=0 ; i<CAPACITE_SAC ; i++, j++)
     {
         //faire correspondre la liste graphique à la liste du programme
         if(inventaire->sac->liste[i] == NULL)
             j--;
 
-        if(j == slot)
+        if(j == slot){
             equiper_objet(perso_principal,&(inventaire->sac->liste[i]),inventaire);
+            break;
+        }
     }
 }

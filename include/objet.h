@@ -27,7 +27,7 @@ typedef enum{quete, arme, bouclier, protection, amulette, consommable}t_item;
 
 typedef struct objet_s {
     t_aff * texture; /**<Image de l'objet*/
-    char * texture_src;
+    char * texture_src; /**<Chemin de l'image de l'objet*/
     t_item type; /**<Le type d'objet permet de contrôler sa bonne utilisation*/
 	char * nom; /**<Le nom de l'objet*/
 	short int niveau; /**<Le niveau necessaire pour équiper l'objet*/
