@@ -16,13 +16,12 @@
 /**
  * \struct struct lobjet
  * \brief Structure de liste d'objets
- * 
  * \author Descomps Max
  */
 
 typedef struct lobjet_s {
-    int nb;
-    objet_t ** liste;
+    int nb; /**<Nombre d'objets stockés*/
+    objet_t ** liste; /**<Objets stockés*/
 }lobjet_t;
 
 

@@ -16,6 +16,9 @@
 #include "map.h"
 #include "personnage.h"
 
+/**
+ * Type enum renseignant sur la texture personnage à utiliser
+ */
 typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TEXT_MARCHER_BOUCLIER}t_texture_perso;
 
 #define NB_FPS 60 /**< Le nombre maximum de FPS */

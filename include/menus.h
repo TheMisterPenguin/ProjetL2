@@ -12,6 +12,9 @@
 
 #include "definition_commun.h"
 
+/**
+ * Différentes interfaces du jeu
+ */
 typedef enum{JEU,PAUSE,PRINCIPAL,INVENTAIRE}menus_t;
 
 extern menus_t menus;

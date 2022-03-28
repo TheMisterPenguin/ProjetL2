@@ -14,12 +14,14 @@
 #include "definition_commun.h"
 #include "affichage.h"
 
+/**
+ * Types d'objets du jeu
+ */
 typedef enum{quete, arme, bouclier, protection, amulette, consommable}t_item;
 
 /**
  * \struct struct objet
  * \brief Structure objet
- * 
  * \author Descomps Max
  */
 

@@ -14,9 +14,13 @@
 
 #include "commun.h"
 
+/**
+ * \struct inventaire_t
+ * \brief Structure inventaire diviser en deux parties: le sac et les objets équipés
+ */
 typedef struct inventaire_s{
-    lobjet_t *equipe;
-    lobjet_t *sac;
+    lobjet_t *equipe; /**<Objets équipés*/
+    lobjet_t *sac; /**<Objets dans le sac*/
 }inventaire_t;
 
 extern inventaire_t * inventaire;
