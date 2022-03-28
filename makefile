@@ -33,7 +33,7 @@ $(BINDIR)jeux$(EXT) : $(OBJ)
 # Compilation de tout les fichiers source
 
 $(ODIR)%.o : $(SRC)%.c
-	$(CC) $(CFLAGS) -o $@ -c $< -g -D __LOG
+	$(CC) $(CFLAGS) -o $@ -c $< -g 
 
 # Génération des tests
 
@@ -59,10 +59,7 @@ $(BINDIR)test_listes.bin : $(OBJ_TEST_LISTES)
 	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
 
 # Création de l'arboressence 
-.PHONY: makedir
-makedir :
-	@chmod a+x $(DIRMAKE)
-	@./$(DIRMAKE)
+
 #options de suppression
 
 .PHONY: clean
@@ -74,3 +71,14 @@ clean:
 mrproper: clean
 	@$(rm) $(GEN)
 	@echo "Executable removed!"
+
+.PHONY: makedir
+ifeq ($(OS),Windows_NT)
+makedir :
+	@echo "Dossier obj: crée"
+else 
+makedir :
+	@chmod a+x $(DIRMAKE)
+	@./$(DIRMAKE)
+
+endif
