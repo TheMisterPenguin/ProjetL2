@@ -111,14 +111,15 @@ void detruire_monstre(monstre_t** monstre);
 void charger_monstres(char* nom_fichier);
 
 /**
- * \fn monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, position_t position);
+ * \fn monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, int x, int y);
  * \brief Fonction qui creer et initialise un monstre
  * \param liste_base_monstre les monstres de base
  * \param nom_monstre le nom du monstre à creer
- * \param position la position du monstre sur la map
+ * \param x la position en abscisse du monstre sur la map
+ * \param y la position en ordonnée du monstre sur la map
  * \return monstres_t* une structure contenant les informations du monstre
  */
-monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, position_t position);
+monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, int x, int y);
 
 
 

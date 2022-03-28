@@ -34,7 +34,7 @@ void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres){
     *liste_base_monstres = NULL;
 }
 
-monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, position_t position){
+monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, int x, int y){
     int i;
     char * chemin_texture;
     base_monstre_t* base_monstre;
@@ -44,8 +44,8 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_mo
     for(i=0; i<liste_base_monstre->nb_monstre; i++){
         if(strcmp(liste_base_monstre->tab[i]->nom_monstre,nom_monstre) == 0){
             monstre->type = nom_monstre_to_type_monstre(nom_monstre);
-            monstre->collision.x = position.x;
-            monstre->collision.y = position.y;
+            monstre->collision.x = x;
+            monstre->collision.y = y;
             monstre->collision.w = base_monstre->hitbox.w * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3);
             monstre->collision.h = base_monstre->hitbox.h * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3);
 
