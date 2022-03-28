@@ -123,6 +123,13 @@ void afficher_inventaire()
     SDL_Rect slot8 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
     SDL_Rect slot9 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
 
+    SDL_Rect slot_pers_0 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot_pers_1 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot_pers_2 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot_pers_3 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot_pers_4 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot_pers_5 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+
     /* Placemennt des slots */
     deplacer_rect_origine(&slot0, floor(582 * multiplicateur_x), floor(659 * multiplicateur_y));
     deplacer_rect_origine(&slot1, floor(734 * multiplicateur_x), floor(659 * multiplicateur_y));
