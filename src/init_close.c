@@ -174,20 +174,6 @@ void init_affichage(){
 
 void init_sousbuffer(t_map *map){
 
-    if(SDL_CreateWindowAndRenderer(
-    floor(map->text_sol->width * map->text_sol->multipli_taille),
-    floor(map->text_sol->height * map->text_sol->multipli_taille), 
-    SDL_WINDOW_HIDDEN | SDL_WINDOW_OPENGL,
-    &fenetre_sous_rendu,
-    &sous_rendu))
-    {
-        char *msp = malloc(sizeof(char) * (500));
-        sprintf(msp, "Erreur lors de la création du sous rendu: %s\n Erreur : 0x%X\n", SDL_GetError(), SDL_ERREUR);
-        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-        free(msp);
-        fermer_programme(SDL_ERREUR);
-    }
-
     SDL_Texture *sous_buffer = SDL_CreateTexture(rendu_principal,
                                                  SDL_PIXELFORMAT_RGBA8888,
                                                  SDL_TEXTUREACCESS_TARGET,
@@ -242,14 +228,20 @@ void init_sousbuffer(t_map *map){
     }
 
     /* On place la partie de la map que l'on voit */
-    map->text_map->frame_anim->w = FENETRE_LONGUEUR;
-    map->text_map->frame_anim->h = FENETRE_LARGEUR;
+    map->text_map->frame_anim->w = map->text_sol->aff_fenetre->w;
+    map->text_map->frame_anim->h = map->text_sol->aff_fenetre->h;
 
     map->text_map->frame_anim->x = 0;
     map->text_map->frame_anim->y = 0;
 
-
-
+if (SDL_SetRenderTarget(rendu_principal, map->text_map->texture)){
+        char *msp = malloc(sizeof(char) * (500));
+        sprintf(msp, "Erreur lors de la création du sous buffer : %s\n Erreur : 0x%X\n", SDL_GetError(), SDL_ERREUR);
+        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+        SDL_LogError(SDL_LOG_CATEGORY_RENDER, "Erreur lors de la création du sous buffer : %s\n Erreur : 0x%X\n", SDL_GetError(), SDL_ERREUR);
+        free(msp);
+        fermer_programme(SDL_ERREUR);
+    }
 }
 
 /**

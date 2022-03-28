@@ -1,9 +1,10 @@
 {
     "type" : "map",
     "id" : 1,
-    "file-path" : "ressources/background/map/house.bmp",
+    "file-path" : "ressources/background/map/map-test.bmp",
     "width" : 30, //30 cases de 16px mais une cases de la map fait 32px en réalité
     "height" : 26,
+    "taille case" : 32,
     "starting-point" : [5, 5],
     "monsters" : [
         {"type" : "demon_alpha",
