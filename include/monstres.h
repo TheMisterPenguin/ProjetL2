@@ -15,6 +15,17 @@
 #include "definition_commun.h"
 #include <affichage.h>
 
+#define DISTANCE_AGRO 500
+#define DUREE_MONSTRE_MARCHER 150
+#define DUREE_MONSTRE_EN_GARDE 300
+#define DUREE_RUSH_OU_FUITE 150
+#define DUREE_MONSTRE_ATTAQUE 100
+
+#define CHEMIN_TEXTURE "ressources/sprite"
+
+typedef enum {WITCHER,KNIGHT,BOSS}type_monstre_t;
+typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE}action_monstre_t;
+
 /**
  * \struct struct position
  * \brief Structure regroupant les coordonnées
@@ -30,15 +41,18 @@ typedef point position_t;
  */
 typedef struct monstre_s
 {
-	char nom_monstre[20]; /**<nom du monstre*/
+	type_monstre_t type; /**<type de monstre*/
     int pdv; /**<points de vie*/
     int attaque; /**<attaque*/
     float vitesse; /**<vitesse de déplacement*/
-    position_t position; /**<coordonnées*/
     int gainXp; /**<gain d'xp pour le joueur*/
-    t_direction orientation; /**<orientation*/
+
+    t_direction orientation; /*orientation du monstre*/
+    int duree; /*duree de l'action*/
+    action_monstre_t action; /*action en cours par le monstre*/
+
+    SDL_Rect collision; /**<coordonnées*/
     t_aff* texture; /**<texture*/
-    /*short int niveau;*/ /**<Le niveau du monstre*/
 } monstre_t;
 
 
@@ -50,11 +64,12 @@ typedef struct monstre_s
 typedef struct base_monstre_s
 {
     char fichier_image[20]; /**<nom fichier image*/
-    char nom_monstre[20]; /**<nom du monstre*/
+    char * nom_monstre; /**<nom du monstre*/
     int pdv; /**<points de vie*/
     int attaque; /**<attaque*/
     float vitesse; /**<vitesse de déplacement*/
     int gainXp; /**<gain d'xp pour le joueur*/
+    SDL_Rect hitbox; /**<hitbox du monstre*/
 }base_monstre_t;
 
 
@@ -69,6 +84,7 @@ typedef struct liste_base_monstres_s
     base_monstre_t** tab;
 }liste_base_monstres_t;
 
+extern liste_base_monstres_t* liste_base_monstres;
 
 /**
  * \fn void detruire_liste_base_monstres(liste_base_monstre_t* liste_base_monstre)
@@ -89,10 +105,28 @@ void detruire_monstre(monstre_t** monstre);
 
 /**
  * \fn liste_base_monstres_t* charger_monstres(char* nom_fichier)
- * \brief Fonction qui recopie les informations d'un fichier pour les insérrer dans une structure liste_base_monstres_t
+ * \brief Fonction qui recopie les informations d'un fichier pour les insérrer dans la structure global liste_base_monstres
  * \param nom_fichier nom du fichier à lire
- * \return liste_base_monstres_t* une structure contenant la liste des monstres
  */
-liste_base_monstres_t* charger_monstres(char* nom_fichier);
+void charger_monstres(char* nom_fichier);
+
+/**
+ * \fn monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, position_t position);
+ * \brief Fonction qui creer et initialise un monstre
+ * \param liste_base_monstre les monstres de base
+ * \param nom_monstre le nom du monstre à creer
+ * \param position la position du monstre sur la map
+ * \return monstres_t* une structure contenant les informations du monstre
+ */
+monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, position_t position);
+
+
+
+/**
+ * \fn void action_monstre(monstre_t * monstre)
+ * \brief Fonction qui met à jour le sprite d'un monstre
+ * \param monstre le monstre à mettre à jour
+ */
+void action_monstre(monstre_t * monstre)
 
 #endif

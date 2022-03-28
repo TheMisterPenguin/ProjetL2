@@ -123,6 +123,7 @@ int main(int argc, char** argv)
         SDL_RenderClear(rendu_principal);
         afficher_texture(text, rendu_principal);
 
+
         #ifdef __DEBUG__
             SDL_RenderDrawRect(rendu_principal, &tx);
             SDL_RenderDrawRect(rendu_principal, &(perso_principal->statut->zone_colision));
@@ -130,6 +131,7 @@ int main(int argc, char** argv)
         #endif
 
         /* On affiche le joueur */
+        afficher_monstres(map->liste_monstres);
         afficher_texture(next_texture_joueur, rendu_principal);
 
         /* On affiche l'interface */
