@@ -344,6 +344,9 @@ joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const in
 	perso->attaque = attaque;
 	perso->defense = defense;
 	perso->vitesse = vitesse;
+    perso->attaque_actif = attaque;
+	perso->defense_actif = defense;
+	perso->vitesse_actif = vitesse;
 	perso->trigger = calloc(TAILLE_TRIGGER, sizeof(byte));
 	copy(trig, perso->trigger, TAILLE_TRIGGER);
 	perso->statut = malloc(sizeof(statut_t));
@@ -378,7 +381,7 @@ joueur_t *caracteristiques(joueur_t* perso){
 void afficher_statistiques(joueur_t* perso){
 	if(perso != NULL){
 		printf("Nom : %s\nNiveau : %d\nExpérience : %d\nPoints de vie max : %d\nPoints de vie actuels : %d\nAttaque : %d\nDéfense : %d\nVitesse : %d\n",
-		perso->nom_pers,perso->niveau,perso->xp,perso->maxPdv,perso->pdv,perso->attaque,perso->defense,perso->vitesse);
+		perso->nom_pers,perso->niveau,perso->xp,perso->maxPdv,perso->pdv,perso->attaque_actif,perso->defense_actif,perso->vitesse_actif);
 	} else {
 		printf("Pas de perso\n");
 	}	

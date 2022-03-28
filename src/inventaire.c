@@ -9,9 +9,9 @@ void changement_statistiques(joueur_t *j,lobjet_t *equipe){
     for(i = 0;i<equipe->nb;i++){
         while(equipe->liste[i] == NULL)
             i++;
-        j->attaque += (equipe->liste[i])->attaque;
-        j->defense += (equipe->liste[i])->defense;
-        j->vitesse += (equipe->liste[i])->vitesse;
+        j->attaque_actif = j->attaque + (equipe->liste[i])->attaque;
+        j->defense_actif = j->defense + (equipe->liste[i])->defense;
+        j->vitesse_actif = j->vitesse + (equipe->liste[i])->vitesse;
     }
 }
 
@@ -33,6 +33,7 @@ void equiper_objet(joueur_t *j,objet_t **objet,inventaire_t *inventaire){
     }
 
     changement_statistiques(j,inventaire->equipe);
+    afficher_statistiques(perso_principal);
 
     if(temp->type == bouclier){
         j->statut->bouclier_equipe = 1;
@@ -91,6 +92,15 @@ void ramasser_objet(objet_t * objet, inventaire_t * inventaire){
     inventaire->sac->nb++;
 }
 
+void tout_ramasser(lobjet_t * objets, inventaire_t * inventaire){
+    int i;
+    
+    for(i=0; i<objets->nb; i++){
+        inventaire->sac->liste[inventaire->sac->nb] = objets->liste[i];
+        inventaire->sac->nb++;
+    }
+}
+
 void equiper_sac_slot( int slot )
 {
     int i, j ;
@@ -105,6 +115,7 @@ void equiper_sac_slot( int slot )
 
     for( i=0, j=0 ; i<nb_obj ; i++, j++)
     {
+        //faire correspondre la liste graphique à la liste du programme
         if(inventaire->sac->liste[i] == NULL)
             j--;
 

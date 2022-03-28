@@ -41,4 +41,12 @@ void effacer_liste_objet( lobjet_t ** liste_obj);
 void placer_objet_sac(objet_t * objet, int slot);
 void afficher_textures_sac( inventaire_t * const inventaire );
 void afficher_textures_equipe( inventaire_t * const inventaire );
+
+/**
+ * \fn void creer_textures_objets(lobjet_t * objets)
+ * \brief Creer toutes les textures d'une structure lobjet_t
+ * \param liste_obj Pointeur sur la structure lobjet_t
+ */
+void creer_textures_objets(lobjet_t * liste_obj);
+
 #endif

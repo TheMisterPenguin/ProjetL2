@@ -12,6 +12,8 @@
 #ifndef __H_INVENTAIRE__
 #define __H_INVENTAIRE__
 
+#define CAPACITE_SAC 10
+
 #include "commun.h"
 
 typedef struct inventaire_s{
@@ -61,6 +63,14 @@ void desequiper(joueur_t *j, objet_t **objet,inventaire_t *inventaire);
  * \param inventaire Inventaire du joueur
  */
 void ramasser_objet(objet_t * objet, inventaire_t * inventaire);
+
+/**
+ * \fn void tout_ramasser(lobjet_t * objets, inventaire_t * inventaire)
+ * \brief Met tous les objets du jeu dans l'inventaire (sac)
+ * \param objets Liste d'objets du jeu
+ * \param inventaire Inventaire du joueur
+ */
+void tout_ramasser(lobjet_t * objets, inventaire_t * inventaire);
 
 /**
  * \fn void * detruire_inventaire(inventaire_t ** inventaire)
