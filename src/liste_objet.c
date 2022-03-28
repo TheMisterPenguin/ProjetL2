@@ -6,7 +6,7 @@
 
 lobjet_t * objets = NULL;
 
-//creer la structure contenant la liste des objets
+//creer la structure contenant la liste des objets avec au maximum CAPACITE_SAC objets
 lobjet_t * creer_liste_objet(){
     lobjet_t * liste_obj; //le pointeur sur structure contenant la liste d'objets que la fonction retourne
     FILE * obj; //fichier source contenant les objets
@@ -39,6 +39,10 @@ lobjet_t * creer_liste_objet(){
     //compte les objets (1 par ligne)
     while(fscanf(obj, "%c", &c) == 1){
         if(c == ';') nb_obj++;
+        if(nb_obj > CAPACITE_SAC){
+            nb_obj = CAPACITE_SAC;
+            break;
+        }
     }
 
     fseek(obj,0,SEEK_SET); // le pointeur du fichier pointe à son début
@@ -51,7 +55,7 @@ lobjet_t * creer_liste_objet(){
         }
 
 
-        while(fscanf(obj, "%s%d%49[^:]:%d%d%d%d;", imgsrc, (int *)&type, nom, &niveau, &att, &def, &vit) == 7){
+        while((fscanf(obj, "%s%d%49[^:]:%d%d%d%d;", imgsrc, (int *)&type, nom, &niveau, &att, &def, &vit) == 7) && i<nb_obj){
             liste_obj->liste[i] = creer_objet(imgsrc, type, nom, niveau, att, def, vit);
             i++;
         }
@@ -64,7 +68,7 @@ lobjet_t * creer_liste_objet(){
     return liste_obj;
 }
 
-//creer une structure lobjet_t vide d'objets
+//creer une structure lobjet_t vide d'objets de maximum CAPACITE_SAC objets
 lobjet_t * creer_liste_objet_vide(){
     lobjet_t * liste_obj; //le pointeur sur structure contenant la liste d'objets que la fonction retourne
     FILE * obj; //fichier source contenant les objets
@@ -92,6 +96,10 @@ lobjet_t * creer_liste_objet_vide(){
     //compte les objets (1 par ligne)
     while(fscanf(obj, "%c", &c) == 1){
         if(c == ';') nb_obj++;
+        if(nb_obj > CAPACITE_SAC){
+            nb_obj = CAPACITE_SAC;
+            break;
+        }
     }
     fclose(obj);
 
@@ -258,5 +266,13 @@ void afficher_textures_equipe( inventaire_t * const inventaire )
             }
             afficher_texture(objet->texture, rendu_principal);
         }
+    }
+}
+
+void creer_textures_objets(lobjet_t * liste_obj){
+    int i;
+
+    for(i=0; i<liste_obj->nb; i++){
+        liste_obj->liste[i]->texture = creer_texture(liste_obj->liste[i]->texture_src, 46, 48, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 0.8);
     }
 }

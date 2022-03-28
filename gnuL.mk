@@ -5,6 +5,6 @@ ODIRCMD = obj/
 DIRMAKE = gen_dos.sh
 JSON-LIB-PATH = lib/libjson-c.a
 EXT = .bin
-rm = rm -f obj.*.o
+rm = rm -f obj/*.o
 
 
