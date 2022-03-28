@@ -18,6 +18,15 @@ extern menus_t menus;
 
 //extern void afficher_menu(menus_t * menu);
 
+/**
+ * \fn void afficher_menu_pause()
+ * \brief Affiche le menu pause et gère les interactions avec l'utilisateur
+ */
 extern void afficher_menu_pause();
+
+/**
+ * \fn void afficher_inventaire()
+ * \brief Affiche l'inventaire et gère les interactions avec l'utilisateur
+ */
 extern void afficher_inventaire();
 #endif

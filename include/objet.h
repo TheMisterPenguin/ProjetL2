@@ -34,10 +34,31 @@ typedef struct objet_s {
     int vitesse; /**<modificateur de vitesse de l'objet*/
 }objet_t;
 
-void detruire_texture(t_aff **texture);
-
+/**
+ * \fn objet_t * creer_objet(const char * const texture_src, const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit)
+ * \brief Créé un objet du jeu
+ * \param texture_src Chemin vers l'image de l'objet
+ * \param type Type d'objet
+ * \param nom Nom de l'objet
+ * \param niveau Niveau nécessaire pour s'équiper de l'objet
+ * \param att Bonus d'attaque de l'objet
+ * \param def Bonus de défense de l'objet
+ * \param vit Bonus de vitesse de l'objet
+ * \return Instance nouvellement allouée du type objet_t ou NULL
+ */
 extern objet_t * creer_objet(const char * const texture_src, const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit);
+
+/**
+ * \fn void detruire_objet(objet_t **obj)
+ * \brief Libère la mémoire allouée à un objet
+ * \param obj L'objet à libérer
+ */
 extern void detruire_objet(objet_t **obj);
-extern objet_t ** init_objet(void);
+
+/**
+ * \fn void afficher_objet(objet_t * obj)
+ * \brief Affiche les caractéristiques d'un objet dans la console
+ * \param obj L'objet à afficher
+ */
 extern void afficher_objet(objet_t * obj);
 #endif

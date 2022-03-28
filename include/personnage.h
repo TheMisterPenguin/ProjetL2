@@ -2,6 +2,7 @@
  * \file personnage.h
  * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
  * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \author Antoine Bruneau (Antoine.Bruneau.Etu@univ-lemans.fr)
  * \brief Fichier contenant toutes les définitions concernant le personnage
  * \version 0.2
  * \date 28/03/2022

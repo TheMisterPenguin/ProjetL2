@@ -16,6 +16,8 @@ unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 int main(){
     lobjet_t * liste_obj = NULL;
 
+    init();
+    
     printf("----- Création de la liste d'objets selon le fichier correspondant -----\n\n");
     liste_obj = creer_liste_objet();
 
