@@ -1,12 +1,10 @@
 /**
  * \file map.h
- * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
- * \brief Le fichier contient les définitions des fonctions de gestion de la map
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \brief Définitions des fonctions de gestion de la map
  * \version 1.0
  * \date 27/03/2022
- * 
  * \copyright Copyright (c) 2022
- * 
  */
 
 #ifndef __MAP_H__

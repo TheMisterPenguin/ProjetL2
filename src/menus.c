@@ -5,6 +5,16 @@
 #include <liste_objet.h>
 #include <inventaire.h>
 
+/**
+ * \file menus.c
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Fonctions des menus du jeu
+ * \version 0.2
+ * \date 28/03/2022
+ * \copyright Copyright (c) 2022
+ */
+
 /*void afficher_menu(menus_t * menu){
     switch (menu) {
         case 0: break;
@@ -200,10 +210,16 @@ void afficher_inventaire()
                 if (SDL_PointInRect(&coord_souris, &slot9))
                     slot_selectionne = 9;
                 
-                if(slot_selectionne != -1){
+                if(slot_selectionne > -1){
                     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "On a selectionné le slot %d\n", slot_selectionne);
-                    /* Fonction pour equiper l'item */
-                    equiper_sac_slot(slot_selectionne);
+                    if(slot_selectionne < 10){
+                        /* Fonction pour équiper l'item */
+                        equiper_sac_slot(slot_selectionne);
+                    }
+                    else{
+                        /* Fonction pour déséquiper l'item */
+                        desequiper_slot(slot_selectionne);
+                    }
                 }
                 break;
             }

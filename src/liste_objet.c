@@ -4,6 +4,15 @@
 #include <stdio.h>
 #include <inventaire.h>
 
+/**
+ * \file liste_objet.c
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Fonctions relatives aux structures contenant les objets
+ * \version 0.2
+ * \date 28/03/2022
+ * \copyright Copyright (c) 2022
+ */
+
 lobjet_t * objets = NULL;
 
 //creer la structure contenant la liste des objets avec au maximum CAPACITE_SAC objets
@@ -188,8 +197,8 @@ void effacer_liste_objet( lobjet_t ** liste_obj)
 
 void afficher_liste_objet( lobjet_t * const liste_obj )
 {
-    int i ;
-    int nb_obj ;
+    int num_obj, next_obj ;
+    int tt_obj ;
 
     if( liste_obj == NULL )
     {
@@ -197,22 +206,27 @@ void afficher_liste_objet( lobjet_t * const liste_obj )
         return ;
     }
 
-    nb_obj = liste_obj->nb ;
+    tt_obj = liste_obj->nb ;
 
-    if( nb_obj == 0 )
+    if( tt_obj == 0 )
     {
         printf("(liste d'objets vide)\n" );
         return ;
     }
 
-    printf( "Nombre d'objets: %d\n" , nb_obj );
+    printf( "Nombre d'objets: %d\n" , tt_obj );
     printf( "{ " ) ;
-    for( i=0 ; i<nb_obj ; i++ )
+    for( num_obj=0, next_obj=0 ; num_obj<tt_obj && next_obj<CAPACITE_SAC ; num_obj++, next_obj++ )
     {
-        while(liste_obj->liste[i] == NULL)
-            i++;
-        afficher_objet(liste_obj->liste[i]);
-        printf("\n");
+        //on cherche le prochain objet dans la liste
+        while(liste_obj->liste[next_obj] == NULL && next_obj < CAPACITE_SAC)
+            next_obj++;
+
+        //si on n'est pas sorti de la liste
+        if(next_obj<CAPACITE_SAC){
+            afficher_objet(liste_obj->liste[next_obj]);
+            printf("\n");
+        }
     }
     printf( " }\n" ) ;
 }
@@ -223,8 +237,8 @@ void placer_objet_sac(objet_t * objet, int slot){
 
 void afficher_textures_sac( inventaire_t * const inventaire )
 {
-    int i, j ;
-    int nb_obj ;
+    int num_obj, next_obj, slot ;
+    int tt_obj ;
 
     if( inventaire == NULL )
     {
@@ -232,22 +246,25 @@ void afficher_textures_sac( inventaire_t * const inventaire )
         return ;
     }
 
-    nb_obj = inventaire->sac->nb ;
+    tt_obj = inventaire->sac->nb ;
 
-    if( nb_obj != 0 ){
-        for( i=0, j=0 ; i<nb_obj ; i++, j++)
-        {
-            while(inventaire->sac->liste[i] == NULL)
-                i++;
-            placer_objet_sac(inventaire->sac->liste[i], j);
-            afficher_texture(objets->liste[i]->texture, rendu_principal);
+    for( num_obj=0, next_obj=0, slot=0 ; num_obj<tt_obj && next_obj<CAPACITE_SAC ; num_obj++, next_obj++, slot++)
+    {
+        //on cherche le prochain objet dans la liste
+        while(inventaire->sac->liste[next_obj] == NULL && next_obj < CAPACITE_SAC)
+            next_obj++;
+        
+        //si on n'est pas sorti de la liste
+        if(next_obj<CAPACITE_SAC){
+            placer_objet_sac(inventaire->sac->liste[next_obj], slot);
+            afficher_texture(inventaire->sac->liste[next_obj]->texture, rendu_principal);
         }
     }
 }
 
 void afficher_textures_equipe( inventaire_t * const inventaire )
 {
-    int i;
+    int type_obj;
     objet_t * objet = NULL;
 
     if( inventaire == NULL )
@@ -256,12 +273,15 @@ void afficher_textures_equipe( inventaire_t * const inventaire )
         return ;
     }
 
-    for( i=1; i<5 ; i++)
+    for( type_obj=1; type_obj<5 ; type_obj++)
     {
-        objet = inventaire->equipe->liste[i];
+        objet = inventaire->equipe->liste[type_obj];
         if(objet != NULL){
-            switch(i){
+            switch(type_obj){
                 case arme: placer_texture(objet->texture, 312, 205); break;
+                case bouclier: placer_texture(objet->texture, 550, 205); break;
+                case protection: placer_texture(objet->texture, 433, 165); break;
+                case amulette: placer_texture(objet->texture, 433, 63); break;
                 //faire les autres types d'objets
             }
             afficher_texture(objet->texture, rendu_principal);

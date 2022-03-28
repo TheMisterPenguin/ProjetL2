@@ -5,6 +5,16 @@
 #include <map.h>
 #include <stdio.h>
 
+/**
+ * \file test_map.c
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Programme de test du module map
+ * \version 0.1
+ * \date 28/03/2022
+ * \copyright Copyright (c) 2022
+ */
+
 long int compteur;
 t_map *test_map;
 unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;

@@ -1,6 +1,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ * \file listes.c
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Fonctions relatives au type de structure liste générique
+ * \version 0.2
+ * \date 28/03/2022
+ * \copyright Copyright (c) 2022
+ */
+
 typedef struct element
 {
     void *valeur;

@@ -1,3 +1,12 @@
+/**
+ * \file commun.h
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \brief Fichier contenant les headers nécessaires au programme principal
+ * \version 2.0
+ * \date 28/03/2022
+ * \copyright Copyright (c) 2022
+ */
+
 #include "code_erreur.h"
 #include "definition_commun.h"
 #include "fonctions.h"

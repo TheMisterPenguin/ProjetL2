@@ -1,14 +1,12 @@
 /**
  * \file code_erreur.h
- * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
  * \brief Fichier contenant les codes d'erreur du programme
  *
  * Ce fichier contient une enumeration des codes d'erreur du programme, permettant ainsi une modification simple et une gestion plus facile des erreurs.
  * \version 1.0
  * \date 02/02/2022
- *
  * \copyright Copyright (c) 2022
- *
  */
 
 #ifndef __H_CODE_ERREUR__

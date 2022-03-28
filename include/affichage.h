@@ -1,11 +1,11 @@
 /**
  * \file affichage.h
- * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
  * \brief Fichier contenant les définitions et les fonctions liées au module affichage.
- * \version 0.1
- * \date 12/03/2022
+ * \version 0.2
+ * \date 28/03/2022
  * \copyright Copyright (c) 2022
- * 
  */
 
 #ifndef __AFFICHAGE_H__
@@ -16,6 +16,9 @@
 #include "map.h"
 #include "personnage.h"
 
+/**
+ * Type enum renseignant sur la texture personnage à utiliser
+ */
 typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TEXT_MARCHER_BOUCLIER}t_texture_perso;
 
 #define NB_FPS 60 /**< Le nombre maximum de FPS */

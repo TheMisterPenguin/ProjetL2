@@ -5,16 +5,17 @@
 #include <math.h>
 #include <map.h>
 #include <definition_commun.h>
+
 /**
  * \file affichage.c
- * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
- * \brief Fichier contenant toutes les fonctions relatives à l'affichage
- * \version 0.1
- * \date 12/02/2022
- * 
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Fonctions liées au module affichage
+ * \version 0.2
+ * \date 28/03/2022
  * \copyright Copyright (c) 2022
- * 
  */
+
 
 list *listeDeTextures; 
 list *buffer_affichage;

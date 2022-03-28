@@ -5,7 +5,15 @@
 #include <math.h>
 #include <map.h>
 
-
+/**
+ * \file main.c
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Programme principal du jeu
+ * \version 0.2
+ * \date 28/03/2022
+ * \copyright Copyright (c) 2022
+ */
 
 void afficher_intro(void){
     int i;

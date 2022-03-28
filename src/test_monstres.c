@@ -2,7 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
+/**
+ * \file test_monstres.c
+ * \author Antoine Bruneau (Antoine.Bruneau.Etu@univ-lemans.fr)
+ * \brief Programme de test du module monstres
+ * \version 0.1
+ * \date 20/03/2022
+ * \copyright Copyright (c) 2022
+ */
 
 int main(){
     int i;
