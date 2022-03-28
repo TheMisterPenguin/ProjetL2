@@ -206,7 +206,7 @@ SDL_Texture* init_sousbuffer(t_map *map){
  * \author Ange Despert
  */
 void init(){
-
+    srand(time(NULL)); //initialisation des nombres aléatoires
     f_close = init_liste(NULL, NULL, NULL); 
 
     if(!f_close){

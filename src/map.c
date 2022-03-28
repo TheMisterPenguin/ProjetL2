@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <code_erreur.h>
+#include <monstres.h>
 #include <math.h>
 
 t_map *map;
@@ -60,18 +61,21 @@ t_map * charger_s_map(char * buffer){
     json_object *width;
     json_object *height;
     json_object *tbl_monstre;
+
     json_object *monstre; 
 
     json_object *nom_monstre;
     json_object *position;
     json_object *x;
     json_object *y;
+  
+    monstre_t * inserer;
 
     SDL_Rect s = taille_ecran_cases();
 
     fichier = json_tokener_parse(buffer);
     m = malloc(sizeof(t_map));
-    m->liste_monstres =  init_liste(NULL,NULL,NULL);
+    m->liste_monstres =  init_liste(NULL,detruire_monstre,NULL);
 
     json_object_object_get_ex(fichier, "file-path", &texture_map);
     json_object_object_get_ex(fichier, "width", &width);
@@ -94,6 +98,9 @@ t_map * charger_s_map(char * buffer){
 
         json_object_get_int(x);
         /* Fonction qui permet de creer un monstre */
+        inserer = creer_monstre(liste_base_monstres, json_object_get_string(monstre), /*type, position*/);
+
+        ajout_droit(m->liste_monstres, inserer);
     }
 
     m->unite_dep_x = floor(FENETRE_LONGUEUR / (float)m->text_map->width); /* Calcul en nombre de pixels d'une unité de déplacement */

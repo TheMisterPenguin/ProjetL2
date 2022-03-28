@@ -119,6 +119,7 @@ int main(int argc, char** argv)
         SDL_RenderDrawRect(rendu_principal, &tx);
         SDL_RenderDrawRect(rendu_principal, &(perso_principal->statut->zone_colision));
         SDL_RenderDrawRect(rendu_principal, &ty);
+        afficher_monstres(map->liste_monstres);
         afficher_texture(next_texture_joueur, rendu_principal);
         RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
             ((float)perso_principal->pdv/perso_principal->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
