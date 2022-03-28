@@ -1,12 +1,10 @@
 /**
  * \file event.h
- * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
- * \brief 
+ * \brief Définitions relatives aux événements
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
  * \version 0.1
  * \date 03/02/2022
- * 
  * \copyright Copyright (c) 2022
- * 
  */
 
 #ifndef __EVENT_H__

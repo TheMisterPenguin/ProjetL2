@@ -1,12 +1,10 @@
 /**
  * \file interface.h
- * \author Descomps Max
- * \brief 
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Définition des fonctions relatives à l'interface joueur
  * \version 1.0
- * \date 26/03/2022
- * 
+ * \date 28/03/2022
  * \copyright Copyright (c) 2022
- * 
  */
 
 #ifndef __INTERFACE_H__

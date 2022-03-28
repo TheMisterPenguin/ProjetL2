@@ -1,16 +1,16 @@
-/**
- * \file event.c
- * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
- * \brief Fichier qui appelle différentes fonctions en fonction du déclenchement d'évenements
- * \version 0.1
- * \date 02/02/2022
- * 
- * \copyright Copyright (c) 2022
- * 
- */
 #include <commun.h>
 #include <event.h>
 #include <personnage.h>
+
+/**
+ * \file event.c
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \brief Fonctions de gestion des événements du jeu
+ * \version 0.1
+ * \date 02/02/2022
+ * \copyright Copyright (c) 2022
+ */
+
 
 /**
  * \fn void keyDown(SDL_KeyboardEvent * ev)

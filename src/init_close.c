@@ -1,12 +1,14 @@
 #include <commun.h>
 #include <stdio.h>
 #include <listes.h>
+
 /** 
- * \file init.c
+ * \file init_close.c
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
  * \brief Contient toutes les fonctions pour initialiser le programme
- * \author Ange Despert
- * \version 0.1
- * \date 10/01/22
+ * \version 0.2
+ * \date 27/03/22
+ * \copyright Copyright (c) 2022
  */
 
 SDL_Window *fenetre_Principale = NULL;

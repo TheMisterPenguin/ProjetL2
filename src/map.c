@@ -7,6 +7,15 @@
 #include <code_erreur.h>
 #include <math.h>
 
+/**
+ * \file map.c
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \brief Fonctions de gestion de la map
+ * \version 0.1
+ * \date 28/03/2022
+ * \copyright Copyright (c) 2022
+ */
+
 t_map *map;
 
 SDL_Rect taille_ecran_cases(){

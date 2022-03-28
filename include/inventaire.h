@@ -1,12 +1,10 @@
 /**
  * \file inventaire.h
- * \author Descomps Max Doneau Rafael
- * \brief 
- * \version 0.2
- * \date 26/03/2022
- * 
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Définition des fonctions relatives au module inventaire
+ * \version 1.0
+ * \date 28/03/2022
  * \copyright Copyright (c) 2022
- * 
  */
 
 #ifndef __H_INVENTAIRE__
@@ -25,8 +23,8 @@ extern inventaire_t * inventaire;
 
 /**
  * \fn inventaire_t * creer_inventaire()
- * \brief Fonction qui permet de creer un inventaire
- * \return Un pointeur sur l'inventaire
+ * \brief Creer un inventaire
+ * \return Pointeur sur l'inventaire
  */
 inventaire_t * creer_inventaire();
 

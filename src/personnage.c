@@ -16,21 +16,21 @@
 	#include <windows.h>
 #endif
 
+
+/**
+ * \file personnage.c
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Fichier contenant toutes les fonctions concernant le personnage
+ * \version 0.2
+ * \date 28/03/2022
+ * \copyright Copyright (c) 2022
+ */
+
 void copy(const byte * origin, byte *out, size_t size){
 	for(unsigned int i = 0; i < size; i++)
 		out[i] = origin[i];
 }
-
-/**
- * \file personnage.c
- * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
- * \brief Fichier contenant toutes les fonctions concernant le personnage
- * \version 0.1
- * \date 01/02/2022
- *  
- * \copyright Copyright (c) 2022
- * 
- */
 
 char save_path[500];
 

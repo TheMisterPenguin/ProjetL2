@@ -2,6 +2,15 @@
 #include <commun.h>
 #include <string.h>
 
+/**
+ * \file inventaire.c
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Fonctions liées au module inventaire
+ * \version 0.2
+ * \date 28/03/2022
+ * \copyright Copyright (c) 2022
+ */
+
 inventaire_t * inventaire = NULL;
 
 void changement_statistiques(joueur_t *j,lobjet_t *equipe){

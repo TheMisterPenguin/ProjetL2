@@ -5,13 +5,11 @@
 
 /**
  * \file objet.c
- * \author Descomps Max (Max.Descomps.Etu@univ-lemans.fr)
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
  * \brief Fichier contenant toutes les fonctions concernant les objets
  * \version 0.2
  * \date 24/02/2022
- * 
  * \copyright Copyright (c) 2022
- * 
  */
 
 objet_t *creer_objet(const char * const texture_src, const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit)

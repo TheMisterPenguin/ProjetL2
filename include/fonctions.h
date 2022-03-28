@@ -1,12 +1,10 @@
 /**
  * \file fonctions.h
- * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
- * \brief Fichier qui contient les définitions de toutes les fonctions
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \brief Définitions des fonctions d'initialisation
  * \version 0.1
  * \date 02/02/2022
- * 
  * \copyright Copyright (c) 2022
- * 
  */
 
 #ifndef __H_FONCTION__

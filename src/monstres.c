@@ -2,14 +2,12 @@
 #include <string.h>
 
 /**
- * \file monstre.c
- * \author Bruneau Antoine (Antoine.Bruneau.Etu@univ-lemans.fr)
+ * \file monstres.c
+ * \author Antoine Bruneau (Antoine.Bruneau.Etu@univ-lemans.fr)
  * \brief Fichier contenant toutes les fonctions concernant les monstres
  * \version 0.1
  * \date 03/03/2022
- * 
  * \copyright Copyright (c) 2022
- * 
  */
 
 void detruire_monstre(monstre_t** monstre){

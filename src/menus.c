@@ -5,6 +5,16 @@
 #include <liste_objet.h>
 #include <inventaire.h>
 
+/**
+ * \file menus.c
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Fonctions des menus du jeu
+ * \version 0.2
+ * \date 28/03/2022
+ * \copyright Copyright (c) 2022
+ */
+
 /*void afficher_menu(menus_t * menu){
     switch (menu) {
         case 0: break;

@@ -4,6 +4,15 @@
 #include <stdio.h>
 #include <inventaire.h>
 
+/**
+ * \file liste_objet.c
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Fonctions relatives aux structures contenant les objets
+ * \version 0.2
+ * \date 28/03/2022
+ * \copyright Copyright (c) 2022
+ */
+
 lobjet_t * objets = NULL;
 
 //creer la structure contenant la liste des objets avec au maximum CAPACITE_SAC objets

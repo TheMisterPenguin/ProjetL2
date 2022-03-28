@@ -1,12 +1,10 @@
 /**
  * \file objet.h
- * \author Descomps Max (Max.Descomps.Etu@univ-lemans.fr)
- * \brief Fichier contenant toutes les définitions concernant les objets
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Définitions concernant les objets
  * \version 0.3
  * \date 24/02/2022
- * 
  * \copyright Copyright (c) 2022
- * 
  */
 
 

@@ -1,12 +1,10 @@
 /**
  * \file liste_objet.h
- * \author Descomps Max (Max.Descomps.Etu@univ-lemans.fr)
- * \brief Fichier contenant toutes les définitions concernant les listes d'objets
- * \version 0.1
- * \date 24/02/2022
- * 
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Définition relatives aux structures contenant les objets
+ * \version 1.0
+ * \date 28/03/2022
  * \copyright Copyright (c) 2022
- * 
  */
 
 
