@@ -80,7 +80,7 @@ t_map * charger_s_map(char * buffer){
     json_object_object_get_ex(fichier, "monsters", &tbl_monstre);
     json_object_object_get_ex(fichier, "taille case", &taille_case);
 
-    int taille_case_val = json_object_get_int(taille_case);
+    m->taille_case = json_object_get_int(taille_case);
 
     m->text_sol = creer_texture(json_object_get_string(texture_map),
                                 -1, -1, 0, 0, 1);

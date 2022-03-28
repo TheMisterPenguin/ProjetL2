@@ -228,8 +228,8 @@ void init_sousbuffer(t_map *map){
     }
 
     /* On place la partie de la map que l'on voit */
-    map->text_map->frame_anim->w = map->text_sol->aff_fenetre->w;
-    map->text_map->frame_anim->h = map->text_sol->aff_fenetre->h;
+    map->text_map->frame_anim->w = floor(FENETRE_LONGUEUR / (float) perso_principal->statut->zone_colision.w) * map->taille_case;
+    map->text_map->frame_anim->h = floor(FENETRE_LARGEUR / (float) perso_principal->statut->zone_colision.h) * map->taille_case;
 
     map->text_map->frame_anim->x = 0;
     map->text_map->frame_anim->y = 0;

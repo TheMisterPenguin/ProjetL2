@@ -42,6 +42,9 @@ typedef struct {
     int unite_dep_x; /**< L'unité de déplacement en x */
     int unite_dep_y; /**< L'unité de déplacement en y */
     t_aff * text_sol; /**< La texture du sol */
+    unsigned int taille_case; /**< La taille d'une case */
+    unsigned int cases_x; /**< Le nombre de cases affichées en x */
+    unsigned int cases_y; /**< Le nombre de cases affichées en y */
 }t_map;
 
 extern t_map *map; /**< La map courante */
