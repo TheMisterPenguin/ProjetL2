@@ -210,10 +210,16 @@ void afficher_inventaire()
                 if (SDL_PointInRect(&coord_souris, &slot9))
                     slot_selectionne = 9;
                 
-                if(slot_selectionne != -1){
+                if(slot_selectionne > -1){
                     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "On a selectionné le slot %d\n", slot_selectionne);
-                    /* Fonction pour equiper l'item */
-                    equiper_sac_slot(slot_selectionne);
+                    if(slot_selectionne < 10){
+                        /* Fonction pour équiper l'item */
+                        equiper_sac_slot(slot_selectionne);
+                    }
+                    else{
+                        /* Fonction pour déséquiper l'item */
+                        desequiper_slot(slot_selectionne);
+                    }
                 }
                 break;
             }

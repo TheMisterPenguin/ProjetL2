@@ -87,4 +87,11 @@ void detruire_inventaire(inventaire_t ** inventaire);
  * \param slot Le slot de l'objet à équiper
  */
 void equiper_sac_slot( int slot );
+
+/**
+ * \fn void desequiper_slot(int slot)
+ * \brief Déséquipe l'objet contenu dans l'inventaire
+ * \param slot Le slot de l'objet à déséquiper
+ */
+void desequiper_slot(int slot);
 #endif

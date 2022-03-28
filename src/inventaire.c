@@ -66,7 +66,9 @@ void desequiper(joueur_t *j, objet_t **objet,inventaire_t *inventaire){
     if(*objet != NULL){
         inventaire->sac->liste[inventaire->sac->nb] = *objet;
         *objet = NULL;
+
         changement_statistiques(j,inventaire->equipe);
+        afficher_statistiques(perso_principal);
 
         if((*objet)->type == bouclier){
             j->statut->bouclier_equipe = 0;
@@ -146,4 +148,10 @@ void equiper_sac_slot( int slot )
             break;
         }
     }
+}
+
+void desequiper_slot(int slot){
+    slot -= CAPACITE_SAC; //on met la valeur du premier slot des objets équipés à 0
+
+    desequiper(perso_principal, &(inventaire->equipe->liste[slot]), inventaire);
 }
