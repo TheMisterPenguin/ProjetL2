@@ -1,0 +1,138 @@
+\hypertarget{event_8c}{}\doxysection{Référence du fichier event.\+c}
+\label{event_8c}\index{event.c@{event.c}}
+
+
+Fichier qui appelle différentes fonctions en fonction du déclenchement d\textquotesingle{}évenements.  
+
+
+{\ttfamily \#include $<$commun.\+h$>$}\newline
+{\ttfamily \#include $<$event.\+h$>$}\newline
+{\ttfamily \#include $<$personnage.\+h$>$}\newline
+Graphe des dépendances par inclusion de event.\+c\+:
+% FIG 0
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{event_8c_a49b2a857f5eb92cffc24e3db887f08d4_a49b2a857f5eb92cffc24e3db887f08d4}{key\+Down}} (S\+D\+L\+\_\+\+Keyboard\+Event $\ast$ev)
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand une touche du clavier est pressée. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{event_8c_a3d44f780c008868fddbb6daa9238b828_a3d44f780c008868fddbb6daa9238b828}{key\+Up}} (S\+D\+L\+\_\+\+Keyboard\+Event $\ast$ev)
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand une touche du clavier est relachée. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{event_8c_a27fd8724d19878c122a916d94f848415_a27fd8724d19878c122a916d94f848415}{mouse\+Button\+Down}} (S\+D\+L\+\_\+\+Mouse\+Button\+Event $\ast$ev)
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand un bouton de la souris est pressée. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{event_8c_a947ade8ec59b845047ae96a8c9ea146a_a947ade8ec59b845047ae96a8c9ea146a}{mouse\+Button\+Up}} (S\+D\+L\+\_\+\+Mouse\+Button\+Event $\ast$ev)
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand un bouton de la souris est relachée. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{event_8c_ac5aaa329d1cae78f44676d63b58eec4a_ac5aaa329d1cae78f44676d63b58eec4a}{jeu\+\_\+event}} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{event_8c_ac8d571cc4da84ae88b13211ec29eb2e3_ac8d571cc4da84ae88b13211ec29eb2e3}{logo\+\_\+passer}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Fichier qui appelle différentes fonctions en fonction du déclenchement d\textquotesingle{}évenements. 
+
+\begin{DoxyAuthor}{Auteur}
+Despert Ange (\href{mailto:Ange.Despert.Etu@univ-lemans.fr}{\texttt{ Ange.\+Despert.\+Etu@univ-\/lemans.\+fr}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+02/02/2022
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{event_8c_ac5aaa329d1cae78f44676d63b58eec4a_ac5aaa329d1cae78f44676d63b58eec4a}\label{event_8c_ac5aaa329d1cae78f44676d63b58eec4a_ac5aaa329d1cae78f44676d63b58eec4a}} 
+\index{event.c@{event.c}!jeu\_event@{jeu\_event}}
+\index{jeu\_event@{jeu\_event}!event.c@{event.c}}
+\doxysubsubsection{\texorpdfstring{jeu\_event()}{jeu\_event()}}
+{\footnotesize\ttfamily void jeu\+\_\+event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gère les événements. 
+
+\begin{DoxyAuthor}{Auteur}
+Despert Ange 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{event_8c_a49b2a857f5eb92cffc24e3db887f08d4_a49b2a857f5eb92cffc24e3db887f08d4}\label{event_8c_a49b2a857f5eb92cffc24e3db887f08d4_a49b2a857f5eb92cffc24e3db887f08d4}} 
+\index{event.c@{event.c}!keyDown@{keyDown}}
+\index{keyDown@{keyDown}!event.c@{event.c}}
+\doxysubsubsection{\texorpdfstring{keyDown()}{keyDown()}}
+{\footnotesize\ttfamily void key\+Down (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Keyboard\+Event $\ast$}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Fonction qui gère les événements quand une touche du clavier est pressée. 
+
+\begin{DoxyAuthor}{Auteur}
+Antoine Bruneau 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em S\+D\+L\+\_\+\+Keyboard\+Event$\ast$} & une structure contenant l\textquotesingle{}évênement \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{event_8c_a3d44f780c008868fddbb6daa9238b828_a3d44f780c008868fddbb6daa9238b828}\label{event_8c_a3d44f780c008868fddbb6daa9238b828_a3d44f780c008868fddbb6daa9238b828}} 
+\index{event.c@{event.c}!keyUp@{keyUp}}
+\index{keyUp@{keyUp}!event.c@{event.c}}
+\doxysubsubsection{\texorpdfstring{keyUp()}{keyUp()}}
+{\footnotesize\ttfamily void key\+Up (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Keyboard\+Event $\ast$}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Fonction qui gère les événements quand une touche du clavier est relachée. 
+
+\begin{DoxyAuthor}{Auteur}
+Antoine Bruneau 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em S\+D\+L\+\_\+\+Keyboard\+Event$\ast$} & une structure contenant l\textquotesingle{}évênement \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{event_8c_ac8d571cc4da84ae88b13211ec29eb2e3_ac8d571cc4da84ae88b13211ec29eb2e3}\label{event_8c_ac8d571cc4da84ae88b13211ec29eb2e3_ac8d571cc4da84ae88b13211ec29eb2e3}} 
+\index{event.c@{event.c}!logo\_passer@{logo\_passer}}
+\index{logo\_passer@{logo\_passer}!event.c@{event.c}}
+\doxysubsubsection{\texorpdfstring{logo\_passer()}{logo\_passer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}} logo\+\_\+passer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{event_8c_a27fd8724d19878c122a916d94f848415_a27fd8724d19878c122a916d94f848415}\label{event_8c_a27fd8724d19878c122a916d94f848415_a27fd8724d19878c122a916d94f848415}} 
+\index{event.c@{event.c}!mouseButtonDown@{mouseButtonDown}}
+\index{mouseButtonDown@{mouseButtonDown}!event.c@{event.c}}
+\doxysubsubsection{\texorpdfstring{mouseButtonDown()}{mouseButtonDown()}}
+{\footnotesize\ttfamily void mouse\+Button\+Down (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Mouse\+Button\+Event $\ast$}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Fonction qui gère les événements quand un bouton de la souris est pressée. 
+
+\begin{DoxyAuthor}{Auteur}
+Antoine Bruneau 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em S\+D\+L\+\_\+\+Keyboard\+Event$\ast$} & une structure contenant l\textquotesingle{}évênement \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{event_8c_a947ade8ec59b845047ae96a8c9ea146a_a947ade8ec59b845047ae96a8c9ea146a}\label{event_8c_a947ade8ec59b845047ae96a8c9ea146a_a947ade8ec59b845047ae96a8c9ea146a}} 
+\index{event.c@{event.c}!mouseButtonUp@{mouseButtonUp}}
+\index{mouseButtonUp@{mouseButtonUp}!event.c@{event.c}}
+\doxysubsubsection{\texorpdfstring{mouseButtonUp()}{mouseButtonUp()}}
+{\footnotesize\ttfamily void mouse\+Button\+Up (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Mouse\+Button\+Event $\ast$}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Fonction qui gère les événements quand un bouton de la souris est relachée. 
+
+\begin{DoxyAuthor}{Auteur}
+Antoine Bruneau 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em S\+D\+L\+\_\+\+Keyboard\+Event$\ast$} & une structure contenant l\textquotesingle{}évênement \\
+\hline
+\end{DoxyParams}

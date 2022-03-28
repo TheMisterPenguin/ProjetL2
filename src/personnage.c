@@ -11,6 +11,9 @@
 #ifndef _WIN32
 	#include <pwd.h>
 	#include <unistd.h>
+#else
+	#include <direct.h>
+	#include <windows.h>
 #endif
 
 void copy(const byte * origin, byte *out, size_t size){
@@ -34,39 +37,44 @@ char save_path[500];
 void check_repertoire_jeux(){
 	struct stat stats;
 
+	#ifndef _WIN32
 	struct passwd *pw = getpwuid(getuid());
-
 	sprintf(save_path, "%s/%s", pw->pw_dir, SAVE_PATH); /* On récupère le répertoire home */
+	#else
+	char *home = getenv("HOMEPATH");
+	sprintf(save_path, "%s\\AppData\\Local\\%s", home ,SAVE_PATH);
+	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Répertoire de sauvegarde : %s", save_path);
+	#endif
 
 	stat(save_path, &stats);
 	if (S_ISDIR(stats.st_mode)){ /* Si le repertoire existe */
-		printf("Le répertoire de sauvegarde existe déja\n");
+		SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Le répertoire de sauvegarde existe déja !\n");
 		return;
 	}
 
-	int err = mkdir(save_path, S_IRWXU); /* On créer le répertoire */
+	/* On créer le répertoire */
 
-	printf("Création du répertoire de sauvegarde : %s\n", save_path);
+	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Création du répertoire de sauvegarde...\n");
+	#ifdef _WIN32
+		int err = mkdir(save_path);
+	#else
+		int err = mkdir(save_path, S_IRWXU);
+	#endif
 
-	if (err == -1){ /* On regarde s'il y a une erreur */ 
-		switch (errno)
-		{
-		case EACCES:
-			printf("Le dossier parent n'autorise pas l'écriture\n");
-			exit(EXIT_FAILURE);
-		case ENOENT :
-			printf("Le dossier spécifié est introuvable !\n");
-			exit(EXIT_FAILURE);
-		default:
-			perror("mkdir");
-			exit(EXIT_FAILURE);
-		}
+	if (err != 0){
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Impossible de créer le répertoire de sauvegarde : %s\n", strerror(errno));
+		fermer_programme(ERR_CREATION_REPERTOIRE_SAUVEGARDE);
 	}
+	else
+		SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Répertoire de sauvegarde créé !\n");
 }
 
 joueur_t *perso_principal;
 
 void creer_sauvegarde_json(joueur_t *j){
+
+	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Création du fichier de sauvegarde...\n");
+
 	/* Object JSON principal */
 	json_object *sauvegarde = json_object_new_object();
 
@@ -85,10 +93,9 @@ void creer_sauvegarde_json(joueur_t *j){
 
 	/* Création des tableaux */
 	json_object *statut = json_object_new_object();
-	json_object *trigger = json_object_new_array_ext(TAILLE_TRIGGER);
+	json_object *trigger = json_object_new_array();
 
 	json_object *trigger_value;
-
 	for(unsigned int i = 0; i < TAILLE_TRIGGER; i++){
 		trigger_value = json_object_new_int( (int) j->trigger[i]);
 		json_object_array_add(trigger, trigger_value);
@@ -116,13 +123,12 @@ void creer_sauvegarde_json(joueur_t *j){
 
 	//json_object_to_file(path, sauvegarde);
 
-	printf("%s\n", path);
 
 	FILE * sauv = fopen(path, "w");
 
 	if(!sauv){
 		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur lors de la sauvegarde", "Imposible de créer le fichier de la sauvegarde \n", NULL);
-		exit(ERREUR_FICHIER);
+		fermer_programme(ERREUR_FICHIER);
 	}
 
 	const char * json = json_object_to_json_string(sauvegarde);
@@ -133,6 +139,7 @@ void creer_sauvegarde_json(joueur_t *j){
 
 	free(path);
 
+	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Fichier de sauvegarde créé !\n");
 }
 
 bool sauv_existe(char *nom_sauv){
@@ -144,11 +151,15 @@ bool sauv_existe(char *nom_sauv){
 
 joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 
+	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Chargement de la sauvegarde...\n");
+
 	/* On récupère la sauvegarde */
 	json_object *sauvegarde = json_object_from_file(nom_sauv);
 
 	if(!sauvegarde){
 		fprintf(stderr,"Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
@@ -156,12 +167,16 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 	json_object *nom_joueur = json_object_object_get(sauvegarde, "Nom Joueur");
 	if (!nom_joueur){
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
 	json_object *niveau = json_object_object_get(sauvegarde, "Niveau");
 	if (!niveau){
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
@@ -169,12 +184,16 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 	if (!xp)
 	{
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
 	json_object *Pdv = json_object_object_get(sauvegarde, "Pv");
 	if (!Pdv){
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
@@ -182,6 +201,8 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 	if (!maxPdv)
 	{
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
@@ -189,12 +210,16 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 	if (!attaque)
 	{
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
 	json_object *vitesse = json_object_object_get(sauvegarde, "Vitesse");
 	if (!vitesse){
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
@@ -202,6 +227,8 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 	if (!defense)
 	{
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
@@ -209,36 +236,48 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 	if (!statut)
 	{
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
 	json_object *trigger = json_object_object_get(sauvegarde, "Triggers");
 	if (!trigger){
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
 	json_object *orientation = json_object_object_get(statut, "Orientation");
 	if (!orientation){
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
 	json_object *bouclier_equipe = json_object_object_get(statut, "Bouclie equipe");
 	if (!bouclier_equipe){
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
 	json_object *x_map = json_object_object_get(statut, "x map");
 	if (!x_map){
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
 	json_object *y_map = json_object_object_get(statut, "y map");
 	if (!y_map){
 		fprintf(stderr, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
+
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la lecture de la sauvegarde : %s\n", json_util_get_last_err());
 		return NULL;
 	}
 
@@ -246,7 +285,7 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 
 	if(!trigger_tab){
 		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur lors du chargement de la sauvegarde", "Plus assez de mémoire !\n", NULL);
-		exit(OUT_OF_MEM);
+		fermer_programme(OUT_OF_MEM);
 	}
 
 	json_object *element_trig;
@@ -273,6 +312,8 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 
 	j->statut->zone_colision.x = json_object_get_int(x_map);
 	j->statut->zone_colision.y = json_object_get_int(y_map);
+
+	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Chargement de la sauvegarde réussi !");
 
 	return j;
 }

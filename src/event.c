@@ -24,8 +24,11 @@ static void keyDown(SDL_KeyboardEvent * ev){
     if (ev->keysym.sym == SDLK_ESCAPE){ /* On affiche le menu de pause si on appuye sur echap */
         SDL_ShowCursor(SDL_ENABLE);
         afficher_menu_pause();
+        SDL_ShowCursor(SDL_DISABLE);
     }
-        
+
+    int flags;
+
     if(statut->action == RIEN || statut->action == CHARGER)
         switch(ev->keysym.sym){
             case SDLK_DOWN :
@@ -37,7 +40,36 @@ static void keyDown(SDL_KeyboardEvent * ev){
             case SDLK_LEFT :
             case TOUCHE_GAUCHE : statut->orientation = OUEST;  statut->en_mouvement = vrai; break;
             case TOUCHE_TAB :
-                
+                SDL_ShowCursor(SDL_ENABLE);
+                afficher_inventaire();
+                SDL_ShowCursor(SDL_DISABLE);
+                break;
+            case SDLK_F11 :
+                flags = SDL_GetWindowFlags(fenetre_Principale);
+
+                if(flags & SDL_WINDOW_FULLSCREEN_DESKTOP){
+                    if(SDL_SetWindowFullscreen(fenetre_Principale, 0)){
+                        char *msp = malloc(sizeof(char) * (500));
+
+                        sprintf(msp, "Erreur lors du changement d'état de la fenêtre : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_WINDOW);
+                        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+                        free(msp);
+                        fermer_programme(ERREUR_SDL_WINDOW);
+                    }
+
+                }
+                else{
+                    if(SDL_SetWindowFullscreen(fenetre_Principale, SDL_WINDOW_FULLSCREEN)){
+                        char *msp = malloc(sizeof(char) * (500));
+
+                        sprintf(msp, "Erreur lors du changement d'état de la fenêtre : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_WINDOW);
+                        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+                        free(msp);
+                        fermer_programme(ERREUR_SDL_WINDOW);
+                    }
+                }
                 break;
             /*case TOUCHE_RETOUR : 
             if(menus == PAUSE){
@@ -132,7 +164,7 @@ void jeu_event(void){
 
     while(SDL_PollEvent(&lastEvent)){
         switch(lastEvent.type){
-            case SDL_QUIT : printf("Détection de la fermeture de la fenêtre\n");exit(EXIT_SUCCESS);
+            case SDL_QUIT : printf("Détection de la fermeture de la fenêtre\n");fermer_programme(EXIT_SUCCESS);
             case SDL_KEYDOWN : keyDown((SDL_KeyboardEvent*)&lastEvent.key); break;
             case SDL_KEYUP : keyUp((SDL_KeyboardEvent*)&lastEvent.key); break;
             case SDL_MOUSEBUTTONDOWN : mouseButtonDown((SDL_MouseButtonEvent*)&lastEvent.button); break;
@@ -149,7 +181,7 @@ bool logo_passer(void){
         switch (lastEvent.type){
         case SDL_QUIT:
             printf("Détection de la fermeture de la fenêtre\n");
-            exit(EXIT_SUCCESS);
+            fermer_programme(EXIT_SUCCESS);
         case SDL_KEYDOWN:
             return vrai;
         }

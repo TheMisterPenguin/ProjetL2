@@ -8,9 +8,7 @@
 #include <monstres.h>
 #include <math.h>
 
-bool bord_map(t_direction orientation){
-    
-}
+t_map *map;
 
 SDL_Rect taille_ecran_cases(){
     SDL_Rect p;
@@ -34,7 +32,7 @@ char * charger_f_map(const char * const nom_map){
     fp = fopen(nom_map,"r");
     if(! fp){
         fprintf(stderr, "Erreur : impossible de charge la map, fichier \"%s\" introuvable !\n", nom_map);
-        exit(EXIT_FAILURE);
+        fermer_programme(EXIT_FAILURE);
     }
 
     fseek(fp, (long)0, SEEK_END); /* On parcourt le fichier afin de connaitre sa taille */
@@ -43,7 +41,7 @@ char * charger_f_map(const char * const nom_map){
     file_buffer = calloc((taille_fichier) + 1, sizeof(char)); /* On alloue d'ynamiquement en fonction de la taille du fichier */
     if(!file_buffer){
         fprintf(stderr, "Erreur : plus de mémoire disponible !\n");
-        exit(OUT_OF_MEM);
+        fermer_programme(OUT_OF_MEM);
     }
 
     rewind(fp); /* On revient au début du fichier */
@@ -64,7 +62,9 @@ t_map * charger_s_map(char * buffer){
     json_object *height;
     json_object *tbl_monstre;
     json_object *monstre;
+  
     monstre_t * inserer;
+
 
     SDL_Rect s = taille_ecran_cases();
 
@@ -83,7 +83,7 @@ t_map * charger_s_map(char * buffer){
     m->width = json_object_get_int(width);
 
     for(unsigned int i = 0; i < json_object_array_length(tbl_monstre); i++){
-        monstre = json_object_array_get_idx(tbl_monstre,i);
+        /*monstre = json_object_array_get_idx(tbl_monstre,i);*/
         /* Fonction qui permet de creer un monstre */
         inserer = creer_monstre(liste_base_monstres, json_object_get_string(monstre), /*type, position*/);
 
@@ -94,6 +94,7 @@ t_map * charger_s_map(char * buffer){
     m->unite_dep_y = floor(FENETRE_LARGEUR / (float)m->text_map->height); /* Calcul en nombre de pixels d'une unité de déplacement */
 
     free(buffer);
+    json_object_put(fichier); //libération mémoire de l'objet json
     return m;
 }
 

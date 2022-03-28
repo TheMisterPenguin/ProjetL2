@@ -1,16 +1,11 @@
+#define SDL_MAIN_HANDLED
+
 #include <commun.h>
 #include <stdio.h>
 #include <math.h>
 #include <map.h>
 
-SDL_Window *fenetre_Principale = NULL;
-SDL_Renderer *rendu_principal = NULL;
-bool running = vrai;
-long int compteur;
-t_map *map;
-unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 
-#define NB_FPS 30
 
 void afficher_intro(void){
     int i;
@@ -59,7 +54,7 @@ void afficher_intro(void){
 
 int main(int argc, char** argv)
 {
-
+    SDL_SetMainReady();
     init();
     afficher_intro();
     char *fichier_map = charger_f_map("map.json");
@@ -75,10 +70,15 @@ int main(int argc, char** argv)
     t_aff *next_texture_joueur = perso_principal->textures_joueur->liste[TEXT_MARCHER];
     t_aff *texture_temp;
 
+    objets = creer_liste_objet();
+    inventaire = creer_inventaire();
+    objets->liste[0]->texture = creer_texture(objets->liste[0]->texture_src, 46, 48, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 0.8);
+    ramasser_objet(objets->liste[0], inventaire);
+
     /*test de l'allocation des textures*/
     for (i = 0; i < perso_principal->textures_joueur->nb_valeurs; i++)
         if (perso_principal->textures_joueur->liste == NULL)
-            exit(EXIT_FAILURE);
+            fermer_programme(EXIT_FAILURE);
 
     rect_centre_x(&tx);
     rect_centre_y(&ty);
@@ -92,9 +92,7 @@ int main(int argc, char** argv)
         debut = SDL_GetPerformanceCounter();
         jeu_event();
         // en_tete(buffer_affichage);
-        //creer_sauvegarde_json(perso_principal);
-        if (perso_principal->statut->en_mouvement)
-        { /* Déplacement map */
+        if (perso_principal->statut->en_mouvement){ /* Déplacement map */
             switch (perso_principal->statut->orientation)
             {
             case NORD:
@@ -132,7 +130,11 @@ int main(int argc, char** argv)
         fin = SDL_GetPerformanceCounter();
 
         float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
-        SDL_Delay(floor((1000 / (float)60) - temps_passe));
+        SDL_Delay(floor((1000 / (float) NB_FPS) - temps_passe));
+        if(compteur == NB_FPS)
+            compteur = 0;
         compteur++;
     }
+
+    return AUCUNE_ERREUR;
 }

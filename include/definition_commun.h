@@ -37,6 +37,15 @@ extern bool running;
 #ifndef _WIN32
 #define SAVE_PATH "Bloody_Sanada"
 #else
-#define SAVE_PATH "%LocalAppData%/Bloody Sanada"
+#define SAVE_PATH "Bloody_Sanada"
 #endif
+
+/* Fonctions indispensables */
+
+/**
+ * \fn void fermer_programme(int code_erreur);
+ * \brief Fonction qui appelle les fonctions pour terminer le programme
+ * \author Ange Despert
+ */
+void fermer_programme(int code_erreur);
 #endif

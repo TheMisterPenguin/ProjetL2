@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Bloody Sanada: Référence du fichier personnage.c</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Bloody Sanada
+   </div>
+   <div id="projectbrief">Projet de L2 Informatique</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier personnage.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Fichier contenant toutes les fonctions concernant le personnage.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d2/d2f/personnage_8h_source.html">personnage.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d5/dae/affichage_8h_source.html">affichage.h</a>&gt;</code><br />
+<code>#include &lt;json-c/json.h&gt;</code><br />
+<code>#include &lt;sys/stat.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../da/de9/code__erreur_8h_source.html">code_erreur.h</a>&gt;</code><br />
+<code>#include &lt;pwd.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de personnage.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/df4/personnage_8c__incl.png" border="0" usemap="#personnage_8c" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a4fc62500724ad88ac0a844833c1b2ab1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a4fc62500724ad88ac0a844833c1b2ab1.html#a4fc62500724ad88ac0a844833c1b2ab1">copy</a> (const <a class="el" href="../../d1/daa/definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *origin, <a class="el" href="../../d1/daa/definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *out, size_t size)</td></tr>
+<tr class="separator:a4fc62500724ad88ac0a844833c1b2ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1674d581294113dd43ec58636bd57802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a1674d581294113dd43ec58636bd57802.html#a1674d581294113dd43ec58636bd57802">check_repertoire_jeux</a> ()</td></tr>
+<tr class="separator:a1674d581294113dd43ec58636bd57802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ce711c80691bb2b4f29e7c58790851a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a9ce711c80691bb2b4f29e7c58790851a.html#a9ce711c80691bb2b4f29e7c58790851a">creer_sauvegarde_json</a> (<a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *j)</td></tr>
+<tr class="separator:a9ce711c80691bb2b4f29e7c58790851a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71919ee7582fae9cc0e2d1fd5bbce94e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/daa/definition__commun_8h_abb452686968e48b67397da5f97445f5b.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a71919ee7582fae9cc0e2d1fd5bbce94e.html#a71919ee7582fae9cc0e2d1fd5bbce94e">sauv_existe</a> (char *nom_sauv)</td></tr>
+<tr class="separator:a71919ee7582fae9cc0e2d1fd5bbce94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36225ef11de350c055f8d1407bda2685"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a36225ef11de350c055f8d1407bda2685.html#a36225ef11de350c055f8d1407bda2685">charger_sauvegarde_joueur</a> (char *nom_sauv)</td></tr>
+<tr class="separator:a36225ef11de350c055f8d1407bda2685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a459037c293964b9d0b060fab158c45dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a459037c293964b9d0b060fab158c45dd.html#a459037c293964b9d0b060fab158c45dd">new_joueur</a> (const char *nom)</td></tr>
+<tr class="separator:a459037c293964b9d0b060fab158c45dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96505a65ab40b828238bfcbb3e90333e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a96505a65ab40b828238bfcbb3e90333e.html#a96505a65ab40b828238bfcbb3e90333e">creer_joueur</a> (const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const <a class="el" href="../../d1/daa/definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> trig[<a class="el" href="../../d2/d2f/personnage_8h_a98a97fd1e52188dde7bcc423c5d17546.html#a98a97fd1e52188dde7bcc423c5d17546">TAILLE_TRIGGER</a>], const <a class="el" href="../../d1/daa/definition__commun_8h_aec4e3894aa763e81148b2241ff730790.html#aec4e3894aa763e81148b2241ff730790">t_direction</a> orientation, const <a class="el" href="../../d1/daa/definition__commun_8h_abb452686968e48b67397da5f97445f5b.html#abb452686968e48b67397da5f97445f5b">bool</a> bouclier_equipe)</td></tr>
+<tr class="separator:a96505a65ab40b828238bfcbb3e90333e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33613b3a2b55cb1d1855a39a288fb230"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230.html#a33613b3a2b55cb1d1855a39a288fb230">detruire_joueur</a> (<a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *j)</td></tr>
+<tr class="separator:a33613b3a2b55cb1d1855a39a288fb230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f3c1bdb9b485ae82c6d64274c76afe4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a0f3c1bdb9b485ae82c6d64274c76afe4.html#a0f3c1bdb9b485ae82c6d64274c76afe4">caracteristiques</a> (<a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *perso)</td></tr>
+<tr class="separator:a0f3c1bdb9b485ae82c6d64274c76afe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5036a38157418caf698d5662fddeb947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a5036a38157418caf698d5662fddeb947.html#a5036a38157418caf698d5662fddeb947">afficher_statistiques</a> (<a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *perso)</td></tr>
+<tr class="separator:a5036a38157418caf698d5662fddeb947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65a6d92356f49132bd234b5338f0a2da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a65a6d92356f49132bd234b5338f0a2da.html#a65a6d92356f49132bd234b5338f0a2da">levelup</a> (<a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *perso)</td></tr>
+<tr class="separator:a65a6d92356f49132bd234b5338f0a2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79c7e8e8c5ccfdcc99b20b3ff39d2726"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a79c7e8e8c5ccfdcc99b20b3ff39d2726.html#a79c7e8e8c5ccfdcc99b20b3ff39d2726">gain_xp</a> (<a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *perso)</td></tr>
+<tr class="separator:a79c7e8e8c5ccfdcc99b20b3ff39d2726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a8512a450e703a0f7eb1bd9540a592187"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a8512a450e703a0f7eb1bd9540a592187.html#a8512a450e703a0f7eb1bd9540a592187">save_path</a> [500]</td></tr>
+<tr class="separator:a8512a450e703a0f7eb1bd9540a592187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ead4748360bfbe8192d0dd51d0cac86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a5ead4748360bfbe8192d0dd51d0cac86.html#a5ead4748360bfbe8192d0dd51d0cac86">perso_principal</a></td></tr>
+<tr class="separator:a5ead4748360bfbe8192d0dd51d0cac86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Fichier contenant toutes les fonctions concernant le personnage. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Despert Ange (<a href="#" onclick="location.href='mai'+'lto:'+'Ang'+'e.'+'Des'+'pe'+'rt.'+'Et'+'u@u'+'ni'+'v-l'+'em'+'ans'+'.f'+'r'; return false;">Ange.<span style="display: none;">.nosp@m.</span>Desp<span style="display: none;">.nosp@m.</span>ert.E<span style="display: none;">.nosp@m.</span>tu@u<span style="display: none;">.nosp@m.</span>niv-l<span style="display: none;">.nosp@m.</span>eman<span style="display: none;">.nosp@m.</span>s.fr</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>01/02/2022</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

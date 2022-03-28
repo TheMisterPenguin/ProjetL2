@@ -20,6 +20,8 @@
 list *listeDeTextures; 
 list *buffer_affichage;
 
+long int compteur;
+unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 SDL_Rect tx,ty;
 
 float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépendent de la résolution */
@@ -36,7 +38,7 @@ void detruire_texture(t_aff **texture){
     if((*texture)->frame_anim != NULL)
         free((*texture)->frame_anim);
 
-    // ne pas faire SDL_DestroyTexture (deja dans atexit(SDL_DestroyRenderer))
+    // ne pas faire SDL_DestroyTexture (deja dans f_close(SDL_DestroyRenderer))
 
     free(*texture);
     *texture = NULL;
@@ -137,7 +139,13 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
     /* Chargement de la texture dans une surface */
     chargement = SDL_LoadBMP(nom_fichier);
     if(! chargement){
-        fprintf(stderr,"Erreur lors du chargement de la texture : %s\n", SDL_GetError());
+        char *msp = malloc(sizeof(char) * (500));
+
+        sprintf(msp, "Erreur lors de la création de la texture : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_FICHIER);
+        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, msp);
+
+        free(msp);
         return NULL;
     }
 
@@ -147,7 +155,13 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
     texture->texture = SDL_CreateTextureFromSurface(rendu_principal, chargement);
     SDL_FreeSurface(chargement); 
     if(! texture->texture){
-        fprintf(stderr,"Erreur lors de la convertion de la surface : %s\n", SDL_GetError());
+        char *msp = malloc(sizeof(char) * (500));
+
+        sprintf(msp, "Erreur lors de la convertion de la surface : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_SURFACE);
+        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, msp);
+
+        free(msp);
         free(texture);
         return NULL;
     }
@@ -166,7 +180,13 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
 
         if (!rect_correct_texture(texture->frame_anim, texture->width, texture->height))
         {
-            fprintf(stderr, "Erreur lors de la création de la texture : taille de la zone affichée supérieure à la texture !\n");
+            char *msp = malloc(sizeof(char) * (500));
+
+            sprintf(msp, "Erreur lors de la création de la texture : taille de la zone affichée supérieure à la texture\nErreur : 0x%X\n", ERR_RECTANGLE_TOO_BIG);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, msp);
+
+            free(msp);
             free(texture->frame_anim);
             free(texture);
             return NULL;
@@ -199,10 +219,10 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
 
         texture->multipli_taille = (float)FENETRE_LONGUEUR / texture->width;
     }
-        ajout_droit(listeDeTextures, texture);
+    ajout_droit(listeDeTextures, texture);
 
-        return texture;
-    }
+    return texture;
+}
 
 err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
     if(texture->frame_anim != NULL)
@@ -609,6 +629,13 @@ SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
    SDL_Color col = {r,g,b,a};
    return col;
 }
+
+void placer_texture(t_aff *texture, int x, int y){
+    x = floor(x * texture->multipli_taille);
+    y = floor(y * texture->multipli_taille);
+
+    texture->aff_fenetre->x = x;
+    texture->aff_fenetre->y = y;
 
 int current_frame_x(t_aff * texture){
     return texture->frame_anim->x / LARGEUR_ENTITE;

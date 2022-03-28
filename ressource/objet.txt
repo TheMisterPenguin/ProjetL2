@@ -1,1 +1,1 @@
-ressources/objet/sword.bmp 1 sabre du purificateur: 5 5 2 2;
+ressources/objet/sword.bmp 1 sabre du purificateur: 0 5 2 2;

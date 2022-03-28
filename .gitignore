@@ -17,7 +17,6 @@
 *.pch
 
 # Libraries
-*.lib
 *.lo
 
 # Shared objects (inc. Windows DLLs)
@@ -50,7 +49,3 @@ dkms.conf
 share/
 lib/cmake
 lib/pkgconfig
-
-*.prog
-
-doc/out

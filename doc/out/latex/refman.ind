@@ -1,0 +1,1237 @@
+\begin{theindex}
+
+  \item {action}
+    \subitem {statut\_s}, \hyperpage{18}
+  \item {action\_t}
+    \subitem {personnage.h}, \hyperpage{97}
+  \item {aff}
+    \subitem {list}, \hyperpage{10}
+  \item {aff\_cleanup}
+    \subitem {init\_close.c}, \hyperpage{50}
+  \item {aff\_fenetre}
+    \subitem {s\_aff}, \hyperpage{16}
+  \item {affichage.c}, \hyperpage{23}
+  \item {affichage.h}, \hyperpage{23}
+    \subitem {afficher\_buffer}, \hyperpage{27}
+    \subitem {afficher\_texture}, \hyperpage{27}
+    \subitem {ajout\_text\_liste}, \hyperpage{28}
+    \subitem {buffer\_affichage}, \hyperpage{36}
+    \subitem {color}, \hyperpage{28}
+    \subitem {compteur}, \hyperpage{36}
+    \subitem {creer\_texture}, \hyperpage{28}
+    \subitem {def\_texture\_taille}, \hyperpage{28}
+    \subitem {deplacement\_x\_pers}, \hyperpage{29}
+    \subitem {deplacement\_y\_pers}, \hyperpage{29}
+    \subitem {deplacer\_rect\_haut\_droit}, \hyperpage{30}
+    \subitem {deplacer\_rect\_origine}, \hyperpage{30}
+    \subitem {deplacer\_texture\_bas\_droit}, \hyperpage{30}
+    \subitem {deplacer\_texture\_bas\_gauche}, \hyperpage{30}
+    \subitem {deplacer\_texture\_centre}, \hyperpage{31}
+    \subitem {deplacer\_texture\_haut\_droit}, \hyperpage{31}
+    \subitem {deplacer\_texture\_origine}, \hyperpage{31}
+    \subitem {detruire\_liste\_textures}, \hyperpage{32}
+    \subitem {detruire\_texture}, \hyperpage{32}
+    \subitem {info\_texture}, \hyperpage{32}
+    \subitem {init\_texture\_joueur}, \hyperpage{32}
+    \subitem {init\_textures\_joueur}, \hyperpage{33}
+    \subitem {LARGEUR\_PERSONNAGE}, \hyperpage{25}
+    \subitem {listeDeTextures}, \hyperpage{37}
+    \subitem {LONGUEUR\_PERSONNAGE}, \hyperpage{25}
+    \subitem {modif\_affichage\_rect}, \hyperpage{33}
+    \subitem {multiplicateur\_x}, \hyperpage{37}
+    \subitem {multiplicateur\_y}, \hyperpage{37}
+    \subitem {N\_T\_ATTAQUE}, \hyperpage{25}
+    \subitem {N\_T\_ATTAQUE\_CHARGEE}, \hyperpage{25}
+    \subitem {N\_T\_CHARGER}, \hyperpage{25}
+    \subitem {N\_T\_MARCHER}, \hyperpage{26}
+    \subitem {N\_T\_MARCHER\_BOUCLIER}, \hyperpage{26}
+    \subitem {NB\_FPS}, \hyperpage{26}
+    \subitem {NB\_SPRITE\_JOUEUR}, \hyperpage{26}
+    \subitem {next\_frame\_joueur}, \hyperpage{33}
+    \subitem {next\_frame\_x}, \hyperpage{33}
+    \subitem {next\_frame\_x\_indice}, \hyperpage{34}
+    \subitem {next\_frame\_y}, \hyperpage{34}
+    \subitem {next\_frame\_y\_indice}, \hyperpage{34}
+    \subitem {rect\_centre}, \hyperpage{35}
+    \subitem {rect\_centre\_x}, \hyperpage{35}
+    \subitem {rect\_centre\_y}, \hyperpage{35}
+    \subitem {rect\_correct\_texture}, \hyperpage{35}
+    \subitem {rects\_egal\_x}, \hyperpage{36}
+    \subitem {rects\_egal\_y}, \hyperpage{36}
+    \subitem {t\_aff}, \hyperpage{26}
+    \subitem {t\_l\_aff}, \hyperpage{26}
+    \subitem {t\_texture\_perso}, \hyperpage{26}
+    \subitem {TEXT\_ATTAQUE}, \hyperpage{27}
+    \subitem {TEXT\_ATTAQUE\_CHARGEE}, \hyperpage{27}
+    \subitem {TEXT\_CHARGER}, \hyperpage{27}
+    \subitem {text\_copier\_position}, \hyperpage{36}
+    \subitem {TEXT\_MARCHER}, \hyperpage{27}
+    \subitem {TEXT\_MARCHER\_BOUCLIER}, \hyperpage{27}
+    \subitem {tx}, \hyperpage{37}
+    \subitem {ty}, \hyperpage{37}
+  \item {afficher\_buffer}
+    \subitem {affichage.h}, \hyperpage{27}
+  \item {afficher\_int}
+    \subitem {test\_listes.c}, \hyperpage{103}
+  \item {afficher\_intro}
+    \subitem {main.c}, \hyperpage{76}
+  \item {afficher\_inventaire}
+    \subitem {menus.c}, \hyperpage{82}
+    \subitem {menus.h}, \hyperpage{83}
+  \item {afficher\_liste}
+    \subitem {listes.c}, \hyperpage{64}
+    \subitem {listes.h}, \hyperpage{70}
+  \item {afficher\_liste\_objet}
+    \subitem {liste\_objet.c}, \hyperpage{60}
+    \subitem {liste\_objet.h}, \hyperpage{62}
+  \item {afficher\_menu\_pause}
+    \subitem {menus.c}, \hyperpage{82}
+    \subitem {menus.h}, \hyperpage{83}
+  \item {afficher\_objet}
+    \subitem {objet.c}, \hyperpage{87}
+    \subitem {objet.h}, \hyperpage{90}
+  \item {afficher\_statistiques}
+    \subitem {personnage.c}, \hyperpage{92}
+    \subitem {personnage.h}, \hyperpage{97}
+  \item {afficher\_texture}
+    \subitem {affichage.h}, \hyperpage{27}
+  \item {ajout}
+    \subitem {list}, \hyperpage{10}
+  \item {ajout\_droit}
+    \subitem {listes.c}, \hyperpage{65}
+    \subitem {listes.h}, \hyperpage{71}
+  \item {ajout\_gauche}
+    \subitem {listes.c}, \hyperpage{65}
+    \subitem {listes.h}, \hyperpage{71}
+  \item {ajout\_text\_liste}
+    \subitem {affichage.h}, \hyperpage{28}
+  \item {amulette}
+    \subitem {objet.h}, \hyperpage{89}
+  \item {arme}
+    \subitem {objet.h}, \hyperpage{89}
+  \item {ATTAQUE}
+    \subitem {personnage.h}, \hyperpage{97}
+  \item {attaque}
+    \subitem {base\_monstre\_s}, \hyperpage{5}
+    \subitem {joueur\_s}, \hyperpage{8}
+    \subitem {monstre\_s}, \hyperpage{12}
+    \subitem {objet\_s}, \hyperpage{14}
+  \item {ATTAQUE\_CHARGEE}
+    \subitem {personnage.h}, \hyperpage{97}
+  \item {ATTAQUE\_OU\_CHARGER}
+    \subitem {personnage.h}, \hyperpage{97}
+  \item {AUCUNE\_ERREUR}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+
+  \indexspace
+
+  \item {base\_monstre\_s}, \hyperpage{5}
+    \subitem {attaque}, \hyperpage{5}
+    \subitem {fichier\_image}, \hyperpage{5}
+    \subitem {gainXp}, \hyperpage{5}
+    \subitem {nom\_monstre}, \hyperpage{5}
+    \subitem {pdv}, \hyperpage{6}
+    \subitem {vitesse}, \hyperpage{6}
+  \item {base\_monstre\_t}
+    \subitem {monstres.h}, \hyperpage{85}
+  \item {BLOQUER}
+    \subitem {personnage.h}, \hyperpage{97}
+  \item {bool}
+    \subitem {definition\_commun.h}, \hyperpage{41}
+  \item {bouclier}
+    \subitem {objet.h}, \hyperpage{89}
+  \item {bouclier\_equipe}
+    \subitem {statut\_s}, \hyperpage{18}
+  \item {buffer\_affichage}
+    \subitem {affichage.h}, \hyperpage{36}
+  \item {BUFFER\_EMPTY}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {byte}
+    \subitem {definition\_commun.h}, \hyperpage{41}
+    \subitem {personnage.h}, \hyperpage{96}
+
+  \indexspace
+
+  \item {caracteristiques}
+    \subitem {personnage.c}, \hyperpage{92}
+    \subitem {personnage.h}, \hyperpage{97}
+  \item {changement\_statistiques}
+    \subitem {inventaire.c}, \hyperpage{55}
+    \subitem {inventaire.h}, \hyperpage{58}
+  \item {CHARGER}
+    \subitem {personnage.h}, \hyperpage{97}
+  \item {charger\_f\_map}
+    \subitem {map.c}, \hyperpage{77}
+    \subitem {map.h}, \hyperpage{80}
+  \item {charger\_monstres}
+    \subitem {monstres.c}, \hyperpage{84}
+    \subitem {monstres.h}, \hyperpage{86}
+  \item {charger\_s\_map}
+    \subitem {map.c}, \hyperpage{78}
+    \subitem {map.h}, \hyperpage{81}
+  \item {charger\_sauvegarde\_joueur}
+    \subitem {personnage.c}, \hyperpage{92}
+    \subitem {personnage.h}, \hyperpage{97}
+  \item {check\_repertoire\_jeux}
+    \subitem {personnage.c}, \hyperpage{92}
+    \subitem {personnage.h}, \hyperpage{98}
+  \item {code\_erreur.h}, \hyperpage{37}
+    \subitem {AUCUNE\_ERREUR}, \hyperpage{39}
+    \subitem {BUFFER\_EMPTY}, \hyperpage{39}
+    \subitem {ERR\_CREATION\_REPERTOIRE\_SAUVEGARDE}, \hyperpage{39}
+    \subitem {ERR\_RECTANGLE\_TOO\_BIG}, \hyperpage{39}
+    \subitem {ERREUR\_FICHIER}, \hyperpage{39}
+    \subitem {ERREUR\_FONCTION}, \hyperpage{39}
+    \subitem {ERREUR\_INIT}, \hyperpage{39}
+    \subitem {ERREUR\_LISTE}, \hyperpage{39}
+    \subitem {ERREUR\_MAP}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_AUDIO}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_EVENT}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_IMG}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_JOYSTICK}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_KEYBOARD}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_MIX}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_MOUSE}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_MOUSEBUTTON}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_MOUSEMOTION}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_MUSIC}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_PIXEL}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_QUIT}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_RENDER}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_SCANCODE}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_SURFACE}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_TIMER}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_TIMER\_START}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_TIMER\_STOP}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_TTF}, \hyperpage{39}
+    \subitem {ERREUR\_SDL\_WINDOW}, \hyperpage{39}
+    \subitem {ERREUR\_TEXTURE}, \hyperpage{39}
+    \subitem {OUT\_OF\_MEM}, \hyperpage{39}
+    \subitem {SDL\_ERREUR}, \hyperpage{39}
+    \subitem {types\_erreur}, \hyperpage{38}
+  \item {color}
+    \subitem {affichage.h}, \hyperpage{28}
+  \item {commun.h}, \hyperpage{39}
+  \item {compteur}
+    \subitem {affichage.h}, \hyperpage{36}
+    \subitem {test\_affichage.c}, \hyperpage{100}
+    \subitem {test\_inventaire.c}, \hyperpage{101}
+    \subitem {test\_liste\_objet.c}, \hyperpage{102}
+    \subitem {test\_listes.c}, \hyperpage{104}
+    \subitem {test\_map.c}, \hyperpage{105}
+    \subitem {test\_personnage.c}, \hyperpage{107}
+  \item {consommable}
+    \subitem {objet.h}, \hyperpage{89}
+  \item {copy}
+    \subitem {personnage.c}, \hyperpage{92}
+  \item {creer\_inventaire}
+    \subitem {inventaire.c}, \hyperpage{56}
+    \subitem {inventaire.h}, \hyperpage{58}
+  \item {creer\_joueur}
+    \subitem {personnage.c}, \hyperpage{92}
+    \subitem {personnage.h}, \hyperpage{98}
+  \item {creer\_liste\_objet}
+    \subitem {liste\_objet.c}, \hyperpage{60}
+    \subitem {liste\_objet.h}, \hyperpage{62}
+  \item {creer\_liste\_objet\_equipe}
+    \subitem {liste\_objet.c}, \hyperpage{60}
+    \subitem {liste\_objet.h}, \hyperpage{62}
+  \item {creer\_liste\_objet\_vide}
+    \subitem {liste\_objet.c}, \hyperpage{61}
+    \subitem {liste\_objet.h}, \hyperpage{63}
+  \item {creer\_objet}
+    \subitem {objet.c}, \hyperpage{87}
+    \subitem {objet.h}, \hyperpage{90}
+  \item {creer\_sauvegarde\_json}
+    \subitem {personnage.c}, \hyperpage{93}
+    \subitem {personnage.h}, \hyperpage{98}
+  \item {creer\_texture}
+    \subitem {affichage.h}, \hyperpage{28}
+
+  \indexspace
+
+  \item {def\_texture\_taille}
+    \subitem {affichage.h}, \hyperpage{28}
+  \item {defense}
+    \subitem {joueur\_s}, \hyperpage{8}
+    \subitem {objet\_s}, \hyperpage{14}
+  \item {definition\_commun.h}, \hyperpage{40}
+    \subitem {bool}, \hyperpage{41}
+    \subitem {byte}, \hyperpage{41}
+    \subitem {err\_t}, \hyperpage{42}
+    \subitem {EST}, \hyperpage{42}
+    \subitem {faux}, \hyperpage{41}
+    \subitem {FENETRE\_LARGEUR}, \hyperpage{43}
+    \subitem {FENETRE\_LONGUEUR}, \hyperpage{43}
+    \subitem {fenetre\_Principale}, \hyperpage{43}
+    \subitem {fermer\_programme}, \hyperpage{42}
+    \subitem {NORD}, \hyperpage{42}
+    \subitem {OUEST}, \hyperpage{42}
+    \subitem {point}, \hyperpage{42}
+    \subitem {rendu\_principal}, \hyperpage{43}
+    \subitem {running}, \hyperpage{43}
+    \subitem {SAVE\_PATH}, \hyperpage{41}
+    \subitem {SUD}, \hyperpage{42}
+    \subitem {t\_direction}, \hyperpage{42}
+    \subitem {vrai}, \hyperpage{41}
+  \item {definition\_ressources.h}, \hyperpage{43}
+    \subitem {PLAYER\_HEIGHT}, \hyperpage{43}
+    \subitem {PLAYER\_WITH}, \hyperpage{44}
+  \item {del}
+    \subitem {list}, \hyperpage{10}
+  \item {deplacement\_x\_pers}
+    \subitem {affichage.h}, \hyperpage{29}
+  \item {deplacement\_y\_pers}
+    \subitem {affichage.h}, \hyperpage{29}
+  \item {deplacer\_rect\_haut\_droit}
+    \subitem {affichage.h}, \hyperpage{30}
+  \item {deplacer\_rect\_origine}
+    \subitem {affichage.h}, \hyperpage{30}
+  \item {deplacer\_texture\_bas\_droit}
+    \subitem {affichage.h}, \hyperpage{30}
+  \item {deplacer\_texture\_bas\_gauche}
+    \subitem {affichage.h}, \hyperpage{30}
+  \item {deplacer\_texture\_centre}
+    \subitem {affichage.h}, \hyperpage{31}
+  \item {deplacer\_texture\_haut\_droit}
+    \subitem {affichage.h}, \hyperpage{31}
+  \item {deplacer\_texture\_origine}
+    \subitem {affichage.h}, \hyperpage{31}
+  \item {desequiper}
+    \subitem {inventaire.c}, \hyperpage{56}
+    \subitem {inventaire.h}, \hyperpage{59}
+  \item {dest}
+    \subitem {zone\_tp}, \hyperpage{21}
+  \item {detruire\_inventaire}
+    \subitem {inventaire.c}, \hyperpage{56}
+    \subitem {inventaire.h}, \hyperpage{59}
+  \item {detruire\_joueur}
+    \subitem {personnage.c}, \hyperpage{93}
+    \subitem {personnage.h}, \hyperpage{98}
+  \item {detruire\_liste}
+    \subitem {listes.c}, \hyperpage{65}
+    \subitem {listes.h}, \hyperpage{71}
+  \item {detruire\_liste\_base\_monstres}
+    \subitem {monstres.c}, \hyperpage{84}
+    \subitem {monstres.h}, \hyperpage{86}
+  \item {detruire\_liste\_objet}
+    \subitem {liste\_objet.c}, \hyperpage{61}
+    \subitem {liste\_objet.h}, \hyperpage{63}
+  \item {detruire\_liste\_textures}
+    \subitem {affichage.h}, \hyperpage{32}
+  \item {detruire\_monstre}
+    \subitem {monstres.c}, \hyperpage{84}
+    \subitem {monstres.h}, \hyperpage{86}
+  \item {detruire\_objet}
+    \subitem {objet.c}, \hyperpage{88}
+    \subitem {objet.h}, \hyperpage{90}
+  \item {detruire\_renderer}
+    \subitem {init\_close.c}, \hyperpage{51}
+  \item {detruire\_texture}
+    \subitem {affichage.h}, \hyperpage{32}
+    \subitem {objet.h}, \hyperpage{90}
+  \item {duree}
+    \subitem {statut\_s}, \hyperpage{18}
+  \item {DUREE\_ATTAQUE}
+    \subitem {personnage.h}, \hyperpage{95}
+  \item {DUREE\_ATTAQUE\_CHARGEE}
+    \subitem {personnage.h}, \hyperpage{95}
+  \item {DUREE\_ATTAQUE\_OU\_CHARGEE}
+    \subitem {personnage.h}, \hyperpage{96}
+  \item {DUREE\_BLOQUER}
+    \subitem {personnage.h}, \hyperpage{96}
+  \item {duree\_frame\_anim}
+    \subitem {s\_aff}, \hyperpage{16}
+
+  \indexspace
+
+  \item {ec}
+    \subitem {list}, \hyperpage{10}
+  \item {effacer\_liste\_objet}
+    \subitem {liste\_objet.c}, \hyperpage{61}
+    \subitem {liste\_objet.h}, \hyperpage{63}
+  \item {element}, \hyperpage{6}
+    \subitem {pred}, \hyperpage{6}
+    \subitem {succ}, \hyperpage{6}
+    \subitem {valeur}, \hyperpage{6}
+  \item {en\_mouvement}
+    \subitem {statut\_s}, \hyperpage{18}
+  \item {en\_queue}
+    \subitem {listes.c}, \hyperpage{65}
+    \subitem {listes.h}, \hyperpage{72}
+  \item {en\_tete}
+    \subitem {listes.c}, \hyperpage{66}
+    \subitem {listes.h}, \hyperpage{72}
+  \item {equipe}
+    \subitem {inventaire\_s}, \hyperpage{7}
+  \item {equiper\_objet}
+    \subitem {inventaire.c}, \hyperpage{56}
+    \subitem {inventaire.h}, \hyperpage{59}
+  \item {ERR\_CREATION\_REPERTOIRE\_SAUVEGARDE}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERR\_RECTANGLE\_TOO\_BIG}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {err\_t}
+    \subitem {definition\_commun.h}, \hyperpage{42}
+  \item {ERREUR\_FICHIER}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_FONCTION}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_INIT}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_LISTE}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_MAP}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_AUDIO}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_EVENT}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_IMG}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_JOYSTICK}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_KEYBOARD}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_MIX}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_MOUSE}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_MOUSEBUTTON}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_MOUSEMOTION}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_MUSIC}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_PIXEL}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_QUIT}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_RENDER}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_SCANCODE}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_SURFACE}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_TIMER}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_TIMER\_START}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_TIMER\_STOP}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_TTF}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_SDL\_WINDOW}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {ERREUR\_TEXTURE}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {EST}
+    \subitem {definition\_commun.h}, \hyperpage{42}
+  \item {event.c}, \hyperpage{44}
+    \subitem {jeu\_event}, \hyperpage{45}
+    \subitem {keyDown}, \hyperpage{45}
+    \subitem {keyUp}, \hyperpage{45}
+    \subitem {logo\_passer}, \hyperpage{46}
+    \subitem {mouseButtonDown}, \hyperpage{46}
+    \subitem {mouseButtonUp}, \hyperpage{46}
+  \item {event.h}, \hyperpage{46}
+    \subitem {jeu\_event}, \hyperpage{48}
+    \subitem {logo\_passer}, \hyperpage{48}
+    \subitem {TOUCHE\_BAS}, \hyperpage{47}
+    \subitem {TOUCHE\_DROITE}, \hyperpage{47}
+    \subitem {TOUCHE\_ECHAP}, \hyperpage{47}
+    \subitem {TOUCHE\_GAUCHE}, \hyperpage{48}
+    \subitem {TOUCHE\_HAUT}, \hyperpage{48}
+    \subitem {TOUCHE\_TAB}, \hyperpage{48}
+
+  \indexspace
+
+  \item {f\_close}
+    \subitem {init\_close.c}, \hyperpage{52}
+  \item {faux}
+    \subitem {definition\_commun.h}, \hyperpage{41}
+  \item {FENETRE\_LARGEUR}
+    \subitem {definition\_commun.h}, \hyperpage{43}
+    \subitem {test\_affichage.c}, \hyperpage{100}
+    \subitem {test\_inventaire.c}, \hyperpage{101}
+    \subitem {test\_liste\_objet.c}, \hyperpage{102}
+    \subitem {test\_listes.c}, \hyperpage{104}
+    \subitem {test\_map.c}, \hyperpage{105}
+    \subitem {test\_personnage.c}, \hyperpage{107}
+  \item {FENETRE\_LONGUEUR}
+    \subitem {definition\_commun.h}, \hyperpage{43}
+    \subitem {test\_affichage.c}, \hyperpage{100}
+    \subitem {test\_inventaire.c}, \hyperpage{101}
+    \subitem {test\_liste\_objet.c}, \hyperpage{102}
+    \subitem {test\_listes.c}, \hyperpage{104}
+    \subitem {test\_map.c}, \hyperpage{105}
+    \subitem {test\_personnage.c}, \hyperpage{107}
+  \item {fenetre\_Principale}
+    \subitem {definition\_commun.h}, \hyperpage{43}
+    \subitem {init\_close.c}, \hyperpage{52}
+    \subitem {test\_liste\_objet.c}, \hyperpage{102}
+  \item {fenetre\_sous\_rendu}
+    \subitem {init\_close.c}, \hyperpage{52}
+  \item {fermer\_programme}
+    \subitem {definition\_commun.h}, \hyperpage{42}
+    \subitem {init\_close.c}, \hyperpage{51}
+  \item {fermer\_SDL}
+    \subitem {init\_close.c}, \hyperpage{51}
+  \item {fichier\_image}
+    \subitem {base\_monstre\_s}, \hyperpage{5}
+  \item {flag}
+    \subitem {list}, \hyperpage{10}
+  \item {fonctions.h}, \hyperpage{49}
+    \subitem {init}, \hyperpage{49}
+    \subitem {init\_event}, \hyperpage{49}
+    \subitem {terminate\_init}, \hyperpage{50}
+  \item {frame\_anim}
+    \subitem {s\_aff}, \hyperpage{16}
+
+  \indexspace
+
+  \item {gain\_xp}
+    \subitem {personnage.c}, \hyperpage{93}
+    \subitem {personnage.h}, \hyperpage{98}
+  \item {gainXp}
+    \subitem {base\_monstre\_s}, \hyperpage{5}
+    \subitem {monstre\_s}, \hyperpage{12}
+
+  \indexspace
+
+  \item {height}
+    \subitem {s\_aff}, \hyperpage{16}
+    \subitem {t\_map}, \hyperpage{20}
+  \item {hors\_liste}
+    \subitem {listes.c}, \hyperpage{66}
+    \subitem {listes.h}, \hyperpage{72}
+
+  \indexspace
+
+  \item {id\_map}
+    \subitem {zone\_tp}, \hyperpage{22}
+  \item {info\_texture}
+    \subitem {affichage.h}, \hyperpage{32}
+  \item {init}
+    \subitem {fonctions.h}, \hyperpage{49}
+    \subitem {init\_close.c}, \hyperpage{51}
+  \item {init\_affichage}
+    \subitem {init\_close.c}, \hyperpage{51}
+  \item {init\_close.c}, \hyperpage{50}
+    \subitem {aff\_cleanup}, \hyperpage{50}
+    \subitem {detruire\_renderer}, \hyperpage{51}
+    \subitem {f\_close}, \hyperpage{52}
+    \subitem {fenetre\_Principale}, \hyperpage{52}
+    \subitem {fenetre\_sous\_rendu}, \hyperpage{52}
+    \subitem {fermer\_programme}, \hyperpage{51}
+    \subitem {fermer\_SDL}, \hyperpage{51}
+    \subitem {init}, \hyperpage{51}
+    \subitem {init\_affichage}, \hyperpage{51}
+    \subitem {init\_rc\_commun}, \hyperpage{52}
+    \subitem {init\_SDL}, \hyperpage{52}
+    \subitem {init\_sousbuffer}, \hyperpage{52}
+    \subitem {rendu\_principal}, \hyperpage{53}
+    \subitem {running}, \hyperpage{53}
+    \subitem {sous\_rendu}, \hyperpage{53}
+  \item {init\_event}
+    \subitem {fonctions.h}, \hyperpage{49}
+  \item {init\_liste}
+    \subitem {listes.c}, \hyperpage{66}
+    \subitem {listes.h}, \hyperpage{72}
+  \item {init\_objet}
+    \subitem {objet.h}, \hyperpage{90}
+  \item {init\_rc\_commun}
+    \subitem {init\_close.c}, \hyperpage{52}
+  \item {init\_SDL}
+    \subitem {init\_close.c}, \hyperpage{52}
+  \item {init\_sousbuffer}
+    \subitem {init\_close.c}, \hyperpage{52}
+  \item {init\_texture\_joueur}
+    \subitem {affichage.h}, \hyperpage{32}
+  \item {init\_textures\_joueur}
+    \subitem {affichage.h}, \hyperpage{33}
+  \item {interface.c}, \hyperpage{53}
+    \subitem {RenderHPBar}, \hyperpage{53}
+  \item {interface.h}, \hyperpage{54}
+    \subitem {RenderHPBar}, \hyperpage{54}
+  \item {INVENTAIRE}
+    \subitem {menus.h}, \hyperpage{83}
+  \item {inventaire.c}, \hyperpage{55}
+    \subitem {changement\_statistiques}, \hyperpage{55}
+    \subitem {creer\_inventaire}, \hyperpage{56}
+    \subitem {desequiper}, \hyperpage{56}
+    \subitem {detruire\_inventaire}, \hyperpage{56}
+    \subitem {equiper\_objet}, \hyperpage{56}
+    \subitem {ramasser\_objet}, \hyperpage{57}
+  \item {inventaire.h}, \hyperpage{57}
+    \subitem {changement\_statistiques}, \hyperpage{58}
+    \subitem {creer\_inventaire}, \hyperpage{58}
+    \subitem {desequiper}, \hyperpage{59}
+    \subitem {detruire\_inventaire}, \hyperpage{59}
+    \subitem {equiper\_objet}, \hyperpage{59}
+    \subitem {inventaire\_t}, \hyperpage{58}
+    \subitem {ramasser\_objet}, \hyperpage{59}
+  \item {inventaire\_s}, \hyperpage{7}
+    \subitem {equipe}, \hyperpage{7}
+    \subitem {sac}, \hyperpage{7}
+  \item {inventaire\_t}
+    \subitem {inventaire.h}, \hyperpage{58}
+
+  \indexspace
+
+  \item {JEU}
+    \subitem {menus.h}, \hyperpage{83}
+  \item {jeu\_event}
+    \subitem {event.c}, \hyperpage{45}
+    \subitem {event.h}, \hyperpage{48}
+  \item {joueur\_s}, \hyperpage{7}
+    \subitem {attaque}, \hyperpage{8}
+    \subitem {defense}, \hyperpage{8}
+    \subitem {maxPdv}, \hyperpage{8}
+    \subitem {niveau}, \hyperpage{8}
+    \subitem {nom\_pers}, \hyperpage{8}
+    \subitem {pdv}, \hyperpage{8}
+    \subitem {statut}, \hyperpage{9}
+    \subitem {textures\_joueur}, \hyperpage{9}
+    \subitem {trigger}, \hyperpage{9}
+    \subitem {vitesse}, \hyperpage{9}
+    \subitem {xp}, \hyperpage{9}
+  \item {joueur\_t}
+    \subitem {personnage.h}, \hyperpage{96}
+
+  \indexspace
+
+  \item {keyDown}
+    \subitem {event.c}, \hyperpage{45}
+  \item {keyUp}
+    \subitem {event.c}, \hyperpage{45}
+
+  \indexspace
+
+  \item {LARGEUR\_PERSONNAGE}
+    \subitem {affichage.h}, \hyperpage{25}
+  \item {levelup}
+    \subitem {personnage.c}, \hyperpage{93}
+    \subitem {personnage.h}, \hyperpage{98}
+  \item {list}, \hyperpage{9}
+    \subitem {aff}, \hyperpage{10}
+    \subitem {ajout}, \hyperpage{10}
+    \subitem {del}, \hyperpage{10}
+    \subitem {ec}, \hyperpage{10}
+    \subitem {flag}, \hyperpage{10}
+    \subitem {listes.c}, \hyperpage{64}
+    \subitem {listes.h}, \hyperpage{70}
+    \subitem {nb\_elem}, \hyperpage{10}
+  \item {liste}
+    \subitem {lobjet\_s}, \hyperpage{11}
+    \subitem {s\_l\_aff}, \hyperpage{17}
+  \item {liste\_base\_monstres\_s}, \hyperpage{11}
+    \subitem {nb\_monstre}, \hyperpage{11}
+    \subitem {tab}, \hyperpage{11}
+  \item {liste\_base\_monstres\_t}
+    \subitem {monstres.h}, \hyperpage{85}
+  \item {liste\_monstres}
+    \subitem {t\_map}, \hyperpage{20}
+  \item {liste\_objet.c}, \hyperpage{60}
+    \subitem {afficher\_liste\_objet}, \hyperpage{60}
+    \subitem {creer\_liste\_objet}, \hyperpage{60}
+    \subitem {creer\_liste\_objet\_equipe}, \hyperpage{60}
+    \subitem {creer\_liste\_objet\_vide}, \hyperpage{61}
+    \subitem {detruire\_liste\_objet}, \hyperpage{61}
+    \subitem {effacer\_liste\_objet}, \hyperpage{61}
+  \item {liste\_objet.h}, \hyperpage{61}
+    \subitem {afficher\_liste\_objet}, \hyperpage{62}
+    \subitem {creer\_liste\_objet}, \hyperpage{62}
+    \subitem {creer\_liste\_objet\_equipe}, \hyperpage{62}
+    \subitem {creer\_liste\_objet\_vide}, \hyperpage{63}
+    \subitem {detruire\_liste\_objet}, \hyperpage{63}
+    \subitem {effacer\_liste\_objet}, \hyperpage{63}
+    \subitem {lobjet\_t}, \hyperpage{62}
+  \item {liste\_vide}
+    \subitem {listes.c}, \hyperpage{67}
+    \subitem {listes.h}, \hyperpage{73}
+  \item {listeDeTextures}
+    \subitem {affichage.h}, \hyperpage{37}
+  \item {listes.c}, \hyperpage{63}
+    \subitem {afficher\_liste}, \hyperpage{64}
+    \subitem {ajout\_droit}, \hyperpage{65}
+    \subitem {ajout\_gauche}, \hyperpage{65}
+    \subitem {detruire\_liste}, \hyperpage{65}
+    \subitem {en\_queue}, \hyperpage{65}
+    \subitem {en\_tete}, \hyperpage{66}
+    \subitem {hors\_liste}, \hyperpage{66}
+    \subitem {init\_liste}, \hyperpage{66}
+    \subitem {list}, \hyperpage{64}
+    \subitem {liste\_vide}, \hyperpage{67}
+    \subitem {modif\_elt}, \hyperpage{67}
+    \subitem {oter\_elt}, \hyperpage{68}
+    \subitem {precedent}, \hyperpage{68}
+    \subitem {suivant}, \hyperpage{68}
+    \subitem {t\_element}, \hyperpage{64}
+    \subitem {taille\_liste}, \hyperpage{68}
+    \subitem {valeur\_elt}, \hyperpage{69}
+    \subitem {vider\_liste}, \hyperpage{69}
+  \item {listes.h}, \hyperpage{70}
+    \subitem {afficher\_liste}, \hyperpage{70}
+    \subitem {ajout\_droit}, \hyperpage{71}
+    \subitem {ajout\_gauche}, \hyperpage{71}
+    \subitem {detruire\_liste}, \hyperpage{71}
+    \subitem {en\_queue}, \hyperpage{72}
+    \subitem {en\_tete}, \hyperpage{72}
+    \subitem {hors\_liste}, \hyperpage{72}
+    \subitem {init\_liste}, \hyperpage{72}
+    \subitem {list}, \hyperpage{70}
+    \subitem {liste\_vide}, \hyperpage{73}
+    \subitem {modif\_elt}, \hyperpage{73}
+    \subitem {oter\_elt}, \hyperpage{74}
+    \subitem {precedent}, \hyperpage{74}
+    \subitem {suivant}, \hyperpage{74}
+    \subitem {taille\_liste}, \hyperpage{75}
+    \subitem {valeur\_elt}, \hyperpage{75}
+    \subitem {vider\_liste}, \hyperpage{75}
+  \item {lobjet\_s}, \hyperpage{11}
+    \subitem {liste}, \hyperpage{11}
+    \subitem {nb}, \hyperpage{12}
+  \item {lobjet\_t}
+    \subitem {liste\_objet.h}, \hyperpage{62}
+  \item {logo\_passer}
+    \subitem {event.c}, \hyperpage{46}
+    \subitem {event.h}, \hyperpage{48}
+  \item {LONGUEUR\_PERSONNAGE}
+    \subitem {affichage.h}, \hyperpage{25}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.c}, \hyperpage{76}
+    \subitem {test\_affichage.c}, \hyperpage{99}
+    \subitem {test\_inventaire.c}, \hyperpage{101}
+    \subitem {test\_liste\_objet.c}, \hyperpage{102}
+    \subitem {test\_listes.c}, \hyperpage{104}
+    \subitem {test\_map.c}, \hyperpage{105}
+    \subitem {test\_monstres.c}, \hyperpage{106}
+    \subitem {test\_personnage.c}, \hyperpage{106}
+  \item {main.c}, \hyperpage{76}
+    \subitem {afficher\_intro}, \hyperpage{76}
+    \subitem {main}, \hyperpage{76}
+    \subitem {SDL\_MAIN\_HANDLED}, \hyperpage{76}
+  \item {map}
+    \subitem {map.c}, \hyperpage{78}
+    \subitem {map.h}, \hyperpage{81}
+  \item {map.c}, \hyperpage{77}
+    \subitem {charger\_f\_map}, \hyperpage{77}
+    \subitem {charger\_s\_map}, \hyperpage{78}
+    \subitem {map}, \hyperpage{78}
+    \subitem {taille\_ecran\_cases}, \hyperpage{78}
+    \subitem {texture\_map}, \hyperpage{78}
+  \item {map.h}, \hyperpage{79}
+    \subitem {charger\_f\_map}, \hyperpage{80}
+    \subitem {charger\_s\_map}, \hyperpage{81}
+    \subitem {map}, \hyperpage{81}
+    \subitem {t\_aff}, \hyperpage{80}
+    \subitem {TAILLE\_CASE}, \hyperpage{80}
+    \subitem {texture\_map}, \hyperpage{81}
+  \item {maxPdv}
+    \subitem {joueur\_s}, \hyperpage{8}
+  \item {menus}
+    \subitem {menus.h}, \hyperpage{83}
+  \item {menus.c}, \hyperpage{82}
+    \subitem {afficher\_inventaire}, \hyperpage{82}
+    \subitem {afficher\_menu\_pause}, \hyperpage{82}
+  \item {menus.h}, \hyperpage{82}
+    \subitem {afficher\_inventaire}, \hyperpage{83}
+    \subitem {afficher\_menu\_pause}, \hyperpage{83}
+    \subitem {INVENTAIRE}, \hyperpage{83}
+    \subitem {JEU}, \hyperpage{83}
+    \subitem {menus}, \hyperpage{83}
+    \subitem {menus\_t}, \hyperpage{83}
+    \subitem {PAUSE}, \hyperpage{83}
+    \subitem {PRINCIPAL}, \hyperpage{83}
+  \item {menus\_t}
+    \subitem {menus.h}, \hyperpage{83}
+  \item {modif\_affichage\_rect}
+    \subitem {affichage.h}, \hyperpage{33}
+  \item {modif\_elt}
+    \subitem {listes.c}, \hyperpage{67}
+    \subitem {listes.h}, \hyperpage{73}
+  \item {monstre\_s}, \hyperpage{12}
+    \subitem {attaque}, \hyperpage{12}
+    \subitem {gainXp}, \hyperpage{12}
+    \subitem {nom\_monstre}, \hyperpage{12}
+    \subitem {orientation}, \hyperpage{13}
+    \subitem {pdv}, \hyperpage{13}
+    \subitem {position}, \hyperpage{13}
+    \subitem {texture}, \hyperpage{13}
+    \subitem {vitesse}, \hyperpage{13}
+  \item {monstre\_t}
+    \subitem {monstres.h}, \hyperpage{85}
+  \item {monstres.c}, \hyperpage{84}
+    \subitem {charger\_monstres}, \hyperpage{84}
+    \subitem {detruire\_liste\_base\_monstres}, \hyperpage{84}
+    \subitem {detruire\_monstre}, \hyperpage{84}
+  \item {monstres.h}, \hyperpage{85}
+    \subitem {base\_monstre\_t}, \hyperpage{85}
+    \subitem {charger\_monstres}, \hyperpage{86}
+    \subitem {detruire\_liste\_base\_monstres}, \hyperpage{86}
+    \subitem {detruire\_monstre}, \hyperpage{86}
+    \subitem {liste\_base\_monstres\_t}, \hyperpage{85}
+    \subitem {monstre\_t}, \hyperpage{85}
+    \subitem {position\_t}, \hyperpage{86}
+  \item {mouseButtonDown}
+    \subitem {event.c}, \hyperpage{46}
+  \item {mouseButtonUp}
+    \subitem {event.c}, \hyperpage{46}
+  \item {multipli\_taille}
+    \subitem {s\_aff}, \hyperpage{16}
+  \item {multiplicateur\_x}
+    \subitem {affichage.h}, \hyperpage{37}
+  \item {multiplicateur\_y}
+    \subitem {affichage.h}, \hyperpage{37}
+
+  \indexspace
+
+  \item {N\_T\_ATTAQUE}
+    \subitem {affichage.h}, \hyperpage{25}
+  \item {N\_T\_ATTAQUE\_CHARGEE}
+    \subitem {affichage.h}, \hyperpage{25}
+  \item {N\_T\_CHARGER}
+    \subitem {affichage.h}, \hyperpage{25}
+  \item {N\_T\_MARCHER}
+    \subitem {affichage.h}, \hyperpage{26}
+  \item {N\_T\_MARCHER\_BOUCLIER}
+    \subitem {affichage.h}, \hyperpage{26}
+  \item {nb}
+    \subitem {lobjet\_s}, \hyperpage{12}
+  \item {nb\_elem}
+    \subitem {list}, \hyperpage{10}
+  \item {NB\_FPS}
+    \subitem {affichage.h}, \hyperpage{26}
+  \item {nb\_monstre}
+    \subitem {liste\_base\_monstres\_s}, \hyperpage{11}
+  \item {NB\_SPRITE\_JOUEUR}
+    \subitem {affichage.h}, \hyperpage{26}
+  \item {nb\_valeurs}
+    \subitem {s\_l\_aff}, \hyperpage{17}
+  \item {new\_joueur}
+    \subitem {personnage.c}, \hyperpage{93}
+    \subitem {personnage.h}, \hyperpage{99}
+  \item {next\_frame\_joueur}
+    \subitem {affichage.h}, \hyperpage{33}
+  \item {next\_frame\_x}
+    \subitem {affichage.h}, \hyperpage{33}
+  \item {next\_frame\_x\_indice}
+    \subitem {affichage.h}, \hyperpage{34}
+  \item {next\_frame\_y}
+    \subitem {affichage.h}, \hyperpage{34}
+  \item {next\_frame\_y\_indice}
+    \subitem {affichage.h}, \hyperpage{34}
+  \item {niveau}
+    \subitem {joueur\_s}, \hyperpage{8}
+    \subitem {objet\_s}, \hyperpage{14}
+  \item {nom}
+    \subitem {objet\_s}, \hyperpage{14}
+  \item {nom\_monstre}
+    \subitem {base\_monstre\_s}, \hyperpage{5}
+    \subitem {monstre\_s}, \hyperpage{12}
+  \item {nom\_pers}
+    \subitem {joueur\_s}, \hyperpage{8}
+  \item {NORD}
+    \subitem {definition\_commun.h}, \hyperpage{42}
+
+  \indexspace
+
+  \item {objet.c}, \hyperpage{87}
+    \subitem {afficher\_objet}, \hyperpage{87}
+    \subitem {creer\_objet}, \hyperpage{87}
+    \subitem {detruire\_objet}, \hyperpage{88}
+  \item {objet.h}, \hyperpage{88}
+    \subitem {afficher\_objet}, \hyperpage{90}
+    \subitem {amulette}, \hyperpage{89}
+    \subitem {arme}, \hyperpage{89}
+    \subitem {bouclier}, \hyperpage{89}
+    \subitem {consommable}, \hyperpage{89}
+    \subitem {creer\_objet}, \hyperpage{90}
+    \subitem {detruire\_objet}, \hyperpage{90}
+    \subitem {detruire\_texture}, \hyperpage{90}
+    \subitem {init\_objet}, \hyperpage{90}
+    \subitem {objet\_t}, \hyperpage{89}
+    \subitem {protection}, \hyperpage{89}
+    \subitem {quete}, \hyperpage{89}
+    \subitem {t\_item}, \hyperpage{89}
+  \item {objet\_s}, \hyperpage{13}
+    \subitem {attaque}, \hyperpage{14}
+    \subitem {defense}, \hyperpage{14}
+    \subitem {niveau}, \hyperpage{14}
+    \subitem {nom}, \hyperpage{14}
+    \subitem {texture}, \hyperpage{14}
+    \subitem {texture\_src}, \hyperpage{14}
+    \subitem {type}, \hyperpage{15}
+    \subitem {vitesse}, \hyperpage{15}
+  \item {objet\_t}
+    \subitem {objet.h}, \hyperpage{89}
+  \item {orientation}
+    \subitem {monstre\_s}, \hyperpage{13}
+    \subitem {statut\_s}, \hyperpage{18}
+  \item {oter\_elt}
+    \subitem {listes.c}, \hyperpage{68}
+    \subitem {listes.h}, \hyperpage{74}
+  \item {OUEST}
+    \subitem {definition\_commun.h}, \hyperpage{42}
+  \item {OUT\_OF\_MEM}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+
+  \indexspace
+
+  \item {p1}
+    \subitem {zone\_tp}, \hyperpage{22}
+  \item {p2}
+    \subitem {zone\_tp}, \hyperpage{22}
+  \item {PAUSE}
+    \subitem {menus.h}, \hyperpage{83}
+  \item {pdv}
+    \subitem {base\_monstre\_s}, \hyperpage{6}
+    \subitem {joueur\_s}, \hyperpage{8}
+    \subitem {monstre\_s}, \hyperpage{13}
+  \item {perso\_principal}
+    \subitem {personnage.c}, \hyperpage{94}
+    \subitem {personnage.h}, \hyperpage{99}
+  \item {personnage.c}, \hyperpage{91}
+    \subitem {afficher\_statistiques}, \hyperpage{92}
+    \subitem {caracteristiques}, \hyperpage{92}
+    \subitem {charger\_sauvegarde\_joueur}, \hyperpage{92}
+    \subitem {check\_repertoire\_jeux}, \hyperpage{92}
+    \subitem {copy}, \hyperpage{92}
+    \subitem {creer\_joueur}, \hyperpage{92}
+    \subitem {creer\_sauvegarde\_json}, \hyperpage{93}
+    \subitem {detruire\_joueur}, \hyperpage{93}
+    \subitem {gain\_xp}, \hyperpage{93}
+    \subitem {levelup}, \hyperpage{93}
+    \subitem {new\_joueur}, \hyperpage{93}
+    \subitem {perso\_principal}, \hyperpage{94}
+    \subitem {sauv\_existe}, \hyperpage{93}
+    \subitem {save\_path}, \hyperpage{94}
+  \item {personnage.h}, \hyperpage{94}
+    \subitem {action\_t}, \hyperpage{97}
+    \subitem {afficher\_statistiques}, \hyperpage{97}
+    \subitem {ATTAQUE}, \hyperpage{97}
+    \subitem {ATTAQUE\_CHARGEE}, \hyperpage{97}
+    \subitem {ATTAQUE\_OU\_CHARGER}, \hyperpage{97}
+    \subitem {BLOQUER}, \hyperpage{97}
+    \subitem {byte}, \hyperpage{96}
+    \subitem {caracteristiques}, \hyperpage{97}
+    \subitem {CHARGER}, \hyperpage{97}
+    \subitem {charger\_sauvegarde\_joueur}, \hyperpage{97}
+    \subitem {check\_repertoire\_jeux}, \hyperpage{98}
+    \subitem {creer\_joueur}, \hyperpage{98}
+    \subitem {creer\_sauvegarde\_json}, \hyperpage{98}
+    \subitem {detruire\_joueur}, \hyperpage{98}
+    \subitem {DUREE\_ATTAQUE}, \hyperpage{95}
+    \subitem {DUREE\_ATTAQUE\_CHARGEE}, \hyperpage{95}
+    \subitem {DUREE\_ATTAQUE\_OU\_CHARGEE}, \hyperpage{96}
+    \subitem {DUREE\_BLOQUER}, \hyperpage{96}
+    \subitem {gain\_xp}, \hyperpage{98}
+    \subitem {joueur\_t}, \hyperpage{96}
+    \subitem {levelup}, \hyperpage{98}
+    \subitem {new\_joueur}, \hyperpage{99}
+    \subitem {perso\_principal}, \hyperpage{99}
+    \subitem {RIEN}, \hyperpage{97}
+    \subitem {save\_path}, \hyperpage{99}
+    \subitem {statut\_t}, \hyperpage{96}
+    \subitem {t\_l\_aff}, \hyperpage{97}
+    \subitem {TAILLE\_PERSONNAGE}, \hyperpage{96}
+    \subitem {TAILLE\_TRIGGER}, \hyperpage{96}
+  \item {PLAYER\_HEIGHT}
+    \subitem {definition\_ressources.h}, \hyperpage{43}
+  \item {PLAYER\_WITH}
+    \subitem {definition\_ressources.h}, \hyperpage{44}
+  \item {point}, \hyperpage{15}
+    \subitem {definition\_commun.h}, \hyperpage{42}
+    \subitem {x}, \hyperpage{15}
+    \subitem {y}, \hyperpage{15}
+  \item {position}
+    \subitem {monstre\_s}, \hyperpage{13}
+  \item {position\_t}
+    \subitem {monstres.h}, \hyperpage{86}
+  \item {precedent}
+    \subitem {listes.c}, \hyperpage{68}
+    \subitem {listes.h}, \hyperpage{74}
+  \item {pred}
+    \subitem {element}, \hyperpage{6}
+  \item {PRINCIPAL}
+    \subitem {menus.h}, \hyperpage{83}
+  \item {protection}
+    \subitem {objet.h}, \hyperpage{89}
+
+  \indexspace
+
+  \item {quete}
+    \subitem {objet.h}, \hyperpage{89}
+
+  \indexspace
+
+  \item {ramasser\_objet}
+    \subitem {inventaire.c}, \hyperpage{57}
+    \subitem {inventaire.h}, \hyperpage{59}
+  \item {rect\_centre}
+    \subitem {affichage.h}, \hyperpage{35}
+  \item {rect\_centre\_x}
+    \subitem {affichage.h}, \hyperpage{35}
+  \item {rect\_centre\_y}
+    \subitem {affichage.h}, \hyperpage{35}
+  \item {rect\_correct\_texture}
+    \subitem {affichage.h}, \hyperpage{35}
+  \item {rects\_egal\_x}
+    \subitem {affichage.h}, \hyperpage{36}
+  \item {rects\_egal\_y}
+    \subitem {affichage.h}, \hyperpage{36}
+  \item {RenderHPBar}
+    \subitem {interface.c}, \hyperpage{53}
+    \subitem {interface.h}, \hyperpage{54}
+  \item {rendu\_principal}
+    \subitem {definition\_commun.h}, \hyperpage{43}
+    \subitem {init\_close.c}, \hyperpage{53}
+    \subitem {test\_liste\_objet.c}, \hyperpage{103}
+  \item {RIEN}
+    \subitem {personnage.h}, \hyperpage{97}
+  \item {running}
+    \subitem {definition\_commun.h}, \hyperpage{43}
+    \subitem {init\_close.c}, \hyperpage{53}
+    \subitem {test\_liste\_objet.c}, \hyperpage{103}
+
+  \indexspace
+
+  \item {s\_aff}, \hyperpage{16}
+    \subitem {aff\_fenetre}, \hyperpage{16}
+    \subitem {duree\_frame\_anim}, \hyperpage{16}
+    \subitem {frame\_anim}, \hyperpage{16}
+    \subitem {height}, \hyperpage{16}
+    \subitem {multipli\_taille}, \hyperpage{16}
+    \subitem {texture}, \hyperpage{17}
+    \subitem {width}, \hyperpage{17}
+  \item {s\_l\_aff}, \hyperpage{17}
+    \subitem {liste}, \hyperpage{17}
+    \subitem {nb\_valeurs}, \hyperpage{17}
+  \item {sac}
+    \subitem {inventaire\_s}, \hyperpage{7}
+  \item {sauv\_existe}
+    \subitem {personnage.c}, \hyperpage{93}
+  \item {SAVE\_PATH}
+    \subitem {definition\_commun.h}, \hyperpage{41}
+  \item {save\_path}
+    \subitem {personnage.c}, \hyperpage{94}
+    \subitem {personnage.h}, \hyperpage{99}
+  \item {SDL\_ERREUR}
+    \subitem {code\_erreur.h}, \hyperpage{39}
+  \item {SDL\_MAIN\_HANDLED}
+    \subitem {main.c}, \hyperpage{76}
+  \item {sous\_rendu}
+    \subitem {init\_close.c}, \hyperpage{53}
+  \item {statut}
+    \subitem {joueur\_s}, \hyperpage{9}
+  \item {statut\_s}, \hyperpage{18}
+    \subitem {action}, \hyperpage{18}
+    \subitem {bouclier\_equipe}, \hyperpage{18}
+    \subitem {duree}, \hyperpage{18}
+    \subitem {en\_mouvement}, \hyperpage{18}
+    \subitem {orientation}, \hyperpage{18}
+    \subitem {zone\_colision}, \hyperpage{19}
+  \item {statut\_t}
+    \subitem {personnage.h}, \hyperpage{96}
+  \item {struct}, \hyperpage{19}
+  \item {succ}
+    \subitem {element}, \hyperpage{6}
+  \item {SUD}
+    \subitem {definition\_commun.h}, \hyperpage{42}
+  \item {suivant}
+    \subitem {listes.c}, \hyperpage{68}
+    \subitem {listes.h}, \hyperpage{74}
+
+  \indexspace
+
+  \item {t\_aff}
+    \subitem {affichage.h}, \hyperpage{26}
+    \subitem {map.h}, \hyperpage{80}
+  \item {t\_direction}
+    \subitem {definition\_commun.h}, \hyperpage{42}
+  \item {t\_element}
+    \subitem {listes.c}, \hyperpage{64}
+  \item {t\_item}
+    \subitem {objet.h}, \hyperpage{89}
+  \item {t\_l\_aff}
+    \subitem {affichage.h}, \hyperpage{26}
+    \subitem {personnage.h}, \hyperpage{97}
+  \item {t\_map}, \hyperpage{20}
+    \subitem {height}, \hyperpage{20}
+    \subitem {liste\_monstres}, \hyperpage{20}
+    \subitem {text\_map}, \hyperpage{20}
+    \subitem {unite\_dep\_x}, \hyperpage{20}
+    \subitem {unite\_dep\_y}, \hyperpage{21}
+    \subitem {width}, \hyperpage{21}
+  \item {t\_texture\_perso}
+    \subitem {affichage.h}, \hyperpage{26}
+  \item {tab}
+    \subitem {liste\_base\_monstres\_s}, \hyperpage{11}
+  \item {TAILLE\_CASE}
+    \subitem {map.h}, \hyperpage{80}
+  \item {taille\_ecran\_cases}
+    \subitem {map.c}, \hyperpage{78}
+  \item {taille\_liste}
+    \subitem {listes.c}, \hyperpage{68}
+    \subitem {listes.h}, \hyperpage{75}
+  \item {TAILLE\_PERSONNAGE}
+    \subitem {personnage.h}, \hyperpage{96}
+  \item {TAILLE\_TRIGGER}
+    \subitem {personnage.h}, \hyperpage{96}
+  \item {terminate\_init}
+    \subitem {fonctions.h}, \hyperpage{50}
+  \item {test\_affichage.c}, \hyperpage{99}
+    \subitem {compteur}, \hyperpage{100}
+    \subitem {FENETRE\_LARGEUR}, \hyperpage{100}
+    \subitem {FENETRE\_LONGUEUR}, \hyperpage{100}
+    \subitem {main}, \hyperpage{99}
+    \subitem {test\_map}, \hyperpage{100}
+  \item {test\_inventaire.c}, \hyperpage{100}
+    \subitem {compteur}, \hyperpage{101}
+    \subitem {FENETRE\_LARGEUR}, \hyperpage{101}
+    \subitem {FENETRE\_LONGUEUR}, \hyperpage{101}
+    \subitem {main}, \hyperpage{101}
+    \subitem {test\_map}, \hyperpage{101}
+  \item {test\_liste\_objet.c}, \hyperpage{101}
+    \subitem {compteur}, \hyperpage{102}
+    \subitem {FENETRE\_LARGEUR}, \hyperpage{102}
+    \subitem {FENETRE\_LONGUEUR}, \hyperpage{102}
+    \subitem {fenetre\_Principale}, \hyperpage{102}
+    \subitem {main}, \hyperpage{102}
+    \subitem {rendu\_principal}, \hyperpage{103}
+    \subitem {running}, \hyperpage{103}
+    \subitem {test\_map}, \hyperpage{103}
+  \item {test\_listes.c}, \hyperpage{103}
+    \subitem {afficher\_int}, \hyperpage{103}
+    \subitem {compteur}, \hyperpage{104}
+    \subitem {FENETRE\_LARGEUR}, \hyperpage{104}
+    \subitem {FENETRE\_LONGUEUR}, \hyperpage{104}
+    \subitem {main}, \hyperpage{104}
+    \subitem {test\_map}, \hyperpage{104}
+  \item {test\_map}
+    \subitem {test\_affichage.c}, \hyperpage{100}
+    \subitem {test\_inventaire.c}, \hyperpage{101}
+    \subitem {test\_liste\_objet.c}, \hyperpage{103}
+    \subitem {test\_listes.c}, \hyperpage{104}
+    \subitem {test\_map.c}, \hyperpage{105}
+    \subitem {test\_personnage.c}, \hyperpage{107}
+  \item {test\_map.c}, \hyperpage{104}
+    \subitem {compteur}, \hyperpage{105}
+    \subitem {FENETRE\_LARGEUR}, \hyperpage{105}
+    \subitem {FENETRE\_LONGUEUR}, \hyperpage{105}
+    \subitem {main}, \hyperpage{105}
+    \subitem {test\_map}, \hyperpage{105}
+  \item {test\_monstres.c}, \hyperpage{106}
+    \subitem {main}, \hyperpage{106}
+  \item {test\_personnage.c}, \hyperpage{106}
+    \subitem {compteur}, \hyperpage{107}
+    \subitem {FENETRE\_LARGEUR}, \hyperpage{107}
+    \subitem {FENETRE\_LONGUEUR}, \hyperpage{107}
+    \subitem {main}, \hyperpage{106}
+    \subitem {test\_map}, \hyperpage{107}
+  \item {TEXT\_ATTAQUE}
+    \subitem {affichage.h}, \hyperpage{27}
+  \item {TEXT\_ATTAQUE\_CHARGEE}
+    \subitem {affichage.h}, \hyperpage{27}
+  \item {TEXT\_CHARGER}
+    \subitem {affichage.h}, \hyperpage{27}
+  \item {text\_copier\_position}
+    \subitem {affichage.h}, \hyperpage{36}
+  \item {text\_map}
+    \subitem {t\_map}, \hyperpage{20}
+  \item {TEXT\_MARCHER}
+    \subitem {affichage.h}, \hyperpage{27}
+  \item {TEXT\_MARCHER\_BOUCLIER}
+    \subitem {affichage.h}, \hyperpage{27}
+  \item {texture}
+    \subitem {monstre\_s}, \hyperpage{13}
+    \subitem {objet\_s}, \hyperpage{14}
+    \subitem {s\_aff}, \hyperpage{17}
+  \item {texture\_map}
+    \subitem {map.c}, \hyperpage{78}
+    \subitem {map.h}, \hyperpage{81}
+  \item {texture\_src}
+    \subitem {objet\_s}, \hyperpage{14}
+  \item {textures\_joueur}
+    \subitem {joueur\_s}, \hyperpage{9}
+  \item {TOUCHE\_BAS}
+    \subitem {event.h}, \hyperpage{47}
+  \item {TOUCHE\_DROITE}
+    \subitem {event.h}, \hyperpage{47}
+  \item {TOUCHE\_ECHAP}
+    \subitem {event.h}, \hyperpage{47}
+  \item {TOUCHE\_GAUCHE}
+    \subitem {event.h}, \hyperpage{48}
+  \item {TOUCHE\_HAUT}
+    \subitem {event.h}, \hyperpage{48}
+  \item {TOUCHE\_TAB}
+    \subitem {event.h}, \hyperpage{48}
+  \item {trigger}
+    \subitem {joueur\_s}, \hyperpage{9}
+  \item {tx}
+    \subitem {affichage.h}, \hyperpage{37}
+  \item {ty}
+    \subitem {affichage.h}, \hyperpage{37}
+  \item {type}
+    \subitem {objet\_s}, \hyperpage{15}
+  \item {types\_erreur}
+    \subitem {code\_erreur.h}, \hyperpage{38}
+
+  \indexspace
+
+  \item {unite\_dep\_x}
+    \subitem {t\_map}, \hyperpage{20}
+  \item {unite\_dep\_y}
+    \subitem {t\_map}, \hyperpage{21}
+
+  \indexspace
+
+  \item {valeur}
+    \subitem {element}, \hyperpage{6}
+  \item {valeur\_elt}
+    \subitem {listes.c}, \hyperpage{69}
+    \subitem {listes.h}, \hyperpage{75}
+  \item {vider\_liste}
+    \subitem {listes.c}, \hyperpage{69}
+    \subitem {listes.h}, \hyperpage{75}
+  \item {vitesse}
+    \subitem {base\_monstre\_s}, \hyperpage{6}
+    \subitem {joueur\_s}, \hyperpage{9}
+    \subitem {monstre\_s}, \hyperpage{13}
+    \subitem {objet\_s}, \hyperpage{15}
+  \item {vrai}
+    \subitem {definition\_commun.h}, \hyperpage{41}
+
+  \indexspace
+
+  \item {width}
+    \subitem {s\_aff}, \hyperpage{17}
+    \subitem {t\_map}, \hyperpage{21}
+
+  \indexspace
+
+  \item {x}
+    \subitem {point}, \hyperpage{15}
+  \item {xp}
+    \subitem {joueur\_s}, \hyperpage{9}
+
+  \indexspace
+
+  \item {y}
+    \subitem {point}, \hyperpage{15}
+
+  \indexspace
+
+  \item {zone\_colision}
+    \subitem {statut\_s}, \hyperpage{19}
+  \item {zone\_tp}, \hyperpage{21}
+    \subitem {dest}, \hyperpage{21}
+    \subitem {id\_map}, \hyperpage{22}
+    \subitem {p1}, \hyperpage{22}
+    \subitem {p2}, \hyperpage{22}
+
+\end{theindex}

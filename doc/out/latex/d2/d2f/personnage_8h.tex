@@ -1,0 +1,284 @@
+\hypertarget{personnage_8h}{}\doxysection{Référence du fichier personnage.\+h}
+\label{personnage_8h}\index{personnage.h@{personnage.h}}
+
+
+Fichier contenant toutes les définitions concernant le personnage.  
+
+
+{\ttfamily \#include \char`\"{}definition\+\_\+commun.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de personnage.\+h\+:
+% FIG 0
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstatut__s}{statut\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{structjoueur__s}{joueur\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{personnage_8h_ad3f2bbef5ded2c4ae26a1c6713f10c77_ad3f2bbef5ded2c4ae26a1c6713f10c77}{D\+U\+R\+E\+E\+\_\+\+A\+T\+T\+A\+Q\+U\+E\+\_\+\+O\+U\+\_\+\+C\+H\+A\+R\+G\+EE}}~4
+\item 
+\#define \mbox{\hyperlink{personnage_8h_a7be14bf03a40ca718ae0006f78f8381d_a7be14bf03a40ca718ae0006f78f8381d}{D\+U\+R\+E\+E\+\_\+\+A\+T\+T\+A\+Q\+UE}}~6
+\item 
+\#define \mbox{\hyperlink{personnage_8h_aa72595cba92dd30629dcf91827679914_aa72595cba92dd30629dcf91827679914}{D\+U\+R\+E\+E\+\_\+\+A\+T\+T\+A\+Q\+U\+E\+\_\+\+C\+H\+A\+R\+G\+EE}}~10
+\item 
+\#define \mbox{\hyperlink{personnage_8h_a97f6e54dd939bcdb38738d34f9eac517_a97f6e54dd939bcdb38738d34f9eac517}{D\+U\+R\+E\+E\+\_\+\+B\+L\+O\+Q\+U\+ER}}~3
+\item 
+\#define \mbox{\hyperlink{personnage_8h_a3fbc4f4577dff27d8abbc4cb24f68d46_a3fbc4f4577dff27d8abbc4cb24f68d46}{T\+A\+I\+L\+L\+E\+\_\+\+P\+E\+R\+S\+O\+N\+N\+A\+GE}}~16 /$\ast$La taille du personnage en pixels$\ast$/
+\item 
+\#define \mbox{\hyperlink{personnage_8h_a98a97fd1e52188dde7bcc423c5d17546_a98a97fd1e52188dde7bcc423c5d17546}{T\+A\+I\+L\+L\+E\+\_\+\+T\+R\+I\+G\+G\+ER}}~200
+\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{structs__l__aff}{s\+\_\+l\+\_\+aff}} \mbox{\hyperlink{personnage_8h_a335b4ad9655d3aedc1d71c9f1f1fc06d_a335b4ad9655d3aedc1d71c9f1f1fc06d}{t\+\_\+l\+\_\+aff}}
+\item 
+typedef \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{structstatut__s}{statut\+\_\+s}} \mbox{\hyperlink{personnage_8h_aca9f708962d381b038e118085be158ef_aca9f708962d381b038e118085be158ef}{statut\+\_\+t}}
+\item 
+typedef unsigned char \mbox{\hyperlink{personnage_8h_a0c8186d9b9b7880309c27230bbb5e69d_a0c8186d9b9b7880309c27230bbb5e69d}{byte}}
+\item 
+typedef \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{structjoueur__s}{joueur\+\_\+s}} \mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35ec}{action\+\_\+t}} \{ \newline
+\mbox{\hyperlink{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35eca70b100093f9f5e4ec3406859cc808132}{R\+I\+EN}}, 
+\mbox{\hyperlink{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35eca70c3712cf958573a15ce5f5cd738eb55}{A\+T\+T\+A\+Q\+UE}}, 
+\mbox{\hyperlink{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35eca643516a5c96c628c87840980af2cb13a}{A\+T\+T\+A\+Q\+U\+E\+\_\+\+C\+H\+A\+R\+G\+EE}}, 
+\mbox{\hyperlink{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35ecae9e01c96a85be094722f5659627cac91}{C\+H\+A\+R\+G\+ER}}, 
+\newline
+\mbox{\hyperlink{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35eca6a1fa42a656febe62060455625d9a189}{B\+L\+O\+Q\+U\+ER}}, 
+\mbox{\hyperlink{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35eca173dcec74695d3627c1e00883bae108f}{A\+T\+T\+A\+Q\+U\+E\+\_\+\+O\+U\+\_\+\+C\+H\+A\+R\+G\+ER}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$ \mbox{\hyperlink{personnage_8h_a96505a65ab40b828238bfcbb3e90333e_a96505a65ab40b828238bfcbb3e90333e}{creer\+\_\+joueur}} (const char $\ast$nom, const int niveau, const int xp, const int max\+Pdv, const int pdv, const int attaque, const int defense, const int vitesse, const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} trig\mbox{[}\mbox{\hyperlink{personnage_8h_a98a97fd1e52188dde7bcc423c5d17546_a98a97fd1e52188dde7bcc423c5d17546}{T\+A\+I\+L\+L\+E\+\_\+\+T\+R\+I\+G\+G\+ER}}\mbox{]}, const \mbox{\hyperlink{definition__commun_8h_aec4e3894aa763e81148b2241ff730790_aec4e3894aa763e81148b2241ff730790}{t\+\_\+direction}} orientation, const \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}} bouclier\+\_\+equipe)
+\item 
+\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$ \mbox{\hyperlink{personnage_8h_a459037c293964b9d0b060fab158c45dd_a459037c293964b9d0b060fab158c45dd}{new\+\_\+joueur}} (const char $\ast$nom)
+\item 
+void \mbox{\hyperlink{personnage_8h_a33613b3a2b55cb1d1855a39a288fb230_a33613b3a2b55cb1d1855a39a288fb230}{detruire\+\_\+joueur}} (\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$j)
+\item 
+\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$ \mbox{\hyperlink{personnage_8h_a36225ef11de350c055f8d1407bda2685_a36225ef11de350c055f8d1407bda2685}{charger\+\_\+sauvegarde\+\_\+joueur}} (char $\ast$nom\+\_\+sauv)
+\item 
+\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$ \mbox{\hyperlink{personnage_8h_a0f3c1bdb9b485ae82c6d64274c76afe4_a0f3c1bdb9b485ae82c6d64274c76afe4}{caracteristiques}} (\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$perso)
+\item 
+void \mbox{\hyperlink{personnage_8h_a5036a38157418caf698d5662fddeb947_a5036a38157418caf698d5662fddeb947}{afficher\+\_\+statistiques}} (\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$perso)
+\item 
+\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$ \mbox{\hyperlink{personnage_8h_a65a6d92356f49132bd234b5338f0a2da_a65a6d92356f49132bd234b5338f0a2da}{levelup}} (\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$perso)
+\item 
+\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$ \mbox{\hyperlink{personnage_8h_a79c7e8e8c5ccfdcc99b20b3ff39d2726_a79c7e8e8c5ccfdcc99b20b3ff39d2726}{gain\+\_\+xp}} (\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$perso)
+\item 
+void \mbox{\hyperlink{personnage_8h_a9ce711c80691bb2b4f29e7c58790851a_a9ce711c80691bb2b4f29e7c58790851a}{creer\+\_\+sauvegarde\+\_\+json}} (\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$j)
+\item 
+void \mbox{\hyperlink{personnage_8h_a1674d581294113dd43ec58636bd57802_a1674d581294113dd43ec58636bd57802}{check\+\_\+repertoire\+\_\+jeux}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$ \mbox{\hyperlink{personnage_8h_a5ead4748360bfbe8192d0dd51d0cac86_a5ead4748360bfbe8192d0dd51d0cac86}{perso\+\_\+principal}}
+\item 
+char \mbox{\hyperlink{personnage_8h_a8512a450e703a0f7eb1bd9540a592187_a8512a450e703a0f7eb1bd9540a592187}{save\+\_\+path}} \mbox{[}500\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Fichier contenant toutes les définitions concernant le personnage. 
+
+\begin{DoxyAuthor}{Auteur}
+Despert Ange (\href{mailto:Ange.Despert.Etu@univ-lemans.fr}{\texttt{ Ange.\+Despert.\+Etu@univ-\/lemans.\+fr}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+01/02/2022
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentation des macros}
+\mbox{\Hypertarget{personnage_8h_a7be14bf03a40ca718ae0006f78f8381d_a7be14bf03a40ca718ae0006f78f8381d}\label{personnage_8h_a7be14bf03a40ca718ae0006f78f8381d_a7be14bf03a40ca718ae0006f78f8381d}} 
+\index{personnage.h@{personnage.h}!DUREE\_ATTAQUE@{DUREE\_ATTAQUE}}
+\index{DUREE\_ATTAQUE@{DUREE\_ATTAQUE}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{DUREE\_ATTAQUE}{DUREE\_ATTAQUE}}
+{\footnotesize\ttfamily \#define D\+U\+R\+E\+E\+\_\+\+A\+T\+T\+A\+Q\+UE~6}
+
+\mbox{\Hypertarget{personnage_8h_aa72595cba92dd30629dcf91827679914_aa72595cba92dd30629dcf91827679914}\label{personnage_8h_aa72595cba92dd30629dcf91827679914_aa72595cba92dd30629dcf91827679914}} 
+\index{personnage.h@{personnage.h}!DUREE\_ATTAQUE\_CHARGEE@{DUREE\_ATTAQUE\_CHARGEE}}
+\index{DUREE\_ATTAQUE\_CHARGEE@{DUREE\_ATTAQUE\_CHARGEE}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{DUREE\_ATTAQUE\_CHARGEE}{DUREE\_ATTAQUE\_CHARGEE}}
+{\footnotesize\ttfamily \#define D\+U\+R\+E\+E\+\_\+\+A\+T\+T\+A\+Q\+U\+E\+\_\+\+C\+H\+A\+R\+G\+EE~10}
+
+\mbox{\Hypertarget{personnage_8h_ad3f2bbef5ded2c4ae26a1c6713f10c77_ad3f2bbef5ded2c4ae26a1c6713f10c77}\label{personnage_8h_ad3f2bbef5ded2c4ae26a1c6713f10c77_ad3f2bbef5ded2c4ae26a1c6713f10c77}} 
+\index{personnage.h@{personnage.h}!DUREE\_ATTAQUE\_OU\_CHARGEE@{DUREE\_ATTAQUE\_OU\_CHARGEE}}
+\index{DUREE\_ATTAQUE\_OU\_CHARGEE@{DUREE\_ATTAQUE\_OU\_CHARGEE}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{DUREE\_ATTAQUE\_OU\_CHARGEE}{DUREE\_ATTAQUE\_OU\_CHARGEE}}
+{\footnotesize\ttfamily \#define D\+U\+R\+E\+E\+\_\+\+A\+T\+T\+A\+Q\+U\+E\+\_\+\+O\+U\+\_\+\+C\+H\+A\+R\+G\+EE~4}
+
+\mbox{\Hypertarget{personnage_8h_a97f6e54dd939bcdb38738d34f9eac517_a97f6e54dd939bcdb38738d34f9eac517}\label{personnage_8h_a97f6e54dd939bcdb38738d34f9eac517_a97f6e54dd939bcdb38738d34f9eac517}} 
+\index{personnage.h@{personnage.h}!DUREE\_BLOQUER@{DUREE\_BLOQUER}}
+\index{DUREE\_BLOQUER@{DUREE\_BLOQUER}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{DUREE\_BLOQUER}{DUREE\_BLOQUER}}
+{\footnotesize\ttfamily \#define D\+U\+R\+E\+E\+\_\+\+B\+L\+O\+Q\+U\+ER~3}
+
+\mbox{\Hypertarget{personnage_8h_a3fbc4f4577dff27d8abbc4cb24f68d46_a3fbc4f4577dff27d8abbc4cb24f68d46}\label{personnage_8h_a3fbc4f4577dff27d8abbc4cb24f68d46_a3fbc4f4577dff27d8abbc4cb24f68d46}} 
+\index{personnage.h@{personnage.h}!TAILLE\_PERSONNAGE@{TAILLE\_PERSONNAGE}}
+\index{TAILLE\_PERSONNAGE@{TAILLE\_PERSONNAGE}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{TAILLE\_PERSONNAGE}{TAILLE\_PERSONNAGE}}
+{\footnotesize\ttfamily \#define T\+A\+I\+L\+L\+E\+\_\+\+P\+E\+R\+S\+O\+N\+N\+A\+GE~16 /$\ast$La taille du personnage en pixels$\ast$/}
+
+\mbox{\Hypertarget{personnage_8h_a98a97fd1e52188dde7bcc423c5d17546_a98a97fd1e52188dde7bcc423c5d17546}\label{personnage_8h_a98a97fd1e52188dde7bcc423c5d17546_a98a97fd1e52188dde7bcc423c5d17546}} 
+\index{personnage.h@{personnage.h}!TAILLE\_TRIGGER@{TAILLE\_TRIGGER}}
+\index{TAILLE\_TRIGGER@{TAILLE\_TRIGGER}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{TAILLE\_TRIGGER}{TAILLE\_TRIGGER}}
+{\footnotesize\ttfamily \#define T\+A\+I\+L\+L\+E\+\_\+\+T\+R\+I\+G\+G\+ER~200}
+
+
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\Hypertarget{personnage_8h_a0c8186d9b9b7880309c27230bbb5e69d_a0c8186d9b9b7880309c27230bbb5e69d}\label{personnage_8h_a0c8186d9b9b7880309c27230bbb5e69d_a0c8186d9b9b7880309c27230bbb5e69d}} 
+\index{personnage.h@{personnage.h}!byte@{byte}}
+\index{byte@{byte}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{byte}{byte}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d_a0c8186d9b9b7880309c27230bbb5e69d}{byte}}}
+
+\mbox{\Hypertarget{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}\label{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}} 
+\index{personnage.h@{personnage.h}!joueur\_t@{joueur\_t}}
+\index{joueur\_t@{joueur\_t}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{joueur\_t}{joueur\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{structjoueur__s}{joueur\+\_\+s}} \mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}}}
+
+\mbox{\Hypertarget{personnage_8h_aca9f708962d381b038e118085be158ef_aca9f708962d381b038e118085be158ef}\label{personnage_8h_aca9f708962d381b038e118085be158ef_aca9f708962d381b038e118085be158ef}} 
+\index{personnage.h@{personnage.h}!statut\_t@{statut\_t}}
+\index{statut\_t@{statut\_t}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{statut\_t}{statut\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{structstatut__s}{statut\+\_\+s}} \mbox{\hyperlink{personnage_8h_aca9f708962d381b038e118085be158ef_aca9f708962d381b038e118085be158ef}{statut\+\_\+t}}}
+
+\mbox{\Hypertarget{personnage_8h_a335b4ad9655d3aedc1d71c9f1f1fc06d_a335b4ad9655d3aedc1d71c9f1f1fc06d}\label{personnage_8h_a335b4ad9655d3aedc1d71c9f1f1fc06d_a335b4ad9655d3aedc1d71c9f1f1fc06d}} 
+\index{personnage.h@{personnage.h}!t\_l\_aff@{t\_l\_aff}}
+\index{t\_l\_aff@{t\_l\_aff}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{t\_l\_aff}{t\_l\_aff}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{structs__l__aff}{s\+\_\+l\+\_\+aff}} \mbox{\hyperlink{affichage_8h_a335b4ad9655d3aedc1d71c9f1f1fc06d_a335b4ad9655d3aedc1d71c9f1f1fc06d}{t\+\_\+l\+\_\+aff}}}
+
+
+
+\doxysubsection{Documentation du type de l\textquotesingle{}énumération}
+\mbox{\Hypertarget{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35ec}\label{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35ec}} 
+\index{personnage.h@{personnage.h}!action\_t@{action\_t}}
+\index{action\_t@{action\_t}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{action\_t}{action\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35ec}{action\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Valeurs énumérées}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIEN@{RIEN}!personnage.h@{personnage.h}}\index{personnage.h@{personnage.h}!RIEN@{RIEN}}}\mbox{\Hypertarget{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35eca70b100093f9f5e4ec3406859cc808132}\label{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35eca70b100093f9f5e4ec3406859cc808132}} 
+R\+I\+EN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTAQUE@{ATTAQUE}!personnage.h@{personnage.h}}\index{personnage.h@{personnage.h}!ATTAQUE@{ATTAQUE}}}\mbox{\Hypertarget{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35eca70c3712cf958573a15ce5f5cd738eb55}\label{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35eca70c3712cf958573a15ce5f5cd738eb55}} 
+A\+T\+T\+A\+Q\+UE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTAQUE\_CHARGEE@{ATTAQUE\_CHARGEE}!personnage.h@{personnage.h}}\index{personnage.h@{personnage.h}!ATTAQUE\_CHARGEE@{ATTAQUE\_CHARGEE}}}\mbox{\Hypertarget{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35eca643516a5c96c628c87840980af2cb13a}\label{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35eca643516a5c96c628c87840980af2cb13a}} 
+A\+T\+T\+A\+Q\+U\+E\+\_\+\+C\+H\+A\+R\+G\+EE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHARGER@{CHARGER}!personnage.h@{personnage.h}}\index{personnage.h@{personnage.h}!CHARGER@{CHARGER}}}\mbox{\Hypertarget{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35ecae9e01c96a85be094722f5659627cac91}\label{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35ecae9e01c96a85be094722f5659627cac91}} 
+C\+H\+A\+R\+G\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLOQUER@{BLOQUER}!personnage.h@{personnage.h}}\index{personnage.h@{personnage.h}!BLOQUER@{BLOQUER}}}\mbox{\Hypertarget{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35eca6a1fa42a656febe62060455625d9a189}\label{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35eca6a1fa42a656febe62060455625d9a189}} 
+B\+L\+O\+Q\+U\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTAQUE\_OU\_CHARGER@{ATTAQUE\_OU\_CHARGER}!personnage.h@{personnage.h}}\index{personnage.h@{personnage.h}!ATTAQUE\_OU\_CHARGER@{ATTAQUE\_OU\_CHARGER}}}\mbox{\Hypertarget{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35eca173dcec74695d3627c1e00883bae108f}\label{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec_aec2532b33d2d66f09e5b30ed3ded35eca173dcec74695d3627c1e00883bae108f}} 
+A\+T\+T\+A\+Q\+U\+E\+\_\+\+O\+U\+\_\+\+C\+H\+A\+R\+G\+ER&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{personnage_8h_a5036a38157418caf698d5662fddeb947_a5036a38157418caf698d5662fddeb947}\label{personnage_8h_a5036a38157418caf698d5662fddeb947_a5036a38157418caf698d5662fddeb947}} 
+\index{personnage.h@{personnage.h}!afficher\_statistiques@{afficher\_statistiques}}
+\index{afficher\_statistiques@{afficher\_statistiques}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_statistiques()}{afficher\_statistiques()}}
+{\footnotesize\ttfamily void afficher\+\_\+statistiques (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$}]{perso }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{personnage_8h_a0f3c1bdb9b485ae82c6d64274c76afe4_a0f3c1bdb9b485ae82c6d64274c76afe4}\label{personnage_8h_a0f3c1bdb9b485ae82c6d64274c76afe4_a0f3c1bdb9b485ae82c6d64274c76afe4}} 
+\index{personnage.h@{personnage.h}!caracteristiques@{caracteristiques}}
+\index{caracteristiques@{caracteristiques}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{caracteristiques()}{caracteristiques()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}}$\ast$ caracteristiques (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$}]{perso }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{personnage_8h_a36225ef11de350c055f8d1407bda2685_a36225ef11de350c055f8d1407bda2685}\label{personnage_8h_a36225ef11de350c055f8d1407bda2685_a36225ef11de350c055f8d1407bda2685}} 
+\index{personnage.h@{personnage.h}!charger\_sauvegarde\_joueur@{charger\_sauvegarde\_joueur}}
+\index{charger\_sauvegarde\_joueur@{charger\_sauvegarde\_joueur}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{charger\_sauvegarde\_joueur()}{charger\_sauvegarde\_joueur()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}}$\ast$ charger\+\_\+sauvegarde\+\_\+joueur (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom\+\_\+sauv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{personnage_8h_a1674d581294113dd43ec58636bd57802_a1674d581294113dd43ec58636bd57802}\label{personnage_8h_a1674d581294113dd43ec58636bd57802_a1674d581294113dd43ec58636bd57802}} 
+\index{personnage.h@{personnage.h}!check\_repertoire\_jeux@{check\_repertoire\_jeux}}
+\index{check\_repertoire\_jeux@{check\_repertoire\_jeux}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{check\_repertoire\_jeux()}{check\_repertoire\_jeux()}}
+{\footnotesize\ttfamily void check\+\_\+repertoire\+\_\+jeux (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{personnage_8h_a96505a65ab40b828238bfcbb3e90333e_a96505a65ab40b828238bfcbb3e90333e}\label{personnage_8h_a96505a65ab40b828238bfcbb3e90333e_a96505a65ab40b828238bfcbb3e90333e}} 
+\index{personnage.h@{personnage.h}!creer\_joueur@{creer\_joueur}}
+\index{creer\_joueur@{creer\_joueur}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{creer\_joueur()}{creer\_joueur()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}}$\ast$ creer\+\_\+joueur (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom,  }\item[{const int}]{niveau,  }\item[{const int}]{xp,  }\item[{const int}]{max\+Pdv,  }\item[{const int}]{pdv,  }\item[{const int}]{attaque,  }\item[{const int}]{defense,  }\item[{const int}]{vitesse,  }\item[{const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d_a0c8186d9b9b7880309c27230bbb5e69d}{byte}}}]{trig\mbox{[}\+T\+A\+I\+L\+L\+E\+\_\+\+T\+R\+I\+G\+G\+E\+R\mbox{]},  }\item[{const \mbox{\hyperlink{definition__commun_8h_aec4e3894aa763e81148b2241ff730790_aec4e3894aa763e81148b2241ff730790}{t\+\_\+direction}}}]{orientation,  }\item[{const \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}}}]{bouclier\+\_\+equipe }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{personnage_8h_a9ce711c80691bb2b4f29e7c58790851a_a9ce711c80691bb2b4f29e7c58790851a}\label{personnage_8h_a9ce711c80691bb2b4f29e7c58790851a_a9ce711c80691bb2b4f29e7c58790851a}} 
+\index{personnage.h@{personnage.h}!creer\_sauvegarde\_json@{creer\_sauvegarde\_json}}
+\index{creer\_sauvegarde\_json@{creer\_sauvegarde\_json}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{creer\_sauvegarde\_json()}{creer\_sauvegarde\_json()}}
+{\footnotesize\ttfamily void creer\+\_\+sauvegarde\+\_\+json (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$}]{j }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{personnage_8h_a33613b3a2b55cb1d1855a39a288fb230_a33613b3a2b55cb1d1855a39a288fb230}\label{personnage_8h_a33613b3a2b55cb1d1855a39a288fb230_a33613b3a2b55cb1d1855a39a288fb230}} 
+\index{personnage.h@{personnage.h}!detruire\_joueur@{detruire\_joueur}}
+\index{detruire\_joueur@{detruire\_joueur}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{detruire\_joueur()}{detruire\_joueur()}}
+{\footnotesize\ttfamily void detruire\+\_\+joueur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$}]{j }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{personnage_8h_a79c7e8e8c5ccfdcc99b20b3ff39d2726_a79c7e8e8c5ccfdcc99b20b3ff39d2726}\label{personnage_8h_a79c7e8e8c5ccfdcc99b20b3ff39d2726_a79c7e8e8c5ccfdcc99b20b3ff39d2726}} 
+\index{personnage.h@{personnage.h}!gain\_xp@{gain\_xp}}
+\index{gain\_xp@{gain\_xp}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{gain\_xp()}{gain\_xp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}}$\ast$ gain\+\_\+xp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$}]{perso }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{personnage_8h_a65a6d92356f49132bd234b5338f0a2da_a65a6d92356f49132bd234b5338f0a2da}\label{personnage_8h_a65a6d92356f49132bd234b5338f0a2da_a65a6d92356f49132bd234b5338f0a2da}} 
+\index{personnage.h@{personnage.h}!levelup@{levelup}}
+\index{levelup@{levelup}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{levelup()}{levelup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}}$\ast$ levelup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$}]{perso }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{personnage_8h_a459037c293964b9d0b060fab158c45dd_a459037c293964b9d0b060fab158c45dd}\label{personnage_8h_a459037c293964b9d0b060fab158c45dd_a459037c293964b9d0b060fab158c45dd}} 
+\index{personnage.h@{personnage.h}!new\_joueur@{new\_joueur}}
+\index{new\_joueur@{new\_joueur}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{new\_joueur()}{new\_joueur()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}}$\ast$ new\+\_\+joueur (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\Hypertarget{personnage_8h_a5ead4748360bfbe8192d0dd51d0cac86_a5ead4748360bfbe8192d0dd51d0cac86}\label{personnage_8h_a5ead4748360bfbe8192d0dd51d0cac86_a5ead4748360bfbe8192d0dd51d0cac86}} 
+\index{personnage.h@{personnage.h}!perso\_principal@{perso\_principal}}
+\index{perso\_principal@{perso\_principal}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{perso\_principal}{perso\_principal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}}$\ast$ perso\+\_\+principal}
+
+\mbox{\Hypertarget{personnage_8h_a8512a450e703a0f7eb1bd9540a592187_a8512a450e703a0f7eb1bd9540a592187}\label{personnage_8h_a8512a450e703a0f7eb1bd9540a592187_a8512a450e703a0f7eb1bd9540a592187}} 
+\index{personnage.h@{personnage.h}!save\_path@{save\_path}}
+\index{save\_path@{save\_path}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{save\_path}{save\_path}}
+{\footnotesize\ttfamily char save\+\_\+path\mbox{[}500\mbox{]}}
+
