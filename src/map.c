@@ -61,10 +61,15 @@ t_map * charger_s_map(char * buffer){
     json_object *width;
     json_object *height;
     json_object *tbl_monstre;
-    json_object *monstre;
+
+    json_object *monstre; 
+
+    json_object *nom_monstre;
+    json_object *position;
+    json_object *x;
+    json_object *y;
   
     monstre_t * inserer;
-
 
     SDL_Rect s = taille_ecran_cases();
 
@@ -83,7 +88,15 @@ t_map * charger_s_map(char * buffer){
     m->width = json_object_get_int(width);
 
     for(unsigned int i = 0; i < json_object_array_length(tbl_monstre); i++){
-        /*monstre = json_object_array_get_idx(tbl_monstre,i);*/
+        monstre = json_object_array_get_idx(tbl_monstre,i);
+
+        nom_monstre = json_object_object_get(monstre,"type");
+        position = json_object_object_get(monstre,"position");
+
+        x = json_object_array_get_idx(position,0);
+        y = json_object_array_get_idx(position,1);
+
+        json_object_get_int(x);
         /* Fonction qui permet de creer un monstre */
         inserer = creer_monstre(liste_base_monstres, json_object_get_string(monstre), /*type, position*/);
 

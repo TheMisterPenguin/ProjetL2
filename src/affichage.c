@@ -159,7 +159,7 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
 
         sprintf(msp, "Erreur lors de la convertion de la surface : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_SURFACE);
         SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, msp);
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la convertion de la surface : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_SURFACE);
 
         free(msp);
         free(texture);
@@ -184,7 +184,7 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
 
             sprintf(msp, "Erreur lors de la création de la texture : taille de la zone affichée supérieure à la texture\nErreur : 0x%X\n", ERR_RECTANGLE_TOO_BIG);
             SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, msp);
+            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la création de la texture : taille de la zone affichée supérieure à la texture\nErreur : 0x%X\n", ERR_RECTANGLE_TOO_BIG);
 
             free(msp);
             free(texture->frame_anim);
