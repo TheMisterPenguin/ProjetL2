@@ -40,11 +40,13 @@ static void keyDown(SDL_KeyboardEvent * ev){
             case SDLK_LEFT :
             case TOUCHE_GAUCHE : statut->orientation = OUEST;  statut->en_mouvement = vrai; break;
             case TOUCHE_TAB :
+                perso_principal->statut->en_mouvement = faux;
                 SDL_ShowCursor(SDL_ENABLE);
                 afficher_inventaire();
                 SDL_ShowCursor(SDL_DISABLE);
                 break;
             case SDLK_F11 :
+                perso_principal->statut->en_mouvement = faux;
                 flags = SDL_GetWindowFlags(fenetre_Principale);
 
                 if(flags & SDL_WINDOW_FULLSCREEN_DESKTOP){

@@ -6,10 +6,23 @@ Fichier contenant toutes les définitions concernant les listes d\textquotesingl
 
 
 {\ttfamily \#include \char`\"{}objet.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inventaire.\+h\char`\"{}}\newline
 Graphe des dépendances par inclusion de liste\+\_\+objet.\+h\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d91/liste__objet_8h__incl}
+\end{center}
+\end{figure}
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d42/liste__objet_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,6 +47,17 @@ void \mbox{\hyperlink{liste__objet_8h_af785d71f7a4b48b956bb4c6b024d2b6e_af785d71
 \mbox{\hyperlink{liste__objet_8h_a95aa851f70d83b00db72a384040f1919_a95aa851f70d83b00db72a384040f1919}{lobjet\+\_\+t}} $\ast$ \mbox{\hyperlink{liste__objet_8h_aa7ad5b43fb3d37375c824f970d63abef_aa7ad5b43fb3d37375c824f970d63abef}{creer\+\_\+liste\+\_\+objet\+\_\+equipe}} ()
 \item 
 void \mbox{\hyperlink{liste__objet_8h_a1ba32d0d4c27d32b82085294555b1415_a1ba32d0d4c27d32b82085294555b1415}{effacer\+\_\+liste\+\_\+objet}} (\mbox{\hyperlink{liste__objet_8h_a95aa851f70d83b00db72a384040f1919_a95aa851f70d83b00db72a384040f1919}{lobjet\+\_\+t}} $\ast$$\ast$liste\+\_\+obj)
+\item 
+void \mbox{\hyperlink{liste__objet_8h_a77d9896eda8e07e16cb235a43780d405_a77d9896eda8e07e16cb235a43780d405}{placer\+\_\+objet\+\_\+sac}} (\mbox{\hyperlink{objet_8h_ad0efc27a29533dbf784e717262509caa_ad0efc27a29533dbf784e717262509caa}{objet\+\_\+t}} $\ast$objet, int slot)
+\item 
+void \mbox{\hyperlink{liste__objet_8h_a4fe93e1fc39988acec686660009ed240_a4fe93e1fc39988acec686660009ed240}{afficher\+\_\+textures\+\_\+sac}} (\mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}} $\ast$const \mbox{\hyperlink{inventaire_8h_abf04b1680f181d06f88c632ad33c4b1c_abf04b1680f181d06f88c632ad33c4b1c}{inventaire}})
+\item 
+void \mbox{\hyperlink{liste__objet_8h_a2955c31ed7471524e38adb3ed821402e_a2955c31ed7471524e38adb3ed821402e}{afficher\+\_\+textures\+\_\+equipe}} (\mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}} $\ast$const \mbox{\hyperlink{inventaire_8h_abf04b1680f181d06f88c632ad33c4b1c_abf04b1680f181d06f88c632ad33c4b1c}{inventaire}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{liste__objet_8h_a95aa851f70d83b00db72a384040f1919_a95aa851f70d83b00db72a384040f1919}{lobjet\+\_\+t}} $\ast$ \mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}}
 \end{DoxyCompactItemize}
 
 
@@ -70,6 +94,18 @@ Copyright (c) 2022
 \doxysubsubsection{\texorpdfstring{afficher\_liste\_objet()}{afficher\_liste\_objet()}}
 {\footnotesize\ttfamily void afficher\+\_\+liste\+\_\+objet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{liste__objet_8h_a95aa851f70d83b00db72a384040f1919_a95aa851f70d83b00db72a384040f1919}{lobjet\+\_\+t}} $\ast$const}]{liste\+\_\+obj }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{liste__objet_8h_a2955c31ed7471524e38adb3ed821402e_a2955c31ed7471524e38adb3ed821402e}\label{liste__objet_8h_a2955c31ed7471524e38adb3ed821402e_a2955c31ed7471524e38adb3ed821402e}} 
+\index{liste\_objet.h@{liste\_objet.h}!afficher\_textures\_equipe@{afficher\_textures\_equipe}}
+\index{afficher\_textures\_equipe@{afficher\_textures\_equipe}!liste\_objet.h@{liste\_objet.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_textures\_equipe()}{afficher\_textures\_equipe()}}
+{\footnotesize\ttfamily void afficher\+\_\+textures\+\_\+equipe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}} $\ast$const}]{inventaire }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{liste__objet_8h_a4fe93e1fc39988acec686660009ed240_a4fe93e1fc39988acec686660009ed240}\label{liste__objet_8h_a4fe93e1fc39988acec686660009ed240_a4fe93e1fc39988acec686660009ed240}} 
+\index{liste\_objet.h@{liste\_objet.h}!afficher\_textures\_sac@{afficher\_textures\_sac}}
+\index{afficher\_textures\_sac@{afficher\_textures\_sac}!liste\_objet.h@{liste\_objet.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_textures\_sac()}{afficher\_textures\_sac()}}
+{\footnotesize\ttfamily void afficher\+\_\+textures\+\_\+sac (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}} $\ast$const}]{inventaire }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{liste__objet_8h_ab740ef41b92898934acfba27ae688414_ab740ef41b92898934acfba27ae688414}\label{liste__objet_8h_ab740ef41b92898934acfba27ae688414_ab740ef41b92898934acfba27ae688414}} 
 \index{liste\_objet.h@{liste\_objet.h}!creer\_liste\_objet@{creer\_liste\_objet}}
 \index{creer\_liste\_objet@{creer\_liste\_objet}!liste\_objet.h@{liste\_objet.h}}
@@ -99,4 +135,19 @@ Copyright (c) 2022
 \index{effacer\_liste\_objet@{effacer\_liste\_objet}!liste\_objet.h@{liste\_objet.h}}
 \doxysubsubsection{\texorpdfstring{effacer\_liste\_objet()}{effacer\_liste\_objet()}}
 {\footnotesize\ttfamily void effacer\+\_\+liste\+\_\+objet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{liste__objet_8h_a95aa851f70d83b00db72a384040f1919_a95aa851f70d83b00db72a384040f1919}{lobjet\+\_\+t}} $\ast$$\ast$}]{liste\+\_\+obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{liste__objet_8h_a77d9896eda8e07e16cb235a43780d405_a77d9896eda8e07e16cb235a43780d405}\label{liste__objet_8h_a77d9896eda8e07e16cb235a43780d405_a77d9896eda8e07e16cb235a43780d405}} 
+\index{liste\_objet.h@{liste\_objet.h}!placer\_objet\_sac@{placer\_objet\_sac}}
+\index{placer\_objet\_sac@{placer\_objet\_sac}!liste\_objet.h@{liste\_objet.h}}
+\doxysubsubsection{\texorpdfstring{placer\_objet\_sac()}{placer\_objet\_sac()}}
+{\footnotesize\ttfamily void placer\+\_\+objet\+\_\+sac (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{objet_8h_ad0efc27a29533dbf784e717262509caa_ad0efc27a29533dbf784e717262509caa}{objet\+\_\+t}} $\ast$}]{objet,  }\item[{int}]{slot }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\Hypertarget{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82_ad412be52cbf2eb978fac0c2c2e8e3c82}\label{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82_ad412be52cbf2eb978fac0c2c2e8e3c82}} 
+\index{liste\_objet.h@{liste\_objet.h}!objets@{objets}}
+\index{objets@{objets}!liste\_objet.h@{liste\_objet.h}}
+\doxysubsubsection{\texorpdfstring{objets}{objets}}
+{\footnotesize\ttfamily \mbox{\hyperlink{liste__objet_8h_a95aa851f70d83b00db72a384040f1919_a95aa851f70d83b00db72a384040f1919}{lobjet\+\_\+t}}$\ast$ objets}
 

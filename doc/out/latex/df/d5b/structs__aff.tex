@@ -31,6 +31,17 @@ unsigned int \mbox{\hyperlink{structs__aff_a35d4fed1c2d3e5829cafd41c8c2889e2_a35
 \doxysubsection{Description détaillée}
 Structure qui permet l\textquotesingle{}affichage d\textquotesingle{}une texture à l\textquotesingle{}écran de manière précise. 
 
+\hypertarget{structs__aff_autotoc_md0}{}\doxysubsection{Le but de la structure}\label{structs__aff_autotoc_md0}
+Cette structure à pour but de permettre l\textquotesingle{}affichage d\textquotesingle{}une texture à l\textquotesingle{}écran de manière précise. Ainsi, on peut facilement placer une texture où l\textquotesingle{}on veut sans savoir utiliser la S\+DL.\hypertarget{structs__aff_autotoc_md1}{}\doxysubsection{Éléments de la structure}\label{structs__aff_autotoc_md1}
+
+\begin{DoxyItemize}
+\item texture \+: la S\+D\+L\+\_\+\+Texture que l\textquotesingle{}on veut afficher à l\textquotesingle{}écran. Elle est crée par la fonction creer\+\_\+texture. à partir d\textquotesingle{}une surface chargée à partir d\textquotesingle{}un fichier.
+\item frame\+\_\+anim \+: Un rectangle permettant de n\textquotesingle{}afficher qu\textquotesingle{}une partie bien précise de la texture. C\textquotesingle{}est à dire, un rectangle qui contient la frame que l\textquotesingle{}on veut afficher. Cela permet donc d\textquotesingle{}animer la texture.
+\item aff\+\_\+fenetre \+: Un rectangle qui permet de savoir où placer la texture à l\textquotesingle{}écran et de connaitre sa taille. Sa taille est définie à l\textquotesingle{}aide d\textquotesingle{}un multiplicateur où bien elle peut être choisie graâce à l\textquotesingle{}appel d\textquotesingle{}une fonction.
+\item width \+: La largeur de la texture. Cette valeur est obtenue grâce à une requête S\+DL et renseignée dans la structure par la fonction creer\+\_\+texture.
+\item height \+: La hauteur de la texture. Cette valeur est obtenue grâce à une requête S\+DL et renseignée dans la structure par la fonction creer\+\_\+texture. 
+\end{DoxyItemize}
+
 \doxysubsection{Documentation des données membres}
 \mbox{\Hypertarget{structs__aff_a0f6fed7321c1c817f9ec3917c61ae749_a0f6fed7321c1c817f9ec3917c61ae749}\label{structs__aff_a0f6fed7321c1c817f9ec3917c61ae749_a0f6fed7321c1c817f9ec3917c61ae749}} 
 \index{s\_aff@{s\_aff}!aff\_fenetre@{aff\_fenetre}}
