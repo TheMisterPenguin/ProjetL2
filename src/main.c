@@ -70,6 +70,11 @@ int main(int argc, char** argv)
     t_aff *next_texture_joueur = perso_principal->textures_joueur->liste[TEXT_MARCHER];
     t_aff *texture_temp;
 
+    objets = creer_liste_objet();
+    inventaire = creer_inventaire();
+    objets->liste[0]->texture = creer_texture(objets->liste[0]->texture_src, 46, 48, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 0.8);
+    ramasser_objet(objets->liste[0], inventaire);
+
     /*test de l'allocation des textures*/
     for (i = 0; i < perso_principal->textures_joueur->nb_valeurs; i++)
         if (perso_principal->textures_joueur->liste == NULL)

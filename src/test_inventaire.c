@@ -41,6 +41,8 @@ int main(){
     printf("----- destruction inventaire -----\n\n");
     detruire_inventaire(&inventaire);
     printf("OK\n");
+
+    fermer_programme(EXIT_SUCCESS);
     
     return 0;
 }

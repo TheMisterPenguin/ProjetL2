@@ -2,6 +2,8 @@
 #include <string.h>
 #include <affichage.h>
 #include <personnage.h>
+#include <liste_objet.h>
+#include <inventaire.h>
 
 /*void afficher_menu(menus_t * menu){
     switch (menu) {
@@ -109,7 +111,7 @@ void afficher_inventaire()
     if (!text_pause)
         return;
 
-    /* Création des slots de l'invenaire */
+    /* Création des slots de l'inventaire */
     SDL_Rect slot0 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
     SDL_Rect slot1 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
     SDL_Rect slot2 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
@@ -142,6 +144,8 @@ void afficher_inventaire()
         SDL_RenderClear(rendu_principal);
 
         afficher_texture(text_pause, rendu_principal);
+        afficher_textures_sac( inventaire );
+        afficher_textures_equipe(inventaire);
 
         SDL_RenderPresent(rendu_principal); 
 
@@ -192,7 +196,7 @@ void afficher_inventaire()
                 if(slot_selectionne != -1){
                     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "On a selectionné le slot %d\n", slot_selectionne);
                     /* Fonction pour equiper l'item */
-                    //equiper_item(slot_selectionne);
+                    equiper_sac_slot(slot_selectionne);
                 }
                 break;
             }

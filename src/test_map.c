@@ -23,7 +23,7 @@ int main(int argc, char **argv){
 
     while (vrai){
         if (!text)
-            exit(EXIT_FAILURE);
+            fermer_programme(EXIT_FAILURE);
 
         SDL_RenderClear(rendu_principal);
         afficher_texture(text, rendu_principal);
@@ -32,9 +32,7 @@ int main(int argc, char **argv){
         SDL_WaitEvent(&e);
 
         if(e.key.keysym.sym == SDLK_ESCAPE)
-            exit(EXIT_SUCCESS);
+            fermer_programme(EXIT_SUCCESS);
     }
-
-    printf("OK\n");
     return 0;
 }

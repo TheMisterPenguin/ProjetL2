@@ -2,6 +2,8 @@
 #include <commun.h>
 #include <string.h>
 
+inventaire_t * inventaire = NULL;
+
 void changement_statistiques(joueur_t *j,lobjet_t *equipe){
     int i;
     for(i = 0;i<equipe->nb;i++){
@@ -87,4 +89,26 @@ void detruire_inventaire(inventaire_t ** inventaire){
 void ramasser_objet(objet_t * objet, inventaire_t * inventaire){
     inventaire->sac->liste[inventaire->sac->nb] = objet;
     inventaire->sac->nb++;
+}
+
+void equiper_sac_slot( int slot )
+{
+    int i, j ;
+    int nb_obj ;
+
+    nb_obj = inventaire->sac->nb ;
+
+    if( slot >= nb_obj )
+    {
+        return ;
+    }
+
+    for( i=0, j=0 ; i<nb_obj ; i++, j++)
+    {
+        if(inventaire->sac->liste[i] == NULL)
+            j--;
+
+        if(j == slot)
+            equiper_objet(perso_principal,&(inventaire->sac->liste[i]),inventaire);
+    }
 }

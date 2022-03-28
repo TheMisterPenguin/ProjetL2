@@ -218,10 +218,10 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
 
         texture->multipli_taille = (float)FENETRE_LONGUEUR / texture->width;
     }
-        ajout_droit(listeDeTextures, texture);
+    ajout_droit(listeDeTextures, texture);
 
-        return texture;
-    }
+    return texture;
+}
 
 err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
     if(texture->frame_anim != NULL)
@@ -607,4 +607,12 @@ bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2){
 SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
    SDL_Color col = {r,g,b,a};
    return col;
+}
+
+void placer_texture(t_aff *texture, int x, int y){
+    x = floor(x * texture->multipli_taille);
+    y = floor(y * texture->multipli_taille);
+
+    texture->aff_fenetre->x = x;
+    texture->aff_fenetre->y = y;
 }

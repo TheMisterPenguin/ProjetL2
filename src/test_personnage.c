@@ -11,5 +11,7 @@ int main(){
     perso_principal = new_joueur("test");
     detruire_joueur(perso_principal);
 
+    fermer_programme(EXIT_SUCCESS);
+
     return 0;
 }

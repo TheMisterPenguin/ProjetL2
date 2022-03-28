@@ -27,10 +27,18 @@ typedef struct lobjet_s {
     objet_t ** liste;
 }lobjet_t;
 
+
+extern lobjet_t * objets;
+
+#include "inventaire.h"
+
 lobjet_t * creer_liste_objet(void);
 lobjet_t * creer_liste_objet_vide(void);
 void detruire_liste_objet( lobjet_t ** liste_obj);
 void afficher_liste_objet( lobjet_t * const liste_obj );
 lobjet_t * creer_liste_objet_equipe();
 void effacer_liste_objet( lobjet_t ** liste_obj);
+void placer_objet_sac(objet_t * objet, int slot);
+void afficher_textures_sac( inventaire_t * const inventaire );
+void afficher_textures_equipe( inventaire_t * const inventaire );
 #endif
