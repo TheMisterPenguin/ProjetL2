@@ -54,19 +54,23 @@ void afficher_intro(void){
 
 int main(int argc, char** argv)
 {
-    SDL_SetMainReady();
-    init();
-    afficher_intro();
-    char *fichier_map = charger_f_map("map.json");
-    map = charger_s_map(fichier_map);
-
     int debut, fin; /* le temps pour calculer les performances */
     int i;
 
+    /* On initialise le programme */
+    SDL_SetMainReady();
+    init();
+
+    /* On affiche l'introduction */
+    afficher_intro();
+
+    /* On charge la map */
+    char *fichier_map = charger_f_map("map.json");
+    map = charger_s_map(fichier_map);
+    t_aff *text = texture_map(map); 
+
+    /* On créer le joueur */
     perso_principal = new_joueur("test");
-    t_aff *text = texture_map(map);
-    //t_l_aff *textures_joueur = init_textures_joueur(perso_principal);                 /* initialise la liste de textures joueur*/
-    //t_aff *next_texture_joueur = init_texture_joueur(perso_principal->textures_joueur); /* initialise la texture joueur à afficher*/
     t_aff *next_texture_joueur = perso_principal->textures_joueur->liste[TEXT_MARCHER];
     t_aff *texture_temp;
 
@@ -80,12 +84,14 @@ int main(int argc, char** argv)
         if (perso_principal->textures_joueur->liste == NULL)
             fermer_programme(EXIT_FAILURE);
 
-    rect_centre_x(&tx);
-    rect_centre_y(&ty);
-
+    /* On verifie si le répertoire de sauvegarde existe */
     check_repertoire_jeux();
 
     rect_centre(&(perso_principal->statut->zone_colision));
+
+    init_sousbuffer(map);
+
+
     compteur = 0;
     while (running)
     {
@@ -116,13 +122,21 @@ int main(int argc, char** argv)
 
         SDL_RenderClear(rendu_principal);
         afficher_texture(text, rendu_principal);
-        SDL_RenderDrawRect(rendu_principal, &tx);
-        SDL_RenderDrawRect(rendu_principal, &(perso_principal->statut->zone_colision));
-        SDL_RenderDrawRect(rendu_principal, &ty);
+
+        #ifdef __DEBUG__
+            SDL_RenderDrawRect(rendu_principal, &tx);
+            SDL_RenderDrawRect(rendu_principal, &(perso_principal->statut->zone_colision));
+            SDL_RenderDrawRect(rendu_principal, &ty);
+        #endif
+
+        /* On affiche le joueur */
         afficher_texture(next_texture_joueur, rendu_principal);
+
+        /* On affiche l'interface */
         RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
             ((float)perso_principal->pdv/perso_principal->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
-        // afficher_buffer(buffer_affichage, rendu_principal);
+
+
         SDL_RenderPresent(rendu_principal);
 
         // vider_liste(buffer_affichage);
