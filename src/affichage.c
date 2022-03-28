@@ -528,9 +528,10 @@ void modif_affichage_rect(t_aff *texture, SDL_Rect r){
 
 void deplacement_x_pers(t_map *m, joueur_t * j, int x){
 
-    int *x_map = &(m->text_sol->frame_anim->x); /* La coordonnée x actuelle de la map */
+    int *x_map = &(m->text_map->frame_anim->x); /* La coordonnée x actuelle de la map */
     int *x_pers = &(j->statut->zone_colision.x); /* La coordonnée x actuelle du joueur */
-    const long int taille_unite = floor(FENETRE_LONGUEUR / (float)m->text_sol->width); /* Calcul en nombre de pixels d'une unité de déplacement */
+    //const long int taille_unite = floor(FENETRE_LONGUEUR / (float)m->text_map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
+    const long int taille_unite = 1; /* Calcul en nombre de pixels d'une unité de déplacement */
 
     if(*x_pers  + x * taille_unite < 0)
         return;
@@ -540,7 +541,7 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
             *x_pers += x * taille_unite; /* On déplace le personnage de x unités */
             return;
         }
-    if (*x_map + x > (m->text_sol->width - m->text_sol->frame_anim->w)){ /* L'écran est en bordure de map droite */
+    if (*x_map + x > m->text_map->frame_anim->w){ /* L'écran est en bordure de map droite */
         *x_pers += x * taille_unite;
         return;
     }
