@@ -32,6 +32,8 @@ typedef enum
 
 extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre globale pointant sur la fenêtre principale du programme*/
 extern SDL_Renderer *rendu_principal;
+extern SDL_Window *fenetre_sous_rendu;
+extern SDL_Renderer *sous_rendu;
 extern bool running;
 
 #ifndef _WIN32
@@ -48,4 +50,5 @@ extern bool running;
  * \author Ange Despert
  */
 void fermer_programme(int code_erreur);
+
 #endif

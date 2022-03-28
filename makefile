@@ -16,7 +16,7 @@ OBJ_TEST_MONSTRES = $(addsuffix .o, $(addprefix $(ODIR), test_monstres monstres)
 OBJ_TEST_MAP = $(addsuffix .o, $(addprefix $(ODIR), test_map map affichage init_close event listes personnage menus liste_objet objet inventaire))
 OBJ_TEST_LISTE_OBJET = $(addsuffix .o, $(addprefix $(ODIR), test_liste_objet liste_objet objet affichage listes personnage init_close))
 OBJ_TEST_INVENTAIRE = $(addsuffix .o, $(addprefix $(ODIR), test_inventaire inventaire liste_objet objet personnage affichage listes init_close))
-OBJ_TEST_PERSONNAGE = $(addsuffix .o, $(addprefix $(ODIR), test_personnage personnage affichage listes init_close))
+OBJ_TEST_PERSONNAGE = $(addsuffix .o, $(addprefix $(ODIR), test_personnage personnage affichage listes init_close inventaire objet liste_objet map))
 OBJ_TEST_AFFICHAGE = $(addsuffix .o, $(addprefix $(ODIR), test_affichage affichage listes init_close personnage))
 OBJ_TEST_LISTES = $(addsuffix .o, $(addprefix $(ODIR), test_listes listes affichage personnage init_close))
 
@@ -33,7 +33,7 @@ $(BINDIR)jeux$(EXT) : $(OBJ)
 # Compilation de tout les fichiers source
 
 $(ODIR)%.o : $(SRC)%.c
-	$(CC) $(CFLAGS) -o $@ -c $< -g -D __LOG
+	$(CC) $(CFLAGS) -o $@ -c $< -g 
 
 # Génération des tests
 
@@ -59,10 +59,7 @@ $(BINDIR)test_listes.bin : $(OBJ_TEST_LISTES)
 	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
 
 # Création de l'arboressence 
-.PHONY: makedir
-makedir :
-	@chmod a+x $(DIRMAKE)
-	@./$(DIRMAKE)
+
 #options de suppression
 
 .PHONY: clean
@@ -74,3 +71,14 @@ clean:
 mrproper: clean
 	@$(rm) $(GEN)
 	@echo "Executable removed!"
+
+.PHONY: makedir
+ifeq ($(OS),Windows_NT)
+makedir :
+	@echo "Dossier obj: crée"
+else 
+makedir :
+	@chmod a+x $(DIRMAKE)
+	@./$(DIRMAKE)
+
+endif

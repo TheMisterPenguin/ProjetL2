@@ -1,10 +1,9 @@
 /**
  * \file affichage.h
  * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
- * \brief 
+ * \brief Fichier contenant les définitions et les fonctions liées au module affichage.
  * \version 0.1
  * \date 12/03/2022
- * 
  * \copyright Copyright (c) 2022
  * 
  */
@@ -40,18 +39,29 @@ typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TE
  *
  * # Le but de la structure
  * Cette structure à pour but de permettre l'affichage d'une texture à l'écran de manière précise.
- * Ainsi, on peut facilement placer une texture où l'on veut sans 
+ * Ainsi, on peut facilement placer une texture où l'on veut sans savoir utiliser la SDL.
+ * 
+ * # Éléments de la structure
+ * - texture : la SDL_Texture que l'on veut afficher à l'écran. Elle est crée par la fonction creer_texture. à partir d'une surface chargée à partir d'un fichier.
+ * - frame_anim : Un rectangle permettant de n'afficher qu'une partie bien précise de la texture. C'est à dire, un rectangle qui contient la frame que l'on veut afficher. 
+ * Cela permet donc d'animer la texture.
+ * - aff_fenetre : Un rectangle qui permet de savoir où placer la texture à l'écran et de connaitre sa taille. Sa taille est définie à l'aide d'un multiplicateur où bien elle peut être choisie graâce à l'appel d'une fonction.
+ * - width : La largeur de la texture. Cette valeur est obtenue grâce à une requête SDL et renseignée dans la structure par la fonction creer_texture.
+ * - height : La hauteur de la texture. Cette valeur est obtenue grâce à une requête SDL et renseignée dans la structure par la fonction creer_texture.
+ * - multipli_taille : Un multiplicateur qui permet de modifier la taille de la texture. Il s'agit de celui que l'on renseigne dans la fonction creer_texture.
+ * - duree_frame_anim : entier qui permet de savoir combien de temps une frame dure. C'est à dire, combien de temps une frame dure sur l'écran.
  */
 typedef struct s_aff
 {
     SDL_Texture *texture;  /**<Texture utilisée*/
     SDL_Rect *frame_anim;  /**<Désigne la zone de la texture à afficher*/
     SDL_Rect *aff_fenetre; /**<Désigne l'emplacement et la taille de l'objet à l'écran */
-    int width;
-    int height;
+    int width; /**< Longueur de la texture */
+    int height; /**< Hauteur de la texture */
     float multipli_taille; /**<Sauvegarde du multiplicateur de taille de la texture*/
-    unsigned int duree_frame_anim;
+    unsigned int duree_frame_anim; /**<Durée d'une frame*/
 } t_aff;
+
 /**
  * \brief Structure contenant la liste des textures créées par le programme
  * 

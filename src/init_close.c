@@ -159,6 +159,9 @@ void init_affichage(){
     ty = t2;
     tx = t1;
 
+    rect_centre_x(&tx);
+    rect_centre_y(&ty);
+
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Rectangle de texture initialisé");
 
     multiplicateur_x = (float) FENETRE_LONGUEUR / 1920;
@@ -169,11 +172,11 @@ void init_affichage(){
     buffer_affichage = init_liste(NULL,NULL,NULL);
 }
 
-SDL_Texture* init_sousbuffer(t_map *map){
+void init_sousbuffer(t_map *map){
 
     if(SDL_CreateWindowAndRenderer(
-    floor(map->text_map->width * map->text_map->multipli_taille),
-    floor(map->text_map->height * map->text_map->multipli_taille), 
+    floor(map->text_sol->width * map->text_sol->multipli_taille),
+    floor(map->text_sol->height * map->text_sol->multipli_taille), 
     SDL_WINDOW_HIDDEN | SDL_WINDOW_OPENGL,
     &fenetre_sous_rendu,
     &sous_rendu))
@@ -188,8 +191,8 @@ SDL_Texture* init_sousbuffer(t_map *map){
     SDL_Texture *sous_buffer = SDL_CreateTexture(rendu_principal,
                                                  SDL_PIXELFORMAT_RGBA8888,
                                                  SDL_TEXTUREACCESS_TARGET,
-                                                 floor(map->text_map->width * map->text_map->multipli_taille),
-                                                 floor(map->text_map->height * map->text_map->multipli_taille));
+                                                 floor(map->text_sol->width * map->text_sol->multipli_taille),
+                                                 floor(map->text_sol->height * map->text_sol->multipli_taille));
     if(!sous_buffer){
         char *msp = malloc(sizeof(char) * (500));
         sprintf(msp, "Erreur lors de la création du sous buffer : %s\n Erreur : 0x%X\n", SDL_GetError(), SDL_ERREUR);
@@ -197,7 +200,56 @@ SDL_Texture* init_sousbuffer(t_map *map){
         free(msp);
         fermer_programme(SDL_ERREUR);
     }
-    return sous_buffer;
+
+    map->text_map = malloc(sizeof(t_aff));
+
+    if(!map->text_map){
+        char *msp = malloc(sizeof(char) * (500));
+        sprintf(msp, "Erreur : Plus de mémoire\n Erreur : 0x%X\n", OUT_OF_MEM);
+        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+        free(msp);
+        fermer_programme(OUT_OF_MEM);
+    }
+
+    map->text_map->texture = sous_buffer;
+
+    map->text_map->aff_fenetre = malloc(sizeof(SDL_Rect));
+
+    if (!map->text_map->aff_fenetre)
+    {
+        char *msp = malloc(sizeof(char) * (500));
+        sprintf(msp, "Erreur : Plus de mémoire\n Erreur : 0x%X\n", OUT_OF_MEM);
+        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+        free(msp);
+        fermer_programme(OUT_OF_MEM);
+    }
+    /* On définit la partie de la map que l'on voie à l'écran */
+    map->text_map->aff_fenetre->w = FENETRE_LONGUEUR;
+    map->text_map->aff_fenetre->h = FENETRE_LARGEUR;
+
+    map->text_map->aff_fenetre->x = 0;
+    map->text_map->aff_fenetre->y = 0;
+
+    map->text_map->frame_anim = malloc(sizeof(SDL_Rect));
+
+    if (!map->text_map->frame_anim)
+    {
+        char *msp = malloc(sizeof(char) * (500));
+        sprintf(msp, "Erreur : Plus de mémoire\n Erreur : 0x%X\n", OUT_OF_MEM);
+        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+        free(msp);
+        fermer_programme(OUT_OF_MEM);
+    }
+
+    /* On place la partie de la map que l'on voit */
+    map->text_map->frame_anim->w = FENETRE_LONGUEUR;
+    map->text_map->frame_anim->h = FENETRE_LARGEUR;
+
+    map->text_map->frame_anim->x = 0;
+    map->text_map->frame_anim->y = 0;
+
+
+
 }
 
 /**
