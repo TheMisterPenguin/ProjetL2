@@ -252,8 +252,8 @@ t_l_aff* init_textures_joueur(joueur_t *j){
     next_frame_x_indice(textures_joueur->liste[TEXT_CHARGER], 2);
 
     /* On créer la zone de colision du personnage */
-    j->statut->zone_colision.w = TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3);
-    j->statut->zone_colision.h = TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    j->statut->zone_colision.w = floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3));
+    j->statut->zone_colision.h = floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3));
 
     return textures_joueur;
 }
