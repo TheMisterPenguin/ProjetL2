@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <inventaire.h>
+
+lobjet_t * objets = NULL;
 
 //creer la structure contenant la liste des objets
 lobjet_t * creer_liste_objet(){
@@ -204,4 +207,56 @@ void afficher_liste_objet( lobjet_t * const liste_obj )
         printf("\n");
     }
     printf( " }\n" ) ;
+}
+
+void placer_objet_sac(objet_t * objet, int slot){
+    placer_texture(objet->texture, 285+((slot%5) * 73), 317+((slot/5) * 61));
+}
+
+void afficher_textures_sac( inventaire_t * const inventaire )
+{
+    int i, j ;
+    int nb_obj ;
+
+    if( inventaire == NULL )
+    {
+        printf("inventaire inexistant\n" );
+        return ;
+    }
+
+    nb_obj = inventaire->sac->nb ;
+
+    if( nb_obj != 0 ){
+        for( i=0, j=0 ; i<nb_obj ; i++, j++)
+        {
+            while(inventaire->sac->liste[i] == NULL)
+                i++;
+            placer_objet_sac(inventaire->sac->liste[i], j);
+            afficher_texture(objets->liste[i]->texture, rendu_principal);
+        }
+    }
+}
+
+void afficher_textures_equipe( inventaire_t * const inventaire )
+{
+    int i;
+    objet_t * objet = NULL;
+
+    if( inventaire == NULL )
+    {
+        printf("inventaire inexistant\n" );
+        return ;
+    }
+
+    for( i=1; i<5 ; i++)
+    {
+        objet = inventaire->equipe->liste[i];
+        if(objet != NULL){
+            switch(i){
+                case arme: placer_texture(objet->texture, 312, 205); break;
+                //faire les autres types d'objets
+            }
+            afficher_texture(objet->texture, rendu_principal);
+        }
+    }
 }

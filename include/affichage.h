@@ -304,4 +304,12 @@ SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
  */
 void info_texture(t_aff * texture);
 
+/**
+ * \fn void placer_texture(t_aff *texture, int x, int y)
+ * \brief Place une texture sur l'écran
+ * \param texture Texture à placer
+ * \param x Position horizontale
+ * \param y Position verticale
+ */
+void placer_texture(t_aff *texture, int x, int y);
 #endif

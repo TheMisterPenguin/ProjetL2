@@ -608,3 +608,11 @@ SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
    SDL_Color col = {r,g,b,a};
    return col;
 }
+
+void placer_texture(t_aff *texture, int x, int y){
+    x = floor(x * texture->multipli_taille);
+    y = floor(y * texture->multipli_taille);
+
+    texture->aff_fenetre->x = x;
+    texture->aff_fenetre->y = y;
+}

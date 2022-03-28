@@ -14,12 +14,12 @@
 
 #include "commun.h"
 
-typedef struct inventaire_s inventaire_t;
-struct inventaire_s
-{
+typedef struct inventaire_s{
     lobjet_t *equipe;
     lobjet_t *sac;
-};
+}inventaire_t;
+
+extern inventaire_t * inventaire;
 
 /**
  * \fn inventaire_t * creer_inventaire()
@@ -68,4 +68,7 @@ void ramasser_objet(objet_t * objet, inventaire_t * inventaire);
  * \param inventaire Adresse du pointeur sur inventaire_t
  */
 void detruire_inventaire(inventaire_t ** inventaire);
+
+
+void equiper_sac_slot( int slot );
 #endif
