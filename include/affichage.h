@@ -19,15 +19,17 @@
 
 typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TEXT_MARCHER_BOUCLIER}t_texture_perso;
 
-#define NB_FPS 60
-#define NB_SPRITE_JOUEUR 5
-//fichiers images personnage
+#define NB_FPS 60 /**< Le nombre maximum de FPS */
+#define NB_SPRITE_JOUEUR 5 /**< Le nombre de sprites différents du joueur */
+
+/* On définit l'emplacement des textures du joueur */
 #define N_T_MARCHER "ressources/sprite/marcher.bmp"
 #define N_T_ATTAQUE "ressources/sprite/attaque.bmp"
 #define N_T_ATTAQUE_CHARGEE "ressources/sprite/attaque_chargee.bmp"
 #define N_T_CHARGER "ressources/sprite/charger.bmp"
 #define N_T_MARCHER_BOUCLIER "ressources/sprite/marcher_bouclier.bmp"
 
+/* On définit la taille d'une frame de sprite */
 #define LONGUEUR_PERSONNAGE 48
 #define LARGEUR_PERSONNAGE 48
 
@@ -35,6 +37,9 @@ typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TE
  * \struct s_aff
  * \brief Structure qui permet l'affichage d'une texture à l'écran de manière précise
  *
+ * # Le but de la structure
+ * Cette structure à pour but de permettre l'affichage d'une texture à l'écran de manière précise.
+ * Ainsi, on peut facilement placer une texture où l'on veut sans 
  */
 typedef struct s_aff
 {
