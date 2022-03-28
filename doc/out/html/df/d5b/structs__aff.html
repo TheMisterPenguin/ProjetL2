@@ -94,6 +94,18 @@ Attributs publics</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Structure qui permet l'affichage d'une texture à l'écran de manière précise. </p>
+<h1><a class="anchor" id="autotoc_md0"></a>
+Le but de la structure</h1>
+<p>Cette structure à pour but de permettre l'affichage d'une texture à l'écran de manière précise. Ainsi, on peut facilement placer une texture où l'on veut sans savoir utiliser la SDL.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Éléments de la structure</h1>
+<ul>
+<li>texture : la SDL_Texture que l'on veut afficher à l'écran. Elle est crée par la fonction creer_texture. à partir d'une surface chargée à partir d'un fichier.</li>
+<li>frame_anim : Un rectangle permettant de n'afficher qu'une partie bien précise de la texture. C'est à dire, un rectangle qui contient la frame que l'on veut afficher. Cela permet donc d'animer la texture.</li>
+<li>aff_fenetre : Un rectangle qui permet de savoir où placer la texture à l'écran et de connaitre sa taille. Sa taille est définie à l'aide d'un multiplicateur où bien elle peut être choisie graâce à l'appel d'une fonction.</li>
+<li>width : La largeur de la texture. Cette valeur est obtenue grâce à une requête SDL et renseignée dans la structure par la fonction creer_texture.</li>
+<li>height : La hauteur de la texture. Cette valeur est obtenue grâce à une requête SDL et renseignée dans la structure par la fonction creer_texture. </li>
+</ul>
 </div><hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
 <li><a class="el" href="../../d5/dae/affichage_8h_source.html">affichage.h</a></li>
 </ul>
