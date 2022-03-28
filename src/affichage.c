@@ -97,6 +97,21 @@ void next_frame_y(t_aff *texture){
         texture->frame_anim->y = 0; 
 }
 
+err_t next_frame_indice(t_aff *texture, const unsigned int x, const unsigned int y)
+{
+    int temp_x = texture->frame_anim->x;
+    int temp_y = texture->frame_anim->y;
+    texture->frame_anim->x = (texture->frame_anim->w) * x; /* On met à jour */
+    texture->frame_anim->y = (texture->frame_anim->h) * y; /* On met à jour */
+
+    if (!rect_correct_texture(texture->frame_anim, texture->width, texture->height)){ /* Indice trop grand */
+        texture->frame_anim->x = temp_x;
+        texture->frame_anim->y = temp_y;
+        return EXIT_FAILURE;
+    }
+    return EXIT_SUCCESS;
+}
+
 err_t next_frame_x_indice(t_aff *texture, const unsigned int indice)
 {
     int temp = texture->frame_anim->x;
@@ -376,7 +391,10 @@ void afficher_monstres(list * liste_monstre){
     en_tete(liste_monstre);
     while(!hors_liste(liste_monstre)){
         monstre = valeur_elt(liste_monstre);
-        if(/* !en dehors de l'écran*/){
+        SDL_Rect* camera = map->text_map->frame_anim;
+        SDL_Rect* monstre_hitbox;
+        /* !en dehors de l'écran*/
+        if(){
             action_monstre(monstre);
             afficher_texture(monstre->texture ,rendu_principal);
         }
@@ -636,6 +654,7 @@ void placer_texture(t_aff *texture, int x, int y){
 
     texture->aff_fenetre->x = x;
     texture->aff_fenetre->y = y;
+}
 
 int current_frame_x(t_aff * texture){
     return texture->frame_anim->x / LARGEUR_ENTITE;
