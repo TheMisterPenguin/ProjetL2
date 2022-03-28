@@ -91,9 +91,13 @@ int main(int argc, char** argv)
 
     init_sousbuffer(map);
 
-    SDL_RenderClear(sous_rendu);
-    afficher_texture(map->text_sol, sous_rendu);
-    SDL_RenderPresent(sous_rendu);
+    SDL_RenderClear(rendu_principal);
+    SDL_Rect temp = {0, 0, floor(map->text_sol->width * map->text_sol->multipli_taille), floor(map->text_sol->height * map->text_sol->multipli_taille)};
+    if(SDL_RenderCopy(rendu_principal, text->texture, NULL, &temp))
+        fprintf(stderr, "Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
+
+    SDL_SetRenderTarget(rendu_principal, NULL);
+
 
     compteur = 0;
     while (running)
