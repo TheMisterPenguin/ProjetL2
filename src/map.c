@@ -96,10 +96,7 @@ t_map * charger_s_map(char * buffer){
         x = json_object_array_get_idx(position,0);
         y = json_object_array_get_idx(position,1);
 
-        json_object_get_int(x);
-        /* Fonction qui permet de creer un monstre */
-        inserer = creer_monstre(liste_base_monstres, json_object_get_string(monstre), /*type, position*/);
-
+        inserer = creer_monstre(liste_base_monstres, json_object_get_string(nom_monstre), json_object_get_int(x), json_object_get_int(y));
         ajout_droit(m->liste_monstres, inserer);
     }
 
