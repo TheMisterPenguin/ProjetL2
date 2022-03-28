@@ -391,13 +391,8 @@ void afficher_monstres(list * liste_monstre){
     en_tete(liste_monstre);
     while(!hors_liste(liste_monstre)){
         monstre = valeur_elt(liste_monstre);
-        SDL_Rect* camera = map->text_map->frame_anim;
-        SDL_Rect* monstre_hitbox;
-        /* !en dehors de l'écran*/
-        if(){
-            action_monstre(monstre);
-            afficher_texture(monstre->texture ,rendu_principal);
-        }
+        action_monstre(monstre);
+        afficher_texture(monstre->texture ,rendu_principal);
         suivant(liste_monstre);
     }
 }

@@ -84,7 +84,7 @@ typedef struct liste_base_monstres_s
     base_monstre_t** tab;
 }liste_base_monstres_t;
 
-extern liste_base_monstres_t* liste_base_monstres;
+extern liste_base_monstres_t * liste_base_monstres;
 
 /**
  * \fn void detruire_liste_base_monstres(liste_base_monstre_t* liste_base_monstre)
@@ -128,6 +128,13 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_mo
  * \brief Fonction qui met à jour le sprite d'un monstre
  * \param monstre le monstre à mettre à jour
  */
-void action_monstre(monstre_t * monstre)
+void action_monstre(monstre_t * monstre);
 
+/**
+ * \fn type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre)
+ * \brief Convertit une chaîne de caractères en type de monstre
+ * \param nom_monstre La chaîne de caractères à convertir
+ * \return type_monstre_t le type de monstre
+ */
+type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre);
 #endif

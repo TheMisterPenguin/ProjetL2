@@ -17,6 +17,8 @@
  * 
  */
 
+liste_base_monstres_t * liste_base_monstres = NULL;
+
 void detruire_monstre(monstre_t** monstre){
     free((**monstre).texture);
     free(*monstre);
@@ -79,7 +81,7 @@ void charger_monstres(char* nom_fichier){
 
     if(!fichier){
         fprintf(stderr,"Erreur lors de l'ouverture du fichier\n");
-        return NULL;
+        return;
     }
 
     fscanf(fichier, "%s", tampon);
@@ -116,8 +118,7 @@ void charger_monstres(char* nom_fichier){
         }
         fscanf(fichier, "%s", tampon);
     }
-    fclose(fichier);
-    return liste_base_monstres;  
+    fclose(fichier);  
 }
 
 
@@ -138,8 +139,15 @@ type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre){
         return BOSS;
     else{
         fprintf(stderr,"Erreur, nom du monstre incorrect\n");
-        return NULL;
     }
+}
+
+int distance_x_joueur(monstre_t * monstre){
+    return monstre->collision.x - perso_principal->statut->zone_colision.x;
+}
+
+int distance_y_joueur(monstre_t * monstre){
+    return monstre->collision.y - perso_principal->statut->zone_colision.y;
 }
 
 int distance_joueur(monstre_t * monstre){
@@ -148,15 +156,6 @@ int distance_joueur(monstre_t * monstre){
 
     return sqrt(x*x + y*y);
 }
-
-int distance_x_joeur(monstre_t * monstre){
-    return monstre->collision.x - perso_principal->statut->zone_colision.x;
-}
-
-int distance_y_joeur(monstre_t * monstre){
-    return monstre->collision.y - perso_principal->statut->zone_colision.y;
-}
-
 
 void marcher_monstre(monstre_t * monstre){
     switch(monstre->type){
@@ -192,7 +191,7 @@ void monstre_attaque(monstre_t * monstre /*liste texture sort*/){
 void fuir_joueur(monstre_t *monstre){
     int y_diff, x_diff;
     x_diff = distance_x_joueur(monstre);
-    y_diff = distance_y_joeur(monstre);
+    y_diff = distance_y_joueur(monstre);
 
     if( x_diff > y_diff ){
         if(y_diff < 0)
@@ -210,10 +209,10 @@ void fuir_joueur(monstre_t *monstre){
     marcher_monstre(monstre);
 }
 
-void rush_joeur(monstre_t * monstre){
+void rush_joueur(monstre_t * monstre){
     int y_diff, x_diff;
     x_diff = distance_x_joueur(monstre);
-    y_diff = distance_y_joeur(monstre);
+    y_diff = distance_y_joueur(monstre);
 
     if( x_diff > y_diff ){
         if(y_diff < 0)
@@ -233,17 +232,19 @@ void rush_joeur(monstre_t * monstre){
 
 void agro_witcher(monstre_t * monstre){
     if(monstre->action == RUSH_OU_FUITE)
-        if(monstre->duree > 0)
+        if(monstre->duree > 0){
             if(compteur%5 == 0)
                 fuir_joueur(monstre);
+        }
         else{
             monstre->action = MONSTRE_ATTAQUE;
             monstre->duree = DUREE_MONSTRE_ATTAQUE;
         }
     else
-        if(monstre->duree > 0)
+        if(monstre->duree > 0){
             if(compteur%5 == 0)
                 monstre_attaque(monstre);
+        }
         else{
             monstre->action = RUSH_OU_FUITE;
             monstre->duree = DUREE_RUSH_OU_FUITE;
@@ -252,9 +253,10 @@ void agro_witcher(monstre_t * monstre){
 
 void agro_knight(monstre_t * monstre){
     if(monstre->action == RUSH_OU_FUITE){
-        if(monstre->duree > 0)
+        if(monstre->duree > 0){
             if(compteur%5 == 0)
                 rush_joueur(monstre);
+        }
         else
             monstre->duree = DUREE_RUSH_OU_FUITE;
     }
@@ -290,8 +292,6 @@ void ronde_monstre(monstre_t * monstre){
 }
 
 void action_monstre(monstre_t * monstre){
-    int choix;
-
     (monstre->duree)--;
 
     if(monstre->action == MONSTRE_MARCHER || monstre->action == MONSTRE_EN_GARDE){
