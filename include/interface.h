@@ -20,7 +20,6 @@
  * \param h hauteur de la barre
  * \param vie couleur de la barre de vie
  * \param jauge couleur de la barre vide
- * 
  */
 void RenderHPBar(int x, int y, int w, int h, float pourcent, SDL_Color vie, SDL_Color jauge);
 #endif

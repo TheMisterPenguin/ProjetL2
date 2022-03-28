@@ -23,8 +23,8 @@ extern inventaire_t * inventaire;
 
 /**
  * \fn inventaire_t * creer_inventaire()
- * \brief Creer un inventaire
- * \return Pointeur sur l'inventaire
+ * \brief Créé un inventaire
+ * \return Instance nouvellement allouée du type inventaire_t ou NULL
  */
 inventaire_t * creer_inventaire();
 
@@ -77,6 +77,10 @@ void tout_ramasser(lobjet_t * objets, inventaire_t * inventaire);
  */
 void detruire_inventaire(inventaire_t ** inventaire);
 
-
+/**
+ * \fn void equiper_sac_slot( int slot )
+ * \brief Équipe l'objet contenu dans un slot de l'inventaire (sac)
+ * \param slot Le slot de l'objet à équiper
+ */
 void equiper_sac_slot( int slot );
 #endif
