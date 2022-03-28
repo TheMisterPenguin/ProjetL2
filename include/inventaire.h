@@ -31,19 +31,19 @@ inventaire_t * creer_inventaire();
 /**
  * \fn void changement_statistiques(joueur_t *j,lobjet_t *liste)
  * \brief Fonction qui permet de modifier les statistiques du joueur selon une liste d'objets
- * \param j Joueur
+ * \param joueur Joueur dont on change les statistiques
  * \param equipe la liste d'objets
  */
-void changement_statistiques(joueur_t *j,lobjet_t *equipe);
+void changement_statistiques(joueur_t *joueur,lobjet_t *equipe);
 
 /**
  * \fn void equiper_objet(joueur_t *j,objet_t **objet,inventaire_t *inventaire)
  * \brief Fonction qui permet de passer un objet du sac(non-équipé) à un emplacement d'équipement(équipé) dans l'inventaire
- * \param j Joueur à équiper
+ * \param joueur Joueur à équiper
  * \param objet Objet à équiper
  * \param inventaire Inventaire du joueur
  */
-void equiper_objet(joueur_t *j,objet_t **objet,inventaire_t *inventaire);
+void equiper_objet(joueur_t *joueur,objet_t **objet,inventaire_t *inventaire);
 
 /**
  * \fn void desequiper(objet_t **objet,inventaire_t *inventaire,joueur_t *j);

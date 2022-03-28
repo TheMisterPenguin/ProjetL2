@@ -1,8 +1,8 @@
-ressources/objet/sword.bmp 1 sabre du purificateur: 0 5 2 2;
-ressources/objet/test.bmp 2 bouclier: 0 0 1 0;
+ressources/objet/old_sword.bmp 1 sabre du purificateur: 0 5 2 2;
+ressources/objet/shield.bmp 2 bouclier: 0 0 1 0;
 ressources/objet/test.bmp 3 armure rudimentaire: 0 0 1 1;
 ressources/objet/test.bmp 4 amulette de foi(bonus défense): 0 0 3 0;
-ressources/objet/test.bmp 1 katana: 0 2 0 0;
+ressources/objet/sword.bmp 1 katana: 0 2 0 0;
 ressources/objet/test.bmp 1 arc: 0 2 0 1;
 ressources/objet/test.bmp 1 shuriken: 0 1 0 2;
 ressources/objet/test.bmp 3 dō-maru: 0 0 2 0;
