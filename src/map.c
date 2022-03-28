@@ -63,6 +63,7 @@ t_map * charger_s_map(char * buffer){
     json_object *tbl_monstre;
 
     json_object *monstre; 
+    json_object *taille_case;
 
     json_object *nom_monstre;
     json_object *position;
@@ -81,9 +82,12 @@ t_map * charger_s_map(char * buffer){
     json_object_object_get_ex(fichier, "width", &width);
     json_object_object_get_ex(fichier, "height", &height);
     json_object_object_get_ex(fichier, "monsters", &tbl_monstre);
+    json_object_object_get_ex(fichier, "taille case", &taille_case);
+
+    int taille_case_val = json_object_get_int(taille_case);
 
     m->text_sol = creer_texture(json_object_get_string(texture_map),
-                                s.w * 16, s.h * 16, 0, 0, 0);
+                                -1, -1, 0, 0, 1);
     m->height = json_object_get_int(height);
     m->width = json_object_get_int(width);
 
