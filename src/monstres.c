@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <map.h>
 #include <math.h>
+#include <json-c/json.h>
+#include <code_erreur.h>
 
 /**
  * \file monstre.c
@@ -317,4 +319,237 @@ void action_monstre(monstre_t * monstre){
             case(OUEST): (monstre->collision.x) += 3*(map->unite_dep_x); break;
             default: break;
         }
+}
+
+void recupere_info_monstres(){
+
+    json_object *fichier = json_object_from_file("monstres.json");
+
+    if(!fichier){
+        char *msp = malloc(sizeof(char) * (500));
+
+        sprintf(msp, "Erreur lors du chargement des monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+        SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+        free(msp);
+        fermer_programme(ERREUR_FICHIER);
+    }
+
+    json_object *json_tbl_monstre = NULL;
+    json_object *json_monstre = NULL;
+
+    /* Définition des attributs */
+
+    json_object *json_fichier_image = NULL;
+    json_object *json_type = NULL;
+    json_object *json_pdv = NULL;
+    json_object *json_attaque = NULL;
+    json_object *json_vitesse = NULL;
+    json_object *json_xp = NULL;
+    json_object *json_hitbox = NULL;
+
+    /* Définition des attributs de la hitbox */
+    json_object *json_hitbox_x = NULL;
+    json_object *json_hitbox_y = NULL;
+
+    /* Récupération des données */
+
+    json_tbl_monstre = json_object_object_get(fichier, "monstres");
+
+    if(!json_tbl_monstre){
+        char *msp = malloc(sizeof(char) * (500));
+
+        sprintf(msp, "Erreur lors de la récupération des monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+        SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+        free(msp);
+        fermer_programme(ERREUR_FICHIER);
+    }
+
+    for(unsigned int i = 0; i < json_object_array_length(json_tbl_monstre); i++){
+    
+        json_monstre = json_object_array_get_idx(json_tbl_monstre, i);
+
+        if(!json_monstre){
+            char *msp = malloc(sizeof(char) * (500));
+
+            sprintf(msp, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            free(msp);
+            fermer_programme(ERREUR_FICHIER);
+        }
+
+        json_fichier_image = json_object_object_get(json_monstre, "fichier");
+
+        if(!json_fichier_image){
+            char *msp = malloc(sizeof(char) * (500));
+
+            sprintf(msp, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            free(msp);
+            fermer_programme(ERREUR_FICHIER);
+        }
+
+        json_type = json_object_object_get(json_monstre, "type");
+
+        if(!json_type){
+            char *msp = malloc(sizeof(char) * (500));
+
+            sprintf(msp, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            free(msp);
+            fermer_programme(ERREUR_FICHIER);
+        }
+
+        json_pdv = json_object_object_get(json_monstre, "pdv");
+
+        if(!json_pdv){
+            char *msp = malloc(sizeof(char) * (500));
+
+            sprintf(msp, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            free(msp);
+            fermer_programme(ERREUR_FICHIER);
+        }
+
+        json_attaque = json_object_object_get(json_monstre, "attaque");
+
+        if(!json_attaque){
+            char *msp = malloc(sizeof(char) * (500));
+
+            sprintf(msp, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            free(msp);
+            fermer_programme(ERREUR_FICHIER);
+        }
+
+        json_vitesse = json_object_object_get(json_monstre, "vitesse");
+
+        if(!json_vitesse){
+            char *msp = malloc(sizeof(char) * (500));
+
+            sprintf(msp, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            free(msp);
+            fermer_programme(ERREUR_FICHIER);
+        }
+
+        json_xp = json_object_object_get(json_monstre, "xp");
+
+        if(!json_xp){
+            char *msp = malloc(sizeof(char) * (500));
+
+            sprintf(msp, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            free(msp);
+            fermer_programme(ERREUR_FICHIER);
+        }
+
+        json_hitbox = json_object_object_get(json_monstre, "hitbox");
+
+        if(!json_hitbox){
+            char *msp = malloc(sizeof(char) * (500));
+
+            sprintf(msp, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            free(msp);
+            fermer_programme(ERREUR_FICHIER);
+        }
+
+        json_object *temp = json_object_get_array(json_hitbox);
+
+        if(!temp){
+            char *msp = malloc(sizeof(char) * (500));
+
+            sprintf(msp, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            free(msp);
+            fermer_programme(ERREUR_FICHIER);
+        }
+
+        json_hitbox_x = json_object_array_get_idx(temp, 0);
+
+        if(!json_hitbox_x){
+            char *msp = malloc(sizeof(char) * (500));
+
+            sprintf(msp, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            free(msp);
+            fermer_programme(ERREUR_FICHIER);
+        }
+
+        json_hitbox_y = json_object_array_get_idx(temp, 1);
+
+        if(!json_hitbox_y){
+            char *msp = malloc(sizeof(char) * (500));
+
+            sprintf(msp, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            free(msp);
+            fermer_programme(ERREUR_FICHIER);
+        }
+
+        const char *fichier_image = json_object_get_string(json_fichier_image);
+
+        if(!fichier_image){
+            char *msp = malloc(sizeof(char) * (500));
+
+            sprintf(msp, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            free(msp);
+            fermer_programme(ERREUR_FICHIER);
+        }
+
+        const char *type = json_object_get_string(json_type);
+
+        if(!type){
+            char *msp = malloc(sizeof(char) * (500));
+
+            sprintf(msp, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+
+            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les monstres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
+            free(msp);
+            fermer_programme(ERREUR_FICHIER);
+        }
+
+        int pdv = json_object_get_int(json_pdv);
+
+        int attaque = json_object_get_int(json_attaque);
+
+        int vitesse = json_object_get_int(json_vitesse);
+
+        int xp = json_object_get_int(json_xp);
+
+        int hitbox_x = json_object_get_int(json_hitbox_x);
+
+        int hitbox_y = json_object_get_int(json_hitbox_y);
+
+    }
 }
