@@ -167,6 +167,7 @@ void afficher_inventaire()
 
         SDL_RenderClear(rendu_principal);
 
+        afficher_texture(map->text_map, rendu_principal);
         afficher_texture(text_pause, rendu_principal);
         afficher_textures_sac( inventaire );
         afficher_textures_equipe(inventaire);
