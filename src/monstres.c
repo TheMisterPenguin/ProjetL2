@@ -42,18 +42,16 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_mo
     base_monstre_t* base_monstre;
     /* allocation monstre_t*/
     monstre_t* monstre = malloc(sizeof(monstre_t));
-    
     for(i=0; i<liste_base_monstre->nb_monstre; i++){
+        printf("%s\n", liste_base_monstre->tab[i]->nom_monstre);
         if(strcmp(liste_base_monstre->tab[i]->nom_monstre,nom_monstre) == 0){
+            printf("yes\n");
             monstre->type = nom_monstre_to_type_monstre(nom_monstre);
             monstre->collision.x = x;
             monstre->collision.y = y;
             monstre->collision.w = base_monstre->hitbox.w * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3);
             monstre->collision.h = base_monstre->hitbox.h * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3);
-
-            sprintf(chemin_texture, "%s/%s" , CHEMIN_TEXTURE, base_monstre->fichier_image);
-            monstre->texture = creer_texture(chemin_texture, LARGEUR_ENTITE, LONGUEUR_ENTITE, -100, -100, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
-
+            
             monstre->orientation = NORD;
             monstre->duree = 0;
             monstre->action = MONSTRE_EN_GARDE;
@@ -64,6 +62,9 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_mo
             monstre->attaque = base_monstre->attaque;
             monstre->vitesse = base_monstre->vitesse;
             monstre->gainXp = base_monstre->gainXp;
+
+            sprintf(chemin_texture, "%s/%s" , CHEMIN_TEXTURE, base_monstre->fichier_image);
+            monstre->texture = creer_texture(chemin_texture, LARGEUR_ENTITE, LONGUEUR_ENTITE, -100, -100, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
 
             return monstre;
         }
@@ -77,7 +78,6 @@ void charger_monstres(char* nom_fichier){
     int i;
     int nb_monstre = 0;
     base_monstre_t* base_monstre;
-    liste_base_monstres_t* liste_base_monstres = NULL;
 
     if(!fichier){
         fprintf(stderr,"Erreur lors de l'ouverture du fichier\n");
@@ -95,28 +95,31 @@ void charger_monstres(char* nom_fichier){
     //revient au début du fichier
     fseek(fichier,0,SEEK_SET);
 
+    
     //allocation de liste_base_monstre avec le nombre de monstre nécéssaire
     liste_base_monstres = malloc(sizeof(liste_base_monstres_t));
-    liste_base_monstres->tab = malloc(sizeof(monstre_t*) * nb_monstre);
+    liste_base_monstres->tab = malloc(sizeof(base_monstre_t*) * nb_monstre);
     liste_base_monstres->nb_monstre = nb_monstre;
     
-    fscanf(fichier, "%s", tampon);
+    fscanf(fichier, "[%[^\]]", tampon);
     i = 0;
     //tant qu'on est pas arrivé à la fin du fichier
     while(strcmp(tampon,"END")){
-        if(tampon[0] == '['){
+        if(tampon){
             base_monstre = malloc(sizeof(base_monstre_t));
             /*inserrer les caractèristiques dans base_monstre_t*/
             strcpy(base_monstre->fichier_image,tampon);
-            fscanf(fichier, "%s", base_monstre->nom_monstre);
+            printf("image = %s\n", base_monstre->fichier_image);
+            fscanf(fichier, "\n%s", base_monstre->nom_monstre);
             fscanf(fichier, "%d", &(base_monstre->pdv));
             fscanf(fichier, "%d", &(base_monstre->attaque));
             fscanf(fichier, "%f", &(base_monstre->vitesse));
             fscanf(fichier, "%d", &(base_monstre->gainXp));
             fscanf(fichier, "%d%d", &(base_monstre->hitbox.w), &(base_monstre->hitbox.h) );
             liste_base_monstres->tab[i++] = base_monstre; //inserrer monstre_t dans liste_base_monstre_t
+            printf("%s\n", liste_base_monstres->tab[i-1]->nom_monstre);
         }
-        fscanf(fichier, "%s", tampon);
+        fscanf(fichier, "[%[^\]]", tampon);
     }
     fclose(fichier);  
 }

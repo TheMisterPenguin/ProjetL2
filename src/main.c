@@ -65,6 +65,7 @@ int main(int argc, char** argv)
     afficher_intro();
 
     /* On charge la map */
+    charger_monstres("../ressource/monstres.txt");
     char *fichier_map = charger_f_map("map.json");
     map = charger_s_map(fichier_map);
     t_aff *text = texture_map(map); 
@@ -74,7 +75,6 @@ int main(int argc, char** argv)
     t_aff *next_texture_joueur = perso_principal->textures_joueur->liste[TEXT_MARCHER];
     t_aff *texture_temp;
 
-    charger_monstres("../ressource/monstres.txt");
     objets = creer_liste_objet();
     inventaire = creer_inventaire();
     creer_textures_objets(objets);
