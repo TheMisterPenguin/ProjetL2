@@ -64,7 +64,6 @@ int main(int argc, char** argv)
 {
     int debut, fin; /* le temps pour calculer les performances */
     int i;
-    joueur_t * perso_principal = NULL;
     char *fichier_map = NULL;
     t_aff *text = NULL;
     t_aff *next_texture_joueur = NULL;
@@ -83,6 +82,9 @@ int main(int argc, char** argv)
     fichier_map = charger_f_map("map.json");
     map = charger_s_map(fichier_map);
     text = texture_map(map); 
+
+    //TEMPORAIREMENT ICI -- test animation heal (équiper consommable puis touche e) -- TEMPORAIREMENT ICI
+    heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
 
     /* On créer le joueur */
     perso_principal = new_joueur("test");
@@ -148,6 +150,7 @@ int main(int argc, char** argv)
             next_texture_joueur = texture_temp;
 
         SDL_RenderClear(rendu_principal);
+        /* On affiche la carte */
         afficher_texture(map->text_map, rendu_principal);
 
         #ifdef __DEBUG__

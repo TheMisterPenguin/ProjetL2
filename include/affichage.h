@@ -82,6 +82,7 @@ extern list *buffer_affichage; /*<Buffer contenant toutes les textures à affich
 extern long int compteur;      /*compteur utilisé pour gérer la vitesse d'affichage (fps)*/
 extern SDL_Rect tx, ty;
 extern float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépendent de la résolution */
+extern t_aff * heal;
 
 /* Définition des fonctions */
 
@@ -334,4 +335,19 @@ void info_texture(t_aff * texture);
  * \param y Position verticale
  */
 void placer_texture(t_aff *texture, int x, int y);
+
+/**
+ * \fn void boucle_sprite(t_aff * texture)
+ * \brief Permet d'afficher tous les sprites d'un spritesheet successivement
+ * \param texture Texture spritesheet
+ */
+void boucle_sprite(t_aff * texture);
+
+/**
+ * \fn void anim_effet_joueur(t_aff * effet, t_aff * joueur)
+ * \brief Permet de créer une animation sur un joueur
+ * \param texture Texture spritesheet d'animation
+ * \param joueur Joueur sur lequel afficher l'animation
+ */
+void anim_effet_joueur(t_aff * effet, t_aff * joueur);
 #endif

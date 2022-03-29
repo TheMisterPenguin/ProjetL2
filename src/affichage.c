@@ -5,6 +5,7 @@
 #include <math.h>
 #include <map.h>
 #include <definition_commun.h>
+#include <interface.h>
 
 /**
  * \file affichage.c
@@ -19,6 +20,7 @@
 
 list *listeDeTextures; 
 list *buffer_affichage;
+t_aff * heal = NULL;
 
 long int compteur;
 unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
@@ -616,4 +618,57 @@ void placer_texture(t_aff *texture, int x, int y){
 
     texture->aff_fenetre->x = x;
     texture->aff_fenetre->y = y;
+}
+
+void boucle_sprite(t_aff * texture){
+    int debut, fin;
+    float temps_passe;
+    int fini = 0;
+
+    while(!fini){
+        debut = SDL_GetPerformanceCounter();
+
+        if ((compteur % 5) == 0){ /*compteur%5 pour la vitesse d'affichage*/
+            //affichage du rendu
+            SDL_RenderClear(rendu_principal);
+
+            /* On affiche la carte */
+            afficher_texture(map->text_map, rendu_principal);
+
+            /* On affiche le joueur */  //faire sans variable globale et pour un joueur donné si temps
+            afficher_texture(perso_principal->textures_joueur->liste[TEXT_MARCHER], rendu_principal);
+
+            /* On affiche l'interface */
+            RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
+            ((float)perso_principal->pdv/perso_principal->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
+
+            /* On affiche l'animation */
+            afficher_texture(texture, rendu_principal);
+            SDL_RenderPresent(rendu_principal);
+
+            //calcul de la suite de l'animation
+            next_frame_x(texture);
+
+            if(texture->frame_anim->x == 0){ //passage à la ligne suivante
+                next_frame_y(texture);
+                if(texture->frame_anim->y == 0)
+                    fini = 1;
+            }
+        }
+
+        fin = SDL_GetPerformanceCounter();
+
+        //calcul du temps d'affichage
+        temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
+        SDL_Delay(floor((200 / (float) NB_FPS) - temps_passe));
+        if(compteur == NB_FPS)
+            compteur = 0;
+        compteur++;
+    }
+}
+
+void anim_effet_joueur(t_aff * effet, t_aff * joueur){
+    text_copier_position(effet, joueur); //amélioration: centrer pour toutes les tailles
+
+    boucle_sprite(effet);
 }

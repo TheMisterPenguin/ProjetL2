@@ -1,6 +1,7 @@
 #include <commun.h>
 #include <event.h>
 #include <personnage.h>
+#include <affichage.h>
 
 /**
  * \file event.c
@@ -10,7 +11,6 @@
  * \date 02/02/2022
  * \copyright Copyright (c) 2022
  */
-
 
 /**
  * \fn void keyDown(SDL_KeyboardEvent * ev, joueur_t * joueur)
@@ -81,7 +81,10 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t * joueur){
                 menus = PAUSE;
             }; break; A décommenter quand la texture menu pause sera faite*/
             case TOUCHE_CONSOMMABLE :
-                consommer_objet(joueur);
+                if(joueur->inventaire->equipe->liste[consommable] != NULL){
+                    consommer_objet(joueur);
+                    anim_effet_joueur(heal, *(joueur->textures_joueur->liste));
+                }
                 break;
         }
 }
