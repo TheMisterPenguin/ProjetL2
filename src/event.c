@@ -24,7 +24,7 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t * joueur){
 
     if (ev->keysym.sym == SDLK_ESCAPE){ /* On affiche le menu de pause si on appuye sur echap */
         SDL_ShowCursor(SDL_ENABLE);
-        afficher_menu_pause();
+        afficher_menu_pause(joueur);
         SDL_ShowCursor(SDL_DISABLE);
     }
 

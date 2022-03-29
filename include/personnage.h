@@ -68,8 +68,6 @@ typedef struct joueur_s {
 
 #define TAILLE_PERSONNAGE 16 /*La taille du personnage en pixels*/
 
-extern joueur_t *perso_principal;
-
 extern char save_path[500];
 
 #define TAILLE_TRIGGER 200

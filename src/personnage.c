@@ -70,8 +70,6 @@ void check_repertoire_jeux(){
 		SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Répertoire de sauvegarde créé !\n");
 }
 
-joueur_t *perso_principal;
-
 void creer_sauvegarde_json(joueur_t *j){
 
 	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Création du fichier de sauvegarde...\n");

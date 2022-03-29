@@ -14,6 +14,8 @@ t_map *test_map;
 unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 
 int main(){
+    joueur_t * perso_principal = NULL;
+
     init();
 
     perso_principal = new_joueur("test");

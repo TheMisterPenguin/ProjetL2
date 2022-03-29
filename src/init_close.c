@@ -11,6 +11,8 @@
  * \copyright Copyright (c) 2022
  */
 
+typedef struct t_map t_map;
+
 SDL_Window *fenetre_Principale = NULL;
 SDL_Renderer *rendu_principal = NULL;
 
@@ -174,7 +176,7 @@ void init_affichage(){
     buffer_affichage = init_liste(NULL,NULL,NULL);
 }
 
-void init_sousbuffer(t_map *map){
+void init_sousbuffer(t_map *map, joueur_t * joueur){
 
     SDL_Texture *sous_buffer = SDL_CreateTexture(rendu_principal,
                                                  SDL_PIXELFORMAT_RGBA8888,
@@ -230,8 +232,8 @@ void init_sousbuffer(t_map *map){
     }
 
     /* On place la partie de la map que l'on voit */
-    map->text_map->frame_anim->w = floor(FENETRE_LONGUEUR / (float) perso_principal->statut->zone_colision.w) * map->taille_case;
-    map->text_map->frame_anim->h = floor(FENETRE_LARGEUR / (float) perso_principal->statut->zone_colision.h) * map->taille_case;
+    map->text_map->frame_anim->w = floor(FENETRE_LONGUEUR / (float) joueur->statut->zone_colision.w) * map->taille_case;
+    map->text_map->frame_anim->h = floor(FENETRE_LARGEUR / (float) joueur->statut->zone_colision.h) * map->taille_case;
 
     map->text_map->frame_anim->x = 0;
     map->text_map->frame_anim->y = 0;

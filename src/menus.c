@@ -26,7 +26,7 @@
     }
 }*/
 
-void afficher_menu_pause(){
+void afficher_menu_pause(joueur_t * joueur){
 
     int debut, fin; /* le temps pour calculer les performances */
 
@@ -90,15 +90,15 @@ void afficher_menu_pause(){
                     fermer_programme(EXIT_SUCCESS);
                 }
                 if (SDL_PointInRect(&coord_souris, &boutton_sauvegarder)){
-                    creer_sauvegarde_json(perso_principal);
+                    creer_sauvegarde_json(joueur);
                     SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "Sauvegarde", "La sauvegarde a été effectuée avec succès\n", NULL);
                     break;
                 }
                 if (SDL_PointInRect(&coord_souris, &boutton_charger)){
                     char temp[510];
                     sprintf(temp,"%s/perso.sav", save_path);
-                    detruire_joueur(perso_principal);
-                    perso_principal = charger_sauvegarde_joueur(temp);
+                    detruire_joueur(joueur);
+                    joueur = charger_sauvegarde_joueur(temp);
                 }
                 break;
             }

@@ -11,7 +11,7 @@
 #define __MONSTRES_H__
 
 #include "definition_commun.h"
-#include <affichage.h>
+#include "affichage.h"
 
 /**
  * \struct struct position

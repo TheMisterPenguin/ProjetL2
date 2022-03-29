@@ -21,15 +21,20 @@ unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 
 int main(int argc, char **argv){
     SDL_Event e;
+    char * fichier_map = NULL;
+    t_map *test_map = NULL;
+    t_aff *text = NULL;
+
+
     init();
 
     printf("----- Analyse du fichier json -----\n");
-    char * fichier_map = charger_f_map("map.json");
+    fichier_map = charger_f_map("map.json");
 
     printf("----- Création de texture map et traitement des informations json -----\n");
-    t_map *test_map = charger_s_map(fichier_map);
+    test_map = charger_s_map(fichier_map);
 
-    t_aff *text = texture_map(test_map);
+    text = texture_map(test_map);
 
     while (vrai){
         if (!text)

@@ -259,9 +259,9 @@ t_l_aff* init_textures_joueur(joueur_t *j){
     return textures_joueur;
 }
 
-t_aff* init_texture_joueur(t_l_aff* textures_joueur){
+t_aff* init_texture_joueur(t_l_aff* textures_joueur, joueur_t * joueur){
     /* if sauvegarde existante -> return texture sauvegardée du joueur*/
-    if(perso_principal->statut->bouclier_equipe)
+    if(joueur->statut->bouclier_equipe)
         return textures_joueur->liste[TEXT_MARCHER_BOUCLIER];
     else
         return textures_joueur->liste[TEXT_MARCHER];

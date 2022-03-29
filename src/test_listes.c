@@ -20,6 +20,8 @@ void afficher_int(int * nb){
 }
 
 int main(){
+    list * liste_int = NULL;
+
     printf("----- Création de liste de textures -----\n\n");
     init();
 
@@ -32,7 +34,7 @@ int main(){
     afficher_liste(listeDeTextures);
 
     printf("----- Création de simple liste d'entiers -----\n\n");
-    list * liste_int = init_liste(NULL, NULL, (void(*)(void *))afficher_int);
+    liste_int = init_liste(NULL, NULL, (void(*)(void *))afficher_int);
     
     printf("----- Affichage d'une liste vide -----\n\n");
     afficher_liste(liste_int);

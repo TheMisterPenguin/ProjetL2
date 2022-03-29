@@ -22,10 +22,11 @@ extern menus_t menus;
 //extern void afficher_menu(menus_t * menu);
 
 /**
- * \fn void afficher_menu_pause()
- * \brief Affiche le menu pause et gère les interactions avec l'utilisateur
+ * \fn void afficher_menu_pause(joueur_t * joueur)
+ * \brief Affiche le menu pause et gère les interactions avec le joueur
+ * \param joueur Joueur qui ouvre le menu
  */
-extern void afficher_menu_pause();
+extern void afficher_menu_pause(joueur_t * joueur);
 
 /**
  * \fn void afficher_inventaire(joueur_t * joueur)

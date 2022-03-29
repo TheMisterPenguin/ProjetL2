@@ -64,6 +64,13 @@ int main(int argc, char** argv)
 {
     int debut, fin; /* le temps pour calculer les performances */
     int i;
+    joueur_t * perso_principal = NULL;
+    char *fichier_map = NULL;
+    t_aff *text = NULL;
+    t_aff *next_texture_joueur = NULL;
+    t_aff *texture_temp = NULL;
+    SDL_Rect temp = {0};
+    float temps_passe;
 
     /* On initialise le programme */
     SDL_SetMainReady();
@@ -73,14 +80,13 @@ int main(int argc, char** argv)
     afficher_intro();
 
     /* On charge la map */
-    char *fichier_map = charger_f_map("map.json");
+    fichier_map = charger_f_map("map.json");
     map = charger_s_map(fichier_map);
-    t_aff *text = texture_map(map); 
+    text = texture_map(map); 
 
     /* On créer le joueur */
     perso_principal = new_joueur("test");
-    t_aff *next_texture_joueur = perso_principal->textures_joueur->liste[TEXT_MARCHER];
-    t_aff *texture_temp;
+    next_texture_joueur = perso_principal->textures_joueur->liste[TEXT_MARCHER];
 
     objets = creer_liste_objet();
     creer_textures_objets(objets);
@@ -96,10 +102,14 @@ int main(int argc, char** argv)
 
     rect_centre(&(perso_principal->statut->zone_colision));
 
-    init_sousbuffer(map);
+    init_sousbuffer(map, perso_principal);
 
     SDL_RenderClear(rendu_principal);
-    SDL_Rect temp = {0, 0, floor(map->text_sol->width * map->text_sol->multipli_taille), floor(map->text_sol->height * map->text_sol->multipli_taille)};
+    temp.x=0;
+    temp.y=0;
+    temp.w=floor(map->text_sol->width * map->text_sol->multipli_taille);
+    temp.h=floor(map->text_sol->height * map->text_sol->multipli_taille);
+
     if(SDL_RenderCopy(rendu_principal, text->texture, NULL, &temp))
         fprintf(stderr, "Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
 
@@ -158,7 +168,7 @@ int main(int argc, char** argv)
         // vider_liste(buffer_affichage);
         fin = SDL_GetPerformanceCounter();
 
-        float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
+        temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
         SDL_Delay(floor((1000 / (float) NB_FPS) - temps_passe));
         if(compteur == NB_FPS)
             compteur = 0;

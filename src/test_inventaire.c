@@ -17,15 +17,19 @@ t_map *test_map;
 unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 
 int main(){
+    joueur_t * perso_principal = NULL;
+    lobjet_t * objets = NULL;
+    inventaire_t * inventaire = NULL;
+
     printf("----- initialisation SDL -----\n\n");
     init();
     printf("----- création personnage -----\n\n");
     perso_principal = new_joueur("test");
     perso_principal->niveau = 5;
     printf("----- création liste d'objets -----\n\n");
-    lobjet_t * objets = creer_liste_objet();
+    objets = creer_liste_objet();
     printf("----- création inventaire -----\n\n");
-    inventaire_t * inventaire = creer_inventaire();
+    inventaire = creer_inventaire();
 
     printf("----- ramassage objet -----\n\n");
     ramasser_objet(objets->liste[0], inventaire);

@@ -19,5 +19,3 @@
 #include "menus.h"
 #include "map.h"
 #include "interface.h"
-
-void init_sousbuffer(t_map *map);

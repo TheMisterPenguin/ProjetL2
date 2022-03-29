@@ -254,13 +254,14 @@ void deplacement_x_pers(t_map *m, joueur_t *j, int x);
 extern t_l_aff *init_textures_joueur(joueur_t *j);
 
 /**
- * \fn t_aff* init_texture_joueur(t_l_aff* textures_joueur)
+ * \fn t_aff* init_texture_joueur(t_l_aff* textures_joueur, joueur_t * joueur)
  * \brief Fonction qui renvoie la texture de départ du personnage (joueur)
  * \author Antoine Bruneau
- * \param t_l_aff* la liste de textures personnage
+ * \param t_l_aff Liste de textures personnage
+ * \param joueur Joueur dont on veut la texture de départ
  * \return t_aff* Une textures personnage
  */
-extern t_aff *init_texture_joueur(t_l_aff *textures_joueur);
+extern t_aff *init_texture_joueur(t_l_aff *textures_joueur, joueur_t * joueur);
 
 /**
  * \fn t_aff * next_frame_joueur(t_l_aff* textures_joueur);
