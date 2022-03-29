@@ -1,7 +1,7 @@
 {
     "type" : "map",
     "id" : 1,
-    "file-path" : "ressources/background/map/map-test.bmp",
+    "file-path" : "ressources/background/map/truehouse16.bmp",
     "width" : 30, //30 cases de 16px mais une cases de la map fait 32px en réalité
     "height" : 26,
     "taille case" : 16,
