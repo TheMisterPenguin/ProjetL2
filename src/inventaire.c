@@ -6,8 +6,8 @@
  * \file inventaire.c
  * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
  * \brief Fonctions liées au module inventaire
- * \version 0.2
- * \date 28/03/2022
+ * \version 0.3
+ * \date 29/03/2022
  * \copyright Copyright (c) 2022
  */
 
@@ -23,7 +23,6 @@ void changement_statistiques(joueur_t *joueur,lobjet_t *equipe){
         //recherche du prochain objet
         while(equipe->liste[j] == NULL)
             j++;
-        printf("att+%d\n", (equipe->liste[j])->attaque);
         att += (equipe->liste[j])->attaque;
         def += (equipe->liste[j])->defense;
         vit += (equipe->liste[j])->vitesse;
@@ -41,13 +40,14 @@ void equiper_objet(joueur_t *joueur,objet_t **objet,inventaire_t *inventaire){
         return;
     }
 
+    //on échange l'objet avec celui contenu dans le slot de son type dans les objets équipés
     temp = *objet;
     *objet = inventaire->equipe->liste[(*objet)->type];
     inventaire->equipe->liste[temp->type] = temp;
 
     if(*objet == NULL){
-        inventaire->sac->nb--;
-        inventaire->equipe->nb++;
+        (inventaire->sac->nb)--;
+        (inventaire->equipe->nb)++;
     }
 
     changement_statistiques(joueur,inventaire->equipe);
@@ -63,18 +63,27 @@ on clique sur un item de l'inventaire (équipé) qui s'enlève automatiquement
 }
 
 void desequiper(joueur_t *j, objet_t **objet,inventaire_t *inventaire){
+    int i;
+
     if(*objet != NULL){
-        inventaire->sac->liste[inventaire->sac->nb] = *objet;
-        *objet = NULL;
+        if((*objet)->type == bouclier){
+            j->statut->bouclier_equipe = 0;
+        }
+
+        for(i=0; i<CAPACITE_SAC; i++){
+            if(inventaire->sac->liste[i] == NULL){
+                inventaire->sac->liste[i] = *objet;
+                *objet = NULL;
+                break;
+            }
+        }
+
+        (inventaire->sac->nb)++;
+        (inventaire->equipe->nb)--;
 
         changement_statistiques(j,inventaire->equipe);
         afficher_statistiques(perso_principal);
 
-        if((*objet)->type == bouclier){
-            j->statut->bouclier_equipe = 0;
-        }
-        inventaire->sac->nb++;
-        inventaire->equipe->nb--;
     }
     /* 
     on n'utilise pas de liste pour les objets de l'inventaire (sac) car on équipe beaucoup plus souvent qu'on deséquipe donc on préfère profiter

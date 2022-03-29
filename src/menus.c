@@ -11,7 +11,7 @@
  * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
  * \brief Fonctions des menus du jeu
  * \version 0.2
- * \date 28/03/2022
+ * \date 29/03/2022
  * \copyright Copyright (c) 2022
  */
 
@@ -133,12 +133,12 @@ void afficher_inventaire()
     SDL_Rect slot8 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
     SDL_Rect slot9 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
 
-    SDL_Rect slot_10 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
-    SDL_Rect slot_11 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
-    SDL_Rect slot_12 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
-    SDL_Rect slot_13 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
-    SDL_Rect slot_14 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
-    SDL_Rect slot_15 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot10 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot11 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot12 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot13 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot14 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot15 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
 
     /* Placemennt des slots */
     deplacer_rect_origine(&slot0, floor(582 * multiplicateur_x), floor(659 * multiplicateur_y));
@@ -152,10 +152,10 @@ void afficher_inventaire()
     deplacer_rect_origine(&slot8, floor(1038 * multiplicateur_x), floor(787 * multiplicateur_y));
     deplacer_rect_origine(&slot9, floor(1190 * multiplicateur_x), floor(787 * multiplicateur_y));
 
-    deplacer_rect_origine(&slot10, floor(636 * multiplicateur_x), floor(421 * multiplicateur_y));
-    deplacer_rect_origine(&slot11, floor(890 * multiplicateur_x), floor(338 * multiplicateur_y));
+    deplacer_rect_origine(&slot10, floor(673 * multiplicateur_x), floor(281 * multiplicateur_y));
+    deplacer_rect_origine(&slot11, floor(636 * multiplicateur_x), floor(421 * multiplicateur_y));
     deplacer_rect_origine(&slot12, floor(1137 * multiplicateur_x), floor(421 * multiplicateur_y));
-    deplacer_rect_origine(&slot13, floor(673 * multiplicateur_x), floor(281 * multiplicateur_y));
+    deplacer_rect_origine(&slot13, floor(890 * multiplicateur_x), floor(338 * multiplicateur_y));
     deplacer_rect_origine(&slot14, floor(887 * multiplicateur_x), floor(121 * multiplicateur_y));
     deplacer_rect_origine(&slot15, floor(1100 * multiplicateur_x), floor(281 * multiplicateur_y));
 
