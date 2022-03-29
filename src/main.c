@@ -70,6 +70,8 @@ int main(int argc, char** argv)
     t_aff *texture_temp = NULL;
     SDL_Rect temp = {0};
     float temps_passe;
+    joueur_t * joueurs[2] = {NULL}; //liste des joueurs pour amélioration: mode 2 joueurs
+    joueur_t * perso_principal = NULL;
 
     /* On initialise le programme */
     SDL_SetMainReady();
@@ -87,7 +89,8 @@ int main(int argc, char** argv)
     heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
 
     /* On créer le joueur */
-    perso_principal = new_joueur("test");
+    joueurs[0] = new_joueur("test");
+    perso_principal = joueurs[0];
     perso_principal->pdv = 5;
     next_texture_joueur = perso_principal->textures_joueur->liste[TEXT_MARCHER];
 
@@ -125,7 +128,7 @@ int main(int argc, char** argv)
     while (running)
     {
         debut = SDL_GetPerformanceCounter();
-        jeu_event(perso_principal);
+        jeu_event(joueurs);
         // en_tete(buffer_affichage);
         if (perso_principal->statut->en_mouvement){ /* Déplacement map */
             switch (perso_principal->statut->orientation)

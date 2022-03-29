@@ -28,8 +28,6 @@
  * \copyright Copyright (c) 2022
  */
 
-joueur_t * perso_principal = NULL;
-
 void copy(const byte * origin, byte *out, size_t size){
 	for(unsigned int i = 0; i < size; i++)
 		out[i] = origin[i];

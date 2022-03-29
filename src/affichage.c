@@ -620,7 +620,7 @@ void placer_texture(t_aff *texture, int x, int y){
     texture->aff_fenetre->y = y;
 }
 
-void boucle_sprite(t_aff * texture){
+void boucle_sprite(t_aff * texture, joueur_t * joueur){
     int debut, fin;
     float temps_passe;
     int fini = 0;
@@ -636,11 +636,11 @@ void boucle_sprite(t_aff * texture){
             afficher_texture(map->text_map, rendu_principal);
 
             /* On affiche le joueur */  //faire sans variable globale et pour un joueur donné si temps
-            afficher_texture(perso_principal->textures_joueur->liste[TEXT_MARCHER], rendu_principal);
+            afficher_texture(joueur->textures_joueur->liste[TEXT_MARCHER], rendu_principal);
 
             /* On affiche l'interface */
             RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
-            ((float)perso_principal->pdv/perso_principal->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
+            ((float)joueur->pdv/joueur->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
 
             /* On affiche l'animation */
             afficher_texture(texture, rendu_principal);
@@ -667,8 +667,8 @@ void boucle_sprite(t_aff * texture){
     }
 }
 
-void anim_effet_joueur(t_aff * effet, t_aff * joueur){
-    text_copier_position(effet, joueur); //amélioration: centrer pour toutes les tailles
+void anim_effet_joueur(t_aff * effet, joueur_t * joueur){
+    text_copier_position(effet, *(joueur->textures_joueur->liste)); //amélioration: centrer pour toutes les tailles
 
-    boucle_sprite(effet);
+    boucle_sprite(effet, joueur);
 }

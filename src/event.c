@@ -13,13 +13,14 @@
  */
 
 /**
- * \fn void keyDown(SDL_KeyboardEvent * ev, joueur_t * joueur)
+ * \fn void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs)
  * \brief Fonction qui gère les événements quand une touche du clavier est pressée par un joueur
  * \author Antoine Bruneau
- * \param SDL_KeyboardEvent Structure contenant l'évênement
- * \param joueur Le joueur qui provoque l'événement
+ * \param ev Structure contenant l'événement
+ * \param joueurs Joueurs pouvant provoquer l'événement
  */
-static void keyDown(SDL_KeyboardEvent * ev, joueur_t * joueur){
+static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
+    joueur_t * joueur = joueurs[0];
     statut_t* statut = joueur->statut;
 
     if (ev->keysym.sym == SDLK_ESCAPE){ /* On affiche le menu de pause si on appuye sur echap */
@@ -83,20 +84,21 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t * joueur){
             case TOUCHE_CONSOMMABLE :
                 if(joueur->inventaire->equipe->liste[consommable] != NULL){
                     consommer_objet(joueur);
-                    anim_effet_joueur(heal, *(joueur->textures_joueur->liste));
+                    anim_effet_joueur(heal, joueur);
                 }
                 break;
         }
 }
 
 /**
- * \fn void keyUp(SDL_KeyboardEvent * ev, joueur_t * joueur)
+ * \fn void keyUp(SDL_KeyboardEvent * ev, joueur_t ** joueurs)
  * \brief Fonction qui gère les événements quand une touche du clavier est relachée par un joueur
  * \author Antoine Bruneau
- * \param SDL_KeyboardEvent Structure contenant l'évênement
- * \param joueur Le joueur qui provoque l'événement
+ * \param ev Structure contenant l'événement
+ * \param joueurs Joueurs pouvant provoquer l'événement
  */
-static void keyUp(SDL_KeyboardEvent * ev, joueur_t * joueur){
+static void keyUp(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
+    joueur_t * joueur = joueurs[0];
     t_direction orientation = joueur->statut->orientation;
 
     switch(ev->keysym.sym){
@@ -124,13 +126,14 @@ static void keyUp(SDL_KeyboardEvent * ev, joueur_t * joueur){
 }
 
 /**
- * \fn void mouseButtonDown(SDL_MouseButtonEvent * ev, joueur_t * joueur)
+ * \fn void mouseButtonDown(SDL_MouseButtonEvent * ev, joueur_t ** joueurs)
  * \brief Fonction qui gère les événements quand un bouton de la souris est pressée par un joueur
  * \author Antoine Bruneau
- * \param SDL_KeyboardEvent Structure contenant l'évênement
- * \param joueur Le joueur qui provoque l'événement
+ * \param ev Structure contenant l'événement
+ * \param joueurs Joueurs pouvant provoquer l'événement
  */
-static void mouseButtonDown(SDL_MouseButtonEvent * ev, joueur_t * joueur){
+static void mouseButtonDown(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
+    joueur_t * joueur = joueurs[0];
     statut_t* statut = joueur->statut;
 
     if(statut->action == RIEN && statut->duree == 0){
@@ -146,13 +149,14 @@ static void mouseButtonDown(SDL_MouseButtonEvent * ev, joueur_t * joueur){
 }
 
 /**
- * \fn void mouseButtonUp(SDL_MouseButtonEvent * ev)
+ * \fn void mouseButtonUp(SDL_MouseButtonEvent * ev, joueur_t ** joueurs)
  * \brief Fonction qui gère les événements quand un bouton de la souris est relachée par un joueur
  * \author Antoine Bruneau
- * \param SDL_KeyboardEvent Structure contenant l'évênement
- * \param joueur Le joueur qui provoque l'événement
+ * \param ev Structure contenant l'évênement
+ * \param joueurs Joueurs pouvant provoquer l'événement
  */
-static void mouseButtonUp(SDL_MouseButtonEvent * ev, joueur_t * joueur){
+static void mouseButtonUp(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
+    joueur_t * joueur = joueurs[0];
     statut_t* statut = joueur->statut;
 
     if(ev->button == SDL_BUTTON_LEFT){
@@ -171,16 +175,16 @@ static void mouseButtonUp(SDL_MouseButtonEvent * ev, joueur_t * joueur){
 }
 
 
-void jeu_event(joueur_t * joueur){
+void jeu_event(joueur_t ** joueurs){
     SDL_Event lastEvent;
 
     while(SDL_PollEvent(&lastEvent)){
         switch(lastEvent.type){
             case SDL_QUIT : printf("Détection de la fermeture de la fenêtre\n");fermer_programme(EXIT_SUCCESS);
-            case SDL_KEYDOWN : keyDown((SDL_KeyboardEvent*)&lastEvent.key, joueur); break;
-            case SDL_KEYUP : keyUp((SDL_KeyboardEvent*)&lastEvent.key, joueur); break;
-            case SDL_MOUSEBUTTONDOWN : mouseButtonDown((SDL_MouseButtonEvent*)&lastEvent.button, joueur); break;
-            case SDL_MOUSEBUTTONUP : mouseButtonUp((SDL_MouseButtonEvent*)&lastEvent.button, joueur); break;
+            case SDL_KEYDOWN : keyDown((SDL_KeyboardEvent*)&lastEvent.key, joueurs); break;
+            case SDL_KEYUP : keyUp((SDL_KeyboardEvent*)&lastEvent.key, joueurs); break;
+            case SDL_MOUSEBUTTONDOWN : mouseButtonDown((SDL_MouseButtonEvent*)&lastEvent.button, joueurs); break;
+            case SDL_MOUSEBUTTONUP : mouseButtonUp((SDL_MouseButtonEvent*)&lastEvent.button, joueurs); break;
         } 
     }
 }

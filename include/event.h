@@ -24,12 +24,12 @@
 extern _Bool logo_passer(void);
 
 /**
- * \fn void jeu_event(joueur_t * joueur)
+ * \fn void jeu_event(joueur_t ** joueurs)
  * \brief Fonction qui gère les événements
  * \author Despert Ange
- * \param joueur Le joueur provoquant l'événement
+ * \param joueur Joueurs pouvant provoquer l'événement
  */
-extern void jeu_event(joueur_t * joueur);
+extern void jeu_event(joueur_t ** joueurs);
 
 
 #endif

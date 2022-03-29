@@ -25,7 +25,7 @@ int main(){
     tout_ramasser(objets, perso_principal->inventaire);
 
     afficher_statistiques(perso_principal);
-    detruire_joueur(perso_principal);
+    // detruire_joueur(perso_principal);
 
     fermer_programme(EXIT_SUCCESS);
 
