@@ -532,7 +532,7 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
     int *x_map = &(m->text_map->frame_anim->x); /* La coordonnée x actuelle de la map */
     int *x_pers = &(j->statut->zone_colision.x); /* La coordonnée x actuelle du joueur */
     //const long int taille_unite = floor(FENETRE_LONGUEUR / (float)m->text_map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
-    const long int taille_unite = 1; /* Calcul en nombre de pixels d'une unité de déplacement */
+    const long int taille_unite = floor(3 * multiplicateur_x); /* Calcul en nombre de pixels d'une unité de déplacement */
 
     if(*x_pers  + x * taille_unite < 0)
         return;
@@ -542,10 +542,11 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
             *x_pers += x * taille_unite; /* On déplace le personnage de x unités */
             return;
         }
-    if (*x_map + x > m->text_map->frame_anim->w){ /* L'écran est en bordure de map droite */
-        *x_pers += x * taille_unite;
-        return;
-    }
+        if (*x_map + x > (m->text_map->width - m->text_map->frame_anim->w))
+            { /* L'écran est en bordure de map droite */
+                *x_pers += x * taille_unite;
+                return;
+            }
     if(rects_egal_x(&(j->statut->zone_colision), &tx))  /*On se trouve dans l'intervalle normal */
         *x_map += x; /* On déplace la map en fond */
     else
@@ -555,21 +556,19 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
 
 void deplacement_y_pers(t_map *m, joueur_t *j, int y){
 
-    int *y_map = &(m->text_sol->frame_anim->y);                                        /* La coordonnée y actuelle de la map */
+    int *y_map = &(m->text_map->frame_anim->y);                                        /* La coordonnée y actuelle de la map */
     int *y_pers = &(j->statut->zone_colision.y);                                       /* La coordonnée y actuelle du joueur */
-    const long int taille_unite = floor(FENETRE_LARGEUR / (float)m->text_sol->height); /* Calcul en nombre de pixels d'une unité de déplacement */
+    const long int taille_unite = floor(3 * multiplicateur_y); /* Calcul en nombre de pixels d'une unité de déplacement */
 
-    if (*y_pers + y * taille_unite < 0)
+    if (*y_pers + y * taille_unite < 0) /* Le personnage ne peut pas aller en haut */
         return;
-    if (*y_pers + j->statut->zone_colision.h + y * taille_unite > FENETRE_LARGEUR)
+    if (*y_pers + j->statut->zone_colision.h + y * taille_unite > FENETRE_LARGEUR) /* Le personnage ne peut pas aller en bas */
         return;
-    if (*y_map + y < 0)
-    { /* La map ne peut pas plus aller à gauche */
+    if (*y_map + y < 0){ /* La map ne peut pas plus aller en haut */
         *y_pers += y * taille_unite; /* On déplace le personnage de x unités */
         return;
     }
-    if (*y_map + y > (m->text_sol->height - m->text_sol->frame_anim->h))
-    { /* L'écran est en bordure de map droite */
+    if (*y_map + y > (m->text_map->height - m->text_map->frame_anim->h)){ /* L'écran est en bordure de map bas*/
         *y_pers += y * taille_unite;
         return;
     }
