@@ -13,18 +13,22 @@
 
 void changement_statistiques(joueur_t * joueur){
     lobjet_t * equipe = joueur->inventaire->equipe;
-    int i, j;
+    int nb_conso = (equipe->liste[consommable] != NULL) + (equipe->liste[quete] != NULL); //nombre d'objets ne modifiant pas les statistiques
     int att = joueur->attaque;
     int def = joueur->defense;
     int vit = joueur->vitesse;
+    int nb_trouve, i;
 
-    for(i = 0, j=0;i<equipe->nb;i++, j++){
+    //on boucle dans tous les éléments sauf les objets de quête et les consommables (on commence donc à arme)
+    for(nb_trouve = 0, i=arme;nb_trouve < (equipe->nb - nb_conso); nb_trouve++, i++){
         //recherche du prochain objet
-        while(equipe->liste[j] == NULL)
-            j++;
-        att += (equipe->liste[j])->attaque;
-        def += (equipe->liste[j])->defense;
-        vit += (equipe->liste[j])->vitesse;
+        while(equipe->liste[i] == NULL)
+            i++;
+
+        //application des bonus de l'objet trouvé
+        att += (equipe->liste[i])->attaque;
+        def += (equipe->liste[i])->defense;
+        vit += (equipe->liste[i])->vitesse;
     }
         joueur->attaque_actif = att;
         joueur->defense_actif = def;
@@ -51,11 +55,13 @@ void equiper_objet(joueur_t * joueur,objet_t ** objet){
         (equipe->nb)++;
     }
 
-    changement_statistiques(joueur);
-    afficher_statistiques(joueur);
+    if(temp->type != consommable && temp->type != quete){
+        changement_statistiques(joueur);
+        afficher_statistiques(joueur);
 
-    if(temp->type == bouclier){
-        joueur->statut->bouclier_equipe = 1;
+        if(temp->type == bouclier){
+            joueur->statut->bouclier_equipe = 1;
+        }
     }
 /*
 on clique sur un item de l'inventaire (sac) qui s'équipe automatiquement
