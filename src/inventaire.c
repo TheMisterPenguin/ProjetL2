@@ -170,3 +170,16 @@ void desequiper_slot(joueur_t * joueur, int slot){
 
     desequiper(joueur, &(equipe->liste[slot]));
 }
+
+void consommer_objet(joueur_t * joueur){
+    lobjet_t * equipe = joueur->inventaire->equipe;
+    
+    if(equipe->liste[consommable] != NULL){
+        //soigne le joueur
+        joueur->pdv = joueur->maxPdv;
+
+        //retire le consommable de l'inventaire
+        equipe->liste[consommable] = NULL;
+        (equipe->nb)--;
+    }
+}

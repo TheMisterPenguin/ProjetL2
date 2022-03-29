@@ -95,4 +95,11 @@ void equiper_sac_slot(joueur_t * joueur, int slot);
  * \param joueur Le joueur à déséquiper
  */
 void desequiper_slot(joueur_t * joueur, int slot);
+
+/**
+ * \fn void consommer_objet(joueur_t * joueur)
+ * \brief Utilise le consommable équipé pour soigner le joueur
+ * \param joueur Le joueur qui consomme un objet
+ */
+void consommer_objet(joueur_t * joueur);
 #endif

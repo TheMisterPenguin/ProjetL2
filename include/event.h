@@ -19,6 +19,7 @@
 #define TOUCHE_DROITE SDLK_d
 #define TOUCHE_TAB SDLK_TAB
 #define TOUCHE_ECHAP SDLK_ESCAPE
+#define TOUCHE_CONSOMMABLE SDLK_e
 
 extern _Bool logo_passer(void);
 

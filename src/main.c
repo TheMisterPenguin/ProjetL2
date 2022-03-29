@@ -86,6 +86,7 @@ int main(int argc, char** argv)
 
     /* On créer le joueur */
     perso_principal = new_joueur("test");
+    perso_principal->pdv = 5;
     next_texture_joueur = perso_principal->textures_joueur->liste[TEXT_MARCHER];
 
     objets = creer_liste_objet();

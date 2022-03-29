@@ -80,6 +80,9 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t * joueur){
             } else {
                 menus = PAUSE;
             }; break; A décommenter quand la texture menu pause sera faite*/
+            case TOUCHE_CONSOMMABLE :
+                consommer_objet(joueur);
+                break;
         }
 }
 
