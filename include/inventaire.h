@@ -10,9 +10,14 @@
 #ifndef __H_INVENTAIRE__
 #define __H_INVENTAIRE__
 
+#include "personnage.h"
+#include "liste_objet.h"
+
 #define CAPACITE_SAC 10
 
-#include "commun.h"
+typedef struct lobjet_s lobjet_t;
+typedef struct objet_s objet_t;
+typedef struct joueur_s joueur_t;
 
 /**
  * \struct inventaire_t
@@ -23,8 +28,6 @@ typedef struct inventaire_s{
     lobjet_t *sac; /**<Objets dans le sac*/
 }inventaire_t;
 
-extern inventaire_t * inventaire;
-
 /**
  * \fn inventaire_t * creer_inventaire()
  * \brief Créé un inventaire
@@ -33,36 +36,32 @@ extern inventaire_t * inventaire;
 inventaire_t * creer_inventaire();
 
 /**
- * \fn void changement_statistiques(joueur_t *j,lobjet_t *liste)
- * \brief Fonction qui permet de modifier les statistiques du joueur selon une liste d'objets
+ * \fn void changement_statistiques(joueur_t *joueur)
+ * \brief Fonction qui permet de modifier les statistiques du joueur selon ses objets équipés
  * \param joueur Joueur dont on change les statistiques
- * \param equipe la liste d'objets
  */
-void changement_statistiques(joueur_t *joueur,lobjet_t *equipe);
+void changement_statistiques(joueur_t * joueur);
 
 /**
- * \fn void equiper_objet(joueur_t *j,objet_t **objet,inventaire_t *inventaire)
+ * \fn void equiper_objet(joueur_t *joueur,objet_t **objet)
  * \brief Fonction qui permet de passer un objet du sac(non-équipé) à un emplacement d'équipement(équipé) dans l'inventaire
  * \param joueur Joueur à équiper
  * \param objet Objet à équiper
- * \param inventaire Inventaire du joueur
  */
-void equiper_objet(joueur_t *joueur,objet_t **objet,inventaire_t *inventaire);
+void equiper_objet(joueur_t * joueur,objet_t ** objet);
 
 /**
- * \fn void desequiper(objet_t **objet,inventaire_t *inventaire,joueur_t *j);
+ * \fn void desequiper(joueur_t *joueur, objet_t **objet);
  * \brief Fonction qui permet de passer un objet d'un emplacement d'équipement(équipé) au sac(non-équipé) dans l'inventaire
- * \param j Joueur à déséquiper
+ * \param joueur Joueur à déséquiper
  * \param objet Objet à déséquiper
- * \param inventaire Inventaire du joueur
  */
-void desequiper(joueur_t *j, objet_t **objet,inventaire_t *inventaire);
+void desequiper(joueur_t * joueur, objet_t ** objet);
 
 /**
  * \fn void ramasser_objet(objet_t * objet, inventaire_t * inventaire)
  * \brief Fonction qui permet de mettre un objet trouvé dans le sac(inventaire)
  * \param objet Objet trouvé
- * \param inventaire Inventaire du joueur
  */
 void ramasser_objet(objet_t * objet, inventaire_t * inventaire);
 
@@ -82,16 +81,18 @@ void tout_ramasser(lobjet_t * objets, inventaire_t * inventaire);
 void detruire_inventaire(inventaire_t ** inventaire);
 
 /**
- * \fn void equiper_sac_slot( int slot )
- * \brief Équipe l'objet contenu dans un slot de l'inventaire (sac)
+ * \fn void equiper_sac_slot(joueur_t * joueur, int slot)
+ * \brief Équipe le joueur de l'objet contenu dans un slot de l'inventaire (sac)
  * \param slot Le slot de l'objet à équiper
+ * \param joueur Le joueur à équiper
  */
-void equiper_sac_slot( int slot );
+void equiper_sac_slot(joueur_t * joueur, int slot);
 
 /**
- * \fn void desequiper_slot(int slot)
- * \brief Déséquipe l'objet contenu dans l'inventaire
+ * \fn void desequiper_slot(joueur_t * joueur, int slot)
+ * \brief Déséquipe le joueur de l'objet contenu dans un slot de l'inventaire (equipe)
  * \param slot Le slot de l'objet à déséquiper
+ * \param joueur Le joueur à déséquiper
  */
-void desequiper_slot(int slot);
+void desequiper_slot(joueur_t * joueur, int slot);
 #endif

@@ -10,11 +10,14 @@
 
 #ifndef __AFFICHAGE_H__
 #define __AFFICHAGE_H__
+
 #include "SDL2/SDL.h"
 #include "definition_commun.h"
 #include "listes.h"
 #include "map.h"
 #include "personnage.h"
+
+typedef struct joueur_s joueur_t;
 
 /**
  * Type enum renseignant sur la texture personnage à utiliser

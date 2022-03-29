@@ -11,9 +11,8 @@
  * \copyright Copyright (c) 2022
  */
 
-inventaire_t * inventaire = NULL;
-
-void changement_statistiques(joueur_t *joueur,lobjet_t *equipe){
+void changement_statistiques(joueur_t * joueur){
+    lobjet_t * equipe = joueur->inventaire->equipe;
     int i, j;
     int att = joueur->attaque;
     int def = joueur->defense;
@@ -32,7 +31,9 @@ void changement_statistiques(joueur_t *joueur,lobjet_t *equipe){
         joueur->vitesse_actif = vit;
 }
 
-void equiper_objet(joueur_t *joueur,objet_t **objet,inventaire_t *inventaire){
+void equiper_objet(joueur_t * joueur,objet_t ** objet){
+    lobjet_t * equipe = joueur->inventaire->equipe;
+    lobjet_t * sac = joueur->inventaire->sac;
     objet_t *temp = NULL;
 
     if(joueur->niveau < (*objet)->niveau){
@@ -42,16 +43,16 @@ void equiper_objet(joueur_t *joueur,objet_t **objet,inventaire_t *inventaire){
 
     //on échange l'objet avec celui contenu dans le slot de son type dans les objets équipés
     temp = *objet;
-    *objet = inventaire->equipe->liste[(*objet)->type];
-    inventaire->equipe->liste[temp->type] = temp;
+    *objet = equipe->liste[(*objet)->type];
+    equipe->liste[temp->type] = temp;
 
     if(*objet == NULL){
-        (inventaire->sac->nb)--;
-        (inventaire->equipe->nb)++;
+        (sac->nb)--;
+        (equipe->nb)++;
     }
 
-    changement_statistiques(joueur,inventaire->equipe);
-    afficher_statistiques(perso_principal);
+    changement_statistiques(joueur);
+    afficher_statistiques(joueur);
 
     if(temp->type == bouclier){
         joueur->statut->bouclier_equipe = 1;
@@ -62,27 +63,29 @@ on clique sur un item de l'inventaire (équipé) qui s'enlève automatiquement
 */
 }
 
-void desequiper(joueur_t *j, objet_t **objet,inventaire_t *inventaire){
+void desequiper(joueur_t * joueur, objet_t ** objet){
+    lobjet_t * equipe = joueur->inventaire->equipe;
+    lobjet_t * sac = joueur->inventaire->sac;
     int i;
 
     if(*objet != NULL){
         if((*objet)->type == bouclier){
-            j->statut->bouclier_equipe = 0;
+            joueur->statut->bouclier_equipe = 0;
         }
 
         for(i=0; i<CAPACITE_SAC; i++){
-            if(inventaire->sac->liste[i] == NULL){
-                inventaire->sac->liste[i] = *objet;
+            if(sac->liste[i] == NULL){
+                sac->liste[i] = *objet;
                 *objet = NULL;
                 break;
             }
         }
 
-        (inventaire->sac->nb)++;
-        (inventaire->equipe->nb)--;
+        (sac->nb)++;
+        (equipe->nb)--;
 
-        changement_statistiques(j,inventaire->equipe);
-        afficher_statistiques(perso_principal);
+        changement_statistiques(joueur);
+        afficher_statistiques(joueur);
 
     }
     /* 
@@ -134,12 +137,12 @@ void tout_ramasser(lobjet_t * objets, inventaire_t * inventaire){
     }
 }
 
-void equiper_sac_slot( int slot )
-{
+void equiper_sac_slot(joueur_t * joueur, int slot){
+    lobjet_t * sac = joueur->inventaire->sac;
     int i, j ;
     int tt_obj ;
 
-    tt_obj = inventaire->sac->nb ;
+    tt_obj = sac->nb ;
 
     if( slot >= tt_obj )
     {
@@ -149,18 +152,20 @@ void equiper_sac_slot( int slot )
     for( i=0, j=0 ; i<CAPACITE_SAC ; i++, j++)
     {
         //faire correspondre la liste graphique à la liste du programme
-        if(inventaire->sac->liste[i] == NULL)
+        if(sac->liste[i] == NULL)
             j--;
 
         if(j == slot){
-            equiper_objet(perso_principal,&(inventaire->sac->liste[i]),inventaire);
+            equiper_objet(joueur,&(sac->liste[i]));
             break;
         }
     }
 }
 
-void desequiper_slot(int slot){
+void desequiper_slot(joueur_t * joueur, int slot){
+    lobjet_t * equipe = joueur->inventaire->equipe;
+
     slot -= CAPACITE_SAC; //on met la valeur du premier slot des objets équipés à 0
 
-    desequiper(perso_principal, &(inventaire->equipe->liste[slot]), inventaire);
+    desequiper(joueur, &(equipe->liste[slot]));
 }

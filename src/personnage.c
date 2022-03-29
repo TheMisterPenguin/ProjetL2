@@ -7,6 +7,7 @@
 #include <errno.h>
 #include <string.h>
 #include <code_erreur.h>
+#include <inventaire.h>
 
 #ifndef _WIN32
 	#include <pwd.h>
@@ -358,6 +359,8 @@ joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const in
 
 	perso->textures_joueur = init_textures_joueur(perso);
 
+    perso->inventaire = creer_inventaire();
+
 	return perso;
 }
 
@@ -368,6 +371,7 @@ void detruire_joueur(joueur_t *j){
 	free(j->statut);
 	detruire_liste_textures(&(j->textures_joueur));
 	free(j);
+    detruire_inventaire(&(j->inventaire));
 }
 
 joueur_t *caracteristiques(joueur_t* perso){

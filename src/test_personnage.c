@@ -16,12 +16,12 @@ unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 int main(){
     init();
 
-    objets = creer_liste_objet();
-    inventaire = creer_inventaire();
-    creer_textures_objets(objets);
-    tout_ramasser(objets, inventaire);
-
     perso_principal = new_joueur("test");
+
+    objets = creer_liste_objet();
+    creer_textures_objets(objets);
+    tout_ramasser(objets, perso_principal->inventaire);
+
     afficher_statistiques(perso_principal);
     detruire_joueur(perso_principal);
 

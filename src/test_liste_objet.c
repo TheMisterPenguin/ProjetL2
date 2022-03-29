@@ -1,4 +1,5 @@
 #include <liste_objet.h>
+#include <fonctions.h>
 
 /**
  * \file test_liste_objet.c

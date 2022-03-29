@@ -7,7 +7,6 @@
  * \copyright Copyright (c) 2022
  */
 
-
 #ifndef __OBJET_H__
 #define __OBJET_H__
 

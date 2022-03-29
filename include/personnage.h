@@ -9,11 +9,11 @@
  * \copyright Copyright (c) 2022
  */
 
-
 #ifndef __PERSONNAGE_H__
 #define __PERSONNAGE_H__
 
 #include "definition_commun.h"
+#include "inventaire.h"
 
 typedef struct s_l_aff t_l_aff;
 
@@ -58,6 +58,7 @@ typedef struct joueur_s {
     int vitesse_actif; /**<vitesse du joueur avec bonus d'equipement*/
 	statut_t *statut; /**<statut du joueur*/
 	t_l_aff *textures_joueur; /**<Tableau contenant toutes les textures du joueur*/
+    inventaire_t * inventaire; /**<Inventaire du joueur*/
 }joueur_t;
 
 #define DUREE_ATTAQUE_OU_CHARGEE 4
