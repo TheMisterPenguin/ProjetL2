@@ -64,8 +64,9 @@ int main(int argc, char** argv)
     /* On affiche l'introduction */
     afficher_intro();
 
+    /* On charge la base monstre*/
+    charger_base_monstre("monstres.json");
     /* On charge la map */
-    charger_monstres("../ressource/monstres.txt");
     char *fichier_map = charger_f_map("map.json");
     map = charger_s_map(fichier_map);
     t_aff *text = texture_map(map); 
