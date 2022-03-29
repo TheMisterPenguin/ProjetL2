@@ -9,6 +9,7 @@
 
 #ifndef __OBJET_H__
 #define __OBJET_H__
+#define NB_TYPE_OBJ 6
 
 #include "definition_commun.h"
 #include "affichage.h"

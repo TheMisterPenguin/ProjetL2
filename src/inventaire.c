@@ -155,6 +155,7 @@ void equiper_sac_slot(joueur_t * joueur, int slot){
         if(sac->liste[i] == NULL)
             j--;
 
+        //on se trouve sur le bon objet donc on l'équipe
         if(j == slot){
             equiper_objet(joueur,&(sac->liste[i]));
             break;

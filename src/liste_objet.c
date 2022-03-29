@@ -131,7 +131,7 @@ lobjet_t * creer_liste_objet_equipe(){
     lobjet_t * liste_obj; //le pointeur sur structure contenant la liste d'objets que la fonction retourne
 
     int i;
-    int nb_obj = 5; //nombre d'objets à contenir
+    int nb_obj = NB_TYPE_OBJ; //nombre d'objets à contenir
 
     if(( liste_obj= malloc(sizeof(lobjet_t))) == NULL )
     {
@@ -273,16 +273,17 @@ void afficher_textures_equipe( inventaire_t * const inventaire )
         return ;
     }
 
-    for( type_obj=1; type_obj<5 ; type_obj++)
+    for( type_obj=0; type_obj<NB_TYPE_OBJ ; type_obj++)
     {
         objet = inventaire->equipe->liste[type_obj];
         if(objet != NULL){
             switch(type_obj){
+                case quete: placer_texture(objet->texture, 329, 138); break;
                 case arme: placer_texture(objet->texture, 312, 205); break;
                 case bouclier: placer_texture(objet->texture, 550, 205); break;
                 case protection: placer_texture(objet->texture, 433, 165); break;
                 case amulette: placer_texture(objet->texture, 433, 63); break;
-                //faire les autres types d'objets
+                case consommable: placer_texture(objet->texture, 534, 137); break;
             }
             afficher_texture(objet->texture, rendu_principal);
         }
