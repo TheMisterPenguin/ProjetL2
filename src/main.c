@@ -104,6 +104,8 @@ int main(int argc, char** argv)
     if(SDL_RenderCopy(rendu_principal, text->texture, NULL, &temp))
         fprintf(stderr, "Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
 
+    SDL_QueryTexture(map->text_map->texture, NULL, NULL, &(map->text_map->width), &(map->text_map->height));
+
     SDL_SetRenderTarget(rendu_principal, NULL);
 
 
