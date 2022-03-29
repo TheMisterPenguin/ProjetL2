@@ -13,6 +13,9 @@
 
 #include "objet.h"
 
+typedef struct objet_s objet_t;
+typedef struct inventaire_s inventaire_t;
+
 /**
  * \struct struct lobjet
  * \brief Structure de liste d'objets
@@ -73,7 +76,7 @@ void effacer_liste_objet( lobjet_t ** liste_obj);
 
 /**
  * \fn void placer_objet_sac(objet_t * objet, int slot)
- * \brief Place la texture d'un objet dans le sac dans le menu inventaire selon son numéro de slot
+ * \brief Place la texture d'un objet contenu dans une liste d'objet dans le sac depuis le menu inventaire selon son numéro de slot
  * \param objet L'objet dont on place la texture dans le sac
  * \param slot le numéro de slot de l'objet
  */

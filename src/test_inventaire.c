@@ -37,7 +37,8 @@ int main(){
     afficher_statistiques(perso_principal);
 
     printf("----- équipement objet -----\n\n");
-    equiper_objet(perso_principal,&(inventaire->sac->liste[0]),inventaire);
+    equiper_objet(perso_principal,&(inventaire->sac->liste[0]));
+
     printf("----- sac après equipement -----\n\n");
     afficher_liste_objet(inventaire->sac);
     printf("----- équipé après équipement -----\n\n");

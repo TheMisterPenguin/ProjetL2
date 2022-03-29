@@ -28,8 +28,9 @@ extern menus_t menus;
 extern void afficher_menu_pause();
 
 /**
- * \fn void afficher_inventaire()
+ * \fn void afficher_inventaire(joueur_t * joueur)
  * \brief Affiche l'inventaire et gère les interactions avec l'utilisateur
+ * \param joueur Joueur auquel appartient l'inventaire
  */
-extern void afficher_inventaire();
+extern void afficher_inventaire(joueur_t * joueur);
 #endif

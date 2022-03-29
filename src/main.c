@@ -83,9 +83,8 @@ int main(int argc, char** argv)
     t_aff *texture_temp;
 
     objets = creer_liste_objet();
-    inventaire = creer_inventaire();
     creer_textures_objets(objets);
-    tout_ramasser(objets, inventaire);
+    tout_ramasser(objets, perso_principal->inventaire);
 
     /*test de l'allocation des textures*/
     for (i = 0; i < perso_principal->textures_joueur->nb_valeurs; i++)
@@ -111,7 +110,7 @@ int main(int argc, char** argv)
     while (running)
     {
         debut = SDL_GetPerformanceCounter();
-        jeu_event();
+        jeu_event(perso_principal);
         // en_tete(buffer_affichage);
         if (perso_principal->statut->en_mouvement){ /* Déplacement map */
             switch (perso_principal->statut->orientation)
