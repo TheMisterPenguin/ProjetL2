@@ -58,8 +58,9 @@ void afficher_menu_pause(){
         SDL_RenderClear(rendu_principal);
         afficher_texture(text_pause, rendu_principal);
 
+        #ifdef __DEBUG__
         SDL_RenderDrawRect(rendu_principal, &boutton_sortie);
-        SDL_RenderDrawRect(rendu_principal, &boutton_quitter);
+        #endif
 
         SDL_RenderPresent(rendu_principal);
         SDL_Event lastEvent; /* On récupère les événements */
