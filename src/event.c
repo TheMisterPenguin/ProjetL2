@@ -23,15 +23,15 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
     joueur_t * joueur1 = joueurs[0];
     joueur_t * joueur2 = joueurs[1];
 
+    int flags;
+
+    //tous les joueurs ____________________________________________________________________
+
     if (ev->keysym.sym == SDLK_ESCAPE){ /* On affiche le menu de pause si on appuye sur echap */
         SDL_ShowCursor(SDL_ENABLE);
         afficher_menu_pause(joueur1);
         SDL_ShowCursor(SDL_DISABLE);
     }
-
-    int flags;
-
-    //tous les joueurs ____________________________________________________________________
 
     if((joueur1->statut->action == RIEN || joueur1->statut->action == CHARGER) && (joueur2->statut->action == RIEN || joueur2->statut->action == CHARGER))
         switch(ev->keysym.sym){
@@ -70,12 +70,6 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
             } else {
                 menus = PAUSE;
             }; break; A décommenter quand la texture menu pause sera faite*/
-            case TOUCHE_CONSOMMABLE :
-                if(joueur1->inventaire->equipe->liste[consommable] != NULL){
-                    consommer_objet(joueur1);
-                    anim_effet_joueur(heal, joueur1);
-                }
-                break;
         }
 
     //joueur1 _____________________________________________________________
@@ -88,8 +82,14 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
             case TOUCHE_TAB :
                 joueur1->statut->en_mouvement = faux;
                 SDL_ShowCursor(SDL_ENABLE);
-                afficher_inventaire(joueur1);
+                afficher_inventaire(joueur1, TOUCHE_TAB);
                 SDL_ShowCursor(SDL_DISABLE);
+                break;
+            case TOUCHE_CONSOMMABLE :
+                if(joueur1->inventaire->equipe->liste[consommable] != NULL){
+                    consommer_objet(joueur1);
+                    anim_effet_joueur(heal, joueur1);
+                }
                 break;
         }
             
@@ -105,7 +105,7 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
         case SDLK_p :
             joueur2->statut->en_mouvement = faux;
             SDL_ShowCursor(SDL_ENABLE);
-            afficher_inventaire(joueur2);
+            afficher_inventaire(joueur2, SDLK_p);
             SDL_ShowCursor(SDL_DISABLE);
             break;
         /*case TOUCHE_RETOUR : 

@@ -114,7 +114,7 @@ void afficher_menu_pause(joueur_t * joueur){
     }
 }
 
-void afficher_inventaire(joueur_t * joueur)
+void afficher_inventaire(joueur_t * joueur, SDL_KeyCode touche_inventaire)
 {
     int slot_selectionne = -1;
     int debut, fin; /* le temps pour calculer les performances */
@@ -185,7 +185,7 @@ void afficher_inventaire(joueur_t * joueur)
                 SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Détection de la fermeture de la fenêtre\n");
                 fermer_programme(EXIT_SUCCESS);
             case SDL_KEYDOWN:
-                if(lastEvent.key.keysym.sym == SDLK_TAB){
+                if(lastEvent.key.keysym.sym == touche_inventaire){
                     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "On quitte l'inventaire\n");
                     return;
                 }

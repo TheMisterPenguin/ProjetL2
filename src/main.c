@@ -160,7 +160,7 @@ int main(int argc, char** argv)
         }
 
         if (joueur2->statut->en_mouvement){ /* Déplacement map */
-            switch (joueur1->statut->orientation)
+            switch (joueur2->statut->orientation)
             {
             case NORD:
                 deplacement_y_pers(map, joueur2, -3);
