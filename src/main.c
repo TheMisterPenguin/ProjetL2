@@ -80,6 +80,8 @@ int main(int argc, char** argv)
     /* On affiche l'introduction */
     afficher_intro();
 
+    /* On charge la base monstre*/
+    charger_base_monstre("monstres.json");
     /* On charge la map */
     fichier_map = charger_f_map("map.json");
     charger_monstres("../ressource/monstres.txt");

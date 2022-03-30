@@ -61,8 +61,8 @@ typedef struct monstre_s
  */
 typedef struct base_monstre_s
 {
-    char fichier_image[20]; /**<nom fichier image*/
-    char * nom_monstre; /**<nom du monstre*/
+    char fichier_image[25]; /**<nom fichier image*/
+    char nom_monstre[25]; /**<nom du monstre*/
     int pdv; /**<points de vie*/
     int attaque; /**<attaque*/
     float vitesse; /**<vitesse de déplacement*/
@@ -79,7 +79,7 @@ typedef struct base_monstre_s
 typedef struct liste_base_monstres_s
 {
     int nb_monstre;
-    base_monstre_t** tab;
+    base_monstre_t* tab;
 }liste_base_monstres_t;
 
 extern liste_base_monstres_t * liste_base_monstres;
@@ -100,13 +100,19 @@ void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres);
  */
 void detruire_monstre(monstre_t** monstre);
 
+/**
+ * \fn monstre_t * ajout_monstre(monstre_t * monstre);
+ * \brief Fonction qui retourne un monstre
+ * \param monstre le monstre à retourner
+ */
+monstre_t * ajout_monstre(monstre_t * monstre);
 
 /**
- * \fn liste_base_monstres_t* charger_monstres(char* nom_fichier)
- * \brief Fonction qui recopie les informations d'un fichier pour les insérrer dans la structure global liste_base_monstres
+ * \fn void charger_base_monstre(char* nom_fichier);
+ * \brief Fonction qui recopie les informations d'un fichier json pour les insérrer dans la structure global liste_base_monstres
  * \param nom_fichier nom du fichier à lire
  */
-void charger_monstres(char* nom_fichier);
+void charger_base_monstre(char* nom_fichier);
 
 /**
  * \fn monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, int x, int y);

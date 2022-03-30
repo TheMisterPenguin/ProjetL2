@@ -6,14 +6,15 @@
         "attaque" : 15,
         "vitesse" : 1.2,
         "xp" : 30,
-        "hitbox" : [18,18]},
-
+        "hitbox" : [18,18]
+        },
         {"fichier" : "witcher.bmp",
         "type" : "witcher",
         "pdv" : 50,
         "attaque" : 15,
         "vitesse" : 1.0,
         "xp" : 40,
-        "hitbox" : [18,18]}
+        "hitbox" : [18,18]
+        }
     ]
 }
