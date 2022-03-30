@@ -88,7 +88,7 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
             case TOUCHE_CONSOMMABLE :
                 if(joueur1->inventaire->equipe->liste[consommable] != NULL){
                     consommer_objet(joueur1);
-                    anim_effet_joueur(heal, joueur1);
+                    anim_effet_joueur(heal, 0, joueurs);
                 }
                 break;
         }
@@ -117,7 +117,7 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
         case SDLK_RETURN :
             if(joueur2->inventaire->equipe->liste[consommable] != NULL){
                 consommer_objet(joueur2);
-                anim_effet_joueur(heal, joueur2);
+                anim_effet_joueur(heal, 1, joueurs);
             }
             break;
     }
@@ -131,29 +131,50 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
  * \param joueurs Joueurs pouvant provoquer l'événement
  */
 static void keyUp(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
-    joueur_t * joueur = joueurs[0];
-    t_direction orientation = joueur->statut->orientation;
+    joueur_t * joueur1 = joueurs[0];
+    joueur_t * joueur2 = joueurs[1];
+    t_direction orientation1 = joueur1->statut->orientation;
+    t_direction orientation2 = joueur2->statut->orientation;
+
+    //joueur1 _____________________________________________________________
 
     switch(ev->keysym.sym){
         case TOUCHE_BAS :
-        case SDLK_DOWN : 
-            if(orientation == SUD)
-                joueur->statut->en_mouvement = faux;
+            if(orientation1 == SUD)
+                joueur1->statut->en_mouvement = faux;
             break;
         case TOUCHE_HAUT :
-        case SDLK_UP :
-            if (orientation == NORD)
-                joueur->statut->en_mouvement = faux;
+            if (orientation1 == NORD)
+                joueur1->statut->en_mouvement = faux;
             break;
         case TOUCHE_DROITE :
-        case SDLK_RIGHT :
-            if (orientation == EST)
-                joueur->statut->en_mouvement = faux;
+            if (orientation1 == EST)
+                joueur1->statut->en_mouvement = faux;
             break;
         case TOUCHE_GAUCHE :
+            if (orientation1 == OUEST)
+                joueur1->statut->en_mouvement = faux;
+            break;
+    }
+
+    //joueur2 _____________________________________________________________
+
+    switch(ev->keysym.sym){
+        case SDLK_DOWN : 
+            if(orientation2 == SUD)
+                joueur2->statut->en_mouvement = faux;
+            break;
+        case SDLK_UP :
+            if (orientation2 == NORD)
+                joueur2->statut->en_mouvement = faux;
+            break;
+        case SDLK_RIGHT :
+            if (orientation2 == EST)
+                joueur2->statut->en_mouvement = faux;
+            break;
         case SDLK_LEFT :
-            if (orientation == OUEST)
-                joueur->statut->en_mouvement = faux;
+            if (orientation2 == OUEST)
+                joueur2->statut->en_mouvement = faux;
             break;
     }
 }

@@ -620,7 +620,7 @@ void placer_texture(t_aff *texture, int x, int y){
     texture->aff_fenetre->y = y;
 }
 
-void boucle_sprite(t_aff * texture, joueur_t * joueur){
+void boucle_sprite(t_aff * texture, joueur_t ** joueurs){
     int debut, fin;
     float temps_passe;
     int fini = 0;
@@ -635,12 +635,16 @@ void boucle_sprite(t_aff * texture, joueur_t * joueur){
             /* On affiche la carte */
             afficher_texture(map->text_map, rendu_principal);
 
-            /* On affiche le joueur */  //faire sans variable globale et pour un joueur donné si temps
-            afficher_texture(joueur->textures_joueur->liste[TEXT_MARCHER], rendu_principal);
+            /* On affiche les joueur */
+            afficher_texture(joueurs[0]->textures_joueur->liste[TEXT_MARCHER], rendu_principal);
+            afficher_texture(joueurs[1]->textures_joueur->liste[TEXT_MARCHER], rendu_principal);
 
             /* On affiche l'interface */
             RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
-            ((float)joueur->pdv/joueur->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
+            ((float)joueurs[0]->pdv/joueurs[0]->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
+
+            RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
+            ((float)joueurs[1]->pdv/joueurs[1]->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
 
             /* On affiche l'animation */
             afficher_texture(texture, rendu_principal);
@@ -667,8 +671,8 @@ void boucle_sprite(t_aff * texture, joueur_t * joueur){
     }
 }
 
-void anim_effet_joueur(t_aff * effet, joueur_t * joueur){
-    text_copier_position(effet, *(joueur->textures_joueur->liste)); //amélioration: centrer pour toutes les tailles
+void anim_effet_joueur(t_aff * effet, int num_joueur, joueur_t ** joueurs){
+    text_copier_position(effet, *(joueurs[num_joueur]->textures_joueur->liste)); //amélioration: centrer pour toutes les tailles
 
-    boucle_sprite(effet, joueur);
+    boucle_sprite(effet, joueurs);
 }

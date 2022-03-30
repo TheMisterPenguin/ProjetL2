@@ -337,18 +337,19 @@ void info_texture(t_aff * texture);
 void placer_texture(t_aff *texture, int x, int y);
 
 /**
- * \fn void boucle_sprite(t_aff * texture, joueur_t * joueur)
+ * \fn void boucle_sprite(t_aff * texture, joueur_t ** joueurs)
  * \brief Permet d'afficher tous les sprites d'un spritesheet successivement
  * \param texture Texture spritesheet
- * \param joueur Joueur sur lequel afficher l'animation
+ * \param joueurs Joueurs à afficher
  */
-void boucle_sprite(t_aff * texture, joueur_t * joueur);
+void boucle_sprite(t_aff * texture, joueur_t ** joueurs);
 
 /**
- * \fn void anim_effet_joueur(t_aff * effet, joueur_t * joueur)
+ * \fn void anim_effet_joueur(t_aff * effet, int num_joueur, joueur_t ** joueurs)
  * \brief Permet de créer une animation sur un joueur
  * \param texture Texture spritesheet d'animation
- * \param joueur Joueur sur lequel afficher l'animation
+ * \param num_joueur Numéro du joueur activant l'animation
+ * \param joueurs Joueurs en jeu
  */
-void anim_effet_joueur(t_aff * effet, joueur_t * joueur);
+void anim_effet_joueur(t_aff * effet, int num_joueur, joueur_t ** joueurs);
 #endif
