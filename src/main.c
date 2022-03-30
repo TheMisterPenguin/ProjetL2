@@ -82,15 +82,14 @@ int main(int argc, char** argv)
 
     /* On charge la base monstre*/
     charger_base_monstre("monstres.json");
+
     /* On charge la map */
     fichier_map = charger_f_map("map.json");
-    charger_monstres("../ressource/monstres.txt");
-    char *fichier_map = charger_f_map("map.json");
     map = charger_s_map(fichier_map);
     text = texture_map(map); 
 
     //TEMPORAIREMENT ICI -- test animation heal (équiper consommable puis touche e) -- TEMPORAIREMENT ICI
-    heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
+    heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
 
     /* On créer le joueur */
     joueurs[0] = new_joueur("test");
@@ -115,17 +114,12 @@ int main(int argc, char** argv)
     init_sousbuffer(map, perso_principal);
 
     SDL_RenderClear(rendu_principal);
-    temp.x=0;
-    temp.y=0;
-    temp.w=floor(map->text_sol->width * map->text_sol->multipli_taille);
-    temp.h=floor(map->text_sol->height * map->text_sol->multipli_taille);
 
-    if(SDL_RenderCopy(rendu_principal, text->texture, NULL, &temp))
+    if(SDL_RenderCopy(rendu_principal, text->texture, NULL, NULL))
         fprintf(stderr, "Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
 
     SDL_QueryTexture(map->text_map->texture, NULL, NULL, &(map->text_map->width), &(map->text_map->height));
 
-    SDL_SetRenderTarget(rendu_principal, NULL);
 
 
     compteur = 0;
@@ -156,10 +150,12 @@ int main(int argc, char** argv)
         if (texture_temp)
             next_texture_joueur = texture_temp;
 
-        SDL_RenderClear(rendu_principal);
-        /* On affiche la carte */
-        afficher_texture(map->text_map, rendu_principal);
 
+        
+        /* On affiche la carte */
+        SDL_SetRenderTarget(rendu_principal, map->text_map->texture);
+        SDL_RenderClear(rendu_principal);
+        SDL_RenderCopy(rendu_principal, map->text_sol->texture, NULL, NULL);
 
         #ifdef __DEBUG__
             SDL_RenderDrawRect(rendu_principal, &tx);
@@ -168,7 +164,14 @@ int main(int argc, char** argv)
         #endif
 
         /* On affiche le joueur */
-        afficher_monstres(map->liste_monstres);
+        en_tete(map->liste_monstres);
+        monstre_t * temp = valeur_elt(map->liste_monstres);
+        SDL_RenderDrawRect(rendu_principal,  &temp->collision);
+        afficher_monstres(map->liste_monstres, perso_principal);
+
+        SDL_SetRenderTarget(rendu_principal, NULL);
+
+        afficher_texture(map->text_map, rendu_principal);
         afficher_texture(next_texture_joueur, rendu_principal);
 
         /* On affiche l'interface */
