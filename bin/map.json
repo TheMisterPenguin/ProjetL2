@@ -1,19 +1,28 @@
 {
     "type" : "map",
     "id" : 1,
-    "file-path" : "ressources/background/map/truehouse16.bmp",
-    "width" : 30, //30 cases de 16px mais une cases de la map fait 32px en réalité
-    "height" : 26,
-    "taille case" : 16,
+    "file-path" : "ressources/background/map/house.bmp",
+    "width" : 15, //30 cases de 16px mais une cases de la map fait 32px en réalité
+    "height" : 13,
+    "taille case" : 32,
     "starting-point" : [5, 5],
     "monsters" : [
         {"type" : "demon_alpha",
         "level" : 1,
         "position" : [1,6]}
     ],
-    "title-entities" : [
-        {"type" : 1,
-        "wall" : 1,
-        "position" : [5,9]}
+    "wall" : [
+        {
+            "x" : 6,
+            "y" : 0,
+            "h" : 7,
+            "w" : 1
+        },
+        {
+            "x": 4,
+            "y": 7,
+            "h": 1,
+            "w": 4
+        }
     ]
 }
