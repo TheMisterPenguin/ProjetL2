@@ -67,7 +67,7 @@ static void init_SDL(){
 
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Démarrage de la SDL");
 
-    if (SDL_Init(SDL_INIT_EVERYTHING) ){
+    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS | SDL_INIT_TIMER) ){
         char *msp = malloc(sizeof(char) * (500));
 
         sprintf(msp, "Erreur lors de l'initialisation de la SDL : %s\nErreur : 0x%X\n", SDL_GetError(), SDL_ERREUR);

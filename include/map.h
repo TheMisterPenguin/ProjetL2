@@ -44,6 +44,7 @@ typedef struct t_map{
     unsigned int taille_case; /**< La taille d'une case */
     unsigned int cases_x; /**< Le nombre de cases affichées en x */
     unsigned int cases_y; /**< Le nombre de cases affichées en y */
+    list *liste_collisions; /*< La liste de toutes les les collisions */
 }t_map;
 
 extern t_map *map; /**< La map courante */
