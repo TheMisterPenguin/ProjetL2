@@ -456,8 +456,8 @@ void deplacer_texture_centre(t_aff *texture, int x, int y){
 
 void deplacer_rect_origine(SDL_Rect *r, int x, int y){
 
-    r->x += x;
-    r->y += y;
+    r->x = x;
+    r->y = y;
 }
 
 void deplacer_texture_origine(t_aff *texture, int x, int y){
