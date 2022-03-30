@@ -8,7 +8,9 @@
     "starting-point" : [5, 5],
     "monsters" : [
         {"type" : "knight",
-        "position" : [300,300]}
+        "position" : [50,50]},
+        {"type" : "witcher",
+        "position" : [10,10]}
     ],
     "title-entities" : [
         {"type" : 1,

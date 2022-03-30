@@ -6,7 +6,7 @@
         "attaque" : 15,
         "vitesse" : 1.2,
         "xp" : 30,
-        "hitbox" : [18,18]
+        "hitbox" : [21,24]
         },
         {"fichier" : "witcher.bmp",
         "type" : "witcher",
