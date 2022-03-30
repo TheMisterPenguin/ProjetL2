@@ -68,7 +68,6 @@ int main(int argc, char** argv)
     t_aff *text = NULL;
     t_aff *next_texture_joueur = NULL;
     t_aff *texture_temp = NULL;
-    SDL_Rect temp = {0};
     float temps_passe;
     joueur_t * joueurs[2] = {NULL}; //liste des joueurs pour amélioration: mode 2 joueurs
     joueur_t * perso_principal = NULL;
@@ -111,17 +110,11 @@ int main(int argc, char** argv)
     init_sousbuffer(map, perso_principal);
 
     SDL_RenderClear(rendu_principal);
-    temp.x=0;
-    temp.y=0;
-    temp.w=floor(map->text_sol->width * map->text_sol->multipli_taille);
-    temp.h=floor(map->text_sol->height * map->text_sol->multipli_taille);
 
-    if(SDL_RenderCopy(rendu_principal, text->texture, NULL, &temp))
+    if(SDL_RenderCopy(rendu_principal, text->texture, NULL, NULL))
         fprintf(stderr, "Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
 
     SDL_QueryTexture(map->text_map->texture, NULL, NULL, &(map->text_map->width), &(map->text_map->height));
-
-    SDL_SetRenderTarget(rendu_principal, NULL);
 
 
     compteur = 0;
@@ -152,23 +145,46 @@ int main(int argc, char** argv)
         if (texture_temp)
             next_texture_joueur = texture_temp;
 
+        SDL_SetRenderTarget(rendu_principal, map->text_map->texture);
         SDL_RenderClear(rendu_principal);
-        /* On affiche la carte */
-        afficher_texture(map->text_map, rendu_principal);
+        
+        /* On cous les objets à la map */
+
+        if (SDL_RenderCopy(rendu_principal, map->text_sol->texture, NULL, NULL))
+            fprintf(stderr, "Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
 
         #ifdef __DEBUG__
-            SDL_RenderDrawRect(rendu_principal, &tx);
-            SDL_RenderDrawRect(rendu_principal, &(perso_principal->statut->zone_colision));
-            SDL_RenderDrawRect(rendu_principal, &ty);
+                SDL_SetRenderDrawColor(rendu_principal, 0, 255, 0, SDL_ALPHA_OPAQUE);
+                en_tete(map->liste_collisions);
+
+                while(!hors_liste(map->liste_collisions)){
+                    SDL_Rect *e = valeur_elt(map->liste_collisions);
+                    SDL_RenderDrawRect(rendu_principal, e);
+                    suivant(map->liste_collisions);
+                }
+                SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
+        #endif        
+
+        SDL_SetRenderTarget(rendu_principal, NULL);
+        SDL_RenderClear(rendu_principal);
+
+        afficher_texture(map->text_map, rendu_principal);
+
+        /* On affiche les collision si l'on ajoute la constante __DEBUG__ à la compilation */
+        #ifdef __DEBUG__
+                SDL_SetRenderDrawColor(rendu_principal, 255, 0, 0, SDL_ALPHA_OPAQUE);
+                SDL_RenderDrawRect(rendu_principal, &tx);
+                SDL_RenderDrawRect(rendu_principal, &(perso_principal->statut->zone_colision));
+                SDL_RenderDrawRect(rendu_principal, &ty);
+                SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
         #endif
 
         /* On affiche le joueur */
         afficher_texture(next_texture_joueur, rendu_principal);
 
         /* On affiche l'interface */
-        RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
-            ((float)perso_principal->pdv/perso_principal->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
-
+        RenderHPBar(FENETRE_LONGUEUR / 20, FENETRE_LARGEUR / 20, FENETRE_LONGUEUR / 4, FENETRE_LARGEUR / 25,
+                    ((float)perso_principal->pdv / perso_principal->maxPdv), color(195, 0, 0, 0.9), color(125, 125, 125, 1));
 
         SDL_RenderPresent(rendu_principal);
 
@@ -176,8 +192,8 @@ int main(int argc, char** argv)
         fin = SDL_GetPerformanceCounter();
 
         temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
-        SDL_Delay(floor((1000 / (float) NB_FPS) - temps_passe));
-        if(compteur == NB_FPS)
+        SDL_Delay(floor((1000 / (float)NB_FPS) - temps_passe));
+        if (compteur == NB_FPS)
             compteur = 0;
         compteur++;
     }
