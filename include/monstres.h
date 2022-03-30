@@ -1,19 +1,17 @@
 /**
- * \file monstre.h
- * \author Bruneau Antoine (Antoine.Bruneau.Etu@univ-lemans.fr)
- * \brief Fichier contenant toutes les fonctions concernant les monstres
+ * \file monstres.h
+ * \author Antoine Bruneau (Antoine.Bruneau.Etu@univ-lemans.fr)
+ * \brief Fonctions concernant les monstres
  * \version 0.1
  * \date 01/02/2022
- * 
  * \copyright Copyright (c) 2022
- * 
  */
 
 #ifndef __MONSTRES_H__
 #define __MONSTRES_H__
 
 #include "definition_commun.h"
-#include <affichage.h>
+#include "affichage.h"
 
 #define DISTANCE_AGRO 500
 #define DUREE_MONSTRE_MARCHER 150

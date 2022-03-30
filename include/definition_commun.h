@@ -1,11 +1,10 @@
-
-
 /** 
  * \file definition_commun.h
  * \brief Contient toutes les définitions communes à tout les fichiers
- * \author Ange Despert 
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
  * \version 0.1
  * \date 20/01/22
+ * \copyright Copyright (c) 2022
  */
 
 #ifndef __H_DEF_COMMUN__

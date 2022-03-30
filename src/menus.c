@@ -5,6 +5,16 @@
 #include <liste_objet.h>
 #include <inventaire.h>
 
+/**
+ * \file menus.c
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Fonctions des menus du jeu
+ * \version 0.2
+ * \date 29/03/2022
+ * \copyright Copyright (c) 2022
+ */
+
 /*void afficher_menu(menus_t * menu){
     switch (menu) {
         case 0: break;
@@ -16,7 +26,7 @@
     }
 }*/
 
-void afficher_menu_pause(){
+void afficher_menu_pause(joueur_t * joueur){
 
     int debut, fin; /* le temps pour calculer les performances */
 
@@ -48,8 +58,9 @@ void afficher_menu_pause(){
         SDL_RenderClear(rendu_principal);
         afficher_texture(text_pause, rendu_principal);
 
+        #ifdef __DEBUG__
         SDL_RenderDrawRect(rendu_principal, &boutton_sortie);
-        SDL_RenderDrawRect(rendu_principal, &boutton_quitter);
+        #endif
 
         SDL_RenderPresent(rendu_principal);
         SDL_Event lastEvent; /* On récupère les événements */
@@ -79,15 +90,15 @@ void afficher_menu_pause(){
                     fermer_programme(EXIT_SUCCESS);
                 }
                 if (SDL_PointInRect(&coord_souris, &boutton_sauvegarder)){
-                    creer_sauvegarde_json(perso_principal);
+                    creer_sauvegarde_json(joueur);
                     SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "Sauvegarde", "La sauvegarde a été effectuée avec succès\n", NULL);
                     break;
                 }
                 if (SDL_PointInRect(&coord_souris, &boutton_charger)){
                     char temp[510];
                     sprintf(temp,"%s/perso.sav", save_path);
-                    detruire_joueur(perso_principal);
-                    perso_principal = charger_sauvegarde_joueur(temp);
+                    detruire_joueur(joueur);
+                    joueur = charger_sauvegarde_joueur(temp);
                 }
                 break;
             }
@@ -103,7 +114,7 @@ void afficher_menu_pause(){
     }
 }
 
-void afficher_inventaire()
+void afficher_inventaire(joueur_t * joueur)
 {
     int slot_selectionne = -1;
     int debut, fin; /* le temps pour calculer les performances */
@@ -123,12 +134,12 @@ void afficher_inventaire()
     SDL_Rect slot8 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
     SDL_Rect slot9 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
 
-    SDL_Rect slot_pers_0 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
-    SDL_Rect slot_pers_1 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
-    SDL_Rect slot_pers_2 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
-    SDL_Rect slot_pers_3 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
-    SDL_Rect slot_pers_4 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
-    SDL_Rect slot_pers_5 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot10 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot11 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot12 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot13 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot14 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
+    SDL_Rect slot15 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
 
     /* Placemennt des slots */
     deplacer_rect_origine(&slot0, floor(582 * multiplicateur_x), floor(659 * multiplicateur_y));
@@ -142,6 +153,13 @@ void afficher_inventaire()
     deplacer_rect_origine(&slot8, floor(1038 * multiplicateur_x), floor(787 * multiplicateur_y));
     deplacer_rect_origine(&slot9, floor(1190 * multiplicateur_x), floor(787 * multiplicateur_y));
 
+    deplacer_rect_origine(&slot10, floor(673 * multiplicateur_x), floor(281 * multiplicateur_y));
+    deplacer_rect_origine(&slot11, floor(636 * multiplicateur_x), floor(421 * multiplicateur_y));
+    deplacer_rect_origine(&slot12, floor(1137 * multiplicateur_x), floor(421 * multiplicateur_y));
+    deplacer_rect_origine(&slot13, floor(890 * multiplicateur_x), floor(338 * multiplicateur_y));
+    deplacer_rect_origine(&slot14, floor(887 * multiplicateur_x), floor(121 * multiplicateur_y));
+    deplacer_rect_origine(&slot15, floor(1100 * multiplicateur_x), floor(281 * multiplicateur_y));
+
     while (1)
     {
         debut = SDL_GetPerformanceCounter();
@@ -150,9 +168,10 @@ void afficher_inventaire()
 
         SDL_RenderClear(rendu_principal);
 
+        afficher_texture(map->text_map, rendu_principal);
         afficher_texture(text_pause, rendu_principal);
-        afficher_textures_sac( inventaire );
-        afficher_textures_equipe(inventaire);
+        afficher_textures_sac(joueur->inventaire);
+        afficher_textures_equipe(joueur->inventaire);
 
         SDL_RenderPresent(rendu_principal); 
 
@@ -199,11 +218,29 @@ void afficher_inventaire()
                     slot_selectionne = 8;
                 if (SDL_PointInRect(&coord_souris, &slot9))
                     slot_selectionne = 9;
-                
-                if(slot_selectionne != -1){
+                if (SDL_PointInRect(&coord_souris, &slot10))
+                    slot_selectionne = 10;
+                if (SDL_PointInRect(&coord_souris, &slot11))
+                    slot_selectionne = 11;
+                if (SDL_PointInRect(&coord_souris, &slot12))
+                    slot_selectionne = 12;
+                if (SDL_PointInRect(&coord_souris, &slot13))
+                    slot_selectionne = 13;
+                if (SDL_PointInRect(&coord_souris, &slot14))
+                    slot_selectionne = 14;
+                if (SDL_PointInRect(&coord_souris, &slot15))
+                    slot_selectionne = 15;
+
+                if(slot_selectionne > -1){
                     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "On a selectionné le slot %d\n", slot_selectionne);
-                    /* Fonction pour equiper l'item */
-                    equiper_sac_slot(slot_selectionne);
+                    if(slot_selectionne < 10){
+                        /* Fonction pour équiper l'item */
+                        equiper_sac_slot(joueur, slot_selectionne);
+                    }
+                    else{
+                        /* Fonction pour déséquiper l'item */
+                        desequiper_slot(joueur, slot_selectionne);
+                    }
                 }
                 break;
             }

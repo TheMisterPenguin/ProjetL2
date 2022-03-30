@@ -2,41 +2,66 @@
 #include <commun.h>
 #include <string.h>
 
-inventaire_t * inventaire = NULL;
+/**
+ * \file inventaire.c
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Fonctions liées au module inventaire
+ * \version 0.3
+ * \date 29/03/2022
+ * \copyright Copyright (c) 2022
+ */
 
-void changement_statistiques(joueur_t *j,lobjet_t *equipe){
-    int i;
-    for(i = 0;i<equipe->nb;i++){
+void changement_statistiques(joueur_t * joueur){
+    lobjet_t * equipe = joueur->inventaire->equipe;
+    int nb_conso = (equipe->liste[consommable] != NULL) + (equipe->liste[quete] != NULL); //nombre d'objets ne modifiant pas les statistiques
+    int att = joueur->attaque;
+    int def = joueur->defense;
+    int vit = joueur->vitesse;
+    int nb_trouve, i;
+
+    //on boucle dans tous les éléments sauf les objets de quête et les consommables (on commence donc à arme)
+    for(nb_trouve = 0, i=arme;nb_trouve < (equipe->nb - nb_conso); nb_trouve++, i++){
+        //recherche du prochain objet
         while(equipe->liste[i] == NULL)
             i++;
-        j->attaque_actif = j->attaque + (equipe->liste[i])->attaque;
-        j->defense_actif = j->defense + (equipe->liste[i])->defense;
-        j->vitesse_actif = j->vitesse + (equipe->liste[i])->vitesse;
+
+        //application des bonus de l'objet trouvé
+        att += (equipe->liste[i])->attaque;
+        def += (equipe->liste[i])->defense;
+        vit += (equipe->liste[i])->vitesse;
     }
+        joueur->attaque_actif = att;
+        joueur->defense_actif = def;
+        joueur->vitesse_actif = vit;
 }
 
-void equiper_objet(joueur_t *j,objet_t **objet,inventaire_t *inventaire){
+void equiper_objet(joueur_t * joueur,objet_t ** objet){
+    lobjet_t * equipe = joueur->inventaire->equipe;
+    lobjet_t * sac = joueur->inventaire->sac;
     objet_t *temp = NULL;
 
-    if(j->niveau < (*objet)->niveau){
+    if(joueur->niveau < (*objet)->niveau){
         printf("Niveau insuffisant pour équiper\n");
         return;
     }
 
+    //on échange l'objet avec celui contenu dans le slot de son type dans les objets équipés
     temp = *objet;
-    *objet = inventaire->equipe->liste[(*objet)->type];
-    inventaire->equipe->liste[temp->type] = temp;
+    *objet = equipe->liste[(*objet)->type];
+    equipe->liste[temp->type] = temp;
 
     if(*objet == NULL){
-        inventaire->sac->nb--;
-        inventaire->equipe->nb++;
+        (sac->nb)--;
+        (equipe->nb)++;
     }
 
-    changement_statistiques(j,inventaire->equipe);
-    afficher_statistiques(perso_principal);
+    if(temp->type != consommable && temp->type != quete){
+        changement_statistiques(joueur);
+        afficher_statistiques(joueur);
 
-    if(temp->type == bouclier){
-        j->statut->bouclier_equipe = 1;
+        if(temp->type == bouclier){
+            joueur->statut->bouclier_equipe = 1;
+        }
     }
 /*
 on clique sur un item de l'inventaire (sac) qui s'équipe automatiquement
@@ -44,13 +69,30 @@ on clique sur un item de l'inventaire (équipé) qui s'enlève automatiquement
 */
 }
 
-void desequiper(joueur_t *j, objet_t **objet,inventaire_t *inventaire){
-    inventaire->sac->liste[inventaire->sac->nb] = *objet;
-    *objet = NULL;
-    changement_statistiques(j,inventaire->equipe);
+void desequiper(joueur_t * joueur, objet_t ** objet){
+    lobjet_t * equipe = joueur->inventaire->equipe;
+    lobjet_t * sac = joueur->inventaire->sac;
+    int i;
 
-    if((*objet)->type == bouclier){
-        j->statut->bouclier_equipe = 0;
+    if(*objet != NULL){
+        if((*objet)->type == bouclier){
+            joueur->statut->bouclier_equipe = 0;
+        }
+
+        for(i=0; i<CAPACITE_SAC; i++){
+            if(sac->liste[i] == NULL){
+                sac->liste[i] = *objet;
+                *objet = NULL;
+                break;
+            }
+        }
+
+        (sac->nb)++;
+        (equipe->nb)--;
+
+        changement_statistiques(joueur);
+        afficher_statistiques(joueur);
+
     }
     /* 
     on n'utilise pas de liste pour les objets de l'inventaire (sac) car on équipe beaucoup plus souvent qu'on deséquipe donc on préfère profiter
@@ -101,25 +143,47 @@ void tout_ramasser(lobjet_t * objets, inventaire_t * inventaire){
     }
 }
 
-void equiper_sac_slot( int slot )
-{
+void equiper_sac_slot(joueur_t * joueur, int slot){
+    lobjet_t * sac = joueur->inventaire->sac;
     int i, j ;
-    int nb_obj ;
+    int tt_obj ;
 
-    nb_obj = inventaire->sac->nb ;
+    tt_obj = sac->nb ;
 
-    if( slot >= nb_obj )
+    if( slot >= tt_obj )
     {
         return ;
     }
 
-    for( i=0, j=0 ; i<nb_obj ; i++, j++)
+    for( i=0, j=0 ; i<CAPACITE_SAC ; i++, j++)
     {
         //faire correspondre la liste graphique à la liste du programme
-        if(inventaire->sac->liste[i] == NULL)
+        if(sac->liste[i] == NULL)
             j--;
 
-        if(j == slot)
-            equiper_objet(perso_principal,&(inventaire->sac->liste[i]),inventaire);
+        //on se trouve sur le bon objet donc on l'équipe
+        if(j == slot){
+            equiper_objet(joueur,&(sac->liste[i]));
+            break;
+        }
     }
+}
+
+void desequiper_slot(joueur_t * joueur, int slot){
+    lobjet_t * equipe = joueur->inventaire->equipe;
+
+    slot -= CAPACITE_SAC; //on met la valeur du premier slot des objets équipés à 0
+
+    desequiper(joueur, &(equipe->liste[slot]));
+}
+
+void consommer_objet(joueur_t * joueur){
+    lobjet_t * equipe = joueur->inventaire->equipe;
+    
+    //soigne le joueur
+    joueur->pdv = joueur->maxPdv;
+
+    //retire le consommable de l'inventaire
+    equipe->liste[consommable] = NULL;
+    (equipe->nb)--;
 }

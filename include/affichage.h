@@ -1,21 +1,27 @@
 /**
  * \file affichage.h
- * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
  * \brief Fichier contenant les définitions et les fonctions liées au module affichage.
- * \version 0.1
- * \date 12/03/2022
+ * \version 0.2
+ * \date 28/03/2022
  * \copyright Copyright (c) 2022
- * 
  */
 
 #ifndef __AFFICHAGE_H__
 #define __AFFICHAGE_H__
+
 #include "SDL2/SDL.h"
 #include "definition_commun.h"
 #include "listes.h"
 #include "map.h"
 #include "personnage.h"
 
+typedef struct joueur_s joueur_t;
+
+/**
+ * Type enum renseignant sur la texture personnage à utiliser
+ */
 typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TEXT_MARCHER_BOUCLIER}t_texture_perso;
 
 #define NB_FPS 60 /**< Le nombre maximum de FPS */
@@ -77,6 +83,7 @@ extern list *buffer_affichage; /*<Buffer contenant toutes les textures à affich
 extern long int compteur;      /*compteur utilisé pour gérer la vitesse d'affichage (fps)*/
 extern SDL_Rect tx, ty;
 extern float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépendent de la résolution */
+extern t_aff * heal;
 
 /* Définition des fonctions */
 
@@ -260,13 +267,14 @@ void deplacement_x_pers(t_map *m, joueur_t *j, int x);
 extern t_l_aff *init_textures_joueur(joueur_t *j);
 
 /**
- * \fn t_aff* init_texture_joueur(t_l_aff* textures_joueur)
+ * \fn t_aff* init_texture_joueur(t_l_aff* textures_joueur, joueur_t * joueur)
  * \brief Fonction qui renvoie la texture de départ du personnage (joueur)
  * \author Antoine Bruneau
- * \param t_l_aff* la liste de textures personnage
+ * \param t_l_aff Liste de textures personnage
+ * \param joueur Joueur dont on veut la texture de départ
  * \return t_aff* Une textures personnage
  */
-extern t_aff *init_texture_joueur(t_l_aff *textures_joueur);
+extern t_aff *init_texture_joueur(t_l_aff *textures_joueur, joueur_t * joueur);
 
 /**
  * \fn t_aff * next_frame_joueur(t_l_aff* textures_joueur);
@@ -365,4 +373,20 @@ extern void afficher_monstres(list * liste_monstre);
  * \param y Position verticale
  */
 void placer_texture(t_aff *texture, int x, int y);
+
+/**
+ * \fn void boucle_sprite(t_aff * texture, joueur_t * joueur)
+ * \brief Permet d'afficher tous les sprites d'un spritesheet successivement
+ * \param texture Texture spritesheet
+ * \param joueur Joueur sur lequel afficher l'animation
+ */
+void boucle_sprite(t_aff * texture, joueur_t * joueur);
+
+/**
+ * \fn void anim_effet_joueur(t_aff * effet, joueur_t * joueur)
+ * \brief Permet de créer une animation sur un joueur
+ * \param texture Texture spritesheet d'animation
+ * \param joueur Joueur sur lequel afficher l'animation
+ */
+void anim_effet_joueur(t_aff * effet, joueur_t * joueur);
 #endif

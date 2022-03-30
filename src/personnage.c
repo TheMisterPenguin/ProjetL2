@@ -7,6 +7,7 @@
 #include <errno.h>
 #include <string.h>
 #include <code_erreur.h>
+#include <inventaire.h>
 
 #ifndef _WIN32
 	#include <pwd.h>
@@ -16,21 +17,21 @@
 	#include <windows.h>
 #endif
 
+
+/**
+ * \file personnage.c
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Fichier contenant toutes les fonctions concernant le personnage
+ * \version 0.2
+ * \date 28/03/2022
+ * \copyright Copyright (c) 2022
+ */
+
 void copy(const byte * origin, byte *out, size_t size){
 	for(unsigned int i = 0; i < size; i++)
 		out[i] = origin[i];
 }
-
-/**
- * \file personnage.c
- * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
- * \brief Fichier contenant toutes les fonctions concernant le personnage
- * \version 0.1
- * \date 01/02/2022
- *  
- * \copyright Copyright (c) 2022
- * 
- */
 
 char save_path[500];
 
@@ -68,8 +69,6 @@ void check_repertoire_jeux(){
 	else
 		SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Répertoire de sauvegarde créé !\n");
 }
-
-joueur_t *perso_principal;
 
 void creer_sauvegarde_json(joueur_t *j){
 
@@ -358,6 +357,8 @@ joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const in
 
 	perso->textures_joueur = init_textures_joueur(perso);
 
+    perso->inventaire = creer_inventaire();
+
 	return perso;
 }
 
@@ -368,6 +369,7 @@ void detruire_joueur(joueur_t *j){
 	free(j->statut);
 	detruire_liste_textures(&(j->textures_joueur));
 	free(j);
+    detruire_inventaire(&(j->inventaire));
 }
 
 joueur_t *caracteristiques(joueur_t* perso){

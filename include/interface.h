@@ -1,16 +1,15 @@
 /**
  * \file interface.h
- * \author Descomps Max
- * \brief 
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Définition des fonctions relatives à l'interface joueur
  * \version 1.0
- * \date 26/03/2022
- * 
+ * \date 28/03/2022
  * \copyright Copyright (c) 2022
- * 
  */
 
 #ifndef __INTERFACE_H__
 #define __INTERFACE_H__
+
 #include "definition_commun.h"
 
 /**
@@ -22,7 +21,6 @@
  * \param h hauteur de la barre
  * \param vie couleur de la barre de vie
  * \param jauge couleur de la barre vide
- * 
  */
 void RenderHPBar(int x, int y, int w, int h, float pourcent, SDL_Color vie, SDL_Color jauge);
 #endif

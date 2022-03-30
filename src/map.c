@@ -8,6 +8,15 @@
 #include <monstres.h>
 #include <math.h>
 
+/**
+ * \file map.c
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \brief Fonctions de gestion de la map
+ * \version 0.1
+ * \date 28/03/2022
+ * \copyright Copyright (c) 2022
+ */
+
 t_map *map;
 
 SDL_Rect taille_ecran_cases(){
@@ -84,7 +93,7 @@ t_map * charger_s_map(char * buffer){
     json_object_object_get_ex(fichier, "monsters", &tbl_monstre);
     json_object_object_get_ex(fichier, "taille case", &taille_case);
 
-    int taille_case_val = json_object_get_int(taille_case);
+    m->taille_case = json_object_get_int(taille_case);
 
     m->text_sol = creer_texture(json_object_get_string(texture_map),
                                 -1, -1, 0, 0, 1);

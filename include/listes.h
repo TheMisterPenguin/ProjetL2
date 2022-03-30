@@ -1,12 +1,11 @@
 /**
  * \file liste.h
- * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
- * \brief 
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Fonction relatives au type de structure liste générique
  * \version 2.0
  * \date 27/03/2022
- * 
  * \copyright Copyright (c) 2022
- * 
  */
 
 #ifndef __LISTE_H__

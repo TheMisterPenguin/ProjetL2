@@ -1,14 +1,37 @@
+/**
+ * \file menus.h
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \brief Définitions relatives à la gestion des menus du jeu
+ * \version 1.0
+ * \date 27/03/2022
+ * \copyright Copyright (c) 2022
+ */
+
 #ifndef __MENUS_H__
 #define __MENUS_H__
 
 #include "definition_commun.h"
 
+/**
+ * Différentes interfaces du jeu
+ */
 typedef enum{JEU,PAUSE,PRINCIPAL,INVENTAIRE}menus_t;
 
 extern menus_t menus;
 
 //extern void afficher_menu(menus_t * menu);
 
-extern void afficher_menu_pause();
-extern void afficher_inventaire();
+/**
+ * \fn void afficher_menu_pause(joueur_t * joueur)
+ * \brief Affiche le menu pause et gère les interactions avec le joueur
+ * \param joueur Joueur qui ouvre le menu
+ */
+extern void afficher_menu_pause(joueur_t * joueur);
+
+/**
+ * \fn void afficher_inventaire(joueur_t * joueur)
+ * \brief Affiche l'inventaire et gère les interactions avec l'utilisateur
+ * \param joueur Joueur auquel appartient l'inventaire
+ */
+extern void afficher_inventaire(joueur_t * joueur);
 #endif

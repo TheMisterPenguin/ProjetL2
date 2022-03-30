@@ -5,7 +5,15 @@
 #include <math.h>
 #include <map.h>
 
-
+/**
+ * \file main.c
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Programme principal du jeu
+ * \version 0.2
+ * \date 28/03/2022
+ * \copyright Copyright (c) 2022
+ */
 
 void afficher_intro(void){
     int i;
@@ -56,6 +64,14 @@ int main(int argc, char** argv)
 {
     int debut, fin; /* le temps pour calculer les performances */
     int i;
+    char *fichier_map = NULL;
+    t_aff *text = NULL;
+    t_aff *next_texture_joueur = NULL;
+    t_aff *texture_temp = NULL;
+    SDL_Rect temp = {0};
+    float temps_passe;
+    joueur_t * joueurs[2] = {NULL}; //liste des joueurs pour amélioration: mode 2 joueurs
+    joueur_t * perso_principal = NULL;
 
     /* On initialise le programme */
     SDL_SetMainReady();
@@ -67,19 +83,24 @@ int main(int argc, char** argv)
     /* On charge la base monstre*/
     charger_base_monstre("monstres.json");
     /* On charge la map */
+    fichier_map = charger_f_map("map.json");
+    charger_monstres("../ressource/monstres.txt");
     char *fichier_map = charger_f_map("map.json");
     map = charger_s_map(fichier_map);
-    t_aff *text = texture_map(map); 
+    text = texture_map(map); 
+
+    //TEMPORAIREMENT ICI -- test animation heal (équiper consommable puis touche e) -- TEMPORAIREMENT ICI
+    heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
 
     /* On créer le joueur */
-    perso_principal = new_joueur("test");
-    t_aff *next_texture_joueur = perso_principal->textures_joueur->liste[TEXT_MARCHER];
-    t_aff *texture_temp;
+    joueurs[0] = new_joueur("test");
+    perso_principal = joueurs[0];
+    perso_principal->pdv = 5;
+    next_texture_joueur = perso_principal->textures_joueur->liste[TEXT_MARCHER];
 
     objets = creer_liste_objet();
-    inventaire = creer_inventaire();
     creer_textures_objets(objets);
-    tout_ramasser(objets, inventaire);
+    tout_ramasser(objets, perso_principal->inventaire);
 
     /*test de l'allocation des textures*/
     for (i = 0; i < perso_principal->textures_joueur->nb_valeurs; i++)
@@ -91,12 +112,18 @@ int main(int argc, char** argv)
 
     rect_centre(&(perso_principal->statut->zone_colision));
 
-    init_sousbuffer(map);
+    init_sousbuffer(map, perso_principal);
 
     SDL_RenderClear(rendu_principal);
-    SDL_Rect temp = {0, 0, floor(map->text_sol->width * map->text_sol->multipli_taille), floor(map->text_sol->height * map->text_sol->multipli_taille)};
+    temp.x=0;
+    temp.y=0;
+    temp.w=floor(map->text_sol->width * map->text_sol->multipli_taille);
+    temp.h=floor(map->text_sol->height * map->text_sol->multipli_taille);
+
     if(SDL_RenderCopy(rendu_principal, text->texture, NULL, &temp))
         fprintf(stderr, "Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
+
+    SDL_QueryTexture(map->text_map->texture, NULL, NULL, &(map->text_map->width), &(map->text_map->height));
 
     SDL_SetRenderTarget(rendu_principal, NULL);
 
@@ -105,7 +132,7 @@ int main(int argc, char** argv)
     while (running)
     {
         debut = SDL_GetPerformanceCounter();
-        jeu_event();
+        jeu_event(joueurs);
         // en_tete(buffer_affichage);
         if (perso_principal->statut->en_mouvement){ /* Déplacement map */
             switch (perso_principal->statut->orientation)
@@ -130,6 +157,7 @@ int main(int argc, char** argv)
             next_texture_joueur = texture_temp;
 
         SDL_RenderClear(rendu_principal);
+        /* On affiche la carte */
         afficher_texture(map->text_map, rendu_principal);
 
 
@@ -153,7 +181,7 @@ int main(int argc, char** argv)
         // vider_liste(buffer_affichage);
         fin = SDL_GetPerformanceCounter();
 
-        float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
+        temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
         SDL_Delay(floor((1000 / (float) NB_FPS) - temps_passe));
         if(compteur == NB_FPS)
             compteur = 0;

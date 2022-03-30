@@ -1,16 +1,15 @@
 /**
  * \file map.h
- * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
- * \brief Le fichier contient les définitions des fonctions de gestion de la map
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \brief Définitions des fonctions de gestion de la map
  * \version 1.0
  * \date 27/03/2022
- * 
  * \copyright Copyright (c) 2022
- * 
  */
 
 #ifndef __MAP_H__
 #define __MAP_H__ 
+
 #include "definition_commun.h"
 #include "listes.h"
 
@@ -35,13 +34,16 @@ typedef struct {
  * \brief Structure représentant une map
  * \author Ange Despert
 */
-typedef struct {
+typedef struct t_map{
     t_aff * text_map; /**< La texture de la map */
     unsigned int width, height; /**< La largeur et la hauteur de la map */
     list *liste_monstres; /*< La liste des monstres de la map */
     int unite_dep_x; /**< L'unité de déplacement en x */
     int unite_dep_y; /**< L'unité de déplacement en y */
     t_aff * text_sol; /**< La texture du sol */
+    unsigned int taille_case; /**< La taille d'une case */
+    unsigned int cases_x; /**< Le nombre de cases affichées en x */
+    unsigned int cases_y; /**< Le nombre de cases affichées en y */
 }t_map;
 
 extern t_map *map; /**< La map courante */

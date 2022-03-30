@@ -1,12 +1,10 @@
 /**
  * \file liste_objet.h
- * \author Descomps Max (Max.Descomps.Etu@univ-lemans.fr)
- * \brief Fichier contenant toutes les définitions concernant les listes d'objets
- * \version 0.1
- * \date 24/02/2022
- * 
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Définition relatives aux structures contenant les objets
+ * \version 1.0
+ * \date 28/03/2022
  * \copyright Copyright (c) 2022
- * 
  */
 
 
@@ -15,16 +13,18 @@
 
 #include "objet.h"
 
+typedef struct objet_s objet_t;
+typedef struct inventaire_s inventaire_t;
+
 /**
  * \struct struct lobjet
  * \brief Structure de liste d'objets
- * 
  * \author Descomps Max
  */
 
 typedef struct lobjet_s {
-    int nb;
-    objet_t ** liste;
+    int nb; /**<Nombre d'objets stockés*/
+    objet_t ** liste; /**<Objets stockés*/
 }lobjet_t;
 
 
@@ -32,14 +32,68 @@ extern lobjet_t * objets;
 
 #include "inventaire.h"
 
+/**
+ * \fn lobjet_t * creer_liste_objet(void)
+ * \brief Créé une liste d'objets et la remplit à l'aide du fichier des objets du jeu
+ * \return Instance nouvellement allouée du type lobjet_t ou NULL
+ */
 lobjet_t * creer_liste_objet(void);
+
+/**
+ * \fn lobjet_t * creer_liste_objet_vide(void)
+ * \brief Créé une liste d'objets vide
+ * \return Instance nouvellement allouée du type lobjet_t ou NULL
+ */
 lobjet_t * creer_liste_objet_vide(void);
-void detruire_liste_objet( lobjet_t ** liste_obj);
-void afficher_liste_objet( lobjet_t * const liste_obj );
+
+/**
+ * \fn lobjet_t * creer_liste_objet_equipe()
+ * \brief Créé une liste d'objets vide contenant les objets équipés
+ * \return Instance nouvellement allouée du type lobjet_t ou NULL
+ */
 lobjet_t * creer_liste_objet_equipe();
+
+/**
+ * \fn void detruire_liste_objet( lobjet_t ** liste_obj)
+ * \brief Détruit une liste d'objets
+ * \param liste_obj La liste d'objets à détruire
+ */
+void detruire_liste_objet( lobjet_t ** liste_obj);
+
+/**
+ * \fn void afficher_liste_objet( lobjet_t * const liste_obj )
+ * \brief Affiche une liste d'objets dans la console
+ * \param liste_obj La liste d'objets à afficher
+ */
+void afficher_liste_objet( lobjet_t * const liste_obj );
+
+/**
+ * \fn void effacer_liste_objet( lobjet_t ** liste_obj)
+ * \brief Efface une liste d'objets sans libérer la mémoire allouée aux objets qu'elle contient
+ * \param liste_obj La liste d'objets à effacer
+ */
 void effacer_liste_objet( lobjet_t ** liste_obj);
+
+/**
+ * \fn void placer_objet_sac(objet_t * objet, int slot)
+ * \brief Place la texture d'un objet contenu dans une liste d'objet dans le sac depuis le menu inventaire selon son numéro de slot
+ * \param objet L'objet dont on place la texture dans le sac
+ * \param slot le numéro de slot de l'objet
+ */
 void placer_objet_sac(objet_t * objet, int slot);
+
+/**
+ * \fn void afficher_textures_sac( inventaire_t * const inventaire )
+ * \brief Affiche les textures des objets du sac dans le menu inventaire
+ * \param inventaire L'inventaire contenant le sac
+ */
 void afficher_textures_sac( inventaire_t * const inventaire );
+
+/**
+ * \fn void afficher_textures_equipe( inventaire_t * const inventaire )
+ * \brief Affiche les textures des objets équipés dans le menu inventaire
+ * \param inventaire L'inventaire contenant les objets équipés
+ */
 void afficher_textures_equipe( inventaire_t * const inventaire );
 
 /**

@@ -3,20 +3,33 @@
 #include <objet.h>
 #include <inventaire.h>
 
+/**
+ * \file test_inventaire.c
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Programme de test du module inventaire
+ * \version 0.1
+ * \date 28/03/2022
+ * \copyright Copyright (c) 2022
+ */
+
 long int compteur;
 t_map *test_map;
 unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 
 int main(){
+    joueur_t * perso_principal = NULL;
+    lobjet_t * objets = NULL;
+    inventaire_t * inventaire = NULL;
+
     printf("----- initialisation SDL -----\n\n");
     init();
     printf("----- création personnage -----\n\n");
     perso_principal = new_joueur("test");
     perso_principal->niveau = 5;
     printf("----- création liste d'objets -----\n\n");
-    lobjet_t * objets = creer_liste_objet();
+    objets = creer_liste_objet();
     printf("----- création inventaire -----\n\n");
-    inventaire_t * inventaire = creer_inventaire();
+    inventaire = creer_inventaire();
 
     printf("----- ramassage objet -----\n\n");
     ramasser_objet(objets->liste[0], inventaire);
@@ -28,7 +41,8 @@ int main(){
     afficher_statistiques(perso_principal);
 
     printf("----- équipement objet -----\n\n");
-    equiper_objet(perso_principal,&(inventaire->sac->liste[0]),inventaire);
+    equiper_objet(perso_principal,&(inventaire->sac->liste[0]));
+
     printf("----- sac après equipement -----\n\n");
     afficher_liste_objet(inventaire->sac);
     printf("----- équipé après équipement -----\n\n");

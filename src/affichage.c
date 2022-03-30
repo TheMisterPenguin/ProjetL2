@@ -6,19 +6,22 @@
 #include <math.h>
 #include <map.h>
 #include <definition_commun.h>
+#include <interface.h>
+
 /**
  * \file affichage.c
- * \author Despert Ange (Ange.Despert.Etu@univ-lemans.fr)
- * \brief Fichier contenant toutes les fonctions relatives à l'affichage
- * \version 0.1
- * \date 12/02/2022
- * 
+ * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \brief Fonctions liées au module affichage
+ * \version 0.2
+ * \date 28/03/2022
  * \copyright Copyright (c) 2022
- * 
  */
+
 
 list *listeDeTextures; 
 list *buffer_affichage;
+t_aff * heal = NULL;
 
 long int compteur;
 unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
@@ -274,9 +277,9 @@ t_l_aff* init_textures_joueur(joueur_t *j){
     return textures_joueur;
 }
 
-t_aff* init_texture_joueur(t_l_aff* textures_joueur){
+t_aff* init_texture_joueur(t_l_aff* textures_joueur, joueur_t * joueur){
     /* if sauvegarde existante -> return texture sauvegardée du joueur*/
-    if(perso_principal->statut->bouclier_equipe)
+    if(joueur->statut->bouclier_equipe)
         return textures_joueur->liste[TEXT_MARCHER_BOUCLIER];
     else
         return textures_joueur->liste[TEXT_MARCHER];
@@ -564,7 +567,7 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
     int *x_map = &(m->text_map->frame_anim->x); /* La coordonnée x actuelle de la map */
     int *x_pers = &(j->statut->zone_colision.x); /* La coordonnée x actuelle du joueur */
     //const long int taille_unite = floor(FENETRE_LONGUEUR / (float)m->text_map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
-    const long int taille_unite = 1; /* Calcul en nombre de pixels d'une unité de déplacement */
+    const long int taille_unite = floor(3 * multiplicateur_x); /* Calcul en nombre de pixels d'une unité de déplacement */
 
     if(*x_pers  + x * taille_unite < 0)
         return;
@@ -574,10 +577,11 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
             *x_pers += x * taille_unite; /* On déplace le personnage de x unités */
             return;
         }
-    if (*x_map + x > m->text_map->frame_anim->w){ /* L'écran est en bordure de map droite */
-        *x_pers += x * taille_unite;
-        return;
-    }
+        if (*x_map + x > (m->text_map->width - m->text_map->frame_anim->w))
+            { /* L'écran est en bordure de map droite */
+                *x_pers += x * taille_unite;
+                return;
+            }
     if(rects_egal_x(&(j->statut->zone_colision), &tx))  /*On se trouve dans l'intervalle normal */
         *x_map += x; /* On déplace la map en fond */
     else
@@ -587,21 +591,19 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
 
 void deplacement_y_pers(t_map *m, joueur_t *j, int y){
 
-    int *y_map = &(m->text_sol->frame_anim->y);                                        /* La coordonnée y actuelle de la map */
+    int *y_map = &(m->text_map->frame_anim->y);                                        /* La coordonnée y actuelle de la map */
     int *y_pers = &(j->statut->zone_colision.y);                                       /* La coordonnée y actuelle du joueur */
-    const long int taille_unite = floor(FENETRE_LARGEUR / (float)m->text_sol->height); /* Calcul en nombre de pixels d'une unité de déplacement */
+    const long int taille_unite = floor(3 * multiplicateur_y); /* Calcul en nombre de pixels d'une unité de déplacement */
 
-    if (*y_pers + y * taille_unite < 0)
+    if (*y_pers + y * taille_unite < 0) /* Le personnage ne peut pas aller en haut */
         return;
-    if (*y_pers + j->statut->zone_colision.h + y * taille_unite > FENETRE_LARGEUR)
+    if (*y_pers + j->statut->zone_colision.h + y * taille_unite > FENETRE_LARGEUR) /* Le personnage ne peut pas aller en bas */
         return;
-    if (*y_map + y < 0)
-    { /* La map ne peut pas plus aller à gauche */
+    if (*y_map + y < 0){ /* La map ne peut pas plus aller en haut */
         *y_pers += y * taille_unite; /* On déplace le personnage de x unités */
         return;
     }
-    if (*y_map + y > (m->text_sol->height - m->text_sol->frame_anim->h))
-    { /* L'écran est en bordure de map droite */
+    if (*y_map + y > (m->text_map->height - m->text_map->frame_anim->h)){ /* L'écran est en bordure de map bas*/
         *y_pers += y * taille_unite;
         return;
     }
@@ -651,6 +653,59 @@ void placer_texture(t_aff *texture, int x, int y){
     texture->aff_fenetre->x = x;
     texture->aff_fenetre->y = y;
 }
+
+
+void boucle_sprite(t_aff * texture, joueur_t * joueur){
+    int debut, fin;
+    float temps_passe;
+    int fini = 0;
+
+    while(!fini){
+        debut = SDL_GetPerformanceCounter();
+
+        if ((compteur % 5) == 0){ /*compteur%5 pour la vitesse d'affichage*/
+            //affichage du rendu
+            SDL_RenderClear(rendu_principal);
+
+            /* On affiche la carte */
+            afficher_texture(map->text_map, rendu_principal);
+
+            /* On affiche le joueur */  //faire sans variable globale et pour un joueur donné si temps
+            afficher_texture(joueur->textures_joueur->liste[TEXT_MARCHER], rendu_principal);
+
+            /* On affiche l'interface */
+            RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
+            ((float)joueur->pdv/joueur->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
+
+            /* On affiche l'animation */
+            afficher_texture(texture, rendu_principal);
+            SDL_RenderPresent(rendu_principal);
+
+            //calcul de la suite de l'animation
+            next_frame_x(texture);
+
+            if(texture->frame_anim->x == 0){ //passage à la ligne suivante
+                next_frame_y(texture);
+                if(texture->frame_anim->y == 0)
+                    fini = 1;
+            }
+        }
+
+        fin = SDL_GetPerformanceCounter();
+
+        //calcul du temps d'affichage
+        temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
+        SDL_Delay(floor((200 / (float) NB_FPS) - temps_passe));
+        if(compteur == NB_FPS)
+            compteur = 0;
+        compteur++;
+    }
+}
+
+void anim_effet_joueur(t_aff * effet, joueur_t * joueur){
+    text_copier_position(effet, *(joueur->textures_joueur->liste)); //amélioration: centrer pour toutes les tailles
+
+    boucle_sprite(effet, joueur);
 
 int current_frame_x(t_aff * texture){
     return texture->frame_anim->x / LARGEUR_ENTITE;
