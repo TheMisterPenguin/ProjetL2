@@ -8,6 +8,9 @@
 #include <string.h>
 #include <code_erreur.h>
 #include <inventaire.h>
+#include <monstres.h>
+#include <sorts.h>
+#include <listes.h>
 
 #ifndef _WIN32
 	#include <pwd.h>
@@ -401,4 +404,54 @@ joueur_t *gain_xp(joueur_t* perso){
 		levelup(perso);		
 	}
 	return perso;
+}
+
+
+void environnement_joueur(list * liste_monstre, list * liste_sort, joueur_t * joueur){
+	monstre_t * monstre;
+	sort_t * sort;
+	t_direction orientation;
+
+	en_tete(liste_monstre);
+	en_tete(liste_sort);
+
+	while(!hors_liste(liste_monstre)){
+		monstre = valeur_elt(liste_monstre);
+		//entite_en_collision renvoi un booleen ainsi qu'une orientation en paramètre
+		if(entite_en_collision(monstre->collision, joueur->statut->zone_colision, &orientation)){
+			(joueur->pdv) -= monstre->attaque;
+			if(joueur->pdv <= 0)
+				game_over = TRUE;
+			else{
+				joueur->statut->action = J_BLESSE;
+				joueur->statut->orientation = orientation;
+			}
+		}
+		/* si un monstre est touché */
+		if(joueur->statut->action == ATTAQUE){
+			if(entite_subit_attaque(monstre->texture, joueur->statut)){
+				(monstre->pdv) -= joueur->attaque_actif;
+				if(monstre->pdv <= 0)
+					oter_elt(liste_monstre);
+				else{
+					monstre->orientation = joueur->statut->orientation;
+					monstre->action = MONSTRE_BLESSE;
+				}
+			}
+		}
+		if(joueur->statut->action == ATTAQUE_CHARGEE){
+			//modif l'orientation du personnage pendant qu'il tourne
+			if(entite_subit_attaque_zone(monstre->texture, joueur->statut)){
+				
+			}
+		}
+		if(joueur->statut->action == BLOQUER){
+
+		}
+
+		suivant(liste_monstre);
+	}
+	if(joueur->statut->action == BLOQUER)
+
+
 }
