@@ -254,7 +254,7 @@ if (SDL_SetRenderTarget(rendu_principal, map->text_map->texture)){
  * \author Ange Despert
  */
 void init(){
-
+    srand(time(NULL)); //initialisation des nombres aléatoires
     f_close = init_liste(NULL, NULL, NULL); 
 
     if(!f_close){

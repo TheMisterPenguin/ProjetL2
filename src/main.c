@@ -82,6 +82,8 @@ int main(int argc, char** argv)
 
     /* On charge la map */
     fichier_map = charger_f_map("map.json");
+    charger_monstres("../ressource/monstres.txt");
+    char *fichier_map = charger_f_map("map.json");
     map = charger_s_map(fichier_map);
     text = texture_map(map); 
 
@@ -156,6 +158,7 @@ int main(int argc, char** argv)
         /* On affiche la carte */
         afficher_texture(map->text_map, rendu_principal);
 
+
         #ifdef __DEBUG__
             SDL_RenderDrawRect(rendu_principal, &tx);
             SDL_RenderDrawRect(rendu_principal, &(perso_principal->statut->zone_colision));
@@ -163,6 +166,7 @@ int main(int argc, char** argv)
         #endif
 
         /* On affiche le joueur */
+        afficher_monstres(map->liste_monstres);
         afficher_texture(next_texture_joueur, rendu_principal);
 
         /* On affiche l'interface */
