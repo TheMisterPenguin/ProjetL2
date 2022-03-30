@@ -385,7 +385,7 @@ t_aff *next_frame_joueur(joueur_t *j)
         return textures[TEXT_MARCHER];
 }
 
-void afficher_monstres(list * liste_monstre){
+void afficher_monstres(list * liste_monstre, joueur_t * joueur){
     monstre_t * monstre;
 
     if(liste_vide(liste_monstre))
@@ -394,7 +394,7 @@ void afficher_monstres(list * liste_monstre){
     en_tete(liste_monstre);
     while(!hors_liste(liste_monstre)){
         monstre = valeur_elt(liste_monstre);
-        action_monstre(monstre);
+        action_monstre(monstre, joueur);
         afficher_texture(monstre->texture ,rendu_principal);
         suivant(liste_monstre);
     }
@@ -706,6 +706,7 @@ void anim_effet_joueur(t_aff * effet, joueur_t * joueur){
     text_copier_position(effet, *(joueur->textures_joueur->liste)); //amélioration: centrer pour toutes les tailles
 
     boucle_sprite(effet, joueur);
+}
 
 int current_frame_x(t_aff * texture){
     return texture->frame_anim->x / LARGEUR_ENTITE;

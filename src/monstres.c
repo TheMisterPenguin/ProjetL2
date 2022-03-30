@@ -43,17 +43,15 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, char* nom_m
     /* allocation monstre_t*/
     monstre_t* monstre = malloc(sizeof(monstre_t));
     for(i=0; i<liste_base_monstres->nb_monstre; i++){
-        printf("%s\n", liste_base_monstres->tab[i].nom_monstre);
         if(strcmp(liste_base_monstres->tab[i].nom_monstre,nom_monstre) == 0){
-            printf("yes\n");
             monstre->type = nom_monstre_to_type_monstre(nom_monstre);
             monstre->collision.x = x;
             monstre->collision.y = y;
-            monstre->collision.w = liste_base_monstres->tab[i].hitbox.w * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3);
-            monstre->collision.h = liste_base_monstres->tab[i].hitbox.h * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+            monstre->collision.w = liste_base_monstres->tab[i].hitbox.w;
+            monstre->collision.h = liste_base_monstres->tab[i].hitbox.h;
             
             monstre->orientation = NORD;
-            monstre->duree = 0;
+            monstre->duree = DUREE_MONSTRE_EN_GARDE;
             monstre->action = MONSTRE_EN_GARDE;
 
             /*copie les informations de base_monstre dans monstre*/
@@ -63,9 +61,8 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, char* nom_m
             monstre->gainXp = liste_base_monstres->tab[i].gainXp;
 
             sprintf(chemin_texture, "%s/%s" , CHEMIN_TEXTURE, liste_base_monstres->tab[i].fichier_image);
-            monstre->texture = creer_texture(chemin_texture, LARGEUR_ENTITE, LONGUEUR_ENTITE, -100, -100, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+            monstre->texture = creer_texture(chemin_texture, LARGEUR_ENTITE, LONGUEUR_ENTITE, -100, -100, 1);
             
-            printf("2nd yes\n");
             return monstre;
         }
     }
@@ -85,17 +82,17 @@ type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre){
     }
 }
 
-int distance_x_joueur(SDL_Rect collision){
-    return collision.x - perso_principal->statut->zone_colision.x;
+int distance_x_joueur(SDL_Rect collision, joueur_t * joueur){
+    return joueur->statut->zone_colision.x - collision.x;
 }
 
-int distance_y_joueur(SDL_Rect collision){
-    return collision.y - perso_principal->statut->zone_colision.y;
+int distance_y_joueur(SDL_Rect collision, joueur_t * joueur){
+    return joueur->statut->zone_colision.y - collision.y;
 }
 
-int distance_joueur(SDL_Rect collision){
-    int x = distance_x_joueur(collision);
-    int y = distance_y_joueur(collision);
+int distance_joueur(SDL_Rect collision, joueur_t * joueur){
+    int x = distance_x_joueur(collision, joueur);
+    int y = distance_y_joueur(collision, joueur);
 
     return sqrt(x*x + y*y);
 }
@@ -131,10 +128,10 @@ void monstre_attaque(monstre_t * monstre /*liste texture sort*/){
     }
 }
 
-void fuir_joueur(monstre_t *monstre){
+void fuir_joueur(monstre_t *monstre, joueur_t * joueur){
     int y_diff, x_diff;
-    x_diff = distance_x_joueur(monstre->collision);
-    y_diff = distance_y_joueur(monstre->collision);
+    x_diff = distance_x_joueur(monstre->collision, joueur);
+    y_diff = distance_y_joueur(monstre->collision, joueur);
 
     if( x_diff > y_diff ){
         if(y_diff < 0)
@@ -152,10 +149,10 @@ void fuir_joueur(monstre_t *monstre){
     marcher_monstre(monstre);
 }
 
-void rush_joueur(monstre_t * monstre){
+void rush_joueur(monstre_t * monstre, joueur_t * joueur){
     int y_diff, x_diff;
-    x_diff = distance_x_joueur(monstre->collision);
-    y_diff = distance_y_joueur(monstre->collision);
+    x_diff = distance_x_joueur(monstre->collision, joueur);
+    y_diff = distance_y_joueur(monstre->collision, joueur);
 
     if( x_diff > y_diff ){
         if(y_diff < 0)
@@ -173,11 +170,11 @@ void rush_joueur(monstre_t * monstre){
     marcher_monstre(monstre);
 }
 
-void agro_witcher(monstre_t * monstre){
+void agro_witcher(monstre_t * monstre, joueur_t * joueur){
     if(monstre->action == RUSH_OU_FUITE)
         if(monstre->duree > 0){
             if(compteur%5 == 0)
-                fuir_joueur(monstre);
+                fuir_joueur(monstre, joueur);
         }
         else{
             monstre->action = MONSTRE_ATTAQUE;
@@ -194,28 +191,28 @@ void agro_witcher(monstre_t * monstre){
         }  
 }
 
-void agro_knight(monstre_t * monstre){
+void agro_knight(monstre_t * monstre, joueur_t * joueur){
     if(monstre->action == RUSH_OU_FUITE){
         if(monstre->duree > 0){
             if(compteur%5 == 0)
-                rush_joueur(monstre);
+                rush_joueur(monstre, joueur);
         }
         else
             monstre->duree = DUREE_RUSH_OU_FUITE;
     }
 }
 
-void agro_monstre(monstre_t * monstre){
+void agro_monstre(monstre_t * monstre, joueur_t * joueur){
     switch(monstre->type){
-        case(WITCHER): agro_witcher(monstre); break;
-        case(KNIGHT): agro_knight(monstre); break;
+        case(WITCHER): agro_witcher(monstre, joueur); break;
+        case(KNIGHT): agro_knight(monstre, joueur); break;
         default : break; 
     }
 }
 
 void ronde_monstre(monstre_t * monstre){
     if(monstre->duree == 0){
-        if(rand()%10){
+        if(rand()%3){
             monstre->action = MONSTRE_MARCHER;
             monstre->duree = DUREE_MONSTRE_MARCHER;
             monstre->orientation = rand()%4;
@@ -226,20 +223,39 @@ void ronde_monstre(monstre_t * monstre){
         }
     }
     if(monstre->action == MONSTRE_MARCHER){
-        if(compteur%5 == 0)
+        if(compteur%16 == 0){
             marcher_monstre(monstre);
-        /*x et y*/
+        }
     }
     else
         monstre_en_garde(monstre);
 }
 
-void action_monstre(monstre_t * monstre){
-    (monstre->duree)--;
+bool hors_map_monstre(monstre_t * monstre){
+    //test gauche
+    if(monstre->collision.x <= 0)
+        return 1;
+    //test haut
+    if(monstre->collision.y <= 0)
+        return 1;
+    //test droit
+    if(monstre->collision.w + monstre->collision.x >= map->text_map->width)
+        return 1;
+    //test bas
+    if(monstre->collision.h + monstre->collision.y >= map->text_map->height)
+        return 1;
+    return 0;
+}
+
+void action_monstre(monstre_t * monstre, joueur_t * joueur){
+    monstre->texture->aff_fenetre->x = monstre->collision.x - floor(13 * monstre->texture->multipli_taille);
+    monstre->texture->aff_fenetre->y = monstre->collision.y - floor(13 * monstre->texture->multipli_taille);
+    if(monstre->duree > 0)
+        (monstre->duree)--;
 
     if(monstre->action == MONSTRE_MARCHER || monstre->action == MONSTRE_EN_GARDE){
         //si le monstre détecte le joueur
-        if(distance_joueur(monstre->collision) < DISTANCE_AGRO){
+        if(distance_joueur(monstre->collision, joueur) < DISTANCE_AGRO){
             monstre->action = RUSH_OU_FUITE;
             monstre->duree = DUREE_RUSH_OU_FUITE;
         }
@@ -247,17 +263,31 @@ void action_monstre(monstre_t * monstre){
             ronde_monstre(monstre);
     }
     else
-        agro_monstre(monstre);
+        agro_monstre(monstre, joueur);
     
-    if(monstre->action == MONSTRE_MARCHER || monstre->action == RUSH_OU_FUITE)
+    if(compteur%2 == 0 && (monstre->action == MONSTRE_MARCHER || monstre->action == RUSH_OU_FUITE) ){
+
         switch(monstre->orientation){
-            case(NORD): (monstre->collision.y) += 3*(map->unite_dep_y); break;
-            case(EST): (monstre->collision.x) += 3*(map->unite_dep_x); break;
-            case(SUD): (monstre->collision.y) += 3*(map->unite_dep_y); break;
-            case(OUEST): (monstre->collision.x) += 3*(map->unite_dep_x); break;
+            case(NORD): (monstre->collision.y)--; break;
+            case(EST): (monstre->collision.x)++; break;
+            case(SUD): (monstre->collision.y)++; break;
+            case(OUEST): (monstre->collision.x)--; break;
             default: break;
         }
+        if(hors_map_monstre(monstre)){
+            switch(monstre->orientation){
+                case(NORD): (monstre->collision.y)++; break;
+                case(EST): (monstre->collision.x)--; break;
+                case(SUD): (monstre->collision.y)--; break;
+                case(OUEST): (monstre->collision.x)++; break;
+                default: break;
+            }
+            monstre->duree = 1;
+        }
+    }
 }
+
+
 
 void charger_base_monstre(char * chemin_fichier){
 

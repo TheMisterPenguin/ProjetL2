@@ -14,8 +14,8 @@
 #include "affichage.h"
 
 #define DISTANCE_AGRO 500
-#define DUREE_MONSTRE_MARCHER 150
-#define DUREE_MONSTRE_EN_GARDE 300
+#define DUREE_MONSTRE_MARCHER 100
+#define DUREE_MONSTRE_EN_GARDE 140
 #define DUREE_RUSH_OU_FUITE 150
 #define DUREE_MONSTRE_ATTAQUE 100
 
@@ -131,8 +131,9 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_mo
  * \fn void action_monstre(monstre_t * monstre)
  * \brief Fonction qui met à jour le sprite d'un monstre
  * \param monstre le monstre à mettre à jour
+ * \param joueur le joueur qui provoque l'action du monstre
  */
-void action_monstre(monstre_t * monstre);
+void action_monstre(monstre_t * monstre, joueur_t * joueur);
 
 /**
  * \fn type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre)

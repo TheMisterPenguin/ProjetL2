@@ -361,8 +361,9 @@ extern int current_frame_y(t_aff * texture);
 * \fn extern void afficher_monstres(list * liste_monstre);
  * \brief Fonction qui affiche les monstres
  * \param liste_monstre une liste de monstre
+ * \param joueur le joueur qui influe sur le monstre
  */
-extern void afficher_monstres(list * liste_monstre);
+extern void afficher_monstres(list * liste_monstre, joueur_t * joueur);
 
 
 /**
