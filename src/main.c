@@ -66,11 +66,15 @@ int main(int argc, char** argv)
     int i;
     char *fichier_map = NULL;
     t_aff *text = NULL;
-    t_aff *next_texture_joueur = NULL;
-    t_aff *texture_temp = NULL;
+    t_aff *next_texture_joueur1 = NULL;
+    t_aff *next_texture_joueur2 = NULL;
+    t_aff *texture_temp1 = NULL;
+    t_aff *texture_temp2 = NULL;
+    SDL_Rect temp = {0};
     float temps_passe;
     joueur_t * joueurs[2] = {NULL}; //liste des joueurs pour amélioration: mode 2 joueurs
-    joueur_t * perso_principal = NULL;
+    joueur_t * joueur1 = NULL;
+    joueur_t * joueur2 = NULL;
 
     /* On initialise le programme */
     SDL_SetMainReady();
@@ -88,26 +92,34 @@ int main(int argc, char** argv)
     heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
 
     /* On créer le joueur */
-    joueurs[0] = new_joueur("test");
-    perso_principal = joueurs[0];
-    perso_principal->pdv = 5;
-    next_texture_joueur = perso_principal->textures_joueur->liste[TEXT_MARCHER];
+    joueurs[0] = new_joueur("joueur1");
+    joueurs[1] = new_joueur("joueur2");
+    joueur1 = joueurs[0];
+    joueur2 = joueurs[1];
+    joueur1->pdv = 5;
+
+    next_texture_joueur1 = joueur1->textures_joueur->liste[TEXT_MARCHER];
+    next_texture_joueur2 = joueur2->textures_joueur->liste[TEXT_MARCHER];
 
     objets = creer_liste_objet();
     creer_textures_objets(objets);
-    tout_ramasser(objets, perso_principal->inventaire);
+    tout_ramasser(objets, joueur1->inventaire);
 
     /*test de l'allocation des textures*/
-    for (i = 0; i < perso_principal->textures_joueur->nb_valeurs; i++)
-        if (perso_principal->textures_joueur->liste == NULL)
+    for (i = 0; i < joueur1->textures_joueur->nb_valeurs; i++)
+        if (joueur1->textures_joueur->liste == NULL)
+            fermer_programme(EXIT_FAILURE);
+
+    for (i = 0; i < joueur2->textures_joueur->nb_valeurs; i++)
+        if (joueur2->textures_joueur->liste == NULL)
             fermer_programme(EXIT_FAILURE);
 
     /* On verifie si le répertoire de sauvegarde existe */
     check_repertoire_jeux();
 
-    rect_centre(&(perso_principal->statut->zone_colision));
+    rect_centre(&(joueur1->statut->zone_colision));
 
-    init_sousbuffer(map, perso_principal);
+    init_sousbuffer(map, joueur1);
 
     SDL_RenderClear(rendu_principal);
 
@@ -123,27 +135,49 @@ int main(int argc, char** argv)
         debut = SDL_GetPerformanceCounter();
         jeu_event(joueurs);
         // en_tete(buffer_affichage);
-        if (perso_principal->statut->en_mouvement){ /* Déplacement map */
-            switch (perso_principal->statut->orientation)
+        if (joueur1->statut->en_mouvement){ /* Déplacement map */
+            switch (joueur1->statut->orientation)
             {
             case NORD:
-                deplacement_y_pers(map, perso_principal, -3);
+                deplacement_y_pers(map, joueur1, -3);
                 break;
             case SUD:
-                deplacement_y_pers(map, perso_principal, 3);
+                deplacement_y_pers(map, joueur1, 3);
                 break;
             case OUEST:
-                deplacement_x_pers(map, perso_principal, -3);
+                deplacement_x_pers(map, joueur1, -3);
                 break;
             case EST:
-                deplacement_x_pers(map, perso_principal, 3);
+                deplacement_x_pers(map, joueur1, 3);
                 break;
             }
         }
 
-        texture_temp = next_frame_joueur(perso_principal);
-        if (texture_temp)
-            next_texture_joueur = texture_temp;
+        if (joueur2->statut->en_mouvement){ /* Déplacement map */
+            switch (joueur2->statut->orientation)
+            {
+            case NORD:
+                deplacement_y_pers(map, joueur2, -3);
+                break;
+            case SUD:
+                deplacement_y_pers(map, joueur2, 3);
+                break;
+            case OUEST:
+                deplacement_x_pers(map, joueur2, -3);
+                break;
+            case EST:
+                deplacement_x_pers(map, joueur2, 3);
+                break;
+            }
+        }
+
+        texture_temp1 = next_frame_joueur(joueur1);
+        if (texture_temp1)
+            next_texture_joueur1 = texture_temp1;
+        
+        texture_temp2 = next_frame_joueur(joueur2);
+        if (texture_temp2)
+            next_texture_joueur2 = texture_temp2;
 
         SDL_SetRenderTarget(rendu_principal, map->text_map->texture);
         SDL_RenderClear(rendu_principal);
@@ -177,14 +211,21 @@ int main(int argc, char** argv)
                 SDL_RenderDrawRect(rendu_principal, &(perso_principal->statut->zone_colision));
                 SDL_RenderDrawRect(rendu_principal, &ty);
                 SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
+
         #endif
 
-        /* On affiche le joueur */
-        afficher_texture(next_texture_joueur, rendu_principal);
+        /* On affiche le joueur1 */
+        afficher_texture(next_texture_joueur1, rendu_principal);
+
+        /* On affiche le joueur2 */
+        afficher_texture(next_texture_joueur2, rendu_principal);
 
         /* On affiche l'interface */
-        RenderHPBar(FENETRE_LONGUEUR / 20, FENETRE_LARGEUR / 20, FENETRE_LONGUEUR / 4, FENETRE_LARGEUR / 25,
-                    ((float)perso_principal->pdv / perso_principal->maxPdv), color(195, 0, 0, 0.9), color(125, 125, 125, 1));
+        RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
+            ((float)joueur1->pdv/joueur1->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
+        
+        RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20 + FENETRE_LARGEUR/25 + 20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
+            ((float)joueur2->pdv/joueur2->maxPdv), color(0, 153, 51,0.9), color(125, 125, 125, 1));
 
         SDL_RenderPresent(rendu_principal);
 
