@@ -65,6 +65,7 @@ typedef struct s_aff
     int height; /**< Hauteur de la texture */
     float multipli_taille; /**<Sauvegarde du multiplicateur de taille de la texture*/
     unsigned int duree_frame_anim; /**<Durée d'une frame*/
+    unsigned int compteur_frame_anim; 
 } t_aff;
 
 /**

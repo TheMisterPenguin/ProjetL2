@@ -278,12 +278,20 @@ void afficher_textures_equipe( inventaire_t * const inventaire )
         objet = inventaire->equipe->liste[type_obj];
         if(objet != NULL){
             switch(type_obj){
-                case quete: placer_texture(objet->texture, 329, 138); break;
-                case arme: placer_texture(objet->texture, 312, 205); break;
-                case bouclier: placer_texture(objet->texture, 550, 205); break;
-                case protection: placer_texture(objet->texture, 433, 165); break;
-                case amulette: placer_texture(objet->texture, 433, 63); break;
-                case consommable: placer_texture(objet->texture, 534, 137); break;
+                case quete:
+                    deplacer_rect_origine(objet->texture->aff_fenetre, floor(696 * multiplicateur_x), floor(292 * multiplicateur_y));
+                    break;
+                case arme:
+                    deplacer_rect_origine(objet->texture->aff_fenetre, floor(662 * multiplicateur_x), floor(435 * multiplicateur_y));
+                    break;
+                case bouclier:
+                    deplacer_rect_origine(objet->texture->aff_fenetre, floor(1163 * multiplicateur_x), floor(432 * multiplicateur_y));
+                    break;
+                case protection:
+                    deplacer_rect_origine(objet->texture->aff_fenetre, floor(916 * multiplicateur_x), floor(350 * multiplicateur_y));
+                    break;
+                case consommable: deplacer_rect_origine(objet->texture->aff_fenetre, floor(1126 * multiplicateur_x), floor(293 * multiplicateur_y)); break;
+                case amulette: deplacer_rect_origine(objet->texture->aff_fenetre, floor(913 * multiplicateur_x), floor(134 * multiplicateur_y)); break;
             }
             afficher_texture(objet->texture, rendu_principal);
         }
@@ -294,6 +302,6 @@ void creer_textures_objets(lobjet_t * liste_obj){
     int i;
 
     for(i=0; i<liste_obj->nb; i++){
-        liste_obj->liste[i]->texture = creer_texture(liste_obj->liste[i]->texture_src, 46, 48, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 0.8);
+        liste_obj->liste[i]->texture = creer_texture(liste_obj->liste[i]->texture_src, 46, 48, 0, 0, ((FENETRE_LONGUEUR * 0.022f) / 16 * 0.8) * multiplicateur_y);
     }
 }

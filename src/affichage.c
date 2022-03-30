@@ -456,8 +456,8 @@ void deplacer_texture_centre(t_aff *texture, int x, int y){
 
 void deplacer_rect_origine(SDL_Rect *r, int x, int y){
 
-    r->x += x;
-    r->y += y;
+    r->x = x;
+    r->y = y;
 }
 
 void deplacer_texture_origine(t_aff *texture, int x, int y){
@@ -674,5 +674,64 @@ void boucle_sprite(t_aff * texture, joueur_t ** joueurs){
 void anim_effet_joueur(t_aff * effet, int num_joueur, joueur_t ** joueurs){
     text_copier_position(effet, *(joueurs[num_joueur]->textures_joueur->liste)); //amélioration: centrer pour toutes les tailles
 
-    boucle_sprite(effet, joueurs);
+    boucle_sprite(effet, joueur);
+}
+
+void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map){
+    const double multipli_x = (double) map->text_map->frame_anim->w / FENETRE_LONGUEUR;
+    const double multipli_y = (double)map->text_map->frame_anim->h / FENETRE_LARGEUR;
+}
+
+void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
+{
+    if (r){
+        if (r->x + x < 0) /* Le personnage ne peut pas aller en haut */
+            return;
+        if (r->x + r->w + x > m->text_map->width) /* Le personnage ne peut pas aller en bas */
+            return;
+        if (texture->compteur_frame_anim % texture->duree_frame_anim)
+            r->y += x;
+    }
+    else
+    {
+        if (texture->aff_fenetre->x + x < 0) /* Le personnage ne peut pas aller en haut */
+            return;
+        if (texture->aff_fenetre->x + texture->aff_fenetre->w + x > m->text_map->width) /* Le personnage ne peut pas aller en bas */
+            return;
+        if (texture->compteur_frame_anim % texture->duree_frame_anim)
+            r->x += x;
+    }
+
+    if (texture->compteur_frame_anim == NB_FPS)
+        (texture->compteur_frame_anim) == 0;
+    else
+        (texture->compteur_frame_anim)++;
+}
+
+void deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
+{
+    if(r){
+        if(r->y + y  < 0) /* Le personnage ne peut pas aller en haut */
+            return;
+        if (r->y + r->h + y  > m->text_map->height) /* Le personnage ne peut pas aller en bas */
+            return;
+        if(texture->compteur_frame_anim % texture->duree_frame_anim)
+            r->y += y;
+    }
+    else{
+        if (texture->aff_fenetre->y + y < 0) /* Le personnage ne peut pas aller en haut */
+            return;
+        if (texture->aff_fenetre->y + texture->aff_fenetre->h + y > m->text_map->height) /* Le personnage ne peut pas aller en bas */
+            return;
+        if (texture->compteur_frame_anim % texture->duree_frame_anim)
+            r->y += y;
+    }
+
+
+    if(texture->compteur_frame_anim == NB_FPS)
+        (texture->compteur_frame_anim) == 0;
+    else
+        (texture->compteur_frame_anim)++;
+    
+
 }

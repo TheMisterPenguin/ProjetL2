@@ -77,6 +77,13 @@ t_map * charger_s_map(char * buffer){
     json_object *x;
     json_object *y;
 
+    json_object *json_wall = NULL;
+    json_object *json_object_wall = NULL;
+    json_object *json_wall_x = NULL;
+    json_object *json_wall_y = NULL;
+    json_object *json_wall_h = NULL;
+    json_object *json_wall_w = NULL;
+
     SDL_Rect s = taille_ecran_cases();
 
     fichier = json_tokener_parse(buffer);
@@ -108,6 +115,29 @@ t_map * charger_s_map(char * buffer){
         json_object_get_int(x);
         /* Fonction qui permet de creer un monstre */
     }
+
+    json_object_object_get_ex(fichier, "wall", &json_wall);
+
+    m->liste_collisions = init_liste(NULL,NULL,NULL);
+    for(unsigned int i = 0; i < json_object_array_length(json_wall); i++){
+        json_object_wall = json_object_array_get_idx(json_wall, i);
+
+        json_object_object_get_ex(json_object_wall, "x", &json_wall_x);
+        json_object_object_get_ex(json_object_wall, "y", &json_wall_y);
+        json_object_object_get_ex(json_object_wall, "h", &json_wall_h);
+        json_object_object_get_ex(json_object_wall, "w", &json_wall_w);
+
+        SDL_Rect *valeur = malloc(sizeof(SDL_Rect));
+
+
+        valeur->x = json_object_get_int(json_wall_x) * m->taille_case;
+        valeur->y = json_object_get_int(json_wall_y) * m->taille_case;
+        valeur->h = json_object_get_int(json_wall_h) * m->taille_case;
+        valeur->w = json_object_get_int(json_wall_w) * m->taille_case;
+
+        ajout_droit(m->liste_collisions, valeur);
+    }
+
 
     m->unite_dep_x = floor(FENETRE_LONGUEUR / (float)m->text_sol->width); /* Calcul en nombre de pixels d'une unité de déplacement */
     m->unite_dep_y = floor(FENETRE_LARGEUR / (float)m->text_sol->height); /* Calcul en nombre de pixels d'une unité de déplacement */
