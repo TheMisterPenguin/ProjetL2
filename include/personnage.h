@@ -31,6 +31,8 @@ typedef struct statut_s {
 	int duree; /**<duree de l'action à réaliser*/
 	action_t action; /**<l'action du personnage*/
 	SDL_Rect zone_colision; /**<zone de colision du personnage*/
+	SDL_Rect vrai_zone_collision;
+	int x,y;
 }statut_t;
 
 /**

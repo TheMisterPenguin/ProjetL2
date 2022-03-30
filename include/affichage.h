@@ -352,4 +352,6 @@ void boucle_sprite(t_aff * texture, joueur_t * joueur);
  * \param joueur Joueur sur lequel afficher l'animation
  */
 void anim_effet_joueur(t_aff * effet, joueur_t * joueur);
+
+void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y);
 #endif

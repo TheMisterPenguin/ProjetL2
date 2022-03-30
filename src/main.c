@@ -105,8 +105,6 @@ int main(int argc, char** argv)
     /* On verifie si le répertoire de sauvegarde existe */
     check_repertoire_jeux();
 
-    rect_centre(&(perso_principal->statut->zone_colision));
-
     init_sousbuffer(map, perso_principal);
 
     SDL_RenderClear(rendu_principal);
@@ -127,16 +125,16 @@ int main(int argc, char** argv)
             switch (perso_principal->statut->orientation)
             {
             case NORD:
-                deplacement_y_pers(map, perso_principal, -3);
+                deplacement_y_pers(map, perso_principal, -1);
                 break;
             case SUD:
-                deplacement_y_pers(map, perso_principal, 3);
+                deplacement_y_pers(map, perso_principal, 1);
                 break;
             case OUEST:
-                deplacement_x_pers(map, perso_principal, -3);
+                deplacement_x_pers(map, perso_principal, -1);
                 break;
             case EST:
-                deplacement_x_pers(map, perso_principal, 3);
+                deplacement_x_pers(map, perso_principal, 1);
                 break;
             }
         }
@@ -155,6 +153,7 @@ int main(int argc, char** argv)
 
         #ifdef __DEBUG__
                 SDL_SetRenderDrawColor(rendu_principal, 0, 255, 0, SDL_ALPHA_OPAQUE);
+                SDL_RenderDrawRect(rendu_principal, &perso_principal->statut->vrai_zone_collision);
                 en_tete(map->liste_collisions);
 
                 while(!hors_liste(map->liste_collisions)){

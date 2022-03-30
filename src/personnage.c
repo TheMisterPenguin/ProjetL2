@@ -355,6 +355,17 @@ joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const in
 	perso->statut->bouclier_equipe = bouclier_equipe;
 	perso->statut->action = RIEN;
 
+	perso->statut->vrai_zone_collision.x = 0;
+	perso->statut->vrai_zone_collision.y = 0;
+	perso->statut->vrai_zone_collision.w = map->taille_case;
+	perso->statut->vrai_zone_collision.h = map->taille_case;
+	perso->statut->x = 0;
+	perso->statut->y = 0;
+
+
+	perso->statut->zone_colision.x = 0;
+	perso->statut->zone_colision.y = 0;
+
 	perso->textures_joueur = init_textures_joueur(perso);
 
     perso->inventaire = creer_inventaire();
