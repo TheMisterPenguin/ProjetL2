@@ -18,11 +18,12 @@
 #define DUREE_MONSTRE_EN_GARDE 140
 #define DUREE_RUSH_OU_FUITE 150
 #define DUREE_MONSTRE_ATTAQUE 100
+#define DUREE_MONSTRE_BLESSE 30
 
 #define CHEMIN_TEXTURE "ressources/sprite"
 
 typedef enum {WITCHER,KNIGHT,BOSS}type_monstre_t;
-typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE}action_monstre_t;
+typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE, MONSTRE_BLESSE}action_monstre_t;
 
 /**
  * \struct struct position

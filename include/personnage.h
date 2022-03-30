@@ -65,6 +65,7 @@ typedef struct joueur_s {
 #define DUREE_ATTAQUE 6
 #define DUREE_ATTAQUE_CHARGEE 10
 #define DUREE_BLOQUER 3
+#define DUREE_JOUEUR_BLESSE 4
 
 #define TAILLE_PERSONNAGE 16 /*La taille du personnage en pixels*/
 

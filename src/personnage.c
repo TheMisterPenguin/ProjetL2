@@ -419,12 +419,21 @@ void environnement_joueur(list * liste_monstre, list * liste_sort, joueur_t * jo
 		monstre = valeur_elt(liste_monstre);
 		//entite_en_collision renvoi un booleen ainsi qu'une orientation en paramètre
 		if(entite_en_collision(monstre->collision, joueur->statut->zone_colision, &orientation)){
-			(joueur->pdv) -= monstre->attaque;
-			if(joueur->pdv <= 0)
-				game_over = TRUE;
+			/* si le coup est bloqué */
+			if(joueur->statut->action == BLOQUER){
+				monstre->orientation = joueur->statut->orientation;
+				monstre->action = MONSTRE_BLESSE;
+				monstre->duree = DUREE_MONSTRE_BLESSE;
+			}
 			else{
-				joueur->statut->action = J_BLESSE;
-				joueur->statut->orientation = orientation;
+				(joueur->pdv) -= monstre->attaque;
+				if(joueur->pdv <= 0)
+					game_over = TRUE;
+				else{
+					joueur->statut->orientation = orientation;
+					joueur->statut->action = J_BLESSE;
+					joueur->statut->duree = DUREE_JOUEUR_BLESSE;
+				}
 			}
 		}
 		/* si un monstre est touché */
@@ -445,13 +454,13 @@ void environnement_joueur(list * liste_monstre, list * liste_sort, joueur_t * jo
 				
 			}
 		}
-		if(joueur->statut->action == BLOQUER){
-
-		}
-
 		suivant(liste_monstre);
 	}
-	if(joueur->statut->action == BLOQUER)
+
+
+	while(!hors_liste(liste_sort)){
+
+	}
 
 
 }
