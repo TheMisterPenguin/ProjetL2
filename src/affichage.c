@@ -536,10 +536,14 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
     //const long int taille_unite = floor(FENETRE_LONGUEUR / (float)m->text_map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
     const long int taille_unite = floor(3 * multiplicateur_x); /* Calcul en nombre de pixels d'une unité de déplacement */
 
+    j->statut->vrai_zone_collision.x = floor(j->statut->x / ) * map->taille_case;
+
+
     if(*x_pers  + x * taille_unite < 0)
         return;
     if(*x_pers + j->statut->zone_colision.w + x * taille_unite > FENETRE_LONGUEUR)
         return;
+    j->statut->x += x;
     if (*x_map + x < 0) { /* La map ne peut pas plus aller à gauche */
             *x_pers += x * taille_unite; /* On déplace le personnage de x unités */
             return;
@@ -561,23 +565,25 @@ void deplacement_y_pers(t_map *m, joueur_t *j, int y){
     int *y_map = &(m->text_map->frame_anim->y);                                        /* La coordonnée y actuelle de la map */
     int *y_pers = &(j->statut->zone_colision.y);                                       /* La coordonnée y actuelle du joueur */
     const long int taille_unite = floor(3 * multiplicateur_y); /* Calcul en nombre de pixels d'une unité de déplacement */
+    const double taille_pixel = FENETRE_LARGEUR / m->text_map->frame_anim->h;
 
-    if (*y_pers + y * taille_unite < 0) /* Le personnage ne peut pas aller en haut */
+    if (*y_pers + floor(y * taille_pixel) < 0) /* Le personnage ne peut pas aller en haut */
         return;
-    if (*y_pers + j->statut->zone_colision.h + y * taille_unite > FENETRE_LARGEUR) /* Le personnage ne peut pas aller en bas */
+    if (*y_pers + j->statut->zone_colision.h + floor(y * taille_pixel) > FENETRE_LARGEUR) /* Le personnage ne peut pas aller en bas */
         return;
+    j->statut->y += y;
     if (*y_map + y < 0){ /* La map ne peut pas plus aller en haut */
-        *y_pers += y * taille_unite; /* On déplace le personnage de x unités */
+        *y_pers += floor(y * taille_pixel); /* On déplace le personnage de x unités */
         return;
     }
     if (*y_map + y > (m->text_map->height - m->text_map->frame_anim->h)){ /* L'écran est en bordure de map bas*/
-        *y_pers += y * taille_unite;
+        *y_pers += floor(y * taille_pixel);
         return;
     }
     if (rects_egal_y(&(j->statut->zone_colision), &ty)) /*On se trouve dans l'intervalle normal */
-        *y_map += y;                                    /* On déplace la map en fond */
+        *y_map += floor(y * taille_pixel);                                    /* On déplace la map en fond */
     else
-        *y_pers += y * taille_unite;
+        *y_pers += floor(y * taille_pixel);
 }
 
 void text_copier_position(t_aff * a_modifier, const t_aff * const original){
@@ -673,9 +679,15 @@ void anim_effet_joueur(t_aff * effet, joueur_t * joueur){
     boucle_sprite(effet, joueur);
 }
 
-void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map){
+void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y){
     const double multipli_x = (double) map->text_map->frame_anim->w / FENETRE_LONGUEUR;
     const double multipli_y = (double)map->text_map->frame_anim->h / FENETRE_LARGEUR;
+
+    r_map->h = floor(ecran->h * multipli_y);
+    r_map->w = floor(ecran->w * multipli_x);
+
+    r_map->x = floor((ecran->x + x) * multipli_x);
+    r_map->y = floor((ecran->y + y) * multipli_y);
 }
 
 void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
