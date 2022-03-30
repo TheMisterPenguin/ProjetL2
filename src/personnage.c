@@ -305,7 +305,8 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 		json_object_get_int(vitesse),
 		trigger_tab,
 		json_object_get_int(orientation),
-		json_object_get_boolean(bouclier_equipe)
+		json_object_get_boolean(bouclier_equipe),
+        0
 	);
 	free(trigger_tab);
 
@@ -317,10 +318,10 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 	return j;
 }
 
-joueur_t *new_joueur(const char* nom){
+joueur_t *new_joueur(const char* nom, int num_j){
 	byte *trig = calloc(TAILLE_TRIGGER, sizeof(byte));
 
-	joueur_t *j = creer_joueur(nom, 0, 0, 10, 10, 10, 10, 1, trig, NORD, faux);
+	joueur_t *j = creer_joueur(nom, 0, 0, 10, 10, 10, 10, 1, trig, NORD, faux, num_j);
 	free(trig);
 
 	j->statut->zone_colision.x = 0;
@@ -329,9 +330,8 @@ joueur_t *new_joueur(const char* nom){
 	return j;
 }
 
-joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction orientation, const bool bouclier_equipe)
+joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction orientation, const bool bouclier_equipe, const int num_j)
 {
-
 	joueur_t * perso = malloc(sizeof(joueur_t));
 	perso->nom_pers = malloc(sizeof(char) * (strlen(nom) + 1));
 	
@@ -350,12 +350,14 @@ joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const in
 	copy(trig, perso->trigger, TAILLE_TRIGGER);
 	perso->statut = malloc(sizeof(statut_t));
 	perso->statut->duree = 0;
+    perso->statut->duree_anim = 0;
 	perso->statut->en_mouvement = faux;
 	perso->statut->orientation = orientation;
 	perso->statut->bouclier_equipe = bouclier_equipe;
 	perso->statut->action = RIEN;
+	perso->statut->action = RIEN;
 
-	perso->textures_joueur = init_textures_joueur(perso);
+	perso->textures_joueur = init_textures_joueur(perso, num_j);
 
     perso->inventaire = creer_inventaire();
 

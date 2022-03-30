@@ -75,6 +75,7 @@ int main(int argc, char** argv)
     joueur_t * joueurs[2] = {NULL}; //liste des joueurs pour amélioration: mode 2 joueurs
     joueur_t * joueur1 = NULL;
     joueur_t * joueur2 = NULL;
+    list * animations = init_liste(NULL, NULL, (void (*)(void *))info_texture);
 
     /* On initialise le programme */
     SDL_SetMainReady();
@@ -88,15 +89,15 @@ int main(int argc, char** argv)
     map = charger_s_map(fichier_map);
     text = texture_map(map); 
 
-    //TEMPORAIREMENT ICI -- test animation heal (équiper consommable puis touche e) -- TEMPORAIREMENT ICI
-    heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
-
     /* On créer le joueur */
-    joueurs[0] = new_joueur("joueur1");
-    joueurs[1] = new_joueur("joueur2");
+    joueurs[0] = new_joueur("joueur1", 0);
+    joueurs[1] = new_joueur("joueur2", 1);
     joueur1 = joueurs[0];
     joueur2 = joueurs[1];
     joueur1->pdv = 5;
+
+    /* On créer les animations */
+    init_animations();
 
     next_texture_joueur1 = joueur1->textures_joueur->liste[TEXT_MARCHER];
     next_texture_joueur2 = joueur2->textures_joueur->liste[TEXT_MARCHER];
@@ -104,6 +105,7 @@ int main(int argc, char** argv)
     objets = creer_liste_objet();
     creer_textures_objets(objets);
     tout_ramasser(objets, joueur1->inventaire);
+    tout_ramasser(objets, joueur2->inventaire);
 
     /*test de l'allocation des textures*/
     for (i = 0; i < joueur1->textures_joueur->nb_valeurs; i++)
@@ -219,6 +221,11 @@ int main(int argc, char** argv)
 
         /* On affiche le joueur2 */
         afficher_texture(next_texture_joueur2, rendu_principal);
+
+        // Afficher les animations eventuelles
+        lister_animations(joueurs, animations);
+        afficher_animations(animations);
+        vider_liste(animations);
 
         /* On affiche l'interface */
         RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
