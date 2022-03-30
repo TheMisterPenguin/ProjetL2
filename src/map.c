@@ -76,7 +76,7 @@ t_map * charger_s_map(char * buffer){
 
     fichier = json_tokener_parse(buffer);
     m = malloc(sizeof(t_map));
-    m->liste_monstres =  init_liste(NULL,detruire_monstre,NULL);
+    m->liste_monstres =  init_liste(ajout_monstre,detruire_monstre,NULL);
 
     json_object_object_get_ex(fichier, "file-path", &texture_map);
     json_object_object_get_ex(fichier, "width", &width);
@@ -99,16 +99,20 @@ t_map * charger_s_map(char * buffer){
 
         x = json_object_array_get_idx(position,0);
         y = json_object_array_get_idx(position,1);
-
+        printf("map\n");
         inserer = creer_monstre(liste_base_monstres, json_object_get_string(nom_monstre), json_object_get_int(x), json_object_get_int(y));
+        if(m->liste_monstres == NULL)
+            printf("NULL\n");
         ajout_droit(m->liste_monstres, inserer);
+        printf("map\n");
     }
 
     m->unite_dep_x = floor(FENETRE_LONGUEUR / (float)m->text_sol->width); /* Calcul en nombre de pixels d'une unité de déplacement */
     m->unite_dep_y = floor(FENETRE_LARGEUR / (float)m->text_sol->height); /* Calcul en nombre de pixels d'une unité de déplacement */
-
+    printf("map\n");
     free(buffer);
     json_object_put(fichier); //libération mémoire de l'objet json
+    printf("map\n");
     return m;
 }
 
