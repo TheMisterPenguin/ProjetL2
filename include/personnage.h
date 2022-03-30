@@ -17,7 +17,7 @@
 
 typedef struct s_l_aff t_l_aff;
 
-typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER}action_t; /**<l'action qu'est en train de faire le personnage*/
+typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER,J_BLESSE}action_t; /**<l'action qu'est en train de faire le personnage*/
 /**
  * \struct struct statut_s
  * \brief Structure contenant les éléments nécéssaires au choix de l'affichage des sprites du personnage
