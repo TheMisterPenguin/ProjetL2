@@ -24,7 +24,7 @@ int main(){
     printf("----- initialisation SDL -----\n\n");
     init();
     printf("----- création personnage -----\n\n");
-    perso_principal = new_joueur("test");
+    perso_principal = new_joueur("test", 0);
     perso_principal->niveau = 5;
     printf("----- création liste d'objets -----\n\n");
     objets = creer_liste_objet();

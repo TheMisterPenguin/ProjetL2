@@ -18,7 +18,7 @@ int main(){
 
     init();
 
-    perso_principal = new_joueur("test");
+    perso_principal = new_joueur("test", 0);
 
     objets = creer_liste_objet();
     creer_textures_objets(objets);

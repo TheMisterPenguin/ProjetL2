@@ -20,10 +20,11 @@ OBJ_TEST_PERSONNAGE = $(addsuffix .o, $(addprefix $(ODIR), test_personnage perso
 OBJ_TEST_AFFICHAGE = $(addsuffix .o, $(addprefix $(ODIR), test_affichage affichage listes init_close personnage personnage inventaire liste_objet objet map interface))
 OBJ_TEST_LISTES = $(addsuffix .o, $(addprefix $(ODIR), test_listes listes affichage personnage init_close inventaire liste_objet objet interface map))
 
-
 default : $(BINDIR)jeux$(EXT) # Génération par défault
 
 all : makedir $(GEN) # Génération de tout les fichiers
+
+test : makedir $(TEST) # Génération des tests
 
 #programme principal
 
@@ -37,25 +38,25 @@ $(ODIR)%.o : $(SRC)%.c
 
 # Génération des tests
 
-$(BINDIR)test_map.bin : $(OBJ_TEST_MAP)
+$(BINDIR)test_map$(EXT) : $(OBJ_TEST_MAP)
 	$(CC) $^ -o $@  $(JSON-LIB-PATH) $(LDFLAGS)
 
-$(BINDIR)test_monstres.bin : $(OBJ_TEST_MONSTRES)
+$(BINDIR)test_monstres$(EXT) : $(OBJ_TEST_MONSTRES)
 	$(CC) $^ -o $@ $(LDFLAGS)
 
-$(BINDIR)test_liste_objet.bin : $(OBJ_TEST_LISTE_OBJET)
+$(BINDIR)test_liste_objet$(EXT) : $(OBJ_TEST_LISTE_OBJET)
 	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
 
-$(BINDIR)test_inventaire.bin : $(OBJ_TEST_INVENTAIRE)
+$(BINDIR)test_inventaire$(EXT) : $(OBJ_TEST_INVENTAIRE)
 	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
 
-$(BINDIR)test_personnage.bin : $(OBJ_TEST_PERSONNAGE)
+$(BINDIR)test_personnage$(EXT) : $(OBJ_TEST_PERSONNAGE)
 	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
 
-$(BINDIR)test_affichage.bin : $(OBJ_TEST_AFFICHAGE)
+$(BINDIR)test_affichage$(EXT) : $(OBJ_TEST_AFFICHAGE)
 	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
 
-$(BINDIR)test_listes.bin : $(OBJ_TEST_LISTES)
+$(BINDIR)test_listes$(EXT) : $(OBJ_TEST_LISTES)
 	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
 
 # Création de l'arboressence 
