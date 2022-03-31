@@ -168,7 +168,7 @@ void afficher_inventaire(joueur_t * joueur)
 
         SDL_RenderClear(rendu_principal);
 
-        afficher_texture(map->text_map, rendu_principal);
+        afficher_texture(fenetre_finale, rendu_principal);
         afficher_texture(text_pause, rendu_principal);
         afficher_textures_sac(joueur->inventaire);
         afficher_textures_equipe(joueur->inventaire);
