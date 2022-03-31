@@ -385,13 +385,6 @@ t_aff * next_frame_animation(joueur_t * joueur);
  */
 void lister_animations(joueur_t ** joueurs, list * animations);
 
-/**
- * \fn void afficher_animations(list * animations)
- * \brief Affiche les animations de la liste
- * \param animations Liste regroupant les animations
- */
-void anim_effet_joueur(t_aff * effet, joueur_t * joueur);
-
 void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y);
 void afficher_animations(list * animations);
 #endif

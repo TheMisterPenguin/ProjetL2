@@ -204,7 +204,7 @@ int main(int argc, char** argv)
 
         #ifdef __DEBUG__
                 SDL_SetRenderDrawColor(rendu_principal, 0, 255, 0, SDL_ALPHA_OPAQUE);
-                SDL_RenderDrawRect(rendu_principal, &perso_principal->statut->vrai_zone_collision);
+                SDL_RenderDrawRect(rendu_principal, &joueur1->statut->vrai_zone_collision);
                 en_tete(map->liste_collisions);
 
                 while(!hors_liste(map->liste_collisions)){
@@ -224,7 +224,7 @@ int main(int argc, char** argv)
         #ifdef __DEBUG__
                 SDL_SetRenderDrawColor(rendu_principal, 255, 0, 0, SDL_ALPHA_OPAQUE);
                 SDL_RenderDrawRect(rendu_principal, &tx);
-                SDL_RenderDrawRect(rendu_principal, &(perso_principal->statut->zone_colision));
+                SDL_RenderDrawRect(rendu_principal, &(joueur1->statut->zone_colision));
                 SDL_RenderDrawRect(rendu_principal, &ty);
                 SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
 
