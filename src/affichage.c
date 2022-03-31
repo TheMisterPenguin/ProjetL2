@@ -259,6 +259,11 @@ t_l_aff* init_textures_joueur(joueur_t *j, int num_j){
     j->statut->zone_colision.w = TAILLE_PERSONNAGE * textures_joueur->liste[TEXT_MARCHER]->multipli_taille;
     j->statut->zone_colision.h = TAILLE_PERSONNAGE * textures_joueur->liste[TEXT_MARCHER]->multipli_taille;
 
+    if(num_j == 0)
+        ajout_droit(map->liste_collisions, &j->statut->vrai_zone_collision);
+    else
+        ajout_droit(map->liste_collisions, &j->statut->zone_colision);
+
     return textures_joueur;
 }
 
@@ -771,7 +776,7 @@ void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
     {
         SDL_Rect *element = valeur_elt(m->liste_collisions);
 
-        if (element == r){ /* Si la collision nou concerne */
+        if (element == r){ /* Si la collision nouss concerne */
             suivant(m->liste_collisions);
             continue;
         }
