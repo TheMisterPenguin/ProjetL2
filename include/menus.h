@@ -29,9 +29,17 @@ extern menus_t menus;
 extern void afficher_menu_pause(joueur_t * joueur);
 
 /**
+ * \fn void afficher_menu_accueil(int * nb_joueur)
+ * \brief Affiche le menu d'acceuil et gère les interactions avec le joueur
+ * \param nb_joueur Le nombre de joueurs souhaitant commencer une partie
+ */
+extern void afficher_menu_accueil(int * nb_joueur);
+
+/**
  * \fn void afficher_inventaire(joueur_t * joueur)
  * \brief Affiche l'inventaire et gère les interactions avec l'utilisateur
  * \param joueur Joueur auquel appartient l'inventaire
+ * \param touche_inventaire Touche inventaire du joueur
  */
-extern void afficher_inventaire(joueur_t * joueur);
+extern void afficher_inventaire(joueur_t * joueur, SDL_KeyCode touche_inventaire);
 #endif

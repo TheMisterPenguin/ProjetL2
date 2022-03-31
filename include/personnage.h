@@ -15,9 +15,20 @@
 #include "definition_commun.h"
 #include "inventaire.h"
 
+#define DUREE_ATTAQUE_OU_CHARGEE 4
+#define DUREE_ATTAQUE 6
+#define DUREE_ATTAQUE_CHARGEE 10
+#define DUREE_BLOQUER 3
+
+#define DUREE_SOIN 25 //(nb sprites du spritesheet)
+
+#define TAILLE_PERSONNAGE 16 /*La taille du personnage en pixels*/
+
+#define TAILLE_TRIGGER 200
+
 typedef struct s_l_aff t_l_aff;
 
-typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER}action_t; /**<l'action qu'est en train de faire le personnage*/
+typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER, SOIN}action_t; /**<l'action qu'est en train de faire le personnage*/
 /**
  * \struct struct statut_s
  * \brief Structure contenant les éléments nécéssaires au choix de l'affichage des sprites du personnage
@@ -28,8 +39,10 @@ typedef struct statut_s {
 	bool en_mouvement; /**<personnage en mouvement*/
 	t_direction	orientation;/**<ordientation du personnage*/
 	bool bouclier_equipe; /**<personnage à un bouclier d'équipé*/
-	int duree; /**<duree de l'action à réaliser*/
+	int duree; /**<durée de l'action à réaliser*/
+    int duree_anim; /**<durée d'une animation éventuelle sur le joueur*/
 	action_t action; /**<l'action du personnage*/
+	action_t animation; /**<Animation sur le personnage*/
 	SDL_Rect zone_colision; /**<zone de colision du personnage*/
 	SDL_Rect vrai_zone_collision;
 	int x,y;
@@ -63,20 +76,10 @@ typedef struct joueur_s {
     inventaire_t * inventaire; /**<Inventaire du joueur*/
 }joueur_t;
 
-#define DUREE_ATTAQUE_OU_CHARGEE 4
-#define DUREE_ATTAQUE 6
-#define DUREE_ATTAQUE_CHARGEE 10
-#define DUREE_BLOQUER 3
-
-#define TAILLE_PERSONNAGE 16 /*La taille du personnage en pixels*/
-
 extern char save_path[500];
 
-#define TAILLE_TRIGGER 200
-
-	extern joueur_t *
-	creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction orientation, const bool bouclier_equipe);
-extern joueur_t *new_joueur(const char *nom);
+extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction orientation, const bool bouclier_equipe, const int num_j);
+extern joueur_t *new_joueur(const char* nom, int num_j);
 extern void detruire_joueur(joueur_t *j);
 extern joueur_t *charger_sauvegarde_joueur(char *nom_sauv);
 extern joueur_t * caracteristiques(joueur_t* perso);

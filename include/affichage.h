@@ -17,12 +17,6 @@
 #include "map.h"
 #include "personnage.h"
 
-typedef struct joueur_s joueur_t;
-
-/**
- * Type enum renseignant sur la texture personnage à utiliser
- */
-typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TEXT_MARCHER_BOUCLIER}t_texture_perso;
 
 #define NB_FPS 60 /**< Le nombre maximum de FPS */
 #define NB_SPRITE_JOUEUR 5 /**< Le nombre de sprites différents du joueur */
@@ -34,9 +28,22 @@ typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TE
 #define N_T_CHARGER "ressources/sprite/charger.bmp"
 #define N_T_MARCHER_BOUCLIER "ressources/sprite/marcher_bouclier.bmp"
 
+#define N_T_MARCHER2 "ressources/sprite/marcher_green.bmp"
+#define N_T_ATTAQUE2 "ressources/sprite/attaque_green.bmp"
+#define N_T_ATTAQUE_CHARGEE2 "ressources/sprite/attaque_chargee_green.bmp"
+#define N_T_CHARGER2 "ressources/sprite/charger_green.bmp"
+#define N_T_MARCHER_BOUCLIER2 "ressources/sprite/marcher_bouclier_green.bmp"
+
 /* On définit la taille d'une frame de sprite */
 #define LONGUEUR_PERSONNAGE 48
 #define LARGEUR_PERSONNAGE 48
+
+typedef struct joueur_s joueur_t;
+
+/**
+ * Type enum renseignant sur la texture personnage à utiliser
+ */
+typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TEXT_MARCHER_BOUCLIER}t_texture_perso;
 
 /**
  * \struct s_aff
@@ -248,12 +255,14 @@ void modif_affichage_rect(t_aff *texture, SDL_Rect r);
 void deplacement_x_pers(t_map *m, joueur_t *j, int x);
 
 /**
- * \fn t_l_aff* init_textures_joueur()
+ * \fn t_l_aff* init_textures_joueur(joueur_t *j, int num_j)
  * \brief Fonction qui creer et renvoie une liste de textures pour le personnage (joueur)
  * \author Antoine Bruneau
+ * \param j Le joueur dont on initialise les textures
+ * \param num_j Indice du joueur dans le tableau des joueurs
  * \return t_l_aff* Une liste de textures
  */
-extern t_l_aff *init_textures_joueur(joueur_t *j);
+extern t_l_aff* init_textures_joueur(joueur_t *j, int num_j);
 
 /**
  * \fn t_aff* init_texture_joueur(t_l_aff* textures_joueur, joueur_t * joueur)
@@ -338,20 +347,51 @@ void info_texture(t_aff * texture);
 void placer_texture(t_aff *texture, int x, int y);
 
 /**
- * \fn void boucle_sprite(t_aff * texture, joueur_t * joueur)
+ * \fn void boucle_sprite(t_aff * texture, joueur_t ** joueurs)
  * \brief Permet d'afficher tous les sprites d'un spritesheet successivement
  * \param texture Texture spritesheet
- * \param joueur Joueur sur lequel afficher l'animation
+ * \param joueurs Joueurs à afficher
  */
-void boucle_sprite(t_aff * texture, joueur_t * joueur);
+void boucle_sprite(t_aff * texture, joueur_t ** joueurs);
 
 /**
- * \fn void anim_effet_joueur(t_aff * effet, joueur_t * joueur)
+ * \fn void anim_effet_joueur(t_aff * effet, int num_joueur, joueur_t ** joueurs)
  * \brief Permet de créer une animation sur un joueur
  * \param texture Texture spritesheet d'animation
- * \param joueur Joueur sur lequel afficher l'animation
+ * \param num_joueur Numéro du joueur activant l'animation
+ * \param joueurs Joueurs en jeu
+ */
+void anim_effet_joueur(t_aff * effet, int num_joueur, joueur_t ** joueurs);
+
+/**
+ * \fn void init_animations(void)
+ * \brief Initialise les textures des animations
+ */
+void init_animations(void);
+
+/**
+ * \fn t_aff * next_frame_animation(joueur_t * joueur)
+ * \brief Fait évoluer les animations en jeu
+ * \param joueur Le joueur sur lequel placer l'animation
+ * \return La texture de l'animation
+ */
+t_aff * next_frame_animation(joueur_t * joueur);
+
+/**
+ * \fn void lister_animations(joueur_t ** joueurs, list * animations)
+ * \brief Liste les animations en jeu
+ * \param joueurs Les joueurs sur lesquels placer les animation
+ * \param animations Liste regroupant les animations trouvées
+ */
+void lister_animations(joueur_t ** joueurs, list * animations);
+
+/**
+ * \fn void afficher_animations(list * animations)
+ * \brief Affiche les animations de la liste
+ * \param animations Liste regroupant les animations
  */
 void anim_effet_joueur(t_aff * effet, joueur_t * joueur);
 
 void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y);
+void afficher_animations(list * animations);
 #endif
