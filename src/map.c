@@ -84,8 +84,6 @@ t_map * charger_s_map(char * buffer){
     json_object *json_wall_h = NULL;
     json_object *json_wall_w = NULL;
 
-    SDL_Rect s = taille_ecran_cases();
-
     fichier = json_tokener_parse(buffer);
     m = malloc(sizeof(t_map));
     m->liste_monstres =  init_liste(NULL,NULL,NULL);
