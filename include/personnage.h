@@ -78,11 +78,12 @@ extern char save_path[500];
 extern joueur_t *new_joueur(const char *nom);
 extern void detruire_joueur(joueur_t *j);
 extern joueur_t *charger_sauvegarde_joueur(char *nom_sauv);
-extern joueur_t * caracteristiques(joueur_t* perso);
+extern void caracteristiques(joueur_t* perso);
 extern void afficher_statistiques(joueur_t* perso);
-extern joueur_t * levelup(joueur_t* perso);
-extern joueur_t * gain_xp(joueur_t* perso);
+extern void levelup(joueur_t* perso);
+extern void gain_xp(joueur_t* perso);
 extern void creer_sauvegarde_json(joueur_t *j);
 void check_repertoire_jeux();
+void environnement_joueur(list * liste_monstre, list * liste_sort, joueur_t * joueur);
 
 #endif
