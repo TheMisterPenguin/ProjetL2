@@ -408,20 +408,28 @@ SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_directio
 
 	switch(orientation){
 		case NORD:
-			result->h = (sprite->h - hitbox->h) / 2;
-			
+			result->w = (sprite->w - hitbox->w) / 2 + hitbox->w;
+			result->h = sprite->h / 2;
+			result->x = hitbox->x;
+			result->y = sprite->y;
 			break;
 		case SUD:
-			
+			result->w = (sprite->w - hitbox->w) / 2 + hitbox->w;
+			result->h = sprite->h / 2;
+			result->x = sprite->x;
+			result->y = hitbox->y + hitbox->h / 2;
 			break;
 		case OUEST:
-			result->w = (sprite->w - hitbox->w) / 2;
+			result->w = sprite->w / 2 ;
 			result->h = (sprite->h - hitbox->h) / 2 + hitbox->h;
-			result->x = hitbox->x + hitbox->w;
+			result->x = sprite->x;
 			result->y = sprite->y;
 			break;
 		case EST: 
-			
+			result->w = sprite->w / 2 ;
+			result->h = (sprite->h - hitbox->h) / 2 + hitbox->h;
+			result->x = hitbox->x + hitbox->w / 2;
+			result->y = sprite->y;
 			break;
 	}
 	return result;
