@@ -118,7 +118,14 @@ void afficher_inventaire(joueur_t * joueur, SDL_KeyCode touche_inventaire)
 {
     int slot_selectionne = -1;
     int debut, fin; /* le temps pour calculer les performances */
-    t_aff *text_pause = creer_texture("ressources/background/menu/inventaire.bmp", -1, -1, 0, 0, 0);
+    t_aff *text_pause = NULL;
+
+    //affichage bonne couleur de l'inventaire selon le joueur
+    if(touche_inventaire == SDLK_TAB)
+        text_pause = creer_texture("ressources/background/menu/inventaire.bmp", -1, -1, 0, 0, 0);
+    else
+        text_pause = creer_texture("ressources/background/menu/inventaire_green.bmp", -1, -1, 0, 0, 0);
+
     if (!text_pause)
         return;
 
@@ -253,6 +260,94 @@ void afficher_inventaire(joueur_t * joueur, SDL_KeyCode touche_inventaire)
         SDL_Delay(floor((1000 / (float) NB_FPS) - temps_passe));
 
 
+        if(compteur == NB_FPS)
+            compteur = 0;
+        else
+            compteur++;
+    }
+}
+
+void afficher_menu_accueil(int * nb_joueur){
+
+    int debut, fin; /* le temps pour calculer les performances */
+
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Affichage du menu d'accueil");
+
+    t_aff * text_accueil = creer_texture("ressources/background/menu/Sprite_Menu_Accueil.bmp", -1, -1, 0, 0, 0);
+
+    if (!text_accueil){
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors du chargement du menu d'accueil");
+        return;
+    }
+
+    SDL_Rect boutton_sortie = {.h = floor(56 * multiplicateur_y), .w = floor(66 * multiplicateur_x)};
+
+    SDL_Rect boutton_quitter = {.h = floor(136 * multiplicateur_y), .w = floor(1064 * multiplicateur_x)};
+    SDL_Rect boutton_nouvelle_partie = {.h = floor(136 * multiplicateur_y), .w = floor(1064 * multiplicateur_x)};
+    SDL_Rect boutton_solo = {.h = floor(136 * multiplicateur_y), .w = floor(1064 * multiplicateur_x)};
+    SDL_Rect boutton_coop = {.h = floor(136 * multiplicateur_y), .w = floor(1064 * multiplicateur_x)};
+
+    deplacer_rect_haut_droit(&boutton_sortie, floor(-9 * multiplicateur_x), floor(7 * multiplicateur_y));
+
+    deplacer_rect_origine(&boutton_quitter, floor(427 * multiplicateur_x), floor(836 * multiplicateur_y));
+    deplacer_rect_origine(&boutton_nouvelle_partie, floor(427 * multiplicateur_x), floor(108 * multiplicateur_y));
+    deplacer_rect_origine(&boutton_coop, floor(427 * multiplicateur_x), floor(590 * multiplicateur_y));
+    deplacer_rect_origine(&boutton_solo, floor(427 * multiplicateur_x), floor(348 * multiplicateur_y));
+
+    while(1){
+        debut = SDL_GetPerformanceCounter();
+        SDL_RenderClear(rendu_principal);
+        afficher_texture(text_accueil, rendu_principal);
+
+        #ifdef __DEBUG__
+        SDL_RenderDrawRect(rendu_principal, &boutton_sortie);
+        #endif
+
+        SDL_RenderPresent(rendu_principal);
+        SDL_Event lastEvent; /* On récupère les événements */
+
+        SDL_Point coord_souris;
+        while (SDL_PollEvent(&lastEvent)){
+            switch (lastEvent.type)
+            {
+            case SDL_QUIT:
+
+                SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Détection de la fermeture de la fenêtre\n");
+                fermer_programme(EXIT_SUCCESS);
+            case SDL_KEYDOWN:
+                if (lastEvent.key.keysym.sym == SDLK_ESCAPE)
+                    return;
+                break;
+            case SDL_MOUSEBUTTONUP:
+                coord_souris.x = lastEvent.button.x;
+                coord_souris.y = lastEvent.button.y;
+
+                if(SDL_PointInRect(&coord_souris, &boutton_sortie))
+                    fermer_programme(EXIT_SUCCESS);
+                if(SDL_PointInRect(&coord_souris, &boutton_nouvelle_partie)){
+                    *nb_joueur = 1;
+                    return;
+                }
+                if(SDL_PointInRect(&coord_souris, &boutton_quitter)){
+                    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Fermeture du programme ...\n");
+                    fermer_programme(EXIT_SUCCESS);
+                }
+                if (SDL_PointInRect(&coord_souris, &boutton_solo)){
+                    *nb_joueur = 1;
+                    return;
+                }
+                if (SDL_PointInRect(&coord_souris, &boutton_coop)){
+                    char temp[510];
+                    *nb_joueur = 2;
+                    return;
+                }
+                break;
+            }
+        }
+        fin = SDL_GetPerformanceCounter();
+        float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
+        SDL_Delay(floor((1000 / (float)60) - temps_passe));
+        
         if(compteur == NB_FPS)
             compteur = 0;
         else

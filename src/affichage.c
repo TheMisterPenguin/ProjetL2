@@ -777,8 +777,10 @@ void lister_animations(joueur_t ** joueurs, list * animations){
     if(joueurs[0]->statut->duree_anim != 0)
         ajout_droit(animations, next_frame_animation(joueurs[0]));
     
-    if(joueurs[1]->statut->duree_anim != 0)
-        ajout_droit(animations, next_frame_animation(joueurs[1]));
+    if(joueurs[1] != NULL){
+        if(joueurs[1]->statut->duree_anim != 0)
+            ajout_droit(animations, next_frame_animation(joueurs[1]));
+    }
 }
 
 void afficher_animations(list * animations){

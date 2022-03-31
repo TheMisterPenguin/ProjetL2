@@ -62,6 +62,7 @@ void afficher_intro(void){
 
 int main(int argc, char** argv)
 {
+    int nb_joueurs;
     int debut, fin; /* le temps pour calculer les performances */
     int i;
     char *fichier_map = NULL;
@@ -84,6 +85,12 @@ int main(int argc, char** argv)
     /* On affiche l'introduction */
     afficher_intro();
 
+    /* On affiche l'accueil du jeu */
+    SDL_ShowCursor(SDL_ENABLE);
+    afficher_menu_accueil(&nb_joueurs);
+    SDL_ShowCursor(SDL_DISABLE);
+
+
     /* On charge la map */
     fichier_map = charger_f_map("map.json");
     map = charger_s_map(fichier_map);
@@ -91,30 +98,35 @@ int main(int argc, char** argv)
 
     /* On créer le joueur */
     joueurs[0] = new_joueur("joueur1", 0);
-    joueurs[1] = new_joueur("joueur2", 1);
     joueur1 = joueurs[0];
-    joueur2 = joueurs[1];
     joueur1->pdv = 5;
 
     /* On créer les animations */
     init_animations();
 
     next_texture_joueur1 = joueur1->textures_joueur->liste[TEXT_MARCHER];
-    next_texture_joueur2 = joueur2->textures_joueur->liste[TEXT_MARCHER];
 
     objets = creer_liste_objet();
     creer_textures_objets(objets);
     tout_ramasser(objets, joueur1->inventaire);
-    tout_ramasser(objets, joueur2->inventaire);
 
     /*test de l'allocation des textures*/
     for (i = 0; i < joueur1->textures_joueur->nb_valeurs; i++)
         if (joueur1->textures_joueur->liste == NULL)
             fermer_programme(EXIT_FAILURE);
 
-    for (i = 0; i < joueur2->textures_joueur->nb_valeurs; i++)
-        if (joueur2->textures_joueur->liste == NULL)
-            fermer_programme(EXIT_FAILURE);
+    //même création pour le joueur2 si le mode coop est sélectionné
+    if(nb_joueurs == 2){
+        joueurs[1] = new_joueur("joueur2", 1);
+        joueur2 = joueurs[1];
+        joueur2->pdv = 7;
+        next_texture_joueur2 = joueur2->textures_joueur->liste[TEXT_MARCHER];
+        tout_ramasser(objets, joueur2->inventaire);
+
+        for (i = 0; i < joueur2->textures_joueur->nb_valeurs; i++)
+            if (joueur2->textures_joueur->liste == NULL)
+                fermer_programme(EXIT_FAILURE);
+    }
 
     /* On verifie si le répertoire de sauvegarde existe */
     check_repertoire_jeux();
@@ -155,31 +167,32 @@ int main(int argc, char** argv)
             }
         }
 
-        if (joueur2->statut->en_mouvement){ /* Déplacement map */
-            switch (joueur2->statut->orientation)
-            {
-            case NORD:
-                deplacement_y_pers(map, joueur2, -3);
-                break;
-            case SUD:
-                deplacement_y_pers(map, joueur2, 3);
-                break;
-            case OUEST:
-                deplacement_x_pers(map, joueur2, -3);
-                break;
-            case EST:
-                deplacement_x_pers(map, joueur2, 3);
-                break;
-            }
-        }
-
         texture_temp1 = next_frame_joueur(joueur1);
         if (texture_temp1)
             next_texture_joueur1 = texture_temp1;
-        
-        texture_temp2 = next_frame_joueur(joueur2);
-        if (texture_temp2)
-            next_texture_joueur2 = texture_temp2;
+
+        if(nb_joueurs == 2){
+            if (joueur2->statut->en_mouvement){
+                switch (joueur2->statut->orientation)
+                {
+                case NORD:
+                    deplacement_y_pers(map, joueur2, -3);
+                    break;
+                case SUD:
+                    deplacement_y_pers(map, joueur2, 3);
+                    break;
+                case OUEST:
+                    deplacement_x_pers(map, joueur2, -3);
+                    break;
+                case EST:
+                    deplacement_x_pers(map, joueur2, 3);
+                    break;
+                }
+            }
+            texture_temp2 = next_frame_joueur(joueur2);
+            if (texture_temp2)
+                next_texture_joueur2 = texture_temp2;
+        }       
 
         SDL_SetRenderTarget(rendu_principal, map->text_map->texture);
         SDL_RenderClear(rendu_principal);
@@ -219,8 +232,9 @@ int main(int argc, char** argv)
         /* On affiche le joueur1 */
         afficher_texture(next_texture_joueur1, rendu_principal);
 
-        /* On affiche le joueur2 */
-        afficher_texture(next_texture_joueur2, rendu_principal);
+        /* On affiche le joueur2 s'il existe*/
+        if(nb_joueurs == 2)
+            afficher_texture(next_texture_joueur2, rendu_principal);
 
         // Afficher les animations eventuelles
         lister_animations(joueurs, animations);
@@ -228,10 +242,13 @@ int main(int argc, char** argv)
         vider_liste(animations);
 
         /* On affiche l'interface */
+        //barre de vie joueur1
         RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
-            ((float)joueur1->pdv/joueur1->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
+        ((float)joueur1->pdv/joueur1->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
         
-        RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20 + FENETRE_LARGEUR/25 + 20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
+        //barre de vie joueur2
+        if(nb_joueurs == 2)
+            RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20 + FENETRE_LARGEUR/25 + 20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
             ((float)joueur2->pdv/joueur2->maxPdv), color(0, 153, 51,0.9), color(125, 125, 125, 1));
 
         SDL_RenderPresent(rendu_principal);
