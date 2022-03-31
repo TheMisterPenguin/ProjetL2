@@ -145,6 +145,10 @@ int main(int argc, char** argv)
 
     SDL_QueryTexture(map->text_map->texture, NULL, NULL, &(map->text_map->width), &(map->text_map->height));
 
+    /* On place le J1 au centre de l'écran */
+
+    rect_centre_rect(&joueur1->statut->zone_colision, fenetre_finale->frame_anim);
+    rect_centre_rect(&joueur1->statut->vrai_zone_collision, fenetre_finale->frame_anim);
 
     compteur = 0;
     while (running)
