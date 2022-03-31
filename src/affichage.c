@@ -210,6 +210,8 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
 
         texture->multipli_taille = (float)FENETRE_LONGUEUR / texture->width;
     }
+
+    texture->compteur_frame_anim = 0;
     ajout_droit(listeDeTextures, texture);
 
     return texture;
@@ -249,8 +251,7 @@ t_l_aff* init_textures_joueur(joueur_t *j, int num_j){
     textures_joueur->liste[TEXT_ATTAQUE_CHARGEE]->duree_frame_anim = 3;
     textures_joueur->liste[TEXT_CHARGER]->duree_frame_anim = 5;
     textures_joueur->liste[TEXT_MARCHER_BOUCLIER]->duree_frame_anim = 5;
-    
-/* Déplacement des textures au centre de l'écran. */
+
     /* positionnement au dernier sprite*/
     next_frame_x_indice(textures_joueur->liste[TEXT_CHARGER], 2);
 
@@ -749,22 +750,36 @@ void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y){
 
 void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
 {
-    if (r){
-        if (r->x + x < 0) /* Le personnage ne peut pas aller en haut */
+    const int taille_unite = floor(map->taille_case / TAILLE_PERSONNAGE);
+    SDL_Rect temp = {.x = r->x + x * taille_unite, .y = r->y, .w = r->w, .h = r->h};
+
+    en_tete(m->liste_collisions);
+
+    while (!hors_liste(m->liste_collisions))
+    {
+        SDL_Rect *element = valeur_elt(m->liste_collisions);
+        if (SDL_HasIntersection(&temp, element))
             return;
-        if (r->x + r->w + x > m->text_map->width) /* Le personnage ne peut pas aller en bas */
+        suivant(m->liste_collisions);
+    }
+
+    if (r)
+    {
+        if (r->x + x * taille_unite < 0) /* Le personnage ne peut pas aller en haut */
+            return;
+        if (r->x + r->w + x * taille_unite > m->text_map->width) /* Le personnage ne peut pas aller en bas */
             return;
         if (texture->compteur_frame_anim % texture->duree_frame_anim)
-            r->y += x;
+            r->x += x * taille_unite;
     }
     else
     {
-        if (texture->aff_fenetre->x + x < 0) /* Le personnage ne peut pas aller en haut */
+        if (texture->aff_fenetre->x + x * taille_unite < 0) /* Le personnage ne peut pas aller en haut */
             return;
-        if (texture->aff_fenetre->x + texture->aff_fenetre->w + x > m->text_map->width) /* Le personnage ne peut pas aller en bas */
+        if (texture->aff_fenetre->x + texture->aff_fenetre->w + x * taille_unite > m->text_map->width) /* Le personnage ne peut pas aller en bas */
             return;
         if (texture->compteur_frame_anim % texture->duree_frame_anim)
-            r->x += x;
+            r->x += x * taille_unite;
     }
 
     if (texture->compteur_frame_anim == NB_FPS)
@@ -775,21 +790,35 @@ void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
 
 void deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
 {
-    if(r){
-        if(r->y + y  < 0) /* Le personnage ne peut pas aller en haut */
+    const int taille_unite = floor(map->taille_case / TAILLE_PERSONNAGE);
+    SDL_Rect temp = {.x = r->x, .y = r->y + y * taille_unite, .w = r->w, .h = r->h};
+
+    en_tete(m->liste_collisions);
+
+    while (!hors_liste(m->liste_collisions)){
+        SDL_Rect *element = valeur_elt(m->liste_collisions);
+        if (SDL_HasIntersection(&temp, element))
             return;
-        if (r->y + r->h + y  > m->text_map->height) /* Le personnage ne peut pas aller en bas */
+        suivant(m->liste_collisions);
+    }
+
+    if(r)
+    {
+        if(r->y + y * taille_unite  < 0) /* Le personnage ne peut pas aller en haut */
+            return;
+        if (r->y + r->h + y * taille_unite > m->text_map->height) /* Le personnage ne peut pas aller en bas */
             return;
         if(texture->compteur_frame_anim % texture->duree_frame_anim)
-            r->y += y;
+            r->y += y * taille_unite;
     }
-    else{
-        if (texture->aff_fenetre->y + y < 0) /* Le personnage ne peut pas aller en haut */
+    else
+    {
+        if (texture->aff_fenetre->y + y * taille_unite< 0) /* Le personnage ne peut pas aller en haut */
             return;
-        if (texture->aff_fenetre->y + texture->aff_fenetre->h + y > m->text_map->height) /* Le personnage ne peut pas aller en bas */
+        if (texture->aff_fenetre->y + texture->aff_fenetre->h + y * taille_unite> m->text_map->height) /* Le personnage ne peut pas aller en bas */
             return;
         if (texture->compteur_frame_anim % texture->duree_frame_anim)
-            r->y += y;
+            r->y += y * taille_unite;
     }
 
 
@@ -827,6 +856,7 @@ t_aff * next_frame_animation(joueur_t * joueur){
 }
 
 void lister_animations(joueur_t ** joueurs, list * animations){
+
     if(joueurs[0]->statut->duree_anim != 0)
         ajout_droit(animations, next_frame_animation(joueurs[0]));
     

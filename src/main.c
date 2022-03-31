@@ -136,8 +136,6 @@ int main(int argc, char** argv)
     /* On verifie si le répertoire de sauvegarde existe */
     check_repertoire_jeux();
 
-    rect_centre(&(joueur1->statut->zone_colision));
-
     init_sousbuffer(map, joueur1);
 
     SDL_RenderClear(rendu_principal);
@@ -159,16 +157,16 @@ int main(int argc, char** argv)
             switch (joueur1->statut->orientation)
             {
             case NORD:
-                deplacement_y_pers(map, joueur1, -3);
+                deplacement_y_pers(map, joueur1, -1);
                 break;
             case SUD:
-                deplacement_y_pers(map, joueur1, 3);
+                deplacement_y_pers(map, joueur1, 1);
                 break;
             case OUEST:
-                deplacement_x_pers(map, joueur1, -3);
+                deplacement_x_pers(map, joueur1, -1);
                 break;
             case EST:
-                deplacement_x_pers(map, joueur1, 3);
+                deplacement_x_pers(map, joueur1, 1);
                 break;
             }
         }
@@ -182,16 +180,16 @@ int main(int argc, char** argv)
                 switch (joueur2->statut->orientation)
                 {
                 case NORD:
-                    deplacement_y_pers(map, joueur2, -3);
+                    deplacement_y_entite(map, joueur2->textures_joueur->liste[0], -1, &joueur2->statut->zone_colision);
                     break;
                 case SUD:
-                    deplacement_y_pers(map, joueur2, 3);
+                    deplacement_y_entite(map, joueur2->textures_joueur->liste[0], 1, &joueur2->statut->zone_colision);
                     break;
                 case OUEST:
-                    deplacement_x_pers(map, joueur2, -3);
+                    deplacement_x_entite(map, joueur2->textures_joueur->liste[0], -1, &joueur2->statut->zone_colision);
                     break;
                 case EST:
-                    deplacement_x_pers(map, joueur2, 3);
+                    deplacement_x_entite(map, joueur2->textures_joueur->liste[0], 1, &joueur2->statut->zone_colision);
                     break;
                 }
             }
@@ -212,6 +210,7 @@ int main(int argc, char** argv)
         #ifdef _DEBUG_COLLISION /* On affiche les collisions */
                 SDL_SetRenderDrawColor(rendu_principal, 0, 255, 0, SDL_ALPHA_OPAQUE);
                 SDL_RenderDrawRect(rendu_principal, &joueur1->statut->vrai_zone_collision);
+                SDL_RenderDrawRect(rendu_principal, &joueur2->statut->zone_colision);
                 en_tete(map->liste_collisions);
 
                 while(!hors_liste(map->liste_collisions)){
@@ -221,6 +220,11 @@ int main(int argc, char** argv)
                 }
                 SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
         #endif
+
+        
+        /* On cous le joueur2 s'il existe*/
+        if(nb_joueurs == 2)
+            afficher_texture(next_texture_joueur2, rendu_principal);
 
         /* On affiche le 1er plan (joueur) */
         SDL_SetRenderTarget(rendu_principal, fenetre_finale->texture);
@@ -240,10 +244,6 @@ int main(int argc, char** argv)
 
         /* On cous le joueur1 */
         afficher_texture(next_texture_joueur1, rendu_principal);
-
-        /* On cous le joueur2 s'il existe*/
-        if(nb_joueurs == 2)
-            afficher_texture(next_texture_joueur2, rendu_principal);
 
         // Afficher les animations eventuelles
         lister_animations(joueurs, animations);
