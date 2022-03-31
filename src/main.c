@@ -82,6 +82,9 @@ int main(int argc, char** argv)
     SDL_SetMainReady();
     init();
 
+    /* On créer les textures des menus */
+    init_text_menus();
+
     /* On affiche l'introduction */
     afficher_intro();
 
@@ -90,6 +93,8 @@ int main(int argc, char** argv)
     afficher_menu_accueil(&nb_joueurs);
     SDL_ShowCursor(SDL_DISABLE);
 
+    if(nb_joueurs == 2)
+        creer_inventaire_j2();
 
     /* On charge la map */
     fichier_map = charger_f_map("map.json");

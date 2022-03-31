@@ -15,6 +15,11 @@
  * \copyright Copyright (c) 2022
  */
 
+t_aff * text_pause = NULL;
+t_aff * text_inventaire1 = NULL;
+t_aff * text_inventaire2 = NULL;
+t_aff * text_accueil = NULL;
+
 /*void afficher_menu(menus_t * menu){
     switch (menu) {
         case 0: break;
@@ -31,8 +36,6 @@ void afficher_menu_pause(joueur_t * joueur){
     int debut, fin; /* le temps pour calculer les performances */
 
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Affichage du menu pause");
-
-    t_aff * text_pause = creer_texture("ressources/background/menu/Sprite_Menu_Pause.bmp", -1, -1, 0, 0, 0);
 
     if (!text_pause){
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors du chargement du menu pause");
@@ -118,16 +121,21 @@ void afficher_inventaire(joueur_t * joueur, SDL_KeyCode touche_inventaire)
 {
     int slot_selectionne = -1;
     int debut, fin; /* le temps pour calculer les performances */
-    t_aff *text_pause = NULL;
+    t_aff *text_inventaire = NULL;
 
-    //affichage bonne couleur de l'inventaire selon le joueur
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Affichage de l'inventaire");
+
+    //affiche la bonne texture de l'inventaire selon le joueur
     if(touche_inventaire == SDLK_TAB)
-        text_pause = creer_texture("ressources/background/menu/inventaire.bmp", -1, -1, 0, 0, 0);
+        text_inventaire = text_inventaire1;
     else
-        text_pause = creer_texture("ressources/background/menu/inventaire_green.bmp", -1, -1, 0, 0, 0);
+        text_inventaire = text_inventaire2;
 
-    if (!text_pause)
+
+    if (!text_inventaire){
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors du chargement de l'inventaire");
         return;
+    }
 
     /* Création des slots de l'inventaire */
     SDL_Rect slot0 = {.h = floor(144 * multiplicateur_y), .w = floor(120 * multiplicateur_x)};
@@ -176,7 +184,7 @@ void afficher_inventaire(joueur_t * joueur, SDL_KeyCode touche_inventaire)
         SDL_RenderClear(rendu_principal);
 
         afficher_texture(map->text_map, rendu_principal);
-        afficher_texture(text_pause, rendu_principal);
+        afficher_texture(text_inventaire, rendu_principal);
         afficher_textures_sac(joueur->inventaire);
         afficher_textures_equipe(joueur->inventaire);
 
@@ -273,8 +281,6 @@ void afficher_menu_accueil(int * nb_joueur){
 
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Affichage du menu d'accueil");
 
-    t_aff * text_accueil = creer_texture("ressources/background/menu/Sprite_Menu_Accueil.bmp", -1, -1, 0, 0, 0);
-
     if (!text_accueil){
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors du chargement du menu d'accueil");
         return;
@@ -353,4 +359,14 @@ void afficher_menu_accueil(int * nb_joueur){
         else
             compteur++;
     }
+}
+
+void init_text_menus(int nb_joueur){
+    text_pause = creer_texture("ressources/background/menu/Sprite_Menu_Pause.bmp", -1, -1, 0, 0, 0);
+    text_inventaire1 = creer_texture("ressources/background/menu/inventaire.bmp", -1, -1, 0, 0, 0);
+    text_accueil = creer_texture("ressources/background/menu/Sprite_Menu_Accueil.bmp", -1, -1, 0, 0, 0);
+}
+
+void creer_inventaire_j2(){
+    text_inventaire2 = creer_texture("ressources/background/menu/inventaire_green.bmp", -1, -1, 0, 0, 0);
 }
