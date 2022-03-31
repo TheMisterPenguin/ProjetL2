@@ -578,6 +578,12 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
 
     while(!hors_liste(m->liste_collisions)){
         SDL_Rect *element = valeur_elt(m->liste_collisions);
+
+        if (element == &j->statut->vrai_zone_collision){ /* Si la collision nou concerne */
+            suivant(m->liste_collisions);
+            continue;
+        }
+
         if(SDL_HasIntersection(&temp, element))
             return;
         suivant(m->liste_collisions);
@@ -616,6 +622,12 @@ void deplacement_y_pers(t_map *m, joueur_t *j, int y){
     while (!hors_liste(m->liste_collisions))
     {
         SDL_Rect *element = valeur_elt(m->liste_collisions);
+
+        if (element == &j->statut->vrai_zone_collision){ /* Si la collision nou concerne */
+            suivant(m->liste_collisions);
+            continue;
+        }
+
         if (SDL_HasIntersection(&temp, element))
             return;
         suivant(m->liste_collisions);
@@ -758,6 +770,12 @@ void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
     while (!hors_liste(m->liste_collisions))
     {
         SDL_Rect *element = valeur_elt(m->liste_collisions);
+
+        if (element == r){ /* Si la collision nou concerne */
+            suivant(m->liste_collisions);
+            continue;
+        }
+
         if (SDL_HasIntersection(&temp, element))
             return;
         suivant(m->liste_collisions);
@@ -797,6 +815,12 @@ void deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
 
     while (!hors_liste(m->liste_collisions)){
         SDL_Rect *element = valeur_elt(m->liste_collisions);
+
+        if (element == r){ /* Si la collision nou concerne */
+            suivant(m->liste_collisions);
+            continue;
+        }
+
         if (SDL_HasIntersection(&temp, element))
             return;
         suivant(m->liste_collisions);
