@@ -30,7 +30,7 @@ typedef struct sort_s {
     type_sort_t type;       /**<type de sort*/
     position_t cible;       /**<point d'arrivé du sort*/
     statut_sort_t statut;   /**<statut du sort*/
-    SDL_Rec collision;      /**<hitbox du sort*/
+    SDL_Rect collision;      /**<hitbox du sort*/
     t_aff * texture;        /**<texture du sort*/
 }sort_t;
 

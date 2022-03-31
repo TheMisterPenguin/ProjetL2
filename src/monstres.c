@@ -7,6 +7,7 @@
 #include <math.h>
 #include <json-c/json.h>
 #include <code_erreur.h>
+#include <definition_commun.h>
 
 /**
  * \file monstres.c
@@ -211,7 +212,7 @@ void agro_monstre(monstre_t * monstre, joueur_t * joueur){
 }
 
 void ronde_monstre(monstre_t * monstre){
-    if(monstre->duree == 0){
+    if(monstre->duree <= 0){
         if(rand()%3){
             monstre->action = MONSTRE_MARCHER;
             monstre->duree = DUREE_MONSTRE_MARCHER;
@@ -247,11 +248,28 @@ bool hors_map_monstre(monstre_t * monstre){
     return 0;
 }
 
+void deplacer_entite(SDL_Rect collision, t_direction orientation, int nb_pixel){
+    
+}
+
+void monstre_blesse(monstre_t * monstre){
+    if(monstre->duree <= 0)
+            monstre->action = MONSTRE_EN_GARDE;
+    else{
+        deplacer_entite(monstre->collision, monstre->orientation, 1);
+        //clignotement affichage frame
+
+    }
+}
+
 void action_monstre(monstre_t * monstre, joueur_t * joueur){
     monstre->texture->aff_fenetre->x = monstre->collision.x - floor(13 * monstre->texture->multipli_taille);
     monstre->texture->aff_fenetre->y = monstre->collision.y - floor(13 * monstre->texture->multipli_taille);
-    if(monstre->duree > 0)
-        (monstre->duree)--;
+    (monstre->duree)--;
+
+    if(monstre->action == MONSTRE_BLESSE){
+        monstre_blesse(monstre);
+    }
 
     if(monstre->action == MONSTRE_MARCHER || monstre->action == MONSTRE_EN_GARDE){
         //si le monstre détecte le joueur
@@ -282,7 +300,7 @@ void action_monstre(monstre_t * monstre, joueur_t * joueur){
                 case(OUEST): (monstre->collision.x)++; break;
                 default: break;
             }
-            monstre->duree = 1;
+            monstre->duree = 0;
         }
     }
 }
