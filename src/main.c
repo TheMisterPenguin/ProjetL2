@@ -153,6 +153,7 @@ int main(int argc, char** argv)
     {
         debut = SDL_GetPerformanceCounter();
         jeu_event(joueurs);
+
         // en_tete(buffer_affichage);
         if (joueur1->statut->en_mouvement){ /* Déplacement map */
             switch (joueur1->statut->orientation)
@@ -199,6 +200,7 @@ int main(int argc, char** argv)
                 next_texture_joueur2 = texture_temp2;
         }       
 
+        /* On affiche toutes les entitées sur la map */
         SDL_SetRenderTarget(rendu_principal, map->text_map->texture);
         SDL_RenderClear(rendu_principal);
         
@@ -207,7 +209,7 @@ int main(int argc, char** argv)
         if (SDL_RenderCopy(rendu_principal, map->text_sol->texture, NULL, NULL))
             fprintf(stderr, "Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
 
-        #ifdef __DEBUG__
+        #ifdef _DEBUG_COLLISION /* On affiche les collisions */
                 SDL_SetRenderDrawColor(rendu_principal, 0, 255, 0, SDL_ALPHA_OPAQUE);
                 SDL_RenderDrawRect(rendu_principal, &joueur1->statut->vrai_zone_collision);
                 en_tete(map->liste_collisions);
@@ -218,15 +220,16 @@ int main(int argc, char** argv)
                     suivant(map->liste_collisions);
                 }
                 SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
-        #endif        
+        #endif
 
-        SDL_SetRenderTarget(rendu_principal, NULL);
+        /* On affiche le 1er plan (joueur) */
+        SDL_SetRenderTarget(rendu_principal, fenetre_finale->texture);
         SDL_RenderClear(rendu_principal);
 
+        /* On cous la map */
         afficher_texture(map->text_map, rendu_principal);
-
-        /* On affiche les collision si l'on ajoute la constante __DEBUG__ à la compilation */
-        #ifdef __DEBUG__
+                
+        #ifdef _DEBUG_MOUVEMENT /* On affiche les informations liées au mouvement du personnage */
                 SDL_SetRenderDrawColor(rendu_principal, 255, 0, 0, SDL_ALPHA_OPAQUE);
                 SDL_RenderDrawRect(rendu_principal, &tx);
                 SDL_RenderDrawRect(rendu_principal, &(joueur1->statut->zone_colision));
@@ -235,10 +238,10 @@ int main(int argc, char** argv)
 
         #endif
 
-        /* On affiche le joueur1 */
+        /* On cous le joueur1 */
         afficher_texture(next_texture_joueur1, rendu_principal);
 
-        /* On affiche le joueur2 s'il existe*/
+        /* On cous le joueur2 s'il existe*/
         if(nb_joueurs == 2)
             afficher_texture(next_texture_joueur2, rendu_principal);
 
@@ -246,6 +249,13 @@ int main(int argc, char** argv)
         lister_animations(joueurs, animations);
         afficher_animations(animations);
         vider_liste(animations);
+
+        /* On passe à l'affichage du renderer sur la fenêtre */
+        SDL_SetRenderTarget(rendu_principal, NULL);
+        SDL_RenderClear(rendu_principal);
+
+        /* On affiche le rendu principal final */
+        afficher_texture(fenetre_finale, rendu_principal);
 
         /* On affiche l'interface */
         //barre de vie joueur1
@@ -259,11 +269,11 @@ int main(int argc, char** argv)
 
         SDL_RenderPresent(rendu_principal);
 
-        // vider_liste(buffer_affichage);
         fin = SDL_GetPerformanceCounter();
 
         temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
         SDL_Delay(floor((1000 / (float)NB_FPS) - temps_passe));
+
         if (compteur == NB_FPS)
             compteur = 0;
         compteur++;
