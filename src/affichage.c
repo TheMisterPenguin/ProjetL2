@@ -21,6 +21,7 @@
 list *listeDeTextures; 
 list *buffer_affichage;
 t_aff * heal = NULL;
+t_aff *fenetre_finale = NULL; /* La fenêtre de jeu finale sans l'interface */
 
 long int compteur;
 unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
@@ -138,38 +139,39 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
     SDL_Surface * chargement = NULL;
     t_aff *texture = NULL;
 
-    /* Chargement de la texture dans une surface */
-    chargement = SDL_LoadBMP(nom_fichier);
-    if(! chargement){
-        char *msp = malloc(sizeof(char) * (500));
-
-        sprintf(msp, "Erreur lors de la création de la texture : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_FICHIER);
-        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, msp);
-
-        free(msp);
-        return NULL;
-    }
-
     texture = malloc(sizeof(t_aff));
- 
-    /* Copie de la ressource dans une structure SDL_Texture */
-    texture->texture = SDL_CreateTextureFromSurface(rendu_principal, chargement);
-    SDL_FreeSurface(chargement); 
-    if(! texture->texture){
-        char *msp = malloc(sizeof(char) * (500));
+    /* Chargement de la texture dans une surface */
+    if(nom_fichier != NULL){
+        chargement = SDL_LoadBMP(nom_fichier);
+        if(! chargement){
+            char *msp = malloc(sizeof(char) * (500));
 
-        sprintf(msp, "Erreur lors de la convertion de la surface : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_SURFACE);
-        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la convertion de la surface : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_SURFACE);
+            sprintf(msp, "Erreur lors de la création de la texture : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_FICHIER);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, msp);
 
-        free(msp);
-        free(texture);
-        return NULL;
+            free(msp);
+            return NULL;
+        }
+    
+        /* Copie de la ressource dans une structure SDL_Texture */
+        texture->texture = SDL_CreateTextureFromSurface(rendu_principal, chargement);
+        SDL_FreeSurface(chargement); 
+        if(! texture->texture){
+            char *msp = malloc(sizeof(char) * (500));
+
+            sprintf(msp, "Erreur lors de la convertion de la surface : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_SURFACE);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la convertion de la surface : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_SURFACE);
+
+            free(msp);
+            free(texture);
+            return NULL;
+        }
+
+        SDL_QueryTexture(texture->texture, NULL, NULL, &texture->width, &texture->height);
     }
 
-
-    SDL_QueryTexture(texture->texture, NULL, NULL, &texture->width, &texture->height);
 
     if(taille_t_x > -1 && taille_t_y > -1){
         texture->frame_anim = malloc(sizeof(SDL_Rect));
@@ -179,20 +181,6 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
         texture->frame_anim->h = taille_t_y;
         texture->frame_anim->x = 0;
         texture->frame_anim->y = 0;
-
-        if (!rect_correct_texture(texture->frame_anim, texture->width, texture->height))
-        {
-            char *msp = malloc(sizeof(char) * (500));
-
-            sprintf(msp, "Erreur lors de la création de la texture : taille de la zone affichée supérieure à la texture\nErreur : 0x%X\n", ERR_RECTANGLE_TOO_BIG);
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la création de la texture : taille de la zone affichée supérieure à la texture\nErreur : 0x%X\n", ERR_RECTANGLE_TOO_BIG);
-
-            free(msp);
-            free(texture->frame_anim);
-            free(texture);
-            return NULL;
-        }
     }
     else
         texture->frame_anim = NULL;
@@ -238,11 +226,11 @@ t_l_aff* init_textures_joueur(joueur_t *j){
     textures_joueur->nb_valeurs = NB_SPRITE_JOUEUR;
     textures_joueur->liste = malloc(sizeof(t_aff)*NB_SPRITE_JOUEUR);
 /* Création d'une nouvelle liste de textures pour le joueur. */
-    textures_joueur->liste[TEXT_MARCHER] = (creer_texture(N_T_MARCHER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
-    textures_joueur->liste[TEXT_ATTAQUE] = (creer_texture(N_T_ATTAQUE, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
-    textures_joueur->liste[TEXT_ATTAQUE_CHARGEE] = creer_texture(N_T_ATTAQUE_CHARGEE, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
-    textures_joueur->liste[TEXT_CHARGER] = creer_texture(N_T_CHARGER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
-    textures_joueur->liste[TEXT_MARCHER_BOUCLIER] = creer_texture(N_T_MARCHER_BOUCLIER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    textures_joueur->liste[TEXT_MARCHER] = (creer_texture(N_T_MARCHER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE)));
+    textures_joueur->liste[TEXT_ATTAQUE] = (creer_texture(N_T_ATTAQUE, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE)));
+    textures_joueur->liste[TEXT_ATTAQUE_CHARGEE] = creer_texture(N_T_ATTAQUE_CHARGEE, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE));
+    textures_joueur->liste[TEXT_CHARGER] = creer_texture(N_T_CHARGER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE));
+    textures_joueur->liste[TEXT_MARCHER_BOUCLIER] = creer_texture(N_T_MARCHER_BOUCLIER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE));
 
     textures_joueur->liste[TEXT_MARCHER]->duree_frame_anim = 5;
     textures_joueur->liste[TEXT_ATTAQUE]->duree_frame_anim = 4;
@@ -255,8 +243,8 @@ t_l_aff* init_textures_joueur(joueur_t *j){
     next_frame_x_indice(textures_joueur->liste[TEXT_CHARGER], 2);
 
     /* On créer la zone de colision du personnage */
-    j->statut->zone_colision.w = floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3));
-    j->statut->zone_colision.h = floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3));
+    j->statut->zone_colision.w = TAILLE_PERSONNAGE * textures_joueur->liste[TEXT_MARCHER]->multipli_taille;
+    j->statut->zone_colision.h = TAILLE_PERSONNAGE * textures_joueur->liste[TEXT_MARCHER]->multipli_taille;
 
     return textures_joueur;
 }
@@ -443,6 +431,43 @@ void rect_centre(SDL_Rect *rectangle){
 
 }
 
+void rect_centre_rect_x(SDL_Rect *rectangle, SDL_Rect *rectangle_centre){
+    unsigned int centre_x = rectangle_centre->w / 2;
+
+    rectangle->x = centre_x;
+
+    if (rectangle->w % 2)
+    {
+        rectangle->x -= rectangle->w / 2 + 1;
+    }
+    else
+    {
+        rectangle->x -= rectangle->w / 2;
+    }
+}
+
+void rect_centre_rect_y(SDL_Rect *rectangle, SDL_Rect *rectangle_centre){
+    unsigned int centre_y = rectangle_centre->h / 2;
+
+    rectangle->y = centre_y;
+
+    if (rectangle->h % 2)
+    {
+        rectangle->y -= rectangle->h / 2 + 1;
+    }
+    else
+    {
+        rectangle->y -= rectangle->h / 2;
+    }
+}
+
+void rect_centre_rect(SDL_Rect *rectangle, SDL_Rect *rectangle_centre){
+    
+    rect_centre_rect_x(rectangle, rectangle_centre);
+    rect_centre_rect_y(rectangle, rectangle_centre);
+
+}
+
 void deplacer_texture_centre(t_aff *texture, int x, int y){
     
     x = floor(x * texture->multipli_taille);
@@ -531,30 +556,36 @@ void modif_affichage_rect(t_aff *texture, SDL_Rect r){
 
 void deplacement_x_pers(t_map *m, joueur_t * j, int x){
 
-    int *x_map = &(m->text_map->frame_anim->x); /* La coordonnée x actuelle de la map */
+    int *x_map = &(fenetre_finale->frame_anim->x); /* La coordonnée x actuelle de la map */
     int *x_pers = &(j->statut->zone_colision.x); /* La coordonnée x actuelle du joueur */
-    //const long int taille_unite = floor(FENETRE_LONGUEUR / (float)m->text_map->width); /* Calcul en nombre de pixels d'une unité de déplacement */
-    const long int taille_unite = floor(3 * multiplicateur_x); /* Calcul en nombre de pixels d'une unité de déplacement */
+    const long int taille_unite = floor(j->textures_joueur->liste[0]->multipli_taille); /* Calcul en nombre de pixels d'une unité de déplacement */
+    SDL_Rect temp = {.x = j->statut->vrai_zone_collision.x + x * taille_unite, .y = j->statut->vrai_zone_collision.y, .w = j->statut->vrai_zone_collision.w, .h = j->statut->vrai_zone_collision.h};
 
-    j->statut->vrai_zone_collision.x = floor(j->statut->x / ) * map->taille_case;
+    en_tete(m->liste_collisions);
 
+    while(!hors_liste(m->liste_collisions)){
+        SDL_Rect *element = valeur_elt(m->liste_collisions);
+        if(SDL_HasIntersection(&temp, element))
+            return;
+        suivant(m->liste_collisions);
+    }
 
     if(*x_pers  + x * taille_unite < 0)
         return;
-    if(*x_pers + j->statut->zone_colision.w + x * taille_unite > FENETRE_LONGUEUR)
+    if(*x_pers + j->statut->zone_colision.w + x * taille_unite > fenetre_finale->frame_anim->w)
         return;
-    j->statut->x += x;
-    if (*x_map + x < 0) { /* La map ne peut pas plus aller à gauche */
+    j->statut->vrai_zone_collision.x += x * taille_unite;
+    if (*x_map + x * taille_unite < 0) { /* La map ne peut pas plus aller à gauche */
             *x_pers += x * taille_unite; /* On déplace le personnage de x unités */
             return;
         }
-        if (*x_map + x > (m->text_map->width - m->text_map->frame_anim->w))
+        if (*x_map + x * taille_unite > (m->text_map->width - fenetre_finale->frame_anim->w))
             { /* L'écran est en bordure de map droite */
                 *x_pers += x * taille_unite;
                 return;
             }
     if(rects_egal_x(&(j->statut->zone_colision), &tx))  /*On se trouve dans l'intervalle normal */
-        *x_map += x; /* On déplace la map en fond */
+        *x_map += x * taille_unite; /* On déplace la map en fond */
     else
         *x_pers += x * taille_unite;
     
@@ -562,28 +593,38 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
 
 void deplacement_y_pers(t_map *m, joueur_t *j, int y){
 
-    int *y_map = &(m->text_map->frame_anim->y);                                        /* La coordonnée y actuelle de la map */
+    int *y_map = &(map->text_map->frame_anim->y);                                        /* La coordonnée y actuelle de la map */
     int *y_pers = &(j->statut->zone_colision.y);                                       /* La coordonnée y actuelle du joueur */
-    const long int taille_unite = floor(3 * multiplicateur_y); /* Calcul en nombre de pixels d'une unité de déplacement */
-    const double taille_pixel = FENETRE_LARGEUR / m->text_map->frame_anim->h;
+    const long int taille_unite = floor(j->textures_joueur->liste[0]->multipli_taille); /* Calcul en nombre de pixels d'une unité de déplacement */
+    SDL_Rect temp = {.x = j->statut->vrai_zone_collision.x, .y = j->statut->vrai_zone_collision.y + y * taille_unite, .w = j->statut->vrai_zone_collision.w, .h = j->statut->vrai_zone_collision.h};
 
-    if (*y_pers + floor(y * taille_pixel) < 0) /* Le personnage ne peut pas aller en haut */
+    en_tete(m->liste_collisions);
+
+    while (!hors_liste(m->liste_collisions))
+    {
+        SDL_Rect *element = valeur_elt(m->liste_collisions);
+        if (SDL_HasIntersection(&temp, element))
+            return;
+        suivant(m->liste_collisions);
+    }
+
+    if (*y_pers + y * taille_unite < 0) /* Le personnage ne peut pas aller en haut */
         return;
-    if (*y_pers + j->statut->zone_colision.h + floor(y * taille_pixel) > FENETRE_LARGEUR) /* Le personnage ne peut pas aller en bas */
+    if (*y_pers + j->statut->zone_colision.h + y * taille_unite > fenetre_finale->frame_anim->h) /* Le personnage ne peut pas aller en bas */
         return;
-    j->statut->y += y;
-    if (*y_map + y < 0){ /* La map ne peut pas plus aller en haut */
-        *y_pers += floor(y * taille_pixel); /* On déplace le personnage de x unités */
+    j->statut->vrai_zone_collision.y += y * taille_unite;
+    if (*y_map + y * taille_unite < 0){ /* La map ne peut pas plus aller en haut */
+        *y_pers += y * taille_unite; /* On déplace le personnage de x unités */
         return;
     }
-    if (*y_map + y > (m->text_map->height - m->text_map->frame_anim->h)){ /* L'écran est en bordure de map bas*/
-        *y_pers += floor(y * taille_pixel);
+    if (*y_map + y * taille_unite > (m->text_map->height - fenetre_finale->frame_anim->h)){ /* L'écran est en bordure de map bas*/
+        *y_pers += y * taille_unite;
         return;
     }
     if (rects_egal_y(&(j->statut->zone_colision), &ty)) /*On se trouve dans l'intervalle normal */
-        *y_map += floor(y * taille_pixel);                                    /* On déplace la map en fond */
+        *y_map += y * taille_unite;                                    /* On déplace la map en fond */
     else
-        *y_pers += floor(y * taille_pixel);
+        *y_pers += y * taille_unite;
 }
 
 void text_copier_position(t_aff * a_modifier, const t_aff * const original){
@@ -711,7 +752,7 @@ void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
     }
 
     if (texture->compteur_frame_anim == NB_FPS)
-        (texture->compteur_frame_anim) == 0;
+        (texture->compteur_frame_anim) = 0;
     else
         (texture->compteur_frame_anim)++;
 }
@@ -737,7 +778,7 @@ void deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
 
 
     if(texture->compteur_frame_anim == NB_FPS)
-        (texture->compteur_frame_anim) == 0;
+        (texture->compteur_frame_anim) = 0;
     else
         (texture->compteur_frame_anim)++;
     

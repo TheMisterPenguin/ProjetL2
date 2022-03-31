@@ -84,6 +84,7 @@ extern long int compteur;      /*compteur utilisé pour gérer la vitesse d'affi
 extern SDL_Rect tx, ty;
 extern float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépendent de la résolution */
 extern t_aff * heal;
+extern t_aff *fenetre_finale; /* La fenêtre de jeu finale sans l'interface */
 
 /* Définition des fonctions */
 
@@ -354,4 +355,10 @@ void boucle_sprite(t_aff * texture, joueur_t * joueur);
 void anim_effet_joueur(t_aff * effet, joueur_t * joueur);
 
 void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y);
+
+void rect_centre_rect_x(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
+
+void rect_centre_rect_y(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
+
+void rect_centre_rect(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
 #endif
