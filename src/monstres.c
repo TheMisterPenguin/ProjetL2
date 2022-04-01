@@ -63,7 +63,8 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, char* nom_m
 
             sprintf(chemin_texture, "%s/%s" , CHEMIN_TEXTURE, liste_base_monstres->tab[i].fichier_image);
             monstre->texture = creer_texture(chemin_texture, LARGEUR_ENTITE, LONGUEUR_ENTITE, -100, -100, 1);
-            
+            monstre->texture->duree_frame_anim = NB_FPS;
+
             return monstre;
         }
     }
@@ -84,11 +85,11 @@ type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre){
 }
 
 int distance_x_joueur(SDL_Rect collision, joueur_t * joueur){
-    return joueur->statut->zone_colision.x - collision.x;
+    return joueur->statut->vrai_zone_collision.x - collision.x;
 }
 
 int distance_y_joueur(SDL_Rect collision, joueur_t * joueur){
-    return joueur->statut->zone_colision.y - collision.y;
+    return joueur->statut->vrai_zone_collision.y - collision.y;
 }
 
 int distance_joueur(SDL_Rect collision, joueur_t * joueur){
@@ -155,7 +156,7 @@ void rush_joueur(monstre_t * monstre, joueur_t * joueur){
     x_diff = distance_x_joueur(monstre->collision, joueur);
     y_diff = distance_y_joueur(monstre->collision, joueur);
 
-    if( x_diff > y_diff ){
+    if( abs(x_diff) < abs(y_diff) ){
         if(y_diff < 0)
             monstre->orientation = NORD;
         else
@@ -163,9 +164,9 @@ void rush_joueur(monstre_t * monstre, joueur_t * joueur){
     }
     else{
         if(x_diff < 0)
-            monstre->orientation = EST;
-        else
             monstre->orientation = OUEST;
+        else
+            monstre->orientation = EST;
     }
     orienter_monstre(monstre);
     marcher_monstre(monstre);
@@ -195,8 +196,9 @@ void agro_witcher(monstre_t * monstre, joueur_t * joueur){
 void agro_knight(monstre_t * monstre, joueur_t * joueur){
     if(monstre->action == RUSH_OU_FUITE){
         if(monstre->duree > 0){
-            if(compteur%5 == 0)
+            if(compteur%5 == 0){
                 rush_joueur(monstre, joueur);
+            }
         }
         else
             monstre->duree = DUREE_RUSH_OU_FUITE;
@@ -256,13 +258,13 @@ void monstre_blesse(monstre_t * monstre){
     if(monstre->duree <= 0)
             monstre->action = MONSTRE_EN_GARDE;
     else{
-        deplacer_entite(monstre->collision, monstre->orientation, 1);
         //clignotement affichage frame
 
     }
 }
 
 void action_monstre(monstre_t * monstre, joueur_t * joueur){
+    bool deplacement = 1;
     monstre->texture->aff_fenetre->x = monstre->collision.x - floor(13 * monstre->texture->multipli_taille);
     monstre->texture->aff_fenetre->y = monstre->collision.y - floor(13 * monstre->texture->multipli_taille);
     (monstre->duree)--;
@@ -271,7 +273,7 @@ void action_monstre(monstre_t * monstre, joueur_t * joueur){
         monstre_blesse(monstre);
     }
 
-    if(monstre->action == MONSTRE_MARCHER || monstre->action == MONSTRE_EN_GARDE){
+    else if(monstre->action == MONSTRE_MARCHER || monstre->action == MONSTRE_EN_GARDE){
         //si le monstre détecte le joueur
         if(distance_joueur(monstre->collision, joueur) < DISTANCE_AGRO){
             monstre->action = RUSH_OU_FUITE;
@@ -283,25 +285,18 @@ void action_monstre(monstre_t * monstre, joueur_t * joueur){
     else
         agro_monstre(monstre, joueur);
     
-    if(compteur%2 == 0 && (monstre->action == MONSTRE_MARCHER || monstre->action == RUSH_OU_FUITE) ){
+    if(compteur%2 == 0 && (monstre->action == MONSTRE_MARCHER || monstre->action == RUSH_OU_FUITE || monstre->action == MONSTRE_BLESSE) ){
 
         switch(monstre->orientation){
-            case(NORD): (monstre->collision.y)--; break;
-            case(EST): (monstre->collision.x)++; break;
-            case(SUD): (monstre->collision.y)++; break;
-            case(OUEST): (monstre->collision.x)--; break;
+            case(NORD): deplacement_y_entite(map, monstre->texture, -1, &(monstre->collision) ); break;
+            case(EST): deplacement_x_entite(map, monstre->texture, 1, &(monstre->collision) ); break;
+            case(SUD): deplacement_y_entite(map, monstre->texture, 1, &(monstre->collision) ); break;
+            case(OUEST): deplacement_x_entite(map, monstre->texture, -1, &(monstre->collision) ); break;
             default: break;
         }
-        if(hors_map_monstre(monstre)){
-            switch(monstre->orientation){
-                case(NORD): (monstre->collision.y)++; break;
-                case(EST): (monstre->collision.x)--; break;
-                case(SUD): (monstre->collision.y)--; break;
-                case(OUEST): (monstre->collision.x)++; break;
-                default: break;
-            }
+        //si bloquer par une entité
+        if(!deplacement)
             monstre->duree = 0;
-        }
     }
 }
 
