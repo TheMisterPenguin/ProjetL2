@@ -20,35 +20,27 @@
  * \param joueurs Joueurs pouvant provoquer l'événement
  */
 static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
-    joueur_t * joueur = joueurs[0];
-    statut_t* statut = joueur->statut;
-
-    if (ev->keysym.sym == SDLK_ESCAPE){ /* On affiche le menu de pause si on appuye sur echap */
-        SDL_ShowCursor(SDL_ENABLE);
-        afficher_menu_pause(joueur);
-        SDL_ShowCursor(SDL_DISABLE);
-    }
+    joueur_t * joueur1 = joueurs[0];
+    joueur_t * joueur2 = joueurs[1];
 
     int flags;
 
-    if(statut->action == RIEN || statut->action == CHARGER)
+    //tous les joueurs ____________________________________________________________________
+
+    if (ev->keysym.sym == SDLK_ESCAPE){ /* On affiche le menu de pause si on appuye sur echap */
+        SDL_ShowCursor(SDL_ENABLE);
+        afficher_menu_pause(joueur1);
+        SDL_ShowCursor(SDL_DISABLE);
+    }
+
+    if((joueur1->statut->action == RIEN || joueur1->statut->action == CHARGER) && (joueur2 == NULL || (joueur2->statut->action == RIEN || joueur2->statut->action == CHARGER)))
         switch(ev->keysym.sym){
-            case SDLK_DOWN :
-            case TOUCHE_BAS : statut->orientation = SUD;  statut->en_mouvement = vrai; break;
-            case SDLK_UP :
-            case TOUCHE_HAUT : statut->orientation = NORD;  statut->en_mouvement = vrai; break;
-            case SDLK_RIGHT :
-            case TOUCHE_DROITE : statut->orientation = EST;  statut->en_mouvement = vrai; break;
-            case SDLK_LEFT :
-            case TOUCHE_GAUCHE : statut->orientation = OUEST;  statut->en_mouvement = vrai; break;
-            case TOUCHE_TAB :
-                joueur->statut->en_mouvement = faux;
-                SDL_ShowCursor(SDL_ENABLE);
-                afficher_inventaire(joueur);
-                SDL_ShowCursor(SDL_DISABLE);
-                break;
             case SDLK_F11 :
-                joueur->statut->en_mouvement = faux;
+                joueur1->statut->en_mouvement = faux;
+
+                if(joueur2 != NULL)
+                    joueur2->statut->en_mouvement = faux;
+
                 flags = SDL_GetWindowFlags(fenetre_Principale);
 
                 if(flags & SDL_WINDOW_FULLSCREEN_DESKTOP){
@@ -81,13 +73,67 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
             } else {
                 menus = PAUSE;
             }; break; A décommenter quand la texture menu pause sera faite*/
+        }
+
+    //joueur1 _____________________________________________________________
+    if(joueur1->statut->action == RIEN || joueur1->statut->action == CHARGER)
+        switch(ev->keysym.sym){
+            case TOUCHE_BAS : joueur1->statut->orientation = SUD;  joueur1->statut->en_mouvement = vrai; break;
+            case TOUCHE_HAUT : joueur1->statut->orientation = NORD;  joueur1->statut->en_mouvement = vrai; break;
+            case TOUCHE_DROITE : joueur1->statut->orientation = EST;  joueur1->statut->en_mouvement = vrai; break;
+            case TOUCHE_GAUCHE : joueur1->statut->orientation = OUEST;  joueur1->statut->en_mouvement = vrai; break;
+            case TOUCHE_TAB :
+                joueur1->statut->en_mouvement = faux;
+                SDL_ShowCursor(SDL_ENABLE);
+                afficher_inventaire(joueur1, TOUCHE_TAB);
+                SDL_ShowCursor(SDL_DISABLE);
+                break;
             case TOUCHE_CONSOMMABLE :
-                if(joueur->inventaire->equipe->liste[consommable] != NULL){
-                    consommer_objet(joueur);
-                    anim_effet_joueur(heal, joueur);
+                if(joueur1->inventaire->equipe->liste[consommable] != NULL){
+                    consommer_objet(joueur1);
+                    // anim_effet_joueur(heal, 0, joueurs);
+                    text_copier_position(heal, *(joueur1->textures_joueur->liste)); //amélioration: centrer pour toutes les tailles
+                    joueur1->statut->duree_anim = DUREE_SOIN;
+                    joueur1->statut->animation = SOIN;
+                    joueur1->statut->en_mouvement = faux;
                 }
                 break;
         }
+            
+
+    //joueur2 _____________________________________________________________
+
+    if(joueur2 != NULL){ //si mode coopération
+        if(joueur2->statut->action == RIEN || joueur2->statut->action == CHARGER)
+        switch(ev->keysym.sym){
+            case SDLK_DOWN : joueur2->statut->orientation = SUD;  joueur2->statut->en_mouvement = vrai; break;
+            case SDLK_UP : joueur2->statut->orientation = NORD;  joueur2->statut->en_mouvement = vrai; break;
+            case SDLK_RIGHT : joueur2->statut->orientation = EST;  joueur2->statut->en_mouvement = vrai; break;
+            case SDLK_LEFT : joueur2->statut->orientation = OUEST;  joueur2->statut->en_mouvement = vrai; break;
+            case SDLK_p :
+                joueur2->statut->en_mouvement = faux;
+                SDL_ShowCursor(SDL_ENABLE);
+                afficher_inventaire(joueur2, SDLK_p);
+                SDL_ShowCursor(SDL_DISABLE);
+                break;
+            /*case TOUCHE_RETOUR : 
+            if(menus == PAUSE){
+                menus = JEU;
+            } else {
+                menus = PAUSE;
+            }; break; A décommenter quand la texture menu pause sera faite*/
+            case SDLK_RETURN :
+                if(joueur2->inventaire->equipe->liste[consommable] != NULL){
+                    consommer_objet(joueur2);
+                    // anim_effet_joueur(heal, 1, joueurs);
+                    text_copier_position(heal, *(joueur2->textures_joueur->liste)); //amélioration: centrer pour toutes les tailles
+                    joueur2->statut->duree_anim = DUREE_SOIN;
+                    joueur2->statut->animation = SOIN;
+                    joueur2->statut->en_mouvement = faux;
+                }
+                break;
+        }
+    }
 }
 
 /**
@@ -98,30 +144,55 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
  * \param joueurs Joueurs pouvant provoquer l'événement
  */
 static void keyUp(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
-    joueur_t * joueur = joueurs[0];
-    t_direction orientation = joueur->statut->orientation;
+    joueur_t * joueur1 = joueurs[0];
+    joueur_t * joueur2 = joueurs[1];
+    t_direction orientation1 = joueur1->statut->orientation;
+    t_direction orientation2;
+
+    //joueur1 _____________________________________________________________
 
     switch(ev->keysym.sym){
         case TOUCHE_BAS :
-        case SDLK_DOWN : 
-            if(orientation == SUD)
-                joueur->statut->en_mouvement = faux;
+            if(orientation1 == SUD)
+                joueur1->statut->en_mouvement = faux;
             break;
         case TOUCHE_HAUT :
-        case SDLK_UP :
-            if (orientation == NORD)
-                joueur->statut->en_mouvement = faux;
+            if (orientation1 == NORD)
+                joueur1->statut->en_mouvement = faux;
             break;
         case TOUCHE_DROITE :
-        case SDLK_RIGHT :
-            if (orientation == EST)
-                joueur->statut->en_mouvement = faux;
+            if (orientation1 == EST)
+                joueur1->statut->en_mouvement = faux;
             break;
         case TOUCHE_GAUCHE :
-        case SDLK_LEFT :
-            if (orientation == OUEST)
-                joueur->statut->en_mouvement = faux;
+            if (orientation1 == OUEST)
+                joueur1->statut->en_mouvement = faux;
             break;
+    }
+
+    //joueur2 _____________________________________________________________
+
+    if(joueur2 != NULL){ //si mode coopération
+        orientation2 = joueur2->statut->orientation;
+        
+        switch(ev->keysym.sym){
+            case SDLK_DOWN : 
+                if(orientation2 == SUD)
+                    joueur2->statut->en_mouvement = faux;
+                break;
+            case SDLK_UP :
+                if (orientation2 == NORD)
+                    joueur2->statut->en_mouvement = faux;
+                break;
+            case SDLK_RIGHT :
+                if (orientation2 == EST)
+                    joueur2->statut->en_mouvement = faux;
+                break;
+            case SDLK_LEFT :
+                if (orientation2 == OUEST)
+                    joueur2->statut->en_mouvement = faux;
+                break;
+        }
     }
 }
 

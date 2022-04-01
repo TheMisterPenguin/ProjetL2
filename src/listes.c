@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <listes.h>
 
 /**
  * \file listes.c
@@ -10,22 +11,6 @@
  * \date 28/03/2022
  * \copyright Copyright (c) 2022
  */
-
-typedef struct element
-{
-    void *valeur;
-    struct element *pred;
-    struct element *succ;
-} t_element;
-
-typedef struct list{
-    t_element *flag;
-    t_element *ec;
-    unsigned int nb_elem;
-    void * (*ajout)(void *);
-    void (*del)(void *);
-    void (*aff)(void *);
-}list;
 
 list * init_liste(void *(*fonction_ajout)(void *), void (*fonction_suppresion)(void *),
     void (*fonction_affichage)(void *)){
