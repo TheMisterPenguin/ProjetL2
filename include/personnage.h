@@ -19,6 +19,7 @@
 #define DUREE_ATTAQUE 6
 #define DUREE_ATTAQUE_CHARGEE 10
 #define DUREE_BLOQUER 3
+#define DUREE_JOUEUR_BLESSE 4
 
 #define DUREE_SOIN 25 //(nb sprites du spritesheet)
 
@@ -28,7 +29,7 @@
 
 typedef struct s_l_aff t_l_aff;
 
-typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER, SOIN}action_t; /**<l'action qu'est en train de faire le personnage*/
+typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER,J_BLESSE, SOIN}action_t; /**<l'action qu'est en train de faire le personnage*/
 /**
  * \struct struct statut_s
  * \brief Structure contenant les éléments nécéssaires au choix de l'affichage des sprites du personnage
@@ -82,11 +83,12 @@ extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, c
 extern joueur_t *new_joueur(const char* nom, int num_j);
 extern void detruire_joueur(joueur_t *j);
 extern joueur_t *charger_sauvegarde_joueur(char *nom_sauv);
-extern joueur_t * caracteristiques(joueur_t* perso);
+extern void caracteristiques(joueur_t* perso);
 extern void afficher_statistiques(joueur_t* perso);
-extern joueur_t * levelup(joueur_t* perso);
-extern joueur_t * gain_xp(joueur_t* perso);
+extern void levelup(joueur_t* perso);
+extern void gain_xp(joueur_t* perso);
 extern void creer_sauvegarde_json(joueur_t *j);
 void check_repertoire_jeux();
+void environnement_joueur(list * liste_monstre, list * liste_sort, joueur_t * joueur);
 
 #endif

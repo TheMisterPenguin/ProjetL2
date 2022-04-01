@@ -88,6 +88,7 @@ int main(int argc, char** argv)
     /* On affiche l'introduction */
     afficher_intro();
 
+
     /* On affiche l'accueil du jeu */
     SDL_ShowCursor(SDL_ENABLE);
     afficher_menu_accueil(&nb_joueurs);
@@ -95,11 +96,19 @@ int main(int argc, char** argv)
 
     if(nb_joueurs == 2)
         creer_inventaire_j2();
+  
+    /* On charge la base monstre*/
+    charger_base_monstre("monstres.json");
+
 
     /* On charge la map */
     fichier_map = charger_f_map("map.json");
     map = charger_s_map(fichier_map);
     text = texture_map(map); 
+
+
+    //TEMPORAIREMENT ICI -- test animation heal (équiper consommable puis touche e) -- TEMPORAIREMENT ICI
+    heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
 
     /* On créer le joueur */
     joueurs[0] = new_joueur("joueur1", 0);
@@ -247,6 +256,12 @@ int main(int argc, char** argv)
 
         #endif
 
+
+         en_tete(map->liste_monstres);
+        monstre_t * temp = valeur_elt(map->liste_monstres);
+        SDL_RenderDrawRect(rendu_principal,  &temp->collision);
+        afficher_monstres(map->liste_monstres, perso_principal);
+  
         /* On cous le joueur1 */
         afficher_texture(next_texture_joueur1, rendu_principal);
 

@@ -8,6 +8,9 @@
 #include <string.h>
 #include <code_erreur.h>
 #include <inventaire.h>
+#include <monstres.h>
+#include <sorts.h>
+#include <listes.h>
 
 #ifndef _WIN32
 	#include <pwd.h>
@@ -330,12 +333,11 @@ void detruire_joueur(joueur_t *j){
     detruire_inventaire(&(j->inventaire));
 }
 
-joueur_t *caracteristiques(joueur_t* perso){
+void caracteristiques(joueur_t* perso){
 	perso->attaque = 10+1*(perso->niveau);
 	perso->defense = 10+1*(perso->niveau);
 	perso->maxPdv = 10+5*(perso->niveau);
 	perso->pdv = perso->maxPdv;
-	return perso;
 }
 
 void afficher_statistiques(joueur_t* perso){
@@ -347,16 +349,123 @@ void afficher_statistiques(joueur_t* perso){
 	}	
 }
 
-joueur_t *levelup(joueur_t* perso){
+void levelup(joueur_t* perso){
 	perso->niveau += 1;
 	caracteristiques(perso);
-	return perso;
 }
 
-joueur_t *gain_xp(joueur_t* perso){
+void gain_xp(joueur_t* perso){
 	while(perso->xp >= 150+100*perso->niveau){
 		perso->xp = (perso->xp)-(150+100*(perso->niveau));
 		levelup(perso);		
 	}
-	return perso;
+}
+
+SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_direction orientation){
+	SDL_Rect * result = malloc(sizeof(SDL_Rect));
+
+	switch(orientation){
+		case NORD:
+			result->w = (sprite->w - hitbox->w) / 2 + hitbox->w;
+			result->h = sprite->h / 2;
+			result->x = hitbox->x;
+			result->y = sprite->y;
+			break;
+		case SUD:
+			result->w = (sprite->w - hitbox->w) / 2 + hitbox->w;
+			result->h = sprite->h / 2;
+			result->x = sprite->x;
+			result->y = hitbox->y + hitbox->h / 2;
+			break;
+		case OUEST:
+			result->w = sprite->w / 2 ;
+			result->h = (sprite->h - hitbox->h) / 2 + hitbox->h;
+			result->x = sprite->x;
+			result->y = sprite->y;
+			break;
+		case EST: 
+			result->w = sprite->w / 2 ;
+			result->h = (sprite->h - hitbox->h) / 2 + hitbox->h;
+			result->x = hitbox->x + hitbox->w / 2;
+			result->y = sprite->y;
+			break;
+	}
+	return result;
+}
+SDL_bool entite_subit_attaque(SDL_Rect * monstre_hitbox, joueur_t * joueur){
+	SDL_Rect * zone_attaque = zone_en_dehors_hitbox(&(joueur->statut->zone_colision), joueur->textures_joueur->liste[0]->aff_fenetre, joueur->statut->orientation);
+	SDL_bool statut = SDL_IntersectRect(zone_attaque, monstre_hitbox, NULL);
+	free(zone_attaque);
+	return statut;
+}
+
+t_direction orientation_inverse(t_direction orientation){
+	return (orientation + 2) % 4;
+}
+
+SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_direction * coter_entite_1, t_direction * coter_entite_2){
+	return vrai;
+}
+
+void environnement_joueur(list * liste_monstre, list * liste_sort, joueur_t * joueur){
+	monstre_t * monstre;
+	sort_t * sort;
+	t_direction coter_joueur;
+	t_direction coter_monstre;
+
+	en_tete(liste_monstre);
+	en_tete(liste_sort);
+
+	while(!hors_liste(liste_monstre)){
+		monstre = valeur_elt(liste_monstre);
+		//entite_en_collision renvoi un booleen ainsi qu'une orientation en paramètre
+		if(entite_en_collision(&(monstre->collision), &(joueur->statut->zone_colision), &coter_monstre, &coter_joueur)){
+			/* si le coup est bloqué */
+			if(joueur->statut->action == BLOQUER){
+				monstre->orientation = coter_joueur;
+				monstre->action = MONSTRE_BLESSE;
+				monstre->duree = DUREE_MONSTRE_BLESSE;
+			}
+			else if(joueur->statut->action != J_BLESSE){
+				(joueur->pdv) -= monstre->attaque;
+				if(joueur->pdv <= 0)
+					running = faux;
+				else{
+					joueur->statut->orientation = coter_monstre;
+					joueur->statut->action = J_BLESSE;
+					joueur->statut->duree = DUREE_JOUEUR_BLESSE;
+				}
+			}
+		}
+		/* si un monstre est touché */
+		if(joueur->statut->action == ATTAQUE){
+			if(entite_subit_attaque(monstre->texture, joueur->statut)){
+				(monstre->pdv) -= joueur->attaque_actif;
+				if(monstre->pdv <= 0){
+					oter_elt(liste_monstre);
+					(joueur->xp)+= monstre->gainXp;
+					gain_xp(joueur);
+				}
+				else{
+					monstre->orientation = joueur->statut->orientation;
+					monstre->action = MONSTRE_BLESSE;
+					monstre->duree = DUREE_MONSTRE_BLESSE;
+				}
+			}
+		}
+		if(joueur->statut->action == ATTAQUE_CHARGEE){
+			//modif l'orientation du personnage pendant qu'il tourne
+			/*if(entite_subit_attaque_zone(monstre->texture, joueur->statut)){
+				
+			}*/
+		}
+		suivant(liste_monstre);
+	}
+
+
+	while(!hors_liste(liste_sort)){
+
+	}
+
+
 }

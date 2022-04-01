@@ -223,7 +223,7 @@ void init_sousbuffer(t_map *map, joueur_t * joueur){
  * \author Ange Despert
  */
 void init(){
-
+    srand(time(NULL)); //initialisation des nombres aléatoires
     f_close = init_liste(NULL, NULL, NULL); 
 
     if(!f_close)
