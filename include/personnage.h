@@ -89,6 +89,7 @@ extern void levelup(joueur_t* perso);
 extern void gain_xp(joueur_t* perso);
 extern void creer_sauvegarde_json(joueur_t *j);
 void check_repertoire_jeux();
-void environnement_joueur(list * liste_monstre, list * liste_sort, joueur_t * joueur);
+void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * joueur);
+SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_direction orientation);
 
 #endif
