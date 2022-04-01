@@ -91,6 +91,7 @@ t_map * charger_s_map(char * buffer){
     fichier = json_tokener_parse(buffer);
     m = malloc(sizeof(t_map));
     m->liste_monstres =  init_liste(ajout_monstre,detruire_monstre,NULL);
+    m->liste_sorts = init_liste(NULL,NULL,NULL);
 
     json_object_object_get_ex(fichier, "file-path", &texture_map);
     json_object_object_get_ex(fichier, "width", &width);
@@ -104,19 +105,6 @@ t_map * charger_s_map(char * buffer){
                                 -1, -1, 0, 0, 1);
     m->height = json_object_get_int(height);
     m->width = json_object_get_int(width);
-
-    for(unsigned int i = 0; i < json_object_array_length(tbl_monstre); i++){
-        monstre = json_object_array_get_idx(tbl_monstre,i);
-
-        nom_monstre = json_object_object_get(monstre,"type");
-        position = json_object_object_get(monstre,"position");
-
-        x = json_object_array_get_idx(position,0);
-        y = json_object_array_get_idx(position,1);
-        
-        inserer = creer_monstre(liste_base_monstres, json_object_get_string(nom_monstre), json_object_get_int(x), json_object_get_int(y));
-        ajout_droit(m->liste_monstres, inserer);
-    }
 
     json_object_object_get_ex(fichier, "wall", &json_wall);
 
@@ -139,6 +127,22 @@ t_map * charger_s_map(char * buffer){
 
         ajout_droit(m->liste_collisions, valeur);
     }
+
+    for(unsigned int i = 0; i < json_object_array_length(tbl_monstre); i++){
+        monstre = json_object_array_get_idx(tbl_monstre,i);
+
+        nom_monstre = json_object_object_get(monstre,"type");
+        position = json_object_object_get(monstre,"position");
+
+        x = json_object_array_get_idx(position,0);
+        y = json_object_array_get_idx(position,1);
+        
+        inserer = creer_monstre(liste_base_monstres, json_object_get_string(nom_monstre), json_object_get_int(x), json_object_get_int(y));
+        ajout_droit(m->liste_monstres, inserer);
+        en_queue(m->liste_collisions);
+        ajout_droit(m->liste_collisions, &(inserer->collision));
+    }
+
 
 
     m->unite_dep_x = floor(FENETRE_LONGUEUR / (float)m->text_sol->width); /* Calcul en nombre de pixels d'une unité de déplacement */
