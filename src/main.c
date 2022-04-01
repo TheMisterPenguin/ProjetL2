@@ -214,7 +214,8 @@ int main(int argc, char** argv)
         #ifdef _DEBUG_COLLISION /* On affiche les collisions */
                 SDL_SetRenderDrawColor(rendu_principal, 0, 255, 0, SDL_ALPHA_OPAQUE);
                 SDL_RenderDrawRect(rendu_principal, &joueur1->statut->vrai_zone_collision);
-                SDL_RenderDrawRect(rendu_principal, &joueur2->statut->zone_colision);
+                if(nb_joueurs == 2)
+                    SDL_RenderDrawRect(rendu_principal, &joueur2->statut->zone_colision);
                 en_tete(map->liste_collisions);
 
                 while(!hors_liste(map->liste_collisions)){
