@@ -710,7 +710,7 @@ void boucle_sprite(t_aff * texture, joueur_t ** joueurs){
             SDL_RenderClear(rendu_principal);
 
             /* On affiche la carte */
-            afficher_texture(map->text_map, rendu_principal);
+            afficher_texture(fenetre_finale, rendu_principal);
 
             /* On affiche les joueur */
             afficher_texture(joueurs[0]->textures_joueur->liste[TEXT_MARCHER], rendu_principal);
