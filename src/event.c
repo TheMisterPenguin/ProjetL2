@@ -85,7 +85,7 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
             case TOUCHE_CONSOMMABLE :
                 if(joueur1->inventaire->equipe->liste[consommable] != NULL){
                     consommer_objet(joueur1);
-                    text_copier_position(heal, *(joueur1->textures_joueur->liste)); // amélioration: centrer pour toutes les tailles
+                    text_copier_position(heal, joueur1->textures_joueur->liste[0]); // amélioration: centrer pour toutes les tailles
                     joueur1->statut->duree_anim = DUREE_SOIN;
                     joueur1->statut->animation = SOIN;
                     joueur1->statut->en_mouvement = faux;
@@ -112,7 +112,7 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
             case SDLK_RETURN :
                 if(joueur2->inventaire->equipe->liste[consommable] != NULL){
                     consommer_objet(joueur2);
-                    text_copier_position(heal, *(joueur2->textures_joueur->liste)); // amélioration: centrer pour toutes les tailles
+                    text_copier_position(heal, joueur2->textures_joueur->liste[0]); // amélioration: centrer pour toutes les tailles
                     joueur2->statut->duree_anim = DUREE_SOIN;
                     joueur2->statut->animation = SOIN;
                     joueur2->statut->en_mouvement = faux;

@@ -19,15 +19,61 @@ joueur_t * perso_principal = NULL;
 int init_suite(void) { return 0; }
 int clean_suite(void) { return 0; }
 
-void personnage_test_1(void) {
+void creation_personnage(void) {
     CU_ASSERT_NOT_EQUAL(perso_principal = new_joueur("test", 0), NULL);
-    //autres tests similaires
+    CU_ASSERT_STRING_EQUAL(perso_principal->nom_pers, "test");
+    CU_ASSERT_EQUAL(perso_principal->niveau, 0);
+    CU_ASSERT_EQUAL(perso_principal->xp, 0);
+    CU_ASSERT_EQUAL(perso_principal->maxPdv, 10);
+    CU_ASSERT_EQUAL(perso_principal->pdv, 10);
+    CU_ASSERT_EQUAL(perso_principal->attaque, 10);
+    CU_ASSERT_EQUAL(perso_principal->defense, 10);
+    CU_ASSERT_EQUAL(perso_principal->vitesse, 1);
+    CU_ASSERT_EQUAL(perso_principal->attaque_actif, 10);
+    CU_ASSERT_EQUAL(perso_principal->defense_actif, 10);
+    CU_ASSERT_EQUAL(perso_principal->vitesse_actif, 1);
+
+    CU_ASSERT_NOT_EQUAL(perso_principal->inventaire, NULL);
+    CU_ASSERT_NOT_EQUAL(perso_principal->inventaire->sac, NULL);
+    CU_ASSERT_NOT_EQUAL(perso_principal->inventaire->equipe, NULL);
+    CU_ASSERT_NOT_EQUAL(perso_principal->inventaire->sac->liste, NULL);
+    CU_ASSERT_NOT_EQUAL(perso_principal->inventaire->equipe->liste, NULL);
+    CU_ASSERT_EQUAL(perso_principal->inventaire->sac->nb, 0);
+    CU_ASSERT_EQUAL(perso_principal->inventaire->equipe->nb, 0);
+    CU_ASSERT_EQUAL(perso_principal->inventaire->sac->liste[0], NULL);
+    CU_ASSERT_EQUAL(perso_principal->inventaire->equipe->liste[0], NULL);
+
+    CU_ASSERT_NOT_EQUAL(perso_principal->statut, NULL);
+    CU_ASSERT_EQUAL(perso_principal->statut->orientation, NORD);
+    CU_ASSERT_EQUAL(perso_principal->statut->bouclier_equipe, faux);
+    CU_ASSERT_EQUAL(perso_principal->statut->duree, 0);
+    CU_ASSERT_EQUAL(perso_principal->statut->duree_anim, 0);
+    CU_ASSERT_EQUAL(perso_principal->statut->en_mouvement, faux);
+    CU_ASSERT_EQUAL(perso_principal->statut->action, 0);
+    CU_ASSERT_EQUAL(perso_principal->statut->animation, 0);
+    CU_ASSERT_EQUAL(perso_principal->statut->x, 0);
+    CU_ASSERT_EQUAL(perso_principal->statut->y, 0);
+    CU_ASSERT_EQUAL(perso_principal->statut->zone_colision.x, 0);
+    CU_ASSERT_EQUAL(perso_principal->statut->zone_colision.y, 0);
+
+    CU_ASSERT_EQUAL(perso_principal->statut->vrai_zone_collision.x, 0);
+    CU_ASSERT_EQUAL(perso_principal->statut->vrai_zone_collision.y, 0);
+    CU_ASSERT_EQUAL(perso_principal->statut->vrai_zone_collision.w, map->taille_case);
+    CU_ASSERT_EQUAL(perso_principal->statut->vrai_zone_collision.h, map->taille_case);
+
+    CU_ASSERT_NOT_EQUAL(perso_principal->textures_joueur, NULL);
 }
 
-void personnage_test_2(void) {
-    CU_ASSERT_NOT_EQUAL(objets = creer_liste_objet(), NULL);
-    creer_textures_objets(objets);
+void modification_personnage(void) {
+    CU_ASSERT_NOT_EQUAL(objets = creer_liste_objet("../ressource/objet.txt"), NULL);
     tout_ramasser(objets, perso_principal->inventaire);
+    CU_ASSERT_NOT_EQUAL(perso_principal->inventaire->sac->liste[0], NULL);
+    CU_ASSERT_NOT_EQUAL(perso_principal->inventaire->sac->nb, 0);
+    CU_ASSERT_EQUAL(perso_principal->inventaire->equipe->liste[0], NULL);
+    CU_ASSERT_EQUAL(perso_principal->inventaire->equipe->nb, 0);
+    //test avec fichiers donnant des valeurs extremes (0,5,10,15 objets)
+    //test des valeurs des objets
+    //test d'appels multiples
 }
 
 
@@ -48,8 +94,8 @@ int main(){
     }
     
 
-    if ( (NULL == CU_add_test(pSuite, "personnage_test_1", personnage_test_1)) ||
-        (NULL == CU_add_test(pSuite, "personnage_test_2", personnage_test_2))
+    if ( (NULL == CU_add_test(pSuite, "creation_personnage", creation_personnage)) ||
+        (NULL == CU_add_test(pSuite, "modification_personnage", modification_personnage))
         )
     {
         CU_cleanup_registry();

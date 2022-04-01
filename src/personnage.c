@@ -247,10 +247,10 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 }
 
 joueur_t *new_joueur(const char* nom, int num_j){
-	byte *trig = calloc(TAILLE_TRIGGER, sizeof(byte));
+	byte *trig = calloc(TAILLE_TRIGGER, sizeof(byte));//pour l'instant inutile (refait dans creer joueur)
 
 	joueur_t *j = creer_joueur(nom, 0, 0, 10, 10, 10, 10, 1, trig, NORD, faux, num_j);
-	free(trig);
+	free(trig); //pour l'instant inutile (refait dans creer joueur)
 
 	j->statut->zone_colision.x = 0;
 	j->statut->zone_colision.y = 0;
@@ -300,7 +300,7 @@ joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const in
 	perso->statut->orientation = orientation;
 	perso->statut->bouclier_equipe = bouclier_equipe;
 	perso->statut->action = RIEN;
-	perso->statut->action = RIEN;
+	perso->statut->animation = RIEN;
 
 	perso->statut->vrai_zone_collision.x = 0;
 	perso->statut->vrai_zone_collision.y = 0;
