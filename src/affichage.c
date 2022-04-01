@@ -248,19 +248,19 @@ t_l_aff* init_textures_joueur(joueur_t *j, int num_j){
 /* Création d'une nouvelle liste de textures pour le joueur. */
     //textures joueur1
     if(num_j == 0){
-      textures_joueur->liste[TEXT_MARCHER] = (creer_texture(N_T_MARCHER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE)));
-      textures_joueur->liste[TEXT_ATTAQUE] = (creer_texture(N_T_ATTAQUE, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE)));
-      textures_joueur->liste[TEXT_ATTAQUE_CHARGEE] = creer_texture(N_T_ATTAQUE_CHARGEE, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE));
-      textures_joueur->liste[TEXT_CHARGER] = creer_texture(N_T_CHARGER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE));
-      textures_joueur->liste[TEXT_MARCHER_BOUCLIER] = creer_texture(N_T_MARCHER_BOUCLIER, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE));
+      textures_joueur->liste[TEXT_MARCHER] = (creer_texture(N_T_MARCHER, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE)));
+      textures_joueur->liste[TEXT_ATTAQUE] = (creer_texture(N_T_ATTAQUE, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE)));
+      textures_joueur->liste[TEXT_ATTAQUE_CHARGEE] = creer_texture(N_T_ATTAQUE_CHARGEE, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE));
+      textures_joueur->liste[TEXT_CHARGER] = creer_texture(N_T_CHARGER, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE));
+      textures_joueur->liste[TEXT_MARCHER_BOUCLIER] = creer_texture(N_T_MARCHER_BOUCLIER, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE));
     }
     //textures joueur2
     else{
-        textures_joueur->liste[TEXT_MARCHER] = (creer_texture(N_T_MARCHER2, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE)));
-        textures_joueur->liste[TEXT_ATTAQUE] = (creer_texture(N_T_ATTAQUE2, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE)));
-        textures_joueur->liste[TEXT_ATTAQUE_CHARGEE] = creer_texture(N_T_ATTAQUE_CHARGEE2, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE));
-        textures_joueur->liste[TEXT_CHARGER] = creer_texture(N_T_CHARGER2, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE));
-        textures_joueur->liste[TEXT_MARCHER_BOUCLIER] = creer_texture(N_T_MARCHER_BOUCLIER2, LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE));    }
+        textures_joueur->liste[TEXT_MARCHER] = (creer_texture(N_T_MARCHER2, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE)));
+        textures_joueur->liste[TEXT_ATTAQUE] = (creer_texture(N_T_ATTAQUE2, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE)));
+        textures_joueur->liste[TEXT_ATTAQUE_CHARGEE] = creer_texture(N_T_ATTAQUE_CHARGEE2, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE));
+        textures_joueur->liste[TEXT_CHARGER] = creer_texture(N_T_CHARGER2, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE));
+        textures_joueur->liste[TEXT_MARCHER_BOUCLIER] = creer_texture(N_T_MARCHER_BOUCLIER2, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, floor(map->taille_case / TAILLE_PERSONNAGE));    }
     
     textures_joueur->liste[TEXT_MARCHER]->duree_frame_anim = 5;
     textures_joueur->liste[TEXT_ATTAQUE]->duree_frame_anim = 4;
@@ -280,7 +280,6 @@ t_l_aff* init_textures_joueur(joueur_t *j, int num_j){
         ajout_droit(map->liste_collisions, &j->statut->vrai_zone_collision);
     else
         ajout_droit(map->liste_collisions, &j->statut->zone_colision);
-
     return textures_joueur;
 }
 
@@ -402,6 +401,7 @@ void afficher_monstres(list * liste_monstre, joueur_t * joueur){
     while(!hors_liste(liste_monstre)){
         monstre = valeur_elt(liste_monstre);
         action_monstre(monstre, joueur);
+        if(monstre->action != MONSTRE_BLESSE || monstre->action == MONSTRE_BLESSE && compteur%3 == 0)
         afficher_texture(monstre->texture ,rendu_principal);
         suivant(liste_monstre);
     }
@@ -732,65 +732,6 @@ void placer_texture(t_aff *texture, int x, int y){
     texture->aff_fenetre->y = y;
 }
 
-
-void boucle_sprite(t_aff * texture, joueur_t ** joueurs){
-
-    int debut, fin;
-    float temps_passe;
-    int fini = 0;
-
-    while(!fini){
-        debut = SDL_GetPerformanceCounter();
-
-        if ((compteur % 5) == 0){ /*compteur%5 pour la vitesse d'affichage*/
-            //affichage du rendu
-            SDL_RenderClear(rendu_principal);
-
-            /* On affiche la carte */
-            afficher_texture(map->text_map, rendu_principal);
-
-            /* On affiche les joueur */
-            afficher_texture(joueurs[0]->textures_joueur->liste[TEXT_MARCHER], rendu_principal);
-            afficher_texture(joueurs[1]->textures_joueur->liste[TEXT_MARCHER], rendu_principal);
-
-            /* On affiche l'interface */
-            RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
-            ((float)joueurs[0]->pdv/joueurs[0]->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
-
-            RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
-            ((float)joueurs[1]->pdv/joueurs[1]->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
-
-            /* On affiche l'animation */
-            afficher_texture(texture, rendu_principal);
-            SDL_RenderPresent(rendu_principal);
-
-            //calcul de la suite de l'animation
-            next_frame_x(texture);
-
-            if(texture->frame_anim->x == 0){ //passage à la ligne suivante
-                next_frame_y(texture);
-                if(texture->frame_anim->y == 0)
-                    fini = 1;
-            }
-        }
-
-        fin = SDL_GetPerformanceCounter();
-
-        //calcul du temps d'affichage
-        temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
-        SDL_Delay(floor((200 / (float) NB_FPS) - temps_passe));
-        if(compteur == NB_FPS)
-            compteur = 0;
-        compteur++;
-    }
-}
-
-void anim_effet_joueur(t_aff * effet, int num_joueur, joueur_t ** joueurs){
-    text_copier_position(effet, *(joueurs[num_joueur]->textures_joueur->liste)); //amélioration: centrer pour toutes les tailles
-
-    boucle_sprite(effet, joueurs);
-}
-
 void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y){
     const double multipli_x = (double) map->text_map->frame_anim->w / FENETRE_LONGUEUR;
     const double multipli_y = (double)map->text_map->frame_anim->h / FENETRE_LARGEUR;
@@ -895,7 +836,7 @@ void deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
 }
 
 void init_animations(){
-    heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_PERSONNAGE, LONGUEUR_PERSONNAGE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
+    heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
 }
 
 t_aff * next_frame_animation(joueur_t * joueur){
