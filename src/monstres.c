@@ -52,7 +52,7 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, char* nom_m
             monstre->collision.h = liste_base_monstres->tab[i].hitbox.h;
             
             monstre->orientation = NORD;
-            monstre->duree = DUREE_MONSTRE_EN_GARDE;
+            monstre->duree = 0;
             monstre->action = MONSTRE_EN_GARDE;
 
             /*copie les informations de base_monstre dans monstre*/
