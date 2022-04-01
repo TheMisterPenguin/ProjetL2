@@ -13,7 +13,7 @@
 #include "definition_commun.h"
 #include "affichage.h"
 
-#define DISTANCE_AGRO 500
+#define DISTANCE_AGRO 50
 #define DUREE_MONSTRE_MARCHER 100
 #define DUREE_MONSTRE_EN_GARDE 140
 #define DUREE_RUSH_OU_FUITE 150
