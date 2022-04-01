@@ -15,8 +15,21 @@
  * \brief Définition du type liste
  * 
  */
-typedef struct list list;
+typedef struct element
+{
+    void *valeur;
+    struct element *pred;
+    struct element *succ;
+} t_element;
 
+typedef struct list{
+    t_element *flag;
+    t_element *ec;
+    unsigned int nb_elem;
+    void * (*ajout)(void *);
+    void (*del)(void *);
+    void (*aff)(void *);
+}list;
 /**
  * Fonction qui permet de créer une liste
  *
