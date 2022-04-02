@@ -137,7 +137,7 @@ t_map * charger_s_map(char * buffer){
         x = json_object_array_get_idx(position,0);
         y = json_object_array_get_idx(position,1);
         
-        inserer = creer_monstre(liste_base_monstres, json_object_get_string(nom_monstre), json_object_get_int(x), json_object_get_int(y));
+        inserer = creer_monstre(liste_base_monstres, json_object_get_string(nom_monstre), json_object_get_int(x), json_object_get_int(y), m);
         ajout_droit(m->liste_monstres, inserer);
         en_queue(m->liste_collisions);
         ajout_droit(m->liste_collisions, &(inserer->collision));

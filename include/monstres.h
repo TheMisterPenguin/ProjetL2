@@ -106,7 +106,7 @@ void charger_base_monstre(char* nom_fichier);
  * \param y la position en ordonnée du monstre sur la map
  * \return monstres_t* une structure contenant les informations du monstre
  */
-monstre_t *creer_monstre(liste_base_monstres_t *liste_base_monstres, const char *const nom_monstre, int x, int y);
+monstre_t *creer_monstre(liste_base_monstres_t *liste_base_monstres, const char *const nom_monstre, int x, int y, t_map *map);
 
 /**
  * \fn void action_monstre(monstre_t * monstre)

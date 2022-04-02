@@ -30,7 +30,7 @@ void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres){
     *liste_base_monstres = NULL;
 }
 
-monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, const char * const nom_monstre, int x, int y){
+monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, const char * const nom_monstre, int x, int y, t_map *map){
     int i;
 
     /* allocation monstre_t*/
@@ -40,9 +40,9 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, const char 
             monstre->type = nom_monstre_to_type_monstre(nom_monstre);
             monstre->collision.x = x;
             monstre->collision.y = y;
-            monstre->collision.w = liste_base_monstres->tab[i].hitbox.w;
-            monstre->collision.h = liste_base_monstres->tab[i].hitbox.h;
-            
+            monstre->collision.w = liste_base_monstres->tab[i].hitbox.w * (map->taille_case / TAILLE_CASE);
+            monstre->collision.h = liste_base_monstres->tab[i].hitbox.h * (map->taille_case / TAILLE_CASE);
+
             monstre->orientation = NORD;
             monstre->duree = 0;
             monstre->action = MONSTRE_EN_GARDE;
@@ -53,7 +53,7 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, const char 
             monstre->vitesse = liste_base_monstres->tab[i].vitesse;
             monstre->gainXp = liste_base_monstres->tab[i].gainXp;
 
-            monstre->texture = creer_texture(liste_base_monstres->tab[i].fichier_image, LARGEUR_ENTITE, LONGUEUR_ENTITE, -100, -100, 1);
+            monstre->texture = creer_texture(liste_base_monstres->tab[i].fichier_image, LARGEUR_ENTITE, LONGUEUR_ENTITE, -100, -100, map->taille_case / TAILLE_CASE);
             monstre->texture->duree_frame_anim = NB_FPS;
 
             return monstre;
