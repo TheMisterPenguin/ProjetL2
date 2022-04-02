@@ -35,8 +35,9 @@
 #define N_T_MARCHER_BOUCLIER2 "ressources/sprite/marcher_bouclier_green.bmp"
 
 /* On définit la taille d'une frame de sprite */
-#define LONGUEUR_PERSONNAGE 48
-#define LARGEUR_PERSONNAGE 48
+#define LONGUEUR_ENTITE 48
+#define LARGEUR_ENTITE 48
+
 
 typedef struct joueur_s joueur_t;
 
@@ -155,6 +156,17 @@ extern void next_frame_y(t_aff* texture);
  * \param t_aff* une texture joueur
  */
 extern void next_frame_x(t_aff *texture);
+
+/**
+ * \fn void next_frame_indice(t_aff *texture, const unsigned int x, const unsigned int y);
+ * \brief Fonction qui positionne la texture au n-ème sprite sur l'axe des x
+ *
+ * \param texture une texture joueur
+ * \param x qui correspond au n-ème sprite sur l'axe des x ou l'on souhaite positionner la texture
+ * \param y qui correspond au n-ème sprite sur l'axe des y ou l'on souhaite positionner la texture
+ * \return err_t un entier pour savoir si il y a eu une erreur
+ */
+extern err_t next_frame_indice(t_aff *texture, const unsigned int x, const unsigned int y);
 
 /**
  * \fn void next_frame_x_indice(t_aff *texture, const unsigned int indice);
@@ -329,14 +341,41 @@ bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2);
  * \param a niveau d'opacité
  * \return SDL_Color une couleur SDL
  */
-SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
+extern SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 
 /**
  * \fn void info_texture(t_aff * texture)
  * \brief Affiche des informations sur une texture
  * \param texture la texture sur laquelle on se renseigne
  */
-void info_texture(t_aff * texture);
+extern void info_texture(t_aff * texture);
+
+/**
+* \fn extern int current_frame_x(t_aff * texture);
+ * \brief Fonction qui donne l'indice sur l'axe des abscisses actuelle de la texture 
+ *
+ * \param texture une texture
+ * \return un entier correspondant à l'indice
+ */
+extern int current_frame_x(t_aff * texture);
+
+/**
+* \fn extern int current_frame_y(t_aff * texture);
+ * \brief Fonction qui donne l'indice sur l'axe des ordonnées actuelle de la texture 
+ *
+ * \param texture une texture
+ * \return un entier correspondant à l'indice
+ */
+extern int current_frame_y(t_aff * texture);
+
+/**
+* \fn extern void afficher_monstres(list * liste_monstre);
+ * \brief Fonction qui affiche les monstres
+ * \param liste_monstre une liste de monstre
+ * \param joueur le joueur qui influe sur le monstre
+ */
+extern void afficher_monstres(list * liste_monstre, joueur_t * joueur);
+
 
 /**
  * \fn void placer_texture(t_aff *texture, int x, int y)
@@ -346,23 +385,6 @@ void info_texture(t_aff * texture);
  * \param y Position verticale
  */
 void placer_texture(t_aff *texture, int x, int y);
-
-/**
- * \fn void boucle_sprite(t_aff * texture, joueur_t ** joueurs)
- * \brief Permet d'afficher tous les sprites d'un spritesheet successivement
- * \param texture Texture spritesheet
- * \param joueurs Joueurs à afficher
- */
-void boucle_sprite(t_aff * texture, joueur_t ** joueurs);
-
-/**
- * \fn void anim_effet_joueur(t_aff * effet, int num_joueur, joueur_t ** joueurs)
- * \brief Permet de créer une animation sur un joueur
- * \param texture Texture spritesheet d'animation
- * \param num_joueur Numéro du joueur activant l'animation
- * \param joueurs Joueurs en jeu
- */
-void anim_effet_joueur(t_aff * effet, int num_joueur, joueur_t ** joueurs);
 
 /**
  * \fn void init_animations(void)
