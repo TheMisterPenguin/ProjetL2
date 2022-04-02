@@ -1,0 +1,46 @@
+{
+    "type" : "map",
+    "id" : 1,
+    "file-path" : "ressources/background/map/outside_sanada.bmp",
+    "width" : 55, //30 cases de 16px mais une cases de la map fait 32px en réalité
+    "height" : 35,
+    "taille case" : 32,
+    "starting-point" : [5, 5],
+    "monsters" : [
+        {"type" : "demon_alpha",
+        "level" : 1,
+        "position" : [1,6]}
+    ],
+    "wall" : [
+        {
+            "x" : 6,
+            "y" : 0,
+            "h" : 8,
+            "w" : 1
+        },
+        {
+            "x": 5,
+            "y": 8,
+            "h": 2,
+            "w": 3
+        },
+        {
+            "x": 0,
+            "y": 8,
+            "h": 2,
+            "w": 3
+        },
+        /*{
+            "w" : 6,
+            "h" : 3,
+            "x" : 0,
+            "y" : 0
+        }*/
+        {
+            "w": 6,
+            "h": 3,
+            "x": 0,
+            "y": 0
+        }
+    ]
+}
