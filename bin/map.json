@@ -1,10 +1,10 @@
 {
     "type" : "map",
     "id" : 1,
-    "file-path" : "ressources/background/map/truehouse16.bmp",
+    "file-path" : "ressources/background/map/interieur3.bmp",
     "width" : 15, //30 cases de 16px mais une cases de la map fait 32px en réalité
     "height" : 13,
-    "taille case" : 16,
+    "taille case" : 32,
     "starting-point" : [5, 5],
     "monsters" : [
         {"type" : "demon_alpha",
@@ -15,19 +15,19 @@
         {
             "x" : 6,
             "y" : 0,
-            "h" : 7,
+            "h" : 8,
             "w" : 1
         },
         {
-            "x": 4,
-            "y": 7,
-            "h": 3,
-            "w": 4
+            "x": 5,
+            "y": 8,
+            "h": 2,
+            "w": 3
         },
         {
             "x": 0,
-            "y": 7,
-            "h": 3,
+            "y": 8,
+            "h": 2,
             "w": 3
         },
         /*{
@@ -39,7 +39,7 @@
         {
             "w": 6,
             "h": 3,
-            "x": 5,
+            "x": 0,
             "y": 0
         }
     ]
