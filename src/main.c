@@ -89,15 +89,20 @@ int main(int argc, char** argv)
     afficher_intro();
 
     /* On affiche l'accueil du jeu */
-    SDL_ShowCursor(SDL_ENABLE);
-    afficher_menu_accueil(&nb_joueurs);
-    SDL_ShowCursor(SDL_DISABLE);
+    if(!manette){
+        SDL_ShowCursor(SDL_ENABLE);
+        afficher_menu_accueil(&nb_joueurs);
+        SDL_ShowCursor(SDL_DISABLE);
+    }
+    else
+        afficher_menu_accueil_manette(&nb_joueurs);
+
 
     if(nb_joueurs == 2)
         creer_inventaire_j2();
 
     /* On charge la map */
-    fichier_map = charger_f_map("map.json");
+    fichier_map = charger_f_map("2.json");
     map = charger_s_map(fichier_map);
     text = texture_map(map); 
 
@@ -154,7 +159,11 @@ int main(int argc, char** argv)
     while (running)
     {
         debut = SDL_GetPerformanceCounter();
-        jeu_event(joueurs);
+
+        if(!manette)
+            jeu_event(joueurs);
+        else
+            jeu_event_manette(joueurs);
 
         // en_tete(buffer_affichage);
         if (joueur1->statut->en_mouvement){ /* Déplacement map */
