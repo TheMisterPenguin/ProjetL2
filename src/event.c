@@ -12,6 +12,8 @@
  * \copyright Copyright (c) 2022
  */
 
+SDL_GameController * manette;
+
 /**
  * \fn void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs)
  * \brief Fonction qui gère les événements quand une touche du clavier est pressée par un joueur
@@ -32,7 +34,6 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
         afficher_menu_pause(joueur1);
         SDL_ShowCursor(SDL_DISABLE);
     }
-
     if((joueur1->statut->action == RIEN || joueur1->statut->action == CHARGER) && (joueur2 == NULL || (joueur2->statut->action == RIEN || joueur2->statut->action == CHARGER)))
         switch(ev->keysym.sym){
             case SDLK_F11 :
@@ -67,16 +68,10 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
                     }
                 }
                 break;
-            /*case TOUCHE_RETOUR : 
-            if(menus == PAUSE){
-                menus = JEU;
-            } else {
-                menus = PAUSE;
-            }; break; A décommenter quand la texture menu pause sera faite*/
         }
 
     //joueur1 _____________________________________________________________
-    if(joueur1->statut->action == RIEN || joueur1->statut->action == CHARGER)
+    if(joueur1->statut->action == RIEN || joueur1->statut->action == CHARGER){
         switch(ev->keysym.sym){
             case TOUCHE_BAS : joueur1->statut->orientation = SUD;  joueur1->statut->en_mouvement = vrai; break;
             case TOUCHE_HAUT : joueur1->statut->orientation = NORD;  joueur1->statut->en_mouvement = vrai; break;
@@ -91,19 +86,26 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
             case TOUCHE_CONSOMMABLE :
                 if(joueur1->inventaire->equipe->liste[consommable] != NULL){
                     consommer_objet(joueur1);
-                    // anim_effet_joueur(heal, 0, joueurs);
-                    text_copier_position(heal, *(joueur1->textures_joueur->liste)); //amélioration: centrer pour toutes les tailles
+                    text_copier_position(heal, joueur1->textures_joueur->liste[0]); // amélioration: centrer pour toutes les tailles
                     joueur1->statut->duree_anim = DUREE_SOIN;
                     joueur1->statut->animation = SOIN;
                     joueur1->statut->en_mouvement = faux;
                 }
                 break;
         }
+        if(joueur2 == NULL){//mode solo
+            switch(ev->keysym.sym){
+                case SDLK_DOWN : joueur1->statut->orientation = SUD;  joueur1->statut->en_mouvement = vrai; break;
+                case SDLK_UP : joueur1->statut->orientation = NORD;  joueur1->statut->en_mouvement = vrai; break;
+                case SDLK_RIGHT : joueur1->statut->orientation = EST;  joueur1->statut->en_mouvement = vrai; break;
+                case SDLK_LEFT : joueur1->statut->orientation = OUEST;  joueur1->statut->en_mouvement = vrai; break;
+            }
+        }
+    }
             
-
     //joueur2 _____________________________________________________________
 
-    if(joueur2 != NULL){ //si mode coopération
+    if(joueur2 != NULL){ //mode coopération
         if(joueur2->statut->action == RIEN || joueur2->statut->action == CHARGER)
         switch(ev->keysym.sym){
             case SDLK_DOWN : joueur2->statut->orientation = SUD;  joueur2->statut->en_mouvement = vrai; break;
@@ -116,17 +118,10 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
                 afficher_inventaire(joueur2, SDLK_p);
                 SDL_ShowCursor(SDL_DISABLE);
                 break;
-            /*case TOUCHE_RETOUR : 
-            if(menus == PAUSE){
-                menus = JEU;
-            } else {
-                menus = PAUSE;
-            }; break; A décommenter quand la texture menu pause sera faite*/
             case SDLK_RETURN :
                 if(joueur2->inventaire->equipe->liste[consommable] != NULL){
                     consommer_objet(joueur2);
-                    // anim_effet_joueur(heal, 1, joueurs);
-                    text_copier_position(heal, *(joueur2->textures_joueur->liste)); //amélioration: centrer pour toutes les tailles
+                    text_copier_position(heal, joueur2->textures_joueur->liste[0]); // amélioration: centrer pour toutes les tailles
                     joueur2->statut->duree_anim = DUREE_SOIN;
                     joueur2->statut->animation = SOIN;
                     joueur2->statut->en_mouvement = faux;
@@ -169,10 +164,26 @@ static void keyUp(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
                 joueur1->statut->en_mouvement = faux;
             break;
     }
+    if(joueur2 == NULL){//mode solo
+            switch(ev->keysym.sym){
+                case SDLK_DOWN : 
+                    if(orientation1 == SUD)
+                        joueur1->statut->en_mouvement = faux;
+                case SDLK_UP : 
+                    if(orientation1 == NORD)
+                        joueur1->statut->en_mouvement = faux;
+                case SDLK_RIGHT : 
+                    if(orientation1 == EST)
+                        joueur1->statut->en_mouvement = faux;
+                case SDLK_LEFT : 
+                    if(orientation1 == OUEST)
+                        joueur1->statut->en_mouvement = faux;
+            }
+        }
 
     //joueur2 _____________________________________________________________
 
-    if(joueur2 != NULL){ //si mode coopération
+    if(joueur2 != NULL){ //mode coopération
         orientation2 = joueur2->statut->orientation;
         
         switch(ev->keysym.sym){
@@ -195,6 +206,85 @@ static void keyUp(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
         }
     }
 }
+
+void joystick_button_down(SDL_JoyButtonEvent *ev, joueur_t **j){
+    joueur_t *joueur = j[0];
+    statut_t *statut = joueur->statut;
+
+    switch(ev->button){
+        case SDL_CONTROLLER_BUTTON_START : afficher_menu_pause_manette(joueur); break;
+        case SDL_CONTROLLER_BUTTON_X :
+            statut->action = ATTAQUE_OU_CHARGER;
+            statut->duree = DUREE_ATTAQUE_OU_CHARGEE;
+            break;
+        case SDL_CONTROLLER_BUTTON_GUIDE :
+            afficher_inventaire(joueur, SDLK_TAB);
+            break;
+    }
+}
+
+void joystick_button_up(SDL_JoyButtonEvent *ev, joueur_t **j)
+{
+    joueur_t *joueur = j[0];
+    statut_t *statut = joueur->statut;
+
+    switch (ev->button)
+    {
+    case SDL_CONTROLLER_BUTTON_X:
+        if (statut->action == CHARGER)
+        {
+            statut->action = ATTAQUE_CHARGEE;
+            statut->en_mouvement = faux;
+            statut->duree = DUREE_ATTAQUE_CHARGEE;
+        }
+        else if (statut->action == ATTAQUE_OU_CHARGER)
+        {
+            statut->action = ATTAQUE;
+            statut->duree = DUREE_ATTAQUE;
+        }
+        break;
+    }
+}
+
+
+void joystick_stick(joueur_t **j){
+    joueur_t *joueur = j[0];
+    statut_t *statut = joueur->statut;
+    Sint16 axe_x = SDL_GameControllerGetAxis(manette, 0); /* On récupère la valeur du stick  */
+    Sint16 axe_y = SDL_GameControllerGetAxis(manette, 1); /* On récupère la valeur du stick  */
+
+    if((axe_y > -25735 && axe_y < 25735)){ /* Possible mouvement de l'axe x */
+        if (axe_x > 10000){
+            statut->orientation = EST;
+            statut->en_mouvement = vrai;
+        }
+        else{ 
+            if (axe_x < -10000){
+                statut->orientation = OUEST;
+                statut->en_mouvement = vrai;
+            }
+            else
+                statut->en_mouvement = faux;
+        }
+    }
+
+    if ((axe_x > -25735 && axe_x < 25735)){
+        if (axe_y > 10000){
+            statut->orientation = SUD;
+            statut->en_mouvement = vrai;
+        }
+        else {
+            if (axe_y < -10000){
+                statut->orientation = NORD;
+                statut->en_mouvement = vrai;
+            }
+            else
+                statut->en_mouvement = faux;
+        }
+    }
+    
+}
+
 
 /**
  * \fn void mouseButtonDown(SDL_MouseButtonEvent * ev, joueur_t ** joueurs)
@@ -245,6 +335,27 @@ static void mouseButtonUp(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
         joueur->statut->action = RIEN;    
 }
 
+void jeu_event_manette(joueur_t **joueurs){
+    SDL_Event lastEvent;
+
+    joystick_stick(joueurs);
+
+    while (SDL_PollEvent(&lastEvent))
+    {
+        switch (lastEvent.type)
+        {
+        case SDL_QUIT:
+            printf("Détection de la fermeture de la fenêtre\n");
+            fermer_programme(EXIT_SUCCESS);
+        case SDL_JOYBUTTONDOWN:
+            joystick_button_down((SDL_JoyButtonEvent *)&lastEvent, joueurs);
+            break;
+        case SDL_JOYBUTTONUP:
+            joystick_button_up((SDL_JoyButtonEvent *)&lastEvent, joueurs);
+            break;
+        }
+    }
+}
 
 void jeu_event(joueur_t ** joueurs){
     SDL_Event lastEvent;

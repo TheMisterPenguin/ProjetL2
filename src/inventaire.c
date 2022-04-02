@@ -100,23 +100,20 @@ void desequiper(joueur_t * joueur, objet_t ** objet){
     */
 }
 
-inventaire_t * creer_inventaire(){
+inventaire_t * creer_inventaire(){ //refaire fonction##################
     inventaire_t * inventaire = NULL;
-    lobjet_t * equipe = NULL;
-    lobjet_t * sac = NULL;
 
-    equipe = creer_liste_objet_equipe();
-    sac = creer_liste_objet_vide();
-
-    if(equipe != NULL && sac != NULL){
-        if(( inventaire = malloc(sizeof(inventaire_t))) == NULL )
-        {
+    if(( inventaire = malloc(sizeof(inventaire_t))) == NULL ){
         fprintf( stderr , "creer_inventaire: debordement memoire lors de la creation d'une structure inventaire_t\n");
         return((inventaire_t *)NULL);
-        }
+    }
 
-        inventaire->equipe = equipe;
-        inventaire->sac = sac;
+    inventaire->equipe = creer_liste_objet_equipe();
+    inventaire->sac = creer_liste_objet_vide("../ressource/objet.txt");
+
+    if(inventaire->equipe == NULL || inventaire->sac == NULL){
+        fprintf( stderr , "creer_inventaire: erreur de création du sac ou du équipé\n");
+        return((inventaire_t *)NULL);
     }
     return inventaire;
 }
@@ -138,8 +135,7 @@ void tout_ramasser(lobjet_t * objets, inventaire_t * inventaire){
     int i;
     
     for(i=0; i<objets->nb; i++){
-        inventaire->sac->liste[inventaire->sac->nb] = objets->liste[i];
-        inventaire->sac->nb++;
+        ramasser_objet(objets->liste[i], inventaire);
     }
 }
 
