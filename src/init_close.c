@@ -26,11 +26,6 @@ SDL_Rect * hors_hitbox = NULL;
 list *f_close = NULL; /**< Liste des fonctions à appeler lors de la fermeture du programme*/
 
 void fermer_programme(int code_erreur){
-    #ifdef _DEBUG_COLLISION /* Affichage des collisions */
-
-        if(hors_hitbox)
-            free(hors_hitbox);
-    #endif
     en_queue(f_close);
 
     while(!hors_liste(f_close)){

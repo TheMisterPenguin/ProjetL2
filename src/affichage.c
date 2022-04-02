@@ -700,7 +700,7 @@ void deplacement_y_pers(t_map *m, joueur_t *j, int y){
     {
         SDL_Rect *element = valeur_elt(m->liste_collisions);
 
-        if (element == &j->statut->vrai_zone_collision){ /* Si la collision nou concerne */
+        if (element == &j->statut->vrai_zone_collision){ /* Si la collision nous concerne */
             suivant(m->liste_collisions);
             continue;
         }
