@@ -137,7 +137,7 @@ extern t_aff *creer_texture(const char *nom_fichier, const int taille_t_x, const
  *
  * \param texture La texture à afficher
  * \param rendu Le rendu sur lequel afficher la texture à l'écran
- * \return 0 s'il n'y a pas eu d'erreur
+ * \return 0 s'il n'y a pas eu d'erreur sinon un entier négatif
  */
 extern err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu);
 

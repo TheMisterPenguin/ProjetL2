@@ -29,7 +29,7 @@
 
 typedef struct s_l_aff t_l_aff;
 
-typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER,J_BLESSE, SOIN}action_t; /**<l'action qu'est en train de faire le personnage*/
+typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER, J_BLESSE, SOIN}action_t; /**<l'action qu'est en train de faire le personnage*/
 /**
  * \struct struct statut_s
  * \brief Structure contenant les éléments nécéssaires au choix de l'affichage des sprites du personnage
@@ -76,6 +76,13 @@ typedef struct joueur_s {
 	t_l_aff *textures_joueur; /**<Tableau contenant toutes les textures du joueur*/
     inventaire_t * inventaire; /**<Inventaire du joueur*/
 }joueur_t;
+
+/**
+ * \fn void stoper_mouvement_joueurs(joueur_t ** joueurs)
+ * \brief Stop le mouvement des joueurs en jeu
+ * \param joueurs Tableau des joueurs en jeu
+ */
+void stoper_mouvement_joueurs(joueur_t ** joueurs);
 
 extern char save_path[500];
 

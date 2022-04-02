@@ -372,13 +372,13 @@ SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_directio
 		case SUD:
 			result->w = (sprite->w - hitbox->w) / 2 + hitbox->w;
 			result->h = sprite->h / 2;
-			result->x = sprite->x;
+			result->x = hitbox->x - hitbox->w;
 			result->y = hitbox->y + hitbox->h / 2;
 			break;
 		case OUEST:
 			result->w = sprite->w / 2 ;
 			result->h = (sprite->h - hitbox->h) / 2 + hitbox->h;
-			result->x = sprite->x;
+			result->x = hitbox->x - hitbox->w;
 			result->y = hitbox->y - hitbox->h;
 			break;
 		case EST: 
@@ -473,12 +473,16 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * 
 		suivant(liste_monstres);
 	}
 
-
 	while(!hors_liste(liste_sorts)){
-
-		
 		suivant(map->liste_sorts);
 	}
 
 
+}
+
+void stoper_mouvement_joueurs(joueur_t ** joueurs){
+    joueurs[0]->statut->en_mouvement = faux;
+    //si mode coopératif
+    if(joueurs[1])
+        joueurs[1]->statut->en_mouvement = faux;
 }
