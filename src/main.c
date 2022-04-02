@@ -70,7 +70,6 @@ int main(int argc, char** argv)
     t_aff *next_texture_joueur2 = NULL;
     t_aff *texture_temp1 = NULL;
     t_aff *texture_temp2 = NULL;
-    SDL_Rect temp = {0};
     float temps_passe;
     joueur_t * joueurs[2] = {NULL}; //liste des joueurs pour amélioration: mode 2 joueurs
     joueur_t * joueur1 = NULL;

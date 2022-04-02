@@ -30,7 +30,7 @@ void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres){
     *liste_base_monstres = NULL;
 }
 
-monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, char* nom_monstre, int x, int y){
+monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, const char * const nom_monstre, int x, int y){
     int i;
 
     /* allocation monstre_t*/
@@ -73,6 +73,8 @@ type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre){
     else{
         fprintf(stderr,"Erreur, nom du monstre incorrect\n");
     }
+
+    return ERREUR;
 }
 
 int distance_x_joueur(SDL_Rect collision, joueur_t * joueur){

@@ -417,7 +417,6 @@ SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_directi
 
 void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * joueur){
 	monstre_t * monstre;
-	sort_t * sort;
 	t_direction coter_joueur;
 	t_direction coter_monstre;
 

@@ -23,7 +23,7 @@
 #define CHEMIN_TEXTURE "ressources/sprite"
 
 typedef enum {WITCHER,KNIGHT,BOSS}type_monstre_t;
-typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE, MONSTRE_BLESSE}action_monstre_t;
+typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE, MONSTRE_BLESSE, ERREUR}action_monstre_t;
 
 /**
  * \struct struct position
@@ -106,7 +106,7 @@ void charger_base_monstre(char* nom_fichier);
  * \param y la position en ordonnée du monstre sur la map
  * \return monstres_t* une structure contenant les informations du monstre
  */
-monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, int x, int y);
+monstre_t *creer_monstre(liste_base_monstres_t *liste_base_monstres, const char *const nom_monstre, int x, int y);
 
 /**
  * \fn void action_monstre(monstre_t * monstre)

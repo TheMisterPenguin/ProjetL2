@@ -1,6 +1,7 @@
 #include <commun.h>
 #include <stdio.h>
 #include <listes.h>
+#include <time.h>
 
 /** 
  * \file init_close.c
