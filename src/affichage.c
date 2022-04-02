@@ -574,7 +574,7 @@ void modif_affichage_rect(t_aff *texture, SDL_Rect r){
 
 void deplacement_x_pers(t_map *m, joueur_t * j, int x){
 
-    int *x_map = &(fenetre_finale->frame_anim->x); /* La coordonnée x actuelle de la map */
+    int *x_map = &(map->text_map->frame_anim->x); /* La coordonnée x actuelle de la map */
     int *x_pers = &(j->statut->zone_colision.x); /* La coordonnée x actuelle du joueur */
     const long int taille_unite = floor(j->textures_joueur->liste[0]->multipli_taille); /* Calcul en nombre de pixels d'une unité de déplacement */
     SDL_Rect temp = {.x = j->statut->vrai_zone_collision.x + x * taille_unite, .y = j->statut->vrai_zone_collision.y, .w = j->statut->vrai_zone_collision.w, .h = j->statut->vrai_zone_collision.h};
@@ -585,6 +585,11 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
         SDL_Rect *element = valeur_elt(m->liste_collisions);
 
         if (element == &j->statut->vrai_zone_collision){ /* Si la collision nou concerne */
+            suivant(m->liste_collisions);
+            continue;
+        }
+
+        if (SDL_HasIntersection(&j->statut->vrai_zone_collision, element)){ /* Si la collision nou concerne */
             suivant(m->liste_collisions);
             continue;
         }
@@ -620,7 +625,18 @@ void deplacement_y_pers(t_map *m, joueur_t *j, int y){
     int *y_map = &(map->text_map->frame_anim->y);                                        /* La coordonnée y actuelle de la map */
     int *y_pers = &(j->statut->zone_colision.y);                                       /* La coordonnée y actuelle du joueur */
     const long int taille_unite = floor(j->textures_joueur->liste[0]->multipli_taille); /* Calcul en nombre de pixels d'une unité de déplacement */
-    SDL_Rect temp = {.x = j->statut->vrai_zone_collision.x, .y = j->statut->vrai_zone_collision.y + y * taille_unite, .w = j->statut->vrai_zone_collision.w, .h = j->statut->vrai_zone_collision.h};
+    SDL_Rect temp = {.x = j->statut->vrai_zone_collision.x, .w = j->statut->vrai_zone_collision.w, .h = floor(j->textures_joueur->liste[0]->multipli_taille) * 3};
+    SDL_Rect actuel = {.x = j->statut->vrai_zone_collision.x, .w = j->statut->vrai_zone_collision.w, .h = floor(j->textures_joueur->liste[0]->multipli_taille) * 3};
+
+    if(y < 0){
+        temp.y = j->statut->vrai_zone_collision.y + y * taille_unite + (j->statut->vrai_zone_collision.h - 3);
+        actuel.y = j->statut->vrai_zone_collision.y + (j->statut->vrai_zone_collision.h - 3);
+    }
+    else {
+        temp.y = j->statut->vrai_zone_collision.y + y * taille_unite;
+        temp.h = j->statut->vrai_zone_collision.h;
+        actuel.y = j->statut->vrai_zone_collision.y - 3;
+    }
 
     en_tete(m->liste_collisions);
 
@@ -629,6 +645,11 @@ void deplacement_y_pers(t_map *m, joueur_t *j, int y){
         SDL_Rect *element = valeur_elt(m->liste_collisions);
 
         if (element == &j->statut->vrai_zone_collision){ /* Si la collision nou concerne */
+            suivant(m->liste_collisions);
+            continue;
+        }
+
+        if(SDL_HasIntersection(&actuel, element)){
             suivant(m->liste_collisions);
             continue;
         }
