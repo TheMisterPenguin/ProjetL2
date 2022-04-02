@@ -235,10 +235,16 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
 }
 
 err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
-    if(texture->frame_anim != NULL)
-        return SDL_RenderCopy(rendu,texture->texture, texture->frame_anim, texture->aff_fenetre);
-    else
-        return SDL_RenderCopy(rendu, texture->texture, NULL, texture->aff_fenetre);
+    if(texture != NULL){
+        if(texture->frame_anim != NULL)
+            return SDL_RenderCopy(rendu,texture->texture, texture->frame_anim, texture->aff_fenetre);
+        else
+            return SDL_RenderCopy(rendu, texture->texture, NULL, texture->aff_fenetre);
+    }
+    else{
+        printf("erreur afficher_texture(): texture == NULL\n");
+        return(-1);
+    }
 }
 
 t_l_aff* init_textures_joueur(joueur_t *j, int num_j){
@@ -903,7 +909,7 @@ t_aff * next_frame_animation(joueur_t * joueur){
 
     if (statut->animation == SOIN)
     {
-        if ((compteur % 2) == 0)
+        if ((compteur % 2) == 0 || statut->duree_anim == DUREE_SOIN) //cadence d'affichage et avec premier affichage immédiat dans tous les cas
         {
             /*si on a fait le tour du spritesheet soin, l'animation est terminée*/
             if (statut->duree_anim == 0)
@@ -935,10 +941,13 @@ void lister_animations(joueur_t ** joueurs, list * animations){
 void afficher_animations(list * animations){
     en_tete(animations);
 
-    while(!hors_liste(animations)){
+    while(!hors_liste(animations) && animations->ec->valeur != NULL){ //évite de boucler à l'infini en cas d'erreur
         afficher_texture(animations->ec->valeur, rendu_principal);
 
         suivant(animations);
+    }
+    if(!hors_liste(animations) && animations->ec->valeur == NULL){
+        printf("erreur afficher_animations(): une texture de la liste d'animations vaut NULL\n");
     }
 }
 

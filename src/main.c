@@ -284,12 +284,12 @@ int main(int argc, char** argv)
 
         /* On affiche l'interface */
         //barre de vie joueur1
-        RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
+        RenderHPBar(FENETRE_LONGUEUR/30, FENETRE_LARGEUR/25, FENETRE_LONGUEUR/6, FENETRE_LARGEUR/35,
         ((float)joueur1->pdv/joueur1->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
         
         //barre de vie joueur2
         if(nb_joueurs == 2)
-            RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20 + FENETRE_LARGEUR/25 + 20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
+            RenderHPBar(FENETRE_LONGUEUR/30, FENETRE_LARGEUR/25 + FENETRE_LARGEUR/25 + 20, FENETRE_LONGUEUR/6, FENETRE_LARGEUR/35,
             ((float)joueur2->pdv/joueur2->maxPdv), color(0, 153, 51,0.9), color(125, 125, 125, 1));
 
         SDL_RenderPresent(rendu_principal);
