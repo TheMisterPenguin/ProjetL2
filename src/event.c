@@ -12,6 +12,8 @@
  * \copyright Copyright (c) 2022
  */
 
+SDL_GameController * manette;
+
 /**
  * \fn void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs)
  * \brief Fonction qui gère les événements quand une touche du clavier est pressée par un joueur
@@ -32,7 +34,6 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
         afficher_menu_pause(joueur1);
         SDL_ShowCursor(SDL_DISABLE);
     }
-
     if((joueur1->statut->action == RIEN || joueur1->statut->action == CHARGER) && (joueur2 == NULL || (joueur2->statut->action == RIEN || joueur2->statut->action == CHARGER)))
         switch(ev->keysym.sym){
             case SDLK_F11 :
@@ -102,7 +103,6 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
         }
     }
             
-
     //joueur2 _____________________________________________________________
 
     if(joueur2 != NULL){ //mode coopération
@@ -207,6 +207,85 @@ static void keyUp(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
     }
 }
 
+void joystick_button_down(SDL_JoyButtonEvent *ev, joueur_t **j){
+    joueur_t *joueur = j[0];
+    statut_t *statut = joueur->statut;
+
+    switch(ev->button){
+        case SDL_CONTROLLER_BUTTON_START : afficher_menu_pause_manette(joueur); break;
+        case SDL_CONTROLLER_BUTTON_X :
+            statut->action = ATTAQUE_OU_CHARGER;
+            statut->duree = DUREE_ATTAQUE_OU_CHARGEE;
+            break;
+        case SDL_CONTROLLER_BUTTON_GUIDE :
+            afficher_inventaire(joueur, SDLK_TAB);
+            break;
+    }
+}
+
+void joystick_button_up(SDL_JoyButtonEvent *ev, joueur_t **j)
+{
+    joueur_t *joueur = j[0];
+    statut_t *statut = joueur->statut;
+
+    switch (ev->button)
+    {
+    case SDL_CONTROLLER_BUTTON_X:
+        if (statut->action == CHARGER)
+        {
+            statut->action = ATTAQUE_CHARGEE;
+            statut->en_mouvement = faux;
+            statut->duree = DUREE_ATTAQUE_CHARGEE;
+        }
+        else if (statut->action == ATTAQUE_OU_CHARGER)
+        {
+            statut->action = ATTAQUE;
+            statut->duree = DUREE_ATTAQUE;
+        }
+        break;
+    }
+}
+
+
+void joystick_stick(joueur_t **j){
+    joueur_t *joueur = j[0];
+    statut_t *statut = joueur->statut;
+    Sint16 axe_x = SDL_GameControllerGetAxis(manette, 0); /* On récupère la valeur du stick  */
+    Sint16 axe_y = SDL_GameControllerGetAxis(manette, 1); /* On récupère la valeur du stick  */
+
+    if((axe_y > -25735 && axe_y < 25735)){ /* Possible mouvement de l'axe x */
+        if (axe_x > 10000){
+            statut->orientation = EST;
+            statut->en_mouvement = vrai;
+        }
+        else{ 
+            if (axe_x < -10000){
+                statut->orientation = OUEST;
+                statut->en_mouvement = vrai;
+            }
+            else
+                statut->en_mouvement = faux;
+        }
+    }
+
+    if ((axe_x > -25735 && axe_x < 25735)){
+        if (axe_y > 10000){
+            statut->orientation = SUD;
+            statut->en_mouvement = vrai;
+        }
+        else {
+            if (axe_y < -10000){
+                statut->orientation = NORD;
+                statut->en_mouvement = vrai;
+            }
+            else
+                statut->en_mouvement = faux;
+        }
+    }
+    
+}
+
+
 /**
  * \fn void mouseButtonDown(SDL_MouseButtonEvent * ev, joueur_t ** joueurs)
  * \brief Fonction qui gère les événements quand un bouton de la souris est pressée par un joueur
@@ -256,6 +335,27 @@ static void mouseButtonUp(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
         joueur->statut->action = RIEN;    
 }
 
+void jeu_event_manette(joueur_t **joueurs){
+    SDL_Event lastEvent;
+
+    joystick_stick(joueurs);
+
+    while (SDL_PollEvent(&lastEvent))
+    {
+        switch (lastEvent.type)
+        {
+        case SDL_QUIT:
+            printf("Détection de la fermeture de la fenêtre\n");
+            fermer_programme(EXIT_SUCCESS);
+        case SDL_JOYBUTTONDOWN:
+            joystick_button_down((SDL_JoyButtonEvent *)&lastEvent, joueurs);
+            break;
+        case SDL_JOYBUTTONUP:
+            joystick_button_up((SDL_JoyButtonEvent *)&lastEvent, joueurs);
+            break;
+        }
+    }
+}
 
 void jeu_event(joueur_t ** joueurs){
     SDL_Event lastEvent;

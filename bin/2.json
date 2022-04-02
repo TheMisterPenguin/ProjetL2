@@ -1,9 +1,9 @@
 {
     "type" : "map",
     "id" : 1,
-    "file-path" : "ressources/background/map/interieur3.bmp",
-    "width" : 15, //30 cases de 16px mais une cases de la map fait 32px en réalité
-    "height" : 13,
+    "file-path" : "ressources/background/map/outside_sanada.bmp",
+    "width" : 55, //30 cases de 16px mais une cases de la map fait 32px en réalité
+    "height" : 35,
     "taille case" : 32,
     "starting-point" : [5, 5],
     "monsters" : [
