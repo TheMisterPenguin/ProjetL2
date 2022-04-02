@@ -473,12 +473,16 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * 
 		suivant(liste_monstres);
 	}
 
-
 	while(!hors_liste(liste_sorts)){
-
-		
 		suivant(map->liste_sorts);
 	}
 
 
+}
+
+void stoper_mouvement_joueurs(joueur_t ** joueurs){
+    joueurs[0]->statut->en_mouvement = faux;
+    //si mode coopératif
+    if(joueurs[1])
+        joueurs[1]->statut->en_mouvement = faux;
 }

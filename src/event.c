@@ -30,6 +30,9 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
     //tous les joueurs ____________________________________________________________________
 
     if (ev->keysym.sym == SDLK_ESCAPE){ /* On affiche le menu de pause si on appuye sur echap */
+        //empêche un joueur de marcher à l'infini lors du maintien d'une touche directionnel en ouvrant un menu et du relachement de la touche dans le menu
+        stoper_mouvement_joueurs(joueurs);
+
         SDL_ShowCursor(SDL_ENABLE);
         afficher_menu_pause(joueur1);
         SDL_ShowCursor(SDL_DISABLE);
@@ -78,18 +81,20 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
             case TOUCHE_DROITE : joueur1->statut->orientation = EST;  joueur1->statut->en_mouvement = vrai; break;
             case TOUCHE_GAUCHE : joueur1->statut->orientation = OUEST;  joueur1->statut->en_mouvement = vrai; break;
             case TOUCHE_TAB :
-                joueur1->statut->en_mouvement = faux;
+                //empêche un joueur de marcher à l'infini lors du maintien d'une touche directionnel en ouvrant un menu et du relachement de la touche dans le menu
+                stoper_mouvement_joueurs(joueurs);
+
                 SDL_ShowCursor(SDL_ENABLE);
                 afficher_inventaire(joueur1, TOUCHE_TAB);
                 SDL_ShowCursor(SDL_DISABLE);
                 break;
             case TOUCHE_CONSOMMABLE :
                 if(joueur1->inventaire->equipe->liste[consommable] != NULL){
+                    joueur1->statut->en_mouvement = faux;
                     consommer_objet(joueur1);
                     text_copier_position(heal, joueur1->textures_joueur->liste[0]); // amélioration: centrer pour toutes les tailles
                     joueur1->statut->duree_anim = DUREE_SOIN;
                     joueur1->statut->animation = SOIN;
-                    joueur1->statut->en_mouvement = faux;
                 }
                 break;
         }
@@ -113,18 +118,20 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
             case SDLK_RIGHT : joueur2->statut->orientation = EST;  joueur2->statut->en_mouvement = vrai; break;
             case SDLK_LEFT : joueur2->statut->orientation = OUEST;  joueur2->statut->en_mouvement = vrai; break;
             case SDLK_p :
-                joueur2->statut->en_mouvement = faux;
+                //empêche un joueur de marcher à l'infini lors du maintien d'une touche directionnel en ouvrant un menu et du relachement de la touche dans le menu
+                stoper_mouvement_joueurs(joueurs);
+
                 SDL_ShowCursor(SDL_ENABLE);
                 afficher_inventaire(joueur2, SDLK_p);
                 SDL_ShowCursor(SDL_DISABLE);
                 break;
             case SDLK_RETURN :
                 if(joueur2->inventaire->equipe->liste[consommable] != NULL){
+                    joueur2->statut->en_mouvement = faux;
                     consommer_objet(joueur2);
                     text_copier_position(heal, joueur2->textures_joueur->liste[0]); // amélioration: centrer pour toutes les tailles
                     joueur2->statut->duree_anim = DUREE_SOIN;
                     joueur2->statut->animation = SOIN;
-                    joueur2->statut->en_mouvement = faux;
                 }
                 break;
         }
@@ -169,15 +176,19 @@ static void keyUp(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
                 case SDLK_DOWN : 
                     if(orientation1 == SUD)
                         joueur1->statut->en_mouvement = faux;
+                    break;
                 case SDLK_UP : 
                     if(orientation1 == NORD)
                         joueur1->statut->en_mouvement = faux;
+                    break;
                 case SDLK_RIGHT : 
                     if(orientation1 == EST)
                         joueur1->statut->en_mouvement = faux;
+                    break;
                 case SDLK_LEFT : 
                     if(orientation1 == OUEST)
                         joueur1->statut->en_mouvement = faux;
+                    break;
             }
         }
 
@@ -212,12 +223,18 @@ void joystick_button_down(SDL_JoyButtonEvent *ev, joueur_t **j){
     statut_t *statut = joueur->statut;
 
     switch(ev->button){
-        case SDL_CONTROLLER_BUTTON_START : afficher_menu_pause_manette(joueur); break;
+        case SDL_CONTROLLER_BUTTON_START : 
+            afficher_menu_pause_manette(joueur);
+            //empêche un joueur de marcher à l'infini lors du maintien d'une touche directionnel en ouvrant un menu et du relachement de la touche dans le menu
+            stoper_mouvement_joueurs(j);
+            break;
         case SDL_CONTROLLER_BUTTON_X :
             statut->action = ATTAQUE_OU_CHARGER;
             statut->duree = DUREE_ATTAQUE_OU_CHARGEE;
             break;
         case SDL_CONTROLLER_BUTTON_GUIDE :
+            //empêche un joueur de marcher à l'infini lors du maintien d'une touche directionnel en ouvrant un menu et du relachement de la touche dans le menu
+            stoper_mouvement_joueurs(j);
             afficher_inventaire(joueur, SDLK_TAB);
             break;
     }

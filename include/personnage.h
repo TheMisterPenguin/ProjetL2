@@ -77,6 +77,13 @@ typedef struct joueur_s {
     inventaire_t * inventaire; /**<Inventaire du joueur*/
 }joueur_t;
 
+/**
+ * \fn void stoper_mouvement_joueurs(joueur_t ** joueurs)
+ * \brief Stop le mouvement des joueurs en jeu
+ * \param joueurs Tableau des joueurs en jeu
+ */
+void stoper_mouvement_joueurs(joueur_t ** joueurs);
+
 extern char save_path[500];
 
 extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction orientation, const bool bouclier_equipe, const int num_j);
