@@ -116,7 +116,7 @@ int main(int argc, char** argv)
 
     next_texture_joueur1 = joueur1->textures_joueur->liste[TEXT_MARCHER];
 
-    objets = creer_liste_objet();
+    objets = creer_liste_objet("../ressource/objet.txt");
     creer_textures_objets(objets);
     tout_ramasser(objets, joueur1->inventaire);
 

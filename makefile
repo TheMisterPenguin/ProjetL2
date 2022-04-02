@@ -19,6 +19,7 @@ OBJ_TEST_INVENTAIRE = $(addsuffix .o, $(addprefix $(ODIR), test_inventaire inven
 OBJ_TEST_PERSONNAGE = $(addsuffix .o, $(addprefix $(ODIR), test_personnage personnage affichage listes init_close inventaire objet liste_objet map interface))
 OBJ_TEST_AFFICHAGE = $(addsuffix .o, $(addprefix $(ODIR), test_affichage affichage listes init_close personnage personnage inventaire liste_objet objet map interface))
 OBJ_TEST_LISTES = $(addsuffix .o, $(addprefix $(ODIR), test_listes listes affichage personnage init_close inventaire liste_objet objet interface map))
+OBJ_TEST_SDL = $(addsuffix .o, $(addprefix $(ODIR), test_SDL))
 
 default : $(BINDIR)jeux$(EXT) # Génération par défault
 
@@ -51,13 +52,16 @@ $(BINDIR)test_inventaire$(EXT) : $(OBJ_TEST_INVENTAIRE)
 	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
 
 $(BINDIR)test_personnage$(EXT) : $(OBJ_TEST_PERSONNAGE)
-	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
+	$(CC) $^ -o $@ $(CUNIT-LIB-PATH) $(JSON-LIB-PATH) $(LDFLAGS)
 
 $(BINDIR)test_affichage$(EXT) : $(OBJ_TEST_AFFICHAGE)
 	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
 
 $(BINDIR)test_listes$(EXT) : $(OBJ_TEST_LISTES)
 	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
+
+$(BINDIR)test_SDL$(EXT) : $(OBJ_TEST_SDL)
+	$(CC) $^ -o $@ $(CUNIT-LIB-PATH) $(LDFLAGS)
 
 # Création de l'arboressence 
 

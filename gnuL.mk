@@ -1,6 +1,6 @@
 EXT = .bin
 INCLUDE = $(addprefix -I , include)
-TEST = $(addsuffix $(EXT), $(addprefix $(BINDIR), test_map test_listes test_affichage test_personnage test_liste_objet test_inventaire))
+TEST = $(addsuffix $(EXT), $(addprefix $(BINDIR), test_SDL test_map test_listes test_affichage test_personnage test_liste_objet test_inventaire))
 GEN = $(BINDIR)jeux$(EXT) $(TEST)
 LDFLAGS = -L lib -lSDL2 -l m# Options d'édition de liens.
 ODIRCMD = obj/
