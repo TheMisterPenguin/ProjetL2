@@ -67,7 +67,8 @@ void modification_personnage(void) {
 int main(){
     init();
 
-    map = charger_s_map(charger_f_map("map.json"));
+    charger_base_monstre("monstres.json", &liste_base_monstres);
+    map = charger_s_map(charger_f_map("map.json"), liste_base_monstres);
     
     CU_pSuite pSuite = NULL;
     

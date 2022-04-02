@@ -101,14 +101,14 @@ int main(int argc, char** argv)
         creer_inventaire_j2();
   
     /* On charge la base monstre*/
-    charger_base_monstre("monstres.json");
+    charger_base_monstre("monstres.json", &liste_base_monstres);
 
     /* On initialise le tableau base_sorts */
     init_liste_base_sort();
     
     /* On charge la map */
     fichier_map = charger_f_map("2.json");
-    map = charger_s_map(fichier_map);
+    map = charger_s_map(fichier_map, liste_base_monstres);
     text = texture_map(map); 
 
 

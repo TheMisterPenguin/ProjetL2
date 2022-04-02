@@ -14,6 +14,8 @@
 #include "definition_commun.h"
 #include "affichage.h"
 
+typedef struct s_aff t_aff;
+
 /**
  * Types d'objets du jeu
  */

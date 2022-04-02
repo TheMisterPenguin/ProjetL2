@@ -19,9 +19,9 @@
  * \copyright Copyright (c) 2022
  */
 
+typedef struct t_map t_map;
+
 liste_base_monstres_t * liste_base_monstres = NULL;
-
-
 
 void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres){
 
@@ -303,7 +303,7 @@ void action_monstre(monstre_t * monstre, joueur_t * joueur){
 
 
 
-void charger_base_monstre(char * chemin_fichier){
+void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t ** liste_base_monstres){
 
     json_object *fichier = json_object_from_file(chemin_fichier);
     int nb_monstre;
@@ -352,10 +352,10 @@ void charger_base_monstre(char * chemin_fichier){
     }
 
     //allocation de liste_base_monstre avec le nombre de monstre nécéssaire
-    liste_base_monstres = malloc(sizeof(liste_base_monstres_t));
+    (*liste_base_monstres) = malloc(sizeof(liste_base_monstres_t));
     nb_monstre = json_object_array_length(json_tbl_monstre);
-    liste_base_monstres->tab = malloc(sizeof(base_monstre_t) * nb_monstre);
-    liste_base_monstres->nb_monstre = nb_monstre;
+    (*liste_base_monstres)->tab = malloc(sizeof(base_monstre_t) * nb_monstre);
+    (*liste_base_monstres)->nb_monstre = nb_monstre;
 
     for(unsigned int i = 0; i < nb_monstre; i++){
     
@@ -506,13 +506,13 @@ void charger_base_monstre(char * chemin_fichier){
 
         
         /*inserrer les caractèristiques dans base_monstre_t*/
-        strcpy(liste_base_monstres->tab[i].fichier_image, fichier_image);
-        strcpy(liste_base_monstres->tab[i].nom_monstre, type);
-        liste_base_monstres->tab[i].pdv = json_object_get_int(json_pdv);
-        liste_base_monstres->tab[i].attaque = json_object_get_int(json_attaque);
-        liste_base_monstres->tab[i].vitesse = json_object_get_int(json_vitesse);
-        liste_base_monstres->tab[i].gainXp = json_object_get_int(json_xp);
-        liste_base_monstres->tab[i].hitbox.w = json_object_get_int(json_hitbox_x);
-        liste_base_monstres->tab[i].hitbox.h = json_object_get_int(json_hitbox_y);
+        strcpy((*liste_base_monstres)->tab[i].fichier_image, fichier_image);
+        strcpy((*liste_base_monstres)->tab[i].nom_monstre, type);
+        (*liste_base_monstres)->tab[i].pdv = json_object_get_int(json_pdv);
+        (*liste_base_monstres)->tab[i].attaque = json_object_get_int(json_attaque);
+        (*liste_base_monstres)->tab[i].vitesse = json_object_get_int(json_vitesse);
+        (*liste_base_monstres)->tab[i].gainXp = json_object_get_int(json_xp);
+        (*liste_base_monstres)->tab[i].hitbox.w = json_object_get_int(json_hitbox_x);
+        (*liste_base_monstres)->tab[i].hitbox.h = json_object_get_int(json_hitbox_y);
     }
 }

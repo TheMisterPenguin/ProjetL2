@@ -63,7 +63,7 @@ char * charger_f_map(const char * const nom_map){
     return file_buffer;
 }
 
-t_map * charger_s_map(char * buffer){
+t_map * charger_s_map(char * buffer, liste_base_monstres_t * liste_base_monstres){
     t_map *m;
     json_object *fichier;
     json_object *texture_map;

@@ -326,7 +326,7 @@ void detruire_joueur(joueur_t *j){
 	free(j->nom_pers);
 	free(j->trigger);
 	free(j->statut);
-	detruire_liste_textures(&(j->textures_joueur));
+	// detruire_liste_textures(&(j->textures_joueur));
 	free(j);
     detruire_inventaire(&(j->inventaire));
 }
