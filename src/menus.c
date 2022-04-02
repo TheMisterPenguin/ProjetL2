@@ -373,3 +373,218 @@ void init_text_menus(int nb_joueur){
 void creer_inventaire_j2(){
     text_inventaire2 = creer_texture("ressources/background/menu/inventaire_green.bmp", -1, -1, 0, 0, 0);
 }
+
+static int draw_rect_epaisseur(const SDL_Rect * a_dessiner, SDL_Renderer *rendu, unsigned int epaisseur){
+
+    if(epaisseur == 0)
+        epaisseur = 1;
+
+    /* On créer les bordures du rectangle avec l'épaisseur définie */
+    SDL_Rect haut = {.h = epaisseur, .w = a_dessiner->w, .x = a_dessiner->x, .y = a_dessiner ->y};
+    SDL_Rect bas = {.h = epaisseur, .w = a_dessiner->w, .x = a_dessiner->x, .y = a_dessiner->y - epaisseur + a_dessiner->h};
+    SDL_Rect gauche = {.h = a_dessiner->h, .w = epaisseur, .x = a_dessiner->x, .y = a_dessiner->y};
+    SDL_Rect droit = {.h = a_dessiner->h, .w = epaisseur, .x = a_dessiner->x - epaisseur + a_dessiner->w, .y = a_dessiner->y};
+
+    int erreur = 0;
+
+    if(erreur = SDL_RenderFillRect(rendu, &haut))
+        return erreur;
+    if (erreur = SDL_RenderFillRect(rendu, &bas))
+        return erreur;
+    if (erreur = SDL_RenderFillRect(rendu, &gauche))
+        return erreur;
+    if (erreur = SDL_RenderFillRect(rendu, &droit))
+        return erreur;
+    
+    return 0;
+}
+
+/* Menu spécial manette */
+
+void afficher_menu_pause_manette(joueur_t *joueur)
+{
+
+    int debut, fin; /* le temps pour calculer les performances */
+
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Affichage du menu pause");
+
+    if (!text_pause)
+    {
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors du chargement du menu pause");
+        return;
+    }
+
+    SDL_Rect selectionne[4];
+
+    SDL_Rect boutton_quitter = {.h = floor(136 * multiplicateur_y), .w = floor(1064 * multiplicateur_x)};
+    SDL_Rect boutton_reprendre = {.h = floor(136 * multiplicateur_y), .w = floor(1064 * multiplicateur_x)};
+    SDL_Rect boutton_sauvegarder = {.h = floor(136 * multiplicateur_y), .w = floor(1064 * multiplicateur_x)};
+    SDL_Rect boutton_charger = {.h = floor(136 * multiplicateur_y), .w = floor(1064 * multiplicateur_x)};
+
+    deplacer_rect_origine(&boutton_quitter, floor(427 * multiplicateur_x), floor(836 * multiplicateur_y));
+    deplacer_rect_origine(&boutton_reprendre, floor(427 * multiplicateur_x), floor(108 * multiplicateur_y));
+    deplacer_rect_origine(&boutton_charger, floor(427 * multiplicateur_x), floor(590 * multiplicateur_y));
+    deplacer_rect_origine(&boutton_sauvegarder, floor(427 * multiplicateur_x), floor(348 * multiplicateur_y));
+
+    selectionne[0] = boutton_reprendre;
+    selectionne[1] = boutton_sauvegarder;
+    selectionne[2] = boutton_charger;
+    selectionne[3] = boutton_quitter;
+
+    unsigned int selection = 0;
+    while (1)
+    {
+        debut = SDL_GetPerformanceCounter();
+        SDL_RenderClear(rendu_principal);
+        afficher_texture(text_pause, rendu_principal);
+
+        SDL_SetRenderDrawColor(rendu_principal, 0,255,128, SDL_ALPHA_OPAQUE);
+        draw_rect_epaisseur(&selectionne[selection], rendu_principal, floor(5 * multiplicateur_y));
+        SDL_SetRenderDrawColor(rendu_principal, 255, 255, 255, SDL_ALPHA_OPAQUE);
+
+        SDL_RenderPresent(rendu_principal);
+        SDL_Event lastEvent; /* On récupère les événements */
+
+        while (SDL_PollEvent(&lastEvent))
+        {
+            switch (lastEvent.type)
+            {
+            case SDL_QUIT:
+
+                SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Détection de la fermeture de la fenêtre\n");
+                fermer_programme(EXIT_SUCCESS);
+            case SDL_JOYBUTTONDOWN :
+                switch (((SDL_JoyButtonEvent *) &lastEvent)->button){
+                    case SDL_CONTROLLER_BUTTON_START :
+                        return;
+                    case SDL_CONTROLLER_BUTTON_DPAD_DOWN :
+                        if(selection == 3)
+                            selection = 0;
+                        else
+                            selection ++;
+                        break;
+                    case SDL_CONTROLLER_BUTTON_DPAD_UP :
+                        if (selection == 0)
+                            selection = 3;
+                        else
+                            selection--;
+                        break;
+                    case SDL_CONTROLLER_BUTTON_A :
+                        switch (selection) {
+                            case 0:
+                                return;
+                            case 1:
+
+                            case 2:
+                                    break;
+                            case 3:
+                                SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Fermeture du programme ...\n");
+                                fermer_programme(EXIT_SUCCESS);
+                                break;
+                        }
+                        break;
+                }
+            }
+        }
+        fin = SDL_GetPerformanceCounter();
+        float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
+        SDL_Delay(floor((1000 / (float)60) - temps_passe));
+
+        if (compteur == NB_FPS)
+            compteur = 0;
+        else
+            compteur++;
+    }
+}
+
+void afficher_menu_accueil_manette(int *nb_joueur)
+{
+    int debut, fin; /* le temps pour calculer les performances */
+
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Affichage du menu d'accueil");
+
+    if (!text_accueil)
+    {
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors du chargement du menu d'accueil");
+        return;
+    }
+
+    SDL_Rect selectionne[3];
+
+    SDL_Rect boutton_quitter = {.h = floor(136 * multiplicateur_y), .w = floor(1064 * multiplicateur_x)};
+    SDL_Rect boutton_nouvelle_partie = {.h = floor(136 * multiplicateur_y), .w = floor(1064 * multiplicateur_x)};
+    SDL_Rect boutton_solo = {.h = floor(136 * multiplicateur_y), .w = floor(1064 * multiplicateur_x)};
+
+    deplacer_rect_origine(&boutton_quitter, floor(427 * multiplicateur_x), floor(836 * multiplicateur_y));
+    deplacer_rect_origine(&boutton_nouvelle_partie, floor(427 * multiplicateur_x), floor(108 * multiplicateur_y));
+    deplacer_rect_origine(&boutton_solo, floor(427 * multiplicateur_x), floor(348 * multiplicateur_y));
+
+    selectionne[0] = boutton_nouvelle_partie;
+    selectionne[1] = boutton_solo;
+    selectionne[2] = boutton_quitter;
+
+    unsigned int selection = 0;
+
+    while (1)
+    {
+        debut = SDL_GetPerformanceCounter();
+        SDL_RenderClear(rendu_principal);
+        afficher_texture(text_accueil, rendu_principal);
+
+        SDL_SetRenderDrawColor(rendu_principal, 0, 255, 128, SDL_ALPHA_OPAQUE);
+        draw_rect_epaisseur(&selectionne[selection], rendu_principal, floor(5 * multiplicateur_y));
+        SDL_SetRenderDrawColor(rendu_principal, 255, 255, 255, SDL_ALPHA_OPAQUE);
+
+        SDL_RenderPresent(rendu_principal);
+        SDL_Event lastEvent; /* On récupère les événements */
+
+        while (SDL_PollEvent(&lastEvent))
+        {
+            switch (lastEvent.type)
+            {
+            case SDL_QUIT:
+                SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Détection de la fermeture de la fenêtre\n");
+                fermer_programme(EXIT_SUCCESS);
+            case SDL_JOYBUTTONDOWN:
+                switch (((SDL_JoyButtonEvent *)&lastEvent)->button)
+                {
+                case SDL_CONTROLLER_BUTTON_DPAD_DOWN:
+                    if (selection == 2)
+                        selection = 0;
+                    else
+                        selection++;
+                    break;
+                case SDL_CONTROLLER_BUTTON_DPAD_UP:
+                    if (selection == 0)
+                        selection = 2;
+                    else
+                        selection--;
+                    break;
+                case SDL_CONTROLLER_BUTTON_A:
+                    switch (selection)
+                    {
+                    case 0:
+                        *nb_joueur = 1;
+                        return;
+                    case 1:
+                        *nb_joueur = 1;
+                        return;
+                    case 2:
+                        SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Fermeture du programme ...\n");
+                        fermer_programme(EXIT_SUCCESS);
+                        break;
+                    }
+                    break;
+                }
+            }
+        }
+        fin = SDL_GetPerformanceCounter();
+        float temps_passe = (debut - fin) / (float)SDL_GetPerformanceFrequency();
+        SDL_Delay(floor((1000 / (float)60) - temps_passe));
+
+        if (compteur == NB_FPS)
+            compteur = 0;
+        else
+            compteur++;
+    }
+}
