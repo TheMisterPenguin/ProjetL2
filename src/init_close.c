@@ -66,7 +66,7 @@ static void init_SDL(){
 
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Démarrage de la SDL");
 
-    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS | SDL_INIT_TIMER))
+    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS | SDL_INIT_TIMER | SDL_INIT_GAMECONTROLLER))
         erreur("Erreur lors de l'initialisation de la SDL : %s", SDL_ERREUR, SDL_GetError());
 
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "SDL initialisée !");
@@ -89,6 +89,14 @@ static void init_SDL(){
         erreur("Erreur lors de la création de la fenêtre principale : %s", SDL_ERREUR, SDL_GetError());
 
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Fenêtre principale créée");
+
+    manette = SDL_GameControllerOpen(0);
+
+    if(manette != NULL)
+        SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Manette détectée");
+    else
+        SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION, "Aucune manette détectée");
+
 }
 
 static void init_rc_commun(void){

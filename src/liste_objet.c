@@ -16,7 +16,7 @@
 lobjet_t * objets = NULL;
 
 //creer la structure contenant la liste des objets avec au maximum CAPACITE_SAC objets
-lobjet_t * creer_liste_objet(){
+lobjet_t * creer_liste_objet(char * fichier_src){
     lobjet_t * liste_obj; //le pointeur sur structure contenant la liste d'objets que la fonction retourne
     FILE * obj; //fichier source contenant les objets
 
@@ -35,7 +35,7 @@ lobjet_t * creer_liste_objet(){
       return((lobjet_t *)NULL);
     }
 
-    obj = fopen("../ressource/objet.txt", "r");
+    obj = fopen(fichier_src, "r");
 
     if(obj == NULL){
         fprintf( stderr, "fichier source objet inaccessible\n") ;
@@ -78,7 +78,7 @@ lobjet_t * creer_liste_objet(){
 }
 
 //creer une structure lobjet_t vide d'objets de maximum CAPACITE_SAC objets
-lobjet_t * creer_liste_objet_vide(){
+lobjet_t * creer_liste_objet_vide(char * fichier_src){
     lobjet_t * liste_obj; //le pointeur sur structure contenant la liste d'objets que la fonction retourne
     FILE * obj; //fichier source contenant les objets
 

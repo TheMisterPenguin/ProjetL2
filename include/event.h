@@ -21,6 +21,8 @@
 #define TOUCHE_ECHAP SDLK_ESCAPE
 #define TOUCHE_CONSOMMABLE SDLK_e
 
+extern SDL_GameController *manette;
+
 extern _Bool logo_passer(void);
 
 /**
@@ -31,5 +33,5 @@ extern _Bool logo_passer(void);
  */
 extern void jeu_event(joueur_t ** joueurs);
 
-
+void jeu_event_manette(joueur_t **joueurs);
 #endif

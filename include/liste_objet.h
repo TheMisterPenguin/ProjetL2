@@ -33,18 +33,20 @@ extern lobjet_t * objets;
 #include "inventaire.h"
 
 /**
- * \fn lobjet_t * creer_liste_objet(void)
+ * \fn lobjet_t * creer_liste_objet(char * fichier_src)
  * \brief Créé une liste d'objets et la remplit à l'aide du fichier des objets du jeu
+ * \param fichier_src fichier source contenant la liste des objets
  * \return Instance nouvellement allouée du type lobjet_t ou NULL
  */
-lobjet_t * creer_liste_objet(void);
+lobjet_t * creer_liste_objet(char * fichier_src);
 
 /**
- * \fn lobjet_t * creer_liste_objet_vide(void)
+ * \fn lobjet_t * creer_liste_objet_vide(char * fichier_src)
  * \brief Créé une liste d'objets vide
+ * \param fichier_src fichier source contenant la liste des objets pour en connaître le nombre
  * \return Instance nouvellement allouée du type lobjet_t ou NULL
  */
-lobjet_t * creer_liste_objet_vide(void);
+lobjet_t * creer_liste_objet_vide(char * fichier_src);
 
 /**
  * \fn lobjet_t * creer_liste_objet_equipe()
