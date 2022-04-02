@@ -49,7 +49,7 @@ $(BINDIR)test_liste_objet$(EXT) : $(OBJ_TEST_LISTE_OBJET)
 	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
 
 $(BINDIR)test_inventaire$(EXT) : $(OBJ_TEST_INVENTAIRE)
-	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(LDFLAGS)
+	$(CC) $^ -o $@ $(JSON-LIB-PATH) $(CUNIT-LIB-PATH) $(LDFLAGS)
 
 $(BINDIR)test_personnage$(EXT) : $(OBJ_TEST_PERSONNAGE)
 	$(CC) $^ -o $@ $(CUNIT-LIB-PATH) $(JSON-LIB-PATH) $(LDFLAGS)
