@@ -218,7 +218,7 @@ void joystick_button_down(SDL_JoyButtonEvent *ev, joueur_t **j){
             statut->duree = DUREE_ATTAQUE_OU_CHARGEE;
             break;
         case SDL_CONTROLLER_BUTTON_GUIDE :
-            afficher_inventaire(joueur, SDLK_TAB);
+            afficher_inventaire_manette(joueur);
             break;
     }
 }
