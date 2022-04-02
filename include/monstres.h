@@ -26,6 +26,7 @@
 
 typedef struct s_aff t_aff;
 typedef struct t_map t_map;
+typedef struct joueur_s joueur_t;
 
 typedef enum {WITCHER,KNIGHT,BOSS}type_monstre_t;
 typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE, MONSTRE_BLESSE, ERREUR}action_monstre_t;

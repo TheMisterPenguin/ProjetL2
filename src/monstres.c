@@ -515,4 +515,5 @@ void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t ** liste_
         (*liste_base_monstres)->tab[i].hitbox.w = json_object_get_int(json_hitbox_x);
         (*liste_base_monstres)->tab[i].hitbox.h = json_object_get_int(json_hitbox_y);
     }
+    json_object_put(fichier);
 }
