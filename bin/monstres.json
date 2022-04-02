@@ -1,6 +1,6 @@
 {
     "monstre" : [
-        {"fichier" : "knight.bmp",
+        {"fichier" : "ressources/sprite/knight.bmp",
         "type" : "knight",
         "pdv" : 90,
         "attaque" : 15,
@@ -8,7 +8,7 @@
         "xp" : 30,
         "hitbox" : [21,24]
         },
-        {"fichier" : "witcher.bmp",
+        {"fichier" : "ressources/sprite/witcher.bmp",
         "type" : "witcher",
         "pdv" : 50,
         "attaque" : 15,

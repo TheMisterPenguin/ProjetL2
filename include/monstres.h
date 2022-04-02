@@ -32,7 +32,6 @@ typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE,
  */
 typedef point position_t;
 
-
 /**
  * \struct struct monstre
  * \brief Structure contenant les propriétées du monstre en jeu
@@ -54,7 +53,6 @@ typedef struct monstre_s
     t_aff* texture; /**<texture*/
 } monstre_t;
 
-
 /**
  * \struct struct base_monstre
  * \brief Structure contenant les propiétées du monstre importé
@@ -62,7 +60,7 @@ typedef struct monstre_s
  */
 typedef struct base_monstre_s
 {
-    char fichier_image[25]; /**<nom fichier image*/
+    char fichier_image[50]; /**<nom fichier image*/
     char nom_monstre[25]; /**<nom du monstre*/
     int pdv; /**<points de vie*/
     int attaque; /**<attaque*/
@@ -70,7 +68,6 @@ typedef struct base_monstre_s
     int gainXp; /**<gain d'xp pour le joueur*/
     SDL_Rect hitbox; /**<hitbox du monstre*/
 }base_monstre_t;
-
 
 /**
  * \struct struct liste_base_monstres
@@ -93,21 +90,6 @@ extern liste_base_monstres_t * liste_base_monstres;
 
 void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres);
 
-
-/**
- * \fn void detruire_monstre(base_monstre_t* base_monstre)
- * \brief Fonction qui désalloue la structure monstre
- * \param base_monstres structure monstre_t à détruire
- */
-void detruire_monstre(monstre_t** monstre);
-
-/**
- * \fn monstre_t * ajout_monstre(monstre_t * monstre);
- * \brief Fonction qui retourne un monstre
- * \param monstre le monstre à retourner
- */
-monstre_t * ajout_monstre(monstre_t * monstre);
-
 /**
  * \fn void charger_base_monstre(char* nom_fichier);
  * \brief Fonction qui recopie les informations d'un fichier json pour les insérrer dans la structure global liste_base_monstres
@@ -126,8 +108,6 @@ void charger_base_monstre(char* nom_fichier);
  */
 monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, int x, int y);
 
-
-
 /**
  * \fn void action_monstre(monstre_t * monstre)
  * \brief Fonction qui met à jour le sprite d'un monstre
@@ -143,4 +123,8 @@ void action_monstre(monstre_t * monstre, joueur_t * joueur);
  * \return type_monstre_t le type de monstre
  */
 type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre);
+
+int distance_x_joueur(SDL_Rect collision, joueur_t * joueur);
+int distance_y_joueur(SDL_Rect collision, joueur_t * joueur);
+
 #endif

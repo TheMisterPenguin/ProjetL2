@@ -8,6 +8,7 @@
 #include <json-c/json.h>
 #include <code_erreur.h>
 #include <definition_commun.h>
+#include <sorts.h>
 
 /**
  * \file monstres.c
@@ -20,15 +21,7 @@
 
 liste_base_monstres_t * liste_base_monstres = NULL;
 
-void detruire_monstre(monstre_t** monstre){
-    free((**monstre).texture);
-    free(*monstre);
-    *monstre = NULL;
-}
 
-monstre_t * ajout_monstre(monstre_t * monstre){
-    return monstre;
-}
 
 void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres){
 
@@ -39,7 +32,6 @@ void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres){
 
 monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, char* nom_monstre, int x, int y){
     int i;
-    char * chemin_texture;
 
     /* allocation monstre_t*/
     monstre_t* monstre = malloc(sizeof(monstre_t));
@@ -61,8 +53,7 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, char* nom_m
             monstre->vitesse = liste_base_monstres->tab[i].vitesse;
             monstre->gainXp = liste_base_monstres->tab[i].gainXp;
 
-            sprintf(chemin_texture, "%s/%s" , CHEMIN_TEXTURE, liste_base_monstres->tab[i].fichier_image);
-            monstre->texture = creer_texture(chemin_texture, LARGEUR_ENTITE, LONGUEUR_ENTITE, -100, -100, 1);
+            monstre->texture = creer_texture(liste_base_monstres->tab[i].fichier_image, LARGEUR_ENTITE, LONGUEUR_ENTITE, -100, -100, 1);
             monstre->texture->duree_frame_anim = NB_FPS;
 
             return monstre;
@@ -115,6 +106,26 @@ void orienter_monstre(monstre_t * monstre){
     }
 }
 
+void orienter_monstre_vers_joueur(monstre_t * monstre, joueur_t * joueur){
+    int y_diff, x_diff;
+    x_diff = distance_x_joueur(monstre->collision, joueur);
+    y_diff = distance_y_joueur(monstre->collision, joueur);
+
+    if( abs(x_diff) < abs(y_diff) ){
+        if(y_diff < 0)
+            monstre->orientation = NORD;
+        else
+            monstre->orientation = SUD;
+    }
+    else{
+        if(x_diff < 0)
+            monstre->orientation = OUEST;
+        else
+            monstre->orientation = EST;
+    }
+    orienter_monstre(monstre);
+}
+
 void monstre_en_garde(monstre_t * monstre){
     switch(monstre->type){
         case(KNIGHT): next_frame_x_indice(monstre->texture, 2); break;
@@ -135,7 +146,7 @@ void fuir_joueur(monstre_t *monstre, joueur_t * joueur){
     x_diff = distance_x_joueur(monstre->collision, joueur);
     y_diff = distance_y_joueur(monstre->collision, joueur);
 
-    if( x_diff > y_diff ){
+    if( abs(x_diff) < abs(y_diff) ){
         if(y_diff < 0)
             monstre->orientation = SUD;
         else
@@ -143,32 +154,17 @@ void fuir_joueur(monstre_t *monstre, joueur_t * joueur){
     }
     else{
         if(x_diff < 0)
-            monstre->orientation = OUEST;
-        else
             monstre->orientation = EST;
+        else
+            monstre->orientation = OUEST;
     }
     orienter_monstre(monstre);
     marcher_monstre(monstre);
 }
 
 void rush_joueur(monstre_t * monstre, joueur_t * joueur){
-    int y_diff, x_diff;
-    x_diff = distance_x_joueur(monstre->collision, joueur);
-    y_diff = distance_y_joueur(monstre->collision, joueur);
-
-    if( abs(x_diff) < abs(y_diff) ){
-        if(y_diff < 0)
-            monstre->orientation = NORD;
-        else
-            monstre->orientation = SUD;
-    }
-    else{
-        if(x_diff < 0)
-            monstre->orientation = OUEST;
-        else
-            monstre->orientation = EST;
-    }
-    orienter_monstre(monstre);
+    
+    orienter_monstre_vers_joueur(monstre, joueur);
     marcher_monstre(monstre);
 }
 
@@ -181,6 +177,8 @@ void agro_witcher(monstre_t * monstre, joueur_t * joueur){
         else{
             monstre->action = MONSTRE_ATTAQUE;
             monstre->duree = DUREE_MONSTRE_ATTAQUE;
+            orienter_monstre_vers_joueur(monstre, joueur);
+            creer_sort_monstre(monstre, joueur);
         }
     else
         if(monstre->duree > 0){
@@ -190,6 +188,7 @@ void agro_witcher(monstre_t * monstre, joueur_t * joueur){
         else{
             monstre->action = RUSH_OU_FUITE;
             monstre->duree = DUREE_RUSH_OU_FUITE;
+            next_frame_y_indice(monstre->texture, 0);
         }  
 }
 

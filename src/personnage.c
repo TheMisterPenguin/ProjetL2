@@ -391,8 +391,9 @@ SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_directio
 	return result;
 }
 SDL_bool entite_subit_attaque(SDL_Rect * monstre_hitbox, joueur_t * joueur){
-	SDL_Rect * zone_attaque = zone_en_dehors_hitbox(&(joueur->statut->zone_colision), joueur->textures_joueur->liste[0]->aff_fenetre, joueur->statut->orientation);
+	SDL_Rect * zone_attaque = zone_en_dehors_hitbox(&(joueur->statut->vrai_zone_collision), joueur->textures_joueur->liste[0]->aff_fenetre, joueur->statut->orientation);
 	SDL_Rect * hitbox = malloc(sizeof(SDL_Rect));
+	SDL_RenderDrawRect(rendu_principal,zone_attaque);
 	hitbox->w = monstre_hitbox->w;
 	hitbox->h = monstre_hitbox->h;
 	hitbox->x = monstre_hitbox->x;
@@ -425,7 +426,6 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * 
 
 	while(!hors_liste(liste_monstres)){
 		monstre = valeur_elt(liste_monstres);
-		printf(" monstre w = %d h = %d x = %d y = %d\n",monstre->collision.w,monstre->collision.h,monstre->collision.x,monstre->collision.y);
 		//entite_en_collision renvoi un booleen ainsi qu'une orientation en paramètre
 		if(entite_en_collision(&(monstre->collision), &(joueur->statut->zone_colision), &coter_monstre, &coter_joueur)){
 			/* si le coup est bloqué */
@@ -448,11 +448,13 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * 
 		/* si un monstre est touché */
 		if(joueur->statut->action == ATTAQUE){
 			if(entite_subit_attaque(&(monstre->collision), joueur) && monstre->action != MONSTRE_BLESSE){
-				printf("yes\n");
 				(monstre->pdv) -= joueur->attaque_actif;
 				if(monstre->pdv <= 0){
+					/* detruire la collicion du monstre */
+					detruire_collision_dans_liste(map->liste_collisions, &(monstre->collision));
+					/* detruire le monstre */
 					oter_elt(liste_monstres);
-					//oter_elt(liste_collision)
+					/* actualiser l'xp du joueur */
 					(joueur->xp)+= monstre->gainXp;
 					gain_xp(joueur);
 				}
@@ -475,6 +477,8 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * 
 
 	while(!hors_liste(liste_sorts)){
 
+		
+		suivant(map->liste_sorts);
 	}
 
 

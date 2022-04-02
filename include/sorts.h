@@ -13,6 +13,9 @@
 #ifndef __SORTS_H__
 #define __SORTS_H__
 
+#include <affichage.h>
+#include <monstres.h>
+
 #define PATH_SPELL_BOSS "ressources/sprite/spell_boss.bmp"
 #define PATH_SPELL_WITCHER "ressources/sprite/spell_witcher.bmp"
 
@@ -42,12 +45,14 @@ typedef struct sort_s {
 typedef struct base_sort_s
 {
     type_sort_t type;   /**<type de sort*/
-    int distance;       /**<distance max du sort*/
     SDL_Rect collision; /**<hitbox du sort*/
 }base_sort_t;
 
 
 extern base_sort_t liste_base_sort[3];
 
-
+void init_liste_base_sort();
+void creer_sort_monstre(monstre_t * monstre, joueur_t * joueur);
+void action_sort(sort_t * sort);
+void orienter_sort_vers_joueur(monstre_t * monstre, sort_t * sort, joueur_t * joueur);
 #endif

@@ -369,13 +369,20 @@ extern int current_frame_x(t_aff * texture);
 extern int current_frame_y(t_aff * texture);
 
 /**
-* \fn extern void afficher_monstres(list * liste_monstre);
+* \fn extern void afficher_monstres(list * liste_monstre, joueur_t * joueur);
  * \brief Fonction qui affiche les monstres
  * \param liste_monstre une liste de monstre
- * \param joueur le joueur qui influe sur le monstre
+ * \param joueur le joueur qui influe sur les monstres
  */
 extern void afficher_monstres(list * liste_monstre, joueur_t * joueur);
 
+/**
+* \fn extern void afficher_sorts(list * liste_sorts, joueur_t * joueur);
+ * \brief Fonction qui affiche les sorts
+ * \param liste_sorts une liste de sorts
+ * \param joueur le joueur qui influe sur les sorts
+ */
+extern void afficher_sorts(list * liste_sorts, joueur_t * joueur);
 
 /**
  * \fn void placer_texture(t_aff *texture, int x, int y)
@@ -421,4 +428,7 @@ void afficher_animations(list * animations);
 void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r);
 
 void deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r);
+
+void detruire_collision_dans_liste(list * liste_collisions, SDL_Rect * collision);
+
 #endif

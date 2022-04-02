@@ -104,7 +104,9 @@ int main(int argc, char** argv)
     /* On charge la base monstre*/
     charger_base_monstre("monstres.json");
 
-
+    /* On initialise le tableau base_sorts */
+    init_liste_base_sort();
+    
     /* On charge la map */
     fichier_map = charger_f_map("2.json");
     map = charger_s_map(fichier_map);
@@ -232,9 +234,9 @@ int main(int argc, char** argv)
                 SDL_RenderDrawRect(rendu_principal, &joueur1->statut->vrai_zone_collision);
                 if(nb_joueurs == 2)
                     SDL_RenderDrawRect(rendu_principal, &joueur2->statut->zone_colision);
-                en_tete(map->liste_collisions);
                 SDL_Rect * result = zone_en_dehors_hitbox(&(joueur1->statut->vrai_zone_collision), joueur1->textures_joueur->liste[0]->aff_fenetre, joueur1->statut->orientation);
                 SDL_RenderDrawRect(rendu_principal,result);
+                en_tete(map->liste_collisions);
                 while(!hors_liste(map->liste_collisions)){
                     SDL_Rect *e = valeur_elt(map->liste_collisions);
                     SDL_RenderDrawRect(rendu_principal, e);
@@ -243,9 +245,7 @@ int main(int argc, char** argv)
                 SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
         #endif
 
-        en_tete(map->liste_monstres);
-        monstre_t * temp = valeur_elt(map->liste_monstres);
-        SDL_RenderDrawRect(rendu_principal,  &temp->collision);
+        afficher_sorts(map->liste_sorts, joueur1);
         afficher_monstres(map->liste_monstres, joueur1);
 
         /* On cous le joueur2 s'il existe*/
