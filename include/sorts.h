@@ -13,8 +13,8 @@
 #ifndef __SORTS_H__
 #define __SORTS_H__
 
-#include <affichage.h>
-#include <monstres.h>
+#include "affichage.h"
+#include "monstres.h"
 
 #define PATH_SPELL_BOSS "ressources/sprite/spell_boss.bmp"
 #define PATH_SPELL_WITCHER "ressources/sprite/spell_witcher.bmp"

@@ -10,8 +10,8 @@
 #ifndef __H_FONCTION__
 #define __H_FONCTION__
 
-#include <map.h>
-#include <personnage.h>
+#include "map.h"
+#include "personnage.h"
 
 /**
  * \fn void init(void);
