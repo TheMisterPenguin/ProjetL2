@@ -7,6 +7,7 @@
 #include <map.h>
 #include <definition_commun.h>
 #include <interface.h>
+#include <sorts.h>
 
 /**
  * \file affichage.c
@@ -401,9 +402,24 @@ void afficher_monstres(list * liste_monstre, joueur_t * joueur){
     while(!hors_liste(liste_monstre)){
         monstre = valeur_elt(liste_monstre);
         action_monstre(monstre, joueur);
-        if(monstre->action != MONSTRE_BLESSE || monstre->action == MONSTRE_BLESSE && compteur%3 == 0)
-        afficher_texture(monstre->texture ,rendu_principal);
+        if(monstre->action != MONSTRE_BLESSE || (monstre->action == MONSTRE_BLESSE && compteur%3 == 0) )
+            afficher_texture(monstre->texture ,rendu_principal);
         suivant(liste_monstre);
+    }
+}
+
+void afficher_sorts(list * liste_sorts, joueur_t * joueur){
+    sort_t * sort;
+
+    if(liste_vide(liste_sorts))
+        return;
+
+    en_tete(liste_sorts);
+    while(!hors_liste(liste_sorts)){
+        sort = valeur_elt(liste_sorts);
+        action_sort(sort);
+        afficher_texture(sort->texture ,rendu_principal);
+        suivant(liste_sorts);
     }
 }
 
@@ -890,4 +906,15 @@ int current_frame_x(t_aff * texture){
 int current_frame_y(t_aff * texture){
     return texture->frame_anim->y / LONGUEUR_ENTITE;
 
+}
+
+void detruire_collision_dans_liste(list * liste_collisions, SDL_Rect * collision){
+    en_tete(liste_collisions);
+    while(!hors_liste(liste_collisions)){
+        if(valeur_elt(liste_collisions) == collision){
+            oter_elt(liste_collisions);
+            return;
+        }
+        suivant(liste_collisions);
+    }
 }
