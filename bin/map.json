@@ -7,9 +7,10 @@
     "taille case" : 32,
     "starting-point" : [5, 5],
     "monsters" : [
-        {"type" : "demon_alpha",
-        "level" : 1,
-        "position" : [1,6]}
+        {"type" : "knight",
+        "position" : [8,40]},
+        {"type" : "witcher",
+        "position" : [10,10]}
     ],
     "wall" : [
         {

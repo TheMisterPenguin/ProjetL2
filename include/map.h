@@ -38,6 +38,7 @@ typedef struct t_map{
     t_aff * text_map; /**< La texture de la map */
     unsigned int width, height; /**< La largeur et la hauteur de la map */
     list *liste_monstres; /*< La liste des monstres de la map */
+    list *liste_sorts; /*< La liste des sorts de la map */
     int unite_dep_x; /**< L'unité de déplacement en x */
     int unite_dep_y; /**< L'unité de déplacement en y */
     t_aff * text_sol; /**< La texture du sol */

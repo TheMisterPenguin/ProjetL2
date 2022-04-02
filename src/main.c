@@ -13,8 +13,7 @@
  * \version 0.2
  * \date 28/03/2022
  * \copyright Copyright (c) 2022
- */
-
+ **/
 void afficher_intro(void){
     int i;
     
@@ -88,6 +87,7 @@ int main(int argc, char** argv)
     /* On affiche l'introduction */
     afficher_intro();
 
+
     /* On affiche l'accueil du jeu */
     if(!manette){
         SDL_ShowCursor(SDL_ENABLE);
@@ -100,17 +100,24 @@ int main(int argc, char** argv)
 
     if(nb_joueurs == 2)
         creer_inventaire_j2();
+  
+    /* On charge la base monstre*/
+    charger_base_monstre("monstres.json");
+
 
     /* On charge la map */
     fichier_map = charger_f_map("2.json");
     map = charger_s_map(fichier_map);
     text = texture_map(map); 
 
-    /* On créer le joueur */
+
+    //TEMPORAIREMENT ICI -- test animation heal (équiper consommable puis touche e) -- TEMPORAIREMENT ICI
+    heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
+
+    /* On créer le joueur */    
     joueurs[0] = new_joueur("joueur1", 0);
     joueur1 = joueurs[0];
     joueur1->pdv = 5;
-
     /* On créer les animations */
     init_animations();
 
@@ -209,8 +216,8 @@ int main(int argc, char** argv)
             texture_temp2 = next_frame_joueur(joueur2);
             if (texture_temp2)
                 next_texture_joueur2 = texture_temp2;
-        }       
-
+        }    
+        environnement_joueur(map->liste_monstres, map->liste_sorts, joueur1);   
         /* On affiche toutes les entitées sur la map */
         SDL_SetRenderTarget(rendu_principal, map->text_map->texture);
         SDL_RenderClear(rendu_principal);
@@ -226,7 +233,8 @@ int main(int argc, char** argv)
                 if(nb_joueurs == 2)
                     SDL_RenderDrawRect(rendu_principal, &joueur2->statut->zone_colision);
                 en_tete(map->liste_collisions);
-
+                SDL_Rect * result = zone_en_dehors_hitbox(&(joueur1->statut->vrai_zone_collision), joueur1->textures_joueur->liste[0]->aff_fenetre, joueur1->statut->orientation);
+                SDL_RenderDrawRect(rendu_principal,result);
                 while(!hors_liste(map->liste_collisions)){
                     SDL_Rect *e = valeur_elt(map->liste_collisions);
                     SDL_RenderDrawRect(rendu_principal, e);
@@ -235,7 +243,11 @@ int main(int argc, char** argv)
                 SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
         #endif
 
-        
+        en_tete(map->liste_monstres);
+        monstre_t * temp = valeur_elt(map->liste_monstres);
+        SDL_RenderDrawRect(rendu_principal,  &temp->collision);
+        afficher_monstres(map->liste_monstres, joueur1);
+
         /* On cous le joueur2 s'il existe*/
         if(nb_joueurs == 2)
             afficher_texture(next_texture_joueur2, rendu_principal);
@@ -255,7 +267,7 @@ int main(int argc, char** argv)
                 SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
 
         #endif
-
+  
         /* On cous le joueur1 */
         afficher_texture(next_texture_joueur1, rendu_principal);
 
