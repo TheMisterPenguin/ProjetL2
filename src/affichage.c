@@ -901,7 +901,7 @@ void deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
 }
 
 void init_animations(){
-    heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
+    heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
 }
 
 t_aff * next_frame_animation(joueur_t * joueur){
