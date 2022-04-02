@@ -7,7 +7,7 @@
  * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
  * \brief Programme de test du module personnage
  * \version 0.2
- * \date 28/03/2022
+ * \date 02/04/2022
  * \copyright Copyright (c) 2022
  */
 
@@ -22,6 +22,8 @@ int clean_suite(void) { return 0; }
 void creation_personnage(void) {
     CU_ASSERT_NOT_EQUAL(perso_principal = new_joueur("test", 0), NULL);
     CU_ASSERT_STRING_EQUAL(perso_principal->nom_pers, "test");
+
+    //statistiques
     CU_ASSERT_EQUAL(perso_principal->niveau, 0);
     CU_ASSERT_EQUAL(perso_principal->xp, 0);
     CU_ASSERT_EQUAL(perso_principal->maxPdv, 10);
@@ -33,16 +35,10 @@ void creation_personnage(void) {
     CU_ASSERT_EQUAL(perso_principal->defense_actif, 10);
     CU_ASSERT_EQUAL(perso_principal->vitesse_actif, 1);
 
+    //inventaire
     CU_ASSERT_NOT_EQUAL(perso_principal->inventaire, NULL);
-    CU_ASSERT_NOT_EQUAL(perso_principal->inventaire->sac, NULL);
-    CU_ASSERT_NOT_EQUAL(perso_principal->inventaire->equipe, NULL);
-    CU_ASSERT_NOT_EQUAL(perso_principal->inventaire->sac->liste, NULL);
-    CU_ASSERT_NOT_EQUAL(perso_principal->inventaire->equipe->liste, NULL);
-    CU_ASSERT_EQUAL(perso_principal->inventaire->sac->nb, 0);
-    CU_ASSERT_EQUAL(perso_principal->inventaire->equipe->nb, 0);
-    CU_ASSERT_EQUAL(perso_principal->inventaire->sac->liste[0], NULL);
-    CU_ASSERT_EQUAL(perso_principal->inventaire->equipe->liste[0], NULL);
 
+    //statut
     CU_ASSERT_NOT_EQUAL(perso_principal->statut, NULL);
     CU_ASSERT_EQUAL(perso_principal->statut->orientation, NORD);
     CU_ASSERT_EQUAL(perso_principal->statut->bouclier_equipe, faux);
@@ -55,25 +51,16 @@ void creation_personnage(void) {
     CU_ASSERT_EQUAL(perso_principal->statut->y, 0);
     CU_ASSERT_EQUAL(perso_principal->statut->zone_colision.x, 0);
     CU_ASSERT_EQUAL(perso_principal->statut->zone_colision.y, 0);
-
     CU_ASSERT_EQUAL(perso_principal->statut->vrai_zone_collision.x, 0);
     CU_ASSERT_EQUAL(perso_principal->statut->vrai_zone_collision.y, 0);
     CU_ASSERT_EQUAL(perso_principal->statut->vrai_zone_collision.w, map->taille_case);
     CU_ASSERT_EQUAL(perso_principal->statut->vrai_zone_collision.h, map->taille_case);
 
+    //textures
     CU_ASSERT_NOT_EQUAL(perso_principal->textures_joueur, NULL);
 }
 
 void modification_personnage(void) {
-    CU_ASSERT_NOT_EQUAL(objets = creer_liste_objet("../ressource/objet.txt"), NULL);
-    tout_ramasser(objets, perso_principal->inventaire);
-    CU_ASSERT_NOT_EQUAL(perso_principal->inventaire->sac->liste[0], NULL);
-    CU_ASSERT_NOT_EQUAL(perso_principal->inventaire->sac->nb, 0);
-    CU_ASSERT_EQUAL(perso_principal->inventaire->equipe->liste[0], NULL);
-    CU_ASSERT_EQUAL(perso_principal->inventaire->equipe->nb, 0);
-    //test avec fichiers donnant des valeurs extremes (0,5,10,15 objets)
-    //test des valeurs des objets
-    //test d'appels multiples
 }
 
 

@@ -135,8 +135,7 @@ void tout_ramasser(lobjet_t * objets, inventaire_t * inventaire){
     int i;
     
     for(i=0; i<objets->nb; i++){
-        inventaire->sac->liste[inventaire->sac->nb] = objets->liste[i];
-        inventaire->sac->nb++;
+        ramasser_objet(objets->liste[i], inventaire);
     }
 }
 
