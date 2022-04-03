@@ -107,8 +107,7 @@ int main(int argc, char** argv)
     init_liste_base_sort();
     
     /* On charge la map */
-    fichier_map = charger_f_map("2.json");
-    map = charger_s_map(fichier_map);
+    map = charger_map("2.json");
     text = texture_map(map); 
 
 
