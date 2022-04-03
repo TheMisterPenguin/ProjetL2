@@ -226,15 +226,15 @@ void info_coffre(coffre_t * coffre){
     info_texture(coffre->texture);
 }
 
-void interaction_coffre(SDL_Rect * obstacle_rect){
+void interaction_coffre(SDL_Rect * coffre_rect){
     coffre_t * coffre = NULL;
     en_tete(map->liste_coffres);
 
-    //detection collision coffre
+    //detection collision avec coffre
     while(!hors_liste(map->liste_coffres)){
         coffre = valeur_elt(map->liste_coffres);
 
-        if(&(coffre->collision) == obstacle_rect){
+        if(&(coffre->collision) == coffre_rect){
             printf("ouverture du coffre\n");
             //changer la texture coffre
             //ajouter un bouton d'ouverture

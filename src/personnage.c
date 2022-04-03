@@ -412,29 +412,26 @@ t_direction orientation_inverse(t_direction orientation){
 	return (orientation + 2) % 4;
 }
 
-SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_direction * coter_entite_1, t_direction * coter_entite_2){
+SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_direction * cote_entite_1, t_direction * cote_entite_2){
 	return faux;
 }
 
 void environnement_joueur(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t * joueur){
 	monstre_t * monstre;
-    coffre_t * coffre;
-	t_direction coter_joueur;
-	t_direction coter_monstre;
-	t_direction coter_obstacle;
+	t_direction cote_joueur;
+	t_direction cote_monstre;
 
 	en_tete(liste_monstres);
-    en_tete(liste_coffres);
 	en_tete(liste_sorts);
 
 	while(!hors_liste(liste_monstres)){
 		monstre = valeur_elt(liste_monstres);
 		//entite_en_collision renvoi un booleen ainsi qu'une orientation en paramètre
         /* /!\Utiliser la fonction deplacement_y_pers et deplacement_x_pers pour detecter la collision /!\ */
-		if(entite_en_collision(&(monstre->collision), &(joueur->statut->zone_colision), &coter_monstre, &coter_joueur)){
+		if(entite_en_collision(&(monstre->collision), &(joueur->statut->zone_colision), &cote_monstre, &cote_joueur)){
 			/* si le coup est bloqué */
 			if(joueur->statut->action == BLOQUER){
-				monstre->orientation = coter_joueur;
+				monstre->orientation = cote_joueur;
 				monstre->action = MONSTRE_BLESSE;
 				monstre->duree = DUREE_MONSTRE_BLESSE;
 			}
@@ -443,7 +440,7 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, list * list
 				if(joueur->pdv <= 0)
 					running = faux;
 				else{
-					joueur->statut->orientation = coter_monstre;
+					joueur->statut->orientation = cote_monstre;
 					joueur->statut->action = J_BLESSE;
 					joueur->statut->duree = DUREE_JOUEUR_BLESSE;
 				}
@@ -478,27 +475,9 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, list * list
 		suivant(liste_monstres);
 	}
 
-    /* /!\Utiliser la fonction deplacement_y_pers et deplacement_x_pers pour detecter la collision /!\ */
-    // while(!hors_liste(liste_coffres)){
-	// 	coffre = valeur_elt(liste_coffres);
-        
-	// 	//entite_en_collision renvoi un booleen ainsi qu'une orientation en paramètre
-	// 	if(entite_en_collision(&(coffre->collision), &(joueur->statut->zone_colision), &coter_obstacle, &coter_joueur)){
-
-	// 		/* si le coup est bloqué */
-	// 		if(joueur->statut->action == RIEN || joueur->statut->action == ATTAQUE){
-	// 			printf("ouverture du coffre\n");
-    //             //ajouter gestion direction
-	// 		}
-	// 	}
-	// 	suivant(liste_coffres);
-	// }
-
 	while(!hors_liste(liste_sorts)){
 		suivant(map->liste_sorts);
 	}
-
-
 }
 
 void stoper_mouvement_joueurs(joueur_t ** joueurs){
