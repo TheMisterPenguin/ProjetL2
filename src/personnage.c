@@ -11,6 +11,7 @@
 #include <monstres.h>
 #include <sorts.h>
 #include <listes.h>
+#include <coffres.h>
 
 #ifndef _WIN32
 	#include <pwd.h>
@@ -415,17 +416,21 @@ SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_directi
 	return faux;
 }
 
-void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * joueur){
+void environnement_joueur(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t * joueur){
 	monstre_t * monstre;
+    coffre_t * coffre;
 	t_direction coter_joueur;
 	t_direction coter_monstre;
+	t_direction coter_obstacle;
 
 	en_tete(liste_monstres);
+    en_tete(liste_coffres);
 	en_tete(liste_sorts);
 
 	while(!hors_liste(liste_monstres)){
 		monstre = valeur_elt(liste_monstres);
 		//entite_en_collision renvoi un booleen ainsi qu'une orientation en paramètre
+        /* /!\Utiliser la fonction deplacement_y_pers et deplacement_x_pers pour detecter la collision /!\ */
 		if(entite_en_collision(&(monstre->collision), &(joueur->statut->zone_colision), &coter_monstre, &coter_joueur)){
 			/* si le coup est bloqué */
 			if(joueur->statut->action == BLOQUER){
@@ -449,7 +454,7 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * 
 			if(entite_subit_attaque(&(monstre->collision), joueur) && monstre->action != MONSTRE_BLESSE){
 				(monstre->pdv) -= joueur->attaque_actif;
 				if(monstre->pdv <= 0){
-					/* detruire la collicion du monstre */
+					/* detruire la collision du monstre */
 					detruire_collision_dans_liste(map->liste_collisions, &(monstre->collision));
 					/* detruire le monstre */
 					oter_elt(liste_monstres);
@@ -472,6 +477,22 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * 
 		}
 		suivant(liste_monstres);
 	}
+
+    /* /!\Utiliser la fonction deplacement_y_pers et deplacement_x_pers pour detecter la collision /!\ */
+    // while(!hors_liste(liste_coffres)){
+	// 	coffre = valeur_elt(liste_coffres);
+        
+	// 	//entite_en_collision renvoi un booleen ainsi qu'une orientation en paramètre
+	// 	if(entite_en_collision(&(coffre->collision), &(joueur->statut->zone_colision), &coter_obstacle, &coter_joueur)){
+
+	// 		/* si le coup est bloqué */
+	// 		if(joueur->statut->action == RIEN || joueur->statut->action == ATTAQUE){
+	// 			printf("ouverture du coffre\n");
+    //             //ajouter gestion direction
+	// 		}
+	// 	}
+	// 	suivant(liste_coffres);
+	// }
 
 	while(!hors_liste(liste_sorts)){
 		suivant(map->liste_sorts);

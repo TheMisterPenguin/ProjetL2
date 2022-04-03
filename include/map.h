@@ -13,6 +13,7 @@
 #include "definition_commun.h"
 #include "monstres.h"
 #include "listes.h"
+#include "coffres.h"
 
 #define TAILLE_CASE 16
 
@@ -40,6 +41,7 @@ typedef struct t_map{
     t_aff * text_map; /**< La texture de la map */
     unsigned int width, height; /**< La largeur et la hauteur de la map */
     list *liste_monstres; /*< La liste des monstres de la map */
+    list *liste_coffres; /*< La liste des coffres de la map */
     list *liste_sorts; /*< La liste des sorts de la map */
     int unite_dep_x; /**< L'unité de déplacement en x */
     int unite_dep_y; /**< L'unité de déplacement en y */
@@ -61,13 +63,14 @@ extern t_map *map; /**< La map courante */
 char *charger_f_map(const char *const nom_map);
 
 /**
- * \fn t_map * charger_s_map(char * buffer, liste_base_monstres_t * liste_base_monstres)
+ * \fn t_map * charger_s_map(char * buffer, liste_base_monstres_t * liste_base_monstres, liste_base_coffres_t * liste_base_coffres)
  * \brief Fonction qui récupère les informations stockées dans le buffer en entrée.
  * \param liste_base_monstres Les montres à placer sur la map
+ * \param liste_base_coffres Les coffres à placer sur la map
  * \param buffer Le buffeur qui contient les informations
  * \return Une map initialisée avec toutes les informations dedans;
  */
-t_map * charger_s_map(char * buffer, liste_base_monstres_t * liste_base_monstres);
+t_map * charger_s_map(char * buffer, liste_base_monstres_t * liste_base_monstres, liste_base_coffres_t * liste_base_coffres);
 
 /**
  * \brief Fonction qui renvoie la texture de la map

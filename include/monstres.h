@@ -97,7 +97,7 @@ extern liste_base_monstres_t * liste_base_monstres;
 void detruire_liste_base_monstres(liste_base_monstres_t ** liste_base_monstres);
 
 /**
- * \fn void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t * liste_base_monstres)
+ * \fn void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t ** liste_base_monstres)
  * \brief Fonction qui recopie les informations d'un fichier json pour les insérrer dans la structure liste_base_monstres
  * \param nom_fichier nom du fichier à lire
  * \param liste_base_monstres Base dans laquelle enregistrer les monstres

@@ -8,6 +8,7 @@
 #include <definition_commun.h>
 #include <interface.h>
 #include <sorts.h>
+#include <coffres.h>
 
 /**
  * \file affichage.c
@@ -150,7 +151,13 @@ void def_texture_taille(t_aff * a_modifier, const int longueur, const int largeu
 }
 
 void info_texture(t_aff * texture){
-    printf("texture width: %d, height: %d\n", texture->width, texture->height);
+    printf("\ntexture: %p, width: %d, height: %d\n", texture, texture->width, texture->height);
+    if(texture->frame_anim != NULL){
+        printf("frame_anim: {x:%d, y:%d, w:%d, h:%d}\n", texture->frame_anim->x, texture->frame_anim->y, texture->frame_anim->w, texture->frame_anim->h);
+    }
+    if(texture->aff_fenetre != NULL){
+        printf("aff_fenetre: {x:%d, y:%d, w:%d, h:%d}\n\n", texture->aff_fenetre->x, texture->aff_fenetre->y, texture->aff_fenetre->w, texture->aff_fenetre->h);
+    }
 }
 
 t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multiplicateur_taille){
@@ -202,7 +209,6 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
     }
     else
         texture->frame_anim = NULL;
-
 
     texture->aff_fenetre = malloc(sizeof(SDL_Rect));
 
@@ -411,6 +417,20 @@ void afficher_monstres(list * liste_monstre, joueur_t * joueur){
         if(monstre->action != MONSTRE_BLESSE || (monstre->action == MONSTRE_BLESSE && compteur%3 == 0) )
             afficher_texture(monstre->texture ,rendu_principal);
         suivant(liste_monstre);
+    }
+}
+
+void afficher_coffres(list * liste_coffre){
+    coffre_t * coffre = NULL;
+
+    if(liste_vide(liste_coffre))
+        return;
+
+    en_tete(liste_coffre);
+    while(!hors_liste(liste_coffre)){
+        coffre = valeur_elt(liste_coffre);
+            afficher_texture(coffre->texture ,rendu_principal);
+        suivant(liste_coffre);
     }
 }
 
@@ -650,8 +670,10 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
             continue;
         }
 
-        if(SDL_HasIntersection(&temp, element))
+        if(SDL_HasIntersection(&temp, element)){
+            interaction_coffre(element);
             return;
+        }
         suivant(m->liste_collisions);
     }
 
@@ -684,10 +706,12 @@ void deplacement_y_pers(t_map *m, joueur_t *j, int y){
     SDL_Rect temp = {.x = j->statut->vrai_zone_collision.x, .w = j->statut->vrai_zone_collision.w, .h = floor(j->textures_joueur->liste[0]->multipli_taille) * 3};
     SDL_Rect actuel = {.x = j->statut->vrai_zone_collision.x, .w = j->statut->vrai_zone_collision.w, .h = floor(j->textures_joueur->liste[0]->multipli_taille) * 3};
 
+    //si on va vers le bas
     if(y < 0){
         temp.y = j->statut->vrai_zone_collision.y + y * taille_unite + (j->statut->vrai_zone_collision.h - 3);
         actuel.y = j->statut->vrai_zone_collision.y + (j->statut->vrai_zone_collision.h - 3);
     }
+    //si on va vers le haut
     else {
         temp.y = j->statut->vrai_zone_collision.y + y * taille_unite;
         temp.h = j->statut->vrai_zone_collision.h;
@@ -710,8 +734,10 @@ void deplacement_y_pers(t_map *m, joueur_t *j, int y){
             continue;
         }
 
-        if (SDL_HasIntersection(&temp, element))
+        if (SDL_HasIntersection(&temp, element)){
+            interaction_coffre(element);
             return;
+        }
         suivant(m->liste_collisions);
     }
 
@@ -742,22 +768,14 @@ void text_copier_position(t_aff * a_modifier, const t_aff * const original){
 
 bool rects_egal_x(const SDL_Rect * const r1, SDL_Rect const * const r2){
 
-    if(r1->w != r2->w)
-        return faux;
-
-    if(r1->x == r2->x)
-        return vrai;
+    return (r1->x == r2->x);
 
     return faux;
 }
 
 bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2){
 
-    if (r1->h != r2->h)
-        return faux;
-
-    if (r1->y == r2->y)
-        return vrai;
+    return (r1->h == r2->h);
 
     return faux;
 }

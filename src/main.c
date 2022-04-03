@@ -103,12 +103,15 @@ int main(int argc, char** argv)
     /* On charge la base monstre*/
     charger_base_monstre("monstres.json", &liste_base_monstres);
 
+    /* On charge la base coffre*/
+    charger_base_coffre("coffres.json", &liste_base_coffres);
+
     /* On initialise le tableau base_sorts */
     init_liste_base_sort();
     
     /* On charge la map */
     fichier_map = charger_f_map("2.json");
-    map = charger_s_map(fichier_map, liste_base_monstres);
+    map = charger_s_map(fichier_map, liste_base_monstres, liste_base_coffres);
     text = texture_map(map); 
 
 
@@ -218,7 +221,7 @@ int main(int argc, char** argv)
             if (texture_temp2)
                 next_texture_joueur2 = texture_temp2;
         }    
-        environnement_joueur(map->liste_monstres, map->liste_sorts, joueur1);   
+        environnement_joueur(map->liste_monstres, map->liste_sorts, map->liste_coffres, joueur1);
         /* On affiche toutes les entitées sur la map */
         SDL_SetRenderTarget(rendu_principal, map->text_map->texture);
         SDL_RenderClear(rendu_principal);
@@ -246,6 +249,7 @@ int main(int argc, char** argv)
 
         afficher_sorts(map->liste_sorts, joueur1);
         afficher_monstres(map->liste_monstres, joueur1);
+        afficher_coffres(map->liste_coffres);
 
         /* On cous le joueur2 s'il existe*/
         if(nb_joueurs == 2)

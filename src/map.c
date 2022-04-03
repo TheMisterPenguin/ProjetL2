@@ -7,6 +7,7 @@
 #include <code_erreur.h>
 #include <monstres.h>
 #include <math.h>
+#include <coffres.h>
 
 /**
  * \file map.c
@@ -63,23 +64,28 @@ char * charger_f_map(const char * const nom_map){
     return file_buffer;
 }
 
-t_map * charger_s_map(char * buffer, liste_base_monstres_t * liste_base_monstres){
+t_map * charger_s_map(char * buffer, liste_base_monstres_t * liste_base_monstres, liste_base_coffres_t * liste_base_coffres){
     t_map *m;
     json_object *fichier;
     json_object *texture_map;
     json_object *width;
     json_object *height;
     json_object *tbl_monstre;
+    json_object *tbl_coffre;
 
-    json_object *monstre; 
+    json_object *monstre;
     json_object *taille_case;
 
     json_object *nom_monstre;
     json_object *position;
+    json_object *position2;
     json_object *x;
     json_object *y;
+    json_object *x2;
+    json_object *y2;
   
     monstre_t * inserer;
+    coffre_t * nv_coffre;
 
     json_object *json_wall = NULL;
     json_object *json_object_wall = NULL;
@@ -88,15 +94,21 @@ t_map * charger_s_map(char * buffer, liste_base_monstres_t * liste_base_monstres
     json_object *json_wall_h = NULL;
     json_object *json_wall_w = NULL;
 
+    json_object *nom_coffre = NULL;
+    json_object *objet_json = NULL;
+
+
     fichier = json_tokener_parse(buffer);
     m = malloc(sizeof(t_map));
     m->liste_monstres =  init_liste(NULL,NULL,NULL);
+    m->liste_coffres =  init_liste(NULL,NULL,NULL);
     m->liste_sorts = init_liste(NULL,NULL,NULL);
 
     json_object_object_get_ex(fichier, "file-path", &texture_map);
     json_object_object_get_ex(fichier, "width", &width);
     json_object_object_get_ex(fichier, "height", &height);
     json_object_object_get_ex(fichier, "monsters", &tbl_monstre);
+    json_object_object_get_ex(fichier, "chest", &tbl_coffre);
     json_object_object_get_ex(fichier, "taille case", &taille_case);
 
     m->taille_case = json_object_get_int(taille_case);
@@ -118,7 +130,6 @@ t_map * charger_s_map(char * buffer, liste_base_monstres_t * liste_base_monstres
         json_object_object_get_ex(json_object_wall, "w", &json_wall_w);
 
         SDL_Rect *valeur = malloc(sizeof(SDL_Rect));
-
 
         valeur->x = json_object_get_int(json_wall_x) * m->taille_case;
         valeur->y = json_object_get_int(json_wall_y) * m->taille_case;
@@ -143,7 +154,28 @@ t_map * charger_s_map(char * buffer, liste_base_monstres_t * liste_base_monstres
         ajout_droit(m->liste_collisions, &(inserer->collision));
     }
 
+    for(unsigned int i = 0; i < json_object_array_length(tbl_coffre); i++){
+        objet_json = json_object_array_get_idx(tbl_coffre,i);
 
+        nom_coffre = json_object_object_get(objet_json,"type");
+        position2 = json_object_object_get(objet_json,"position");
+
+        x2 = json_object_array_get_idx(position2,0);
+        y2 = json_object_array_get_idx(position2,1);
+        
+        nv_coffre = creer_coffre(liste_base_coffres, json_object_get_string(nom_coffre), json_object_get_int(x2), json_object_get_int(y2), m);
+        info_coffre(nv_coffre);
+        ajout_droit(m->liste_coffres, nv_coffre);
+        info_coffre(m->liste_coffres->ec->valeur);
+        en_queue(m->liste_collisions);
+
+        //sprite des coffres de profile de 2*3 mais hitbox de 2*2, on baisse la hitbox d'une case pour faire correspondre au sprite
+        if(nv_coffre->type == PROFIL_FERME || nv_coffre->type == PROFIL_OUVERT){
+            (nv_coffre->collision.y) += TAILLE_CASE;
+        }
+
+        ajout_droit(m->liste_collisions, &(nv_coffre->collision));
+    }
 
     m->unite_dep_x = floor(FENETRE_LONGUEUR / (float)m->text_sol->width); /* Calcul en nombre de pixels d'une unité de déplacement */
     m->unite_dep_y = floor(FENETRE_LARGEUR / (float)m->text_sol->height); /* Calcul en nombre de pixels d'une unité de déplacement */
