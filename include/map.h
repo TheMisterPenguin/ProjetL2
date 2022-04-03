@@ -37,7 +37,7 @@ typedef struct {
  * \brief Structure représentant une map
  * \author Ange Despert
 */
-typedef struct t_map{
+typedef struct s_map{
     unsigned int id_map;
     t_aff * text_map; /**< La texture de la map */
     t_aff *text_sol;  /**< La texture du sol */
@@ -45,9 +45,9 @@ typedef struct t_map{
     unsigned int taille_case; /**< La taille d'une case */
     unsigned int cases_x; /**< Le nombre de cases affichées en x */
     unsigned int cases_y; /**< Le nombre de cases affichées en y */
-    list *liste_monstres; /*< La liste des monstres de la map */
-    list *liste_sorts;    /*< La liste des sorts de la map */
-    list *liste_collisions; /*< La liste de toutes les les collisions */
+    list *liste_monstres; /**< La liste des monstres de la map */
+    list *liste_sorts;    /**< La liste des sorts de la map */
+    list *liste_collisions; /**< La liste de toutes les les collisions */
 }t_map;
 
 extern t_map *map; /**< La map courante */
