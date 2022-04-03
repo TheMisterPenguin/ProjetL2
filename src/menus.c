@@ -324,8 +324,6 @@ void afficher_menu_accueil(int * nb_joueur){
                 SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Détection de la fermeture de la fenêtre\n");
                 fermer_programme(EXIT_SUCCESS);
             case SDL_KEYDOWN:
-                if (lastEvent.key.keysym.sym == SDLK_ESCAPE)
-                    return;
                 break;
             case SDL_MOUSEBUTTONUP:
                 coord_souris.x = lastEvent.button.x;
@@ -335,6 +333,7 @@ void afficher_menu_accueil(int * nb_joueur){
                     fermer_programme(EXIT_SUCCESS);
                 if(SDL_PointInRect(&coord_souris, &boutton_nouvelle_partie)){
                     *nb_joueur = 1;
+                    goto transition;
                     return;
                 }
                 if(SDL_PointInRect(&coord_souris, &boutton_quitter)){
@@ -343,10 +342,12 @@ void afficher_menu_accueil(int * nb_joueur){
                 }
                 if (SDL_PointInRect(&coord_souris, &boutton_solo)){
                     *nb_joueur = 1;
+                    goto transition;
                     return;
                 }
                 if (SDL_PointInRect(&coord_souris, &boutton_coop)){
                     *nb_joueur = 2;
+                    goto transition;
                     return;
                 }
                 break;
@@ -360,6 +361,21 @@ void afficher_menu_accueil(int * nb_joueur){
             compteur = 0;
         else
             compteur++;
+    }
+
+    transition :
+    SDL_SetRenderTarget(rendu_principal, NULL);
+    SDL_SetTextureBlendMode(text_accueil->texture, SDL_BLENDMODE_BLEND);
+
+    for(unsigned int i = 255; i > 0; i -= 5 ){ /* Fondu (disparition de la map) */
+        if (SDL_SetTextureAlphaMod(text_accueil->texture, i) < 0)
+            fprintf(stderr, "Erreur lors de la modification de l'alpha : %s\n", SDL_GetError());
+        if(SDL_RenderClear(rendu_principal) < 0)
+            fprintf(stderr, "Erreur : le buffer d'affichage n'a pas pu être vidé : %s\n", SDL_GetError());
+        if (afficher_texture(text_accueil, rendu_principal) != 0)
+            fprintf(stderr,"Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
+        SDL_RenderPresent(rendu_principal);
+        SDL_Delay(10);
     }
 }
 
