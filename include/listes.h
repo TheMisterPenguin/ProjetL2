@@ -169,4 +169,14 @@ extern void detruire_liste(list ** liste);
  * \param liste Pointeur sur la liste
  */
 void afficher_liste(list * liste);
+
+/**
+ * \brief Fonction qui permet de selectionner l'élément courant à partor d'un élément précis
+ * 
+ * \param liste La liste dans laquelle on veut faire la recherche
+ * \param element L'élément que l'on veut rechercher
+ * \param f_egalite Une fonction de comparaison qui renvoie vrai si les deux valeurs sont égales ou NULL si on veut comparer les adresses
+ * \return si l'élément à été trouvé
+ */
+_Bool selectionner_element(list *liste, void *element, _Bool (*f_egalite)(void *, void *));
 #endif
