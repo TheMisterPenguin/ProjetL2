@@ -426,8 +426,8 @@ SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_directi
 void environnement_joueur(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t * joueur){
 	monstre_t * monstre;
 
-	t_direction_1 coter_joueur;
-	t_direction_1 coter_monstre;
+	t_direction_1 cote_joueur;
+	t_direction_1 cote_monstre;
 
 
 	en_tete(liste_monstres);
@@ -449,7 +449,7 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, list * list
 				if(joueur->pdv <= 0)
 					running = faux;
 				else{
-					joueur->statut->orient_dep = coter_monstre;
+					joueur->statut->orient_dep = cote_monstre;
 
 					joueur->statut->action = J_BLESSE;
 					joueur->statut->duree = DUREE_JOUEUR_BLESSE;

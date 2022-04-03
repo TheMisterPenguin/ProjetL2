@@ -34,7 +34,7 @@ typedef enum {OUVERT, FERME}action_coffre_t;
 typedef struct coffre_s
 {
 	type_coffre_t type; /**<Type de coffre*/
-    t_direction orientation; /*Orientation du coffre*/
+    t_direction_1 orientation; /*Orientation du coffre*/
     action_coffre_t action; /*Action en cours par le coffre*/
     SDL_Rect collision; /**<Coordonnées*/
     t_aff* texture; /**<Texture*/
