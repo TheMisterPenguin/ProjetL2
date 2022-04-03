@@ -35,28 +35,19 @@ typedef struct {
  * \author Ange Despert
 */
 typedef struct t_map{
+    unsigned int id_map;
     t_aff * text_map; /**< La texture de la map */
+    t_aff *text_sol;  /**< La texture du sol */
     unsigned int width, height; /**< La largeur et la hauteur de la map */
-    list *liste_monstres; /*< La liste des monstres de la map */
-    list *liste_sorts; /*< La liste des sorts de la map */
-    int unite_dep_x; /**< L'unité de déplacement en x */
-    int unite_dep_y; /**< L'unité de déplacement en y */
-    t_aff * text_sol; /**< La texture du sol */
     unsigned int taille_case; /**< La taille d'une case */
     unsigned int cases_x; /**< Le nombre de cases affichées en x */
     unsigned int cases_y; /**< Le nombre de cases affichées en y */
+    list *liste_monstres; /*< La liste des monstres de la map */
+    list *liste_sorts;    /*< La liste des sorts de la map */
     list *liste_collisions; /*< La liste de toutes les les collisions */
 }t_map;
 
 extern t_map *map; /**< La map courante */
-
-/**
- * \brief Fonction qui charge le contenu du fichier dont le nom est donné en paramètre dans un buffer de caractères
- *
- * \param nom_map Le nom du fichier map à charger
- * \return Un buffer de caractères contenant l'intégralité du fichier
- */
-char *charger_f_map(const char *const nom_map);
 
 /**
  * \brief Fonction qui récupère les informations stockées dans le buffer en entrée.
@@ -64,7 +55,7 @@ char *charger_f_map(const char *const nom_map);
  * \param buffer Le buffeur qui contient les informations
  * \return Une map initialisée avec toutes les informations dedans;
  */
-t_map *charger_s_map(char * buffer);
+t_map *charger_map(const char *const nom_map);
 
 /**
  * \brief Fonction qui renvoie la texture de la map
