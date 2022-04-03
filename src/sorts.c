@@ -3,6 +3,8 @@
 #include <personnage.h>
 #include <listes.h>
 
+
+
 /**
  * \file sorts.c
  * \author Antoine Bruneau (Antoine.Bruneau.Etu@univ-lemans.fr)
@@ -17,9 +19,8 @@ base_sort_t liste_base_sort[3];
 
 void init_liste_base_sort(){
     liste_base_sort[SP_WITCHER].type = SP_WITCHER;
-    liste_base_sort[SP_WITCHER].collision.w = TAILLE_CASE;
-    liste_base_sort[SP_WITCHER].collision.h = TAILLE_CASE;
-
+    liste_base_sort[SP_WITCHER].collision.w = 18;
+    liste_base_sort[SP_WITCHER].collision.h = 18;
 }
 
 void creer_sort_monstre(monstre_t * monstre, joueur_t * joueur){
@@ -32,10 +33,13 @@ void creer_sort_monstre(monstre_t * monstre, joueur_t * joueur){
     sort->collision.y = monstre->collision.y;
     switch(monstre->type){
         case WITCHER :
-            sort->collision.h = liste_base_sort[SP_WITCHER].collision.h;
-            sort->collision.w = liste_base_sort[SP_WITCHER].collision.w;
+            sort->collision.h = liste_base_sort[SP_WITCHER].collision.h * (map->taille_case / TAILLE_CASE);
+            sort->collision.w = liste_base_sort[SP_WITCHER].collision.w * (map->taille_case / TAILLE_CASE);
             sort->type = SP_WITCHER;
-            sort->texture = creer_texture(PATH_SPELL_WITCHER, LARGEUR_ENTITE, LONGUEUR_ENTITE, monstre->collision.x, monstre->collision.y , 1);
+            sort->texture = creer_texture(PATH_SPELL_WITCHER, LARGEUR_ENTITE, LONGUEUR_ENTITE, monstre->collision.x, monstre->collision.y , map->taille_case / TAILLE_CASE);
+            sort->texture->duree_frame_anim = NB_FPS;
+            /* placer texture */
+            
             orienter_sort_vers_joueur(monstre, sort, joueur);
         default : break;
     }
@@ -45,18 +49,46 @@ void creer_sort_monstre(monstre_t * monstre, joueur_t * joueur){
 }
 
 void orienter_sort_vers_joueur(monstre_t * monstre, sort_t * sort, joueur_t * joueur){
-    double x_joueur = distance_x_joueur(monstre->collision, joueur);
-    double y_joueur = distance_y_joueur(monstre->collision, joueur);
-    double x_ref = 0;
-    double y_ref = 1;
+    int x_joueur = distance_x_joueur(monstre->collision, joueur);
+    int y_joueur = distance_y_joueur(monstre->collision, joueur);
+    int x_ref = 0;
+    int y_ref = -1;
     double cos0;
     double teta;
     /*calcul de l'angle entre les 2 vecteurs*/
-    cos0 = (x_joueur * x_ref + y_joueur * y_ref) / (sqrt(x_joueur * x_joueur + y_joueur * y_joueur) * sqrt(x_ref * x_ref + y_ref * y_ref));
-    teta = acos(cos0);
-    next_frame_x_indice(sort->texture, round(teta/45));
+    cos0 =  (x_joueur * x_ref + y_joueur * y_ref) / (sqrt((double)x_joueur * x_joueur + y_joueur * y_joueur) * sqrt((double) x_ref * x_ref + y_ref * y_ref));
+    teta = acos(cos0) * CONVERTIR_RADIANT_DEGREE;
+    //change d'orientation
+    if(x_joueur < 0)
+        next_frame_x_indice(sort->texture, round((360-teta)/(double)45));
+    else
+        next_frame_x_indice(sort->texture, round(teta/(double)45));
 }
 
 void action_sort(sort_t * sort){
+    int orientation = current_frame_x(sort->texture);
+
+    sort->texture->aff_fenetre->x = sort->collision.x - floor(13 * sort->texture->multipli_taille);
+    sort->texture->aff_fenetre->y = sort->collision.y - floor(13 * sort->texture->multipli_taille);
+    
+    switch(orientation){
+        case 1:
+            deplacement_y_entite(map, sort->texture, -2, &(sort->collision) );
+        case 0:
+            deplacement_x_entite(map, sort->texture, 2, &(sort->collision) ); break;
+        case 3:
+            deplacement_y_entite(map, sort->texture, 2, &(sort->collision) );
+        case 2:
+            deplacement_x_entite(map, sort->texture, 2, &(sort->collision) ); break;
+        case 5:
+            deplacement_x_entite(map, sort->texture, -2, &(sort->collision) );
+        case 4:
+            deplacement_y_entite(map, sort->texture, 2, &(sort->collision) ); break;
+        case 7:
+            deplacement_y_entite(map, sort->texture, -2, &(sort->collision) );
+        case 6:
+            deplacement_x_entite(map, sort->texture, -2, &(sort->collision) ); break;
+        default : break;
+    }
 
 }

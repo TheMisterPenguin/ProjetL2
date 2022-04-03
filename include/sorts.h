@@ -18,7 +18,7 @@
 
 #define PATH_SPELL_BOSS "ressources/sprite/spell_boss.bmp"
 #define PATH_SPELL_WITCHER "ressources/sprite/spell_witcher.bmp"
-
+#define CONVERTIR_RADIANT_DEGREE 57.3
 typedef enum {SP_WITCHER,SP_BOSS_BALL,SP_BOSS_GROUP,SP_BOSS_SPLIT}type_sort_t;
 typedef enum {LANCER, PARER}statut_sort_t;
 

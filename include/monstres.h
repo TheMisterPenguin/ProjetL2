@@ -15,10 +15,10 @@
 #include "map.h"
 #include "personnage.h"
 
-#define DISTANCE_AGRO 50
+#define DISTANCE_AGRO 150
 #define DUREE_MONSTRE_MARCHER 100
 #define DUREE_MONSTRE_EN_GARDE 140
-#define DUREE_RUSH_OU_FUITE 150
+#define DUREE_RUSH_OU_FUITE 70
 #define DUREE_MONSTRE_ATTAQUE 100
 #define DUREE_MONSTRE_BLESSE 30
 
@@ -50,7 +50,7 @@ typedef struct monstre_s
     float vitesse; /**<vitesse de déplacement*/
     int gainXp; /**<gain d'xp pour le joueur*/
 
-    t_direction orientation; /*orientation du monstre*/
+    t_direction_1 orientation; /*orientation deplacement du monstre*/
     int duree; /*duree de l'action*/
     action_monstre_t action; /*action en cours par le monstre*/
 

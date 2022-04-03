@@ -41,11 +41,12 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, const char 
                 erreur("Erreur lors de la création du monstre : le monstre %s n'existe pas !", ERREUR_MAP, nom_monstre);
 
             monstre->collision.x = x;
+
             monstre->collision.y = y;
             monstre->collision.w = liste_base_monstres->tab[i].hitbox.w * (map->taille_case / TAILLE_CASE);
             monstre->collision.h = liste_base_monstres->tab[i].hitbox.h * (map->taille_case / TAILLE_CASE);
 
-            monstre->orientation = NORD;
+            monstre->orientation = NORD_1;
             monstre->duree = 0;
             monstre->action = MONSTRE_EN_GARDE;
 
@@ -116,15 +117,15 @@ void orienter_monstre_vers_joueur(monstre_t * monstre, joueur_t * joueur){
 
     if( abs(x_diff) < abs(y_diff) ){
         if(y_diff < 0)
-            monstre->orientation = NORD;
+            monstre->orientation = NORD_1;
         else
-            monstre->orientation = SUD;
+            monstre->orientation = SUD_1;
     }
     else{
         if(x_diff < 0)
-            monstre->orientation = OUEST;
+            monstre->orientation = OUEST_1;
         else
-            monstre->orientation = EST;
+            monstre->orientation = EST_1;
     }
     orienter_monstre(monstre);
 }
@@ -151,15 +152,15 @@ void fuir_joueur(monstre_t *monstre, joueur_t * joueur){
 
     if( abs(x_diff) < abs(y_diff) ){
         if(y_diff < 0)
-            monstre->orientation = SUD;
+            monstre->orientation = SUD_1;
         else
-            monstre->orientation = NORD;
+            monstre->orientation = NORD_1;
     }
     else{
         if(x_diff < 0)
-            monstre->orientation = EST;
+            monstre->orientation = EST_1;
         else
-            monstre->orientation = OUEST;
+            monstre->orientation = OUEST_1;
     }
     orienter_monstre(monstre);
     marcher_monstre(monstre);
@@ -252,7 +253,7 @@ bool hors_map_monstre(monstre_t * monstre){
     return 0;
 }
 
-void deplacer_entite(SDL_Rect collision, t_direction orientation, int nb_pixel){
+void deplacer_entite(SDL_Rect collision, t_direction_1 orientation, int nb_pixel){
     
 }
 
@@ -290,10 +291,10 @@ void action_monstre(monstre_t * monstre, joueur_t * joueur){
     if(compteur%2 == 0 && (monstre->action == MONSTRE_MARCHER || monstre->action == RUSH_OU_FUITE || monstre->action == MONSTRE_BLESSE) ){
 
         switch(monstre->orientation){
-            case(NORD): deplacement_y_entite(map, monstre->texture, -1, &(monstre->collision) ); break;
-            case(EST): deplacement_x_entite(map, monstre->texture, 1, &(monstre->collision) ); break;
-            case(SUD): deplacement_y_entite(map, monstre->texture, 1, &(monstre->collision) ); break;
-            case(OUEST): deplacement_x_entite(map, monstre->texture, -1, &(monstre->collision) ); break;
+            case(NORD_1): deplacement_y_entite(map, monstre->texture, -1, &(monstre->collision) ); break;
+            case(EST_1): deplacement_x_entite(map, monstre->texture, 1, &(monstre->collision) ); break;
+            case(SUD_1): deplacement_y_entite(map, monstre->texture, 1, &(monstre->collision) ); break;
+            case(OUEST_1): deplacement_x_entite(map, monstre->texture, -1, &(monstre->collision) ); break;
             default: break;
         }
         //si bloquer par une entité

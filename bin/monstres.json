@@ -14,7 +14,7 @@
         "attaque" : 15,
         "vitesse" : 1.0,
         "xp" : 40,
-        "hitbox" : [18,18]
+        "hitbox" : [21,24]
         }
     ]
 }
