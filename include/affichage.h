@@ -382,9 +382,9 @@ extern int current_frame_x(t_aff * texture);
 extern int current_frame_y(t_aff * texture);
 
 /**
-* \fn extern void afficher_monstres(list * liste_monstre, joueur_t * joueur);
+* \fn extern void afficher_monstres(list * liste_monstre, joueur_t * joueur)
  * \brief Fonction qui affiche les monstres
- * \param liste_monstre une liste de monstre
+ * \param liste_monstre une liste de monstres
  * \param joueur le joueur qui influe sur les monstres
  */
 extern void afficher_monstres(list * liste_monstre, joueur_t * joueur);
@@ -427,6 +427,13 @@ t_aff * next_frame_animation(joueur_t * joueur);
  * \param animations Liste regroupant les animations trouvées
  */
 void lister_animations(joueur_t ** joueurs, list * animations);
+
+/**
+* \fn void afficher_coffres(list * liste_coffre)
+ * \brief Fonction qui affiche les coffres
+ * \param liste_monstre une liste de coffres
+ */
+void afficher_coffres(list * liste_coffre);
 
 void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y);
 

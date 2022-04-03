@@ -13,6 +13,7 @@
 #include "definition_commun.h"
 #include "monstres.h"
 #include "listes.h"
+#include "coffres.h"
 #include "personnage.h"
 
 #define TAILLE_CASE 16
@@ -45,9 +46,10 @@ typedef struct s_map{
     unsigned int taille_case; /**< La taille d'une case */
     unsigned int cases_x; /**< Le nombre de cases affichées en x */
     unsigned int cases_y; /**< Le nombre de cases affichées en y */
-    list *liste_monstres; /**< La liste des monstres de la map */
-    list *liste_sorts;    /**< La liste des sorts de la map */
-    list *liste_collisions; /**< La liste de toutes les les collisions */
+    list *liste_monstres; /*< La liste des monstres de la map */
+    list *liste_sorts;    /*< La liste des sorts de la map */
+    list *liste_collisions; /*< La liste de toutes les les collisions */
+    list *liste_coffres; /*< La liste de tous les coffres */
 }t_map;
 
 extern t_map *map; /**< La map courante */
@@ -55,6 +57,7 @@ extern t_map *map; /**< La map courante */
 /**
  * \brief Fonction qui récupère les informations stockées dans le buffer en entrée.
  * \param liste_base_monstres Les montres à placer sur la map
+ * \param liste_base_coffres Les coffres à placer sur la map
  * \param buffer Le buffeur qui contient les informations
  * \return Une map initialisée avec toutes les informations dedans;
  */

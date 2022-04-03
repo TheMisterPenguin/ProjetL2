@@ -105,8 +105,9 @@ void ajout_droit(list *mylist, void * v){
     t_element *t;
 
     t = malloc(sizeof(t_element));
-    if(mylist->ajout == NULL)
+    if(mylist->ajout == NULL){
         t->valeur = v;
+    }
     else
         t->valeur = mylist->ajout(v);
 

@@ -23,6 +23,7 @@
 #include "map.h"
 #include "interface.h"
 #include "sorts.h"
+#include "coffres.h"
 
 #endif
 

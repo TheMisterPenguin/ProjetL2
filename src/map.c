@@ -7,6 +7,7 @@
 #include <code_erreur.h>
 #include <monstres.h>
 #include <math.h>
+#include <coffres.h>
 #include <fonctions.h>
 #include <personnage.h>
 
@@ -45,14 +46,21 @@ t_map * charger_map(const char * const nom_map){
     json_object *JSON_height =         NULL;
     json_object *JSON_taille_case =    NULL;
     json_object *JSON_tbl_monstre =    NULL;
+    json_object *JSON_tbl_coffre  =    NULL;
 
-    json_object *JSON_objet_monstre =  NULL; 
+    json_object *JSON_objet_monstre =  NULL;
+    json_object *objet_json =          NULL;
     json_object *JSON_nom_monstre =    NULL;   
     json_object *JSON_position =       NULL;
+    json_object *JSON_position2 =      NULL;
     json_object *JSON_x =              NULL;
-    json_object *JSON_y =              NULL; 
+    json_object *JSON_y =              NULL;
+    json_object *x2 =                  NULL;
+    json_object *y2 =                  NULL;
+    json_object *nom_coffre =          NULL;
 
     monstre_t * inserer =              NULL;
+    coffre_t * nv_coffre =             NULL;
 
     json_object *JSON_tbl_wall =       NULL;
     json_object *JSON_object_wall =    NULL;
@@ -72,6 +80,11 @@ t_map * charger_map(const char * const nom_map){
 
     if(!m->liste_monstres)
         erreur("Impossible de charger la map", ERREUR_LISTE);
+    
+    m->liste_coffres =  init_liste(NULL,NULL,NULL);
+
+    if(!m->liste_coffres)
+        erreur("Impossible de charger la map", ERREUR_LISTE);
 
     m->liste_sorts = init_liste(NULL,NULL,NULL);
 
@@ -83,7 +96,11 @@ t_map * charger_map(const char * const nom_map){
     if(!m->liste_collisions)
         erreur("Impossible de charger la map", ERREUR_LISTE);
 
+
     /* Récupération des informations dans le fichier */
+    if(!json_object_object_get_ex(JSON_fichier, "chest", &JSON_tbl_coffre))
+        erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
     if(!json_object_object_get_ex(JSON_fichier, "id", &JSON_id_map))
         erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
 
@@ -177,6 +194,28 @@ t_map * charger_map(const char * const nom_map){
         ajout_droit(m->liste_collisions, &(inserer->collision));
     }
 
+    for(unsigned int i = 0; i < json_object_array_length(JSON_tbl_coffre); i++){
+        objet_json = json_object_array_get_idx(JSON_tbl_coffre,i);
+
+        nom_coffre = json_object_object_get(objet_json,"type");
+        JSON_position2 = json_object_object_get(objet_json,"position");
+
+        x2 = json_object_array_get_idx(JSON_position2,0);
+        y2 = json_object_array_get_idx(JSON_position2,1);
+        
+        nv_coffre = creer_coffre(liste_base_coffres, json_object_get_string(nom_coffre), json_object_get_int(x2), json_object_get_int(y2), m);
+        info_coffre(nv_coffre);
+        ajout_droit(m->liste_coffres, nv_coffre);
+        info_coffre(m->liste_coffres->ec->valeur);
+        en_queue(m->liste_collisions);
+
+        //sprite des coffres de profile de 2*3 mais hitbox de 2*2, on baisse la hitbox d'une case pour faire correspondre au sprite
+        if(nv_coffre->type == PROFIL_FERME || nv_coffre->type == PROFIL_OUVERT){
+            (nv_coffre->collision.y) += TAILLE_CASE;
+        }
+
+        ajout_droit(m->liste_collisions, &(nv_coffre->collision));
+    }
     json_object_put(JSON_fichier); //libération mémoire de l'objet json
     return m;
 }
