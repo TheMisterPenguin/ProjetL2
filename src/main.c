@@ -173,18 +173,18 @@ int main(int argc, char** argv)
 
         // en_tete(buffer_affichage);
         if (joueur1->statut->en_mouvement){ /* Déplacement map */
-            switch (joueur1->statut->orientation)
+            switch (joueur1->statut->orient_dep)
             {
-            case NORD:
+            case NORD_1:
                 deplacement_y_pers(map, joueur1, -1);
                 break;
-            case SUD:
+            case SUD_1:
                 deplacement_y_pers(map, joueur1, 1);
                 break;
-            case OUEST:
+            case OUEST_1:
                 deplacement_x_pers(map, joueur1, -1);
                 break;
-            case EST:
+            case EST_1:
                 deplacement_x_pers(map, joueur1, 1);
                 break;
             }
@@ -196,18 +196,18 @@ int main(int argc, char** argv)
 
         if(nb_joueurs == 2){
             if (joueur2->statut->en_mouvement){
-                switch (joueur2->statut->orientation)
+                switch (joueur2->statut->orient_dep)
                 {
-                case NORD:
+                case NORD_1:
                     deplacement_y_entite(map, joueur2->textures_joueur->liste[0], -1, &joueur2->statut->zone_colision);
                     break;
-                case SUD:
+                case SUD_1:
                     deplacement_y_entite(map, joueur2->textures_joueur->liste[0], 1, &joueur2->statut->zone_colision);
                     break;
-                case OUEST:
+                case OUEST_1:
                     deplacement_x_entite(map, joueur2->textures_joueur->liste[0], -1, &joueur2->statut->zone_colision);
                     break;
-                case EST:
+                case EST_1:
                     deplacement_x_entite(map, joueur2->textures_joueur->liste[0], 1, &joueur2->statut->zone_colision);
                     break;
                 }
@@ -231,8 +231,12 @@ int main(int argc, char** argv)
                 SDL_RenderDrawRect(rendu_principal, &joueur1->statut->vrai_zone_collision);
                 if(nb_joueurs == 2)
                     SDL_RenderDrawRect(rendu_principal, &joueur2->statut->zone_colision);
-                hors_hitbox = zone_en_dehors_hitbox(&(joueur1->statut->vrai_zone_collision), joueur1->textures_joueur->liste[0]->aff_fenetre, joueur1->statut->orientation);
-                SDL_RenderDrawRect(rendu_principal,hors_hitbox);
+                if(joueur1->statut->action == ATTAQUE || joueur1->statut->action == ATTAQUE_CHARGEE){
+                    printf("%d\n", joueur1->statut->orient_dep);
+                    SDL_Rect * result = zone_en_dehors_hitbox(&(joueur1->statut->vrai_zone_collision), joueur1->textures_joueur->liste[0]->aff_fenetre, joueur1->statut->orient_att);
+                    SDL_RenderDrawRect(rendu_principal,result);
+                }
+
                 en_tete(map->liste_collisions);
                 while(!hors_liste(map->liste_collisions)){
                     SDL_Rect *e = valeur_elt(map->liste_collisions);
@@ -242,8 +246,9 @@ int main(int argc, char** argv)
                 SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
         #endif
 
-        afficher_sorts(map->liste_sorts, joueur1);
         afficher_monstres(map->liste_monstres, joueur1);
+        afficher_sorts(map->liste_sorts, joueur1);
+
         afficher_coffres(map->liste_coffres);
 
         /* On cous le joueur2 s'il existe*/

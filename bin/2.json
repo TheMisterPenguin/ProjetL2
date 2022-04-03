@@ -9,7 +9,7 @@
         {"type" : "knight",
         "position" : [8,40]},
         {"type" : "witcher",
-        "position" : [10,10]}
+        "position" : [300,100]}
     ],
     "wall" : [
         {

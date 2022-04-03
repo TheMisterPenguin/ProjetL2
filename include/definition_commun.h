@@ -19,13 +19,26 @@
 extern unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 typedef unsigned char byte;
 typedef struct point {int x,y;}point;
+
 typedef enum
 {
-    NORD,
-    EST,
-    SUD,
-    OUEST
-} t_direction;
+    NORD_1,
+    EST_1,
+    SUD_1,
+    OUEST_1,
+} t_direction_1;
+
+typedef enum
+{
+    NORD_2,
+    NORD_EST_2,
+    EST_2,
+    SUD_EST_2,
+    SUD_2,
+    SUD_OUEST_2,
+    OUEST_2,
+    NORD_OUEST_2
+} t_direction_2;
 
 #define bool _Bool
 #define vrai 1

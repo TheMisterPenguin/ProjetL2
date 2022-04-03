@@ -135,12 +135,10 @@ err_t next_frame_y_indice(t_aff *texture, const unsigned int indice)
 {
     int temp = texture->frame_anim->y;
     texture->frame_anim->y = (texture->frame_anim->h) * indice; /* On met à jour */
-
     if (!rect_correct_texture(texture->frame_anim, texture->width, texture->height)){ /* Indice trop grand */
         texture->frame_anim->y = temp;
         return EXIT_FAILURE;
     }
-
     return EXIT_SUCCESS;
 }
 
@@ -335,18 +333,19 @@ t_aff *next_frame_joueur(joueur_t *j)
 
     if (statut->action == ATTAQUE_OU_CHARGER && statut->duree == 0)
         statut->action = CHARGER;
+
     if ((statut->action == RIEN || statut->action == ATTAQUE_OU_CHARGER) && statut->en_mouvement)
     {
         if ((compteur % 5) == 0) /*compteur%5 pour la vitesse d'affichage*/
             if (statut->bouclier_equipe)
             {
-                next_frame_y_indice(textures[TEXT_MARCHER_BOUCLIER], statut->orientation);
+                next_frame_y_indice(textures[TEXT_MARCHER_BOUCLIER], statut->orient_dep);
                 next_frame_x(textures[TEXT_MARCHER_BOUCLIER]);
                 return textures[TEXT_MARCHER_BOUCLIER];
             }
             else
             {
-                next_frame_y_indice(textures[TEXT_MARCHER], statut->orientation);
+                next_frame_y_indice(textures[TEXT_MARCHER], statut->orient_dep);
                 next_frame_x(textures[TEXT_MARCHER]);
                 return textures[TEXT_MARCHER];
             }
@@ -365,9 +364,9 @@ t_aff *next_frame_joueur(joueur_t *j)
             { /*compteur%5 pour la vitesse d'affichage*/
                 next_frame_x(textures[TEXT_CHARGER]);
                 if(statut->en_mouvement)
-                    next_frame_y_indice(textures[TEXT_CHARGER], 2 * (statut->orientation) + (textures[TEXT_CHARGER]->frame_anim->x) / (int) LONGUEUR_ENTITE );
+                    next_frame_y_indice(textures[TEXT_CHARGER], statut->orient_dep + (textures[TEXT_CHARGER]->frame_anim->x) / (int) LONGUEUR_ENTITE );
                 else
-                    next_frame_y_indice(textures[TEXT_CHARGER], 2 * (statut->orientation));
+                    next_frame_y_indice(textures[TEXT_CHARGER], statut->orient_dep);
                 return textures[TEXT_CHARGER];
             }
             else
@@ -378,7 +377,10 @@ t_aff *next_frame_joueur(joueur_t *j)
             if ((compteur % 4) == 0)
             { /*compteur%4 pour la vitesse d'affichage*/
                 next_frame_x(textures[TEXT_ATTAQUE]);
-                next_frame_y_indice(textures[TEXT_ATTAQUE], statut->orientation);
+                if(statut->orient_dep != EST_1)
+                    statut->orient_att = (statut->orient_att + 7) % 8;
+                else
+                    statut->orient_att = (statut->orient_att + 1) % 8;
                 /*si il a fait le tour du fichier sprite attaque, l'action est terminée*/
                 if( (textures[TEXT_ATTAQUE]->frame_anim->x) == (LONGUEUR_ENTITE*2) )
                     statut->action = RIEN;
@@ -393,10 +395,11 @@ t_aff *next_frame_joueur(joueur_t *j)
             { /*compteur%3 pour la vitesse d'affichage*/
                 // lorseque l'on rentre pour la première fois dans cette phase d'attaque chargée
                 if (statut->duree == (DUREE_ATTAQUE_CHARGEE - 1))
-                    next_frame_x_indice(textures[TEXT_ATTAQUE_CHARGEE], (statut->orientation) * 2 - 1);
+                    next_frame_x_indice(textures[TEXT_ATTAQUE_CHARGEE], (statut->orient_dep) * 2 - 1);
                 next_frame_x(textures[TEXT_ATTAQUE_CHARGEE]);
+                statut->orient_att = (statut->orient_att + 1) % 8;
                 /*si il a fait le tour du fichier sprite attaque, l'action est terminée*/
-                if( ( (textures[TEXT_ATTAQUE_CHARGEE]->frame_anim->x) == (statut->orientation)*2*LONGUEUR_ENTITE) && (statut->duree != (DUREE_ATTAQUE_CHARGEE-1) ) )
+                if( ( (textures[TEXT_ATTAQUE_CHARGEE]->frame_anim->x) == (statut->orient_dep)*2*LONGUEUR_ENTITE) && (statut->duree != (DUREE_ATTAQUE_CHARGEE-1) ) )
                     statut->action = RIEN;
                 return textures[TEXT_ATTAQUE_CHARGEE];
             }
@@ -423,7 +426,7 @@ void afficher_monstres(list * liste_monstre, joueur_t * joueur){
     while(!hors_liste(liste_monstre)){
         monstre = valeur_elt(liste_monstre);
         action_monstre(monstre, joueur);
-        if(monstre->action != MONSTRE_BLESSE || (monstre->action == MONSTRE_BLESSE && compteur%3 == 0) )
+        if(monstre->action != MONSTRE_BLESSE || (monstre->action == MONSTRE_BLESSE && compteur%2) )
             afficher_texture(monstre->texture ,rendu_principal);
         suivant(liste_monstre);
     }
@@ -945,7 +948,6 @@ t_aff * next_frame_animation(joueur_t * joueur){
             /*si on a fait le tour du spritesheet soin, l'animation est terminée*/
             if (statut->duree_anim == 0)
                 statut->action = RIEN;
-            printf("duree_anim: %d\n", statut->duree_anim);
             next_frame_x_indice(heal, (DUREE_SOIN - statut->duree_anim)%5);
             next_frame_y_indice(heal, (DUREE_SOIN - statut->duree_anim)/5);
 

@@ -76,10 +76,10 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
     //joueur1 _____________________________________________________________
     if(joueur1->statut->action == RIEN || joueur1->statut->action == CHARGER){
         switch(ev->keysym.sym){
-            case TOUCHE_BAS : joueur1->statut->orientation = SUD;  joueur1->statut->en_mouvement = vrai; break;
-            case TOUCHE_HAUT : joueur1->statut->orientation = NORD;  joueur1->statut->en_mouvement = vrai; break;
-            case TOUCHE_DROITE : joueur1->statut->orientation = EST;  joueur1->statut->en_mouvement = vrai; break;
-            case TOUCHE_GAUCHE : joueur1->statut->orientation = OUEST;  joueur1->statut->en_mouvement = vrai; break;
+            case TOUCHE_BAS : joueur1->statut->orient_dep = SUD_1;  joueur1->statut->en_mouvement = vrai; break;
+            case TOUCHE_HAUT : joueur1->statut->orient_dep = NORD_1;  joueur1->statut->en_mouvement = vrai; break;
+            case TOUCHE_DROITE : joueur1->statut->orient_dep = EST_1;  joueur1->statut->en_mouvement = vrai; break;
+            case TOUCHE_GAUCHE : joueur1->statut->orient_dep = OUEST_1;  joueur1->statut->en_mouvement = vrai; break;
             case TOUCHE_TAB :
                 //empêche un joueur de marcher à l'infini lors du maintien d'une touche directionnel en ouvrant un menu et du relachement de la touche dans le menu
                 stoper_mouvement_joueurs(joueurs);
@@ -100,10 +100,10 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
         }
         if(joueur2 == NULL){//mode solo
             switch(ev->keysym.sym){
-                case SDLK_DOWN : joueur1->statut->orientation = SUD;  joueur1->statut->en_mouvement = vrai; break;
-                case SDLK_UP : joueur1->statut->orientation = NORD;  joueur1->statut->en_mouvement = vrai; break;
-                case SDLK_RIGHT : joueur1->statut->orientation = EST;  joueur1->statut->en_mouvement = vrai; break;
-                case SDLK_LEFT : joueur1->statut->orientation = OUEST;  joueur1->statut->en_mouvement = vrai; break;
+                case SDLK_DOWN : joueur1->statut->orient_dep = SUD_1;  joueur1->statut->en_mouvement = vrai; break;
+                case SDLK_UP : joueur1->statut->orient_dep = NORD_1;  joueur1->statut->en_mouvement = vrai; break;
+                case SDLK_RIGHT : joueur1->statut->orient_dep = EST_1;  joueur1->statut->en_mouvement = vrai; break;
+                case SDLK_LEFT : joueur1->statut->orient_dep = OUEST_1;  joueur1->statut->en_mouvement = vrai; break;
             }
         }
     }
@@ -113,10 +113,10 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
     if(joueur2 != NULL){ //mode coopération
         if(joueur2->statut->action == RIEN || joueur2->statut->action == CHARGER)
         switch(ev->keysym.sym){
-            case SDLK_DOWN : joueur2->statut->orientation = SUD;  joueur2->statut->en_mouvement = vrai; break;
-            case SDLK_UP : joueur2->statut->orientation = NORD;  joueur2->statut->en_mouvement = vrai; break;
-            case SDLK_RIGHT : joueur2->statut->orientation = EST;  joueur2->statut->en_mouvement = vrai; break;
-            case SDLK_LEFT : joueur2->statut->orientation = OUEST;  joueur2->statut->en_mouvement = vrai; break;
+            case SDLK_DOWN : joueur2->statut->orient_dep = SUD_1;  joueur2->statut->en_mouvement = vrai; break;
+            case SDLK_UP : joueur2->statut->orient_dep = NORD_1;  joueur2->statut->en_mouvement = vrai; break;
+            case SDLK_RIGHT : joueur2->statut->orient_dep = EST_1;  joueur2->statut->en_mouvement = vrai; break;
+            case SDLK_LEFT : joueur2->statut->orient_dep = OUEST_1;  joueur2->statut->en_mouvement = vrai; break;
             case SDLK_p :
                 //empêche un joueur de marcher à l'infini lors du maintien d'une touche directionnel en ouvrant un menu et du relachement de la touche dans le menu
                 stoper_mouvement_joueurs(joueurs);
@@ -148,45 +148,45 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
 static void keyUp(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
     joueur_t * joueur1 = joueurs[0];
     joueur_t * joueur2 = joueurs[1];
-    t_direction orientation1 = joueur1->statut->orientation;
-    t_direction orientation2;
+    t_direction_1 orientation1 = joueur1->statut->orient_dep;
+    t_direction_1 orientation2;
 
     //joueur1 _____________________________________________________________
 
     switch(ev->keysym.sym){
         case TOUCHE_BAS :
-            if(orientation1 == SUD)
+            if(orientation1 == SUD_1)
                 joueur1->statut->en_mouvement = faux;
             break;
         case TOUCHE_HAUT :
-            if (orientation1 == NORD)
+            if (orientation1 == NORD_1)
                 joueur1->statut->en_mouvement = faux;
             break;
         case TOUCHE_DROITE :
-            if (orientation1 == EST)
+            if (orientation1 == EST_1)
                 joueur1->statut->en_mouvement = faux;
             break;
         case TOUCHE_GAUCHE :
-            if (orientation1 == OUEST)
+            if (orientation1 == OUEST_1)
                 joueur1->statut->en_mouvement = faux;
             break;
     }
     if(joueur2 == NULL){//mode solo
             switch(ev->keysym.sym){
                 case SDLK_DOWN : 
-                    if(orientation1 == SUD)
+                    if(orientation1 == SUD_1)
                         joueur1->statut->en_mouvement = faux;
                     break;
                 case SDLK_UP : 
-                    if(orientation1 == NORD)
+                    if(orientation1 == NORD_1)
                         joueur1->statut->en_mouvement = faux;
                     break;
                 case SDLK_RIGHT : 
-                    if(orientation1 == EST)
+                    if(orientation1 == EST_1)
                         joueur1->statut->en_mouvement = faux;
                     break;
                 case SDLK_LEFT : 
-                    if(orientation1 == OUEST)
+                    if(orientation1 == OUEST_1)
                         joueur1->statut->en_mouvement = faux;
                     break;
             }
@@ -195,23 +195,23 @@ static void keyUp(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
     //joueur2 _____________________________________________________________
 
     if(joueur2 != NULL){ //mode coopération
-        orientation2 = joueur2->statut->orientation;
+        orientation2 = joueur2->statut->orient_dep;
         
         switch(ev->keysym.sym){
             case SDLK_DOWN : 
-                if(orientation2 == SUD)
+                if(orientation2 == SUD_1)
                     joueur2->statut->en_mouvement = faux;
                 break;
             case SDLK_UP :
-                if (orientation2 == NORD)
+                if (orientation2 == NORD_1)
                     joueur2->statut->en_mouvement = faux;
                 break;
             case SDLK_RIGHT :
-                if (orientation2 == EST)
+                if (orientation2 == EST_1)
                     joueur2->statut->en_mouvement = faux;
                 break;
             case SDLK_LEFT :
-                if (orientation2 == OUEST)
+                if (orientation2 == OUEST_1)
                     joueur2->statut->en_mouvement = faux;
                 break;
         }
@@ -250,6 +250,7 @@ void joystick_button_up(SDL_JoyButtonEvent *ev, joueur_t **j)
         if (statut->action == CHARGER)
         {
             statut->action = ATTAQUE_CHARGEE;
+            statut->orient_att = statut->orient_dep * 2;
             statut->en_mouvement = faux;
             statut->duree = DUREE_ATTAQUE_CHARGEE;
         }
@@ -281,12 +282,12 @@ void joystick_stick(joueur_t **j){
 
     if((axe_y > -25735 && axe_y < 25735)){ /* Possible mouvement de l'axe x */
         if (axe_x > 10000){
-            statut->orientation = EST;
+            statut->orient_dep = EST_1;
             statut->en_mouvement = vrai;
         }
         else{ 
             if (axe_x < -10000){
-                statut->orientation = OUEST;
+                statut->orient_dep = OUEST_1;
                 statut->en_mouvement = vrai;
             }
             else
@@ -296,12 +297,12 @@ void joystick_stick(joueur_t **j){
 
     if ((axe_x > -25735 && axe_x < 25735)){
         if (axe_y > 10000){
-            statut->orientation = SUD;
+            statut->orient_dep = SUD_1;
             statut->en_mouvement = vrai;
         }
         else {
             if (axe_y < -10000){
-                statut->orientation = NORD;
+                statut->orient_dep = NORD_1;
                 statut->en_mouvement = vrai;
             }
             else
@@ -354,7 +355,13 @@ static void mouseButtonUp(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
         }
         else if(statut->action == ATTAQUE_OU_CHARGER){
             statut->action = ATTAQUE;
+            next_frame_y_indice(joueur->textures_joueur->liste[TEXT_ATTAQUE], statut->orient_dep);
+            if(statut->orient_dep != EST_1)
+                statut->orient_att = (statut->orient_dep * 2 + 2) % 8;
+            else
+                statut->orient_att = 0;
             statut->duree = DUREE_ATTAQUE;
+            statut->duree_anim = 0;
         }
     }
     else if( ev->button == SDL_BUTTON_RIGHT && (statut->action == BLOQUER || statut->action == CHARGER) )
