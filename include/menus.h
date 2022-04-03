@@ -44,13 +44,15 @@ extern void afficher_menu_accueil(int * nb_joueur);
 
 void afficher_menu_accueil_manette(int *nb_joueur);
 
-    /**
-     * \fn void afficher_inventaire(joueur_t * joueur)
-     * \brief Affiche l'inventaire et gère les interactions avec l'utilisateur
-     * \param joueur Joueur auquel appartient l'inventaire
-     * \param touche_inventaire Touche inventaire du joueur
-     */
-    extern void afficher_inventaire(joueur_t *joueur, SDL_KeyCode touche_inventaire);
+/**
+ * \fn void afficher_inventaire(joueur_t * joueur)
+ * \brief Affiche l'inventaire et gère les interactions avec l'utilisateur
+ * \param joueur Joueur auquel appartient l'inventaire
+ * \param touche_inventaire Touche inventaire du joueur
+ */
+extern void afficher_inventaire(joueur_t *joueur, SDL_KeyCode touche_inventaire);
+
+void afficher_inventaire_manette(joueur_t *joueur);
 
 /**
  * \fn void init_text_menus(void)

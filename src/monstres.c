@@ -21,8 +21,6 @@
 
 liste_base_monstres_t * liste_base_monstres = NULL;
 
-
-
 void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres){
 
     free((**liste_base_monstres).tab);
@@ -38,6 +36,10 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, const char 
     for(i=0; i<liste_base_monstres->nb_monstre; i++){
         if(strcmp(liste_base_monstres->tab[i].nom_monstre,nom_monstre) == 0){
             monstre->type = nom_monstre_to_type_monstre(nom_monstre);
+
+            if(monstre->type == TYPE_MONSTRE_INCONNU)
+                erreur("Erreur lors de la création du monstre : le monstre %s n'existe pas !", ERREUR_MAP, nom_monstre);
+
             monstre->collision.x = x;
 
             monstre->collision.y = y;
@@ -64,7 +66,7 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, const char 
 }
 
 
-type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre){
+type_monstre_t nom_monstre_to_type_monstre(const char * const nom_monstre){
     if(strcmp(nom_monstre,"witcher") == 0)
         return WITCHER;
     else if(strcmp(nom_monstre,"knight") == 0)
@@ -73,9 +75,8 @@ type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre){
         return BOSS;
     else{
         fprintf(stderr,"Erreur, nom du monstre incorrect\n");
+        return TYPE_MONSTRE_INCONNU;
     }
-
-    return ERREUR;
 }
 
 int distance_x_joueur(SDL_Rect collision, joueur_t * joueur){
@@ -304,7 +305,7 @@ void action_monstre(monstre_t * monstre, joueur_t * joueur){
 
 
 
-void charger_base_monstre(char * chemin_fichier){
+void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t ** liste_base_monstres){
 
     json_object *fichier = json_object_from_file(chemin_fichier);
     int nb_monstre;
@@ -353,10 +354,10 @@ void charger_base_monstre(char * chemin_fichier){
     }
 
     //allocation de liste_base_monstre avec le nombre de monstre nécéssaire
-    liste_base_monstres = malloc(sizeof(liste_base_monstres_t));
+    (*liste_base_monstres) = malloc(sizeof(liste_base_monstres_t));
     nb_monstre = json_object_array_length(json_tbl_monstre);
-    liste_base_monstres->tab = malloc(sizeof(base_monstre_t) * nb_monstre);
-    liste_base_monstres->nb_monstre = nb_monstre;
+    (*liste_base_monstres)->tab = malloc(sizeof(base_monstre_t) * nb_monstre);
+    (*liste_base_monstres)->nb_monstre = nb_monstre;
 
     for(unsigned int i = 0; i < nb_monstre; i++){
     
@@ -507,13 +508,14 @@ void charger_base_monstre(char * chemin_fichier){
 
         
         /*inserrer les caractèristiques dans base_monstre_t*/
-        strcpy(liste_base_monstres->tab[i].fichier_image, fichier_image);
-        strcpy(liste_base_monstres->tab[i].nom_monstre, type);
-        liste_base_monstres->tab[i].pdv = json_object_get_int(json_pdv);
-        liste_base_monstres->tab[i].attaque = json_object_get_int(json_attaque);
-        liste_base_monstres->tab[i].vitesse = json_object_get_int(json_vitesse);
-        liste_base_monstres->tab[i].gainXp = json_object_get_int(json_xp);
-        liste_base_monstres->tab[i].hitbox.w = json_object_get_int(json_hitbox_x);
-        liste_base_monstres->tab[i].hitbox.h = json_object_get_int(json_hitbox_y);
+        strcpy((*liste_base_monstres)->tab[i].fichier_image, fichier_image);
+        strcpy((*liste_base_monstres)->tab[i].nom_monstre, type);
+        (*liste_base_monstres)->tab[i].pdv = json_object_get_int(json_pdv);
+        (*liste_base_monstres)->tab[i].attaque = json_object_get_int(json_attaque);
+        (*liste_base_monstres)->tab[i].vitesse = json_object_get_int(json_vitesse);
+        (*liste_base_monstres)->tab[i].gainXp = json_object_get_int(json_xp);
+        (*liste_base_monstres)->tab[i].hitbox.w = json_object_get_int(json_hitbox_x);
+        (*liste_base_monstres)->tab[i].hitbox.h = json_object_get_int(json_hitbox_y);
     }
+    json_object_put(fichier);
 }

@@ -1,7 +1,10 @@
 \hypertarget{test__personnage_8c}{}\doxysection{Référence du fichier test\+\_\+personnage.\+c}
 \label{test__personnage_8c}\index{test\_personnage.c@{test\_personnage.c}}
-{\ttfamily \#include $<$commun.\+h$>$}\newline
-{\ttfamily \#include $<$personnage.\+h$>$}\newline
+
+
+Programme de test du module personnage.  
+
+
 Graphe des dépendances par inclusion de test\+\_\+personnage.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -13,52 +16,149 @@ Graphe des dépendances par inclusion de test\+\_\+personnage.\+c\+:
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{test__personnage_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+int \mbox{\hyperlink{test__personnage_8c_a11244ab0910e8dbcdf132f10630dea91}{init\+\_\+suite}} (void)
+\item 
+int \mbox{\hyperlink{test__personnage_8c_a1277ae7ecbaaad1479cfac38aaa7891d}{clean\+\_\+suite}} (void)
+\item 
+void \mbox{\hyperlink{test__personnage_8c_a3cccdeb8dd61fb359c030d6c8d2c031f}{creation\+\_\+personnage}} (void)
+\item 
+void \mbox{\hyperlink{test__personnage_8c_a0307fbb1e4265af351172693ba4ecdc6}{modification\+\_\+personnage}} (void)
+\item 
+int \mbox{\hyperlink{test__personnage_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-long int \mbox{\hyperlink{test__personnage_8c_a762704f794c8d74099d3053757266dcb_a762704f794c8d74099d3053757266dcb}{compteur}}
+long int \mbox{\hyperlink{test__personnage_8c_a762704f794c8d74099d3053757266dcb}{compteur}}
 \item 
-\mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$ \mbox{\hyperlink{test__personnage_8c_aed95b6163c9140265eb710ce763afafb_aed95b6163c9140265eb710ce763afafb}{test\+\_\+map}}
+\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$ \mbox{\hyperlink{test__personnage_8c_aed95b6163c9140265eb710ce763afafb}{test\+\_\+map}}
 \item 
-unsigned int \mbox{\hyperlink{test__personnage_8c_a28b763408ce1b0c5b625e4c409a5022a_a28b763408ce1b0c5b625e4c409a5022a}{F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+O\+N\+G\+U\+E\+UR}}
+unsigned int \mbox{\hyperlink{test__personnage_8c_a28b763408ce1b0c5b625e4c409a5022a}{F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+O\+N\+G\+U\+E\+UR}}
 \item 
-unsigned int \mbox{\hyperlink{test__personnage_8c_a675ea76148cd2210ee956b7358f18194_a675ea76148cd2210ee956b7358f18194}{F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+A\+R\+G\+E\+UR}}
+unsigned int \mbox{\hyperlink{test__personnage_8c_a675ea76148cd2210ee956b7358f18194}{F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+A\+R\+G\+E\+UR}}
+\item 
+joueur\+\_\+t $\ast$ \mbox{\hyperlink{test__personnage_8c_a5ead4748360bfbe8192d0dd51d0cac86}{perso\+\_\+principal}} = N\+U\+LL
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Description détaillée}
+\begin{DoxyAuthor}{Auteur}
+Max Descomps (\href{mailto:Max.Descomps.Etu@univ-lemans.fr}{\texttt{ Max.\+Descomps.\+Etu@univ-\/lemans.\+fr}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+02/04/2022 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{test__personnage_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{test__personnage_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\mbox{\Hypertarget{test__personnage_8c_a1277ae7ecbaaad1479cfac38aaa7891d}\label{test__personnage_8c_a1277ae7ecbaaad1479cfac38aaa7891d}} 
+\index{test\_personnage.c@{test\_personnage.c}!clean\_suite@{clean\_suite}}
+\index{clean\_suite@{clean\_suite}!test\_personnage.c@{test\_personnage.c}}
+\doxysubsubsection{\texorpdfstring{clean\_suite()}{clean\_suite()}}
+{\footnotesize\ttfamily int clean\+\_\+suite (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{d3/d9d/test__personnage_8c_a1277ae7ecbaaad1479cfac38aaa7891d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{test__personnage_8c_a3cccdeb8dd61fb359c030d6c8d2c031f}\label{test__personnage_8c_a3cccdeb8dd61fb359c030d6c8d2c031f}} 
+\index{test\_personnage.c@{test\_personnage.c}!creation\_personnage@{creation\_personnage}}
+\index{creation\_personnage@{creation\_personnage}!test\_personnage.c@{test\_personnage.c}}
+\doxysubsubsection{\texorpdfstring{creation\_personnage()}{creation\_personnage()}}
+{\footnotesize\ttfamily void creation\+\_\+personnage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d9d/test__personnage_8c_a3cccdeb8dd61fb359c030d6c8d2c031f_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{d3/d9d/test__personnage_8c_a3cccdeb8dd61fb359c030d6c8d2c031f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{test__personnage_8c_a11244ab0910e8dbcdf132f10630dea91}\label{test__personnage_8c_a11244ab0910e8dbcdf132f10630dea91}} 
+\index{test\_personnage.c@{test\_personnage.c}!init\_suite@{init\_suite}}
+\index{init\_suite@{init\_suite}!test\_personnage.c@{test\_personnage.c}}
+\doxysubsubsection{\texorpdfstring{init\_suite()}{init\_suite()}}
+{\footnotesize\ttfamily int init\+\_\+suite (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{d3/d9d/test__personnage_8c_a11244ab0910e8dbcdf132f10630dea91_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{test__personnage_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{test__personnage_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
 \index{test\_personnage.c@{test\_personnage.c}!main@{main}}
 \index{main@{main}!test\_personnage.c@{test\_personnage.c}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d9d/test__personnage_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{test__personnage_8c_a0307fbb1e4265af351172693ba4ecdc6}\label{test__personnage_8c_a0307fbb1e4265af351172693ba4ecdc6}} 
+\index{test\_personnage.c@{test\_personnage.c}!modification\_personnage@{modification\_personnage}}
+\index{modification\_personnage@{modification\_personnage}!test\_personnage.c@{test\_personnage.c}}
+\doxysubsubsection{\texorpdfstring{modification\_personnage()}{modification\_personnage()}}
+{\footnotesize\ttfamily void modification\+\_\+personnage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{d3/d9d/test__personnage_8c_a0307fbb1e4265af351172693ba4ecdc6_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Documentation des variables}
-\mbox{\Hypertarget{test__personnage_8c_a762704f794c8d74099d3053757266dcb_a762704f794c8d74099d3053757266dcb}\label{test__personnage_8c_a762704f794c8d74099d3053757266dcb_a762704f794c8d74099d3053757266dcb}} 
+\mbox{\Hypertarget{test__personnage_8c_a762704f794c8d74099d3053757266dcb}\label{test__personnage_8c_a762704f794c8d74099d3053757266dcb}} 
 \index{test\_personnage.c@{test\_personnage.c}!compteur@{compteur}}
 \index{compteur@{compteur}!test\_personnage.c@{test\_personnage.c}}
 \doxysubsubsection{\texorpdfstring{compteur}{compteur}}
 {\footnotesize\ttfamily long int compteur}
 
-\mbox{\Hypertarget{test__personnage_8c_a675ea76148cd2210ee956b7358f18194_a675ea76148cd2210ee956b7358f18194}\label{test__personnage_8c_a675ea76148cd2210ee956b7358f18194_a675ea76148cd2210ee956b7358f18194}} 
+\mbox{\Hypertarget{test__personnage_8c_a675ea76148cd2210ee956b7358f18194}\label{test__personnage_8c_a675ea76148cd2210ee956b7358f18194}} 
 \index{test\_personnage.c@{test\_personnage.c}!FENETRE\_LARGEUR@{FENETRE\_LARGEUR}}
 \index{FENETRE\_LARGEUR@{FENETRE\_LARGEUR}!test\_personnage.c@{test\_personnage.c}}
 \doxysubsubsection{\texorpdfstring{FENETRE\_LARGEUR}{FENETRE\_LARGEUR}}
 {\footnotesize\ttfamily unsigned int F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+A\+R\+G\+E\+UR}
 
-\mbox{\Hypertarget{test__personnage_8c_a28b763408ce1b0c5b625e4c409a5022a_a28b763408ce1b0c5b625e4c409a5022a}\label{test__personnage_8c_a28b763408ce1b0c5b625e4c409a5022a_a28b763408ce1b0c5b625e4c409a5022a}} 
+\mbox{\Hypertarget{test__personnage_8c_a28b763408ce1b0c5b625e4c409a5022a}\label{test__personnage_8c_a28b763408ce1b0c5b625e4c409a5022a}} 
 \index{test\_personnage.c@{test\_personnage.c}!FENETRE\_LONGUEUR@{FENETRE\_LONGUEUR}}
 \index{FENETRE\_LONGUEUR@{FENETRE\_LONGUEUR}!test\_personnage.c@{test\_personnage.c}}
 \doxysubsubsection{\texorpdfstring{FENETRE\_LONGUEUR}{FENETRE\_LONGUEUR}}
 {\footnotesize\ttfamily unsigned int F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+O\+N\+G\+U\+E\+UR}
 
-\mbox{\Hypertarget{test__personnage_8c_aed95b6163c9140265eb710ce763afafb_aed95b6163c9140265eb710ce763afafb}\label{test__personnage_8c_aed95b6163c9140265eb710ce763afafb_aed95b6163c9140265eb710ce763afafb}} 
+\mbox{\Hypertarget{test__personnage_8c_a5ead4748360bfbe8192d0dd51d0cac86}\label{test__personnage_8c_a5ead4748360bfbe8192d0dd51d0cac86}} 
+\index{test\_personnage.c@{test\_personnage.c}!perso\_principal@{perso\_principal}}
+\index{perso\_principal@{perso\_principal}!test\_personnage.c@{test\_personnage.c}}
+\doxysubsubsection{\texorpdfstring{perso\_principal}{perso\_principal}}
+{\footnotesize\ttfamily joueur\+\_\+t$\ast$ perso\+\_\+principal = N\+U\+LL}
+
+\mbox{\Hypertarget{test__personnage_8c_aed95b6163c9140265eb710ce763afafb}\label{test__personnage_8c_aed95b6163c9140265eb710ce763afafb}} 
 \index{test\_personnage.c@{test\_personnage.c}!test\_map@{test\_map}}
 \index{test\_map@{test\_map}!test\_personnage.c@{test\_personnage.c}}
 \doxysubsubsection{\texorpdfstring{test\_map}{test\_map}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structt__map}{t\+\_\+map}}$\ast$ test\+\_\+map}
+{\footnotesize\ttfamily \mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}}$\ast$ test\+\_\+map}
 

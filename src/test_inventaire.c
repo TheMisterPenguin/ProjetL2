@@ -90,7 +90,7 @@ void modification_inventaire(void) {
 int main(){
     init();
 
-    map = charger_s_map(charger_f_map("map.json"));
+    map = charger_s_map(charger_f_map("map.json"), liste_base_monstres);
     perso_principal = new_joueur("test", 0);
 
     sac = perso_principal->inventaire->sac;

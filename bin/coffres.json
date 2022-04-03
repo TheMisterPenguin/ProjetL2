@@ -1,0 +1,20 @@
+{
+    "coffre" : [
+        {"fichier" : "ressources/sprite/coffreprofilferme.bmp",
+        "type" : "profilferme",
+        "hitbox" : [2,2]
+        },
+        {"fichier" : "ressources/sprite/coffreprofilouvert.bmp",
+            "type" : "profilouvert",
+            "hitbox" : [2,2]
+        },
+        {"fichier" : "ressources/sprite/coffrefaceferme.bmp",
+        "type" : "faceferme",
+        "hitbox" : [2,2]
+        },
+        {"fichier" : "ressources/sprite/coffrefaceouvert.bmp",
+            "type" : "faceouvert",
+            "hitbox" : [2,2]
+        }
+    ]
+}

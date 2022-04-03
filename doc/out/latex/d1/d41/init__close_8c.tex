@@ -1,8 +1,10 @@
 \hypertarget{init__close_8c}{}\doxysection{Référence du fichier init\+\_\+close.\+c}
 \label{init__close_8c}\index{init\_close.c@{init\_close.c}}
-{\ttfamily \#include $<$commun.\+h$>$}\newline
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include $<$listes.\+h$>$}\newline
+
+
+Contient toutes les fonctions pour initialiser le programme.  
+
+
 Graphe des dépendances par inclusion de init\+\_\+close.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -11,165 +13,290 @@ Graphe des dépendances par inclusion de init\+\_\+close.\+c\+:
 \includegraphics[width=350pt]{d7/ddf/init__close_8c__incl}
 \end{center}
 \end{figure}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} \mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}}
+\begin{DoxyCompactList}\small\item\em Définition de la structure map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb_affaacddc6fe16ed3d818bf7e0c9798eb}{fermer\+\_\+programme}} (int code\+\_\+erreur)
+void \mbox{\hyperlink{init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb}{fermer\+\_\+programme}} (int code\+\_\+erreur)
 \begin{DoxyCompactList}\small\item\em Fonction qui appelle les fonctions pour terminer le programme. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{init__close_8c_ab4756fccf04e9940ea20ee66d5167fd8_ab4756fccf04e9940ea20ee66d5167fd8}{fermer\+\_\+\+S\+DL}} (void)
+static void \mbox{\hyperlink{init__close_8c_ab4756fccf04e9940ea20ee66d5167fd8}{fermer\+\_\+\+S\+DL}} (void)
 \begin{DoxyCompactList}\small\item\em Fonction qui détruit la fenêtre principale et ferme la S\+DL. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{init__close_8c_a28e2aa804ce4e3ee68465a58b70885e4_a28e2aa804ce4e3ee68465a58b70885e4}{detruire\+\_\+renderer}} (void)
+static void \mbox{\hyperlink{init__close_8c_a28e2aa804ce4e3ee68465a58b70885e4}{detruire\+\_\+renderer}} (void)
 \item 
-static void \mbox{\hyperlink{init__close_8c_a58667cb5b93a010d26739453ce4d027b_a58667cb5b93a010d26739453ce4d027b}{init\+\_\+\+S\+DL}} ()
+static void \mbox{\hyperlink{init__close_8c_a58667cb5b93a010d26739453ce4d027b}{init\+\_\+\+S\+DL}} ()
 \begin{DoxyCompactList}\small\item\em Fonction qui démarre la S\+DL et créer la fenêtre principale. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{init__close_8c_a739cf24a8e355e9a31447055eae9ae69_a739cf24a8e355e9a31447055eae9ae69}{init\+\_\+rc\+\_\+commun}} (void)
+static void \mbox{\hyperlink{init__close_8c_a739cf24a8e355e9a31447055eae9ae69}{init\+\_\+rc\+\_\+commun}} (void)
 \item 
-void \mbox{\hyperlink{init__close_8c_acc7f4b4da74c22683312acf145e135e1_acc7f4b4da74c22683312acf145e135e1}{aff\+\_\+cleanup}} (void)
+void \mbox{\hyperlink{init__close_8c_acc7f4b4da74c22683312acf145e135e1}{aff\+\_\+cleanup}} (void)
 \begin{DoxyCompactList}\small\item\em Fonction ajoutée à la liste de atexit() afin de libérer toute la mémoire allouée. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{init__close_8c_a79d4020cf0b63c5c11c847b98348af97_a79d4020cf0b63c5c11c847b98348af97}{init\+\_\+affichage}} ()
+void \mbox{\hyperlink{init__close_8c_a79d4020cf0b63c5c11c847b98348af97}{init\+\_\+affichage}} ()
 \item 
-S\+D\+L\+\_\+\+Texture $\ast$ \mbox{\hyperlink{init__close_8c_aadbfbc3ec7810889adaa634a295cb2c5_aadbfbc3ec7810889adaa634a295cb2c5}{init\+\_\+sousbuffer}} (\mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
+void \mbox{\hyperlink{init__close_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821}{init\+\_\+sousbuffer}} (\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}}, joueur\+\_\+t $\ast$joueur)
 \item 
-void \mbox{\hyperlink{init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947_a02fd73d861ef2e4aabb38c0c9ff82947}{init}} ()
+void \mbox{\hyperlink{init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947}{init}} ()
 \begin{DoxyCompactList}\small\item\em Fonction qui initialise le Programme. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-S\+D\+L\+\_\+\+Window $\ast$ \mbox{\hyperlink{init__close_8c_a760de443d1a045170cadd7adfef6653c_a760de443d1a045170cadd7adfef6653c}{fenetre\+\_\+\+Principale}} = N\+U\+LL
+S\+D\+L\+\_\+\+Window $\ast$ \mbox{\hyperlink{init__close_8c_a760de443d1a045170cadd7adfef6653c}{fenetre\+\_\+\+Principale}} = N\+U\+LL
 \item 
-S\+D\+L\+\_\+\+Renderer $\ast$ \mbox{\hyperlink{init__close_8c_a7ad8058d8319a935f7a37f72d4e3e81a_a7ad8058d8319a935f7a37f72d4e3e81a}{rendu\+\_\+principal}} = N\+U\+LL
+S\+D\+L\+\_\+\+Renderer $\ast$ \mbox{\hyperlink{init__close_8c_a7ad8058d8319a935f7a37f72d4e3e81a}{rendu\+\_\+principal}} = N\+U\+LL
 \item 
-S\+D\+L\+\_\+\+Window $\ast$ \mbox{\hyperlink{init__close_8c_a072455f269aaacd4c8ab382318345501_a072455f269aaacd4c8ab382318345501}{fenetre\+\_\+sous\+\_\+rendu}} = N\+U\+LL
+S\+D\+L\+\_\+\+Window $\ast$ \mbox{\hyperlink{init__close_8c_a072455f269aaacd4c8ab382318345501}{fenetre\+\_\+sous\+\_\+rendu}} = N\+U\+LL
 \item 
-S\+D\+L\+\_\+\+Renderer $\ast$ \mbox{\hyperlink{init__close_8c_afbdaa667b84220213b6a5cc90af5e8b8_afbdaa667b84220213b6a5cc90af5e8b8}{sous\+\_\+rendu}} = N\+U\+LL
+S\+D\+L\+\_\+\+Renderer $\ast$ \mbox{\hyperlink{init__close_8c_afbdaa667b84220213b6a5cc90af5e8b8}{sous\+\_\+rendu}} = N\+U\+LL
 \item 
-\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{init__close_8c_a36f7b6be7108281af77939ceaec42fd6_a36f7b6be7108281af77939ceaec42fd6}{running}} = \mbox{\hyperlink{definition__commun_8h_aa4113a26497a6784f9b855b197609b55_aa4113a26497a6784f9b855b197609b55}{vrai}}
+\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{init__close_8c_a36f7b6be7108281af77939ceaec42fd6}{running}} = \mbox{\hyperlink{definition__commun_8h_aa4113a26497a6784f9b855b197609b55}{vrai}}
 \item 
-\mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{init__close_8c_a574fb78df14516631b2250bc56733ac9_a574fb78df14516631b2250bc56733ac9}{f\+\_\+close}} = N\+U\+LL
+S\+D\+L\+\_\+\+Rect $\ast$ \mbox{\hyperlink{init__close_8c_a1731e0f7eea198537ed53078d8b2c132}{hors\+\_\+hitbox}} = N\+U\+LL
+\item 
+\mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{init__close_8c_a574fb78df14516631b2250bc56733ac9}{f\+\_\+close}} = N\+U\+LL
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Description détaillée}
+\begin{DoxyAuthor}{Auteur}
+Ange Despert (\href{mailto:Ange.Despert.Etu@univ-lemans.fr}{\texttt{ Ange.\+Despert.\+Etu@univ-\/lemans.\+fr}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+27/03/22 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\Hypertarget{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}\label{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}} 
+\index{init\_close.c@{init\_close.c}!t\_map@{t\_map}}
+\index{t\_map@{t\_map}!init\_close.c@{init\_close.c}}
+\doxysubsubsection{\texorpdfstring{t\_map}{t\_map}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{structs__map}{s\+\_\+map}} \mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}}}
+
+Cette définition est la pour éviter une inclusion mutuelle des fichiers \mbox{\hyperlink{affichage_8h}{affichage.\+h}} et \mbox{\hyperlink{map_8h}{map.\+h}} . 
+
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{init__close_8c_acc7f4b4da74c22683312acf145e135e1_acc7f4b4da74c22683312acf145e135e1}\label{init__close_8c_acc7f4b4da74c22683312acf145e135e1_acc7f4b4da74c22683312acf145e135e1}} 
+\mbox{\Hypertarget{init__close_8c_acc7f4b4da74c22683312acf145e135e1}\label{init__close_8c_acc7f4b4da74c22683312acf145e135e1}} 
 \index{init\_close.c@{init\_close.c}!aff\_cleanup@{aff\_cleanup}}
 \index{aff\_cleanup@{aff\_cleanup}!init\_close.c@{init\_close.c}}
 \doxysubsubsection{\texorpdfstring{aff\_cleanup()}{aff\_cleanup()}}
 {\footnotesize\ttfamily void aff\+\_\+cleanup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-
-
-Fonction ajoutée à la liste de atexit() afin de libérer toute la mémoire allouée. 
-
-\mbox{\Hypertarget{init__close_8c_a28e2aa804ce4e3ee68465a58b70885e4_a28e2aa804ce4e3ee68465a58b70885e4}\label{init__close_8c_a28e2aa804ce4e3ee68465a58b70885e4_a28e2aa804ce4e3ee68465a58b70885e4}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d41/init__close_8c_acc7f4b4da74c22683312acf145e135e1_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{d1/d41/init__close_8c_acc7f4b4da74c22683312acf145e135e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{init__close_8c_a28e2aa804ce4e3ee68465a58b70885e4}\label{init__close_8c_a28e2aa804ce4e3ee68465a58b70885e4}} 
 \index{init\_close.c@{init\_close.c}!detruire\_renderer@{detruire\_renderer}}
 \index{detruire\_renderer@{detruire\_renderer}!init\_close.c@{init\_close.c}}
 \doxysubsubsection{\texorpdfstring{detruire\_renderer()}{detruire\_renderer()}}
 {\footnotesize\ttfamily static void detruire\+\_\+renderer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb_affaacddc6fe16ed3d818bf7e0c9798eb}\label{init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb_affaacddc6fe16ed3d818bf7e0c9798eb}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{d1/d41/init__close_8c_a28e2aa804ce4e3ee68465a58b70885e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb}\label{init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb}} 
 \index{init\_close.c@{init\_close.c}!fermer\_programme@{fermer\_programme}}
 \index{fermer\_programme@{fermer\_programme}!init\_close.c@{init\_close.c}}
 \doxysubsubsection{\texorpdfstring{fermer\_programme()}{fermer\_programme()}}
 {\footnotesize\ttfamily void fermer\+\_\+programme (\begin{DoxyParamCaption}\item[{int}]{code\+\_\+erreur }\end{DoxyParamCaption})}
 
-
-
-Fonction qui appelle les fonctions pour terminer le programme. 
-
 \begin{DoxyAuthor}{Auteur}
 Ange Despert 
 \end{DoxyAuthor}
-\mbox{\Hypertarget{init__close_8c_ab4756fccf04e9940ea20ee66d5167fd8_ab4756fccf04e9940ea20ee66d5167fd8}\label{init__close_8c_ab4756fccf04e9940ea20ee66d5167fd8_ab4756fccf04e9940ea20ee66d5167fd8}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d41/init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d41/init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{init__close_8c_ab4756fccf04e9940ea20ee66d5167fd8}\label{init__close_8c_ab4756fccf04e9940ea20ee66d5167fd8}} 
 \index{init\_close.c@{init\_close.c}!fermer\_SDL@{fermer\_SDL}}
 \index{fermer\_SDL@{fermer\_SDL}!init\_close.c@{init\_close.c}}
 \doxysubsubsection{\texorpdfstring{fermer\_SDL()}{fermer\_SDL()}}
 {\footnotesize\ttfamily void fermer\+\_\+\+S\+DL (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-
-
-Fonction qui détruit la fenêtre principale et ferme la S\+DL. 
-
 \begin{DoxyAuthor}{Auteur}
 Ange Despert 
 \end{DoxyAuthor}
-\mbox{\Hypertarget{init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947_a02fd73d861ef2e4aabb38c0c9ff82947}\label{init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947_a02fd73d861ef2e4aabb38c0c9ff82947}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{d1/d41/init__close_8c_ab4756fccf04e9940ea20ee66d5167fd8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947}\label{init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947}} 
 \index{init\_close.c@{init\_close.c}!init@{init}}
 \index{init@{init}!init\_close.c@{init\_close.c}}
 \doxysubsubsection{\texorpdfstring{init()}{init()}}
 {\footnotesize\ttfamily void init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
-
-Fonction qui initialise le Programme. 
-
 \begin{DoxyAuthor}{Auteur}
 Ange Despert 
 \end{DoxyAuthor}
-\mbox{\Hypertarget{init__close_8c_a79d4020cf0b63c5c11c847b98348af97_a79d4020cf0b63c5c11c847b98348af97}\label{init__close_8c_a79d4020cf0b63c5c11c847b98348af97_a79d4020cf0b63c5c11c847b98348af97}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d41/init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{d1/d41/init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{init__close_8c_a79d4020cf0b63c5c11c847b98348af97}\label{init__close_8c_a79d4020cf0b63c5c11c847b98348af97}} 
 \index{init\_close.c@{init\_close.c}!init\_affichage@{init\_affichage}}
 \index{init\_affichage@{init\_affichage}!init\_close.c@{init\_close.c}}
 \doxysubsubsection{\texorpdfstring{init\_affichage()}{init\_affichage()}}
 {\footnotesize\ttfamily void init\+\_\+affichage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{init__close_8c_a739cf24a8e355e9a31447055eae9ae69_a739cf24a8e355e9a31447055eae9ae69}\label{init__close_8c_a739cf24a8e355e9a31447055eae9ae69_a739cf24a8e355e9a31447055eae9ae69}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{d1/d41/init__close_8c_a79d4020cf0b63c5c11c847b98348af97_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{d1/d41/init__close_8c_a79d4020cf0b63c5c11c847b98348af97_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{init__close_8c_a739cf24a8e355e9a31447055eae9ae69}\label{init__close_8c_a739cf24a8e355e9a31447055eae9ae69}} 
 \index{init\_close.c@{init\_close.c}!init\_rc\_commun@{init\_rc\_commun}}
 \index{init\_rc\_commun@{init\_rc\_commun}!init\_close.c@{init\_close.c}}
 \doxysubsubsection{\texorpdfstring{init\_rc\_commun()}{init\_rc\_commun()}}
 {\footnotesize\ttfamily static void init\+\_\+rc\+\_\+commun (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{init__close_8c_a58667cb5b93a010d26739453ce4d027b_a58667cb5b93a010d26739453ce4d027b}\label{init__close_8c_a58667cb5b93a010d26739453ce4d027b_a58667cb5b93a010d26739453ce4d027b}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d1/d41/init__close_8c_a739cf24a8e355e9a31447055eae9ae69_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{init__close_8c_a58667cb5b93a010d26739453ce4d027b}\label{init__close_8c_a58667cb5b93a010d26739453ce4d027b}} 
 \index{init\_close.c@{init\_close.c}!init\_SDL@{init\_SDL}}
 \index{init\_SDL@{init\_SDL}!init\_close.c@{init\_close.c}}
 \doxysubsubsection{\texorpdfstring{init\_SDL()}{init\_SDL()}}
 {\footnotesize\ttfamily void init\+\_\+\+S\+DL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-
-
-Fonction qui démarre la S\+DL et créer la fenêtre principale. 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert 
+\end{DoxyAuthor}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{d1/d41/init__close_8c_a58667cb5b93a010d26739453ce4d027b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{init__close_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821}\label{init__close_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821}} 
+\index{init\_close.c@{init\_close.c}!init\_sousbuffer@{init\_sousbuffer}}
+\index{init\_sousbuffer@{init\_sousbuffer}!init\_close.c@{init\_close.c}}
+\doxysubsubsection{\texorpdfstring{init\_sousbuffer()}{init\_sousbuffer()}}
+{\footnotesize\ttfamily void init\+\_\+sousbuffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Ange Despert 
 \end{DoxyAuthor}
-\mbox{\Hypertarget{init__close_8c_aadbfbc3ec7810889adaa634a295cb2c5_aadbfbc3ec7810889adaa634a295cb2c5}\label{init__close_8c_aadbfbc3ec7810889adaa634a295cb2c5_aadbfbc3ec7810889adaa634a295cb2c5}} 
-\index{init\_close.c@{init\_close.c}!init\_sousbuffer@{init\_sousbuffer}}
-\index{init\_sousbuffer@{init\_sousbuffer}!init\_close.c@{init\_close.c}}
-\doxysubsubsection{\texorpdfstring{init\_sousbuffer()}{init\_sousbuffer()}}
-{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ init\+\_\+sousbuffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$}]{map }\end{DoxyParamCaption})}
 
+\begin{DoxyParams}{Paramètres}
+{\em map} & \\
+\hline
+{\em joueur} & Joueur autour duquel se fait la fenêtre d\textquotesingle{}affichage de la carte \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{d1/d41/init__close_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{d1/d41/init__close_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Documentation des variables}
-\mbox{\Hypertarget{init__close_8c_a574fb78df14516631b2250bc56733ac9_a574fb78df14516631b2250bc56733ac9}\label{init__close_8c_a574fb78df14516631b2250bc56733ac9_a574fb78df14516631b2250bc56733ac9}} 
+\mbox{\Hypertarget{init__close_8c_a574fb78df14516631b2250bc56733ac9}\label{init__close_8c_a574fb78df14516631b2250bc56733ac9}} 
 \index{init\_close.c@{init\_close.c}!f\_close@{f\_close}}
 \index{f\_close@{f\_close}!init\_close.c@{init\_close.c}}
 \doxysubsubsection{\texorpdfstring{f\_close}{f\_close}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structlist}{list}}$\ast$ f\+\_\+close = N\+U\+LL}
 
-Liste des fonctions à appeler lors de la fermeture du programme \mbox{\Hypertarget{init__close_8c_a760de443d1a045170cadd7adfef6653c_a760de443d1a045170cadd7adfef6653c}\label{init__close_8c_a760de443d1a045170cadd7adfef6653c_a760de443d1a045170cadd7adfef6653c}} 
+Liste des fonctions à appeler lors de la fermeture du programme \mbox{\Hypertarget{init__close_8c_a760de443d1a045170cadd7adfef6653c}\label{init__close_8c_a760de443d1a045170cadd7adfef6653c}} 
 \index{init\_close.c@{init\_close.c}!fenetre\_Principale@{fenetre\_Principale}}
 \index{fenetre\_Principale@{fenetre\_Principale}!init\_close.c@{init\_close.c}}
 \doxysubsubsection{\texorpdfstring{fenetre\_Principale}{fenetre\_Principale}}
 {\footnotesize\ttfamily S\+D\+L\+\_\+\+Window$\ast$ fenetre\+\_\+\+Principale = N\+U\+LL}
 
-\mbox{\Hypertarget{init__close_8c_a072455f269aaacd4c8ab382318345501_a072455f269aaacd4c8ab382318345501}\label{init__close_8c_a072455f269aaacd4c8ab382318345501_a072455f269aaacd4c8ab382318345501}} 
+\mbox{\Hypertarget{init__close_8c_a072455f269aaacd4c8ab382318345501}\label{init__close_8c_a072455f269aaacd4c8ab382318345501}} 
 \index{init\_close.c@{init\_close.c}!fenetre\_sous\_rendu@{fenetre\_sous\_rendu}}
 \index{fenetre\_sous\_rendu@{fenetre\_sous\_rendu}!init\_close.c@{init\_close.c}}
 \doxysubsubsection{\texorpdfstring{fenetre\_sous\_rendu}{fenetre\_sous\_rendu}}
 {\footnotesize\ttfamily S\+D\+L\+\_\+\+Window$\ast$ fenetre\+\_\+sous\+\_\+rendu = N\+U\+LL}
 
-\mbox{\Hypertarget{init__close_8c_a7ad8058d8319a935f7a37f72d4e3e81a_a7ad8058d8319a935f7a37f72d4e3e81a}\label{init__close_8c_a7ad8058d8319a935f7a37f72d4e3e81a_a7ad8058d8319a935f7a37f72d4e3e81a}} 
+\mbox{\Hypertarget{init__close_8c_a1731e0f7eea198537ed53078d8b2c132}\label{init__close_8c_a1731e0f7eea198537ed53078d8b2c132}} 
+\index{init\_close.c@{init\_close.c}!hors\_hitbox@{hors\_hitbox}}
+\index{hors\_hitbox@{hors\_hitbox}!init\_close.c@{init\_close.c}}
+\doxysubsubsection{\texorpdfstring{hors\_hitbox}{hors\_hitbox}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Rect$\ast$ hors\+\_\+hitbox = N\+U\+LL}
+
+\mbox{\Hypertarget{init__close_8c_a7ad8058d8319a935f7a37f72d4e3e81a}\label{init__close_8c_a7ad8058d8319a935f7a37f72d4e3e81a}} 
 \index{init\_close.c@{init\_close.c}!rendu\_principal@{rendu\_principal}}
 \index{rendu\_principal@{rendu\_principal}!init\_close.c@{init\_close.c}}
 \doxysubsubsection{\texorpdfstring{rendu\_principal}{rendu\_principal}}
 {\footnotesize\ttfamily S\+D\+L\+\_\+\+Renderer$\ast$ rendu\+\_\+principal = N\+U\+LL}
 
-Pointeur vers fenêtre globale pointant sur la fenêtre principale du programme \mbox{\Hypertarget{init__close_8c_a36f7b6be7108281af77939ceaec42fd6_a36f7b6be7108281af77939ceaec42fd6}\label{init__close_8c_a36f7b6be7108281af77939ceaec42fd6_a36f7b6be7108281af77939ceaec42fd6}} 
+Pointeur vers fenêtre globale pointant sur la fenêtre principale du programme \mbox{\Hypertarget{init__close_8c_a36f7b6be7108281af77939ceaec42fd6}\label{init__close_8c_a36f7b6be7108281af77939ceaec42fd6}} 
 \index{init\_close.c@{init\_close.c}!running@{running}}
 \index{running@{running}!init\_close.c@{init\_close.c}}
 \doxysubsubsection{\texorpdfstring{running}{running}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}} running = \mbox{\hyperlink{definition__commun_8h_aa4113a26497a6784f9b855b197609b55_aa4113a26497a6784f9b855b197609b55}{vrai}}}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} running = \mbox{\hyperlink{definition__commun_8h_aa4113a26497a6784f9b855b197609b55}{vrai}}}
 
-\mbox{\Hypertarget{init__close_8c_afbdaa667b84220213b6a5cc90af5e8b8_afbdaa667b84220213b6a5cc90af5e8b8}\label{init__close_8c_afbdaa667b84220213b6a5cc90af5e8b8_afbdaa667b84220213b6a5cc90af5e8b8}} 
+\mbox{\Hypertarget{init__close_8c_afbdaa667b84220213b6a5cc90af5e8b8}\label{init__close_8c_afbdaa667b84220213b6a5cc90af5e8b8}} 
 \index{init\_close.c@{init\_close.c}!sous\_rendu@{sous\_rendu}}
 \index{sous\_rendu@{sous\_rendu}!init\_close.c@{init\_close.c}}
 \doxysubsubsection{\texorpdfstring{sous\_rendu}{sous\_rendu}}

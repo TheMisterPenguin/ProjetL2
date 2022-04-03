@@ -64,8 +64,6 @@ int main(int argc, char** argv)
     int nb_joueurs;
     int debut, fin; /* le temps pour calculer les performances */
     int i;
-    char *fichier_map = NULL;
-    t_aff *text = NULL;
     t_aff *next_texture_joueur1 = NULL;
     t_aff *next_texture_joueur2 = NULL;
     t_aff *texture_temp1 = NULL;
@@ -96,20 +94,20 @@ int main(int argc, char** argv)
     else
         afficher_menu_accueil_manette(&nb_joueurs);
 
-
     if(nb_joueurs == 2)
         creer_inventaire_j2();
   
     /* On charge la base monstre*/
-    charger_base_monstre("monstres.json");
+    charger_base_monstre("monstres.json", &liste_base_monstres);
+
+    /* On charge la base coffre*/
+    charger_base_coffre("coffres.json", &liste_base_coffres);
 
     /* On initialise le tableau base_sorts */
     init_liste_base_sort();
     
     /* On charge la map */
-    fichier_map = charger_f_map("2.json");
-    map = charger_s_map(fichier_map);
-    text = texture_map(map); 
+    map = charger_map("2.json");
 
 
     //TEMPORAIREMENT ICI -- test animation heal (équiper consommable puis touche e) -- TEMPORAIREMENT ICI
@@ -153,7 +151,7 @@ int main(int argc, char** argv)
 
     SDL_RenderClear(rendu_principal);
 
-    if(SDL_RenderCopy(rendu_principal, text->texture, NULL, NULL))
+    if(SDL_RenderCopy(rendu_principal, map->text_sol->texture, NULL, NULL))
         fprintf(stderr, "Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
 
     SDL_QueryTexture(map->text_map->texture, NULL, NULL, &(map->text_map->width), &(map->text_map->height));
@@ -218,7 +216,7 @@ int main(int argc, char** argv)
             if (texture_temp2)
                 next_texture_joueur2 = texture_temp2;
         }    
-        environnement_joueur(map->liste_monstres, map->liste_sorts, joueur1);   
+        environnement_joueur(map->liste_monstres, map->liste_sorts, map->liste_coffres, joueur1);
         /* On affiche toutes les entitées sur la map */
         SDL_SetRenderTarget(rendu_principal, map->text_map->texture);
         SDL_RenderClear(rendu_principal);
@@ -238,6 +236,7 @@ int main(int argc, char** argv)
                     SDL_Rect * result = zone_en_dehors_hitbox(&(joueur1->statut->vrai_zone_collision), joueur1->textures_joueur->liste[0]->aff_fenetre, joueur1->statut->orient_att);
                     SDL_RenderDrawRect(rendu_principal,result);
                 }
+
                 en_tete(map->liste_collisions);
                 while(!hors_liste(map->liste_collisions)){
                     SDL_Rect *e = valeur_elt(map->liste_collisions);
@@ -249,6 +248,8 @@ int main(int argc, char** argv)
 
         afficher_monstres(map->liste_monstres, joueur1);
         afficher_sorts(map->liste_sorts, joueur1);
+
+        afficher_coffres(map->liste_coffres);
 
         /* On cous le joueur2 s'il existe*/
         if(nb_joueurs == 2)
@@ -287,12 +288,12 @@ int main(int argc, char** argv)
 
         /* On affiche l'interface */
         //barre de vie joueur1
-        RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
+        RenderHPBar(FENETRE_LONGUEUR/30, FENETRE_LARGEUR/25, FENETRE_LONGUEUR/6, FENETRE_LARGEUR/35,
         ((float)joueur1->pdv/joueur1->maxPdv), color(195,0,0,0.9), color(125, 125, 125, 1));
         
         //barre de vie joueur2
         if(nb_joueurs == 2)
-            RenderHPBar(FENETRE_LONGUEUR/20, FENETRE_LARGEUR/20 + FENETRE_LARGEUR/25 + 20, FENETRE_LONGUEUR/4, FENETRE_LARGEUR/25,
+            RenderHPBar(FENETRE_LONGUEUR/30, FENETRE_LARGEUR/25 + FENETRE_LARGEUR/25 + 20, FENETRE_LONGUEUR/6, FENETRE_LARGEUR/35,
             ((float)joueur2->pdv/joueur2->maxPdv), color(0, 153, 51,0.9), color(125, 125, 125, 1));
 
         SDL_RenderPresent(rendu_principal);
@@ -305,6 +306,10 @@ int main(int argc, char** argv)
         if (compteur == NB_FPS)
             compteur = 0;
         compteur++;
+
+        #ifdef _DEBUG_COLLISION
+                free(hors_hitbox);
+        #endif
     }
 
     return AUCUNE_ERREUR;

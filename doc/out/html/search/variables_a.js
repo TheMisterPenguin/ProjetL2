@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['map_549',['map',['../d3/d7a/map_8c_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae',1,'map():&#160;map.c'],['../dc/db7/map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae',1,'map():&#160;map.c']]],
-  ['maxpdv_550',['maxPdv',['../d1/d3e/structjoueur__s_a63eec551eed397472ad0854a88eda1e9.html#a63eec551eed397472ad0854a88eda1e9',1,'joueur_s']]],
-  ['menus_551',['menus',['../d6/d46/menus_8h_a5754038b10e89bfad05455ed7f82cd00.html#a5754038b10e89bfad05455ed7f82cd00',1,'menus.h']]],
-  ['multipli_5ftaille_552',['multipli_taille',['../df/d5b/structs__aff_a746199708438425fb0ff3b0ccd2f6333.html#a746199708438425fb0ff3b0ccd2f6333',1,'s_aff']]],
-  ['multiplicateur_5fx_553',['multiplicateur_x',['../da/d68/affichage_8c_ad73b9ba1a88012fd3ae8637a61b57709.html#ad73b9ba1a88012fd3ae8637a61b57709',1,'multiplicateur_x():&#160;affichage.c'],['../d5/dae/affichage_8h_ad73b9ba1a88012fd3ae8637a61b57709.html#ad73b9ba1a88012fd3ae8637a61b57709',1,'multiplicateur_x():&#160;affichage.c']]],
-  ['multiplicateur_5fy_554',['multiplicateur_y',['../da/d68/affichage_8c_a2c28b6f5a4c139bcb8ed3fed95ff8099.html#a2c28b6f5a4c139bcb8ed3fed95ff8099',1,'multiplicateur_y():&#160;affichage.c'],['../d5/dae/affichage_8h_a2c28b6f5a4c139bcb8ed3fed95ff8099.html#a2c28b6f5a4c139bcb8ed3fed95ff8099',1,'multiplicateur_y():&#160;affichage.h']]]
+  ['manette_812',['manette',['../d0/deb/event_8c.html#a3fcb970d4a71cf584b59951228186d91',1,'manette():&#160;event.c'],['../dd/d20/event_8h.html#a3fcb970d4a71cf584b59951228186d91',1,'manette():&#160;event.c']]],
+  ['map_813',['map',['../d3/d7a/map_8c.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae',1,'map():&#160;map.c'],['../dc/db7/map_8h.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae',1,'map():&#160;map.c']]],
+  ['maxpdv_814',['maxPdv',['../d1/d3e/structjoueur__s.html#a25ede0d11afd576d908541172b5de89f',1,'joueur_s']]],
+  ['menus_815',['menus',['../d6/d46/menus_8h.html#a5754038b10e89bfad05455ed7f82cd00',1,'menus.h']]],
+  ['multipli_5ftaille_816',['multipli_taille',['../df/d5b/structs__aff.html#a33bec0945acf1637b9d6848d5a68917f',1,'s_aff']]],
+  ['multiplicateur_5fx_817',['multiplicateur_x',['../da/d68/affichage_8c.html#ad73b9ba1a88012fd3ae8637a61b57709',1,'multiplicateur_x():&#160;affichage.c'],['../d5/dae/affichage_8h.html#ad73b9ba1a88012fd3ae8637a61b57709',1,'multiplicateur_x():&#160;affichage.c']]],
+  ['multiplicateur_5fy_818',['multiplicateur_y',['../da/d68/affichage_8c.html#a2c28b6f5a4c139bcb8ed3fed95ff8099',1,'multiplicateur_y():&#160;affichage.c'],['../d5/dae/affichage_8h.html#a2c28b6f5a4c139bcb8ed3fed95ff8099',1,'multiplicateur_y():&#160;affichage.h']]]
 ];

@@ -1,6 +1,5 @@
 {
-    "type" : "map",
-    "id" : 1,
+    "id" : 2,
     "file-path" : "ressources/background/map/outside_sanada.bmp",
     "width" : 55, //30 cases de 16px mais une cases de la map fait 32px en réalité
     "height" : 35,
@@ -43,5 +42,11 @@
             "x": 0,
             "y": 0
         }
+    ],
+    "chest" : [
+        {"type" : "profilferme",
+        "position" : [15,12]}//,
+        // {"type" : "faceferme",
+        // "position" : [10,10]}
     ]
 }

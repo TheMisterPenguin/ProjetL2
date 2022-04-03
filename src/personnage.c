@@ -11,6 +11,8 @@
 #include <monstres.h>
 #include <sorts.h>
 #include <listes.h>
+#include <coffres.h>
+#include <map.h>
 
 #ifndef _WIN32
 	#include <pwd.h>
@@ -88,8 +90,9 @@ void creer_sauvegarde_json(joueur_t *j){
 	json_object *vitesse = json_object_new_int(j->vitesse);
 	json_object *orientation = json_object_new_int(j->statut->orient_dep);
 	json_object *bouclier_equipe = json_object_new_boolean(j->statut->bouclier_equipe);
-	json_object *x_map = json_object_new_int(j->statut->zone_colision.x);
-	json_object *y_map = json_object_new_int(j->statut->zone_colision.y);
+	json_object *x_map = json_object_new_int(j->statut->vrai_zone_collision.x);
+	json_object *y_map = json_object_new_int(j->statut->vrai_zone_collision.y);
+	json_object *id_map = json_object_new_int(map->id_map);
 
 	/* Création des tableaux */
 	json_object *statut = json_object_new_object();
@@ -103,6 +106,7 @@ void creer_sauvegarde_json(joueur_t *j){
 
 	json_object_object_add(statut, "Orientation", orientation);
 	json_object_object_add(statut, "Bouclie equipe", bouclier_equipe);
+	json_object_object_add(statut, "id map", id_map);
 	json_object_object_add(statut, "x map", x_map);
 	json_object_object_add(statut, "y map", y_map);
 
@@ -309,9 +313,6 @@ joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const in
 	perso->statut->vrai_zone_collision.y = 0;
 	perso->statut->vrai_zone_collision.w = map->taille_case;
 	perso->statut->vrai_zone_collision.h = map->taille_case;
-	perso->statut->x = 0;
-	perso->statut->y = 0;
-
 
 	perso->statut->zone_colision.x = 0;
 	perso->statut->zone_colision.y = 0;
@@ -326,7 +327,7 @@ void detruire_joueur(joueur_t *j){
 	free(j->nom_pers);
 	free(j->trigger);
 	free(j->statut);
-	detruire_liste_textures(&(j->textures_joueur));
+	// detruire_liste_textures(&(j->textures_joueur));
 	free(j);
     detruire_inventaire(&(j->inventaire));
 }
@@ -412,20 +413,22 @@ SDL_bool entite_subit_attaque(SDL_Rect * monstre_hitbox, joueur_t * joueur){
 	hitbox->y = monstre_hitbox->y;
 
 	SDL_bool statut = SDL_HasIntersection(zone_attaque, hitbox);
-	
 	free(zone_attaque);
 	free(hitbox);
 	return statut;
 }
 
 SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_direction_1 * coter_entite_1, t_direction_1 * coter_entite_2){
+
 	return faux;
 }
 
-void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * joueur){
+void environnement_joueur(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t * joueur){
 	monstre_t * monstre;
+
 	t_direction_1 coter_joueur;
 	t_direction_1 coter_monstre;
+
 
 	en_tete(liste_monstres);
 	en_tete(liste_sorts);
@@ -433,10 +436,11 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * 
 	while(!hors_liste(liste_monstres)){
 		monstre = valeur_elt(liste_monstres);
 		//entite_en_collision renvoi un booleen ainsi qu'une orientation en paramètre
-		if(entite_en_collision(&(monstre->collision), &(joueur->statut->zone_colision), &coter_monstre, &coter_joueur)){
+        /* /!\Utiliser la fonction deplacement_y_pers et deplacement_x_pers pour detecter la collision /!\ */
+		if(entite_en_collision(&(monstre->collision), &(joueur->statut->zone_colision), &cote_monstre, &cote_joueur)){
 			/* si le coup est bloqué */
 			if(joueur->statut->action == BLOQUER){
-				monstre->orientation = coter_joueur;
+				monstre->orientation = cote_joueur;
 				monstre->action = MONSTRE_BLESSE;
 				monstre->duree = DUREE_MONSTRE_BLESSE;
 			}
@@ -446,6 +450,7 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * 
 					running = faux;
 				else{
 					joueur->statut->orient_dep = coter_monstre;
+
 					joueur->statut->action = J_BLESSE;
 					joueur->statut->duree = DUREE_JOUEUR_BLESSE;
 				}
@@ -456,7 +461,7 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * 
 			if(entite_subit_attaque(&(monstre->collision), joueur) && monstre->action != MONSTRE_BLESSE){
 				(monstre->pdv) -= joueur->attaque_actif;
 				if(monstre->pdv <= 0){
-					/* detruire la collicion du monstre */
+					/* detruire la collision du monstre */
 					detruire_collision_dans_liste(map->liste_collisions, &(monstre->collision));
 					/* detruire le monstre */
 					oter_elt(liste_monstres);
@@ -480,12 +485,14 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * 
 		suivant(liste_monstres);
 	}
 
-
 	while(!hors_liste(liste_sorts)){
-
-		
 		suivant(map->liste_sorts);
 	}
+}
 
-
+void stoper_mouvement_joueurs(joueur_t ** joueurs){
+    joueurs[0]->statut->en_mouvement = faux;
+    //si mode coopératif
+    if(joueurs[1])
+        joueurs[1]->statut->en_mouvement = faux;
 }

@@ -13,6 +13,7 @@
 #define __PERSONNAGE_H__
 
 #include "definition_commun.h"
+#include "listes.h"
 #include "inventaire.h"
 
 #define DUREE_ATTAQUE_OU_CHARGEE 4
@@ -29,7 +30,7 @@
 
 typedef struct s_l_aff t_l_aff;
 
-typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER,J_BLESSE, SOIN}action_t; /**<l'action qu'est en train de faire le personnage*/
+typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER, J_BLESSE, SOIN}action_t; /**<l'action qu'est en train de faire le personnage*/
 /**
  * \struct struct statut_s
  * \brief Structure contenant les éléments nécéssaires au choix de l'affichage des sprites du personnage
@@ -46,8 +47,7 @@ typedef struct statut_s {
 	action_t action; /**<l'action du personnage*/
 	action_t animation; /**<Animation sur le personnage*/
 	SDL_Rect zone_colision; /**<zone de colision du personnage*/
-	SDL_Rect vrai_zone_collision;
-	int x,y;
+	SDL_Rect vrai_zone_collision; /**<La vrai zone de collision du J1 sur la carte */
 }statut_t;
 
 /**
@@ -64,9 +64,8 @@ typedef struct joueur_s {
 	short int niveau; /**<Le niveau du joueur*/
 	int xp; /**<Le nombre de points d'expérience que possède le joueur */
 	byte *trigger; /**<Une variable contenant des triggers logiques concernant le personnage */
-	/** TODO : créer un type énuméré map*/
-	int maxPdv;
-	int pdv;
+	int maxPdv; /**<Le nombre de Pv max du joueur */
+	int pdv; /**<Les points de vie actuels du joueur */
 	int attaque; /**<attaque de base du joueur*/
     int defense; /**<defense de base du joueur*/
     int vitesse; /**<vitesse de déplacement de base du joueur*/
@@ -77,6 +76,13 @@ typedef struct joueur_s {
 	t_l_aff *textures_joueur; /**<Tableau contenant toutes les textures du joueur*/
     inventaire_t * inventaire; /**<Inventaire du joueur*/
 }joueur_t;
+
+/**
+ * \fn void stoper_mouvement_joueurs(joueur_t ** joueurs)
+ * \brief Stop le mouvement des joueurs en jeu
+ * \param joueurs Tableau des joueurs en jeu
+ */
+void stoper_mouvement_joueurs(joueur_t ** joueurs);
 
 extern char save_path[500];
 
@@ -90,7 +96,9 @@ extern void levelup(joueur_t* perso);
 extern void gain_xp(joueur_t* perso);
 extern void creer_sauvegarde_json(joueur_t *j);
 void check_repertoire_jeux();
+
 void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * joueur);
 SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_direction_2 orientation);
+
 
 #endif

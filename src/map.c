@@ -7,6 +7,9 @@
 #include <code_erreur.h>
 #include <monstres.h>
 #include <math.h>
+#include <coffres.h>
+#include <fonctions.h>
+#include <personnage.h>
 
 /**
  * \file map.c
@@ -33,125 +36,300 @@ SDL_Rect taille_ecran_cases(){
     return p;
 }
 
-char * charger_f_map(const char * const nom_map){
-    FILE * fp;
-    char *file_buffer;
-    unsigned long taille_fichier;
+t_map * charger_map(const char * const nom_map){
+    t_map *m = NULL;
 
-    fp = fopen(nom_map,"r");
-    if(! fp){
-        fprintf(stderr, "Erreur : impossible de charge la map, fichier \"%s\" introuvable !\n", nom_map);
-        fermer_programme(EXIT_FAILURE);
-    }
+    json_object *JSON_fichier = json_object_from_file(nom_map);
+    json_object *JSON_id_map =         NULL;
+    json_object *JSON_texture_map =    NULL;
+    json_object *JSON_width =          NULL;
+    json_object *JSON_height =         NULL;
+    json_object *JSON_taille_case =    NULL;
+    json_object *JSON_tbl_monstre =    NULL;
+    json_object *JSON_tbl_coffre  =    NULL;
 
-    fseek(fp, (long)0, SEEK_END); /* On parcourt le fichier afin de connaitre sa taille */
-    taille_fichier = ftell(fp) + 1;
+    json_object *JSON_objet_monstre =  NULL;
+    json_object *objet_json =          NULL;
+    json_object *JSON_nom_monstre =    NULL;   
+    json_object *JSON_position =       NULL;
+    json_object *JSON_position2 =      NULL;
+    json_object *JSON_x =              NULL;
+    json_object *JSON_y =              NULL;
+    json_object *x2 =                  NULL;
+    json_object *y2 =                  NULL;
+    json_object *nom_coffre =          NULL;
 
-    file_buffer = calloc((taille_fichier) + 1, sizeof(char)); /* On alloue d'ynamiquement en fonction de la taille du fichier */
-    if(!file_buffer){
-        fprintf(stderr, "Erreur : plus de mémoire disponible !\n");
-        fermer_programme(OUT_OF_MEM);
-    }
+    monstre_t * inserer =              NULL;
+    coffre_t * nv_coffre =             NULL;
 
-    rewind(fp); /* On revient au début du fichier */
+    json_object *JSON_tbl_wall =       NULL;
+    json_object *JSON_object_wall =    NULL;
+    json_object *JSON_wall_x =         NULL;
+    json_object *JSON_wall_y =         NULL;
+    json_object *JSON_wall_h =         NULL;
+    json_object *JSON_wall_w =         NULL;
 
-    fread(file_buffer, 1, taille_fichier, fp); /* On lit le fichier */
-    fclose(fp); /* On a plus besoin du fichier */
-
-    file_buffer[taille_fichier] = '\0';
-
-    return file_buffer;
-}
-
-t_map * charger_s_map(char * buffer){
-    t_map *m;
-    json_object *fichier;
-    json_object *texture_map;
-    json_object *width;
-    json_object *height;
-    json_object *tbl_monstre;
-
-    json_object *monstre; 
-    json_object *taille_case;
-
-    json_object *nom_monstre;
-    json_object *position;
-    json_object *x;
-    json_object *y;
-  
-    monstre_t * inserer;
-
-    json_object *json_wall = NULL;
-    json_object *json_object_wall = NULL;
-    json_object *json_wall_x = NULL;
-    json_object *json_wall_y = NULL;
-    json_object *json_wall_h = NULL;
-    json_object *json_wall_w = NULL;
-
-    fichier = json_tokener_parse(buffer);
+    /* Allocation de la mémoire pour la map */
     m = malloc(sizeof(t_map));
+
+    if(!m)
+        erreur("Impossible de charger la map : Plus de mémoire", OUT_OF_MEM);
+
+    /* Initialisation des listes */
     m->liste_monstres =  init_liste(NULL,NULL,NULL);
+
+    if(!m->liste_monstres)
+        erreur("Impossible de charger la map", ERREUR_LISTE);
+    
+    m->liste_coffres =  init_liste(NULL,NULL,NULL);
+
+    if(!m->liste_coffres)
+        erreur("Impossible de charger la map", ERREUR_LISTE);
+
     m->liste_sorts = init_liste(NULL,NULL,NULL);
 
-    json_object_object_get_ex(fichier, "file-path", &texture_map);
-    json_object_object_get_ex(fichier, "width", &width);
-    json_object_object_get_ex(fichier, "height", &height);
-    json_object_object_get_ex(fichier, "monsters", &tbl_monstre);
-    json_object_object_get_ex(fichier, "taille case", &taille_case);
+    if(!m->liste_sorts)
+        erreur("Impossible de charger la map", ERREUR_LISTE);
 
-    m->taille_case = json_object_get_int(taille_case);
+    m->liste_collisions = init_liste(NULL, NULL, NULL);
 
-    m->text_sol = creer_texture(json_object_get_string(texture_map),
-                                -1, -1, 0, 0, 1);
-    m->height = json_object_get_int(height);
-    m->width = json_object_get_int(width);
+    if(!m->liste_collisions)
+        erreur("Impossible de charger la map", ERREUR_LISTE);
 
-    json_object_object_get_ex(fichier, "wall", &json_wall);
 
-    m->liste_collisions = init_liste(NULL,NULL,NULL);
-    for(unsigned int i = 0; i < json_object_array_length(json_wall); i++){
-        json_object_wall = json_object_array_get_idx(json_wall, i);
+    /* Récupération des informations dans le fichier */
+    if(!json_object_object_get_ex(JSON_fichier, "chest", &JSON_tbl_coffre))
+        erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
 
-        json_object_object_get_ex(json_object_wall, "x", &json_wall_x);
-        json_object_object_get_ex(json_object_wall, "y", &json_wall_y);
-        json_object_object_get_ex(json_object_wall, "h", &json_wall_h);
-        json_object_object_get_ex(json_object_wall, "w", &json_wall_w);
+    if(!json_object_object_get_ex(JSON_fichier, "id", &JSON_id_map))
+        erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+    if(!json_object_object_get_ex(JSON_fichier, "file-path", &JSON_texture_map))
+        erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+    if(!json_object_object_get_ex(JSON_fichier, "width", &JSON_width))
+        erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+    if(!json_object_object_get_ex(JSON_fichier, "height", &JSON_height))
+        erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+    if (!json_object_object_get_ex(JSON_fichier, "taille case", &JSON_taille_case))
+        erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+    if(!json_object_object_get_ex(JSON_fichier, "monsters", &JSON_tbl_monstre))
+        erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+    if(!json_object_object_get_ex(JSON_fichier, "wall", &JSON_tbl_wall))
+        erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+    /* Récupération des informations */
+    m->id_map = json_object_get_int(JSON_id_map);
+    m->text_sol = creer_texture(json_object_get_string(JSON_texture_map), -1, -1, 0, 0, 1);
+    m->height = json_object_get_int(JSON_height);
+    m->width = json_object_get_int(JSON_width);
+    m->taille_case = json_object_get_int(JSON_taille_case);
+
+    if(!m->text_sol)
+        erreur("Impossible de charger la map : %s", ERREUR_TEXTURE, SDL_GetError());
+
+    for(unsigned int i = 0; i < json_object_array_length(JSON_tbl_wall); i++){
+        JSON_object_wall = json_object_array_get_idx(JSON_tbl_wall, i);
+
+        if(!JSON_object_wall)
+            erreur("Impossible de charger la map : %s", ERREUR_FICHIER, json_util_get_last_err());
+
+        if(!json_object_object_get_ex(JSON_object_wall, "x", &JSON_wall_x))
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+        if(!json_object_object_get_ex(JSON_object_wall, "y", &JSON_wall_y))
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+        if(!json_object_object_get_ex(JSON_object_wall, "h", &JSON_wall_h))
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+        if(!json_object_object_get_ex(JSON_object_wall, "w", &JSON_wall_w))
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
 
         SDL_Rect *valeur = malloc(sizeof(SDL_Rect));
 
+        if(!valeur)
+            erreur("Impossible de charger la map", OUT_OF_MEM);
 
-        valeur->x = json_object_get_int(json_wall_x) * m->taille_case;
-        valeur->y = json_object_get_int(json_wall_y) * m->taille_case;
-        valeur->h = json_object_get_int(json_wall_h) * m->taille_case;
-        valeur->w = json_object_get_int(json_wall_w) * m->taille_case;
+        valeur->x = json_object_get_int(JSON_wall_x) * m->taille_case;
+        valeur->y = json_object_get_int(JSON_wall_y) * m->taille_case;
+        valeur->h = json_object_get_int(JSON_wall_h) * m->taille_case;
+        valeur->w = json_object_get_int(JSON_wall_w) * m->taille_case;
 
         ajout_droit(m->liste_collisions, valeur);
     }
 
-    for(unsigned int i = 0; i < json_object_array_length(tbl_monstre); i++){
-        monstre = json_object_array_get_idx(tbl_monstre,i);
+    for(unsigned int i = 0; i < json_object_array_length(JSON_tbl_monstre); i++){
+        JSON_objet_monstre = json_object_array_get_idx(JSON_tbl_monstre,i);
 
-        nom_monstre = json_object_object_get(monstre,"type");
-        position = json_object_object_get(monstre,"position");
+        if(!JSON_objet_monstre)
+            erreur("Impossible de charger la map : %s", ERREUR_FICHIER, json_util_get_last_err())
 
-        x = json_object_array_get_idx(position,0);
-        y = json_object_array_get_idx(position,1);
+        if(!json_object_object_get_ex(JSON_objet_monstre, "type", &JSON_nom_monstre))
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+        if(!json_object_object_get_ex(JSON_objet_monstre, "position", &JSON_position))
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+        JSON_x = json_object_array_get_idx(JSON_position,0);
+        JSON_y = json_object_array_get_idx(JSON_position,1);
         
-        inserer = creer_monstre(liste_base_monstres, json_object_get_string(nom_monstre), json_object_get_int(x), json_object_get_int(y), m);
+        if(!JSON_x)
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+        if(!JSON_y)
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+        inserer = creer_monstre(liste_base_monstres, json_object_get_string(JSON_nom_monstre), json_object_get_int(JSON_x), json_object_get_int(JSON_y), m);
+
+        if(!inserer)
+            erreur("Erreur lors de la création du monstre : le monstre \"%s\" n'existe pas !", ERREUR_MAP, json_object_get_string(JSON_nom_monstre));
+
         ajout_droit(m->liste_monstres, inserer);
         en_queue(m->liste_collisions);
         ajout_droit(m->liste_collisions, &(inserer->collision));
     }
 
+    for(unsigned int i = 0; i < json_object_array_length(JSON_tbl_coffre); i++){
+        objet_json = json_object_array_get_idx(JSON_tbl_coffre,i);
 
+        nom_coffre = json_object_object_get(objet_json,"type");
+        JSON_position2 = json_object_object_get(objet_json,"position");
 
-    m->unite_dep_x = floor(FENETRE_LONGUEUR / (float)m->text_sol->width); /* Calcul en nombre de pixels d'une unité de déplacement */
-    m->unite_dep_y = floor(FENETRE_LARGEUR / (float)m->text_sol->height); /* Calcul en nombre de pixels d'une unité de déplacement */
-    free(buffer);
-    json_object_put(fichier); //libération mémoire de l'objet json
+        x2 = json_object_array_get_idx(JSON_position2,0);
+        y2 = json_object_array_get_idx(JSON_position2,1);
+        
+        nv_coffre = creer_coffre(liste_base_coffres, json_object_get_string(nom_coffre), json_object_get_int(x2), json_object_get_int(y2), m);
+        info_coffre(nv_coffre);
+        ajout_droit(m->liste_coffres, nv_coffre);
+        info_coffre(m->liste_coffres->ec->valeur);
+        en_queue(m->liste_collisions);
+
+        //sprite des coffres de profile de 2*3 mais hitbox de 2*2, on baisse la hitbox d'une case pour faire correspondre au sprite
+        if(nv_coffre->type == PROFIL_FERME || nv_coffre->type == PROFIL_OUVERT){
+            (nv_coffre->collision.y) += TAILLE_CASE;
+        }
+
+        ajout_droit(m->liste_collisions, &(nv_coffre->collision));
+    }
+    json_object_put(JSON_fichier); //libération mémoire de l'objet json
     return m;
 }
 
 t_aff * texture_map(const t_map * map){
     return map->text_sol;
+}
+
+void detruire_map(t_map **map){
+    
+    /* Destruction des monstres */
+    detruire_liste(&(*map)->liste_monstres);
+
+    /* Destruction des sorts */
+    detruire_liste(&(*map)->liste_sorts);
+
+    /* Destruction des collisions */
+    en_tete((*map)->liste_collisions);
+
+    while(!hors_liste((*map)->liste_collisions)){
+        free(valeur_elt((*map)->liste_collisions));
+        suivant((*map)->liste_collisions);
+    }
+
+    detruire_liste(&(*map)->liste_collisions);
+
+    /* Destruction des textures */
+
+    selectionner_element((*map)->liste_collisions, (*map)->text_sol, NULL);
+    oter_elt((*map)->liste_collisions);
+
+    detruire_texture(&(*map)->text_map);
+
+    /* Libération de la mémoire */
+    free(*map);
+    *map = NULL;
+}
+
+void transition(t_map **actuelle, const char * const nom_map, joueur_t ** joueurs, unsigned short int nb_joueurs){
+
+    detruire_map(actuelle);
+    detruire_texture(&fenetre_finale);
+    *actuelle = charger_map(nom_map);
+
+    init_sousbuffer(*actuelle, *joueurs);
+
+    /* Mise à jour des textures du joueur */
+
+    for(unsigned short int i = 0; i < nb_joueurs; i++){
+        joueur_t *j = joueurs[i];
+        
+        j->statut->zone_colision.h = (*actuelle)->taille_case;
+        j->statut->zone_colision.w = (*actuelle)->taille_case;
+
+        j->statut->vrai_zone_collision.h = (*actuelle)->taille_case;
+        j->statut->vrai_zone_collision.w = (*actuelle)->taille_case;
+
+        for(unsigned int y = 0; y < j->textures_joueur->nb_valeurs; y++){
+            j->textures_joueur->liste[y]->multipli_taille = (*actuelle)->taille_case / TAILLE_CASE;
+            def_texture_taille(j->textures_joueur->liste[i], LONGUEUR_ENTITE * (*actuelle)->taille_case / TAILLE_CASE, LARGEUR_ENTITE * (*actuelle)->taille_case / TAILLE_CASE);
+        }
+    }
+}
+
+void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, unsigned short int nb_joueurs){
+    
+    if(x < 0 || x > map->text_map->width)
+        return;
+
+    if (y < 0 || y > map->text_map->height)
+        return;
+
+    for(unsigned int i = 0; i < nb_joueurs; i++){
+        joueur_t *j = joueurs[i];
+
+        if(i == 0) { /* Joueur principal */
+            fenetre_finale->frame_anim->x = 0;
+            fenetre_finale->frame_anim->y = 0;
+            place_rect_center_from_point(fenetre_finale->frame_anim, get_rect_center_coord(&j->statut->vrai_zone_collision));
+            j->statut->vrai_zone_collision.x = x;
+            j->statut->vrai_zone_collision.y = y;
+            
+            if(x < fenetre_finale->frame_anim->w / 2){ /* Extrémité gauche */
+                j->statut->zone_colision.x = x;
+                fenetre_finale->frame_anim->x = 0;
+            }
+            else{
+                if(x > (map->text_map->width - fenetre_finale->frame_anim->w / 2 )){ /* Extémité droite */
+                    j->statut->zone_colision.x = x;
+                    fenetre_finale->frame_anim->x = map->text_map->width - fenetre_finale->frame_anim->w;
+                }
+                else {
+                    place_rect_center_from_point(&j->statut->zone_colision, get_rect_center_coord(fenetre_finale->frame_anim));
+                }
+            }
+            
+            /* Pour y */
+            if(y < fenetre_finale->frame_anim->h / 2){ /* Extrémité haut */
+                j->statut->zone_colision.y = y;
+                fenetre_finale->frame_anim->y = 0;
+            }
+            else{
+                if(y > (map->text_map->height - fenetre_finale->frame_anim->h / 2 )){ /* Extémité basse */
+                    j->statut->zone_colision.y = y;
+                    fenetre_finale->frame_anim->y = map->text_map->height - fenetre_finale->frame_anim->h;
+                }
+                else {
+                    place_rect_center_from_point(&j->statut->zone_colision, get_rect_center_coord(fenetre_finale->frame_anim));
+                }
+            }
+        }
+        else {
+            j->statut->zone_colision.x = x;
+            j->statut->zone_colision.y = y;
+        }
+    }
 }

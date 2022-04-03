@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['levelup_481',['levelup',['../dd/dce/personnage_8c_a65a6d92356f49132bd234b5338f0a2da.html#a65a6d92356f49132bd234b5338f0a2da',1,'levelup(joueur_t *perso):&#160;personnage.c'],['../d2/d2f/personnage_8h_a65a6d92356f49132bd234b5338f0a2da.html#a65a6d92356f49132bd234b5338f0a2da',1,'levelup(joueur_t *perso):&#160;personnage.c']]],
-  ['liste_5fvide_482',['liste_vide',['../d0/ddc/listes_8c_abe07097bbae832dce242428fdb1d95b4.html#abe07097bbae832dce242428fdb1d95b4',1,'liste_vide(const list *const to_verify):&#160;listes.c'],['../d8/dd0/listes_8h_abe07097bbae832dce242428fdb1d95b4.html#abe07097bbae832dce242428fdb1d95b4',1,'liste_vide(const list *const to_verify):&#160;listes.c']]],
-  ['logo_5fpasser_483',['logo_passer',['../d0/deb/event_8c_ac8d571cc4da84ae88b13211ec29eb2e3.html#ac8d571cc4da84ae88b13211ec29eb2e3',1,'logo_passer(void):&#160;event.c'],['../dd/d20/event_8h_a950ad08652f1a6177a5b55912280e63c.html#a950ad08652f1a6177a5b55912280e63c',1,'logo_passer(void):&#160;event.c']]]
+  ['levelup_698',['levelup',['../dd/dce/personnage_8c.html#a3082b9ef9df15ce021d06dccaa1e9f2c',1,'levelup(joueur_t *perso):&#160;personnage.c'],['../d2/d2f/personnage_8h.html#a3082b9ef9df15ce021d06dccaa1e9f2c',1,'levelup(joueur_t *perso):&#160;personnage.c']]],
+  ['liste_5fvide_699',['liste_vide',['../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4',1,'liste_vide(const list *const to_verify):&#160;listes.c'],['../d8/dd0/listes_8h.html#abe07097bbae832dce242428fdb1d95b4',1,'liste_vide(const list *const to_verify):&#160;listes.c']]],
+  ['lister_5fanimations_700',['lister_animations',['../da/d68/affichage_8c.html#a293f0049d422a068c70def4e5608484d',1,'lister_animations(joueur_t **joueurs, list *animations):&#160;affichage.c'],['../d5/dae/affichage_8h.html#a293f0049d422a068c70def4e5608484d',1,'lister_animations(joueur_t **joueurs, list *animations):&#160;affichage.c']]],
+  ['logo_5fpasser_701',['logo_passer',['../d0/deb/event_8c.html#ac8d571cc4da84ae88b13211ec29eb2e3',1,'logo_passer(void):&#160;event.c'],['../dd/d20/event_8h.html#a950ad08652f1a6177a5b55912280e63c',1,'logo_passer(void):&#160;event.c']]]
 ];

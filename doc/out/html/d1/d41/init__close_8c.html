@@ -67,114 +67,641 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#typedef-members">Définitions de type</a> &#124;
 <a href="#func-members">Fonctions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">Référence du fichier init_close.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="../../d1/d0f/commun_8h_source.html">commun.h</a>&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d8/dd0/listes_8h_source.html">listes.h</a>&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
+
+<p>Contient toutes les fonctions pour initialiser le programme.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de init_close.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/ddf/init__close_8c__incl.png" border="0" usemap="#init__close_8c" alt=""/></div>
 <map name="init__close_8c" id="init__close_8c">
-<area shape="rect" title=" " alt="" coords="31,5,125,32"/>
-<area shape="rect" href="../../d1/d0f/commun_8h.html" title=" " alt="" coords="5375,80,5466,107"/>
-<area shape="rect" title=" " alt="" coords="45,319,111,345"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html" title=" " alt="" coords="133,408,202,435"/>
-<area shape="rect" href="../../da/de9/code__erreur_8h.html" title="Fichier contenant les codes d&#39;erreur du programme." alt="" coords="5869,155,5980,181"/>
-<area shape="rect" href="../../d1/daa/definition__commun_8h.html" title="Contient toutes les définitions communes à tout les fichiers." alt="" coords="5435,408,5593,435"/>
-<area shape="rect" href="../../d4/d78/fonctions_8h.html" title="Fichier qui contient les définitions de toutes les fonctions." alt="" coords="5751,155,5845,181"/>
-<area shape="rect" href="../../d0/d1f/monstres_8h.html" title=" " alt="" coords="5276,155,5371,181"/>
-<area shape="rect" href="../../d5/dae/affichage_8h.html" title=" " alt="" coords="3392,229,3487,256"/>
-<area shape="rect" href="../../dc/db7/map_8h.html" title="Le fichier contient les définitions des fonctions de gestion de la map." alt="" coords="136,319,199,345"/>
-<area shape="rect" href="../../d2/d2f/personnage_8h.html" title="Fichier contenant toutes les définitions concernant le personnage." alt="" coords="5412,319,5523,345"/>
-<area shape="rect" href="../../d7/d64/liste__objet_8h.html" title="Fichier contenant toutes les définitions concernant les listes d&#39;objets." alt="" coords="5471,155,5573,181"/>
-<area shape="rect" href="../../d2/d9f/inventaire_8h.html" title=" " alt="" coords="5472,229,5572,256"/>
-<area shape="rect" href="../../dd/d20/event_8h.html" title=" " alt="" coords="5129,155,5200,181"/>
-<area shape="rect" href="../../d6/d46/menus_8h.html" title=" " alt="" coords="5649,229,5728,256"/>
-<area shape="rect" href="../../d4/da9/interface_8h.html" title=" " alt="" coords="5752,229,5844,256"/>
-<area shape="rect" title=" " alt="" coords="5347,483,5443,509"/>
-<area shape="rect" title=" " alt="" coords="2975,304,3141,360"/>
-<area shape="rect" title=" " alt="" coords="3165,304,3332,360"/>
-<area shape="rect" title=" " alt="" coords="3356,304,3523,360"/>
-<area shape="rect" title=" " alt="" coords="3547,304,3713,360"/>
-<area shape="rect" title=" " alt="" coords="3737,304,3904,360"/>
-<area shape="rect" title=" " alt="" coords="3928,304,4095,360"/>
-<area shape="rect" title=" " alt="" coords="4119,319,4215,345"/>
-<area shape="rect" title=" " alt="" coords="4240,319,4311,345"/>
-<area shape="rect" title=" " alt="" coords="4335,319,4410,345"/>
-<area shape="rect" title=" " alt="" coords="4434,319,4509,345"/>
-<area shape="rect" title=" " alt="" coords="4533,319,4604,345"/>
-<area shape="rect" title=" " alt="" coords="4628,319,4707,345"/>
-<area shape="rect" title=" " alt="" coords="4731,319,4803,345"/>
-<area shape="rect" title=" " alt="" coords="4828,319,4915,345"/>
-<area shape="rect" title=" " alt="" coords="4939,319,5009,345"/>
-<area shape="rect" title=" " alt="" coords="5033,319,5101,345"/>
-<area shape="rect" title=" " alt="" coords="5125,319,5188,345"/>
-<area shape="rect" title=" " alt="" coords="5212,319,5285,345"/>
-<area shape="rect" title=" " alt="" coords="275,304,441,360"/>
-<area shape="rect" title=" " alt="" coords="465,319,539,345"/>
-<area shape="rect" title=" " alt="" coords="563,304,729,360"/>
-<area shape="rect" title=" " alt="" coords="753,304,920,360"/>
-<area shape="rect" title=" " alt="" coords="944,304,1111,360"/>
-<area shape="rect" title=" " alt="" coords="1135,304,1301,360"/>
-<area shape="rect" title=" " alt="" coords="1325,304,1492,360"/>
-<area shape="rect" title=" " alt="" coords="1516,304,1683,360"/>
-<area shape="rect" title=" " alt="" coords="1707,304,1873,360"/>
-<area shape="rect" title=" " alt="" coords="1897,304,2064,360"/>
-<area shape="rect" title=" " alt="" coords="2088,304,2255,360"/>
-<area shape="rect" title=" " alt="" coords="2279,319,2378,345"/>
-<area shape="rect" title=" " alt="" coords="2403,304,2569,360"/>
-<area shape="rect" title=" " alt="" coords="2593,304,2760,360"/>
-<area shape="rect" title=" " alt="" coords="2784,304,2951,360"/>
+<area shape="rect" title="Contient toutes les fonctions pour initialiser le programme." alt="" coords="3216,5,3311,32"/>
+<area shape="rect" href="../../d1/d0f/commun_8h.html" title="Fichier contenant les headers nécessaires au programme principal." alt="" coords="3177,80,3267,107"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html" title=" " alt="" coords="1538,333,1607,360"/>
+<area shape="rect" title=" " alt="" coords="6725,169,6791,196"/>
+<area shape="rect" title=" " alt="" coords="3342,80,3406,107"/>
+<area shape="rect" href="../../da/de9/code__erreur_8h.html" title="Fichier contenant les codes d&#39;erreur du programme." alt="" coords="6165,169,6276,196"/>
+<area shape="rect" href="../../d1/daa/definition__commun_8h.html" title="Contient toutes les définitions communes à tout les fichiers." alt="" coords="6105,408,6264,435"/>
+<area shape="rect" href="../../d4/d78/fonctions_8h.html" title="Définitions des fonctions d&#39;initialisation." alt="" coords="6453,259,6548,285"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html" title="Fichier contenant toutes les définitions concernant le personnage." alt="" coords="6392,333,6503,360"/>
+<area shape="rect" href="../../d2/d9f/inventaire_8h.html" title="Définition des fonctions relatives au module inventaire." alt="" coords="6447,408,6547,435"/>
+<area shape="rect" href="../../d7/d64/liste__objet_8h.html" title="Définition relatives aux structures contenant les objets." alt="" coords="6445,483,6548,509"/>
+<area shape="rect" href="../../d0/d1f/monstres_8h.html" title="Fonctions concernant les monstres." alt="" coords="6352,169,6447,196"/>
+<area shape="rect" href="../../d5/dae/affichage_8h.html" title="Fichier contenant les définitions et les fonctions liées au module affichage." alt="" coords="6137,259,6232,285"/>
+<area shape="rect" href="../../dd/d20/event_8h.html" title="Définitions relatives aux événements." alt="" coords="6359,259,6429,285"/>
+<area shape="rect" title=" " alt="" coords="160,155,345,211"/>
+<area shape="rect" title=" " alt="" coords="369,155,555,211"/>
+<area shape="rect" title=" " alt="" coords="579,155,764,211"/>
+<area shape="rect" title=" " alt="" coords="788,155,973,211"/>
+<area shape="rect" title=" " alt="" coords="997,155,1183,211"/>
+<area shape="rect" title=" " alt="" coords="1207,169,1303,196"/>
+<area shape="rect" title=" " alt="" coords="1328,169,1399,196"/>
+<area shape="rect" title=" " alt="" coords="1423,169,1498,196"/>
+<area shape="rect" title=" " alt="" coords="1522,169,1597,196"/>
+<area shape="rect" title=" " alt="" coords="1621,169,1692,196"/>
+<area shape="rect" title=" " alt="" coords="1716,169,1795,196"/>
+<area shape="rect" title=" " alt="" coords="1819,169,1891,196"/>
+<area shape="rect" title=" " alt="" coords="1916,169,2003,196"/>
+<area shape="rect" title=" " alt="" coords="2027,169,2097,196"/>
+<area shape="rect" title=" " alt="" coords="2121,169,2189,196"/>
+<area shape="rect" title=" " alt="" coords="2213,169,2276,196"/>
+<area shape="rect" title=" " alt="" coords="2300,169,2373,196"/>
+<area shape="rect" title=" " alt="" coords="2397,155,2583,211"/>
+<area shape="rect" title=" " alt="" coords="2607,155,2792,211"/>
+<area shape="rect" title=" " alt="" coords="2816,155,3001,211"/>
+<area shape="rect" title=" " alt="" coords="3025,155,3211,211"/>
+<area shape="rect" title=" " alt="" coords="3235,155,3420,211"/>
+<area shape="rect" title=" " alt="" coords="3444,155,3629,211"/>
+<area shape="rect" title=" " alt="" coords="3653,155,3839,211"/>
+<area shape="rect" title=" " alt="" coords="3863,155,4048,211"/>
+<area shape="rect" title=" " alt="" coords="4072,155,4257,211"/>
+<area shape="rect" title=" " alt="" coords="4281,155,4467,211"/>
+<area shape="rect" title=" " alt="" coords="4491,155,4676,211"/>
+<area shape="rect" title=" " alt="" coords="4700,155,4885,211"/>
+<area shape="rect" title=" " alt="" coords="4909,155,5095,211"/>
+<area shape="rect" title=" " alt="" coords="5119,155,5304,211"/>
+<area shape="rect" title=" " alt="" coords="5328,155,5513,211"/>
+<area shape="rect" title=" " alt="" coords="5537,155,5723,211"/>
+<area shape="rect" title=" " alt="" coords="5747,155,5932,211"/>
+<area shape="rect" title=" " alt="" coords="5956,155,6141,211"/>
+<area shape="rect" href="../../d6/d46/menus_8h.html" title="Définitions relatives à la gestion des menus du jeu." alt="" coords="4589,333,4668,360"/>
 </map>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:aa6370cd7b08553210cd2ca45f421b122"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../dc/d9f/structstruct.html">struct</a> <a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a></td></tr>
+<tr class="memdesc:aa6370cd7b08553210cd2ca45f421b122"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définition de la structure map.  <a href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa6370cd7b08553210cd2ca45f421b122"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:affaacddc6fe16ed3d818bf7e0c9798eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb.html#affaacddc6fe16ed3d818bf7e0c9798eb">fermer_programme</a> (int code_erreur)</td></tr>
-<tr class="memdesc:affaacddc6fe16ed3d818bf7e0c9798eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui appelle les fonctions pour terminer le programme.  <a href="../../d1/d41/init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb.html#affaacddc6fe16ed3d818bf7e0c9798eb">Plus de détails...</a><br /></td></tr>
+<tr class="memitem:affaacddc6fe16ed3d818bf7e0c9798eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#affaacddc6fe16ed3d818bf7e0c9798eb">fermer_programme</a> (int code_erreur)</td></tr>
+<tr class="memdesc:affaacddc6fe16ed3d818bf7e0c9798eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui appelle les fonctions pour terminer le programme.  <a href="../../d1/d41/init__close_8c.html#affaacddc6fe16ed3d818bf7e0c9798eb">Plus de détails...</a><br /></td></tr>
 <tr class="separator:affaacddc6fe16ed3d818bf7e0c9798eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4756fccf04e9940ea20ee66d5167fd8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c_ab4756fccf04e9940ea20ee66d5167fd8.html#ab4756fccf04e9940ea20ee66d5167fd8">fermer_SDL</a> (void)</td></tr>
-<tr class="memdesc:ab4756fccf04e9940ea20ee66d5167fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui détruit la fenêtre principale et ferme la SDL.  <a href="../../d1/d41/init__close_8c_ab4756fccf04e9940ea20ee66d5167fd8.html#ab4756fccf04e9940ea20ee66d5167fd8">Plus de détails...</a><br /></td></tr>
+<tr class="memitem:ab4756fccf04e9940ea20ee66d5167fd8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#ab4756fccf04e9940ea20ee66d5167fd8">fermer_SDL</a> (void)</td></tr>
+<tr class="memdesc:ab4756fccf04e9940ea20ee66d5167fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui détruit la fenêtre principale et ferme la SDL.  <a href="../../d1/d41/init__close_8c.html#ab4756fccf04e9940ea20ee66d5167fd8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab4756fccf04e9940ea20ee66d5167fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28e2aa804ce4e3ee68465a58b70885e4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c_a28e2aa804ce4e3ee68465a58b70885e4.html#a28e2aa804ce4e3ee68465a58b70885e4">detruire_renderer</a> (void)</td></tr>
+<tr class="memitem:a28e2aa804ce4e3ee68465a58b70885e4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#a28e2aa804ce4e3ee68465a58b70885e4">detruire_renderer</a> (void)</td></tr>
 <tr class="separator:a28e2aa804ce4e3ee68465a58b70885e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58667cb5b93a010d26739453ce4d027b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c_a58667cb5b93a010d26739453ce4d027b.html#a58667cb5b93a010d26739453ce4d027b">init_SDL</a> ()</td></tr>
-<tr class="memdesc:a58667cb5b93a010d26739453ce4d027b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui démarre la SDL et créer la fenêtre principale.  <a href="../../d1/d41/init__close_8c_a58667cb5b93a010d26739453ce4d027b.html#a58667cb5b93a010d26739453ce4d027b">Plus de détails...</a><br /></td></tr>
+<tr class="memitem:a58667cb5b93a010d26739453ce4d027b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#a58667cb5b93a010d26739453ce4d027b">init_SDL</a> ()</td></tr>
+<tr class="memdesc:a58667cb5b93a010d26739453ce4d027b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui démarre la SDL et créer la fenêtre principale.  <a href="../../d1/d41/init__close_8c.html#a58667cb5b93a010d26739453ce4d027b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a58667cb5b93a010d26739453ce4d027b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a739cf24a8e355e9a31447055eae9ae69"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c_a739cf24a8e355e9a31447055eae9ae69.html#a739cf24a8e355e9a31447055eae9ae69">init_rc_commun</a> (void)</td></tr>
+<tr class="memitem:a739cf24a8e355e9a31447055eae9ae69"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#a739cf24a8e355e9a31447055eae9ae69">init_rc_commun</a> (void)</td></tr>
 <tr class="separator:a739cf24a8e355e9a31447055eae9ae69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc7f4b4da74c22683312acf145e135e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c_acc7f4b4da74c22683312acf145e135e1.html#acc7f4b4da74c22683312acf145e135e1">aff_cleanup</a> (void)</td></tr>
-<tr class="memdesc:acc7f4b4da74c22683312acf145e135e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction ajoutée à la liste de atexit() afin de libérer toute la mémoire allouée.  <a href="../../d1/d41/init__close_8c_acc7f4b4da74c22683312acf145e135e1.html#acc7f4b4da74c22683312acf145e135e1">Plus de détails...</a><br /></td></tr>
+<tr class="memitem:acc7f4b4da74c22683312acf145e135e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#acc7f4b4da74c22683312acf145e135e1">aff_cleanup</a> (void)</td></tr>
+<tr class="memdesc:acc7f4b4da74c22683312acf145e135e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction ajoutée à la liste de atexit() afin de libérer toute la mémoire allouée.  <a href="../../d1/d41/init__close_8c.html#acc7f4b4da74c22683312acf145e135e1">Plus de détails...</a><br /></td></tr>
 <tr class="separator:acc7f4b4da74c22683312acf145e135e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79d4020cf0b63c5c11c847b98348af97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c_a79d4020cf0b63c5c11c847b98348af97.html#a79d4020cf0b63c5c11c847b98348af97">init_affichage</a> ()</td></tr>
+<tr class="memitem:a79d4020cf0b63c5c11c847b98348af97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#a79d4020cf0b63c5c11c847b98348af97">init_affichage</a> ()</td></tr>
 <tr class="separator:a79d4020cf0b63c5c11c847b98348af97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadbfbc3ec7810889adaa634a295cb2c5"><td class="memItemLeft" align="right" valign="top">SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c_aadbfbc3ec7810889adaa634a295cb2c5.html#aadbfbc3ec7810889adaa634a295cb2c5">init_sousbuffer</a> (<a class="el" href="../../d3/d90/structt__map.html">t_map</a> *<a class="el" href="../../dc/db7/map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>)</td></tr>
-<tr class="separator:aadbfbc3ec7810889adaa634a295cb2c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a> ()</td></tr>
-<tr class="memdesc:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui initialise le Programme.  <a href="../../d1/d41/init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947.html#a02fd73d861ef2e4aabb38c0c9ff82947">Plus de détails...</a><br /></td></tr>
+<tr class="memitem:aad95fee9e6bf2bd4c8ae74d98e1a6821"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#aad95fee9e6bf2bd4c8ae74d98e1a6821">init_sousbuffer</a> (<a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a> *<a class="el" href="../../dc/db7/map_8h.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>, joueur_t *joueur)</td></tr>
+<tr class="separator:aad95fee9e6bf2bd4c8ae74d98e1a6821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a> ()</td></tr>
+<tr class="memdesc:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui initialise le Programme.  <a href="../../d1/d41/init__close_8c.html#a02fd73d861ef2e4aabb38c0c9ff82947">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a760de443d1a045170cadd7adfef6653c"><td class="memItemLeft" align="right" valign="top">SDL_Window *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c_a760de443d1a045170cadd7adfef6653c.html#a760de443d1a045170cadd7adfef6653c">fenetre_Principale</a> = NULL</td></tr>
+<tr class="memitem:a760de443d1a045170cadd7adfef6653c"><td class="memItemLeft" align="right" valign="top">SDL_Window *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#a760de443d1a045170cadd7adfef6653c">fenetre_Principale</a> = NULL</td></tr>
 <tr class="separator:a760de443d1a045170cadd7adfef6653c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ad8058d8319a935f7a37f72d4e3e81a"><td class="memItemLeft" align="right" valign="top">SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c_a7ad8058d8319a935f7a37f72d4e3e81a.html#a7ad8058d8319a935f7a37f72d4e3e81a">rendu_principal</a> = NULL</td></tr>
+<tr class="memitem:a7ad8058d8319a935f7a37f72d4e3e81a"><td class="memItemLeft" align="right" valign="top">SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#a7ad8058d8319a935f7a37f72d4e3e81a">rendu_principal</a> = NULL</td></tr>
 <tr class="separator:a7ad8058d8319a935f7a37f72d4e3e81a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a072455f269aaacd4c8ab382318345501"><td class="memItemLeft" align="right" valign="top">SDL_Window *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c_a072455f269aaacd4c8ab382318345501.html#a072455f269aaacd4c8ab382318345501">fenetre_sous_rendu</a> = NULL</td></tr>
+<tr class="memitem:a072455f269aaacd4c8ab382318345501"><td class="memItemLeft" align="right" valign="top">SDL_Window *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#a072455f269aaacd4c8ab382318345501">fenetre_sous_rendu</a> = NULL</td></tr>
 <tr class="separator:a072455f269aaacd4c8ab382318345501"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbdaa667b84220213b6a5cc90af5e8b8"><td class="memItemLeft" align="right" valign="top">SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c_afbdaa667b84220213b6a5cc90af5e8b8.html#afbdaa667b84220213b6a5cc90af5e8b8">sous_rendu</a> = NULL</td></tr>
+<tr class="memitem:afbdaa667b84220213b6a5cc90af5e8b8"><td class="memItemLeft" align="right" valign="top">SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#afbdaa667b84220213b6a5cc90af5e8b8">sous_rendu</a> = NULL</td></tr>
 <tr class="separator:afbdaa667b84220213b6a5cc90af5e8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36f7b6be7108281af77939ceaec42fd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/daa/definition__commun_8h_abb452686968e48b67397da5f97445f5b.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c_a36f7b6be7108281af77939ceaec42fd6.html#a36f7b6be7108281af77939ceaec42fd6">running</a> = <a class="el" href="../../d1/daa/definition__commun_8h_aa4113a26497a6784f9b855b197609b55.html#aa4113a26497a6784f9b855b197609b55">vrai</a></td></tr>
+<tr class="memitem:a36f7b6be7108281af77939ceaec42fd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/daa/definition__commun_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#a36f7b6be7108281af77939ceaec42fd6">running</a> = <a class="el" href="../../d1/daa/definition__commun_8h.html#aa4113a26497a6784f9b855b197609b55">vrai</a></td></tr>
 <tr class="separator:a36f7b6be7108281af77939ceaec42fd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a574fb78df14516631b2250bc56733ac9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d10/structlist.html">list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c_a574fb78df14516631b2250bc56733ac9.html#a574fb78df14516631b2250bc56733ac9">f_close</a> = NULL</td></tr>
+<tr class="memitem:a1731e0f7eea198537ed53078d8b2c132"><td class="memItemLeft" align="right" valign="top">SDL_Rect *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#a1731e0f7eea198537ed53078d8b2c132">hors_hitbox</a> = NULL</td></tr>
+<tr class="separator:a1731e0f7eea198537ed53078d8b2c132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a574fb78df14516631b2250bc56733ac9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d10/structlist.html">list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/init__close_8c.html#a574fb78df14516631b2250bc56733ac9">f_close</a> = NULL</td></tr>
 <tr class="separator:a574fb78df14516631b2250bc56733ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><dl class="section author"><dt>Auteur</dt><dd>Ange Despert (<a href="#" onclick="location.href='mai'+'lto:'+'Ang'+'e.'+'Des'+'pe'+'rt.'+'Et'+'u@u'+'ni'+'v-l'+'em'+'ans'+'.f'+'r'; return false;">Ange.<span style="display: none;">.nosp@m.</span>Desp<span style="display: none;">.nosp@m.</span>ert.E<span style="display: none;">.nosp@m.</span>tu@u<span style="display: none;">.nosp@m.</span>niv-l<span style="display: none;">.nosp@m.</span>eman<span style="display: none;">.nosp@m.</span>s.fr</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.2 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>27/03/22 </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div><h2 class="groupheader">Documentation des définitions de type</h2>
+<a id="aa6370cd7b08553210cd2ca45f421b122"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6370cd7b08553210cd2ca45f421b122">&#9670;&nbsp;</a></span>t_map</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../dc/d9f/structstruct.html">struct</a> <a class="el" href="../../d1/d49/structs__map.html">s_map</a> <a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Cette définition est la pour éviter une inclusion mutuelle des fichiers <a class="el" href="../../d5/dae/affichage_8h.html">affichage.h</a> et <a class="el" href="../../dc/db7/map_8h.html">map.h</a> . </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="acc7f4b4da74c22683312acf145e135e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc7f4b4da74c22683312acf145e135e1">&#9670;&nbsp;</a></span>aff_cleanup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void aff_cleanup </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d41/init__close_8c_acc7f4b4da74c22683312acf145e135e1_cgraph.png" border="0" usemap="#d1/d41/init__close_8c_acc7f4b4da74c22683312acf145e135e1_cgraph" alt=""/></div>
+<map name="d1/d41/init__close_8c_acc7f4b4da74c22683312acf145e135e1_cgraph" id="d1/d41/init__close_8c_acc7f4b4da74c22683312acf145e135e1_cgraph">
+<area shape="rect" title="Fonction ajoutée à la liste de atexit() afin de libérer toute la mémoire allouée." alt="" coords="5,56,103,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a4597d1c1550e48dc54b54b240ab3c0e9" title="Détruit une structure liste." alt="" coords="151,56,259,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#af234a65d00ef1f963f212d6761636941" title=" " alt="" coords="307,56,397,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="446,5,517,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="699,107,784,133"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title=" " alt="" coords="445,107,517,133"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title=" " alt="" coords="565,5,651,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="573,157,643,184"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d41/init__close_8c_acc7f4b4da74c22683312acf145e135e1_icgraph.png" border="0" usemap="#d1/d41/init__close_8c_acc7f4b4da74c22683312acf145e135e1_icgraph" alt=""/></div>
+<map name="d1/d41/init__close_8c_acc7f4b4da74c22683312acf145e135e1_icgraph" id="d1/d41/init__close_8c_acc7f4b4da74c22683312acf145e135e1_icgraph">
+<area shape="rect" title="Fonction ajoutée à la liste de atexit() afin de libérer toute la mémoire allouée." alt="" coords="199,5,296,32"/>
+<area shape="rect" href="../../d4/d78/fonctions_8h.html#a2858154e2009b0e6e616f313177762bc" title="Fonction qui initialise le Programme." alt="" coords="108,5,151,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a28e2aa804ce4e3ee68465a58b70885e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28e2aa804ce4e3ee68465a58b70885e4">&#9670;&nbsp;</a></span>detruire_renderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void detruire_renderer </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d41/init__close_8c_a28e2aa804ce4e3ee68465a58b70885e4_icgraph.png" border="0" usemap="#d1/d41/init__close_8c_a28e2aa804ce4e3ee68465a58b70885e4_icgraph" alt=""/></div>
+<map name="d1/d41/init__close_8c_a28e2aa804ce4e3ee68465a58b70885e4_icgraph" id="d1/d41/init__close_8c_a28e2aa804ce4e3ee68465a58b70885e4_icgraph">
+<area shape="rect" title=" " alt="" coords="199,5,333,32"/>
+<area shape="rect" href="../../d4/d78/fonctions_8h.html#a2858154e2009b0e6e616f313177762bc" title="Fonction qui initialise le Programme." alt="" coords="108,5,151,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="affaacddc6fe16ed3d818bf7e0c9798eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affaacddc6fe16ed3d818bf7e0c9798eb">&#9670;&nbsp;</a></span>fermer_programme()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fermer_programme </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>code_erreur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d41/init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb_cgraph.png" border="0" usemap="#d1/d41/init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb_cgraph" alt=""/></div>
+<map name="d1/d41/init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb_cgraph" id="d1/d41/init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb_cgraph">
+<area shape="rect" title="Fonction qui appelle les fonctions pour terminer le programme." alt="" coords="5,259,155,285"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a4597d1c1550e48dc54b54b240ab3c0e9" title="Détruit une structure liste." alt="" coords="203,132,311,159"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="751,183,836,209"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#adce0cb151a53ff2182012642c95262be" title=" " alt="" coords="361,208,447,235"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a2afbd9c9fde39b0f0c20e628718b7576" title=" " alt="" coords="361,309,447,336"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="213,360,300,387"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#af234a65d00ef1f963f212d6761636941" title=" " alt="" coords="359,120,449,147"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="498,157,569,184"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title=" " alt="" coords="497,56,569,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title=" " alt="" coords="617,183,703,209"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="625,5,695,32"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d41/init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb_icgraph.png" border="0" usemap="#d1/d41/init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb_icgraph" alt=""/></div>
+<map name="d1/d41/init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb_icgraph" id="d1/d41/init__close_8c_affaacddc6fe16ed3d818bf7e0c9798eb_icgraph">
+<area shape="rect" title="Fonction qui appelle les fonctions pour terminer le programme." alt="" coords="752,300,901,327"/>
+<area shape="rect" href="../../d6/d46/menus_8h.html#a98b87de7b6779d1ea4db3543621cc3cb" title=" " alt="" coords="551,5,695,32"/>
+<area shape="rect" href="../../d0/deb/event_8c.html#afe551917ddc29ee5ade1c65a26a61537" title="Fonction qui gère les événements quand une touche du clavier est pressée par un joueur." alt="" coords="369,81,452,108"/>
+<area shape="rect" href="../../dd/d20/event_8h.html#aded23e2ea2ac3df851674e2292250166" title="Fonction qui gère les événements." alt="" coords="150,157,237,184"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,441,60,468"/>
+<area shape="rect" href="../../d6/d46/menus_8h.html#afcde784ea1d5fb8c9fd6436fa063c5f2" title=" " alt="" coords="551,259,695,301"/>
+<area shape="rect" href="../../dd/d20/event_8h.html#ac27091daa86f31b79780d6a91801fd11" title=" " alt="" coords="119,391,267,417"/>
+<area shape="rect" href="../../d6/d46/menus_8h.html#a1c8778affd5380fae88f7ce24787c8ea" title="Affiche le menu d&#39;acceuil et gère les interactions avec le joueur." alt="" coords="109,441,277,468"/>
+<area shape="rect" href="../../d6/d46/menus_8h.html#aa1042f350a66ae56b754f3bf22556405" title=" " alt="" coords="327,493,495,534"/>
+<area shape="rect" href="../../d6/d46/menus_8h.html#acc47fe54070e003622ad3a68d3d6d310" title="Affiche le menu pause et gère les interactions avec le joueur." alt="" coords="543,107,704,133"/>
+<area shape="rect" href="../../d6/d46/menus_8h.html#a4da3c6c1c4423889f8735c91a92e20d9" title=" " alt="" coords="543,325,704,366"/>
+<area shape="rect" href="../../d0/d1f/monstres_8h.html#ae475ce68edaa0a8f29e6df495043bebf" title=" " alt="" coords="108,548,279,575"/>
+<area shape="rect" href="../../dd/d20/event_8h.html#a950ad08652f1a6177a5b55912280e63c" title=" " alt="" coords="573,609,673,636"/>
+<area shape="rect" href="../../d0/deb/event_8c.html#ac367042c66a1868384bac213a1ecbb99" title=" " alt="" coords="329,332,493,359"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#afba04a756d78b062c9638acb7436beed" title=" " alt="" coords="357,609,465,636"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab4756fccf04e9940ea20ee66d5167fd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4756fccf04e9940ea20ee66d5167fd8">&#9670;&nbsp;</a></span>fermer_SDL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fermer_SDL </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d41/init__close_8c_ab4756fccf04e9940ea20ee66d5167fd8_icgraph.png" border="0" usemap="#d1/d41/init__close_8c_ab4756fccf04e9940ea20ee66d5167fd8_icgraph" alt=""/></div>
+<map name="d1/d41/init__close_8c_ab4756fccf04e9940ea20ee66d5167fd8_icgraph" id="d1/d41/init__close_8c_ab4756fccf04e9940ea20ee66d5167fd8_icgraph">
+<area shape="rect" title="Fonction qui détruit la fenêtre principale et ferme la SDL." alt="" coords="199,5,297,32"/>
+<area shape="rect" href="../../d4/d78/fonctions_8h.html#a2858154e2009b0e6e616f313177762bc" title="Fonction qui initialise le Programme." alt="" coords="108,5,151,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a02fd73d861ef2e4aabb38c0c9ff82947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02fd73d861ef2e4aabb38c0c9ff82947">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d41/init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph.png" border="0" usemap="#d1/d41/init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph" alt=""/></div>
+<map name="d1/d41/init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph" id="d1/d41/init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph">
+<area shape="rect" title="Fonction qui initialise le Programme." alt="" coords="5,233,48,260"/>
+<area shape="rect" href="../../d1/d41/init__close_8c.html#acc7f4b4da74c22683312acf145e135e1" title="Fonction ajoutée à la liste de atexit() afin de libérer toute la mémoire allouée." alt="" coords="115,56,212,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title=" " alt="" coords="117,107,209,133"/>
+<area shape="rect" href="../../d1/d41/init__close_8c.html#a28e2aa804ce4e3ee68465a58b70885e4" title=" " alt="" coords="96,157,231,184"/>
+<area shape="rect" href="../../d1/d41/init__close_8c.html#ab4756fccf04e9940ea20ee66d5167fd8" title="Fonction qui détruit la fenêtre principale et ferme la SDL." alt="" coords="114,208,213,235"/>
+<area shape="rect" href="../../d1/d41/init__close_8c.html#a79d4020cf0b63c5c11c847b98348af97" title=" " alt="" coords="108,259,219,285"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a44494ff9efed6cd1416119b4a4f3dca2" title=" " alt="" coords="303,309,381,336"/>
+<area shape="rect" href="../../d1/d41/init__close_8c.html#a739cf24a8e355e9a31447055eae9ae69" title=" " alt="" coords="100,360,227,387"/>
+<area shape="rect" href="../../d1/d41/init__close_8c.html#a58667cb5b93a010d26739453ce4d027b" title="Fonction qui démarre la SDL et créer la fenêtre principale." alt="" coords="126,411,201,437"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a4597d1c1550e48dc54b54b240ab3c0e9" title="Détruit une structure liste." alt="" coords="288,56,396,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#af234a65d00ef1f963f212d6761636941" title=" " alt="" coords="453,56,544,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="593,5,663,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="845,107,931,133"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title=" " alt="" coords="592,107,664,133"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title=" " alt="" coords="712,5,797,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="719,157,790,184"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#ad6025b84e0d3f62a1ca7b1835d9263df" title=" " alt="" coords="281,157,403,184"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a6e1d5af117ac87c2c309507f4750dcb9" title="Fonction qui détruit une structure d&#39;affichage de texture passée en paramètre." alt="" coords="279,208,405,235"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a833a9e3f93662a67ba30a73d64435286" title="Affiche des informations sur une texture." alt="" coords="291,259,393,285"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d41/init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph.png" border="0" usemap="#d1/d41/init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph" alt=""/></div>
+<map name="d1/d41/init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph" id="d1/d41/init__close_8c_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph">
+<area shape="rect" title="Fonction qui initialise le Programme." alt="" coords="108,5,151,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a79d4020cf0b63c5c11c847b98348af97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79d4020cf0b63c5c11c847b98348af97">&#9670;&nbsp;</a></span>init_affichage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_affichage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d41/init__close_8c_a79d4020cf0b63c5c11c847b98348af97_cgraph.png" border="0" usemap="#d1/d41/init__close_8c_a79d4020cf0b63c5c11c847b98348af97_cgraph" alt=""/></div>
+<map name="d1/d41/init__close_8c_a79d4020cf0b63c5c11c847b98348af97_cgraph" id="d1/d41/init__close_8c_a79d4020cf0b63c5c11c847b98348af97_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,116,108"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#ad6025b84e0d3f62a1ca7b1835d9263df" title=" " alt="" coords="166,5,289,32"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a6e1d5af117ac87c2c309507f4750dcb9" title="Fonction qui détruit une structure d&#39;affichage de texture passée en paramètre." alt="" coords="164,56,291,83"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a833a9e3f93662a67ba30a73d64435286" title="Affiche des informations sur une texture." alt="" coords="177,107,278,133"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a44494ff9efed6cd1416119b4a4f3dca2" title=" " alt="" coords="188,157,267,184"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d41/init__close_8c_a79d4020cf0b63c5c11c847b98348af97_icgraph.png" border="0" usemap="#d1/d41/init__close_8c_a79d4020cf0b63c5c11c847b98348af97_icgraph" alt=""/></div>
+<map name="d1/d41/init__close_8c_a79d4020cf0b63c5c11c847b98348af97_icgraph" id="d1/d41/init__close_8c_a79d4020cf0b63c5c11c847b98348af97_icgraph">
+<area shape="rect" title=" " alt="" coords="199,5,309,32"/>
+<area shape="rect" href="../../d4/d78/fonctions_8h.html#a2858154e2009b0e6e616f313177762bc" title="Fonction qui initialise le Programme." alt="" coords="108,5,151,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a739cf24a8e355e9a31447055eae9ae69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a739cf24a8e355e9a31447055eae9ae69">&#9670;&nbsp;</a></span>init_rc_commun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void init_rc_commun </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d41/init__close_8c_a739cf24a8e355e9a31447055eae9ae69_icgraph.png" border="0" usemap="#d1/d41/init__close_8c_a739cf24a8e355e9a31447055eae9ae69_icgraph" alt=""/></div>
+<map name="d1/d41/init__close_8c_a739cf24a8e355e9a31447055eae9ae69_icgraph" id="d1/d41/init__close_8c_a739cf24a8e355e9a31447055eae9ae69_icgraph">
+<area shape="rect" title=" " alt="" coords="199,5,325,32"/>
+<area shape="rect" href="../../d4/d78/fonctions_8h.html#a2858154e2009b0e6e616f313177762bc" title="Fonction qui initialise le Programme." alt="" coords="108,5,151,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a58667cb5b93a010d26739453ce4d027b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58667cb5b93a010d26739453ce4d027b">&#9670;&nbsp;</a></span>init_SDL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_SDL </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d41/init__close_8c_a58667cb5b93a010d26739453ce4d027b_icgraph.png" border="0" usemap="#d1/d41/init__close_8c_a58667cb5b93a010d26739453ce4d027b_icgraph" alt=""/></div>
+<map name="d1/d41/init__close_8c_a58667cb5b93a010d26739453ce4d027b_icgraph" id="d1/d41/init__close_8c_a58667cb5b93a010d26739453ce4d027b_icgraph">
+<area shape="rect" title="Fonction qui démarre la SDL et créer la fenêtre principale." alt="" coords="199,5,273,32"/>
+<area shape="rect" href="../../d4/d78/fonctions_8h.html#a2858154e2009b0e6e616f313177762bc" title="Fonction qui initialise le Programme." alt="" coords="108,5,151,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aad95fee9e6bf2bd4c8ae74d98e1a6821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad95fee9e6bf2bd4c8ae74d98e1a6821">&#9670;&nbsp;</a></span>init_sousbuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_sousbuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a> *&#160;</td>
+          <td class="paramname"><em>map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>joueur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td></td></tr>
+    <tr><td class="paramname">joueur</td><td>Joueur autour duquel se fait la fenêtre d'affichage de la carte </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d41/init__close_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_cgraph.png" border="0" usemap="#d1/d41/init__close_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_cgraph" alt=""/></div>
+<map name="d1/d41/init__close_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_cgraph" id="d1/d41/init__close_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,124,57"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#ab74333683d8d4816aa1331794b3b9e94" title=" " alt="" coords="172,5,315,32"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#ada2e4bcab49cd7c1563aef3afa20f75d" title=" " alt="" coords="172,56,315,83"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d41/init__close_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_icgraph.png" border="0" usemap="#d1/d41/init__close_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_icgraph" alt=""/></div>
+<map name="d1/d41/init__close_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_icgraph" id="d1/d41/init__close_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_icgraph">
+<area shape="rect" title=" " alt="" coords="137,31,256,57"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="20,5,75,32"/>
+<area shape="rect" href="../../dc/db7/map_8h.html#a1a36cad71a42c80da1f12a50caff8d00" title=" " alt="" coords="5,56,89,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a id="a574fb78df14516631b2250bc56733ac9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a574fb78df14516631b2250bc56733ac9">&#9670;&nbsp;</a></span>f_close</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d10/structlist.html">list</a>* f_close = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Liste des fonctions à appeler lors de la fermeture du programme </p>
+
+</div>
+</div>
+<a id="a760de443d1a045170cadd7adfef6653c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a760de443d1a045170cadd7adfef6653c">&#9670;&nbsp;</a></span>fenetre_Principale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Window* fenetre_Principale = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a072455f269aaacd4c8ab382318345501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a072455f269aaacd4c8ab382318345501">&#9670;&nbsp;</a></span>fenetre_sous_rendu</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Window* fenetre_sous_rendu = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1731e0f7eea198537ed53078d8b2c132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1731e0f7eea198537ed53078d8b2c132">&#9670;&nbsp;</a></span>hors_hitbox</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Rect* hors_hitbox = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ad8058d8319a935f7a37f72d4e3e81a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ad8058d8319a935f7a37f72d4e3e81a">&#9670;&nbsp;</a></span>rendu_principal</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Renderer* rendu_principal = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pointeur vers fenêtre globale pointant sur la fenêtre principale du programme </p>
+
+</div>
+</div>
+<a id="a36f7b6be7108281af77939ceaec42fd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36f7b6be7108281af77939ceaec42fd6">&#9670;&nbsp;</a></span>running</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/daa/definition__commun_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> running = <a class="el" href="../../d1/daa/definition__commun_8h.html#aa4113a26497a6784f9b855b197609b55">vrai</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afbdaa667b84220213b6a5cc90af5e8b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbdaa667b84220213b6a5cc90af5e8b8">&#9670;&nbsp;</a></span>sous_rendu</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Renderer* sous_rendu = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

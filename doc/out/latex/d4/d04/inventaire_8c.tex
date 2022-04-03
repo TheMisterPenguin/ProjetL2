@@ -1,8 +1,10 @@
 \hypertarget{inventaire_8c}{}\doxysection{Référence du fichier inventaire.\+c}
 \label{inventaire_8c}\index{inventaire.c@{inventaire.c}}
-{\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include $<$commun.\+h$>$}\newline
-{\ttfamily \#include $<$string.\+h$>$}\newline
+
+
+Fonctions liées au module inventaire.  
+
+
 Graphe des dépendances par inclusion de inventaire.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -14,127 +16,278 @@ Graphe des dépendances par inclusion de inventaire.\+c\+:
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{inventaire_8c_aca47283aea5d6234a08bddf93062c44d_aca47283aea5d6234a08bddf93062c44d}{changement\+\_\+statistiques}} (\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$j, \mbox{\hyperlink{liste__objet_8h_a95aa851f70d83b00db72a384040f1919_a95aa851f70d83b00db72a384040f1919}{lobjet\+\_\+t}} $\ast$equipe)
-\begin{DoxyCompactList}\small\item\em Fonction qui permet de modifier les statistiques du joueur selon une liste d\textquotesingle{}objets. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{inventaire_8c_a3cd781a9fa136894e7982481cba1a3f3_a3cd781a9fa136894e7982481cba1a3f3}{equiper\+\_\+objet}} (\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$j, \mbox{\hyperlink{objet_8h_ad0efc27a29533dbf784e717262509caa_ad0efc27a29533dbf784e717262509caa}{objet\+\_\+t}} $\ast$$\ast$objet, \mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}} $\ast$\mbox{\hyperlink{inventaire_8h_abf04b1680f181d06f88c632ad33c4b1c_abf04b1680f181d06f88c632ad33c4b1c}{inventaire}})
+void \mbox{\hyperlink{inventaire_8c_a1b70bc002675692d62ba7d5343341fd3}{changement\+\_\+statistiques}} (joueur\+\_\+t $\ast$joueur)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de modifier les statistiques du joueur selon ses objets équipés. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{inventaire_8c_a699ab6b7030b61f08e85b59355360a04}{equiper\+\_\+objet}} (joueur\+\_\+t $\ast$joueur, objet\+\_\+t $\ast$$\ast$objet)
 \begin{DoxyCompactList}\small\item\em Fonction qui permet de passer un objet du sac(non-\/équipé) à un emplacement d\textquotesingle{}équipement(équipé) dans l\textquotesingle{}inventaire. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{inventaire_8c_a6a453e86083b6bab0be72f9ed1f3dbfc_a6a453e86083b6bab0be72f9ed1f3dbfc}{desequiper}} (\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$j, \mbox{\hyperlink{objet_8h_ad0efc27a29533dbf784e717262509caa_ad0efc27a29533dbf784e717262509caa}{objet\+\_\+t}} $\ast$$\ast$objet, \mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}} $\ast$\mbox{\hyperlink{inventaire_8h_abf04b1680f181d06f88c632ad33c4b1c_abf04b1680f181d06f88c632ad33c4b1c}{inventaire}})
-\item 
-\mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}} $\ast$ \mbox{\hyperlink{inventaire_8c_a1ee5b996c2d2ca56746853c114efc34f_a1ee5b996c2d2ca56746853c114efc34f}{creer\+\_\+inventaire}} ()
-\begin{DoxyCompactList}\small\item\em Fonction qui permet de creer un inventaire. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{inventaire_8c_ad5b47c7ac8715bcc4b4c2b331370fcd2_ad5b47c7ac8715bcc4b4c2b331370fcd2}{detruire\+\_\+inventaire}} (\mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}} $\ast$$\ast$\mbox{\hyperlink{inventaire_8h_abf04b1680f181d06f88c632ad33c4b1c_abf04b1680f181d06f88c632ad33c4b1c}{inventaire}})
+void \mbox{\hyperlink{inventaire_8c_afbcc0f721ebc471ac4fb9cafd97fb77a}{desequiper}} (joueur\+\_\+t $\ast$joueur, objet\+\_\+t $\ast$$\ast$objet)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de passer un objet d\textquotesingle{}un emplacement d\textquotesingle{}équipement(équipé) au sac(non-\/équipé) dans l\textquotesingle{}inventaire. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$ \mbox{\hyperlink{inventaire_8c_a1ee5b996c2d2ca56746853c114efc34f}{creer\+\_\+inventaire}} ()
+\begin{DoxyCompactList}\small\item\em Créé un inventaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{inventaire_8c_ad5b47c7ac8715bcc4b4c2b331370fcd2}{detruire\+\_\+inventaire}} (\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$$\ast$inventaire)
 \begin{DoxyCompactList}\small\item\em Détruit un inventaire. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{inventaire_8c_a1144d923a9a0174ae254109cd825c758_a1144d923a9a0174ae254109cd825c758}{ramasser\+\_\+objet}} (\mbox{\hyperlink{objet_8h_ad0efc27a29533dbf784e717262509caa_ad0efc27a29533dbf784e717262509caa}{objet\+\_\+t}} $\ast$objet, \mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}} $\ast$\mbox{\hyperlink{inventaire_8h_abf04b1680f181d06f88c632ad33c4b1c_abf04b1680f181d06f88c632ad33c4b1c}{inventaire}})
+void \mbox{\hyperlink{inventaire_8c_a1144d923a9a0174ae254109cd825c758}{ramasser\+\_\+objet}} (objet\+\_\+t $\ast$objet, \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$inventaire)
 \begin{DoxyCompactList}\small\item\em Fonction qui permet de mettre un objet trouvé dans le sac(inventaire) \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{inventaire_8c_ad45cfb53dc7eb49aee9dd20fc9607392_ad45cfb53dc7eb49aee9dd20fc9607392}{equiper\+\_\+sac\+\_\+slot}} (int slot)
-\end{DoxyCompactItemize}
-\doxysubsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}} $\ast$ \mbox{\hyperlink{inventaire_8c_abf04b1680f181d06f88c632ad33c4b1c_abf04b1680f181d06f88c632ad33c4b1c}{inventaire}} = N\+U\+LL
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{inventaire_8c_a8e7fe87d00260fd538a5b966b7cfec05}{tout\+\_\+ramasser}} (lobjet\+\_\+t $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}}, \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$inventaire)
+\begin{DoxyCompactList}\small\item\em Met tous les objets du jeu dans l\textquotesingle{}inventaire (sac) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{inventaire_8c_af4759298331c6887427f1a2137910ad2}{equiper\+\_\+sac\+\_\+slot}} (joueur\+\_\+t $\ast$joueur, int slot)
+\begin{DoxyCompactList}\small\item\em Équipe le joueur de l\textquotesingle{}objet contenu dans un slot de l\textquotesingle{}inventaire (sac) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{inventaire_8c_a8aa9d5f1d7be0ac4221f7343d329c4c4}{desequiper\+\_\+slot}} (joueur\+\_\+t $\ast$joueur, int slot)
+\begin{DoxyCompactList}\small\item\em Déséquipe le joueur de l\textquotesingle{}objet contenu dans un slot de l\textquotesingle{}inventaire (equipe) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{inventaire_8c_a085bd391d754f81253408e0754ded991}{consommer\+\_\+objet}} (joueur\+\_\+t $\ast$joueur)
+\begin{DoxyCompactList}\small\item\em Utilise le consommable équipé pour soigner le joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+\begin{DoxyAuthor}{Auteur}
+Max Descomps (\href{mailto:Max.Descomps.Etu@univ-lemans.fr}{\texttt{ Max.\+Descomps.\+Etu@univ-\/lemans.\+fr}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29/03/2022 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{inventaire_8c_aca47283aea5d6234a08bddf93062c44d_aca47283aea5d6234a08bddf93062c44d}\label{inventaire_8c_aca47283aea5d6234a08bddf93062c44d_aca47283aea5d6234a08bddf93062c44d}} 
+\mbox{\Hypertarget{inventaire_8c_a1b70bc002675692d62ba7d5343341fd3}\label{inventaire_8c_a1b70bc002675692d62ba7d5343341fd3}} 
 \index{inventaire.c@{inventaire.c}!changement\_statistiques@{changement\_statistiques}}
 \index{changement\_statistiques@{changement\_statistiques}!inventaire.c@{inventaire.c}}
 \doxysubsubsection{\texorpdfstring{changement\_statistiques()}{changement\_statistiques()}}
-{\footnotesize\ttfamily void changement\+\_\+statistiques (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$}]{j,  }\item[{\mbox{\hyperlink{liste__objet_8h_a95aa851f70d83b00db72a384040f1919_a95aa851f70d83b00db72a384040f1919}{lobjet\+\_\+t}} $\ast$}]{liste }\end{DoxyParamCaption})}
-
-
-
-Fonction qui permet de modifier les statistiques du joueur selon une liste d\textquotesingle{}objets. 
+{\footnotesize\ttfamily void changement\+\_\+statistiques (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
-{\em j} & Joueur \\
-\hline
-{\em equipe} & la liste d\textquotesingle{}objets \\
+{\em joueur} & Joueur dont on change les statistiques \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{inventaire_8c_a1ee5b996c2d2ca56746853c114efc34f_a1ee5b996c2d2ca56746853c114efc34f}\label{inventaire_8c_a1ee5b996c2d2ca56746853c114efc34f_a1ee5b996c2d2ca56746853c114efc34f}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d04/inventaire_8c_a1b70bc002675692d62ba7d5343341fd3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{inventaire_8c_a085bd391d754f81253408e0754ded991}\label{inventaire_8c_a085bd391d754f81253408e0754ded991}} 
+\index{inventaire.c@{inventaire.c}!consommer\_objet@{consommer\_objet}}
+\index{consommer\_objet@{consommer\_objet}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{\texorpdfstring{consommer\_objet()}{consommer\_objet()}}
+{\footnotesize\ttfamily void consommer\+\_\+objet (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em joueur} & Le joueur qui consomme un objet \\
+\hline
+\end{DoxyParams}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d04/inventaire_8c_a085bd391d754f81253408e0754ded991_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{inventaire_8c_a1ee5b996c2d2ca56746853c114efc34f}\label{inventaire_8c_a1ee5b996c2d2ca56746853c114efc34f}} 
 \index{inventaire.c@{inventaire.c}!creer\_inventaire@{creer\_inventaire}}
 \index{creer\_inventaire@{creer\_inventaire}!inventaire.c@{inventaire.c}}
 \doxysubsubsection{\texorpdfstring{creer\_inventaire()}{creer\_inventaire()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}} $\ast$ creer\+\_\+inventaire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Fonction qui permet de creer un inventaire. 
+{\footnotesize\ttfamily \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$ creer\+\_\+inventaire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \begin{DoxyReturn}{Renvoie}
-Un pointeur sur l\textquotesingle{}inventaire 
+Instance nouvellement allouée du type \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} ou N\+U\+LL 
 \end{DoxyReturn}
-\mbox{\Hypertarget{inventaire_8c_a6a453e86083b6bab0be72f9ed1f3dbfc_a6a453e86083b6bab0be72f9ed1f3dbfc}\label{inventaire_8c_a6a453e86083b6bab0be72f9ed1f3dbfc_a6a453e86083b6bab0be72f9ed1f3dbfc}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{d4/d04/inventaire_8c_a1ee5b996c2d2ca56746853c114efc34f_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d04/inventaire_8c_a1ee5b996c2d2ca56746853c114efc34f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{inventaire_8c_afbcc0f721ebc471ac4fb9cafd97fb77a}\label{inventaire_8c_afbcc0f721ebc471ac4fb9cafd97fb77a}} 
 \index{inventaire.c@{inventaire.c}!desequiper@{desequiper}}
 \index{desequiper@{desequiper}!inventaire.c@{inventaire.c}}
 \doxysubsubsection{\texorpdfstring{desequiper()}{desequiper()}}
-{\footnotesize\ttfamily void desequiper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$}]{j,  }\item[{\mbox{\hyperlink{objet_8h_ad0efc27a29533dbf784e717262509caa_ad0efc27a29533dbf784e717262509caa}{objet\+\_\+t}} $\ast$$\ast$}]{objet,  }\item[{\mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}} $\ast$}]{inventaire }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void desequiper (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{objet\+\_\+t $\ast$$\ast$}]{objet }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{inventaire_8c_ad5b47c7ac8715bcc4b4c2b331370fcd2_ad5b47c7ac8715bcc4b4c2b331370fcd2}\label{inventaire_8c_ad5b47c7ac8715bcc4b4c2b331370fcd2_ad5b47c7ac8715bcc4b4c2b331370fcd2}} 
+
+\begin{DoxyParams}{Paramètres}
+{\em joueur} & Joueur à déséquiper \\
+\hline
+{\em objet} & Objet à déséquiper \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{d4/d04/inventaire_8c_afbcc0f721ebc471ac4fb9cafd97fb77a_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d04/inventaire_8c_afbcc0f721ebc471ac4fb9cafd97fb77a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{inventaire_8c_a8aa9d5f1d7be0ac4221f7343d329c4c4}\label{inventaire_8c_a8aa9d5f1d7be0ac4221f7343d329c4c4}} 
+\index{inventaire.c@{inventaire.c}!desequiper\_slot@{desequiper\_slot}}
+\index{desequiper\_slot@{desequiper\_slot}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{\texorpdfstring{desequiper\_slot()}{desequiper\_slot()}}
+{\footnotesize\ttfamily void desequiper\+\_\+slot (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{int}]{slot }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em slot} & Le slot de l\textquotesingle{}objet à déséquiper \\
+\hline
+{\em joueur} & Le joueur à déséquiper \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d04/inventaire_8c_a8aa9d5f1d7be0ac4221f7343d329c4c4_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d04/inventaire_8c_a8aa9d5f1d7be0ac4221f7343d329c4c4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{inventaire_8c_ad5b47c7ac8715bcc4b4c2b331370fcd2}\label{inventaire_8c_ad5b47c7ac8715bcc4b4c2b331370fcd2}} 
 \index{inventaire.c@{inventaire.c}!detruire\_inventaire@{detruire\_inventaire}}
 \index{detruire\_inventaire@{detruire\_inventaire}!inventaire.c@{inventaire.c}}
 \doxysubsubsection{\texorpdfstring{detruire\_inventaire()}{detruire\_inventaire()}}
-{\footnotesize\ttfamily void $\ast$ detruire\+\_\+inventaire (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}} $\ast$$\ast$}]{inventaire }\end{DoxyParamCaption})}
-
-
-
-Détruit un inventaire. 
+{\footnotesize\ttfamily void $\ast$ detruire\+\_\+inventaire (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$$\ast$}]{inventaire }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
-{\em inventaire} & Adresse du pointeur sur inventaire\+\_\+t \\
+{\em inventaire} & Adresse du pointeur sur \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{inventaire_8c_a3cd781a9fa136894e7982481cba1a3f3_a3cd781a9fa136894e7982481cba1a3f3}\label{inventaire_8c_a3cd781a9fa136894e7982481cba1a3f3_a3cd781a9fa136894e7982481cba1a3f3}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{d4/d04/inventaire_8c_ad5b47c7ac8715bcc4b4c2b331370fcd2_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d04/inventaire_8c_ad5b47c7ac8715bcc4b4c2b331370fcd2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{inventaire_8c_a699ab6b7030b61f08e85b59355360a04}\label{inventaire_8c_a699ab6b7030b61f08e85b59355360a04}} 
 \index{inventaire.c@{inventaire.c}!equiper\_objet@{equiper\_objet}}
 \index{equiper\_objet@{equiper\_objet}!inventaire.c@{inventaire.c}}
 \doxysubsubsection{\texorpdfstring{equiper\_objet()}{equiper\_objet()}}
-{\footnotesize\ttfamily void equiper\+\_\+objet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$}]{j,  }\item[{\mbox{\hyperlink{objet_8h_ad0efc27a29533dbf784e717262509caa_ad0efc27a29533dbf784e717262509caa}{objet\+\_\+t}} $\ast$$\ast$}]{objet,  }\item[{\mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}} $\ast$}]{inventaire }\end{DoxyParamCaption})}
-
-
-
-Fonction qui permet de passer un objet du sac(non-\/équipé) à un emplacement d\textquotesingle{}équipement(équipé) dans l\textquotesingle{}inventaire. 
+{\footnotesize\ttfamily void equiper\+\_\+objet (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{objet\+\_\+t $\ast$$\ast$}]{objet }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
-{\em j} & Joueur à équiper \\
+{\em joueur} & Joueur à équiper \\
 \hline
 {\em objet} & Objet à équiper \\
 \hline
-{\em inventaire} & Inventaire du joueur \\
-\hline
 \end{DoxyParams}
-\mbox{\Hypertarget{inventaire_8c_ad45cfb53dc7eb49aee9dd20fc9607392_ad45cfb53dc7eb49aee9dd20fc9607392}\label{inventaire_8c_ad45cfb53dc7eb49aee9dd20fc9607392_ad45cfb53dc7eb49aee9dd20fc9607392}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d4/d04/inventaire_8c_a699ab6b7030b61f08e85b59355360a04_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d04/inventaire_8c_a699ab6b7030b61f08e85b59355360a04_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{inventaire_8c_af4759298331c6887427f1a2137910ad2}\label{inventaire_8c_af4759298331c6887427f1a2137910ad2}} 
 \index{inventaire.c@{inventaire.c}!equiper\_sac\_slot@{equiper\_sac\_slot}}
 \index{equiper\_sac\_slot@{equiper\_sac\_slot}!inventaire.c@{inventaire.c}}
 \doxysubsubsection{\texorpdfstring{equiper\_sac\_slot()}{equiper\_sac\_slot()}}
-{\footnotesize\ttfamily void equiper\+\_\+sac\+\_\+slot (\begin{DoxyParamCaption}\item[{int}]{slot }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void equiper\+\_\+sac\+\_\+slot (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{int}]{slot }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{inventaire_8c_a1144d923a9a0174ae254109cd825c758_a1144d923a9a0174ae254109cd825c758}\label{inventaire_8c_a1144d923a9a0174ae254109cd825c758_a1144d923a9a0174ae254109cd825c758}} 
+
+\begin{DoxyParams}{Paramètres}
+{\em slot} & Le slot de l\textquotesingle{}objet à équiper \\
+\hline
+{\em joueur} & Le joueur à équiper \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d04/inventaire_8c_af4759298331c6887427f1a2137910ad2_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d04/inventaire_8c_af4759298331c6887427f1a2137910ad2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{inventaire_8c_a1144d923a9a0174ae254109cd825c758}\label{inventaire_8c_a1144d923a9a0174ae254109cd825c758}} 
 \index{inventaire.c@{inventaire.c}!ramasser\_objet@{ramasser\_objet}}
 \index{ramasser\_objet@{ramasser\_objet}!inventaire.c@{inventaire.c}}
 \doxysubsubsection{\texorpdfstring{ramasser\_objet()}{ramasser\_objet()}}
-{\footnotesize\ttfamily void ramasser\+\_\+objet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{objet_8h_ad0efc27a29533dbf784e717262509caa_ad0efc27a29533dbf784e717262509caa}{objet\+\_\+t}} $\ast$}]{objet,  }\item[{\mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}} $\ast$}]{inventaire }\end{DoxyParamCaption})}
-
-
-
-Fonction qui permet de mettre un objet trouvé dans le sac(inventaire) 
+{\footnotesize\ttfamily void ramasser\+\_\+objet (\begin{DoxyParamCaption}\item[{objet\+\_\+t $\ast$}]{objet,  }\item[{\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$}]{inventaire }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
 {\em objet} & Objet trouvé \\
 \hline
+\end{DoxyParams}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d04/inventaire_8c_a1144d923a9a0174ae254109cd825c758_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{inventaire_8c_a8e7fe87d00260fd538a5b966b7cfec05}\label{inventaire_8c_a8e7fe87d00260fd538a5b966b7cfec05}} 
+\index{inventaire.c@{inventaire.c}!tout\_ramasser@{tout\_ramasser}}
+\index{tout\_ramasser@{tout\_ramasser}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{\texorpdfstring{tout\_ramasser()}{tout\_ramasser()}}
+{\footnotesize\ttfamily void tout\+\_\+ramasser (\begin{DoxyParamCaption}\item[{lobjet\+\_\+t $\ast$}]{objets,  }\item[{\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$}]{inventaire }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em objets} & Liste d\textquotesingle{}objets du jeu \\
+\hline
 {\em inventaire} & Inventaire du joueur \\
 \hline
 \end{DoxyParams}
-
-
-\doxysubsection{Documentation des variables}
-\mbox{\Hypertarget{inventaire_8c_abf04b1680f181d06f88c632ad33c4b1c_abf04b1680f181d06f88c632ad33c4b1c}\label{inventaire_8c_abf04b1680f181d06f88c632ad33c4b1c_abf04b1680f181d06f88c632ad33c4b1c}} 
-\index{inventaire.c@{inventaire.c}!inventaire@{inventaire}}
-\index{inventaire@{inventaire}!inventaire.c@{inventaire.c}}
-\doxysubsubsection{\texorpdfstring{inventaire}{inventaire}}
-{\footnotesize\ttfamily \mbox{\hyperlink{inventaire_8h_a31cf26aebd1ef1d0c10bd0340472da6a_a31cf26aebd1ef1d0c10bd0340472da6a}{inventaire\+\_\+t}}$\ast$ inventaire = N\+U\+LL}
-
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{d4/d04/inventaire_8c_a8e7fe87d00260fd538a5b966b7cfec05_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{d4/d04/inventaire_8c_a8e7fe87d00260fd538a5b966b7cfec05_icgraph}
+\end{center}
+\end{figure}

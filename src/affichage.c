@@ -1,6 +1,5 @@
 #include <affichage.h>
 #include <listes.h>
-#include <code_erreur.h>
 #include <personnage.h>
 #include <monstres.h>
 #include <math.h>
@@ -8,6 +7,7 @@
 #include <definition_commun.h>
 #include <interface.h>
 #include <sorts.h>
+#include <coffres.h>
 
 /**
  * \file affichage.c
@@ -35,7 +35,7 @@ float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépendent de l
 void * ajout_text_liste(void * t){return t;}
 
 void detruire_texture(t_aff **texture){
-    if(texture == NULL)
+    if(*texture == NULL)
         return;
     
     if((*texture)->aff_fenetre != NULL)
@@ -148,7 +148,13 @@ void def_texture_taille(t_aff * a_modifier, const int longueur, const int largeu
 }
 
 void info_texture(t_aff * texture){
-    printf("texture width: %d, height: %d\n", texture->width, texture->height);
+    printf("\ntexture: %p, width: %d, height: %d\n", texture, texture->width, texture->height);
+    if(texture->frame_anim != NULL){
+        printf("frame_anim: {x:%d, y:%d, w:%d, h:%d}\n", texture->frame_anim->x, texture->frame_anim->y, texture->frame_anim->w, texture->frame_anim->h);
+    }
+    if(texture->aff_fenetre != NULL){
+        printf("aff_fenetre: {x:%d, y:%d, w:%d, h:%d}\n\n", texture->aff_fenetre->x, texture->aff_fenetre->y, texture->aff_fenetre->w, texture->aff_fenetre->h);
+    }
 }
 
 t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multiplicateur_taille){
@@ -156,17 +162,17 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
     t_aff *texture = NULL;
 
     texture = malloc(sizeof(t_aff));
+
+    if(!texture){
+        warning("Erreur lors de la création de la texture", OUT_OF_MEM);
+        return NULL;
+    }
+
     /* Chargement de la texture dans une surface */
     if(nom_fichier != NULL){
         chargement = SDL_LoadBMP(nom_fichier);
         if(! chargement){
-            char *msp = malloc(sizeof(char) * (500));
-
-            sprintf(msp, "Erreur lors de la création de la texture : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_FICHIER);
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, msp);
-
-            free(msp);
+            warning("Erreur lors de la création de la texture : %s", ERREUR_FICHIER, SDL_GetError());
             return NULL;
         }
     
@@ -174,23 +180,27 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
         texture->texture = SDL_CreateTextureFromSurface(rendu_principal, chargement);
         SDL_FreeSurface(chargement); 
         if(! texture->texture){
-            char *msp = malloc(sizeof(char) * (500));
-
-            sprintf(msp, "Erreur lors de la convertion de la surface : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_SURFACE);
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la convertion de la surface : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_SURFACE);
-
-            free(msp);
+            warning("Erreur lors de la création de la texture : %s", ERREUR_FICHIER, SDL_GetError());
             free(texture);
             return NULL;
         }
 
-        SDL_QueryTexture(texture->texture, NULL, NULL, &texture->width, &texture->height);
+        if(SDL_QueryTexture(texture->texture, NULL, NULL, &texture->width, &texture->height)){
+            warning("Erreur lors de la création de la texture : %s", ERREUR_FICHIER, SDL_GetError());
+            free(texture);
+            return NULL;
+        }
     }
 
 
     if(taille_t_x > -1 && taille_t_y > -1){
         texture->frame_anim = malloc(sizeof(SDL_Rect));
+
+        if(!texture->frame_anim){
+            warning("Erreur lors de la création de la texture", OUT_OF_MEM);
+            free(texture);
+            return NULL;
+        }
 
         /* Création de la vue d'animation */
         texture->frame_anim->w = taille_t_x;
@@ -201,8 +211,13 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
     else
         texture->frame_anim = NULL;
 
-
     texture->aff_fenetre = malloc(sizeof(SDL_Rect));
+
+    if(!texture->aff_fenetre){
+        warning("Erreur lors de la création de la texture", OUT_OF_MEM);
+        free(texture);
+        return NULL;
+    }
 
     /* Création de la vue de la fenêtre */
     texture->aff_fenetre->x = x;
@@ -233,10 +248,16 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
 }
 
 err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
-    if(texture->frame_anim != NULL)
-        return SDL_RenderCopy(rendu,texture->texture, texture->frame_anim, texture->aff_fenetre);
-    else
-        return SDL_RenderCopy(rendu, texture->texture, NULL, texture->aff_fenetre);
+    if(texture != NULL){
+        if(texture->frame_anim != NULL)
+            return SDL_RenderCopy(rendu,texture->texture, texture->frame_anim, texture->aff_fenetre);
+        else
+            return SDL_RenderCopy(rendu, texture->texture, NULL, texture->aff_fenetre);
+    }
+    else{
+        printf("erreur afficher_texture(): texture == NULL\n");
+        return(-1);
+    }
 }
 
 t_l_aff* init_textures_joueur(joueur_t *j, int num_j){
@@ -408,6 +429,20 @@ void afficher_monstres(list * liste_monstre, joueur_t * joueur){
         if(monstre->action != MONSTRE_BLESSE || (monstre->action == MONSTRE_BLESSE && compteur%2) )
             afficher_texture(monstre->texture ,rendu_principal);
         suivant(liste_monstre);
+    }
+}
+
+void afficher_coffres(list * liste_coffre){
+    coffre_t * coffre = NULL;
+
+    if(liste_vide(liste_coffre))
+        return;
+
+    en_tete(liste_coffre);
+    while(!hors_liste(liste_coffre)){
+        coffre = valeur_elt(liste_coffre);
+            afficher_texture(coffre->texture ,rendu_principal);
+        suivant(liste_coffre);
     }
 }
 
@@ -647,8 +682,10 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
             continue;
         }
 
-        if(SDL_HasIntersection(&temp, element))
+        if(SDL_HasIntersection(&temp, element)){
+            interaction_coffre(element);
             return;
+        }
         suivant(m->liste_collisions);
     }
 
@@ -681,10 +718,12 @@ void deplacement_y_pers(t_map *m, joueur_t *j, int y){
     SDL_Rect temp = {.x = j->statut->vrai_zone_collision.x, .w = j->statut->vrai_zone_collision.w, .h = floor(j->textures_joueur->liste[0]->multipli_taille) * 3};
     SDL_Rect actuel = {.x = j->statut->vrai_zone_collision.x, .w = j->statut->vrai_zone_collision.w, .h = floor(j->textures_joueur->liste[0]->multipli_taille) * 3};
 
+    //si on va vers le bas
     if(y < 0){
         temp.y = j->statut->vrai_zone_collision.y + y * taille_unite + (j->statut->vrai_zone_collision.h - 3);
         actuel.y = j->statut->vrai_zone_collision.y + (j->statut->vrai_zone_collision.h - 3);
     }
+    //si on va vers le haut
     else {
         temp.y = j->statut->vrai_zone_collision.y + y * taille_unite;
         temp.h = j->statut->vrai_zone_collision.h;
@@ -697,7 +736,7 @@ void deplacement_y_pers(t_map *m, joueur_t *j, int y){
     {
         SDL_Rect *element = valeur_elt(m->liste_collisions);
 
-        if (element == &j->statut->vrai_zone_collision){ /* Si la collision nou concerne */
+        if (element == &j->statut->vrai_zone_collision){ /* Si la collision nous concerne */
             suivant(m->liste_collisions);
             continue;
         }
@@ -707,8 +746,10 @@ void deplacement_y_pers(t_map *m, joueur_t *j, int y){
             continue;
         }
 
-        if (SDL_HasIntersection(&temp, element))
+        if (SDL_HasIntersection(&temp, element)){
+            interaction_coffre(element);
             return;
+        }
         suivant(m->liste_collisions);
     }
 
@@ -739,22 +780,14 @@ void text_copier_position(t_aff * a_modifier, const t_aff * const original){
 
 bool rects_egal_x(const SDL_Rect * const r1, SDL_Rect const * const r2){
 
-    if(r1->w != r2->w)
-        return faux;
-
-    if(r1->x == r2->x)
-        return vrai;
+    return (r1->x == r2->x);
 
     return faux;
 }
 
 bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2){
 
-    if (r1->h != r2->h)
-        return faux;
-
-    if (r1->y == r2->y)
-        return vrai;
+    return (r1->h == r2->h);
 
     return faux;
 }
@@ -783,7 +816,7 @@ void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y){
     r_map->y = floor((ecran->y + y) * multipli_y);
 }
 
-void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
+bool deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
 {
     const int taille_unite = floor(map->taille_case / TAILLE_PERSONNAGE);
     SDL_Rect temp = {.x = r->x + x * taille_unite, .y = r->y, .w = r->w, .h = r->h};
@@ -805,25 +838,25 @@ void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
         }
 
         if (SDL_HasIntersection(&temp, element))
-            return;
+            return faux;
         suivant(m->liste_collisions);
     }
 
     if (r)
     {
         if (r->x + x * taille_unite < 0) /* Le personnage ne peut pas aller en haut */
-            return;
+            return faux;
         if (r->x + r->w + x * taille_unite > m->text_map->width) /* Le personnage ne peut pas aller en bas */
-            return;
+            return faux;
         if (texture->compteur_frame_anim % texture->duree_frame_anim)
             r->x += x * taille_unite;
     }
     else
     {
         if (texture->aff_fenetre->x + x * taille_unite < 0) /* Le personnage ne peut pas aller en haut */
-            return;
+            return faux;
         if (texture->aff_fenetre->x + texture->aff_fenetre->w + x * taille_unite > m->text_map->width) /* Le personnage ne peut pas aller en bas */
-            return;
+            return faux;
         if (texture->compteur_frame_anim % texture->duree_frame_anim)
             r->x += x * taille_unite;
     }
@@ -832,9 +865,11 @@ void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
         (texture->compteur_frame_anim) = 0;
     else
         (texture->compteur_frame_anim)++;
+
+    return vrai;
 }
 
-void deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
+bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
 {
     const int taille_unite = floor(map->taille_case / TAILLE_PERSONNAGE);
     SDL_Rect temp = {.x = r->x, .y = r->y + y * taille_unite, .w = r->w, .h = r->h};
@@ -867,25 +902,25 @@ void deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
         }
 
         if (SDL_HasIntersection(&temp, element))
-            return;
+            return faux;
         suivant(m->liste_collisions);
     }
 
     if(r)
     {
         if(r->y + y * taille_unite  < 0) /* Le personnage ne peut pas aller en haut */
-            return;
+            return faux;
         if (r->y + r->h + y * taille_unite > m->text_map->height) /* Le personnage ne peut pas aller en bas */
-            return;
+            return faux;
         if(texture->compteur_frame_anim % texture->duree_frame_anim)
             r->y += y * taille_unite;
     }
     else
     {
         if (texture->aff_fenetre->y + y * taille_unite< 0) /* Le personnage ne peut pas aller en haut */
-            return;
+            return faux;
         if (texture->aff_fenetre->y + texture->aff_fenetre->h + y * taille_unite> m->text_map->height) /* Le personnage ne peut pas aller en bas */
-            return;
+            return faux;
         if (texture->compteur_frame_anim % texture->duree_frame_anim)
             r->y += y * taille_unite;
     }
@@ -895,10 +930,12 @@ void deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
         (texture->compteur_frame_anim) = 0;
     else
         (texture->compteur_frame_anim)++;
+
+    return vrai;
 }
 
 void init_animations(){
-    heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
+    heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
 }
 
 t_aff * next_frame_animation(joueur_t * joueur){
@@ -906,7 +943,7 @@ t_aff * next_frame_animation(joueur_t * joueur){
 
     if (statut->animation == SOIN)
     {
-        if ((compteur % 2) == 0)
+        if ((compteur % 2) == 0 || statut->duree_anim == DUREE_SOIN) //cadence d'affichage et avec premier affichage immédiat dans tous les cas
         {
             /*si on a fait le tour du spritesheet soin, l'animation est terminée*/
             if (statut->duree_anim == 0)
@@ -937,10 +974,13 @@ void lister_animations(joueur_t ** joueurs, list * animations){
 void afficher_animations(list * animations){
     en_tete(animations);
 
-    while(!hors_liste(animations)){
+    while(!hors_liste(animations) && animations->ec->valeur != NULL){ //évite de boucler à l'infini en cas d'erreur
         afficher_texture(animations->ec->valeur, rendu_principal);
 
         suivant(animations);
+    }
+    if(!hors_liste(animations) && animations->ec->valeur == NULL){
+        printf("erreur afficher_animations(): une texture de la liste d'animations vaut NULL\n");
     }
 }
 
@@ -962,4 +1002,44 @@ void detruire_collision_dans_liste(list * liste_collisions, SDL_Rect * collision
         }
         suivant(liste_collisions);
     }
+}
+
+SDL_Point get_rect_center(const SDL_Rect *const r){
+    SDL_Point p;
+
+    if(r->w % 2)
+        p.x = r->w /2 + 1;
+    else
+        p.x = r->w;
+
+    if (r->h % 2)
+        p.y = r->h / 2 + 1;
+    else
+        p.y = r->h;
+
+    return p;
+}   
+
+SDL_Point get_rect_center_coord(const SDL_Rect *const r){
+    SDL_Point p;
+
+    if(r->w % 2)
+        p.x = r->x + (r->w /2 + 1);
+    else
+        p.x = r->x + r->w;
+
+    if (r->h % 2)
+        p.y = r->y + (r->h / 2 + 1);
+    else
+        p.y = r->y + r->h;
+
+    return p;
+}   
+
+void place_rect_center_from_point(SDL_Rect *r, SDL_Point p){
+
+    SDL_Point centre_rect = get_rect_center_coord(r);
+
+    r->x += p.x - centre_rect.x;
+    r->y += p.y - centre_rect.y;
 }

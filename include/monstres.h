@@ -12,6 +12,8 @@
 
 #include "definition_commun.h"
 #include "affichage.h"
+#include "map.h"
+#include "personnage.h"
 
 #define DISTANCE_AGRO 150
 #define DUREE_MONSTRE_MARCHER 100
@@ -22,8 +24,11 @@
 
 #define CHEMIN_TEXTURE "ressources/sprite"
 
-typedef enum {WITCHER,KNIGHT,BOSS}type_monstre_t;
-typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE, MONSTRE_BLESSE, ERREUR}action_monstre_t;
+typedef struct s_aff t_aff;
+typedef struct joueur_s joueur_t;
+
+typedef enum {WITCHER,KNIGHT,BOSS, TYPE_MONSTRE_INCONNU}type_monstre_t;
+typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE, MONSTRE_BLESSE}action_monstre_t;
 
 /**
  * \struct struct position
@@ -77,8 +82,8 @@ typedef struct base_monstre_s
 typedef struct liste_base_monstres_s
 {
     int nb_monstre;
-    base_monstre_t* tab;
-}liste_base_monstres_t;
+    base_monstre_t* tab; /**<nombre de modèles de monstres du jeu*/
+}liste_base_monstres_t; /**<modèles des monstres du jeu*/
 
 extern liste_base_monstres_t * liste_base_monstres;
 
@@ -88,14 +93,15 @@ extern liste_base_monstres_t * liste_base_monstres;
  * \param base_monstres structure base_monstres_t à détruire
  */
 
-void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres);
+void detruire_liste_base_monstres(liste_base_monstres_t ** liste_base_monstres);
 
 /**
- * \fn void charger_base_monstre(char* nom_fichier);
- * \brief Fonction qui recopie les informations d'un fichier json pour les insérrer dans la structure global liste_base_monstres
+ * \fn void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t ** liste_base_monstres)
+ * \brief Fonction qui recopie les informations d'un fichier json pour les insérrer dans la structure liste_base_monstres
  * \param nom_fichier nom du fichier à lire
+ * \param liste_base_monstres Base dans laquelle enregistrer les monstres
  */
-void charger_base_monstre(char* nom_fichier);
+void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t ** liste_base_monstres);
 
 /**
  * \fn monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, int x, int y);
@@ -122,7 +128,7 @@ void action_monstre(monstre_t * monstre, joueur_t * joueur);
  * \param nom_monstre La chaîne de caractères à convertir
  * \return type_monstre_t le type de monstre
  */
-type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre);
+type_monstre_t nom_monstre_to_type_monstre(const char * const nom_monstre);
 
 int distance_x_joueur(SDL_Rect collision, joueur_t * joueur);
 int distance_y_joueur(SDL_Rect collision, joueur_t * joueur);

@@ -73,91 +73,351 @@ $(function() {
 <div class="title">Référence du fichier map.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;json-c/json.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d5/dae/affichage_8h_source.html">affichage.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../dc/db7/map_8h_source.html">map.h</a>&gt;</code><br />
-<code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../da/de9/code__erreur_8h_source.html">code_erreur.h</a>&gt;</code><br />
-<code>#include &lt;math.h&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
+
+<p>Fonctions de gestion de la map.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de map.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d4/d5f/map_8c__incl.png" border="0" usemap="#map_8c" alt=""/></div>
 <map name="map_8c" id="map_8c">
-<area shape="rect" title=" " alt="" coords="263,5,326,32"/>
-<area shape="rect" title=" " alt="" coords="27,80,131,107"/>
-<area shape="rect" href="../../d5/dae/affichage_8h.html" title=" " alt="" coords="3497,80,3591,107"/>
-<area shape="rect" title=" " alt="" coords="5,169,72,196"/>
-<area shape="rect" title=" " alt="" coords="97,169,167,196"/>
-<area shape="rect" title=" " alt="" coords="191,169,262,196"/>
-<area shape="rect" title=" " alt="" coords="286,169,354,196"/>
-<area shape="rect" href="../../dc/db7/map_8h.html" title="Le fichier contient les définitions des fonctions de gestion de la map." alt="" coords="7161,169,7223,196"/>
-<area shape="rect" href="../../da/de9/code__erreur_8h.html" title="Fichier contenant les codes d&#39;erreur du programme." alt="" coords="3667,80,3778,107"/>
-<area shape="rect" title=" " alt="" coords="5085,169,5181,196"/>
-<area shape="rect" title=" " alt="" coords="5206,155,5373,211"/>
-<area shape="rect" title=" " alt="" coords="5397,155,5563,211"/>
-<area shape="rect" title=" " alt="" coords="5587,155,5754,211"/>
-<area shape="rect" title=" " alt="" coords="5778,155,5945,211"/>
-<area shape="rect" title=" " alt="" coords="5969,155,6135,211"/>
-<area shape="rect" title=" " alt="" coords="6159,155,6326,211"/>
-<area shape="rect" title=" " alt="" coords="6351,169,6447,196"/>
-<area shape="rect" title=" " alt="" coords="6471,169,6545,196"/>
-<area shape="rect" title=" " alt="" coords="6569,169,6644,196"/>
-<area shape="rect" title=" " alt="" coords="6669,169,6747,196"/>
-<area shape="rect" title=" " alt="" coords="6772,169,6844,196"/>
-<area shape="rect" title=" " alt="" coords="6869,169,6955,196"/>
-<area shape="rect" title=" " alt="" coords="6979,169,7050,196"/>
-<area shape="rect" title=" " alt="" coords="7074,169,7137,196"/>
-<area shape="rect" title=" " alt="" coords="378,169,451,196"/>
-<area shape="rect" title=" " alt="" coords="475,155,642,211"/>
-<area shape="rect" title=" " alt="" coords="666,169,739,196"/>
-<area shape="rect" title=" " alt="" coords="763,155,930,211"/>
-<area shape="rect" title=" " alt="" coords="954,155,1121,211"/>
-<area shape="rect" title=" " alt="" coords="1145,155,1311,211"/>
-<area shape="rect" title=" " alt="" coords="1335,155,1502,211"/>
-<area shape="rect" title=" " alt="" coords="1526,155,1693,211"/>
-<area shape="rect" title=" " alt="" coords="1717,155,1883,211"/>
-<area shape="rect" title=" " alt="" coords="1907,155,2074,211"/>
-<area shape="rect" title=" " alt="" coords="2098,155,2265,211"/>
-<area shape="rect" title=" " alt="" coords="2289,155,2455,211"/>
-<area shape="rect" title=" " alt="" coords="2480,169,2579,196"/>
-<area shape="rect" title=" " alt="" coords="2603,155,2770,211"/>
-<area shape="rect" title=" " alt="" coords="2794,155,2961,211"/>
-<area shape="rect" title=" " alt="" coords="2985,155,3151,211"/>
-<area shape="rect" title=" " alt="" coords="3175,155,3342,211"/>
-<area shape="rect" title=" " alt="" coords="3366,155,3533,211"/>
-<area shape="rect" title=" " alt="" coords="3557,155,3723,211"/>
-<area shape="rect" title=" " alt="" coords="3747,155,3914,211"/>
-<area shape="rect" title=" " alt="" coords="3938,155,4105,211"/>
-<area shape="rect" title=" " alt="" coords="4129,155,4295,211"/>
-<area shape="rect" title=" " alt="" coords="4319,155,4486,211"/>
-<area shape="rect" title=" " alt="" coords="4510,155,4677,211"/>
-<area shape="rect" title=" " alt="" coords="4701,155,4869,211"/>
-<area shape="rect" title=" " alt="" coords="4894,155,5061,211"/>
+<area shape="rect" title="Fonctions de gestion de la map." alt="" coords="482,5,545,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,109,107"/>
+<area shape="rect" href="../../d5/dae/affichage_8h.html" title="Fichier contenant les définitions et les fonctions liées au module affichage." alt="" coords="381,80,475,107"/>
+<area shape="rect" href="../../dc/db7/map_8h.html" title="Définitions des fonctions de gestion de la map." alt="" coords="185,155,247,181"/>
+<area shape="rect" href="../../d0/d1f/monstres_8h.html" title="Fonctions concernant les monstres." alt="" coords="110,229,205,256"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html" title="Fichier contenant toutes les définitions concernant le personnage." alt="" coords="331,304,442,331"/>
+<area shape="rect" title=" " alt="" coords="551,80,622,107"/>
+<area shape="rect" title=" " alt="" coords="647,80,713,107"/>
+<area shape="rect" title=" " alt="" coords="738,80,809,107"/>
+<area shape="rect" href="../../da/de9/code__erreur_8h.html" title="Fichier contenant les codes d&#39;erreur du programme." alt="" coords="833,80,943,107"/>
+<area shape="rect" title=" " alt="" coords="967,80,1035,107"/>
+<area shape="rect" href="../../d4/d78/fonctions_8h.html" title="Définitions des fonctions d&#39;initialisation." alt="" coords="254,80,349,107"/>
+<area shape="rect" href="../../d1/daa/definition__commun_8h.html" title="Contient toutes les définitions communes à tout les fichiers." alt="" coords="218,603,377,629"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html" title=" " alt="" coords="280,229,349,256"/>
+<area shape="rect" href="../../d2/d9f/inventaire_8h.html" title="Définition des fonctions relatives au module inventaire." alt="" coords="337,379,437,405"/>
+<area shape="rect" href="../../d7/d64/liste__objet_8h.html" title="Définition relatives aux structures contenant les objets." alt="" coords="335,453,438,480"/>
+<area shape="rect" href="../../d4/d0b/objet_8h.html" title="Définitions concernant les objets." alt="" coords="353,528,420,555"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a7ea38c5f7f7daf29e01fbc3a4d560a0a"><td class="memItemLeft" align="right" valign="top">SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c_a7ea38c5f7f7daf29e01fbc3a4d560a0a.html#a7ea38c5f7f7daf29e01fbc3a4d560a0a">taille_ecran_cases</a> ()</td></tr>
+<tr class="memitem:a7ea38c5f7f7daf29e01fbc3a4d560a0a"><td class="memItemLeft" align="right" valign="top">SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c.html#a7ea38c5f7f7daf29e01fbc3a4d560a0a">taille_ecran_cases</a> ()</td></tr>
 <tr class="separator:a7ea38c5f7f7daf29e01fbc3a4d560a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c30bc495bad0cbcfe07c02d01d636a2"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c_a7c30bc495bad0cbcfe07c02d01d636a2.html#a7c30bc495bad0cbcfe07c02d01d636a2">charger_f_map</a> (const char *const nom_map)</td></tr>
-<tr class="memdesc:a7c30bc495bad0cbcfe07c02d01d636a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui charge le contenu du fichier dont le nom est donné en paramètre dans un buffer de caractères.  <a href="../../d3/d7a/map_8c_a7c30bc495bad0cbcfe07c02d01d636a2.html#a7c30bc495bad0cbcfe07c02d01d636a2">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a7c30bc495bad0cbcfe07c02d01d636a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab600cf609ed952e35c2bd6dae616313d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d90/structt__map.html">t_map</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c_ab600cf609ed952e35c2bd6dae616313d.html#ab600cf609ed952e35c2bd6dae616313d">charger_s_map</a> (char *buffer)</td></tr>
-<tr class="memdesc:ab600cf609ed952e35c2bd6dae616313d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui récupère les informations stockées dans le buffer en entrée.  <a href="../../d3/d7a/map_8c_ab600cf609ed952e35c2bd6dae616313d.html#ab600cf609ed952e35c2bd6dae616313d">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ab600cf609ed952e35c2bd6dae616313d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd78a434afc7dae4de6de6e0b879ccb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/dae/affichage_8h_ab2e17a80d37e499100846e778df315bd.html#ab2e17a80d37e499100846e778df315bd">t_aff</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c_abd78a434afc7dae4de6de6e0b879ccb8.html#abd78a434afc7dae4de6de6e0b879ccb8">texture_map</a> (const <a class="el" href="../../d3/d90/structt__map.html">t_map</a> *<a class="el" href="../../dc/db7/map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>)</td></tr>
-<tr class="memdesc:abd78a434afc7dae4de6de6e0b879ccb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui renvoie la texture de la map.  <a href="../../d3/d7a/map_8c_abd78a434afc7dae4de6de6e0b879ccb8.html#abd78a434afc7dae4de6de6e0b879ccb8">Plus de détails...</a><br /></td></tr>
+<tr class="memitem:af6448083132a6591f73061457f30ebb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c.html#af6448083132a6591f73061457f30ebb3">charger_map</a> (const char *const nom_map)</td></tr>
+<tr class="memdesc:af6448083132a6591f73061457f30ebb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui récupère les informations stockées dans le buffer en entrée.  <a href="../../d3/d7a/map_8c.html#af6448083132a6591f73061457f30ebb3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af6448083132a6591f73061457f30ebb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd78a434afc7dae4de6de6e0b879ccb8"><td class="memItemLeft" align="right" valign="top">t_aff *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c.html#abd78a434afc7dae4de6de6e0b879ccb8">texture_map</a> (const <a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a> *<a class="el" href="../../dc/db7/map_8h.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>)</td></tr>
+<tr class="memdesc:abd78a434afc7dae4de6de6e0b879ccb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui renvoie la texture de la map.  <a href="../../d3/d7a/map_8c.html#abd78a434afc7dae4de6de6e0b879ccb8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abd78a434afc7dae4de6de6e0b879ccb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a38d488f4584c0d15046cf0297d474a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c.html#a9a38d488f4584c0d15046cf0297d474a">detruire_map</a> (<a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a> **<a class="el" href="../../dc/db7/map_8h.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>)</td></tr>
+<tr class="separator:a9a38d488f4584c0d15046cf0297d474a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a36cad71a42c80da1f12a50caff8d00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c.html#a1a36cad71a42c80da1f12a50caff8d00">transition</a> (<a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a> **actuelle, const char *const nom_map, joueur_t **joueurs, unsigned short int nb_joueurs)</td></tr>
+<tr class="separator:a1a36cad71a42c80da1f12a50caff8d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e9c15657f08efce7a84ec6822c064e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c.html#a7e9c15657f08efce7a84ec6822c064e2">tp_joueurs</a> (<a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a> *<a class="el" href="../../dc/db7/map_8h.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>, unsigned int x, unsigned int y, joueur_t **joueurs, unsigned short int nb_joueurs)</td></tr>
+<tr class="separator:a7e9c15657f08efce7a84ec6822c064e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a4bacbbb5c2d9a6cbd19ca4cba0dac1ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d90/structt__map.html">t_map</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a></td></tr>
+<tr class="memitem:a4bacbbb5c2d9a6cbd19ca4cba0dac1ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a></td></tr>
 <tr class="separator:a4bacbbb5c2d9a6cbd19ca4cba0dac1ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><dl class="section author"><dt>Auteur</dt><dd>Ange Despert (<a href="#" onclick="location.href='mai'+'lto:'+'Ang'+'e.'+'Des'+'pe'+'rt.'+'Et'+'u@u'+'ni'+'v-l'+'em'+'ans'+'.f'+'r'; return false;">Ange.<span style="display: none;">.nosp@m.</span>Desp<span style="display: none;">.nosp@m.</span>ert.E<span style="display: none;">.nosp@m.</span>tu@u<span style="display: none;">.nosp@m.</span>niv-l<span style="display: none;">.nosp@m.</span>eman<span style="display: none;">.nosp@m.</span>s.fr</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>28/03/2022 </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="af6448083132a6591f73061457f30ebb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6448083132a6591f73061457f30ebb3">&#9670;&nbsp;</a></span>charger_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a>* charger_map </td>
+          <td>(</td>
+          <td class="paramtype">const char *const&#160;</td>
+          <td class="paramname"><em>nom_map</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">liste_base_monstres</td><td>Les montres à placer sur la map </td></tr>
+    <tr><td class="paramname">buffer</td><td>Le buffeur qui contient les informations </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Une map initialisée avec toutes les informations dedans; </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_cgraph.png" border="0" usemap="#d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_cgraph" alt=""/></div>
+<map name="d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_cgraph" id="d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_cgraph">
+<area shape="rect" title="Fonction qui récupère les informations stockées dans le buffer en entrée." alt="" coords="5,81,112,108"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title=" " alt="" coords="540,5,632,32"/>
+<area shape="rect" href="../../d9/d79/monstres_8c.html#a59111ee22050f72202e7a958275b05f4" title=" " alt="" coords="160,81,276,108"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0" title=" " alt="" coords="353,31,463,57"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#adce0cb151a53ff2182012642c95262be" title=" " alt="" coords="175,132,261,159"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a44494ff9efed6cd1416119b4a4f3dca2" title=" " alt="" coords="179,183,257,209"/>
+<area shape="rect" href="../../d9/d79/monstres_8c.html#a46bbe288759d918b5391361c7abf41d5" title=" " alt="" coords="324,82,492,123"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title=" " alt="" coords="365,148,451,175"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_icgraph.png" border="0" usemap="#d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_icgraph" alt=""/></div>
+<map name="d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_icgraph" id="d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_icgraph">
+<area shape="rect" title="Fonction qui récupère les informations stockées dans le buffer en entrée." alt="" coords="137,31,244,57"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="20,5,75,32"/>
+<area shape="rect" href="../../dc/db7/map_8h.html#a1a36cad71a42c80da1f12a50caff8d00" title=" " alt="" coords="5,56,89,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9a38d488f4584c0d15046cf0297d474a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a38d488f4584c0d15046cf0297d474a">&#9670;&nbsp;</a></span>detruire_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void detruire_map </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a> **&#160;</td>
+          <td class="paramname"><em>map</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d7a/map_8c_a9a38d488f4584c0d15046cf0297d474a_cgraph.png" border="0" usemap="#d3/d7a/map_8c_a9a38d488f4584c0d15046cf0297d474a_cgraph" alt=""/></div>
+<map name="d3/d7a/map_8c_a9a38d488f4584c0d15046cf0297d474a_cgraph" id="d3/d7a/map_8c_a9a38d488f4584c0d15046cf0297d474a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,220,115,247"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a4597d1c1550e48dc54b54b240ab3c0e9" title="Détruit une structure liste." alt="" coords="172,245,280,272"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="556,245,627,272"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="816,195,901,221"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title=" " alt="" coords="555,397,627,424"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="690,347,761,373"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a6e1d5af117ac87c2c309507f4750dcb9" title="Fonction qui détruit une structure d&#39;affichage de texture passée en paramètre." alt="" coords="163,296,289,323"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ac84d5f990f188eed04f7670abf38b020" title="Fonction qui permet de selectionner l&#39;élément courant à partor d&#39;un élément précis." alt="" coords="337,144,500,171"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="548,43,635,69"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#af234a65d00ef1f963f212d6761636941" title=" " alt="" coords="373,271,464,297"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title=" " alt="" coords="683,195,768,221"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d7a/map_8c_a9a38d488f4584c0d15046cf0297d474a_icgraph.png" border="0" usemap="#d3/d7a/map_8c_a9a38d488f4584c0d15046cf0297d474a_icgraph" alt=""/></div>
+<map name="d3/d7a/map_8c_a9a38d488f4584c0d15046cf0297d474a_icgraph" id="d3/d7a/map_8c_a9a38d488f4584c0d15046cf0297d474a_icgraph">
+<area shape="rect" title=" " alt="" coords="137,5,247,32"/>
+<area shape="rect" href="../../dc/db7/map_8h.html#a1a36cad71a42c80da1f12a50caff8d00" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7ea38c5f7f7daf29e01fbc3a4d560a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea38c5f7f7daf29e01fbc3a4d560a0a">&#9670;&nbsp;</a></span>taille_ecran_cases()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Rect taille_ecran_cases </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd78a434afc7dae4de6de6e0b879ccb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd78a434afc7dae4de6de6e0b879ccb8">&#9670;&nbsp;</a></span>texture_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">t_aff* texture_map </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a> *&#160;</td>
+          <td class="paramname"><em>map</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td>La map dont on veut la texture </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La texture de la map </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d7a/map_8c_abd78a434afc7dae4de6de6e0b879ccb8_icgraph.png" border="0" usemap="#d3/d7a/map_8c_abd78a434afc7dae4de6de6e0b879ccb8_icgraph" alt=""/></div>
+<map name="d3/d7a/map_8c_abd78a434afc7dae4de6de6e0b879ccb8_icgraph" id="d3/d7a/map_8c_abd78a434afc7dae4de6de6e0b879ccb8_icgraph">
+<area shape="rect" title="Fonction qui renvoie la texture de la map." alt="" coords="108,5,213,32"/>
+<area shape="rect" href="../../d8/dda/test__map_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7e9c15657f08efce7a84ec6822c064e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e9c15657f08efce7a84ec6822c064e2">&#9670;&nbsp;</a></span>tp_joueurs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tp_joueurs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a> *&#160;</td>
+          <td class="paramname"><em>map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">joueur_t **&#160;</td>
+          <td class="paramname"><em>joueurs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned short int&#160;</td>
+          <td class="paramname"><em>nb_joueurs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d7a/map_8c_a7e9c15657f08efce7a84ec6822c064e2_cgraph.png" border="0" usemap="#d3/d7a/map_8c_a7e9c15657f08efce7a84ec6822c064e2_cgraph" alt=""/></div>
+<map name="d3/d7a/map_8c_a7e9c15657f08efce7a84ec6822c064e2_cgraph" id="d3/d7a/map_8c_a7e9c15657f08efce7a84ec6822c064e2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,96,32"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#aad94b2ce0d93f581c0f82b0467a8d2ed" title="Renvoie les coordonnées du centre du rectangle." alt="" coords="367,5,533,32"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a26cf1d2055162e3bf7166de2f55902f9" title="Fonction qui permet de placer le centre du rectangle donné en paramètre à un point précis." alt="" coords="144,27,319,69"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1a36cad71a42c80da1f12a50caff8d00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a36cad71a42c80da1f12a50caff8d00">&#9670;&nbsp;</a></span>transition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void transition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a> **&#160;</td>
+          <td class="paramname"><em>actuelle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *const&#160;</td>
+          <td class="paramname"><em>nom_map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">joueur_t **&#160;</td>
+          <td class="paramname"><em>joueurs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned short int&#160;</td>
+          <td class="paramname"><em>nb_joueurs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d7a/map_8c_a1a36cad71a42c80da1f12a50caff8d00_cgraph.png" border="0" usemap="#d3/d7a/map_8c_a1a36cad71a42c80da1f12a50caff8d00_cgraph" alt=""/></div>
+<map name="d3/d7a/map_8c_a1a36cad71a42c80da1f12a50caff8d00_cgraph" id="d3/d7a/map_8c_a1a36cad71a42c80da1f12a50caff8d00_cgraph">
+<area shape="rect" title=" " alt="" coords="5,705,89,732"/>
+<area shape="rect" href="../../d3/d7a/map_8c.html#af6448083132a6591f73061457f30ebb3" title="Fonction qui récupère les informations stockées dans le buffer en entrée." alt="" coords="153,148,259,175"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a3e6b4564952e31a2d9e9d0c98dd6ee78" title=" " alt="" coords="137,756,275,783"/>
+<area shape="rect" href="../../d3/d7a/map_8c.html#a9a38d488f4584c0d15046cf0297d474a" title=" " alt="" coords="151,629,261,656"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a6e1d5af117ac87c2c309507f4750dcb9" title="Fonction qui détruit une structure d&#39;affichage de texture passée en paramètre." alt="" coords="331,781,457,808"/>
+<area shape="rect" href="../../d1/d41/init__close_8c.html#aad95fee9e6bf2bd4c8ae74d98e1a6821" title=" " alt="" coords="147,832,265,859"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title=" " alt="" coords="729,64,821,91"/>
+<area shape="rect" href="../../d9/d79/monstres_8c.html#a59111ee22050f72202e7a958275b05f4" title=" " alt="" coords="336,64,452,91"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0" title=" " alt="" coords="543,5,652,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#adce0cb151a53ff2182012642c95262be" title=" " alt="" coords="555,224,640,251"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a44494ff9efed6cd1416119b4a4f3dca2" title=" " alt="" coords="355,173,433,200"/>
+<area shape="rect" href="../../d9/d79/monstres_8c.html#a46bbe288759d918b5391361c7abf41d5" title=" " alt="" coords="513,57,681,98"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title=" " alt="" coords="869,477,955,504"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a4597d1c1550e48dc54b54b240ab3c0e9" title="Détruit une structure liste." alt="" coords="340,629,448,656"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="740,579,811,605"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="1003,528,1088,555"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title=" " alt="" coords="739,731,811,757"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="877,680,947,707"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ac84d5f990f188eed04f7670abf38b020" title="Fonction qui permet de selectionner l&#39;élément courant à partor d&#39;un élément précis." alt="" coords="516,503,679,529"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="732,376,819,403"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#af234a65d00ef1f963f212d6761636941" title=" " alt="" coords="552,629,643,656"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#ab74333683d8d4816aa1331794b3b9e94" title=" " alt="" coords="323,883,465,909"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#ada2e4bcab49cd7c1563aef3afa20f75d" title=" " alt="" coords="323,832,465,859"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a id="a4bacbbb5c2d9a6cbd19ca4cba0dac1ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">&#9670;&nbsp;</a></span>map</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a>* map</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>La map courante </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

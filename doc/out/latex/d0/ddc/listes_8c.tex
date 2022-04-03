@@ -1,98 +1,100 @@
 \hypertarget{listes_8c}{}\doxysection{Référence du fichier listes.\+c}
 \label{listes_8c}\index{listes.c@{listes.c}}
-{\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
-Graphe des dépendances par inclusion de listes.\+c\+:
-\nopagebreak
+
+
+Fonctions relatives au type de structure liste générique.  
+
+
+Graphe des dépendances par inclusion de listes.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=202pt]{d6/d03/listes_8c__incl}
+\includegraphics[width=272pt]{d6/d03/listes_8c__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{structelement}{element}}
-\item 
-struct \mbox{\hyperlink{structlist}{list}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Définitions de type}
-\begin{DoxyCompactItemize}
-\item 
-typedef \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{structelement}{element}} \mbox{\hyperlink{listes_8c_aaa9f09bf55fb32a9090e2dc051b75a6a_aaa9f09bf55fb32a9090e2dc051b75a6a}{t\+\_\+element}}
-\item 
-typedef \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{listes_8c_aa295f649a192b2bcdc06effc2f71dde4_aa295f649a192b2bcdc06effc2f71dde4}{list}}
-\end{DoxyCompactItemize}
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{listes_8c_a44494ff9efed6cd1416119b4a4f3dca2_a44494ff9efed6cd1416119b4a4f3dca2}{init\+\_\+liste}} (void $\ast$($\ast$fonction\+\_\+ajout)(void $\ast$), void($\ast$fonction\+\_\+suppresion)(void $\ast$), void($\ast$fonction\+\_\+affichage)(void $\ast$))
+\mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{listes_8c_a44494ff9efed6cd1416119b4a4f3dca2}{init\+\_\+liste}} (void $\ast$($\ast$fonction\+\_\+ajout)(void $\ast$), void($\ast$fonction\+\_\+suppresion)(void $\ast$), void($\ast$fonction\+\_\+affichage)(void $\ast$))
 \item 
-\+\_\+\+Bool \mbox{\hyperlink{listes_8c_abe07097bbae832dce242428fdb1d95b4_abe07097bbae832dce242428fdb1d95b4}{liste\+\_\+vide}} (const \mbox{\hyperlink{structlist}{list}} $\ast$const to\+\_\+verify)
+\+\_\+\+Bool \mbox{\hyperlink{listes_8c_abe07097bbae832dce242428fdb1d95b4}{liste\+\_\+vide}} (const \mbox{\hyperlink{structlist}{list}} $\ast$const to\+\_\+verify)
 \item 
-\+\_\+\+Bool \mbox{\hyperlink{listes_8c_a0636ccaaa4306ef8525a26cadc4a4805_a0636ccaaa4306ef8525a26cadc4a4805}{hors\+\_\+liste}} (const \mbox{\hyperlink{structlist}{list}} $\ast$const to\+\_\+verify)
+\+\_\+\+Bool \mbox{\hyperlink{listes_8c_a0636ccaaa4306ef8525a26cadc4a4805}{hors\+\_\+liste}} (const \mbox{\hyperlink{structlist}{list}} $\ast$const to\+\_\+verify)
 \item 
-void \mbox{\hyperlink{listes_8c_a9c780173ba80450b8a01ba4c14963437_a9c780173ba80450b8a01ba4c14963437}{en\+\_\+tete}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
+void \mbox{\hyperlink{listes_8c_a9c780173ba80450b8a01ba4c14963437}{en\+\_\+tete}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
 \item 
-void \mbox{\hyperlink{listes_8c_adce0cb151a53ff2182012642c95262be_adce0cb151a53ff2182012642c95262be}{en\+\_\+queue}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
+void \mbox{\hyperlink{listes_8c_adce0cb151a53ff2182012642c95262be}{en\+\_\+queue}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
 \item 
-void \mbox{\hyperlink{listes_8c_ad6061cfcccc3fe717413526943f7bddc_ad6061cfcccc3fe717413526943f7bddc}{suivant}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
+void \mbox{\hyperlink{listes_8c_ad6061cfcccc3fe717413526943f7bddc}{suivant}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
 \item 
-void \mbox{\hyperlink{listes_8c_a2afbd9c9fde39b0f0c20e628718b7576_a2afbd9c9fde39b0f0c20e628718b7576}{precedent}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
+void \mbox{\hyperlink{listes_8c_a2afbd9c9fde39b0f0c20e628718b7576}{precedent}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
 \item 
-void $\ast$ \mbox{\hyperlink{listes_8c_a37afb4f802843bd21792cd494296d9dc_a37afb4f802843bd21792cd494296d9dc}{valeur\+\_\+elt}} (const \mbox{\hyperlink{structlist}{list}} $\ast$const mylist)
+void $\ast$ \mbox{\hyperlink{listes_8c_a37afb4f802843bd21792cd494296d9dc}{valeur\+\_\+elt}} (const \mbox{\hyperlink{structlist}{list}} $\ast$const mylist)
 \item 
-void \mbox{\hyperlink{listes_8c_ac553c0418726475fa46b69b1aaaec8f9_ac553c0418726475fa46b69b1aaaec8f9}{modif\+\_\+elt}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist, void $\ast$v)
+void \mbox{\hyperlink{listes_8c_ac553c0418726475fa46b69b1aaaec8f9}{modif\+\_\+elt}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist, void $\ast$v)
 \item 
-void \mbox{\hyperlink{listes_8c_a59c2257ab1cda9f78444e6b71a8a0c8d_a59c2257ab1cda9f78444e6b71a8a0c8d}{oter\+\_\+elt}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
+void \mbox{\hyperlink{listes_8c_a59c2257ab1cda9f78444e6b71a8a0c8d}{oter\+\_\+elt}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
 \item 
-void \mbox{\hyperlink{listes_8c_a5460022305fdfacd6e0864968fea1841_a5460022305fdfacd6e0864968fea1841}{ajout\+\_\+droit}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist, void $\ast$v)
+void \mbox{\hyperlink{listes_8c_a5460022305fdfacd6e0864968fea1841}{ajout\+\_\+droit}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist, void $\ast$v)
 \item 
-void \mbox{\hyperlink{listes_8c_afec29ddee61034f0def935f3a556a53e_afec29ddee61034f0def935f3a556a53e}{ajout\+\_\+gauche}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist, void $\ast$v)
+void \mbox{\hyperlink{listes_8c_afec29ddee61034f0def935f3a556a53e}{ajout\+\_\+gauche}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist, void $\ast$v)
 \item 
-unsigned int \mbox{\hyperlink{listes_8c_ad4603e6751766ee0c8ef54c5240e4c5c_ad4603e6751766ee0c8ef54c5240e4c5c}{taille\+\_\+liste}} (const \mbox{\hyperlink{structlist}{list}} $\ast$const mylist)
+unsigned int \mbox{\hyperlink{listes_8c_ad4603e6751766ee0c8ef54c5240e4c5c}{taille\+\_\+liste}} (const \mbox{\hyperlink{structlist}{list}} $\ast$const mylist)
 \item 
-void \mbox{\hyperlink{listes_8c_af234a65d00ef1f963f212d6761636941_af234a65d00ef1f963f212d6761636941}{vider\+\_\+liste}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
+void \mbox{\hyperlink{listes_8c_af234a65d00ef1f963f212d6761636941}{vider\+\_\+liste}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
 \item 
-void \mbox{\hyperlink{listes_8c_a4597d1c1550e48dc54b54b240ab3c0e9_a4597d1c1550e48dc54b54b240ab3c0e9}{detruire\+\_\+liste}} (\mbox{\hyperlink{structlist}{list}} $\ast$$\ast$liste)
+void \mbox{\hyperlink{listes_8c_a4597d1c1550e48dc54b54b240ab3c0e9}{detruire\+\_\+liste}} (\mbox{\hyperlink{structlist}{list}} $\ast$$\ast$liste)
 \begin{DoxyCompactList}\small\item\em Détruit une structure liste. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{listes_8c_a68be9a4fdaac39551f98573ba4041fec_a68be9a4fdaac39551f98573ba4041fec}{afficher\+\_\+liste}} (\mbox{\hyperlink{structlist}{list}} $\ast$liste)
-\begin{DoxyCompactList}\small\item\em Affiche une liste d\textquotesingle{}objets génériques. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{listes_8c_a68be9a4fdaac39551f98573ba4041fec}{afficher\+\_\+liste}} (\mbox{\hyperlink{structlist}{list}} $\ast$liste)
+\begin{DoxyCompactList}\small\item\em Affiche une liste d\textquotesingle{}objets génériques. \end{DoxyCompactList}\item 
+\+\_\+\+Bool \mbox{\hyperlink{listes_8c_ac84d5f990f188eed04f7670abf38b020}{selectionner\+\_\+element}} (\mbox{\hyperlink{structlist}{list}} $\ast$liste, void $\ast$\mbox{\hyperlink{structelement}{element}}, \+\_\+\+Bool($\ast$f\+\_\+egalite)(void $\ast$, void $\ast$))
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de selectionner l\textquotesingle{}élément courant à partor d\textquotesingle{}un élément précis. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Documentation des définitions de type}
-\mbox{\Hypertarget{listes_8c_aa295f649a192b2bcdc06effc2f71dde4_aa295f649a192b2bcdc06effc2f71dde4}\label{listes_8c_aa295f649a192b2bcdc06effc2f71dde4_aa295f649a192b2bcdc06effc2f71dde4}} 
-\index{listes.c@{listes.c}!list@{list}}
-\index{list@{list}!listes.c@{listes.c}}
-\doxysubsubsection{\texorpdfstring{list}{list}}
-{\footnotesize\ttfamily typedef \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}}
+\doxysubsection{Description détaillée}
+\begin{DoxyAuthor}{Auteur}
+Ange Despert (\href{mailto:Ange.Despert.Etu@univ-lemans.fr}{\texttt{ Ange.\+Despert.\+Etu@univ-\/lemans.\+fr}}) 
 
-\mbox{\Hypertarget{listes_8c_aaa9f09bf55fb32a9090e2dc051b75a6a_aaa9f09bf55fb32a9090e2dc051b75a6a}\label{listes_8c_aaa9f09bf55fb32a9090e2dc051b75a6a_aaa9f09bf55fb32a9090e2dc051b75a6a}} 
-\index{listes.c@{listes.c}!t\_element@{t\_element}}
-\index{t\_element@{t\_element}!listes.c@{listes.c}}
-\doxysubsubsection{\texorpdfstring{t\_element}{t\_element}}
-{\footnotesize\ttfamily typedef \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{structelement}{element}} \mbox{\hyperlink{listes_8c_aaa9f09bf55fb32a9090e2dc051b75a6a_aaa9f09bf55fb32a9090e2dc051b75a6a}{t\+\_\+element}}}
-
+Max Descomps (\href{mailto:Max.Descomps.Etu@univ-lemans.fr}{\texttt{ Max.\+Descomps.\+Etu@univ-\/lemans.\+fr}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+28/03/2022 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{listes_8c_a68be9a4fdaac39551f98573ba4041fec_a68be9a4fdaac39551f98573ba4041fec}\label{listes_8c_a68be9a4fdaac39551f98573ba4041fec_a68be9a4fdaac39551f98573ba4041fec}} 
+\mbox{\Hypertarget{listes_8c_a68be9a4fdaac39551f98573ba4041fec}\label{listes_8c_a68be9a4fdaac39551f98573ba4041fec}} 
 \index{listes.c@{listes.c}!afficher\_liste@{afficher\_liste}}
 \index{afficher\_liste@{afficher\_liste}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{afficher\_liste()}{afficher\_liste()}}
 {\footnotesize\ttfamily void afficher\+\_\+liste (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste }\end{DoxyParamCaption})}
 
 
-
-Affiche une liste d\textquotesingle{}objets génériques. 
-
-
 \begin{DoxyParams}{Paramètres}
 {\em liste} & Pointeur sur la liste \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{listes_8c_a5460022305fdfacd6e0864968fea1841_a5460022305fdfacd6e0864968fea1841}\label{listes_8c_a5460022305fdfacd6e0864968fea1841_a5460022305fdfacd6e0864968fea1841}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{d0/ddc/listes_8c_a68be9a4fdaac39551f98573ba4041fec_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{d0/ddc/listes_8c_a68be9a4fdaac39551f98573ba4041fec_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{listes_8c_a5460022305fdfacd6e0864968fea1841}\label{listes_8c_a5460022305fdfacd6e0864968fea1841}} 
 \index{listes.c@{listes.c}!ajout\_droit@{ajout\_droit}}
 \index{ajout\_droit@{ajout\_droit}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{ajout\_droit()}{ajout\_droit()}}
@@ -107,7 +109,14 @@ Fonction qui permet d\textquotesingle{}ajouter un élément à droite de l\textq
 {\em v} & L\textquotesingle{}élément que l\textquotesingle{}on veut ajouter \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{listes_8c_afec29ddee61034f0def935f3a556a53e_afec29ddee61034f0def935f3a556a53e}\label{listes_8c_afec29ddee61034f0def935f3a556a53e_afec29ddee61034f0def935f3a556a53e}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_a5460022305fdfacd6e0864968fea1841_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{listes_8c_afec29ddee61034f0def935f3a556a53e}\label{listes_8c_afec29ddee61034f0def935f3a556a53e}} 
 \index{listes.c@{listes.c}!ajout\_gauche@{ajout\_gauche}}
 \index{ajout\_gauche@{ajout\_gauche}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{ajout\_gauche()}{ajout\_gauche()}}
@@ -122,22 +131,32 @@ Fonction qui permet d\textquotesingle{}ajouter un élément à gauche de l\textq
 {\em v} & L\textquotesingle{}élément que l\textquotesingle{}on veut ajouter \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{listes_8c_a4597d1c1550e48dc54b54b240ab3c0e9_a4597d1c1550e48dc54b54b240ab3c0e9}\label{listes_8c_a4597d1c1550e48dc54b54b240ab3c0e9_a4597d1c1550e48dc54b54b240ab3c0e9}} 
+\mbox{\Hypertarget{listes_8c_a4597d1c1550e48dc54b54b240ab3c0e9}\label{listes_8c_a4597d1c1550e48dc54b54b240ab3c0e9}} 
 \index{listes.c@{listes.c}!detruire\_liste@{detruire\_liste}}
 \index{detruire\_liste@{detruire\_liste}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{detruire\_liste()}{detruire\_liste()}}
 {\footnotesize\ttfamily void detruire\+\_\+liste (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$$\ast$}]{liste }\end{DoxyParamCaption})}
 
 
-
-Détruit une structure liste. 
-
-
 \begin{DoxyParams}{Paramètres}
 {\em liste} & Adresse du pointeur sur la liste \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{listes_8c_adce0cb151a53ff2182012642c95262be_adce0cb151a53ff2182012642c95262be}\label{listes_8c_adce0cb151a53ff2182012642c95262be_adce0cb151a53ff2182012642c95262be}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_a4597d1c1550e48dc54b54b240ab3c0e9_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_a4597d1c1550e48dc54b54b240ab3c0e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{listes_8c_adce0cb151a53ff2182012642c95262be}\label{listes_8c_adce0cb151a53ff2182012642c95262be}} 
 \index{listes.c@{listes.c}!en\_queue@{en\_queue}}
 \index{en\_queue@{en\_queue}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{en\_queue()}{en\_queue()}}
@@ -150,7 +169,21 @@ Fonction qui permet de se placer en queue de la liste.
 {\em mylist} & La liste dans laquelle on se déplace \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{listes_8c_a9c780173ba80450b8a01ba4c14963437_a9c780173ba80450b8a01ba4c14963437}\label{listes_8c_a9c780173ba80450b8a01ba4c14963437_a9c780173ba80450b8a01ba4c14963437}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{d0/ddc/listes_8c_adce0cb151a53ff2182012642c95262be_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_adce0cb151a53ff2182012642c95262be_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{listes_8c_a9c780173ba80450b8a01ba4c14963437}\label{listes_8c_a9c780173ba80450b8a01ba4c14963437}} 
 \index{listes.c@{listes.c}!en\_tete@{en\_tete}}
 \index{en\_tete@{en\_tete}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{en\_tete()}{en\_tete()}}
@@ -163,7 +196,21 @@ Fonction qui permet de se placer en tête de la liste.
 {\em mylist} & La liste dans laquelle on se déplace \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{listes_8c_a0636ccaaa4306ef8525a26cadc4a4805_a0636ccaaa4306ef8525a26cadc4a4805}\label{listes_8c_a0636ccaaa4306ef8525a26cadc4a4805_a0636ccaaa4306ef8525a26cadc4a4805}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{d0/ddc/listes_8c_a9c780173ba80450b8a01ba4c14963437_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_a9c780173ba80450b8a01ba4c14963437_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{listes_8c_a0636ccaaa4306ef8525a26cadc4a4805}\label{listes_8c_a0636ccaaa4306ef8525a26cadc4a4805}} 
 \index{listes.c@{listes.c}!hors\_liste@{hors\_liste}}
 \index{hors\_liste@{hors\_liste}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{hors\_liste()}{hors\_liste()}}
@@ -179,7 +226,14 @@ Fonction booléenne qui permet de savoir si ll\textquotesingle{}on est actuellem
 \begin{DoxyReturn}{Renvoie}
 Vrai si on se trouve en dehors de la liste, faux sinon 
 \end{DoxyReturn}
-\mbox{\Hypertarget{listes_8c_a44494ff9efed6cd1416119b4a4f3dca2_a44494ff9efed6cd1416119b4a4f3dca2}\label{listes_8c_a44494ff9efed6cd1416119b4a4f3dca2_a44494ff9efed6cd1416119b4a4f3dca2}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_a0636ccaaa4306ef8525a26cadc4a4805_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{listes_8c_a44494ff9efed6cd1416119b4a4f3dca2}\label{listes_8c_a44494ff9efed6cd1416119b4a4f3dca2}} 
 \index{listes.c@{listes.c}!init\_liste@{init\_liste}}
 \index{init\_liste@{init\_liste}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{init\_liste()}{init\_liste()}}
@@ -207,7 +261,14 @@ On attend des éléments dynamiques dans la liste
 \begin{DoxyReturn}{Renvoie}
 La liste qui vient d\textquotesingle{}être crée, N\+U\+LL s\textquotesingle{}il y a eu une erreur 
 \end{DoxyReturn}
-\mbox{\Hypertarget{listes_8c_abe07097bbae832dce242428fdb1d95b4_abe07097bbae832dce242428fdb1d95b4}\label{listes_8c_abe07097bbae832dce242428fdb1d95b4_abe07097bbae832dce242428fdb1d95b4}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_a44494ff9efed6cd1416119b4a4f3dca2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{listes_8c_abe07097bbae832dce242428fdb1d95b4}\label{listes_8c_abe07097bbae832dce242428fdb1d95b4}} 
 \index{listes.c@{listes.c}!liste\_vide@{liste\_vide}}
 \index{liste\_vide@{liste\_vide}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{liste\_vide()}{liste\_vide()}}
@@ -223,7 +284,14 @@ Fonction booléenne qui permet de savoir si la liste est vide.
 \begin{DoxyReturn}{Renvoie}
 Vrai si la liste est vide, faux sinon 
 \end{DoxyReturn}
-\mbox{\Hypertarget{listes_8c_ac553c0418726475fa46b69b1aaaec8f9_ac553c0418726475fa46b69b1aaaec8f9}\label{listes_8c_ac553c0418726475fa46b69b1aaaec8f9_ac553c0418726475fa46b69b1aaaec8f9}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_abe07097bbae832dce242428fdb1d95b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{listes_8c_ac553c0418726475fa46b69b1aaaec8f9}\label{listes_8c_ac553c0418726475fa46b69b1aaaec8f9}} 
 \index{listes.c@{listes.c}!modif\_elt@{modif\_elt}}
 \index{modif\_elt@{modif\_elt}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{modif\_elt()}{modif\_elt()}}
@@ -240,7 +308,14 @@ A\+T\+T\+E\+N\+T\+I\+ON \+: si les élément sont placés dans la liste par réf
 {\em v} & L\textquotesingle{}élément à mettre à la place de l\textquotesingle{}ancien \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{listes_8c_a59c2257ab1cda9f78444e6b71a8a0c8d_a59c2257ab1cda9f78444e6b71a8a0c8d}\label{listes_8c_a59c2257ab1cda9f78444e6b71a8a0c8d_a59c2257ab1cda9f78444e6b71a8a0c8d}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{d0/ddc/listes_8c_ac553c0418726475fa46b69b1aaaec8f9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{listes_8c_a59c2257ab1cda9f78444e6b71a8a0c8d}\label{listes_8c_a59c2257ab1cda9f78444e6b71a8a0c8d}} 
 \index{listes.c@{listes.c}!oter\_elt@{oter\_elt}}
 \index{oter\_elt@{oter\_elt}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{oter\_elt()}{oter\_elt()}}
@@ -257,7 +332,21 @@ On attend des éléments dynamiques dans la liste.
 {\em mylist} & La liste dont on veut oter l\textquotesingle{}éléement \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{listes_8c_a2afbd9c9fde39b0f0c20e628718b7576_a2afbd9c9fde39b0f0c20e628718b7576}\label{listes_8c_a2afbd9c9fde39b0f0c20e628718b7576_a2afbd9c9fde39b0f0c20e628718b7576}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{d0/ddc/listes_8c_a59c2257ab1cda9f78444e6b71a8a0c8d_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_a59c2257ab1cda9f78444e6b71a8a0c8d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{listes_8c_a2afbd9c9fde39b0f0c20e628718b7576}\label{listes_8c_a2afbd9c9fde39b0f0c20e628718b7576}} 
 \index{listes.c@{listes.c}!precedent@{precedent}}
 \index{precedent@{precedent}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{precedent()}{precedent()}}
@@ -270,7 +359,53 @@ On attend des éléments dynamiques dans la liste.
 {\em mylist} & La liste dans laquelle on se déplace \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{listes_8c_ad6061cfcccc3fe717413526943f7bddc_ad6061cfcccc3fe717413526943f7bddc}\label{listes_8c_ad6061cfcccc3fe717413526943f7bddc_ad6061cfcccc3fe717413526943f7bddc}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{d0/ddc/listes_8c_a2afbd9c9fde39b0f0c20e628718b7576_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_a2afbd9c9fde39b0f0c20e628718b7576_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{listes_8c_ac84d5f990f188eed04f7670abf38b020}\label{listes_8c_ac84d5f990f188eed04f7670abf38b020}} 
+\index{listes.c@{listes.c}!selectionner\_element@{selectionner\_element}}
+\index{selectionner\_element@{selectionner\_element}!listes.c@{listes.c}}
+\doxysubsubsection{\texorpdfstring{selectionner\_element()}{selectionner\_element()}}
+{\footnotesize\ttfamily \+\_\+\+Bool selectionner\+\_\+element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste,  }\item[{void $\ast$}]{element,  }\item[{\+\_\+\+Bool($\ast$)(void $\ast$, void $\ast$)}]{f\+\_\+egalite }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em liste} & La liste dans laquelle on veut faire la recherche \\
+\hline
+{\em element} & L\textquotesingle{}élément que l\textquotesingle{}on veut rechercher \\
+\hline
+{\em f\+\_\+egalite} & Une fonction de comparaison qui renvoie vrai si les deux valeurs sont égales ou N\+U\+LL si on veut comparer les adresses \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+si l\textquotesingle{}élément à été trouvé 
+\end{DoxyReturn}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_ac84d5f990f188eed04f7670abf38b020_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_ac84d5f990f188eed04f7670abf38b020_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{listes_8c_ad6061cfcccc3fe717413526943f7bddc}\label{listes_8c_ad6061cfcccc3fe717413526943f7bddc}} 
 \index{listes.c@{listes.c}!suivant@{suivant}}
 \index{suivant@{suivant}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{suivant()}{suivant()}}
@@ -283,7 +418,21 @@ Fonction qui permet de passer à l\textquotesingle{}élément suivant dans la li
 {\em mylist} & La liste dans laquelle on se déplace \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{listes_8c_ad4603e6751766ee0c8ef54c5240e4c5c_ad4603e6751766ee0c8ef54c5240e4c5c}\label{listes_8c_ad4603e6751766ee0c8ef54c5240e4c5c_ad4603e6751766ee0c8ef54c5240e4c5c}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{d0/ddc/listes_8c_ad6061cfcccc3fe717413526943f7bddc_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_ad6061cfcccc3fe717413526943f7bddc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{listes_8c_ad4603e6751766ee0c8ef54c5240e4c5c}\label{listes_8c_ad4603e6751766ee0c8ef54c5240e4c5c}} 
 \index{listes.c@{listes.c}!taille\_liste@{taille\_liste}}
 \index{taille\_liste@{taille\_liste}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{taille\_liste()}{taille\_liste()}}
@@ -299,7 +448,7 @@ Fonction qui renvoie le nombre d\textquotesingle{}éléments dans la liste
 \begin{DoxyReturn}{Renvoie}
 Le nombre d\textquotesingle{}élements dans la liste 
 \end{DoxyReturn}
-\mbox{\Hypertarget{listes_8c_a37afb4f802843bd21792cd494296d9dc_a37afb4f802843bd21792cd494296d9dc}\label{listes_8c_a37afb4f802843bd21792cd494296d9dc_a37afb4f802843bd21792cd494296d9dc}} 
+\mbox{\Hypertarget{listes_8c_a37afb4f802843bd21792cd494296d9dc}\label{listes_8c_a37afb4f802843bd21792cd494296d9dc}} 
 \index{listes.c@{listes.c}!valeur\_elt@{valeur\_elt}}
 \index{valeur\_elt@{valeur\_elt}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{valeur\_elt()}{valeur\_elt()}}
@@ -315,7 +464,21 @@ Fonction qui renvoie l\textquotesingle{}élément courant
 \begin{DoxyReturn}{Renvoie}
 L\textquotesingle{}élément que l\textquotesingle{}on convoite 
 \end{DoxyReturn}
-\mbox{\Hypertarget{listes_8c_af234a65d00ef1f963f212d6761636941_af234a65d00ef1f963f212d6761636941}\label{listes_8c_af234a65d00ef1f963f212d6761636941_af234a65d00ef1f963f212d6761636941}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{d0/ddc/listes_8c_a37afb4f802843bd21792cd494296d9dc_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_a37afb4f802843bd21792cd494296d9dc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{listes_8c_af234a65d00ef1f963f212d6761636941}\label{listes_8c_af234a65d00ef1f963f212d6761636941}} 
 \index{listes.c@{listes.c}!vider\_liste@{vider\_liste}}
 \index{vider\_liste@{vider\_liste}!listes.c@{listes.c}}
 \doxysubsubsection{\texorpdfstring{vider\_liste()}{vider\_liste()}}
@@ -332,3 +495,17 @@ On attend des éléments dynamiques dans la liste.
 {\em mylist} & La liste que l\textquotesingle{}on veut vider \\
 \hline
 \end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_af234a65d00ef1f963f212d6761636941_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ddc/listes_8c_af234a65d00ef1f963f212d6761636941_icgraph}
+\end{center}
+\end{figure}

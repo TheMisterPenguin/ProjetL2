@@ -11,34 +11,48 @@
 #ifndef __AFFICHAGE_H__
 #define __AFFICHAGE_H__
 
+/** \cond */
 #include "SDL2/SDL.h"
+/** \endcond */
 #include "definition_commun.h"
+#include "personnage.h"
 #include "listes.h"
 #include "map.h"
-#include "personnage.h"
+
 
 
 #define NB_FPS 60 /**< Le nombre maximum de FPS */
 #define NB_SPRITE_JOUEUR 5 /**< Le nombre de sprites différents du joueur */
 
 /* On définit l'emplacement des textures du joueur */
-#define N_T_MARCHER "ressources/sprite/marcher.bmp"
-#define N_T_ATTAQUE "ressources/sprite/attaque.bmp"
-#define N_T_ATTAQUE_CHARGEE "ressources/sprite/attaque_chargee.bmp"
-#define N_T_CHARGER "ressources/sprite/charger.bmp"
-#define N_T_MARCHER_BOUCLIER "ressources/sprite/marcher_bouclier.bmp"
+#define N_T_MARCHER "ressources/sprite/marcher.bmp" /**<La texture du personnage qui marche */
+#define N_T_ATTAQUE "ressources/sprite/attaque.bmp" /**<La texture du personnage qui attaque */
+#define N_T_ATTAQUE_CHARGEE "ressources/sprite/attaque_chargee.bmp" /**<La texture du personnage qui fait son attaque chargée */
+#define N_T_CHARGER "ressources/sprite/charger.bmp" /**<La texture du personnage qui charge son attaque chargée */
+#define N_T_MARCHER_BOUCLIER "ressources/sprite/marcher_bouclier.bmp" /**<La texture du personnage qui marche avec son bouclier équipé*/
 
-#define N_T_MARCHER2 "ressources/sprite/marcher_green.bmp"
-#define N_T_ATTAQUE2 "ressources/sprite/attaque_green.bmp"
-#define N_T_ATTAQUE_CHARGEE2 "ressources/sprite/attaque_chargee_green.bmp"
-#define N_T_CHARGER2 "ressources/sprite/charger_green.bmp"
-#define N_T_MARCHER_BOUCLIER2 "ressources/sprite/marcher_bouclier_green.bmp"
+#define N_T_MARCHER2 "ressources/sprite/marcher_green.bmp" /**<La texture du personnage qui marche */
+#define N_T_ATTAQUE2 "ressources/sprite/attaque_green.bmp" /**<La texture du personnage qui attaque */
+#define N_T_ATTAQUE_CHARGEE2 "ressources/sprite/attaque_chargee_green.bmp" /**<La texture du personnage qui fait son attaque chargée */
+#define N_T_CHARGER2 "ressources/sprite/charger_green.bmp" /**<La texture du personnage qui charge son attaque chargée */
+#define N_T_MARCHER_BOUCLIER2 "ressources/sprite/marcher_bouclier_green.bmp" /**<La texture du personnage qui marche avec son bouclier équipé */
 
 /* On définit la taille d'une frame de sprite */
-#define LONGUEUR_ENTITE 48
-#define LARGEUR_ENTITE 48
+#define LONGUEUR_ENTITE 48 /**<La longueur d'une frame d'un sprite d'une entitée */
+#define LARGEUR_ENTITE 48 /**<La largeur d'une frame d'un sprite d'une entitée */
 
+/**
+ * \brief Définition de la structure map
+ * 
+ * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref affichage.h et \ref map.h .
+ */
+typedef struct s_map t_map;
 
+/**
+ * \brief Définition de la structure joueur
+ *
+ * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref affichage.h et \ref personnage.h .
+ */
 typedef struct joueur_s joueur_t;
 
 /**
@@ -137,7 +151,7 @@ extern t_aff *creer_texture(const char *nom_fichier, const int taille_t_x, const
  *
  * \param texture La texture à afficher
  * \param rendu Le rendu sur lequel afficher la texture à l'écran
- * \return 0 s'il n'y a pas eu d'erreur
+ * \return 0 s'il n'y a pas eu d'erreur sinon un entier négatif
  */
 extern err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu);
 
@@ -369,9 +383,9 @@ extern int current_frame_x(t_aff * texture);
 extern int current_frame_y(t_aff * texture);
 
 /**
-* \fn extern void afficher_monstres(list * liste_monstre, joueur_t * joueur);
+* \fn extern void afficher_monstres(list * liste_monstre, joueur_t * joueur)
  * \brief Fonction qui affiche les monstres
- * \param liste_monstre une liste de monstre
+ * \param liste_monstre une liste de monstres
  * \param joueur le joueur qui influe sur les monstres
  */
 extern void afficher_monstres(list * liste_monstre, joueur_t * joueur);
@@ -415,6 +429,13 @@ t_aff * next_frame_animation(joueur_t * joueur);
  */
 void lister_animations(joueur_t ** joueurs, list * animations);
 
+/**
+* \fn void afficher_coffres(list * liste_coffre)
+ * \brief Fonction qui affiche les coffres
+ * \param liste_monstre une liste de coffres
+ */
+void afficher_coffres(list * liste_coffre);
+
 void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y);
 
 void rect_centre_rect_x(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
@@ -425,10 +446,80 @@ void rect_centre_rect(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
 
 void afficher_animations(list * animations);
 
-void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r);
+/**
+ * \brief Fonction qui permet le déplacement d'une entité
+ * \author Ange Despert
+ * 
+ * Cette fonction permet à une entité de se déplacer sur l'axe x. \n
+ * Cette fonction gère les collisions et empêchera l'entité de sortir des limites de la map. \n
+ * Cette dernière prend également les collisions définies dans la liste des collisions de la map : \ref s_map.liste_collisions "liste_collisions".  \n
+ *
+ * Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l'entier \ref s_aff.duree_frame_anim "duree_frame_anim" qui permet d'êmpécher le déplacement tout les x frames.
+ *
+ * 
+ * \param m La map actuelle
+ * \param texture La texture de l'entité que l'on veut bouger
+ * \param y La nouvelle coordonnée du rectangle de l'entité
+ * \param r Le rectangle représentant la zone de collision de l'entité
+ * \return vrai : Si l'entité a réussi à se déplacer
+ * \return faux : Si l'entité n'a pas pu se déplacer
+ */
+bool deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r);
 
-void deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r);
+/**
+ * \brief Fonction qui permet le déplacement d'une entité
+ * \author Ange Despert
+ * 
+ * Cette fonction permet à une entité de se déplacer sur l'axe y. \n
+ * Cette fonction gère les collisions et empêchera l'entité de sortir des limites de la map. \n
+ * Cette dernière prend également les collisions définies dans la liste des collisions de la map : \ref s_map.liste_collisions "liste_collisions".  \n
+ *
+ * Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l'entier \ref s_aff.duree_frame_anim "duree_frame_anim" qui permet d'êmpécher le déplacement tout les x frames.
+ *
+ * \param m La map actuelle
+ * \param texture La texture de l'entité que l'on veut bouger
+ * \param y La nouvelle coordonnée du rectangle de l'entité
+ * \param r Le rectangle représentant la zone de collision de l'entité
+ * \return vrai : Si l'entité a réussi à se déplacer
+ * \return faux : Si l'entité n'a pas pu se déplacer
+ */
+bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r);
 
 void detruire_collision_dans_liste(list * liste_collisions, SDL_Rect * collision);
+
+/**
+ * \brief Renvoie les coordonnées du centre du rectangle
+ * 
+ * Cette fonction contrairement à la fonction \ref get_rect_center_coord donne les coordonnées strictes du centre.
+ *
+ * \author Ange Despert
+ * \param r Le rectangle dont on veut les coordonnées du milieu
+ * \return Les coordonnées du milieu du rectangle
+ */
+SDL_Point get_rect_center(const SDL_Rect *const r);
+
+/**
+ * \brief Renvoie les coordonnées du centre du rectangle.
+ * 
+ * Cette fonction contrairement à la fonction \ref get_rect_center donne les coordonnées du centre en prenant en compte les coordonnées actuelles du rectangle.
+ * 
+ * Cette fonction est donc faite pour être utilisée conjointement à la fonction \ref place_rect_center_from_point(SDL_Rect *r, SDL_Point p)
+ * \author Ange Despert
+ * \param r Le rectangle dont on veut les coordonnées du milieu.
+ * \return Les coordonnées du milieu du rectangle.
+ */
+SDL_Point get_rect_center_coord(const SDL_Rect *const r);
+
+/**
+ * \brief Fonction qui permet de placer le centre du rectangle donné en paramètre à un point précis.
+ * 
+ * Le but de cette fonction est de pouvoir placer plusieurs rectangles au même endroit peut importe leur taille.
+ * C'est fonction est donc très puissante si elle est utilisée conjointement à la fonction \ref get_rect_center_coord(const SDL_Rect *const r)
+ * 
+ * \author Ange Despert
+ * \param r Le rectangle que l'on veut déplacer
+ * \param p Le point où on veut placer le milieu du rectangle
+ */
+extern void place_rect_center_from_point(SDL_Rect *r, SDL_Point p);
 
 #endif

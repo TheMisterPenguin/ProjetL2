@@ -105,8 +105,9 @@ void ajout_droit(list *mylist, void * v){
     t_element *t;
 
     t = malloc(sizeof(t_element));
-    if(mylist->ajout == NULL)
+    if(mylist->ajout == NULL){
         t->valeur = v;
+    }
     else
         t->valeur = mylist->ajout(v);
 
@@ -165,4 +166,27 @@ void afficher_liste(list * liste){
             suivant(liste);
         }
     }
+}
+
+_Bool selectionner_element(list * liste, void * element, _Bool (*f_egalite)(void *, void *)){
+    
+    if(liste_vide(liste))
+        return 0;
+
+    en_tete(liste);
+
+    while(!hors_liste(liste)){
+        if(f_egalite == NULL){
+            if(valeur_elt(liste) == element)
+                return 1;
+        }
+        else{
+            if(f_egalite(valeur_elt(liste), element))
+                return 1;
+        }
+
+        suivant(liste);
+    }
+
+    return 0;
 }
