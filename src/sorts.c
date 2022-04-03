@@ -43,7 +43,6 @@ void creer_sort_monstre(monstre_t * monstre, joueur_t * joueur){
     }
     ajout_droit(map->liste_sorts , sort);
     ajout_droit(map->liste_collisions, &(sort->collision));
-    //place_rect_center_from_point(sort->texture->aff_fenetre, get_rect_center_coord(&sort->collision));
 
 }
 
@@ -66,10 +65,8 @@ void orienter_sort_vers_joueur(monstre_t * monstre, sort_t * sort, joueur_t * jo
 
 void action_sort(sort_t * sort){
     int orientation = current_frame_x(sort->texture);
-
-    sort->texture->aff_fenetre->x = sort->collision.x - floor(13 * sort->texture->multipli_taille);
-    sort->texture->aff_fenetre->y = sort->collision.y - floor(13 * sort->texture->multipli_taille);
     
+    place_rect_center_from_point(sort->texture->aff_fenetre, get_rect_center_coord(&sort->collision));
     switch(orientation){
         case 1:
             deplacement_y_entite(map, sort->texture, -2, &(sort->collision) );
