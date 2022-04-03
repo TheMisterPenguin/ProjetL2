@@ -10,7 +10,9 @@
 #ifndef __H_DEF_COMMUN__
 #define __H_DEF_COMMUN__
 
+/** \cond */
 #include "SDL2/SDL.h"
+/** \endcond */
 
 extern unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 
@@ -54,12 +56,26 @@ void fermer_programme(int code_erreur);
 #define erreur(msg, code_erreur, ...)                                                         \
     {                                                                                         \
         char *msp = malloc(sizeof(char) * (500));                                             \
+        char *mspbis = malloc(sizeof(char) * (500));                                          \
         sprintf(msp, msg, ##__VA_ARGS__);                                                     \
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "%s\nErreur : 0x%X\n", msp, code_erreur); \
-        sprintf(msp, "%s\nErreur : 0x%X\n", msp, code_erreur);                               \
-        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);                  \
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "%s\nErreur : 0x%X\n", msp, code_erreur);  \
+        sprintf(mspbis, "%s\nErreur : 0x%X\n", msp, code_erreur);                             \
+        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", mspbis, NULL);               \
         free(msp);                                                                            \
+        free(mspbis);                                                                         \
         fermer_programme(code_erreur);                                                        \
+    }
+
+#define warning(msg, code_erreur, ...)                                                       \
+    {                                                                                        \
+        char *msp = malloc(sizeof(char) * (500));                                            \
+        char *mspbis = malloc(sizeof(char) * (500));                                         \
+        sprintf(msp, msg, ##__VA_ARGS__);                                                    \
+        SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION, "%s\nErreur : 0x%X\n", msp, code_erreur);  \
+        sprintf(mspbis, "%s\nErreur : 0x%X\n", msp, code_erreur);                            \
+        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_WARNING, "Attention", mspbis, NULL);         \
+        free(msp);                                                                           \
+        free(mspbis);                                                                        \
     }
 
 #endif
