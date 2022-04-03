@@ -328,7 +328,7 @@ t_aff *next_frame_joueur(joueur_t *j)
 
     appliquer_coord_rect(&(j->statut->zone_colision), textures_joueur);
 
-    if (statut->duree > 0 && (compteur % 2) == 0)
+    if (statut->duree > 0)
         (statut->duree)--;
 
     if (statut->action == ATTAQUE_OU_CHARGER && statut->duree == 0)
@@ -360,13 +360,13 @@ t_aff *next_frame_joueur(joueur_t *j)
         }
         else if (statut->action == CHARGER)
         {
-            if ((compteur % 5) == 0)
+            if ((compteur % 4) == 0)
             { /*compteur%5 pour la vitesse d'affichage*/
                 next_frame_x(textures[TEXT_CHARGER]);
                 if(statut->en_mouvement)
-                    next_frame_y_indice(textures[TEXT_CHARGER], statut->orient_dep + (textures[TEXT_CHARGER]->frame_anim->x) / (int) LONGUEUR_ENTITE );
+                    next_frame_y_indice(textures[TEXT_CHARGER], statut->orient_dep*2 + (textures[TEXT_CHARGER]->frame_anim->x) / (int) LONGUEUR_ENTITE );
                 else
-                    next_frame_y_indice(textures[TEXT_CHARGER], statut->orient_dep);
+                    next_frame_y_indice(textures[TEXT_CHARGER], statut->orient_dep*2);
                 return textures[TEXT_CHARGER];
             }
             else
@@ -391,16 +391,19 @@ t_aff *next_frame_joueur(joueur_t *j)
         }
         else if (statut->action == ATTAQUE_CHARGEE)
         {
-            if ((compteur % 3) == 0)
+            if ((compteur % 2) == 0)
             { /*compteur%3 pour la vitesse d'affichage*/
                 // lorseque l'on rentre pour la première fois dans cette phase d'attaque chargée
-                if (statut->duree == (DUREE_ATTAQUE_CHARGEE - 1))
-                    next_frame_x_indice(textures[TEXT_ATTAQUE_CHARGEE], (statut->orient_dep) * 2 - 1);
+                
                 next_frame_x(textures[TEXT_ATTAQUE_CHARGEE]);
                 statut->orient_att = (statut->orient_att + 1) % 8;
+                printf("orient att : %d\n", statut->orient_att);
                 /*si il a fait le tour du fichier sprite attaque, l'action est terminée*/
-                if( ( (textures[TEXT_ATTAQUE_CHARGEE]->frame_anim->x) == (statut->orient_dep)*2*LONGUEUR_ENTITE) && (statut->duree != (DUREE_ATTAQUE_CHARGEE-1) ) )
+                if( (statut->orient_att) == (statut->orient_dep*2) && (statut->duree < (DUREE_ATTAQUE_CHARGEE-3) ) )
+                {
                     statut->action = RIEN;
+                    printf("duree = %d\n", statut->duree);
+                }
                 return textures[TEXT_ATTAQUE_CHARGEE];
             }
             else
