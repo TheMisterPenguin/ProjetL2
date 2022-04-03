@@ -14,10 +14,10 @@
 #include "SDL2/SDL.h"
 /** \endcond */
 
-extern unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
+#include "code_erreur.h"
 
+extern unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 typedef unsigned char byte;
-typedef int err_t;
 typedef struct point {int x,y;}point;
 typedef enum
 {
@@ -52,30 +52,5 @@ extern SDL_Rect * hors_hitbox;
  * \author Ange Despert
  */
 void fermer_programme(int code_erreur);
-
-#define erreur(msg, code_erreur, ...)                                                         \
-    {                                                                                         \
-        char *msp = malloc(sizeof(char) * (500));                                             \
-        char *mspbis = malloc(sizeof(char) * (500));                                          \
-        sprintf(msp, msg, ##__VA_ARGS__);                                                     \
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "%s\nErreur : 0x%X\n", msp, code_erreur);  \
-        sprintf(mspbis, "%s\nErreur : 0x%X\n", msp, code_erreur);                             \
-        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", mspbis, NULL);               \
-        free(msp);                                                                            \
-        free(mspbis);                                                                         \
-        fermer_programme(code_erreur);                                                        \
-    }
-
-#define warning(msg, code_erreur, ...)                                                       \
-    {                                                                                        \
-        char *msp = malloc(sizeof(char) * (500));                                            \
-        char *mspbis = malloc(sizeof(char) * (500));                                         \
-        sprintf(msp, msg, ##__VA_ARGS__);                                                    \
-        SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION, "%s\nErreur : 0x%X\n", msp, code_erreur);  \
-        sprintf(mspbis, "%s\nErreur : 0x%X\n", msp, code_erreur);                            \
-        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_WARNING, "Attention", mspbis, NULL);         \
-        free(msp);                                                                           \
-        free(mspbis);                                                                        \
-    }
 
 #endif

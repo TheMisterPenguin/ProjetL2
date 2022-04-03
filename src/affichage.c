@@ -1,6 +1,5 @@
 #include <affichage.h>
 #include <listes.h>
-#include <code_erreur.h>
 #include <personnage.h>
 #include <monstres.h>
 #include <math.h>

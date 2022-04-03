@@ -1,8 +1,6 @@
 #include <json-c/json.h>
-#include <coffres.h>
 #include <definition_commun.h>
 #include <map.h>
-#include <code_erreur.h>
 
 /**
  * \file coffres.c
@@ -13,11 +11,13 @@
  * \copyright Copyright (c) 2022
  */
 
+typedef struct t_map t_map;
+
 liste_base_coffres_t * liste_base_coffres = NULL;
 
 void charger_base_coffre(char * chemin_fichier, liste_base_coffres_t ** liste_base_coffres){
 
-    json_object *fichier = json_object_from_file(chemin_fichier);
+    json_object *fichier = json_object_from_file(chemin_fichier); //objet json contenant des informations de jeu
     int nb_coffres;
 
     if(!fichier){
