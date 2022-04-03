@@ -376,6 +376,7 @@ t_aff *next_frame_joueur(joueur_t *j)
                 if (statut->duree == (DUREE_ATTAQUE_CHARGEE - 1))
                     next_frame_x_indice(textures[TEXT_ATTAQUE_CHARGEE], (statut->orient_dep) * 2 - 1);
                 next_frame_x(textures[TEXT_ATTAQUE_CHARGEE]);
+                statut->orient_att = (statut->orient_att + 1) % 8;
                 /*si il a fait le tour du fichier sprite attaque, l'action est terminée*/
                 if( ( (textures[TEXT_ATTAQUE_CHARGEE]->frame_anim->x) == (statut->orient_dep)*2*LONGUEUR_ENTITE) && (statut->duree != (DUREE_ATTAQUE_CHARGEE-1) ) )
                     statut->action = RIEN;

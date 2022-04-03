@@ -233,7 +233,7 @@ int main(int argc, char** argv)
                 SDL_RenderDrawRect(rendu_principal, &joueur1->statut->vrai_zone_collision);
                 if(nb_joueurs == 2)
                     SDL_RenderDrawRect(rendu_principal, &joueur2->statut->zone_colision);
-                if(joueur1->statut->action == ATTAQUE){
+                if(joueur1->statut->action == ATTAQUE || joueur1->statut->action == ATTAQUE_CHARGEE){
                     printf("%d\n", joueur1->statut->orient_dep);
                     SDL_Rect * result = zone_en_dehors_hitbox(&(joueur1->statut->vrai_zone_collision), joueur1->textures_joueur->liste[0]->aff_fenetre, joueur1->statut->orient_att);
                     SDL_RenderDrawRect(rendu_principal,result);

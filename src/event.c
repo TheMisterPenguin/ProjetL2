@@ -234,6 +234,7 @@ void joystick_button_up(SDL_JoyButtonEvent *ev, joueur_t **j)
         if (statut->action == CHARGER)
         {
             statut->action = ATTAQUE_CHARGEE;
+            statut->orient_att = statut->orient_dep * 2;
             statut->en_mouvement = faux;
             statut->duree = DUREE_ATTAQUE_CHARGEE;
         }

@@ -452,7 +452,7 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * 
 			}
 		}
 		/* si un monstre est touché */
-		if(joueur->statut->action == ATTAQUE){
+		if(joueur->statut->action == ATTAQUE || joueur->statut->action == ATTAQUE_CHARGEE){
 			if(entite_subit_attaque(&(monstre->collision), joueur) && monstre->action != MONSTRE_BLESSE){
 				(monstre->pdv) -= joueur->attaque_actif;
 				if(monstre->pdv <= 0){
