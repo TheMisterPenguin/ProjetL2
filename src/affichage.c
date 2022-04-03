@@ -787,7 +787,7 @@ bool rects_egal_x(const SDL_Rect * const r1, SDL_Rect const * const r2){
 
 bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2){
 
-    return (r1->h == r2->h);
+    return (r1->y == r2->y);
 
     return faux;
 }
