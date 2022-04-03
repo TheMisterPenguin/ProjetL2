@@ -38,6 +38,9 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, const char 
     for(i=0; i<liste_base_monstres->nb_monstre; i++){
         if(strcmp(liste_base_monstres->tab[i].nom_monstre,nom_monstre) == 0){
             monstre->type = nom_monstre_to_type_monstre(nom_monstre);
+
+            
+
             monstre->collision.x = x;
             monstre->collision.y = y;
             monstre->collision.w = liste_base_monstres->tab[i].hitbox.w * (map->taille_case / TAILLE_CASE);
@@ -63,7 +66,7 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, const char 
 }
 
 
-type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre){
+type_monstre_t nom_monstre_to_type_monstre(const char * const nom_monstre){
     if(strcmp(nom_monstre,"witcher") == 0)
         return WITCHER;
     else if(strcmp(nom_monstre,"knight") == 0)

@@ -170,7 +170,7 @@ void afficher_liste(list * liste){
 _Bool selectionner_element(list * liste, void * element, _Bool (*f_egalite)(void *, void *)){
     
     if(liste_vide(liste))
-        return;
+        return 0;
 
     en_tete(liste);
 

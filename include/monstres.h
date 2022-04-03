@@ -129,7 +129,7 @@ void action_monstre(monstre_t * monstre, joueur_t * joueur);
  * \param nom_monstre La chaîne de caractères à convertir
  * \return type_monstre_t le type de monstre
  */
-type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre);
+type_monstre_t nom_monstre_to_type_monstre(const char * const nom_monstre);
 
 int distance_x_joueur(SDL_Rect collision, joueur_t * joueur);
 int distance_y_joueur(SDL_Rect collision, joueur_t * joueur);

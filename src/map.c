@@ -197,7 +197,7 @@ void detruire_map(t_map **map){
         suivant((*map)->liste_collisions);
     }
 
-    detruire_liste((*map)->liste_collisions);
+    detruire_liste(&(*map)->liste_collisions);
 
     /* Destruction des textures */
 
@@ -251,7 +251,7 @@ void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, 
         if(i == 0) { /* Joueur principal */
             fenetre_finale->frame_anim->x = 0;
             fenetre_finale->frame_anim->y = 0;
-            place_rect_center_from_point(fenetre_finale->frame_anim, get_rect_center_coord(j->statut->vrai_zone_collision));
+            place_rect_center_from_point(fenetre_finale->frame_anim, get_rect_center_coord(&j->statut->vrai_zone_collision));
             j->statut->vrai_zone_collision.x = x;
             j->statut->vrai_zone_collision.y = y;
             

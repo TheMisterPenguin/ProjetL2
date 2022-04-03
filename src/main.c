@@ -64,8 +64,6 @@ int main(int argc, char** argv)
     int nb_joueurs;
     int debut, fin; /* le temps pour calculer les performances */
     int i;
-    char *fichier_map = NULL;
-    t_aff *text = NULL;
     t_aff *next_texture_joueur1 = NULL;
     t_aff *next_texture_joueur2 = NULL;
     t_aff *texture_temp1 = NULL;
@@ -108,7 +106,6 @@ int main(int argc, char** argv)
     
     /* On charge la map */
     map = charger_map("2.json");
-    text = texture_map(map); 
 
 
     //TEMPORAIREMENT ICI -- test animation heal (équiper consommable puis touche e) -- TEMPORAIREMENT ICI
@@ -152,7 +149,7 @@ int main(int argc, char** argv)
 
     SDL_RenderClear(rendu_principal);
 
-    if(SDL_RenderCopy(rendu_principal, text->texture, NULL, NULL))
+    if(SDL_RenderCopy(rendu_principal, map->text_sol->texture, NULL, NULL))
         fprintf(stderr, "Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
 
     SDL_QueryTexture(map->text_map->texture, NULL, NULL, &(map->text_map->width), &(map->text_map->height));
