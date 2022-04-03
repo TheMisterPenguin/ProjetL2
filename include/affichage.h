@@ -426,9 +426,9 @@ void rect_centre_rect(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
 
 void afficher_animations(list * animations);
 
-void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r);
+bool deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r);
 
-void deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r);
+bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r);
 
 void detruire_collision_dans_liste(list * liste_collisions, SDL_Rect * collision);
 

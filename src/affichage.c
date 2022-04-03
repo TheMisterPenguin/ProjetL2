@@ -786,7 +786,7 @@ void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y){
     r_map->y = floor((ecran->y + y) * multipli_y);
 }
 
-void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
+bool deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
 {
     const int taille_unite = floor(map->taille_case / TAILLE_PERSONNAGE);
     SDL_Rect temp = {.x = r->x + x * taille_unite, .y = r->y, .w = r->w, .h = r->h};
@@ -808,25 +808,25 @@ void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
         }
 
         if (SDL_HasIntersection(&temp, element))
-            return;
+            return faux;
         suivant(m->liste_collisions);
     }
 
     if (r)
     {
         if (r->x + x * taille_unite < 0) /* Le personnage ne peut pas aller en haut */
-            return;
+            return faux;
         if (r->x + r->w + x * taille_unite > m->text_map->width) /* Le personnage ne peut pas aller en bas */
-            return;
+            return faux;
         if (texture->compteur_frame_anim % texture->duree_frame_anim)
             r->x += x * taille_unite;
     }
     else
     {
         if (texture->aff_fenetre->x + x * taille_unite < 0) /* Le personnage ne peut pas aller en haut */
-            return;
+            return faux;
         if (texture->aff_fenetre->x + texture->aff_fenetre->w + x * taille_unite > m->text_map->width) /* Le personnage ne peut pas aller en bas */
-            return;
+            return faux;
         if (texture->compteur_frame_anim % texture->duree_frame_anim)
             r->x += x * taille_unite;
     }
@@ -835,9 +835,11 @@ void deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
         (texture->compteur_frame_anim) = 0;
     else
         (texture->compteur_frame_anim)++;
+
+    return vrai;
 }
 
-void deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
+bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
 {
     const int taille_unite = floor(map->taille_case / TAILLE_PERSONNAGE);
     SDL_Rect temp = {.x = r->x, .y = r->y + y * taille_unite, .w = r->w, .h = r->h};
@@ -870,25 +872,25 @@ void deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
         }
 
         if (SDL_HasIntersection(&temp, element))
-            return;
+            return faux;
         suivant(m->liste_collisions);
     }
 
     if(r)
     {
         if(r->y + y * taille_unite  < 0) /* Le personnage ne peut pas aller en haut */
-            return;
+            return faux;
         if (r->y + r->h + y * taille_unite > m->text_map->height) /* Le personnage ne peut pas aller en bas */
-            return;
+            return faux;
         if(texture->compteur_frame_anim % texture->duree_frame_anim)
             r->y += y * taille_unite;
     }
     else
     {
         if (texture->aff_fenetre->y + y * taille_unite< 0) /* Le personnage ne peut pas aller en haut */
-            return;
+            return faux;
         if (texture->aff_fenetre->y + texture->aff_fenetre->h + y * taille_unite> m->text_map->height) /* Le personnage ne peut pas aller en bas */
-            return;
+            return faux;
         if (texture->compteur_frame_anim % texture->duree_frame_anim)
             r->y += y * taille_unite;
     }
@@ -898,6 +900,8 @@ void deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
         (texture->compteur_frame_anim) = 0;
     else
         (texture->compteur_frame_anim)++;
+
+    return vrai;
 }
 
 void init_animations(){
