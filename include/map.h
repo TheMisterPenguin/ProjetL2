@@ -68,4 +68,7 @@ t_map *charger_map(const char *const nom_map);
  */
 t_aff *texture_map(const t_map *map);
 
+void transition(t_map **actuelle, const char *const nom_map, joueur_t **joueurs, unsigned short int nb_joueurs);
+
+void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, unsigned short int nb_joueurs);
 #endif

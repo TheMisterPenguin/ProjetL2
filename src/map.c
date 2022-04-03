@@ -7,6 +7,7 @@
 #include <code_erreur.h>
 #include <monstres.h>
 #include <math.h>
+#include <fonctions.h>
 
 /**
  * \file map.c
@@ -177,4 +178,111 @@ t_map * charger_map(const char * const nom_map){
 
 t_aff * texture_map(const t_map * map){
     return map->text_sol;
+}
+
+void detruire_map(t_map **map){
+    
+    /* Destruction des monstres */
+    detruire_liste(&(*map)->liste_monstres);
+
+    /* Destruction des sorts */
+    detruire_liste(&(*map)->liste_sorts);
+
+    /* Destruction des collisions */
+    en_tete((*map)->liste_collisions);
+
+    while(!hors_liste((*map)->liste_collisions)){
+        free(valeur_elt((*map)->liste_collisions));
+        suivant((*map)->liste_collisions);
+    }
+
+    detruire_liste((*map)->liste_collisions);
+
+    /* Destruction des textures */
+
+    selectionner_element((*map)->liste_collisions, (*map)->text_sol, NULL);
+    oter_elt((*map)->liste_collisions);
+
+    detruire_texture(&(*map)->text_map);
+
+    /* Libération de la mémoire */
+    free(*map);
+    *map = NULL;
+}
+
+void transition(t_map **actuelle, const char * const nom_map, joueur_t ** joueurs, unsigned short int nb_joueurs){
+
+    detruire_map(actuelle);
+    detruire_texture(&fenetre_finale);
+    *actuelle = charger_map(nom_map);
+
+    init_sousbuffer(*actuelle, *joueurs);
+
+    /* Mise à jour des textures du joueur */
+
+    for(unsigned short int i = 0; i < nb_joueurs; i++){
+        joueur_t *j = joueurs[i];
+        
+        j->statut->zone_colision.h = (*actuelle)->taille_case;
+        j->statut->zone_colision.w = (*actuelle)->taille_case;
+
+        j->statut->vrai_zone_collision.h = (*actuelle)->taille_case;
+        j->statut->vrai_zone_collision.w = (*actuelle)->taille_case;
+
+        for(unsigned int y = 0; y < j->textures_joueur->nb_valeurs; y++){
+            j->textures_joueur->liste[y]->multipli_taille = (*actuelle)->taille_case / TAILLE_CASE;
+            def_texture_taille(j->textures_joueur->liste[i], LONGUEUR_ENTITE * (*actuelle)->taille_case / TAILLE_CASE, LARGEUR_ENTITE * (*actuelle)->taille_case / TAILLE_CASE);
+        }
+    }
+}
+
+void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, unsigned short int nb_joueurs){
+    
+    if(x < 0 || x > map->text_map->width)
+        return;
+
+    if (y < 0 || y > map->text_map->height)
+        return;
+
+    for(unsigned int i = 0; i < nb_joueurs; i++){
+        joueur_t *j = joueurs[i];
+
+        if(i == 0) { /* Joueur principal */
+            j->statut->vrai_zone_collision.x = x;
+            j->statut->vrai_zone_collision.y = y;
+            
+            if(x < fenetre_finale->frame_anim->w / 2){ /* Extrémité gauche */
+                j->statut->zone_colision.x = x;
+                fenetre_finale->frame_anim->x = 0;
+            }
+            else{
+                if(x > (map->text_map->width - fenetre_finale->frame_anim->w / 2 )){ /* Extémité droite */
+                    j->statut->zone_colision.x = x;
+                    fenetre_finale->frame_anim->x = map->text_map->width - fenetre_finale->frame_anim->w;
+                }
+                else {
+                    /* Centrer à l'écran */
+                }
+            }
+            
+            /* Pour y */
+            if(y < fenetre_finale->frame_anim->h / 2){ /* Extrémité gauche */
+                j->statut->zone_colision.y = y;
+                fenetre_finale->frame_anim->y = 0;
+            }
+            else{
+                if(y > (map->text_map->height - fenetre_finale->frame_anim->h / 2 )){ /* Extémité droite */
+                    j->statut->zone_colision.y = y;
+                    fenetre_finale->frame_anim->y = map->text_map->height - fenetre_finale->frame_anim->h;
+                }
+                else {
+                    /* Centrer à l'écran */
+                }
+            }
+        }
+        else {
+            j->statut->zone_colision.x = x;
+            j->statut->zone_colision.y = y;
+        }
+    }
 }
