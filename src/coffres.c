@@ -107,13 +107,14 @@ type_coffre_t nom_coffre_to_type_coffre(const char * nom_coffre){
     return COFFRE_INCONNU;
 }
 
-coffre_t* creer_coffre(liste_base_coffres_t* liste_base_coffres, const char * const nom_coffre, int x, int y, t_map *map){
+coffre_t* creer_coffre(int id_cle, liste_base_coffres_t* liste_base_coffres, const char * const nom_coffre, int x, int y, t_map *map){
     int i;
 
     /* allocation coffre_t*/
     coffre_t* coffre = malloc(sizeof(coffre_t));
     for(i=0; i<liste_base_coffres->nb_coffre; i++){
-        if(strcmp(liste_base_coffres->tab[i].nom_coffre,nom_coffre) == 0){
+        if(strcmp(liste_base_coffres->tab[i].nom_coffre,nom_coffre) == 0){ //comparer les id des coffres car deux coffres peuvent avoir le même nom?
+            coffre->id_cle = id_cle;
             coffre->type = nom_coffre_to_type_coffre(nom_coffre);
             coffre->collision.x = x * TAILLE_CASE;
             coffre->collision.y = y * TAILLE_CASE;
@@ -156,6 +157,7 @@ t_direction_1 inverser_direction(t_direction_1 direction){
 
 void interaction_coffre(SDL_Rect * coffre_rect, joueur_t * joueur){
     coffre_t * coffre = NULL;
+    objet_t * cle_joueur = NULL;
     en_tete(map->liste_coffres);
 
     //detection collision avec coffre
@@ -163,7 +165,9 @@ void interaction_coffre(SDL_Rect * coffre_rect, joueur_t * joueur){
         coffre = valeur_elt(map->liste_coffres);
 
         if(&(coffre->collision) == coffre_rect){
-            if(coffre->etat == FERME && (joueur->statut->orient_dep == inverser_direction(coffre->orientation))){
+            //conditions pour ouvrir un coffre
+            cle_joueur = joueur->inventaire->equipe->liste[quete];
+            if((coffre->etat == FERME) && (joueur->statut->orient_dep == inverser_direction(coffre->orientation)) && ((coffre->id_cle == 0) || ((cle_joueur != NULL) && (coffre->id_cle == cle_joueur->id) ) ) ){
                 if(coffre->type == PROFIL_FERME)
                     coffre->texture = creer_texture(COFFRE_PROFIL_OUVERT, -1, -1, coffre->collision.x, coffre->collision.y - TAILLE_CASE, map->taille_case /(float)32);
                 if(coffre->type == FACE_FERME){

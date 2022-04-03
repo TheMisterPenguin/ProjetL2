@@ -36,6 +36,7 @@ typedef enum {OUVERT, FERME}etat_coffre_t;
  */
 typedef struct coffre_s
 {
+    int id_cle; /**<Indentificateur de l'objet de quête nécessaire pour ouvrir le coffre sinon 0*/
 	type_coffre_t type; /**<Type de coffre*/
     t_direction_1 orientation; /*Orientation du coffre*/
     etat_coffre_t etat; /*Etat en cours par le coffre*/
@@ -80,8 +81,9 @@ extern liste_base_coffres_t * liste_base_coffres; /*Liste des coffres générés
 void charger_base_coffre(char * chemin_fichier, liste_base_coffres_t ** liste_base_coffres);
 
 /**
- * \fn coffre_t* creer_coffre(liste_base_coffres_t* liste_base_coffres, const char * const nom_coffre, int x, int y, t_map *map);
+ * \fn coffre_t* creer_coffre(int id_cle, liste_base_coffres_t* liste_base_coffres, const char * const nom_coffre, int x, int y, t_map *map)
  * \brief Fonction qui creer et initialise un coffre sur une carte
+ * \param id_cle L'identifaicateur de l'objet de quête nécessaire pour ouvrir le coffre, sinon 0
  * \param liste_base_coffre Les coffres de base
  * \param nom_coffre Le nom du coffre à creer
  * \param x La position en abscisse du coffre sur la map
@@ -89,7 +91,7 @@ void charger_base_coffre(char * chemin_fichier, liste_base_coffres_t ** liste_ba
  * \param map La carte dans laquelle mettre le coffre
  * \return Instance nouvellement allouée du type coffre_t contenant les informations du coffre ou NULL
  */
-coffre_t* creer_coffre(liste_base_coffres_t* liste_base_coffres, const char * const nom_coffre, int x, int y, t_map *map);
+coffre_t* creer_coffre(int id_cle, liste_base_coffres_t* liste_base_coffres, const char * const nom_coffre, int x, int y, t_map *map);
 
 /**
  * \fn type_coffre_t nom_coffre_to_type_coffre(char * nom_coffre)
