@@ -82,7 +82,6 @@ void charger_base_coffre(char * chemin_fichier, liste_base_coffres_t ** liste_ba
 
         if(!type)
             erreur("Erreur lors de la récupération des informations sur les coffres : %s", ERREUR_FICHIER, json_util_get_last_err());
-
         
         /*inserrer les caractèristiques dans base_coffre_t*/
         strcpy((*liste_base_coffres)->tab[i].fichier_image, fichier_image);
@@ -93,7 +92,7 @@ void charger_base_coffre(char * chemin_fichier, liste_base_coffres_t ** liste_ba
     json_object_put(JSON_fichier);
 }
 
-type_coffre_t nom_coffre_to_type_coffre(char * nom_coffre){
+type_coffre_t nom_coffre_to_type_coffre(const char * nom_coffre){
     if(strcmp(nom_coffre,"profilferme") == 0)
         return PROFIL_FERME;
     else if(strcmp(nom_coffre,"profilouvert") == 0)
@@ -105,8 +104,7 @@ type_coffre_t nom_coffre_to_type_coffre(char * nom_coffre){
     else{
         fprintf(stderr,"Erreur, nom du coffre incorrect\n");
     }
-
-    fermer_programme(ERREUR_FICHIER);
+    return COFFRE_INCONNU;
 }
 
 coffre_t* creer_coffre(liste_base_coffres_t* liste_base_coffres, const char * const nom_coffre, int x, int y, t_map *map){
@@ -122,8 +120,19 @@ coffre_t* creer_coffre(liste_base_coffres_t* liste_base_coffres, const char * co
             coffre->collision.w = liste_base_coffres->tab[i].hitbox.w * TAILLE_CASE;
             coffre->collision.h = liste_base_coffres->tab[i].hitbox.h * TAILLE_CASE;
 
-            coffre->orientation = NORD_1; //à changer selon le type
-            coffre->etat = FERME;
+            //orientation du coffre
+            if((coffre->type == PROFIL_OUVERT) || (coffre->type == PROFIL_FERME))
+                coffre->orientation = EST_1;
+            else{
+                coffre->orientation = SUD_1;
+                printf("sud\n");
+            }
+
+            //état du coffre
+            if((coffre->type == PROFIL_FERME) || (coffre->type == FACE_FERME))
+                coffre->etat = FERME;
+            else
+                coffre->etat = OUVERT;
 
             /*copie les informations de base_coffre dans coffre*/
             coffre->texture = creer_texture(liste_base_coffres->tab[i].fichier_image, -1, -1, coffre->collision.x, coffre->collision.y, map->taille_case /(float)32);
@@ -141,7 +150,11 @@ void info_coffre(coffre_t * coffre){
     info_texture(coffre->texture);
 }
 
-void interaction_coffre(SDL_Rect * coffre_rect){
+t_direction_1 inverser_direction(t_direction_1 direction){
+    return((direction + 2) %4);
+}
+
+void interaction_coffre(SDL_Rect * coffre_rect, joueur_t * joueur){
     coffre_t * coffre = NULL;
     en_tete(map->liste_coffres);
 
@@ -150,7 +163,7 @@ void interaction_coffre(SDL_Rect * coffre_rect){
         coffre = valeur_elt(map->liste_coffres);
 
         if(&(coffre->collision) == coffre_rect){
-            if(coffre->etat == FERME){
+            if(coffre->etat == FERME && (joueur->statut->orient_dep == inverser_direction(coffre->orientation))){
                 if(coffre->type == PROFIL_FERME)
                     coffre->texture = creer_texture(COFFRE_PROFIL_OUVERT, -1, -1, coffre->collision.x, coffre->collision.y - TAILLE_CASE, map->taille_case /(float)32);
                 if(coffre->type == FACE_FERME){

@@ -683,7 +683,7 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
         }
 
         if(SDL_HasIntersection(&temp, element)){
-            interaction_coffre(element);
+            interaction_coffre(element, j);
             return;
         }
         suivant(m->liste_collisions);
@@ -747,7 +747,7 @@ void deplacement_y_pers(t_map *m, joueur_t *j, int y){
         }
 
         if (SDL_HasIntersection(&temp, element)){
-            interaction_coffre(element);
+            interaction_coffre(element, j);
             return;
         }
         suivant(m->liste_collisions);
