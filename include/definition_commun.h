@@ -56,7 +56,7 @@ void fermer_programme(int code_erreur);
         char *msp = malloc(sizeof(char) * (500));                                             \
         sprintf(msp, msg, ##__VA_ARGS__);                                                     \
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "%s\nErreur : 0x%X\n", msp, code_erreur); \
-        sprintf(msp, "%s\n Erreur : 0x%X\n", msp, code_erreur);                               \
+        sprintf(msp, "%s\nErreur : 0x%X\n", msp, code_erreur);                               \
         SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);                  \
         free(msp);                                                                            \
         fermer_programme(code_erreur);                                                        \
