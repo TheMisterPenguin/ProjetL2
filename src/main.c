@@ -104,7 +104,7 @@ int main(int argc, char** argv)
     charger_base_coffre("coffres.json", &liste_base_coffres);
 
     /* On initialise le tableau base_sorts */
-    init_liste_base_sort();
+    init_liste_base_sort(liste_base_monstres);
     
     /* On charge la map */
     map = charger_map("2.json");
@@ -116,7 +116,7 @@ int main(int argc, char** argv)
     /* On créer le joueur */    
     joueurs[0] = new_joueur("joueur1", 0);
     joueur1 = joueurs[0];
-    joueur1->pdv = 5;
+    joueur1->pdv = 50;
     /* On créer les animations */
     init_animations();
 

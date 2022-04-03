@@ -331,6 +331,16 @@ t_aff *next_frame_joueur(joueur_t *j)
     if (statut->duree > 0)
         (statut->duree)--;
 
+    if(statut->action == J_BLESSE){
+        /* faire clignoter le personnage */
+        if(statut->duree > 0){
+            if(compteur % 2)
+                return NULL;
+        }
+        else
+            statut->action = RIEN;
+    }
+
     if (statut->action == ATTAQUE_OU_CHARGER && statut->duree == 0)
         statut->action = CHARGER;
 
@@ -397,13 +407,9 @@ t_aff *next_frame_joueur(joueur_t *j)
                 
                 next_frame_x(textures[TEXT_ATTAQUE_CHARGEE]);
                 statut->orient_att = (statut->orient_att + 1) % 8;
-                printf("orient att : %d\n", statut->orient_att);
                 /*si il a fait le tour du fichier sprite attaque, l'action est terminée*/
                 if( (statut->orient_att) == (statut->orient_dep*2) && (statut->duree < (DUREE_ATTAQUE_CHARGEE-3) ) )
-                {
                     statut->action = RIEN;
-                    printf("duree = %d\n", statut->duree);
-                }
                 return textures[TEXT_ATTAQUE_CHARGEE];
             }
             else
