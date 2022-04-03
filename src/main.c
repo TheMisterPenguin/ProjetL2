@@ -101,7 +101,7 @@ int main(int argc, char** argv)
         creer_inventaire_j2();
   
     /* On charge la base monstre*/
-    charger_base_monstre("monstres.json");
+    charger_base_monstre("monstres.json", &liste_base_monstres);
 
     /* On initialise le tableau base_sorts */
     init_liste_base_sort();
@@ -232,8 +232,8 @@ int main(int argc, char** argv)
                 SDL_RenderDrawRect(rendu_principal, &joueur1->statut->vrai_zone_collision);
                 if(nb_joueurs == 2)
                     SDL_RenderDrawRect(rendu_principal, &joueur2->statut->zone_colision);
-                SDL_Rect * result = zone_en_dehors_hitbox(&(joueur1->statut->vrai_zone_collision), joueur1->textures_joueur->liste[0]->aff_fenetre, joueur1->statut->orientation);
-                SDL_RenderDrawRect(rendu_principal,result);
+                hors_hitbox = zone_en_dehors_hitbox(&(joueur1->statut->vrai_zone_collision), joueur1->textures_joueur->liste[0]->aff_fenetre, joueur1->statut->orientation);
+                SDL_RenderDrawRect(rendu_principal,hors_hitbox);
                 en_tete(map->liste_collisions);
                 while(!hors_liste(map->liste_collisions)){
                     SDL_Rect *e = valeur_elt(map->liste_collisions);
@@ -301,6 +301,10 @@ int main(int argc, char** argv)
         if (compteur == NB_FPS)
             compteur = 0;
         compteur++;
+
+        #ifdef _DEBUG_COLLISION
+                free(hors_hitbox);
+        #endif
     }
 
     return AUCUNE_ERREUR;

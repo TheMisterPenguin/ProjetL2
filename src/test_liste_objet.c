@@ -20,7 +20,7 @@ int main(){
     init();
     
     printf("----- Création de la liste d'objets selon le fichier correspondant -----\n\n");
-    liste_obj = creer_liste_objet();
+    liste_obj = creer_liste_objet("../ressource/objet.txt");
 
     printf("----- Affichage de la liste d'objets -----\n\n");
     afficher_liste_objet(liste_obj);

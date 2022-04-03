@@ -11,11 +11,13 @@
 #define __MAP_H__ 
 
 #include "definition_commun.h"
+#include "monstres.h"
 #include "listes.h"
 
 #define TAILLE_CASE 16
 
 typedef struct s_aff t_aff; //!< \brief Structure de texture
+typedef struct liste_base_monstres_s liste_base_monstres_t;
 
 /**
  * \brief Structure représentant une zone de tp.
@@ -51,11 +53,12 @@ extern t_map *map; /**< La map courante */
 
 /**
  * \brief Fonction qui récupère les informations stockées dans le buffer en entrée.
- * 
+ * \param liste_base_monstres Les montres à placer sur la map
  * \param buffer Le buffeur qui contient les informations
  * \return Une map initialisée avec toutes les informations dedans;
  */
 t_map *charger_map(const char *const nom_map);
+
 
 /**
  * \brief Fonction qui renvoie la texture de la map

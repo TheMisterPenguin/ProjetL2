@@ -13,12 +13,12 @@ BINDIR = bin/# Répertoire des exécutables
 ALLOBJ = $(addsuffix .o, $(addprefix $(ODIR), main init_close event monstres personnage affichage objet liste_objet listes map menus interface inventaire sorts test_affichage test_inventaire test_liste_objet test_listes test_map test_monstre test_personnage))
 OBJ = $(addsuffix .o, $(addprefix $(ODIR), main init_close event monstres personnage affichage objet liste_objet listes map menus interface inventaire sorts))
 OBJ_TEST_MONSTRES = $(addsuffix .o, $(addprefix $(ODIR), test_monstres monstres))
-OBJ_TEST_MAP = $(addsuffix .o, $(addprefix $(ODIR), test_map map affichage init_close event listes personnage menus liste_objet objet inventaire interface))
-OBJ_TEST_LISTE_OBJET = $(addsuffix .o, $(addprefix $(ODIR), test_liste_objet liste_objet objet affichage listes personnage init_close inventaire map interface))
-OBJ_TEST_INVENTAIRE = $(addsuffix .o, $(addprefix $(ODIR), test_inventaire inventaire liste_objet objet personnage affichage listes init_close map interface))
-OBJ_TEST_PERSONNAGE = $(addsuffix .o, $(addprefix $(ODIR), test_personnage personnage affichage listes init_close inventaire objet liste_objet map interface))
-OBJ_TEST_AFFICHAGE = $(addsuffix .o, $(addprefix $(ODIR), test_affichage affichage listes init_close personnage personnage inventaire liste_objet objet map interface))
-OBJ_TEST_LISTES = $(addsuffix .o, $(addprefix $(ODIR), test_listes listes affichage personnage init_close inventaire liste_objet objet interface map))
+OBJ_TEST_MAP = $(addsuffix .o, $(addprefix $(ODIR), test_map map affichage init_close event listes personnage menus liste_objet objet inventaire interface monstres sorts))
+OBJ_TEST_LISTE_OBJET = $(addsuffix .o, $(addprefix $(ODIR), test_liste_objet liste_objet objet affichage listes personnage init_close inventaire map interface monstres sorts event menus))
+OBJ_TEST_INVENTAIRE = $(addsuffix .o, $(addprefix $(ODIR), test_inventaire inventaire liste_objet objet personnage affichage listes init_close map interface monstres sorts event menus))
+OBJ_TEST_PERSONNAGE = $(addsuffix .o, $(addprefix $(ODIR), test_personnage personnage affichage listes init_close inventaire objet liste_objet map interface monstres sorts event menus))
+OBJ_TEST_AFFICHAGE = $(addsuffix .o, $(addprefix $(ODIR), test_affichage affichage listes init_close personnage personnage inventaire liste_objet objet map interface monstres sorts event menus))
+OBJ_TEST_LISTES = $(addsuffix .o, $(addprefix $(ODIR), test_listes listes affichage personnage init_close inventaire liste_objet objet interface map monstres sorts event menus))
 OBJ_TEST_SDL = $(addsuffix .o, $(addprefix $(ODIR), test_SDL))
 
 default : $(BINDIR)jeux$(EXT) # Génération par défault

@@ -12,6 +12,8 @@
 
 #include "definition_commun.h"
 #include "affichage.h"
+#include "map.h"
+#include "personnage.h"
 
 #define DISTANCE_AGRO 50
 #define DUREE_MONSTRE_MARCHER 100
@@ -21,6 +23,10 @@
 #define DUREE_MONSTRE_BLESSE 30
 
 #define CHEMIN_TEXTURE "ressources/sprite"
+
+typedef struct s_aff t_aff;
+typedef struct t_map t_map;
+typedef struct joueur_s joueur_t;
 
 typedef enum {WITCHER,KNIGHT,BOSS}type_monstre_t;
 typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE, MONSTRE_BLESSE, ERREUR}action_monstre_t;
@@ -88,14 +94,15 @@ extern liste_base_monstres_t * liste_base_monstres;
  * \param base_monstres structure base_monstres_t à détruire
  */
 
-void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres);
+void detruire_liste_base_monstres(liste_base_monstres_t ** liste_base_monstres);
 
 /**
- * \fn void charger_base_monstre(char* nom_fichier);
- * \brief Fonction qui recopie les informations d'un fichier json pour les insérrer dans la structure global liste_base_monstres
+ * \fn void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t * liste_base_monstres)
+ * \brief Fonction qui recopie les informations d'un fichier json pour les insérrer dans la structure liste_base_monstres
  * \param nom_fichier nom du fichier à lire
+ * \param liste_base_monstres Base dans laquelle enregistrer les monstres
  */
-void charger_base_monstre(char* nom_fichier);
+void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t ** liste_base_monstres);
 
 /**
  * \fn monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, int x, int y);

@@ -38,6 +38,7 @@
 #define LONGUEUR_ENTITE 48
 #define LARGEUR_ENTITE 48
 
+typedef struct t_map t_map;
 
 typedef struct joueur_s joueur_t;
 

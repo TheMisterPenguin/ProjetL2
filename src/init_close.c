@@ -20,6 +20,7 @@ SDL_Renderer *rendu_principal = NULL;
 SDL_Window *fenetre_sous_rendu = NULL;
 SDL_Renderer *sous_rendu = NULL;
 bool running = vrai;
+SDL_Rect * hors_hitbox = NULL;
 
 
 list *f_close = NULL; /**< Liste des fonctions à appeler lors de la fermeture du programme*/

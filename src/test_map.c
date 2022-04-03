@@ -4,6 +4,7 @@
 #include <definition_commun.h>
 #include <map.h>
 #include <stdio.h>
+#include <monstres.h>
 
 /**
  * \file test_map.c
@@ -32,7 +33,7 @@ int main(int argc, char **argv){
     fichier_map = charger_f_map("map.json");
 
     printf("----- Création de texture map et traitement des informations json -----\n");
-    test_map = charger_s_map(fichier_map);
+    test_map = charger_s_map(fichier_map, liste_base_monstres);
 
     text = texture_map(test_map);
 
