@@ -38,14 +38,18 @@ unsigned int \mbox{\hyperlink{structs__map_af49bd6e471e7f802244cb14f180d886f}{ca
 \mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{structs__map_a909aa57f45ea83c8c494488e315cd02f}{liste\+\_\+sorts}}
 \item 
 \mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{structs__map_abc1532265c403adfbc475bafca6ad747}{liste\+\_\+collisions}}
+\item 
+\mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{structs__map_af10961161860e31e9a4bc894a37de932}{liste\+\_\+coffres}}
+\item 
+\mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{structs__map_a8d1bfc8107f70a1d462ca92468896ab1}{liste\+\_\+zone\+\_\+tp}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
 Définition de la structure map.
 
-\begin{DoxyAuthor}{Auteur}
-Ange Despert
+\begin{DoxyAuthor}{Auteurs}
+Ange Despert Antoine Bruneau Descomps Max
 \end{DoxyAuthor}
 Cette définition est la pour éviter une inclusion mutuelle des fichiers \mbox{\hyperlink{affichage_8h}{affichage.\+h}} et \mbox{\hyperlink{map_8h}{map.\+h}} . 
 
@@ -74,7 +78,13 @@ La largeur et la hauteur de la map \mbox{\Hypertarget{structs__map_ada908676f9fb
 \doxysubsubsection{\texorpdfstring{id\_map}{id\_map}}
 {\footnotesize\ttfamily unsigned int t\+\_\+map\+::id\+\_\+map}
 
-\mbox{\Hypertarget{structs__map_abc1532265c403adfbc475bafca6ad747}\label{structs__map_abc1532265c403adfbc475bafca6ad747}} 
+\mbox{\Hypertarget{structs__map_af10961161860e31e9a4bc894a37de932}\label{structs__map_af10961161860e31e9a4bc894a37de932}} 
+\index{t\_map@{t\_map}!liste\_coffres@{liste\_coffres}}
+\index{liste\_coffres@{liste\_coffres}!t\_map@{t\_map}}
+\doxysubsubsection{\texorpdfstring{liste\_coffres}{liste\_coffres}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlist}{list}}$\ast$ t\+\_\+map\+::liste\+\_\+coffres}
+
+La liste de tous les coffres \mbox{\Hypertarget{structs__map_abc1532265c403adfbc475bafca6ad747}\label{structs__map_abc1532265c403adfbc475bafca6ad747}} 
 \index{t\_map@{t\_map}!liste\_collisions@{liste\_collisions}}
 \index{liste\_collisions@{liste\_collisions}!t\_map@{t\_map}}
 \doxysubsubsection{\texorpdfstring{liste\_collisions}{liste\_collisions}}
@@ -92,7 +102,13 @@ La liste des monstres de la map \mbox{\Hypertarget{structs__map_a909aa57f45ea83c
 \doxysubsubsection{\texorpdfstring{liste\_sorts}{liste\_sorts}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structlist}{list}}$\ast$ t\+\_\+map\+::liste\+\_\+sorts}
 
-La liste des sorts de la map \mbox{\Hypertarget{structs__map_af838fdad4e19edb485845ad1a76a38f3}\label{structs__map_af838fdad4e19edb485845ad1a76a38f3}} 
+La liste des sorts de la map \mbox{\Hypertarget{structs__map_a8d1bfc8107f70a1d462ca92468896ab1}\label{structs__map_a8d1bfc8107f70a1d462ca92468896ab1}} 
+\index{t\_map@{t\_map}!liste\_zone\_tp@{liste\_zone\_tp}}
+\index{liste\_zone\_tp@{liste\_zone\_tp}!t\_map@{t\_map}}
+\doxysubsubsection{\texorpdfstring{liste\_zone\_tp}{liste\_zone\_tp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlist}{list}}$\ast$ t\+\_\+map\+::liste\+\_\+zone\+\_\+tp}
+
+La liste des points de téléportation \mbox{\Hypertarget{structs__map_af838fdad4e19edb485845ad1a76a38f3}\label{structs__map_af838fdad4e19edb485845ad1a76a38f3}} 
 \index{t\_map@{t\_map}!taille\_case@{taille\_case}}
 \index{taille\_case@{taille\_case}!t\_map@{t\_map}}
 \doxysubsubsection{\texorpdfstring{taille\_case}{taille\_case}}

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['joueur_5fs_513',['joueur_s',['../d1/d3e/structjoueur__s.html',1,'']]]
+  ['inventaire_5fs_534',['inventaire_s',['../d8/d9c/structinventaire__s.html',1,'']]],
+  ['inventaire_5ft_535',['inventaire_t',['../de/dbc/structinventaire__t.html',1,'']]]
 ];

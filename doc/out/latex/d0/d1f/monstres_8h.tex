@@ -10,10 +10,11 @@ Graphe des dépendances par inclusion de monstres.\+h\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d7/deb/monstres_8h__incl}
+\includegraphics[width=287pt]{d7/deb/monstres_8h__incl}
 \end{center}
 \end{figure}
-Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -49,8 +50,6 @@ struct \mbox{\hyperlink{structliste__base__monstres__s}{liste\+\_\+base\+\_\+mon
 \doxysubsection*{Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
-typedef \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} \mbox{\hyperlink{monstres_8h_a3955b9e71f087712956fa58f24b7535c}{t\+\_\+map}}
-\item 
 typedef \mbox{\hyperlink{structpoint}{point}} \mbox{\hyperlink{monstres_8h_a581004ae3aa6c4203a5eaaa75f0a55a6}{position\+\_\+t}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Énumérations}
@@ -77,8 +76,8 @@ enum \mbox{\hyperlink{monstres_8h_a587508e1691dced47b437cc631cef09e}{action\+\_\
 void \mbox{\hyperlink{monstres_8h_a240fa28630c14d22ce9e82e28247b349}{detruire\+\_\+liste\+\_\+base\+\_\+monstres}} (liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$$\ast$\mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}})
 \item 
 void \mbox{\hyperlink{monstres_8h_ae475ce68edaa0a8f29e6df495043bebf}{charger\+\_\+base\+\_\+monstre}} (char $\ast$chemin\+\_\+fichier, liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$$\ast$\mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}})
-\item 
-monstre\+\_\+t $\ast$ \mbox{\hyperlink{monstres_8h_a59111ee22050f72202e7a958275b05f4}{creer\+\_\+monstre}} (liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$\mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}}, const char $\ast$const nom\+\_\+monstre, int x, int y, \mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
+\begin{DoxyCompactList}\small\item\em Fonction qui recopie les informations d\textquotesingle{}un fichier json pour les insérrer dans la structure liste\+\_\+base\+\_\+monstres. \end{DoxyCompactList}\item 
+monstre\+\_\+t $\ast$ \mbox{\hyperlink{monstres_8h_a59111ee22050f72202e7a958275b05f4}{creer\+\_\+monstre}} (liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$\mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}}, const char $\ast$const nom\+\_\+monstre, int x, int y, t\+\_\+map $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
 \item 
 void \mbox{\hyperlink{monstres_8h_a52b27e40a8e179d58dbf20268f75e988}{action\+\_\+monstre}} (monstre\+\_\+t $\ast$monstre, joueur\+\_\+t $\ast$joueur)
 \item 
@@ -162,12 +161,6 @@ Copyright (c) 2022
 \doxysubsubsection{\texorpdfstring{position\_t}{position\_t}}
 {\footnotesize\ttfamily typedef \mbox{\hyperlink{structpoint}{point}} \mbox{\hyperlink{monstres_8h_a581004ae3aa6c4203a5eaaa75f0a55a6}{position\+\_\+t}}}
 
-\mbox{\Hypertarget{monstres_8h_a3955b9e71f087712956fa58f24b7535c}\label{monstres_8h_a3955b9e71f087712956fa58f24b7535c}} 
-\index{monstres.h@{monstres.h}!t\_map@{t\_map}}
-\index{t\_map@{t\_map}!monstres.h@{monstres.h}}
-\doxysubsubsection{\texorpdfstring{t\_map}{t\_map}}
-{\footnotesize\ttfamily typedef \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} \mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}}}
-
 
 
 \doxysubsection{Documentation du type de l\textquotesingle{}énumération}
@@ -232,18 +225,20 @@ T\+Y\+P\+E\+\_\+\+M\+O\+N\+S\+T\+R\+E\+\_\+\+I\+N\+C\+O\+N\+NU&\\
 \doxysubsubsection{\texorpdfstring{action\_monstre()}{action\_monstre()}}
 {\footnotesize\ttfamily void action\+\_\+monstre (\begin{DoxyParamCaption}\item[{monstre\+\_\+t $\ast$}]{monstre,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/d1f/monstres_8h_a52b27e40a8e179d58dbf20268f75e988_cgraph}
+\includegraphics[width=333pt]{d0/d1f/monstres_8h_a52b27e40a8e179d58dbf20268f75e988_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/d1f/monstres_8h_a52b27e40a8e179d58dbf20268f75e988_icgraph}
+\includegraphics[width=312pt]{d0/d1f/monstres_8h_a52b27e40a8e179d58dbf20268f75e988_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{monstres_8h_ae475ce68edaa0a8f29e6df495043bebf}\label{monstres_8h_ae475ce68edaa0a8f29e6df495043bebf}} 
@@ -252,7 +247,15 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{charger\_base\_monstre()}{charger\_base\_monstre()}}
 {\footnotesize\ttfamily void charger\+\_\+base\+\_\+monstre (\begin{DoxyParamCaption}\item[{char $\ast$}]{chemin\+\_\+fichier,  }\item[{liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$$\ast$}]{liste\+\_\+base\+\_\+monstres }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\+\_\+fichier} & nom du fichier à lire \\
+\hline
+{\em liste\+\_\+base\+\_\+monstres} & Base dans laquelle enregistrer les monstres \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -270,20 +273,22 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{monstres.h@{monstres.h}!creer\_monstre@{creer\_monstre}}
 \index{creer\_monstre@{creer\_monstre}!monstres.h@{monstres.h}}
 \doxysubsubsection{\texorpdfstring{creer\_monstre()}{creer\_monstre()}}
-{\footnotesize\ttfamily monstre\+\_\+t$\ast$ creer\+\_\+monstre (\begin{DoxyParamCaption}\item[{liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$}]{liste\+\_\+base\+\_\+monstres,  }\item[{const char $\ast$const}]{nom\+\_\+monstre,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily monstre\+\_\+t$\ast$ creer\+\_\+monstre (\begin{DoxyParamCaption}\item[{liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$}]{liste\+\_\+base\+\_\+monstres,  }\item[{const char $\ast$const}]{nom\+\_\+monstre,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{t\+\_\+map $\ast$}]{map }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/d1f/monstres_8h_a59111ee22050f72202e7a958275b05f4_cgraph}
+\includegraphics[width=329pt]{d0/d1f/monstres_8h_a59111ee22050f72202e7a958275b05f4_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/d1f/monstres_8h_a59111ee22050f72202e7a958275b05f4_icgraph}
+\includegraphics[width=283pt]{d0/d1f/monstres_8h_a59111ee22050f72202e7a958275b05f4_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{monstres_8h_a240fa28630c14d22ce9e82e28247b349}\label{monstres_8h_a240fa28630c14d22ce9e82e28247b349}} 
@@ -305,11 +310,12 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{distance\_x\_joueur()}{distance\_x\_joueur()}}
 {\footnotesize\ttfamily int distance\+\_\+x\+\_\+joueur (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{collision,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/d1f/monstres_8h_a14f8330d9598f09daba245654f27af2a_icgraph}
+\includegraphics[width=348pt]{d0/d1f/monstres_8h_a14f8330d9598f09daba245654f27af2a_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{monstres_8h_a0ae422db30a3dda1ba20e3e77a9a4db3}\label{monstres_8h_a0ae422db30a3dda1ba20e3e77a9a4db3}} 
@@ -318,11 +324,12 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{distance\_y\_joueur()}{distance\_y\_joueur()}}
 {\footnotesize\ttfamily int distance\+\_\+y\+\_\+joueur (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{collision,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/d1f/monstres_8h_a0ae422db30a3dda1ba20e3e77a9a4db3_icgraph}
+\includegraphics[width=348pt]{d0/d1f/monstres_8h_a0ae422db30a3dda1ba20e3e77a9a4db3_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{monstres_8h_a46bbe288759d918b5391361c7abf41d5}\label{monstres_8h_a46bbe288759d918b5391361c7abf41d5}} 
@@ -331,11 +338,12 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{nom\_monstre\_to\_type\_monstre()}{nom\_monstre\_to\_type\_monstre()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{monstres_8h_a99490a386439839dbe510f00783d1904}{type\+\_\+monstre\+\_\+t}} nom\+\_\+monstre\+\_\+to\+\_\+type\+\_\+monstre (\begin{DoxyParamCaption}\item[{const char $\ast$const}]{nom\+\_\+monstre }\end{DoxyParamCaption})}
 
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/d1f/monstres_8h_a46bbe288759d918b5391361c7abf41d5_icgraph}
+\includegraphics[width=329pt]{d0/d1f/monstres_8h_a46bbe288759d918b5391361c7abf41d5_icgraph}
 \end{center}
 \end{figure}
 
