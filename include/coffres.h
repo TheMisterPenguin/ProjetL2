@@ -14,6 +14,9 @@
 #ifndef __COFFRES_H__
 #define __COFFRES_H__
 
+#define COFFRE_FACE_OUVERT "ressources/sprite/coffrefaceouvert.bmp"
+#define COFFRE_PROFIL_OUVERT "ressources/sprite/coffreprofilouvert.bmp"
+
 typedef struct s_aff t_aff; //!< \brief Structure de texture
 
 /**
@@ -24,7 +27,7 @@ typedef enum {PROFIL_FERME,PROFIL_OUVERT,FACE_FERME,FACE_OUVERT}type_coffre_t;
 /**
  * Type enum indiquant si un coffre à été ouvert par un joueur
  */
-typedef enum {OUVERT, FERME}action_coffre_t;
+typedef enum {OUVERT, FERME}etat_coffre_t;
 
 /**
  * \struct coffre_s
@@ -35,7 +38,7 @@ typedef struct coffre_s
 {
 	type_coffre_t type; /**<Type de coffre*/
     t_direction_1 orientation; /*Orientation du coffre*/
-    action_coffre_t action; /*Action en cours par le coffre*/
+    etat_coffre_t etat; /*Etat en cours par le coffre*/
     SDL_Rect collision; /**<Coordonnées*/
     t_aff* texture; /**<Texture*/
 } coffre_t;

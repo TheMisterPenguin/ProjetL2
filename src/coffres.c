@@ -17,162 +17,80 @@ liste_base_coffres_t * liste_base_coffres = NULL;
 
 void charger_base_coffre(char * chemin_fichier, liste_base_coffres_t ** liste_base_coffres){
 
-    json_object *fichier = json_object_from_file(chemin_fichier); //objet json contenant des informations de jeu
+    json_object *JSON_fichier = json_object_from_file(chemin_fichier); //objet json contenant des informations de jeu
     int nb_coffres;
 
-    if(!fichier){
-        char *msp = malloc(sizeof(char) * (500));
+    if(!JSON_fichier)
+        erreur("Erreur lors du chargement des coffres : %s", ERREUR_FICHIER, json_util_get_last_err());
 
-        sprintf(msp, "Erreur lors du chargement des coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-
-        SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-        free(msp);
-        fermer_programme(ERREUR_FICHIER);
-    }
-
-    json_object *json_tbl_coffre = NULL;
-    json_object *json_coffre = NULL;
+    json_object *JSON_tbl_coffre = NULL;
+    json_object *JSON_coffre = NULL;
 
     /* Définition des attributs */
 
-    json_object *json_fichier_image = NULL;
-    json_object *json_type = NULL;
-    json_object *json_hitbox = NULL;
+    json_object *JSON_fichier_image = NULL;
+    json_object *JSON_type = NULL;
+    json_object *JSON_hitbox = NULL;
 
     /* Définition des attributs de la hitbox */
-    json_object *json_hitbox_x = NULL;
-    json_object *json_hitbox_y = NULL;
+    json_object *JSON_hitbox_x = NULL;
+    json_object *JSON_hitbox_y = NULL;
 
     /* Récupération des données */
 
-    json_tbl_coffre = json_object_object_get(fichier, "coffre");
-
-    if(!json_tbl_coffre){
-        char *msp = malloc(sizeof(char) * (500));
-
-        sprintf(msp, "Erreur lors de la récupération des coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-
-        SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-        free(msp);
-        fermer_programme(ERREUR_FICHIER);
-    }
+    if(!json_object_object_get_ex(JSON_fichier, "coffre", &JSON_tbl_coffre))
+        erreur("Erreur lors de la récupération des coffres : %s", ERREUR_FICHIER, json_util_get_last_err());
 
     //allocation de liste_base_coffre avec le nombre de coffre nécéssaire
     (*liste_base_coffres) = malloc(sizeof(liste_base_coffres_t));
-    nb_coffres = json_object_array_length(json_tbl_coffre);
+    nb_coffres = json_object_array_length(JSON_tbl_coffre);
     (*liste_base_coffres)->tab = malloc(sizeof(base_coffre_t) * nb_coffres);
     (*liste_base_coffres)->nb_coffre = nb_coffres;
 
     for(unsigned int i = 0; i < nb_coffres; i++){
     
-        json_coffre = json_object_array_get_idx(json_tbl_coffre, i);
+        JSON_coffre = json_object_array_get_idx(JSON_tbl_coffre, i);
 
-        if(!json_coffre){
-            char *msp = malloc(sizeof(char) * (500));
+        if(!JSON_coffre)
+            erreur("Erreur lors de la récupération des informations sur les coffres : %s", ERREUR_FICHIER, json_util_get_last_err());
 
-            sprintf(msp, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+        if(!json_object_object_get_ex(JSON_coffre, "fichier", &JSON_fichier_image))
+            erreur("Erreur lors de la récupération des informations sur les coffres : %s", ERREUR_FICHIER, json_util_get_last_err());
 
-            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            free(msp);
-            fermer_programme(ERREUR_FICHIER);
-        }
-        json_fichier_image = json_object_object_get(json_coffre, "fichier");
+        if(!json_object_object_get_ex(JSON_coffre, "type", &JSON_type))
+            erreur("Erreur lors de la récupération des informations sur les coffres : %s", ERREUR_FICHIER, json_util_get_last_err());
 
-        if(!json_fichier_image){
-            char *msp = malloc(sizeof(char) * (500));
-
-            sprintf(msp, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-
-            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            free(msp);
-            fermer_programme(ERREUR_FICHIER);
-        }
-        json_type = json_object_object_get(json_coffre, "type");
-
-        if(!json_type){
-            char *msp = malloc(sizeof(char) * (500));
-
-            sprintf(msp, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-
-            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            free(msp);
-            fermer_programme(ERREUR_FICHIER);
-        }
+        if(!json_object_object_get_ex(JSON_coffre, "hitbox", &JSON_hitbox))
+            erreur("Erreur lors de la récupération des informations sur les coffres : %s", ERREUR_FICHIER, json_util_get_last_err());
         
-        json_hitbox = json_object_object_get(json_coffre, "hitbox");
+        JSON_hitbox_x = json_object_array_get_idx(JSON_hitbox, 0);
 
-        if(!json_hitbox){
-            char *msp = malloc(sizeof(char) * (500));
+        if(!JSON_hitbox_x)
+            erreur("Erreur lors de la récupération des informations sur les coffres : %s", ERREUR_FICHIER, json_util_get_last_err());
+            
+        JSON_hitbox_y = json_object_array_get_idx(JSON_hitbox, 1);
 
-            sprintf(msp, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+        if(!JSON_hitbox_y)
+            erreur("Erreur lors de la récupération des informations sur les coffres : %s", ERREUR_FICHIER, json_util_get_last_err());
 
-            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            free(msp);
-            fermer_programme(ERREUR_FICHIER);
-        }
-        json_hitbox_x = json_object_array_get_idx(json_hitbox, 0);
+        const char *fichier_image = json_object_get_string(JSON_fichier_image);
 
-        if(!json_hitbox_x){
-            char *msp = malloc(sizeof(char) * (500));
+        if(!fichier_image)
+            erreur("Erreur lors de la récupération des informations sur les coffres : %s", ERREUR_FICHIER, json_util_get_last_err());
 
-            sprintf(msp, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
+        const char *type = json_object_get_string(JSON_type);
 
-            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            free(msp);
-            fermer_programme(ERREUR_FICHIER);
-        }
-        json_hitbox_y = json_object_array_get_idx(json_hitbox, 1);
-
-        if(!json_hitbox_y){
-            char *msp = malloc(sizeof(char) * (500));
-
-            sprintf(msp, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-
-            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            free(msp);
-            fermer_programme(ERREUR_FICHIER);
-        }
-        const char *fichier_image = json_object_get_string(json_fichier_image);
-
-        if(!fichier_image){
-            char *msp = malloc(sizeof(char) * (500));
-
-            sprintf(msp, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-
-            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            free(msp);
-            fermer_programme(ERREUR_FICHIER);
-        }
-        const char *type = json_object_get_string(json_type);
-
-        if(!type){
-            char *msp = malloc(sizeof(char) * (500));
-
-            sprintf(msp, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-
-            SDL_LogError(SDL_LOG_CATEGORY_INPUT, "Erreur lors de la récupération des informations sur les coffres : %s\n Erreur : 0x%X\n", json_util_get_last_err(), ERREUR_FICHIER);
-            free(msp);
-            fermer_programme(ERREUR_FICHIER);
-        }
+        if(!type)
+            erreur("Erreur lors de la récupération des informations sur les coffres : %s", ERREUR_FICHIER, json_util_get_last_err());
 
         
         /*inserrer les caractèristiques dans base_coffre_t*/
         strcpy((*liste_base_coffres)->tab[i].fichier_image, fichier_image);
         strcpy((*liste_base_coffres)->tab[i].nom_coffre, type);
-        (*liste_base_coffres)->tab[i].hitbox.w = json_object_get_int(json_hitbox_x);
-        (*liste_base_coffres)->tab[i].hitbox.h = json_object_get_int(json_hitbox_y);
+        (*liste_base_coffres)->tab[i].hitbox.w = json_object_get_int(JSON_hitbox_x);
+        (*liste_base_coffres)->tab[i].hitbox.h = json_object_get_int(JSON_hitbox_y);
     }
-    json_object_put(fichier);
+    json_object_put(JSON_fichier);
 }
 
 type_coffre_t nom_coffre_to_type_coffre(char * nom_coffre){
@@ -205,11 +123,10 @@ coffre_t* creer_coffre(liste_base_coffres_t* liste_base_coffres, const char * co
             coffre->collision.h = liste_base_coffres->tab[i].hitbox.h * TAILLE_CASE;
 
             coffre->orientation = NORD_1; //à changer selon le type
-            coffre->action = FERME;
+            coffre->etat = FERME;
 
             /*copie les informations de base_coffre dans coffre*/
             coffre->texture = creer_texture(liste_base_coffres->tab[i].fichier_image, -1, -1, coffre->collision.x, coffre->collision.y, map->taille_case /(float)32);
-            info_coffre(coffre);
             coffre->texture->duree_frame_anim = NB_FPS;
 
             return coffre;
@@ -219,7 +136,7 @@ coffre_t* creer_coffre(liste_base_coffres_t* liste_base_coffres, const char * co
 }
 
 void info_coffre(coffre_t * coffre){
-    printf("Coffre: %p\ntype: %d\norientation: %d\naction%d\ncollision:{x:%d y:%d w:%d h:%d}\n", coffre, coffre->type, coffre->orientation, coffre->action,
+    printf("Coffre: %p\ntype: %d\norientation: %d\netat%d\ncollision:{x:%d y:%d w:%d h:%d}\n", coffre, coffre->type, coffre->orientation, coffre->etat,
     coffre->collision.x, coffre->collision.y, coffre->collision.w, coffre->collision.h);
     info_texture(coffre->texture);
 }
@@ -233,7 +150,13 @@ void interaction_coffre(SDL_Rect * coffre_rect){
         coffre = valeur_elt(map->liste_coffres);
 
         if(&(coffre->collision) == coffre_rect){
-            printf("ouverture du coffre\n");
+            if(coffre->etat == FERME){
+                if(coffre->type == PROFIL_FERME)
+                    coffre->texture = creer_texture(COFFRE_PROFIL_OUVERT, -1, -1, coffre->collision.x, coffre->collision.y - TAILLE_CASE, map->taille_case /(float)32);
+                if(coffre->type == FACE_FERME){
+                    coffre->texture = creer_texture(COFFRE_FACE_OUVERT, -1, -1, coffre->collision.x, coffre->collision.y, map->taille_case /(float)32);
+                }
+            }
             //changer la texture coffre
             //ajouter un bouton d'ouverture
             //ajouter gestion direction
