@@ -38,7 +38,7 @@ typedef struct {
  * \brief Structure représentant une map
  * \author Ange Despert
 */
-typedef struct t_map{
+typedef struct s_map{
     unsigned int id_map;
     t_aff * text_map; /**< La texture de la map */
     t_aff *text_sol;  /**< La texture du sol */

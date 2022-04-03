@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['width_592',['width',['../df/d5b/structs__aff_af81eadb9bfb87e5b890489827e1ad60a.html#af81eadb9bfb87e5b890489827e1ad60a',1,'s_aff::width()'],['../d3/d90/structt__map_a4bd0554ddfe12e87dfbb9405093cfecc.html#a4bd0554ddfe12e87dfbb9405093cfecc',1,'t_map::width()']]]
+  ['x_864',['x',['../d8/dae/structpoint.html#ad679b07fb69d55f5ad454d0f1f2891d5',1,'point']]],
+  ['xp_865',['xp',['../db/d0a/structboss__s.html#ad5555398cbafe701456bc21e9a40508f',1,'boss_s::xp()'],['../d1/d3e/structjoueur__s.html#a982ff904b277f68f58f85165c372c3a4',1,'joueur_s::xp()']]]
 ];

@@ -1,112 +1,147 @@
-\hypertarget{structjoueur__s}{}\doxysection{Référence de la structure joueur\+\_\+s}
-\label{structjoueur__s}\index{joueur\_s@{joueur\_s}}
+\hypertarget{structjoueur__s}{}\doxysection{Référence de la structure joueur\+\_\+t}
+\label{structjoueur__s}\index{joueur\_t@{joueur\_t}}
 
 
-{\ttfamily \#include $<$personnage.\+h$>$}
+Définition de la structure joueur.  
 
 
 
-Graphe de collaboration de joueur\+\_\+s\+:
-\nopagebreak
+
+Graphe de collaboration de joueur\+\_\+t\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=235pt]{da/d57/structjoueur__s__coll__graph}
+\includegraphics[width=171pt]{da/d57/structjoueur__s__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$ \mbox{\hyperlink{structjoueur__s_a68d021d3bf406eb8348e88f3ca188f17_a68d021d3bf406eb8348e88f3ca188f17}{nom\+\_\+pers}}
+char $\ast$ \mbox{\hyperlink{structjoueur__s_af3dfbec80c287ad8af431c0d075f2a78}{nom\+\_\+pers}}
 \item 
-short int \mbox{\hyperlink{structjoueur__s_a55344db17ac9f1b6f2343769fca26006_a55344db17ac9f1b6f2343769fca26006}{niveau}}
+short int \mbox{\hyperlink{structjoueur__s_a0f7112457a852b4db2c4ace8dc317159}{niveau}}
 \item 
-int \mbox{\hyperlink{structjoueur__s_a3acf5bb1fb7283637e24a0dd9efa5cfc_a3acf5bb1fb7283637e24a0dd9efa5cfc}{xp}}
+int \mbox{\hyperlink{structjoueur__s_a982ff904b277f68f58f85165c372c3a4}{xp}}
 \item 
-\mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} $\ast$ \mbox{\hyperlink{structjoueur__s_aa2ee8d4cd90cc58b61592832e0c7b849_aa2ee8d4cd90cc58b61592832e0c7b849}{trigger}}
+\mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} $\ast$ \mbox{\hyperlink{structjoueur__s_a17da423da1417ecd9d986e3a3ae5aa9f}{trigger}}
 \item 
-int \mbox{\hyperlink{structjoueur__s_a63eec551eed397472ad0854a88eda1e9_a63eec551eed397472ad0854a88eda1e9}{max\+Pdv}}
+int \mbox{\hyperlink{structjoueur__s_a25ede0d11afd576d908541172b5de89f}{max\+Pdv}}
 \item 
-int \mbox{\hyperlink{structjoueur__s_a1711f2946ec4e80fa1b5a6415f052102_a1711f2946ec4e80fa1b5a6415f052102}{pdv}}
+int \mbox{\hyperlink{structjoueur__s_af8bae63c7135414cd67e14e2720c8828}{pdv}}
 \item 
-int \mbox{\hyperlink{structjoueur__s_a6b598ce678c8c330f6ce49b2c4073b0b_a6b598ce678c8c330f6ce49b2c4073b0b}{attaque}}
+int \mbox{\hyperlink{structjoueur__s_a50e33fa65206ee072f527b51edd64ba2}{attaque}}
 \item 
-int \mbox{\hyperlink{structjoueur__s_ae89ac684d8acd8a892336eb8e11b6364_ae89ac684d8acd8a892336eb8e11b6364}{defense}}
+int \mbox{\hyperlink{structjoueur__s_a7425e58690c8ec4ce5c3ee9a2f82e7a4}{defense}}
 \item 
-int \mbox{\hyperlink{structjoueur__s_ad6585650289d496fd6645d1f6089ad8d_ad6585650289d496fd6645d1f6089ad8d}{vitesse}}
+int \mbox{\hyperlink{structjoueur__s_a5424e8f0b5f17655064251c71fa4c5cf}{vitesse}}
 \item 
-\mbox{\hyperlink{personnage_8h_aca9f708962d381b038e118085be158ef_aca9f708962d381b038e118085be158ef}{statut\+\_\+t}} $\ast$ \mbox{\hyperlink{structjoueur__s_af8627e3c41e176a3fc34a7167786584d_af8627e3c41e176a3fc34a7167786584d}{statut}}
+int \mbox{\hyperlink{structjoueur__s_a3a76dc4048c45c64b6ba54747f705102}{attaque\+\_\+actif}}
 \item 
-\mbox{\hyperlink{affichage_8h_a335b4ad9655d3aedc1d71c9f1f1fc06d_a335b4ad9655d3aedc1d71c9f1f1fc06d}{t\+\_\+l\+\_\+aff}} $\ast$ \mbox{\hyperlink{structjoueur__s_a7c8c4bbf6d1947df9f23a1b25bb6f1e3_a7c8c4bbf6d1947df9f23a1b25bb6f1e3}{textures\+\_\+joueur}}
+int \mbox{\hyperlink{structjoueur__s_a9ad3c8ba8c284034f3ac32ee8e51fbce}{defense\+\_\+actif}}
+\item 
+int \mbox{\hyperlink{structjoueur__s_a751c17526ebc15d436fe0d7cb08b6a14}{vitesse\+\_\+actif}}
+\item 
+statut\+\_\+t $\ast$ \mbox{\hyperlink{structjoueur__s_a596a0e8a7494ccf4d737412e63ed85f4}{statut}}
+\item 
+t\+\_\+l\+\_\+aff $\ast$ \mbox{\hyperlink{structjoueur__s_a41490d071aa05b28127b90ff2bcf715b}{textures\+\_\+joueur}}
+\item 
+\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$ \mbox{\hyperlink{structjoueur__s_a3ef196a06d3fe0a184b553359a10f20c}{inventaire}}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Description détaillée}
+Cette définition est la pour éviter une inclusion mutuelle des fichiers \mbox{\hyperlink{affichage_8h}{affichage.\+h}} et \mbox{\hyperlink{personnage_8h}{personnage.\+h}} . 
+
 \doxysubsection{Documentation des données membres}
-\mbox{\Hypertarget{structjoueur__s_a6b598ce678c8c330f6ce49b2c4073b0b_a6b598ce678c8c330f6ce49b2c4073b0b}\label{structjoueur__s_a6b598ce678c8c330f6ce49b2c4073b0b_a6b598ce678c8c330f6ce49b2c4073b0b}} 
-\index{joueur\_s@{joueur\_s}!attaque@{attaque}}
-\index{attaque@{attaque}!joueur\_s@{joueur\_s}}
+\mbox{\Hypertarget{structjoueur__s_a50e33fa65206ee072f527b51edd64ba2}\label{structjoueur__s_a50e33fa65206ee072f527b51edd64ba2}} 
+\index{joueur\_t@{joueur\_t}!attaque@{attaque}}
+\index{attaque@{attaque}!joueur\_t@{joueur\_t}}
 \doxysubsubsection{\texorpdfstring{attaque}{attaque}}
-{\footnotesize\ttfamily int joueur\+\_\+s\+::attaque}
+{\footnotesize\ttfamily int joueur\+\_\+t\+::attaque}
 
-attaque du joueur \mbox{\Hypertarget{structjoueur__s_ae89ac684d8acd8a892336eb8e11b6364_ae89ac684d8acd8a892336eb8e11b6364}\label{structjoueur__s_ae89ac684d8acd8a892336eb8e11b6364_ae89ac684d8acd8a892336eb8e11b6364}} 
-\index{joueur\_s@{joueur\_s}!defense@{defense}}
-\index{defense@{defense}!joueur\_s@{joueur\_s}}
+attaque de base du joueur \mbox{\Hypertarget{structjoueur__s_a3a76dc4048c45c64b6ba54747f705102}\label{structjoueur__s_a3a76dc4048c45c64b6ba54747f705102}} 
+\index{joueur\_t@{joueur\_t}!attaque\_actif@{attaque\_actif}}
+\index{attaque\_actif@{attaque\_actif}!joueur\_t@{joueur\_t}}
+\doxysubsubsection{\texorpdfstring{attaque\_actif}{attaque\_actif}}
+{\footnotesize\ttfamily int joueur\+\_\+t\+::attaque\+\_\+actif}
+
+attaque du joueur avec bonus d\textquotesingle{}equipement \mbox{\Hypertarget{structjoueur__s_a7425e58690c8ec4ce5c3ee9a2f82e7a4}\label{structjoueur__s_a7425e58690c8ec4ce5c3ee9a2f82e7a4}} 
+\index{joueur\_t@{joueur\_t}!defense@{defense}}
+\index{defense@{defense}!joueur\_t@{joueur\_t}}
 \doxysubsubsection{\texorpdfstring{defense}{defense}}
-{\footnotesize\ttfamily int joueur\+\_\+s\+::defense}
+{\footnotesize\ttfamily int joueur\+\_\+t\+::defense}
 
-defense du joueur \mbox{\Hypertarget{structjoueur__s_a63eec551eed397472ad0854a88eda1e9_a63eec551eed397472ad0854a88eda1e9}\label{structjoueur__s_a63eec551eed397472ad0854a88eda1e9_a63eec551eed397472ad0854a88eda1e9}} 
-\index{joueur\_s@{joueur\_s}!maxPdv@{maxPdv}}
-\index{maxPdv@{maxPdv}!joueur\_s@{joueur\_s}}
+defense de base du joueur \mbox{\Hypertarget{structjoueur__s_a9ad3c8ba8c284034f3ac32ee8e51fbce}\label{structjoueur__s_a9ad3c8ba8c284034f3ac32ee8e51fbce}} 
+\index{joueur\_t@{joueur\_t}!defense\_actif@{defense\_actif}}
+\index{defense\_actif@{defense\_actif}!joueur\_t@{joueur\_t}}
+\doxysubsubsection{\texorpdfstring{defense\_actif}{defense\_actif}}
+{\footnotesize\ttfamily int joueur\+\_\+t\+::defense\+\_\+actif}
+
+defense du joueur avec bonus d\textquotesingle{}equipement \mbox{\Hypertarget{structjoueur__s_a3ef196a06d3fe0a184b553359a10f20c}\label{structjoueur__s_a3ef196a06d3fe0a184b553359a10f20c}} 
+\index{joueur\_t@{joueur\_t}!inventaire@{inventaire}}
+\index{inventaire@{inventaire}!joueur\_t@{joueur\_t}}
+\doxysubsubsection{\texorpdfstring{inventaire}{inventaire}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}}$\ast$ joueur\+\_\+t\+::inventaire}
+
+Inventaire du joueur \mbox{\Hypertarget{structjoueur__s_a25ede0d11afd576d908541172b5de89f}\label{structjoueur__s_a25ede0d11afd576d908541172b5de89f}} 
+\index{joueur\_t@{joueur\_t}!maxPdv@{maxPdv}}
+\index{maxPdv@{maxPdv}!joueur\_t@{joueur\_t}}
 \doxysubsubsection{\texorpdfstring{maxPdv}{maxPdv}}
-{\footnotesize\ttfamily int joueur\+\_\+s\+::max\+Pdv}
+{\footnotesize\ttfamily int joueur\+\_\+t\+::max\+Pdv}
 
-T\+O\+DO \+: créer un type énuméré map \mbox{\Hypertarget{structjoueur__s_a55344db17ac9f1b6f2343769fca26006_a55344db17ac9f1b6f2343769fca26006}\label{structjoueur__s_a55344db17ac9f1b6f2343769fca26006_a55344db17ac9f1b6f2343769fca26006}} 
-\index{joueur\_s@{joueur\_s}!niveau@{niveau}}
-\index{niveau@{niveau}!joueur\_s@{joueur\_s}}
+Le nombre de Pv max du joueur \mbox{\Hypertarget{structjoueur__s_a0f7112457a852b4db2c4ace8dc317159}\label{structjoueur__s_a0f7112457a852b4db2c4ace8dc317159}} 
+\index{joueur\_t@{joueur\_t}!niveau@{niveau}}
+\index{niveau@{niveau}!joueur\_t@{joueur\_t}}
 \doxysubsubsection{\texorpdfstring{niveau}{niveau}}
-{\footnotesize\ttfamily short int joueur\+\_\+s\+::niveau}
+{\footnotesize\ttfamily short int joueur\+\_\+t\+::niveau}
 
-Le niveau du joueur \mbox{\Hypertarget{structjoueur__s_a68d021d3bf406eb8348e88f3ca188f17_a68d021d3bf406eb8348e88f3ca188f17}\label{structjoueur__s_a68d021d3bf406eb8348e88f3ca188f17_a68d021d3bf406eb8348e88f3ca188f17}} 
-\index{joueur\_s@{joueur\_s}!nom\_pers@{nom\_pers}}
-\index{nom\_pers@{nom\_pers}!joueur\_s@{joueur\_s}}
+Le niveau du joueur \mbox{\Hypertarget{structjoueur__s_af3dfbec80c287ad8af431c0d075f2a78}\label{structjoueur__s_af3dfbec80c287ad8af431c0d075f2a78}} 
+\index{joueur\_t@{joueur\_t}!nom\_pers@{nom\_pers}}
+\index{nom\_pers@{nom\_pers}!joueur\_t@{joueur\_t}}
 \doxysubsubsection{\texorpdfstring{nom\_pers}{nom\_pers}}
-{\footnotesize\ttfamily char$\ast$ joueur\+\_\+s\+::nom\+\_\+pers}
+{\footnotesize\ttfamily char$\ast$ joueur\+\_\+t\+::nom\+\_\+pers}
 
-Le nom du personnage \mbox{\Hypertarget{structjoueur__s_a1711f2946ec4e80fa1b5a6415f052102_a1711f2946ec4e80fa1b5a6415f052102}\label{structjoueur__s_a1711f2946ec4e80fa1b5a6415f052102_a1711f2946ec4e80fa1b5a6415f052102}} 
-\index{joueur\_s@{joueur\_s}!pdv@{pdv}}
-\index{pdv@{pdv}!joueur\_s@{joueur\_s}}
+Le nom du personnage \mbox{\Hypertarget{structjoueur__s_af8bae63c7135414cd67e14e2720c8828}\label{structjoueur__s_af8bae63c7135414cd67e14e2720c8828}} 
+\index{joueur\_t@{joueur\_t}!pdv@{pdv}}
+\index{pdv@{pdv}!joueur\_t@{joueur\_t}}
 \doxysubsubsection{\texorpdfstring{pdv}{pdv}}
-{\footnotesize\ttfamily int joueur\+\_\+s\+::pdv}
+{\footnotesize\ttfamily int joueur\+\_\+t\+::pdv}
 
-\mbox{\Hypertarget{structjoueur__s_af8627e3c41e176a3fc34a7167786584d_af8627e3c41e176a3fc34a7167786584d}\label{structjoueur__s_af8627e3c41e176a3fc34a7167786584d_af8627e3c41e176a3fc34a7167786584d}} 
-\index{joueur\_s@{joueur\_s}!statut@{statut}}
-\index{statut@{statut}!joueur\_s@{joueur\_s}}
+Les points de vie actuels du joueur \mbox{\Hypertarget{structjoueur__s_a596a0e8a7494ccf4d737412e63ed85f4}\label{structjoueur__s_a596a0e8a7494ccf4d737412e63ed85f4}} 
+\index{joueur\_t@{joueur\_t}!statut@{statut}}
+\index{statut@{statut}!joueur\_t@{joueur\_t}}
 \doxysubsubsection{\texorpdfstring{statut}{statut}}
-{\footnotesize\ttfamily \mbox{\hyperlink{personnage_8h_aca9f708962d381b038e118085be158ef_aca9f708962d381b038e118085be158ef}{statut\+\_\+t}}$\ast$ joueur\+\_\+s\+::statut}
+{\footnotesize\ttfamily statut\+\_\+t$\ast$ joueur\+\_\+t\+::statut}
 
-statut du joueur \mbox{\Hypertarget{structjoueur__s_a7c8c4bbf6d1947df9f23a1b25bb6f1e3_a7c8c4bbf6d1947df9f23a1b25bb6f1e3}\label{structjoueur__s_a7c8c4bbf6d1947df9f23a1b25bb6f1e3_a7c8c4bbf6d1947df9f23a1b25bb6f1e3}} 
-\index{joueur\_s@{joueur\_s}!textures\_joueur@{textures\_joueur}}
-\index{textures\_joueur@{textures\_joueur}!joueur\_s@{joueur\_s}}
+statut du joueur \mbox{\Hypertarget{structjoueur__s_a41490d071aa05b28127b90ff2bcf715b}\label{structjoueur__s_a41490d071aa05b28127b90ff2bcf715b}} 
+\index{joueur\_t@{joueur\_t}!textures\_joueur@{textures\_joueur}}
+\index{textures\_joueur@{textures\_joueur}!joueur\_t@{joueur\_t}}
 \doxysubsubsection{\texorpdfstring{textures\_joueur}{textures\_joueur}}
-{\footnotesize\ttfamily \mbox{\hyperlink{affichage_8h_a335b4ad9655d3aedc1d71c9f1f1fc06d_a335b4ad9655d3aedc1d71c9f1f1fc06d}{t\+\_\+l\+\_\+aff}}$\ast$ joueur\+\_\+s\+::textures\+\_\+joueur}
+{\footnotesize\ttfamily t\+\_\+l\+\_\+aff$\ast$ joueur\+\_\+t\+::textures\+\_\+joueur}
 
-Tableau contenant toutes les textures du joueur \mbox{\Hypertarget{structjoueur__s_aa2ee8d4cd90cc58b61592832e0c7b849_aa2ee8d4cd90cc58b61592832e0c7b849}\label{structjoueur__s_aa2ee8d4cd90cc58b61592832e0c7b849_aa2ee8d4cd90cc58b61592832e0c7b849}} 
-\index{joueur\_s@{joueur\_s}!trigger@{trigger}}
-\index{trigger@{trigger}!joueur\_s@{joueur\_s}}
+Tableau contenant toutes les textures du joueur \mbox{\Hypertarget{structjoueur__s_a17da423da1417ecd9d986e3a3ae5aa9f}\label{structjoueur__s_a17da423da1417ecd9d986e3a3ae5aa9f}} 
+\index{joueur\_t@{joueur\_t}!trigger@{trigger}}
+\index{trigger@{trigger}!joueur\_t@{joueur\_t}}
 \doxysubsubsection{\texorpdfstring{trigger}{trigger}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d_a0c8186d9b9b7880309c27230bbb5e69d}{byte}}$\ast$ joueur\+\_\+s\+::trigger}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}}$\ast$ joueur\+\_\+t\+::trigger}
 
-Une variable contenant des triggers logiques concernant le personnage \mbox{\Hypertarget{structjoueur__s_ad6585650289d496fd6645d1f6089ad8d_ad6585650289d496fd6645d1f6089ad8d}\label{structjoueur__s_ad6585650289d496fd6645d1f6089ad8d_ad6585650289d496fd6645d1f6089ad8d}} 
-\index{joueur\_s@{joueur\_s}!vitesse@{vitesse}}
-\index{vitesse@{vitesse}!joueur\_s@{joueur\_s}}
+Une variable contenant des triggers logiques concernant le personnage \mbox{\Hypertarget{structjoueur__s_a5424e8f0b5f17655064251c71fa4c5cf}\label{structjoueur__s_a5424e8f0b5f17655064251c71fa4c5cf}} 
+\index{joueur\_t@{joueur\_t}!vitesse@{vitesse}}
+\index{vitesse@{vitesse}!joueur\_t@{joueur\_t}}
 \doxysubsubsection{\texorpdfstring{vitesse}{vitesse}}
-{\footnotesize\ttfamily int joueur\+\_\+s\+::vitesse}
+{\footnotesize\ttfamily int joueur\+\_\+t\+::vitesse}
 
-vitesse de déplacement du joueur \mbox{\Hypertarget{structjoueur__s_a3acf5bb1fb7283637e24a0dd9efa5cfc_a3acf5bb1fb7283637e24a0dd9efa5cfc}\label{structjoueur__s_a3acf5bb1fb7283637e24a0dd9efa5cfc_a3acf5bb1fb7283637e24a0dd9efa5cfc}} 
-\index{joueur\_s@{joueur\_s}!xp@{xp}}
-\index{xp@{xp}!joueur\_s@{joueur\_s}}
+vitesse de déplacement de base du joueur \mbox{\Hypertarget{structjoueur__s_a751c17526ebc15d436fe0d7cb08b6a14}\label{structjoueur__s_a751c17526ebc15d436fe0d7cb08b6a14}} 
+\index{joueur\_t@{joueur\_t}!vitesse\_actif@{vitesse\_actif}}
+\index{vitesse\_actif@{vitesse\_actif}!joueur\_t@{joueur\_t}}
+\doxysubsubsection{\texorpdfstring{vitesse\_actif}{vitesse\_actif}}
+{\footnotesize\ttfamily int joueur\+\_\+t\+::vitesse\+\_\+actif}
+
+vitesse du joueur avec bonus d\textquotesingle{}equipement \mbox{\Hypertarget{structjoueur__s_a982ff904b277f68f58f85165c372c3a4}\label{structjoueur__s_a982ff904b277f68f58f85165c372c3a4}} 
+\index{joueur\_t@{joueur\_t}!xp@{xp}}
+\index{xp@{xp}!joueur\_t@{joueur\_t}}
 \doxysubsubsection{\texorpdfstring{xp}{xp}}
-{\footnotesize\ttfamily int joueur\+\_\+s\+::xp}
+{\footnotesize\ttfamily int joueur\+\_\+t\+::xp}
 
 Le nombre de points d\textquotesingle{}expérience que possède le joueur 
 

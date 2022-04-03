@@ -76,115 +76,907 @@ $(function() {
 
 <p>Fichier contenant toutes les fonctions concernant le personnage.  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d2/d2f/personnage_8h_source.html">personnage.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d5/dae/affichage_8h_source.html">affichage.h</a>&gt;</code><br />
-<code>#include &lt;json-c/json.h&gt;</code><br />
-<code>#include &lt;sys/stat.h&gt;</code><br />
-<code>#include &lt;errno.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../da/de9/code__erreur_8h_source.html">code_erreur.h</a>&gt;</code><br />
-<code>#include &lt;pwd.h&gt;</code><br />
-<code>#include &lt;unistd.h&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
+<div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de personnage.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/df4/personnage_8c__incl.png" border="0" usemap="#personnage_8c" alt=""/></div>
 <map name="personnage_8c" id="personnage_8c">
-<area shape="rect" title="Fichier contenant toutes les fonctions concernant le personnage." alt="" coords="2562,5,2671,32"/>
-<area shape="rect" title=" " alt="" coords="5,169,76,196"/>
-<area shape="rect" title=" " alt="" coords="100,169,171,196"/>
-<area shape="rect" href="../../d2/d2f/personnage_8h.html" title="Fichier contenant toutes les définitions concernant le personnage." alt="" coords="195,169,305,196"/>
-<area shape="rect" href="../../d5/dae/affichage_8h.html" title=" " alt="" coords="2387,80,2481,107"/>
-<area shape="rect" title=" " alt="" coords="2506,80,2610,107"/>
-<area shape="rect" title=" " alt="" coords="2634,80,2719,107"/>
-<area shape="rect" title=" " alt="" coords="2744,80,2812,107"/>
-<area shape="rect" href="../../da/de9/code__erreur_8h.html" title="Fichier contenant les codes d&#39;erreur du programme." alt="" coords="2836,80,2947,107"/>
-<area shape="rect" title=" " alt="" coords="2971,80,3033,107"/>
-<area shape="rect" title=" " alt="" coords="3057,80,3131,107"/>
-<area shape="rect" href="../../d1/daa/definition__commun_8h.html" title="Contient toutes les définitions communes à tout les fichiers." alt="" coords="4821,259,4980,285"/>
-<area shape="rect" title=" " alt="" coords="4911,333,5007,360"/>
-<area shape="rect" title=" " alt="" coords="5056,155,5223,211"/>
-<area shape="rect" title=" " alt="" coords="5247,155,5413,211"/>
-<area shape="rect" title=" " alt="" coords="5437,155,5604,211"/>
-<area shape="rect" title=" " alt="" coords="5628,155,5795,211"/>
-<area shape="rect" title=" " alt="" coords="5819,155,5985,211"/>
-<area shape="rect" title=" " alt="" coords="6009,155,6176,211"/>
-<area shape="rect" title=" " alt="" coords="6201,169,6297,196"/>
-<area shape="rect" title=" " alt="" coords="330,169,397,196"/>
-<area shape="rect" title=" " alt="" coords="421,169,495,196"/>
-<area shape="rect" title=" " alt="" coords="519,169,594,196"/>
-<area shape="rect" title=" " alt="" coords="619,169,697,196"/>
-<area shape="rect" title=" " alt="" coords="722,169,794,196"/>
-<area shape="rect" title=" " alt="" coords="819,169,905,196"/>
-<area shape="rect" title=" " alt="" coords="929,169,1000,196"/>
-<area shape="rect" title=" " alt="" coords="1024,169,1092,196"/>
-<area shape="rect" title=" " alt="" coords="1116,169,1179,196"/>
-<area shape="rect" title=" " alt="" coords="1203,169,1276,196"/>
-<area shape="rect" title=" " alt="" coords="1300,155,1467,211"/>
-<area shape="rect" title=" " alt="" coords="1491,169,1564,196"/>
-<area shape="rect" title=" " alt="" coords="1588,155,1755,211"/>
-<area shape="rect" title=" " alt="" coords="1779,155,1945,211"/>
-<area shape="rect" title=" " alt="" coords="1969,155,2136,211"/>
-<area shape="rect" title=" " alt="" coords="2160,155,2327,211"/>
-<area shape="rect" title=" " alt="" coords="2351,155,2517,211"/>
-<area shape="rect" title=" " alt="" coords="2541,155,2708,211"/>
-<area shape="rect" title=" " alt="" coords="2732,155,2899,211"/>
-<area shape="rect" title=" " alt="" coords="2923,155,3089,211"/>
-<area shape="rect" title=" " alt="" coords="3113,155,3280,211"/>
-<area shape="rect" title=" " alt="" coords="3305,169,3403,196"/>
-<area shape="rect" title=" " alt="" coords="3428,155,3595,211"/>
-<area shape="rect" title=" " alt="" coords="3619,155,3785,211"/>
-<area shape="rect" title=" " alt="" coords="3809,155,3976,211"/>
-<area shape="rect" title=" " alt="" coords="4000,155,4167,211"/>
-<area shape="rect" title=" " alt="" coords="4191,155,4357,211"/>
-<area shape="rect" title=" " alt="" coords="4381,155,4548,211"/>
-<area shape="rect" title=" " alt="" coords="4572,155,4739,211"/>
-<area shape="rect" title=" " alt="" coords="4763,155,4929,211"/>
+<area shape="rect" title="Fichier contenant toutes les fonctions concernant le personnage." alt="" coords="653,5,762,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,76,107"/>
+<area shape="rect" title=" " alt="" coords="100,80,171,107"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html" title="Fichier contenant toutes les définitions concernant le personnage." alt="" coords="473,80,584,107"/>
+<area shape="rect" href="../../d2/d9f/inventaire_8h.html" title="Définition des fonctions relatives au module inventaire." alt="" coords="568,155,668,181"/>
+<area shape="rect" href="../../d5/dae/affichage_8h.html" title="Fichier contenant les définitions et les fonctions liées au module affichage." alt="" coords="412,379,507,405"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html" title=" " alt="" coords="521,528,590,555"/>
+<area shape="rect" href="../../dc/db7/map_8h.html" title="Définitions des fonctions de gestion de la map." alt="" coords="455,453,517,480"/>
+<area shape="rect" href="../../d0/d1f/monstres_8h.html" title="Fonctions concernant les monstres." alt="" coords="327,528,421,555"/>
+<area shape="rect" title=" " alt="" coords="795,80,899,107"/>
+<area shape="rect" title=" " alt="" coords="923,80,1009,107"/>
+<area shape="rect" title=" " alt="" coords="1033,80,1101,107"/>
+<area shape="rect" href="../../da/de9/code__erreur_8h.html" title="Fichier contenant les codes d&#39;erreur du programme." alt="" coords="1125,80,1236,107"/>
+<area shape="rect" href="../../da/df7/sorts_8h.html" title="Fichier contenant toutes les définitions concernant les sorts." alt="" coords="347,304,414,331"/>
+<area shape="rect" title=" " alt="" coords="1261,80,1322,107"/>
+<area shape="rect" title=" " alt="" coords="1346,80,1421,107"/>
+<area shape="rect" href="../../d1/daa/definition__commun_8h.html" title="Contient toutes les définitions communes à tout les fichiers." alt="" coords="295,603,453,629"/>
+<area shape="rect" href="../../d7/d64/liste__objet_8h.html" title="Définition relatives aux structures contenant les objets." alt="" coords="567,229,669,256"/>
+<area shape="rect" href="../../d4/d0b/objet_8h.html" title="Définitions concernant les objets." alt="" coords="590,304,657,331"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a4fc62500724ad88ac0a844833c1b2ab1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a4fc62500724ad88ac0a844833c1b2ab1.html#a4fc62500724ad88ac0a844833c1b2ab1">copy</a> (const <a class="el" href="../../d1/daa/definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *origin, <a class="el" href="../../d1/daa/definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *out, size_t size)</td></tr>
-<tr class="separator:a4fc62500724ad88ac0a844833c1b2ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1674d581294113dd43ec58636bd57802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a1674d581294113dd43ec58636bd57802.html#a1674d581294113dd43ec58636bd57802">check_repertoire_jeux</a> ()</td></tr>
+<tr class="memitem:a11f105c360020140d57fb4d6ddbae8e8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a11f105c360020140d57fb4d6ddbae8e8">copy</a> (const <a class="el" href="../../d1/daa/definition__commun_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *origin, <a class="el" href="../../d1/daa/definition__commun_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *out, size_t size)</td></tr>
+<tr class="separator:a11f105c360020140d57fb4d6ddbae8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1674d581294113dd43ec58636bd57802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a1674d581294113dd43ec58636bd57802">check_repertoire_jeux</a> ()</td></tr>
 <tr class="separator:a1674d581294113dd43ec58636bd57802"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ce711c80691bb2b4f29e7c58790851a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a9ce711c80691bb2b4f29e7c58790851a.html#a9ce711c80691bb2b4f29e7c58790851a">creer_sauvegarde_json</a> (<a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *j)</td></tr>
+<tr class="memitem:a9ce711c80691bb2b4f29e7c58790851a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a9ce711c80691bb2b4f29e7c58790851a">creer_sauvegarde_json</a> (joueur_t *j)</td></tr>
 <tr class="separator:a9ce711c80691bb2b4f29e7c58790851a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71919ee7582fae9cc0e2d1fd5bbce94e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/daa/definition__commun_8h_abb452686968e48b67397da5f97445f5b.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a71919ee7582fae9cc0e2d1fd5bbce94e.html#a71919ee7582fae9cc0e2d1fd5bbce94e">sauv_existe</a> (char *nom_sauv)</td></tr>
+<tr class="memitem:a71919ee7582fae9cc0e2d1fd5bbce94e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/daa/definition__commun_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a71919ee7582fae9cc0e2d1fd5bbce94e">sauv_existe</a> (char *nom_sauv)</td></tr>
 <tr class="separator:a71919ee7582fae9cc0e2d1fd5bbce94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36225ef11de350c055f8d1407bda2685"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a36225ef11de350c055f8d1407bda2685.html#a36225ef11de350c055f8d1407bda2685">charger_sauvegarde_joueur</a> (char *nom_sauv)</td></tr>
+<tr class="memitem:a36225ef11de350c055f8d1407bda2685"><td class="memItemLeft" align="right" valign="top">joueur_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a36225ef11de350c055f8d1407bda2685">charger_sauvegarde_joueur</a> (char *nom_sauv)</td></tr>
 <tr class="separator:a36225ef11de350c055f8d1407bda2685"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a459037c293964b9d0b060fab158c45dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a459037c293964b9d0b060fab158c45dd.html#a459037c293964b9d0b060fab158c45dd">new_joueur</a> (const char *nom)</td></tr>
-<tr class="separator:a459037c293964b9d0b060fab158c45dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96505a65ab40b828238bfcbb3e90333e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a96505a65ab40b828238bfcbb3e90333e.html#a96505a65ab40b828238bfcbb3e90333e">creer_joueur</a> (const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const <a class="el" href="../../d1/daa/definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> trig[<a class="el" href="../../d2/d2f/personnage_8h_a98a97fd1e52188dde7bcc423c5d17546.html#a98a97fd1e52188dde7bcc423c5d17546">TAILLE_TRIGGER</a>], const <a class="el" href="../../d1/daa/definition__commun_8h_aec4e3894aa763e81148b2241ff730790.html#aec4e3894aa763e81148b2241ff730790">t_direction</a> orientation, const <a class="el" href="../../d1/daa/definition__commun_8h_abb452686968e48b67397da5f97445f5b.html#abb452686968e48b67397da5f97445f5b">bool</a> bouclier_equipe)</td></tr>
-<tr class="separator:a96505a65ab40b828238bfcbb3e90333e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33613b3a2b55cb1d1855a39a288fb230"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230.html#a33613b3a2b55cb1d1855a39a288fb230">detruire_joueur</a> (<a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *j)</td></tr>
+<tr class="memitem:a59bc1851a89a1a015c7a7569cd098611"><td class="memItemLeft" align="right" valign="top">joueur_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a59bc1851a89a1a015c7a7569cd098611">new_joueur</a> (const char *nom, int num_j)</td></tr>
+<tr class="separator:a59bc1851a89a1a015c7a7569cd098611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2437ea086fd1b791da2809a52aacf20a"><td class="memItemLeft" align="right" valign="top">joueur_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a2437ea086fd1b791da2809a52aacf20a">creer_joueur</a> (const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const <a class="el" href="../../d1/daa/definition__commun_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> trig[<a class="el" href="../../d2/d2f/personnage_8h.html#a98a97fd1e52188dde7bcc423c5d17546">TAILLE_TRIGGER</a>], const <a class="el" href="../../d1/daa/definition__commun_8h.html#aec4e3894aa763e81148b2241ff730790">t_direction</a> orientation, const <a class="el" href="../../d1/daa/definition__commun_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> bouclier_equipe, const int num_j)</td></tr>
+<tr class="separator:a2437ea086fd1b791da2809a52aacf20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33613b3a2b55cb1d1855a39a288fb230"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a33613b3a2b55cb1d1855a39a288fb230">detruire_joueur</a> (joueur_t *j)</td></tr>
 <tr class="separator:a33613b3a2b55cb1d1855a39a288fb230"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f3c1bdb9b485ae82c6d64274c76afe4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a0f3c1bdb9b485ae82c6d64274c76afe4.html#a0f3c1bdb9b485ae82c6d64274c76afe4">caracteristiques</a> (<a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *perso)</td></tr>
-<tr class="separator:a0f3c1bdb9b485ae82c6d64274c76afe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5036a38157418caf698d5662fddeb947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a5036a38157418caf698d5662fddeb947.html#a5036a38157418caf698d5662fddeb947">afficher_statistiques</a> (<a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *perso)</td></tr>
+<tr class="memitem:ac26a86b02a29c7246298ecf03544f613"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#ac26a86b02a29c7246298ecf03544f613">caracteristiques</a> (joueur_t *perso)</td></tr>
+<tr class="separator:ac26a86b02a29c7246298ecf03544f613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5036a38157418caf698d5662fddeb947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a5036a38157418caf698d5662fddeb947">afficher_statistiques</a> (joueur_t *perso)</td></tr>
 <tr class="separator:a5036a38157418caf698d5662fddeb947"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65a6d92356f49132bd234b5338f0a2da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a65a6d92356f49132bd234b5338f0a2da.html#a65a6d92356f49132bd234b5338f0a2da">levelup</a> (<a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *perso)</td></tr>
-<tr class="separator:a65a6d92356f49132bd234b5338f0a2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79c7e8e8c5ccfdcc99b20b3ff39d2726"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a79c7e8e8c5ccfdcc99b20b3ff39d2726.html#a79c7e8e8c5ccfdcc99b20b3ff39d2726">gain_xp</a> (<a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *perso)</td></tr>
-<tr class="separator:a79c7e8e8c5ccfdcc99b20b3ff39d2726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3082b9ef9df15ce021d06dccaa1e9f2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a3082b9ef9df15ce021d06dccaa1e9f2c">levelup</a> (joueur_t *perso)</td></tr>
+<tr class="separator:a3082b9ef9df15ce021d06dccaa1e9f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac98e80b68d01d16bf1d9d6159e5aeabc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#ac98e80b68d01d16bf1d9d6159e5aeabc">gain_xp</a> (joueur_t *perso)</td></tr>
+<tr class="separator:ac98e80b68d01d16bf1d9d6159e5aeabc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1feec4dcb1fce6f810bb75fd90b41533"><td class="memItemLeft" align="right" valign="top">SDL_Rect *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a1feec4dcb1fce6f810bb75fd90b41533">zone_en_dehors_hitbox</a> (SDL_Rect *hitbox, SDL_Rect *sprite, <a class="el" href="../../d1/daa/definition__commun_8h.html#aec4e3894aa763e81148b2241ff730790">t_direction</a> orientation)</td></tr>
+<tr class="separator:a1feec4dcb1fce6f810bb75fd90b41533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a434acdc261f9c84b7dca8d540daca729"><td class="memItemLeft" align="right" valign="top">SDL_bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a434acdc261f9c84b7dca8d540daca729">entite_subit_attaque</a> (SDL_Rect *monstre_hitbox, joueur_t *joueur)</td></tr>
+<tr class="separator:a434acdc261f9c84b7dca8d540daca729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c0886659f76bc2d3edaefc53fbf731e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/daa/definition__commun_8h.html#aec4e3894aa763e81148b2241ff730790">t_direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a0c0886659f76bc2d3edaefc53fbf731e">orientation_inverse</a> (<a class="el" href="../../d1/daa/definition__commun_8h.html#aec4e3894aa763e81148b2241ff730790">t_direction</a> orientation)</td></tr>
+<tr class="separator:a0c0886659f76bc2d3edaefc53fbf731e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0033859232a540c50f70d271514c966f"><td class="memItemLeft" align="right" valign="top">SDL_bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a0033859232a540c50f70d271514c966f">entite_en_collision</a> (SDL_Rect *entite_1, SDL_Rect *entite_2, <a class="el" href="../../d1/daa/definition__commun_8h.html#aec4e3894aa763e81148b2241ff730790">t_direction</a> *coter_entite_1, <a class="el" href="../../d1/daa/definition__commun_8h.html#aec4e3894aa763e81148b2241ff730790">t_direction</a> *coter_entite_2)</td></tr>
+<tr class="separator:a0033859232a540c50f70d271514c966f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace87f9712c0e5b18f0e977e0971a5676"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#ace87f9712c0e5b18f0e977e0971a5676">environnement_joueur</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *liste_monstres, <a class="el" href="../../d8/d10/structlist.html">list</a> *liste_sorts, joueur_t *joueur)</td></tr>
+<tr class="separator:ace87f9712c0e5b18f0e977e0971a5676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3324d2dc734d1d45b92a562e61ae18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a1a3324d2dc734d1d45b92a562e61ae18">stoper_mouvement_joueurs</a> (joueur_t **joueurs)</td></tr>
+<tr class="memdesc:a1a3324d2dc734d1d45b92a562e61ae18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop le mouvement des joueurs en jeu.  <a href="../../dd/dce/personnage_8c.html#a1a3324d2dc734d1d45b92a562e61ae18">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1a3324d2dc734d1d45b92a562e61ae18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a8512a450e703a0f7eb1bd9540a592187"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a8512a450e703a0f7eb1bd9540a592187.html#a8512a450e703a0f7eb1bd9540a592187">save_path</a> [500]</td></tr>
+<tr class="memitem:a8512a450e703a0f7eb1bd9540a592187"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a8512a450e703a0f7eb1bd9540a592187">save_path</a> [500]</td></tr>
 <tr class="separator:a8512a450e703a0f7eb1bd9540a592187"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ead4748360bfbe8192d0dd51d0cac86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d2f/personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94.html#a78cda65cd9b26fc9f1ef13f89b316b94">joueur_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c_a5ead4748360bfbe8192d0dd51d0cac86.html#a5ead4748360bfbe8192d0dd51d0cac86">perso_principal</a></td></tr>
-<tr class="separator:a5ead4748360bfbe8192d0dd51d0cac86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Fichier contenant toutes les fonctions concernant le personnage. </p>
-<dl class="section author"><dt>Auteur</dt><dd>Despert Ange (<a href="#" onclick="location.href='mai'+'lto:'+'Ang'+'e.'+'Des'+'pe'+'rt.'+'Et'+'u@u'+'ni'+'v-l'+'em'+'ans'+'.f'+'r'; return false;">Ange.<span style="display: none;">.nosp@m.</span>Desp<span style="display: none;">.nosp@m.</span>ert.E<span style="display: none;">.nosp@m.</span>tu@u<span style="display: none;">.nosp@m.</span>niv-l<span style="display: none;">.nosp@m.</span>eman<span style="display: none;">.nosp@m.</span>s.fr</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>01/02/2022</dd></dl>
+<div class="textblock"><dl class="section author"><dt>Auteur</dt><dd>Ange Despert (<a href="#" onclick="location.href='mai'+'lto:'+'Ang'+'e.'+'Des'+'pe'+'rt.'+'Et'+'u@u'+'ni'+'v-l'+'em'+'ans'+'.f'+'r'; return false;">Ange.<span style="display: none;">.nosp@m.</span>Desp<span style="display: none;">.nosp@m.</span>ert.E<span style="display: none;">.nosp@m.</span>tu@u<span style="display: none;">.nosp@m.</span>niv-l<span style="display: none;">.nosp@m.</span>eman<span style="display: none;">.nosp@m.</span>s.fr</a>) </dd>
+<dd>
+Max Descomps (<a href="#" onclick="location.href='mai'+'lto:'+'Max'+'.D'+'esc'+'om'+'ps.'+'Et'+'u@u'+'ni'+'v-l'+'em'+'ans'+'.f'+'r'; return false;">Max.D<span style="display: none;">.nosp@m.</span>esco<span style="display: none;">.nosp@m.</span>mps.E<span style="display: none;">.nosp@m.</span>tu@u<span style="display: none;">.nosp@m.</span>niv-l<span style="display: none;">.nosp@m.</span>eman<span style="display: none;">.nosp@m.</span>s.fr</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.2 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>28/03/2022 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a5036a38157418caf698d5662fddeb947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5036a38157418caf698d5662fddeb947">&#9670;&nbsp;</a></span>afficher_statistiques()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void afficher_statistiques </td>
+          <td>(</td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>perso</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a5036a38157418caf698d5662fddeb947_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a5036a38157418caf698d5662fddeb947_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a5036a38157418caf698d5662fddeb947_icgraph" id="dd/dce/personnage_8c_a5036a38157418caf698d5662fddeb947_icgraph">
+<area shape="rect" title=" " alt="" coords="1091,93,1245,119"/>
+<area shape="rect" href="../../d2/d9f/inventaire_8h.html#afbcc0f721ebc471ac4fb9cafd97fb77a" title="Fonction qui permet de passer un objet d&#39;un emplacement d&#39;équipement(équipé) au sac(non&#45;équipé) dans ..." alt="" coords="940,30,1035,57"/>
+<area shape="rect" href="../../d2/d9f/inventaire_8h.html#a699ab6b7030b61f08e85b59355360a04" title="Fonction qui permet de passer un objet du sac(non&#45;équipé) à un emplacement d&#39;équipement(équipé) dans ..." alt="" coords="932,93,1043,119"/>
+<area shape="rect" href="../../d9/d66/test__inventaire_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="561,143,615,170"/>
+<area shape="rect" href="../../d2/d9f/inventaire_8h.html#a8aa9d5f1d7be0ac4221f7343d329c4c4" title="Déséquipe le joueur de l&#39;objet contenu dans un slot de l&#39;inventaire (equipe)" alt="" coords="733,17,859,43"/>
+<area shape="rect" href="../../d6/d46/menus_8h.html#a98b87de7b6779d1ea4db3543621cc3cb" title=" " alt="" coords="516,71,660,98"/>
+<area shape="rect" href="../../d6/d46/menus_8h.html#afcde784ea1d5fb8c9fd6436fa063c5f2" title=" " alt="" coords="516,5,660,47"/>
+<area shape="rect" href="../../d0/deb/event_8c.html#afe551917ddc29ee5ade1c65a26a61537" title="Fonction qui gère les événements quand une touche du clavier est pressée par un joueur." alt="" coords="345,70,427,97"/>
+<area shape="rect" href="../../dd/d20/event_8h.html#aded23e2ea2ac3df851674e2292250166" title="Fonction qui gère les événements." alt="" coords="139,66,225,93"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,41,60,67"/>
+<area shape="rect" href="../../d0/deb/event_8c.html#ac367042c66a1868384bac213a1ecbb99" title=" " alt="" coords="304,14,468,41"/>
+<area shape="rect" href="../../dd/d20/event_8h.html#ac27091daa86f31b79780d6a91801fd11" title=" " alt="" coords="108,14,256,41"/>
+<area shape="rect" href="../../d2/d9f/inventaire_8h.html#af4759298331c6887427f1a2137910ad2" title="Équipe le joueur de l&#39;objet contenu dans un slot de l&#39;inventaire (sac)" alt="" coords="731,67,861,94"/>
+<area shape="rect" href="../../d9/d66/test__inventaire_8c.html#ae7e5e7ed7946211586fc6c19e42443d0" title=" " alt="" coords="708,118,884,145"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac26a86b02a29c7246298ecf03544f613"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac26a86b02a29c7246298ecf03544f613">&#9670;&nbsp;</a></span>caracteristiques()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void caracteristiques </td>
+          <td>(</td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>perso</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_ac26a86b02a29c7246298ecf03544f613_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_ac26a86b02a29c7246298ecf03544f613_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_ac26a86b02a29c7246298ecf03544f613_icgraph" id="dd/dce/personnage_8c_ac26a86b02a29c7246298ecf03544f613_icgraph">
+<area shape="rect" title=" " alt="" coords="565,5,692,32"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#a3082b9ef9df15ce021d06dccaa1e9f2c" title=" " alt="" coords="447,5,517,32"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#ac98e80b68d01d16bf1d9d6159e5aeabc" title=" " alt="" coords="325,5,399,32"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#ace87f9712c0e5b18f0e977e0971a5676" title=" " alt="" coords="108,5,277,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a36225ef11de350c055f8d1407bda2685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36225ef11de350c055f8d1407bda2685">&#9670;&nbsp;</a></span>charger_sauvegarde_joueur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">joueur_t* charger_sauvegarde_joueur </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nom_sauv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a36225ef11de350c055f8d1407bda2685_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_a36225ef11de350c055f8d1407bda2685_cgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a36225ef11de350c055f8d1407bda2685_cgraph" id="dd/dce/personnage_8c_a36225ef11de350c055f8d1407bda2685_cgraph">
+<area shape="rect" title=" " alt="" coords="5,49,160,90"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a2437ea086fd1b791da2809a52aacf20a" title=" " alt="" coords="208,56,311,83"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a11f105c360020140d57fb4d6ddbae8e8" title=" " alt="" coords="408,5,461,32"/>
+<area shape="rect" href="../../d4/d04/inventaire_8c.html#a1ee5b996c2d2ca56746853c114efc34f" title="Créé un inventaire." alt="" coords="371,56,499,83"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#aea6ef750998e466ed9d8beef7daefc09" title="Fonction qui creer et renvoie une liste de textures pour le personnage (joueur)" alt="" coords="359,132,511,159"/>
+<area shape="rect" href="../../d5/d17/liste__objet_8c.html#a642642e44de7f33ce3115b733b836a0a" title="Créé une liste d&#39;objets vide contenant les objets équipés." alt="" coords="559,5,740,32"/>
+<area shape="rect" href="../../d5/d17/liste__objet_8c.html#a4716917b2fe34c67458421e97668ab57" title="Créé une liste d&#39;objets vide." alt="" coords="567,56,732,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title=" " alt="" coords="819,132,911,159"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0" title=" " alt="" coords="595,157,704,184"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a0843b69b213a0b2f2645ad6158e00bff" title="Fonction qui positionne la texture au n&#45;ème sprite sur l&#39;axe des x." alt="" coords="570,208,729,235"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a2201c110dd65bb833da125813d849273" title="Fonction qui détermine si la structure SDL_Rect ne dépasse pas la taille de la texture." alt="" coords="788,208,941,235"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a36225ef11de350c055f8d1407bda2685_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a36225ef11de350c055f8d1407bda2685_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a36225ef11de350c055f8d1407bda2685_icgraph" id="dd/dce/personnage_8c_a36225ef11de350c055f8d1407bda2685_icgraph">
+<area shape="rect" title=" " alt="" coords="583,5,737,47"/>
+<area shape="rect" href="../../d6/d46/menus_8h.html#acc47fe54070e003622ad3a68d3d6d310" title="Affiche le menu pause et gère les interactions avec le joueur." alt="" coords="373,13,535,39"/>
+<area shape="rect" href="../../d0/deb/event_8c.html#afe551917ddc29ee5ade1c65a26a61537" title="Fonction qui gère les événements quand une touche du clavier est pressée par un joueur." alt="" coords="243,13,325,39"/>
+<area shape="rect" href="../../dd/d20/event_8h.html#aded23e2ea2ac3df851674e2292250166" title="Fonction qui gère les événements." alt="" coords="108,13,195,39"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1674d581294113dd43ec58636bd57802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1674d581294113dd43ec58636bd57802">&#9670;&nbsp;</a></span>check_repertoire_jeux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void check_repertoire_jeux </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a1674d581294113dd43ec58636bd57802_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a1674d581294113dd43ec58636bd57802_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a1674d581294113dd43ec58636bd57802_icgraph" id="dd/dce/personnage_8c_a1674d581294113dd43ec58636bd57802_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,275,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a11f105c360020140d57fb4d6ddbae8e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11f105c360020140d57fb4d6ddbae8e8">&#9670;&nbsp;</a></span>copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void copy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/daa/definition__commun_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *&#160;</td>
+          <td class="paramname"><em>origin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d1/daa/definition__commun_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a11f105c360020140d57fb4d6ddbae8e8_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a11f105c360020140d57fb4d6ddbae8e8_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a11f105c360020140d57fb4d6ddbae8e8_icgraph" id="dd/dce/personnage_8c_a11f105c360020140d57fb4d6ddbae8e8_icgraph">
+<area shape="rect" title=" " alt="" coords="936,42,989,69"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a2437ea086fd1b791da2809a52aacf20a" title=" " alt="" coords="785,42,888,69"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#a36225ef11de350c055f8d1407bda2685" title=" " alt="" coords="583,5,737,47"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#a59bc1851a89a1a015c7a7569cd098611" title=" " alt="" coords="611,71,709,98"/>
+<area shape="rect" href="../../d6/d46/menus_8h.html#acc47fe54070e003622ad3a68d3d6d310" title="Affiche le menu pause et gère les interactions avec le joueur." alt="" coords="373,13,535,39"/>
+<area shape="rect" href="../../d0/deb/event_8c.html#afe551917ddc29ee5ade1c65a26a61537" title="Fonction qui gère les événements quand une touche du clavier est pressée par un joueur." alt="" coords="243,13,325,39"/>
+<area shape="rect" href="../../dd/d20/event_8h.html#aded23e2ea2ac3df851674e2292250166" title="Fonction qui gère les événements." alt="" coords="108,13,195,39"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,38,60,65"/>
+<area shape="rect" href="../../d3/d9d/test__personnage_8c.html#a3cccdeb8dd61fb359c030d6c8d2c031f" title=" " alt="" coords="375,114,533,141"/>
+<area shape="rect" href="../../d3/d9d/test__personnage_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="257,114,311,141"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2437ea086fd1b791da2809a52aacf20a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2437ea086fd1b791da2809a52aacf20a">&#9670;&nbsp;</a></span>creer_joueur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">joueur_t* creer_joueur </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>niveau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>xp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>maxPdv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>pdv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>attaque</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>defense</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>vitesse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d1/daa/definition__commun_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a>&#160;</td>
+          <td class="paramname"><em>trig</em>[TAILLE_TRIGGER], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d1/daa/definition__commun_8h.html#aec4e3894aa763e81148b2241ff730790">t_direction</a>&#160;</td>
+          <td class="paramname"><em>orientation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d1/daa/definition__commun_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td>
+          <td class="paramname"><em>bouclier_equipe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>num_j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a2437ea086fd1b791da2809a52aacf20a_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_a2437ea086fd1b791da2809a52aacf20a_cgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a2437ea086fd1b791da2809a52aacf20a_cgraph" id="dd/dce/personnage_8c_a2437ea086fd1b791da2809a52aacf20a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,108,83"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a11f105c360020140d57fb4d6ddbae8e8" title=" " alt="" coords="205,5,259,32"/>
+<area shape="rect" href="../../d4/d04/inventaire_8c.html#a1ee5b996c2d2ca56746853c114efc34f" title="Créé un inventaire." alt="" coords="168,56,296,83"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#aea6ef750998e466ed9d8beef7daefc09" title="Fonction qui creer et renvoie une liste de textures pour le personnage (joueur)" alt="" coords="156,132,308,159"/>
+<area shape="rect" href="../../d5/d17/liste__objet_8c.html#a642642e44de7f33ce3115b733b836a0a" title="Créé une liste d&#39;objets vide contenant les objets équipés." alt="" coords="356,5,537,32"/>
+<area shape="rect" href="../../d5/d17/liste__objet_8c.html#a4716917b2fe34c67458421e97668ab57" title="Créé une liste d&#39;objets vide." alt="" coords="364,56,529,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title=" " alt="" coords="616,132,708,159"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0" title=" " alt="" coords="392,157,501,184"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a0843b69b213a0b2f2645ad6158e00bff" title="Fonction qui positionne la texture au n&#45;ème sprite sur l&#39;axe des x." alt="" coords="367,208,526,235"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a2201c110dd65bb833da125813d849273" title="Fonction qui détermine si la structure SDL_Rect ne dépasse pas la taille de la texture." alt="" coords="585,208,739,235"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a2437ea086fd1b791da2809a52aacf20a_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a2437ea086fd1b791da2809a52aacf20a_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a2437ea086fd1b791da2809a52aacf20a_icgraph" id="dd/dce/personnage_8c_a2437ea086fd1b791da2809a52aacf20a_icgraph">
+<area shape="rect" title=" " alt="" coords="785,42,888,69"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#a36225ef11de350c055f8d1407bda2685" title=" " alt="" coords="583,5,737,47"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#a59bc1851a89a1a015c7a7569cd098611" title=" " alt="" coords="611,71,709,98"/>
+<area shape="rect" href="../../d6/d46/menus_8h.html#acc47fe54070e003622ad3a68d3d6d310" title="Affiche le menu pause et gère les interactions avec le joueur." alt="" coords="373,13,535,39"/>
+<area shape="rect" href="../../d0/deb/event_8c.html#afe551917ddc29ee5ade1c65a26a61537" title="Fonction qui gère les événements quand une touche du clavier est pressée par un joueur." alt="" coords="243,13,325,39"/>
+<area shape="rect" href="../../dd/d20/event_8h.html#aded23e2ea2ac3df851674e2292250166" title="Fonction qui gère les événements." alt="" coords="108,13,195,39"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,38,60,65"/>
+<area shape="rect" href="../../d3/d9d/test__personnage_8c.html#a3cccdeb8dd61fb359c030d6c8d2c031f" title=" " alt="" coords="375,114,533,141"/>
+<area shape="rect" href="../../d3/d9d/test__personnage_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="257,114,311,141"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9ce711c80691bb2b4f29e7c58790851a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ce711c80691bb2b4f29e7c58790851a">&#9670;&nbsp;</a></span>creer_sauvegarde_json()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void creer_sauvegarde_json </td>
+          <td>(</td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>j</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a9ce711c80691bb2b4f29e7c58790851a_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a9ce711c80691bb2b4f29e7c58790851a_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a9ce711c80691bb2b4f29e7c58790851a_icgraph" id="dd/dce/personnage_8c_a9ce711c80691bb2b4f29e7c58790851a_icgraph">
+<area shape="rect" title=" " alt="" coords="583,5,755,32"/>
+<area shape="rect" href="../../d6/d46/menus_8h.html#acc47fe54070e003622ad3a68d3d6d310" title="Affiche le menu pause et gère les interactions avec le joueur." alt="" coords="373,5,535,32"/>
+<area shape="rect" href="../../d0/deb/event_8c.html#afe551917ddc29ee5ade1c65a26a61537" title="Fonction qui gère les événements quand une touche du clavier est pressée par un joueur." alt="" coords="243,5,325,32"/>
+<area shape="rect" href="../../dd/d20/event_8h.html#aded23e2ea2ac3df851674e2292250166" title="Fonction qui gère les événements." alt="" coords="108,5,195,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a33613b3a2b55cb1d1855a39a288fb230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33613b3a2b55cb1d1855a39a288fb230">&#9670;&nbsp;</a></span>detruire_joueur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void detruire_joueur </td>
+          <td>(</td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>j</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_cgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_cgraph" id="dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,127,32"/>
+<area shape="rect" href="../../d4/d04/inventaire_8c.html#ad5b47c7ac8715bcc4b4c2b331370fcd2" title="Détruit un inventaire." alt="" coords="175,5,321,32"/>
+<area shape="rect" href="../../d5/d17/liste__objet_8c.html#a1ba32d0d4c27d32b82085294555b1415" title="Efface une liste d&#39;objets sans libérer la mémoire allouée aux objets qu&#39;elle contient." alt="" coords="369,5,512,32"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_icgraph" id="dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_icgraph">
+<area shape="rect" title=" " alt="" coords="583,5,704,32"/>
+<area shape="rect" href="../../d6/d46/menus_8h.html#acc47fe54070e003622ad3a68d3d6d310" title="Affiche le menu pause et gère les interactions avec le joueur." alt="" coords="373,5,535,32"/>
+<area shape="rect" href="../../d0/deb/event_8c.html#afe551917ddc29ee5ade1c65a26a61537" title="Fonction qui gère les événements quand une touche du clavier est pressée par un joueur." alt="" coords="243,5,325,32"/>
+<area shape="rect" href="../../dd/d20/event_8h.html#aded23e2ea2ac3df851674e2292250166" title="Fonction qui gère les événements." alt="" coords="108,5,195,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0033859232a540c50f70d271514c966f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0033859232a540c50f70d271514c966f">&#9670;&nbsp;</a></span>entite_en_collision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_bool entite_en_collision </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Rect *&#160;</td>
+          <td class="paramname"><em>entite_1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Rect *&#160;</td>
+          <td class="paramname"><em>entite_2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d1/daa/definition__commun_8h.html#aec4e3894aa763e81148b2241ff730790">t_direction</a> *&#160;</td>
+          <td class="paramname"><em>coter_entite_1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d1/daa/definition__commun_8h.html#aec4e3894aa763e81148b2241ff730790">t_direction</a> *&#160;</td>
+          <td class="paramname"><em>coter_entite_2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a0033859232a540c50f70d271514c966f_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a0033859232a540c50f70d271514c966f_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a0033859232a540c50f70d271514c966f_icgraph" id="dd/dce/personnage_8c_a0033859232a540c50f70d271514c966f_icgraph">
+<area shape="rect" title=" " alt="" coords="325,5,469,32"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#ace87f9712c0e5b18f0e977e0971a5676" title=" " alt="" coords="108,5,277,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a434acdc261f9c84b7dca8d540daca729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a434acdc261f9c84b7dca8d540daca729">&#9670;&nbsp;</a></span>entite_subit_attaque()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_bool entite_subit_attaque </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Rect *&#160;</td>
+          <td class="paramname"><em>monstre_hitbox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>joueur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a434acdc261f9c84b7dca8d540daca729_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_a434acdc261f9c84b7dca8d540daca729_cgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a434acdc261f9c84b7dca8d540daca729_cgraph" id="dd/dce/personnage_8c_a434acdc261f9c84b7dca8d540daca729_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,161,32"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a1feec4dcb1fce6f810bb75fd90b41533" title=" " alt="" coords="209,5,384,32"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a434acdc261f9c84b7dca8d540daca729_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a434acdc261f9c84b7dca8d540daca729_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a434acdc261f9c84b7dca8d540daca729_icgraph" id="dd/dce/personnage_8c_a434acdc261f9c84b7dca8d540daca729_icgraph">
+<area shape="rect" title=" " alt="" coords="325,5,481,32"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#ace87f9712c0e5b18f0e977e0971a5676" title=" " alt="" coords="108,5,277,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ace87f9712c0e5b18f0e977e0971a5676"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace87f9712c0e5b18f0e977e0971a5676">&#9670;&nbsp;</a></span>environnement_joueur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void environnement_joueur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/d10/structlist.html">list</a> *&#160;</td>
+          <td class="paramname"><em>liste_monstres</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d8/d10/structlist.html">list</a> *&#160;</td>
+          <td class="paramname"><em>liste_sorts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>joueur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_ace87f9712c0e5b18f0e977e0971a5676_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_ace87f9712c0e5b18f0e977e0971a5676_cgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_ace87f9712c0e5b18f0e977e0971a5676_cgraph" id="dd/dce/personnage_8c_ace87f9712c0e5b18f0e977e0971a5676_cgraph">
+<area shape="rect" title=" " alt="" coords="5,259,175,285"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#aa18ada4ee80cd3ec4a96012f5bfdf469" title=" " alt="" coords="233,133,368,174"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="479,5,549,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="824,157,909,184"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title=" " alt="" coords="478,208,550,235"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="677,157,748,184"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="471,56,557,83"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a0033859232a540c50f70d271514c966f" title=" " alt="" coords="229,360,373,387"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a434acdc261f9c84b7dca8d540daca729" title=" " alt="" coords="223,411,379,437"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#ac98e80b68d01d16bf1d9d6159e5aeabc" title=" " alt="" coords="264,461,337,488"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title=" " alt="" coords="670,5,755,32"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a1feec4dcb1fce6f810bb75fd90b41533" title=" " alt="" coords="427,411,601,437"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a3082b9ef9df15ce021d06dccaa1e9f2c" title=" " alt="" coords="479,461,549,488"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#ac26a86b02a29c7246298ecf03544f613" title=" " alt="" coords="649,461,776,488"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_ace87f9712c0e5b18f0e977e0971a5676_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_ace87f9712c0e5b18f0e977e0971a5676_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_ace87f9712c0e5b18f0e977e0971a5676_icgraph" id="dd/dce/personnage_8c_ace87f9712c0e5b18f0e977e0971a5676_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,277,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac98e80b68d01d16bf1d9d6159e5aeabc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac98e80b68d01d16bf1d9d6159e5aeabc">&#9670;&nbsp;</a></span>gain_xp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gain_xp </td>
+          <td>(</td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>perso</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_ac98e80b68d01d16bf1d9d6159e5aeabc_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_ac98e80b68d01d16bf1d9d6159e5aeabc_cgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_ac98e80b68d01d16bf1d9d6159e5aeabc_cgraph" id="dd/dce/personnage_8c_ac98e80b68d01d16bf1d9d6159e5aeabc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,79,32"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a3082b9ef9df15ce021d06dccaa1e9f2c" title=" " alt="" coords="127,5,197,32"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#ac26a86b02a29c7246298ecf03544f613" title=" " alt="" coords="245,5,372,32"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_ac98e80b68d01d16bf1d9d6159e5aeabc_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_ac98e80b68d01d16bf1d9d6159e5aeabc_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_ac98e80b68d01d16bf1d9d6159e5aeabc_icgraph" id="dd/dce/personnage_8c_ac98e80b68d01d16bf1d9d6159e5aeabc_icgraph">
+<area shape="rect" title=" " alt="" coords="325,5,399,32"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#ace87f9712c0e5b18f0e977e0971a5676" title=" " alt="" coords="108,5,277,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3082b9ef9df15ce021d06dccaa1e9f2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3082b9ef9df15ce021d06dccaa1e9f2c">&#9670;&nbsp;</a></span>levelup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void levelup </td>
+          <td>(</td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>perso</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a3082b9ef9df15ce021d06dccaa1e9f2c_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_a3082b9ef9df15ce021d06dccaa1e9f2c_cgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a3082b9ef9df15ce021d06dccaa1e9f2c_cgraph" id="dd/dce/personnage_8c_a3082b9ef9df15ce021d06dccaa1e9f2c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,76,32"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#ac26a86b02a29c7246298ecf03544f613" title=" " alt="" coords="124,5,251,32"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a3082b9ef9df15ce021d06dccaa1e9f2c_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a3082b9ef9df15ce021d06dccaa1e9f2c_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a3082b9ef9df15ce021d06dccaa1e9f2c_icgraph" id="dd/dce/personnage_8c_a3082b9ef9df15ce021d06dccaa1e9f2c_icgraph">
+<area shape="rect" title=" " alt="" coords="447,5,517,32"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#ac98e80b68d01d16bf1d9d6159e5aeabc" title=" " alt="" coords="325,5,399,32"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#ace87f9712c0e5b18f0e977e0971a5676" title=" " alt="" coords="108,5,277,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a59bc1851a89a1a015c7a7569cd098611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59bc1851a89a1a015c7a7569cd098611">&#9670;&nbsp;</a></span>new_joueur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">joueur_t* new_joueur </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a59bc1851a89a1a015c7a7569cd098611_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_a59bc1851a89a1a015c7a7569cd098611_cgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a59bc1851a89a1a015c7a7569cd098611_cgraph" id="dd/dce/personnage_8c_a59bc1851a89a1a015c7a7569cd098611_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,103,83"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a2437ea086fd1b791da2809a52aacf20a" title=" " alt="" coords="151,56,253,83"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a11f105c360020140d57fb4d6ddbae8e8" title=" " alt="" coords="351,5,404,32"/>
+<area shape="rect" href="../../d4/d04/inventaire_8c.html#a1ee5b996c2d2ca56746853c114efc34f" title="Créé un inventaire." alt="" coords="313,56,441,83"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#aea6ef750998e466ed9d8beef7daefc09" title="Fonction qui creer et renvoie une liste de textures pour le personnage (joueur)" alt="" coords="301,132,453,159"/>
+<area shape="rect" href="../../d5/d17/liste__objet_8c.html#a642642e44de7f33ce3115b733b836a0a" title="Créé une liste d&#39;objets vide contenant les objets équipés." alt="" coords="501,5,683,32"/>
+<area shape="rect" href="../../d5/d17/liste__objet_8c.html#a4716917b2fe34c67458421e97668ab57" title="Créé une liste d&#39;objets vide." alt="" coords="509,56,675,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title=" " alt="" coords="761,132,853,159"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0" title=" " alt="" coords="537,157,647,184"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a0843b69b213a0b2f2645ad6158e00bff" title="Fonction qui positionne la texture au n&#45;ème sprite sur l&#39;axe des x." alt="" coords="513,208,671,235"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a2201c110dd65bb833da125813d849273" title="Fonction qui détermine si la structure SDL_Rect ne dépasse pas la taille de la texture." alt="" coords="731,208,884,235"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a59bc1851a89a1a015c7a7569cd098611_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a59bc1851a89a1a015c7a7569cd098611_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a59bc1851a89a1a015c7a7569cd098611_icgraph" id="dd/dce/personnage_8c_a59bc1851a89a1a015c7a7569cd098611_icgraph">
+<area shape="rect" title=" " alt="" coords="315,31,412,57"/>
+<area shape="rect" href="../../d3/d9d/test__personnage_8c.html#a3cccdeb8dd61fb359c030d6c8d2c031f" title=" " alt="" coords="108,5,267,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="160,56,215,83"/>
+<area shape="rect" href="../../d3/d9d/test__personnage_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0c0886659f76bc2d3edaefc53fbf731e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c0886659f76bc2d3edaefc53fbf731e">&#9670;&nbsp;</a></span>orientation_inverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/daa/definition__commun_8h.html#aec4e3894aa763e81148b2241ff730790">t_direction</a> orientation_inverse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/daa/definition__commun_8h.html#aec4e3894aa763e81148b2241ff730790">t_direction</a>&#160;</td>
+          <td class="paramname"><em>orientation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71919ee7582fae9cc0e2d1fd5bbce94e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71919ee7582fae9cc0e2d1fd5bbce94e">&#9670;&nbsp;</a></span>sauv_existe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/daa/definition__commun_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> sauv_existe </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nom_sauv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a3324d2dc734d1d45b92a562e61ae18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a3324d2dc734d1d45b92a562e61ae18">&#9670;&nbsp;</a></span>stoper_mouvement_joueurs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stoper_mouvement_joueurs </td>
+          <td>(</td>
+          <td class="paramtype">joueur_t **&#160;</td>
+          <td class="paramname"><em>joueurs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">joueurs</td><td>Tableau des joueurs en jeu </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a1a3324d2dc734d1d45b92a562e61ae18_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a1a3324d2dc734d1d45b92a562e61ae18_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a1a3324d2dc734d1d45b92a562e61ae18_icgraph" id="dd/dce/personnage_8c_a1a3324d2dc734d1d45b92a562e61ae18_icgraph">
+<area shape="rect" title="Stop le mouvement des joueurs en jeu." alt="" coords="516,31,720,57"/>
+<area shape="rect" href="../../d0/deb/event_8c.html#ac367042c66a1868384bac213a1ecbb99" title=" " alt="" coords="304,5,468,32"/>
+<area shape="rect" href="../../d0/deb/event_8c.html#afe551917ddc29ee5ade1c65a26a61537" title="Fonction qui gère les événements quand une touche du clavier est pressée par un joueur." alt="" coords="345,56,427,83"/>
+<area shape="rect" href="../../dd/d20/event_8h.html#ac27091daa86f31b79780d6a91801fd11" title=" " alt="" coords="108,5,256,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,31,60,57"/>
+<area shape="rect" href="../../dd/d20/event_8h.html#aded23e2ea2ac3df851674e2292250166" title="Fonction qui gère les événements." alt="" coords="139,56,225,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1feec4dcb1fce6f810bb75fd90b41533"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1feec4dcb1fce6f810bb75fd90b41533">&#9670;&nbsp;</a></span>zone_en_dehors_hitbox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Rect* zone_en_dehors_hitbox </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Rect *&#160;</td>
+          <td class="paramname"><em>hitbox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Rect *&#160;</td>
+          <td class="paramname"><em>sprite</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d1/daa/definition__commun_8h.html#aec4e3894aa763e81148b2241ff730790">t_direction</a>&#160;</td>
+          <td class="paramname"><em>orientation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a1feec4dcb1fce6f810bb75fd90b41533_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a1feec4dcb1fce6f810bb75fd90b41533_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a1feec4dcb1fce6f810bb75fd90b41533_icgraph" id="dd/dce/personnage_8c_a1feec4dcb1fce6f810bb75fd90b41533_icgraph">
+<area shape="rect" title=" " alt="" coords="529,31,704,57"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a434acdc261f9c84b7dca8d540daca729" title=" " alt="" coords="325,5,481,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,31,60,57"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#ace87f9712c0e5b18f0e977e0971a5676" title=" " alt="" coords="108,5,277,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a id="a8512a450e703a0f7eb1bd9540a592187"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8512a450e703a0f7eb1bd9540a592187">&#9670;&nbsp;</a></span>save_path</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char save_path[500]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">

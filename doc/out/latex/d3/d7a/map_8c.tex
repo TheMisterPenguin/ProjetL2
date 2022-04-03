@@ -1,13 +1,10 @@
 \hypertarget{map_8c}{}\doxysection{Référence du fichier map.\+c}
 \label{map_8c}\index{map.c@{map.c}}
-{\ttfamily \#include $<$json-\/c/json.\+h$>$}\newline
-{\ttfamily \#include $<$affichage.\+h$>$}\newline
-{\ttfamily \#include $<$map.\+h$>$}\newline
-{\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include $<$string.\+h$>$}\newline
-{\ttfamily \#include $<$code\+\_\+erreur.\+h$>$}\newline
-{\ttfamily \#include $<$math.\+h$>$}\newline
+
+
+Fonctions de gestion de la map.  
+
+
 Graphe des dépendances par inclusion de map.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -19,73 +16,102 @@ Graphe des dépendances par inclusion de map.\+c\+:
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{map_8c_a7ea38c5f7f7daf29e01fbc3a4d560a0a_a7ea38c5f7f7daf29e01fbc3a4d560a0a}{taille\+\_\+ecran\+\_\+cases}} ()
+S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{map_8c_a7ea38c5f7f7daf29e01fbc3a4d560a0a}{taille\+\_\+ecran\+\_\+cases}} ()
 \item 
-char $\ast$ \mbox{\hyperlink{map_8c_a7c30bc495bad0cbcfe07c02d01d636a2_a7c30bc495bad0cbcfe07c02d01d636a2}{charger\+\_\+f\+\_\+map}} (const char $\ast$const nom\+\_\+map)
-\begin{DoxyCompactList}\small\item\em Fonction qui charge le contenu du fichier dont le nom est donné en paramètre dans un buffer de caractères. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$ \mbox{\hyperlink{map_8c_ab600cf609ed952e35c2bd6dae616313d_ab600cf609ed952e35c2bd6dae616313d}{charger\+\_\+s\+\_\+map}} (char $\ast$buffer)
+\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$ \mbox{\hyperlink{map_8c_af6448083132a6591f73061457f30ebb3}{charger\+\_\+map}} (const char $\ast$const nom\+\_\+map)
 \begin{DoxyCompactList}\small\item\em Fonction qui récupère les informations stockées dans le buffer en entrée. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$ \mbox{\hyperlink{map_8c_abd78a434afc7dae4de6de6e0b879ccb8_abd78a434afc7dae4de6de6e0b879ccb8}{texture\+\_\+map}} (const \mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
-\begin{DoxyCompactList}\small\item\em Fonction qui renvoie la texture de la map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+t\+\_\+aff $\ast$ \mbox{\hyperlink{map_8c_abd78a434afc7dae4de6de6e0b879ccb8}{texture\+\_\+map}} (const \mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
+\begin{DoxyCompactList}\small\item\em Fonction qui renvoie la texture de la map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{map_8c_a9a38d488f4584c0d15046cf0297d474a}{detruire\+\_\+map}} (\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$$\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
+\item 
+void \mbox{\hyperlink{map_8c_a1a36cad71a42c80da1f12a50caff8d00}{transition}} (\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$$\ast$actuelle, const char $\ast$const nom\+\_\+map, joueur\+\_\+t $\ast$$\ast$joueurs, unsigned short int nb\+\_\+joueurs)
+\item 
+void \mbox{\hyperlink{map_8c_a7e9c15657f08efce7a84ec6822c064e2}{tp\+\_\+joueurs}} (\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}}, unsigned int x, unsigned int y, joueur\+\_\+t $\ast$$\ast$joueurs, unsigned short int nb\+\_\+joueurs)
+\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$ \mbox{\hyperlink{map_8c_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}}
+\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$ \mbox{\hyperlink{map_8c_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Description détaillée}
+\begin{DoxyAuthor}{Auteur}
+Ange Despert (\href{mailto:Ange.Despert.Etu@univ-lemans.fr}{\texttt{ Ange.\+Despert.\+Etu@univ-\/lemans.\+fr}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+28/03/2022 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{map_8c_a7c30bc495bad0cbcfe07c02d01d636a2_a7c30bc495bad0cbcfe07c02d01d636a2}\label{map_8c_a7c30bc495bad0cbcfe07c02d01d636a2_a7c30bc495bad0cbcfe07c02d01d636a2}} 
-\index{map.c@{map.c}!charger\_f\_map@{charger\_f\_map}}
-\index{charger\_f\_map@{charger\_f\_map}!map.c@{map.c}}
-\doxysubsubsection{\texorpdfstring{charger\_f\_map()}{charger\_f\_map()}}
-{\footnotesize\ttfamily char$\ast$ charger\+\_\+f\+\_\+map (\begin{DoxyParamCaption}\item[{const char $\ast$const}]{nom\+\_\+map }\end{DoxyParamCaption})}
-
-
-
-Fonction qui charge le contenu du fichier dont le nom est donné en paramètre dans un buffer de caractères. 
+\mbox{\Hypertarget{map_8c_af6448083132a6591f73061457f30ebb3}\label{map_8c_af6448083132a6591f73061457f30ebb3}} 
+\index{map.c@{map.c}!charger\_map@{charger\_map}}
+\index{charger\_map@{charger\_map}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{charger\_map()}{charger\_map()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}}$\ast$ charger\+\_\+map (\begin{DoxyParamCaption}\item[{const char $\ast$const}]{nom\+\_\+map }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
-{\em nom\+\_\+map} & Le nom du fichier map à charger \\
+{\em liste\+\_\+base\+\_\+monstres} & Les montres à placer sur la map \\
 \hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Renvoie}
-Un buffer de caractères contenant l\textquotesingle{}intégralité du fichier 
-\end{DoxyReturn}
-\mbox{\Hypertarget{map_8c_ab600cf609ed952e35c2bd6dae616313d_ab600cf609ed952e35c2bd6dae616313d}\label{map_8c_ab600cf609ed952e35c2bd6dae616313d_ab600cf609ed952e35c2bd6dae616313d}} 
-\index{map.c@{map.c}!charger\_s\_map@{charger\_s\_map}}
-\index{charger\_s\_map@{charger\_s\_map}!map.c@{map.c}}
-\doxysubsubsection{\texorpdfstring{charger\_s\_map()}{charger\_s\_map()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structt__map}{t\+\_\+map}}$\ast$ charger\+\_\+s\+\_\+map (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer }\end{DoxyParamCaption})}
-
-
-
-Fonction qui récupère les informations stockées dans le buffer en entrée. 
-
-
-\begin{DoxyParams}{Paramètres}
 {\em buffer} & Le buffeur qui contient les informations \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
 Une map initialisée avec toutes les informations dedans; 
 \end{DoxyReturn}
-\mbox{\Hypertarget{map_8c_a7ea38c5f7f7daf29e01fbc3a4d560a0a_a7ea38c5f7f7daf29e01fbc3a4d560a0a}\label{map_8c_a7ea38c5f7f7daf29e01fbc3a4d560a0a_a7ea38c5f7f7daf29e01fbc3a4d560a0a}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{map_8c_a9a38d488f4584c0d15046cf0297d474a}\label{map_8c_a9a38d488f4584c0d15046cf0297d474a}} 
+\index{map.c@{map.c}!detruire\_map@{detruire\_map}}
+\index{detruire\_map@{detruire\_map}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{detruire\_map()}{detruire\_map()}}
+{\footnotesize\ttfamily void detruire\+\_\+map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$$\ast$}]{map }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d7a/map_8c_a9a38d488f4584c0d15046cf0297d474a_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{d3/d7a/map_8c_a9a38d488f4584c0d15046cf0297d474a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{map_8c_a7ea38c5f7f7daf29e01fbc3a4d560a0a}\label{map_8c_a7ea38c5f7f7daf29e01fbc3a4d560a0a}} 
 \index{map.c@{map.c}!taille\_ecran\_cases@{taille\_ecran\_cases}}
 \index{taille\_ecran\_cases@{taille\_ecran\_cases}!map.c@{map.c}}
 \doxysubsubsection{\texorpdfstring{taille\_ecran\_cases()}{taille\_ecran\_cases()}}
 {\footnotesize\ttfamily S\+D\+L\+\_\+\+Rect taille\+\_\+ecran\+\_\+cases (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{map_8c_abd78a434afc7dae4de6de6e0b879ccb8_abd78a434afc7dae4de6de6e0b879ccb8}\label{map_8c_abd78a434afc7dae4de6de6e0b879ccb8_abd78a434afc7dae4de6de6e0b879ccb8}} 
+\mbox{\Hypertarget{map_8c_abd78a434afc7dae4de6de6e0b879ccb8}\label{map_8c_abd78a434afc7dae4de6de6e0b879ccb8}} 
 \index{map.c@{map.c}!texture\_map@{texture\_map}}
 \index{texture\_map@{texture\_map}!map.c@{map.c}}
 \doxysubsubsection{\texorpdfstring{texture\_map()}{texture\_map()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}}$\ast$ texture\+\_\+map (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$}]{map }\end{DoxyParamCaption})}
-
-
-
-Fonction qui renvoie la texture de la map. 
+{\footnotesize\ttfamily t\+\_\+aff$\ast$ texture\+\_\+map (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
@@ -95,13 +121,46 @@ Fonction qui renvoie la texture de la map.
 \begin{DoxyReturn}{Renvoie}
 La texture de la map 
 \end{DoxyReturn}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{d3/d7a/map_8c_abd78a434afc7dae4de6de6e0b879ccb8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{map_8c_a7e9c15657f08efce7a84ec6822c064e2}\label{map_8c_a7e9c15657f08efce7a84ec6822c064e2}} 
+\index{map.c@{map.c}!tp\_joueurs@{tp\_joueurs}}
+\index{tp\_joueurs@{tp\_joueurs}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{tp\_joueurs()}{tp\_joueurs()}}
+{\footnotesize\ttfamily void tp\+\_\+joueurs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map,  }\item[{unsigned int}]{x,  }\item[{unsigned int}]{y,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{unsigned short int}]{nb\+\_\+joueurs }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d7a/map_8c_a7e9c15657f08efce7a84ec6822c064e2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{map_8c_a1a36cad71a42c80da1f12a50caff8d00}\label{map_8c_a1a36cad71a42c80da1f12a50caff8d00}} 
+\index{map.c@{map.c}!transition@{transition}}
+\index{transition@{transition}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{transition()}{transition()}}
+{\footnotesize\ttfamily void transition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$$\ast$}]{actuelle,  }\item[{const char $\ast$const}]{nom\+\_\+map,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{unsigned short int}]{nb\+\_\+joueurs }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d7a/map_8c_a1a36cad71a42c80da1f12a50caff8d00_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Documentation des variables}
-\mbox{\Hypertarget{map_8c_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}\label{map_8c_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}} 
+\mbox{\Hypertarget{map_8c_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}\label{map_8c_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}} 
 \index{map.c@{map.c}!map@{map}}
 \index{map@{map}!map.c@{map.c}}
 \doxysubsubsection{\texorpdfstring{map}{map}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structt__map}{t\+\_\+map}}$\ast$ map}
+{\footnotesize\ttfamily \mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}}$\ast$ map}
 
 La map courante 

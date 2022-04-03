@@ -2,11 +2,18 @@
 \label{fonctions_8h}\index{fonctions.h@{fonctions.h}}
 
 
-Fichier qui contient les définitions de toutes les fonctions.  
+Définitions des fonctions d\textquotesingle{}initialisation.  
 
 
-Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+Graphe des dépendances par inclusion de fonctions.\+h\+:
 \nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d19/fonctions_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,25 +23,25 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{fonctions_8h_a2858154e2009b0e6e616f313177762bc_a2858154e2009b0e6e616f313177762bc}{init}} (void)
+void \mbox{\hyperlink{fonctions_8h_a2858154e2009b0e6e616f313177762bc}{init}} (void)
 \begin{DoxyCompactList}\small\item\em Fonction qui initialise le Programme. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{fonctions_8h_a7b6ab7ddc25c37de5b94c942bbc5949c_a7b6ab7ddc25c37de5b94c942bbc5949c}{terminate\+\_\+init}} (void)
+void \mbox{\hyperlink{fonctions_8h_a7b6ab7ddc25c37de5b94c942bbc5949c}{terminate\+\_\+init}} (void)
 \item 
-void \mbox{\hyperlink{fonctions_8h_a9ba6aaac1f254ad54badf515822110f1_a9ba6aaac1f254ad54badf515822110f1}{init\+\_\+event}} (void)
-\begin{DoxyCompactList}\small\item\em Fonction qui initialise les fonctions liées aux évenements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{fonctions_8h_a9ba6aaac1f254ad54badf515822110f1}{init\+\_\+event}} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui initialise les fonctions liées aux évenements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fonctions_8h_aad95fee9e6bf2bd4c8ae74d98e1a6821}{init\+\_\+sousbuffer}} (\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}}, joueur\+\_\+t $\ast$joueur)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
-Fichier qui contient les définitions de toutes les fonctions. 
-
 \begin{DoxyAuthor}{Auteur}
-Despert Ange (\href{mailto:Ange.Despert.Etu@univ-lemans.fr}{\texttt{ Ange.\+Despert.\+Etu@univ-\/lemans.\+fr}}) 
+Ange Despert (\href{mailto:Ange.Despert.Etu@univ-lemans.fr}{\texttt{ Ange.\+Despert.\+Etu@univ-\/lemans.\+fr}}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 0.\+1 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-02/02/2022
+02/02/2022 
 \end{DoxyDate}
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2022 
@@ -42,30 +49,66 @@ Copyright (c) 2022
 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{fonctions_8h_a2858154e2009b0e6e616f313177762bc_a2858154e2009b0e6e616f313177762bc}\label{fonctions_8h_a2858154e2009b0e6e616f313177762bc_a2858154e2009b0e6e616f313177762bc}} 
+\mbox{\Hypertarget{fonctions_8h_a2858154e2009b0e6e616f313177762bc}\label{fonctions_8h_a2858154e2009b0e6e616f313177762bc}} 
 \index{fonctions.h@{fonctions.h}!init@{init}}
 \index{init@{init}!fonctions.h@{fonctions.h}}
 \doxysubsubsection{\texorpdfstring{init()}{init()}}
 {\footnotesize\ttfamily void init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
-
-Fonction qui initialise le Programme. 
-
 \begin{DoxyAuthor}{Auteur}
 Ange Despert 
 \end{DoxyAuthor}
-\mbox{\Hypertarget{fonctions_8h_a9ba6aaac1f254ad54badf515822110f1_a9ba6aaac1f254ad54badf515822110f1}\label{fonctions_8h_a9ba6aaac1f254ad54badf515822110f1_a9ba6aaac1f254ad54badf515822110f1}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d78/fonctions_8h_a2858154e2009b0e6e616f313177762bc_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{d4/d78/fonctions_8h_a2858154e2009b0e6e616f313177762bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fonctions_8h_a9ba6aaac1f254ad54badf515822110f1}\label{fonctions_8h_a9ba6aaac1f254ad54badf515822110f1}} 
 \index{fonctions.h@{fonctions.h}!init\_event@{init\_event}}
 \index{init\_event@{init\_event}!fonctions.h@{fonctions.h}}
 \doxysubsubsection{\texorpdfstring{init\_event()}{init\_event()}}
 {\footnotesize\ttfamily init\+\_\+event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{fonctions_8h_aad95fee9e6bf2bd4c8ae74d98e1a6821}\label{fonctions_8h_aad95fee9e6bf2bd4c8ae74d98e1a6821}} 
+\index{fonctions.h@{fonctions.h}!init\_sousbuffer@{init\_sousbuffer}}
+\index{init\_sousbuffer@{init\_sousbuffer}!fonctions.h@{fonctions.h}}
+\doxysubsubsection{\texorpdfstring{init\_sousbuffer()}{init\_sousbuffer()}}
+{\footnotesize\ttfamily void init\+\_\+sousbuffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert 
+\end{DoxyAuthor}
 
-Fonction qui initialise les fonctions liées aux évenements. 
-
-\mbox{\Hypertarget{fonctions_8h_a7b6ab7ddc25c37de5b94c942bbc5949c_a7b6ab7ddc25c37de5b94c942bbc5949c}\label{fonctions_8h_a7b6ab7ddc25c37de5b94c942bbc5949c_a7b6ab7ddc25c37de5b94c942bbc5949c}} 
+\begin{DoxyParams}{Paramètres}
+{\em map} & \\
+\hline
+{\em joueur} & Joueur autour duquel se fait la fenêtre d\textquotesingle{}affichage de la carte \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{d4/d78/fonctions_8h_aad95fee9e6bf2bd4c8ae74d98e1a6821_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{d4/d78/fonctions_8h_aad95fee9e6bf2bd4c8ae74d98e1a6821_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fonctions_8h_a7b6ab7ddc25c37de5b94c942bbc5949c}\label{fonctions_8h_a7b6ab7ddc25c37de5b94c942bbc5949c}} 
 \index{fonctions.h@{fonctions.h}!terminate\_init@{terminate\_init}}
 \index{terminate\_init@{terminate\_init}!fonctions.h@{fonctions.h}}
 \doxysubsubsection{\texorpdfstring{terminate\_init()}{terminate\_init()}}

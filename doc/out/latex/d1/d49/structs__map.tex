@@ -1,0 +1,123 @@
+\hypertarget{structs__map}{}\doxysection{Référence de la structure t\+\_\+map}
+\label{structs__map}\index{t\_map@{t\_map}}
+
+
+Structure représentant une map.  
+
+
+
+
+Graphe de collaboration de t\+\_\+map\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{d5/d6e/structs__map__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{structs__map_ada908676f9fb534c0e99ccf45808beb8}{id\+\_\+map}}
+\item 
+t\+\_\+aff $\ast$ \mbox{\hyperlink{structs__map_a8da9748668e62eeea8e210d3ba81df50}{text\+\_\+map}}
+\item 
+t\+\_\+aff $\ast$ \mbox{\hyperlink{structs__map_a889c64ca7ac5725b8ba0e93e7c3ee057}{text\+\_\+sol}}
+\item 
+unsigned int \mbox{\hyperlink{structs__map_a4bd0554ddfe12e87dfbb9405093cfecc}{width}}
+\item 
+unsigned int \mbox{\hyperlink{structs__map_af5a0e110f70dea1156fca46c53f1c6da}{height}}
+\item 
+unsigned int \mbox{\hyperlink{structs__map_af838fdad4e19edb485845ad1a76a38f3}{taille\+\_\+case}}
+\item 
+unsigned int \mbox{\hyperlink{structs__map_a09b2aabbbc6a94c633eb92658c8d286e}{cases\+\_\+x}}
+\item 
+unsigned int \mbox{\hyperlink{structs__map_af49bd6e471e7f802244cb14f180d886f}{cases\+\_\+y}}
+\item 
+\mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{structs__map_a865072c99e4600fdfaeabe30d7981d7b}{liste\+\_\+monstres}}
+\item 
+\mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{structs__map_a909aa57f45ea83c8c494488e315cd02f}{liste\+\_\+sorts}}
+\item 
+\mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{structs__map_abc1532265c403adfbc475bafca6ad747}{liste\+\_\+collisions}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Définition de la structure map.
+
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette définition est la pour éviter une inclusion mutuelle des fichiers \mbox{\hyperlink{affichage_8h}{affichage.\+h}} et \mbox{\hyperlink{map_8h}{map.\+h}} . 
+
+\doxysubsection{Documentation des données membres}
+\mbox{\Hypertarget{structs__map_a09b2aabbbc6a94c633eb92658c8d286e}\label{structs__map_a09b2aabbbc6a94c633eb92658c8d286e}} 
+\index{t\_map@{t\_map}!cases\_x@{cases\_x}}
+\index{cases\_x@{cases\_x}!t\_map@{t\_map}}
+\doxysubsubsection{\texorpdfstring{cases\_x}{cases\_x}}
+{\footnotesize\ttfamily unsigned int t\+\_\+map\+::cases\+\_\+x}
+
+Le nombre de cases affichées en x \mbox{\Hypertarget{structs__map_af49bd6e471e7f802244cb14f180d886f}\label{structs__map_af49bd6e471e7f802244cb14f180d886f}} 
+\index{t\_map@{t\_map}!cases\_y@{cases\_y}}
+\index{cases\_y@{cases\_y}!t\_map@{t\_map}}
+\doxysubsubsection{\texorpdfstring{cases\_y}{cases\_y}}
+{\footnotesize\ttfamily unsigned int t\+\_\+map\+::cases\+\_\+y}
+
+Le nombre de cases affichées en y \mbox{\Hypertarget{structs__map_af5a0e110f70dea1156fca46c53f1c6da}\label{structs__map_af5a0e110f70dea1156fca46c53f1c6da}} 
+\index{t\_map@{t\_map}!height@{height}}
+\index{height@{height}!t\_map@{t\_map}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily unsigned int t\+\_\+map\+::height}
+
+La largeur et la hauteur de la map \mbox{\Hypertarget{structs__map_ada908676f9fb534c0e99ccf45808beb8}\label{structs__map_ada908676f9fb534c0e99ccf45808beb8}} 
+\index{t\_map@{t\_map}!id\_map@{id\_map}}
+\index{id\_map@{id\_map}!t\_map@{t\_map}}
+\doxysubsubsection{\texorpdfstring{id\_map}{id\_map}}
+{\footnotesize\ttfamily unsigned int t\+\_\+map\+::id\+\_\+map}
+
+\mbox{\Hypertarget{structs__map_abc1532265c403adfbc475bafca6ad747}\label{structs__map_abc1532265c403adfbc475bafca6ad747}} 
+\index{t\_map@{t\_map}!liste\_collisions@{liste\_collisions}}
+\index{liste\_collisions@{liste\_collisions}!t\_map@{t\_map}}
+\doxysubsubsection{\texorpdfstring{liste\_collisions}{liste\_collisions}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlist}{list}}$\ast$ t\+\_\+map\+::liste\+\_\+collisions}
+
+La liste de toutes les les collisions \mbox{\Hypertarget{structs__map_a865072c99e4600fdfaeabe30d7981d7b}\label{structs__map_a865072c99e4600fdfaeabe30d7981d7b}} 
+\index{t\_map@{t\_map}!liste\_monstres@{liste\_monstres}}
+\index{liste\_monstres@{liste\_monstres}!t\_map@{t\_map}}
+\doxysubsubsection{\texorpdfstring{liste\_monstres}{liste\_monstres}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlist}{list}}$\ast$ t\+\_\+map\+::liste\+\_\+monstres}
+
+La liste des monstres de la map \mbox{\Hypertarget{structs__map_a909aa57f45ea83c8c494488e315cd02f}\label{structs__map_a909aa57f45ea83c8c494488e315cd02f}} 
+\index{t\_map@{t\_map}!liste\_sorts@{liste\_sorts}}
+\index{liste\_sorts@{liste\_sorts}!t\_map@{t\_map}}
+\doxysubsubsection{\texorpdfstring{liste\_sorts}{liste\_sorts}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlist}{list}}$\ast$ t\+\_\+map\+::liste\+\_\+sorts}
+
+La liste des sorts de la map \mbox{\Hypertarget{structs__map_af838fdad4e19edb485845ad1a76a38f3}\label{structs__map_af838fdad4e19edb485845ad1a76a38f3}} 
+\index{t\_map@{t\_map}!taille\_case@{taille\_case}}
+\index{taille\_case@{taille\_case}!t\_map@{t\_map}}
+\doxysubsubsection{\texorpdfstring{taille\_case}{taille\_case}}
+{\footnotesize\ttfamily unsigned int t\+\_\+map\+::taille\+\_\+case}
+
+La taille d\textquotesingle{}une case \mbox{\Hypertarget{structs__map_a8da9748668e62eeea8e210d3ba81df50}\label{structs__map_a8da9748668e62eeea8e210d3ba81df50}} 
+\index{t\_map@{t\_map}!text\_map@{text\_map}}
+\index{text\_map@{text\_map}!t\_map@{t\_map}}
+\doxysubsubsection{\texorpdfstring{text\_map}{text\_map}}
+{\footnotesize\ttfamily t\+\_\+aff$\ast$ t\+\_\+map\+::text\+\_\+map}
+
+La texture de la map \mbox{\Hypertarget{structs__map_a889c64ca7ac5725b8ba0e93e7c3ee057}\label{structs__map_a889c64ca7ac5725b8ba0e93e7c3ee057}} 
+\index{t\_map@{t\_map}!text\_sol@{text\_sol}}
+\index{text\_sol@{text\_sol}!t\_map@{t\_map}}
+\doxysubsubsection{\texorpdfstring{text\_sol}{text\_sol}}
+{\footnotesize\ttfamily t\+\_\+aff$\ast$ t\+\_\+map\+::text\+\_\+sol}
+
+La texture du sol \mbox{\Hypertarget{structs__map_a4bd0554ddfe12e87dfbb9405093cfecc}\label{structs__map_a4bd0554ddfe12e87dfbb9405093cfecc}} 
+\index{t\_map@{t\_map}!width@{width}}
+\index{width@{width}!t\_map@{t\_map}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily unsigned int t\+\_\+map\+::width}
+
+
+
+La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{map_8h}{map.\+h}}\end{DoxyCompactItemize}

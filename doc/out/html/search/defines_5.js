@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['player_5fheight_691',['PLAYER_HEIGHT',['../d5/de9/definition__ressources_8h_a2712b06fd52f25adca031d05c3e0c09b.html#a2712b06fd52f25adca031d05c3e0c09b',1,'definition_ressources.h']]],
-  ['player_5fwith_692',['PLAYER_WITH',['../d5/de9/definition__ressources_8h_a1cad6663f3d572fd991eab0aa077fe04.html#a1cad6663f3d572fd991eab0aa077fe04',1,'definition_ressources.h']]]
+  ['largeur_5fentite_988',['LARGEUR_ENTITE',['../d5/dae/affichage_8h.html#a434c2ab7cc859955f137d4c3a08d4120',1,'affichage.h']]],
+  ['longueur_5fentite_989',['LONGUEUR_ENTITE',['../d5/dae/affichage_8h.html#abdb2519521d45de8ea42fcd6f3c969ad',1,'affichage.h']]]
 ];

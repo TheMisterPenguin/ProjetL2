@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Bloody Sanada:  Fichier source de sorts.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Bloody Sanada
+   </div>
+   <div id="projectbrief">Projet de L2 Informatique</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">sorts.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/df7/sorts_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef __SORTS_H__</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define __SORTS_H__</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/dae/affichage_8h.html">affichage.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/d1f/monstres_8h.html">monstres.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../da/df7/sorts_8h.html#a9cd471f27c29037f280640407c0eea10">   19</a></span>&#160;<span class="preprocessor">#define PATH_SPELL_BOSS &quot;ressources/sprite/spell_boss.bmp&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../da/df7/sorts_8h.html#a6dfe4e248dea91cc21f6f0849300cc49">   20</a></span>&#160;<span class="preprocessor">#define PATH_SPELL_WITCHER &quot;ressources/sprite/spell_witcher.bmp&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../da/df7/sorts_8h.html#a26d9cfabf65a2d8874296097354bdf79">   22</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {<a class="code" href="../../da/df7/sorts_8h.html#a26d9cfabf65a2d8874296097354bdf79ae6218e52c98ede7ca59245663f97f3ad">SP_WITCHER</a>,<a class="code" href="../../da/df7/sorts_8h.html#a26d9cfabf65a2d8874296097354bdf79a7ccfd0c8ddbca098482488ff37606be8">SP_BOSS_BALL</a>,<a class="code" href="../../da/df7/sorts_8h.html#a26d9cfabf65a2d8874296097354bdf79a0b6d2b0866cbaf81d981aab860b3259b">SP_BOSS_GROUP</a>,<a class="code" href="../../da/df7/sorts_8h.html#a26d9cfabf65a2d8874296097354bdf79a41280d60537a93623845e4d68fa310a1">SP_BOSS_SPLIT</a>}<a class="code" href="../../da/df7/sorts_8h.html#a26d9cfabf65a2d8874296097354bdf79">type_sort_t</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../da/df7/sorts_8h.html#a7512ccf022700287621e5085379d372f">   23</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {<a class="code" href="../../da/df7/sorts_8h.html#a7512ccf022700287621e5085379d372fa374542edbdf5e51cbda1a4b5908c4caf">LANCER</a>, <a class="code" href="../../da/df7/sorts_8h.html#a7512ccf022700287621e5085379d372fa92102f6cb227ee8b5353a1760f4f1550">PARER</a>}<a class="code" href="../../da/df7/sorts_8h.html#a7512ccf022700287621e5085379d372f">statut_sort_t</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d1/d62/structsort__s.html">   32</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="../../d1/d62/structsort__s.html">sort_s</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d1/d62/structsort__s.html#a28183efd64dc3a3f2fd238b7df6068dc">   33</a></span>&#160;    <a class="code" href="../../da/df7/sorts_8h.html#a26d9cfabf65a2d8874296097354bdf79">type_sort_t</a> <a class="code" href="../../d1/d62/structsort__s.html#a28183efd64dc3a3f2fd238b7df6068dc">type</a>;       </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d1/d62/structsort__s.html#a6a3ab6bd4dce93baa385497d574ac6cb">   34</a></span>&#160;    <a class="code" href="../../d8/dae/structpoint.html">position_t</a> <a class="code" href="../../d1/d62/structsort__s.html#a6a3ab6bd4dce93baa385497d574ac6cb">cible</a>;       </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d1/d62/structsort__s.html#aa46e685d17473eb0ba33564eb23822af">   35</a></span>&#160;    <a class="code" href="../../da/df7/sorts_8h.html#a7512ccf022700287621e5085379d372f">statut_sort_t</a> <a class="code" href="../../d1/d62/structsort__s.html#aa46e685d17473eb0ba33564eb23822af">statut</a>;   </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d1/d62/structsort__s.html#a6c297e8bdce9f4b3915685005cc20404">   36</a></span>&#160;    SDL_Rect <a class="code" href="../../d1/d62/structsort__s.html#a6c297e8bdce9f4b3915685005cc20404">collision</a>;      </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d1/d62/structsort__s.html#a6ac9e89851a272fe5cb7ea096777f1cc">   37</a></span>&#160;    t_aff * <a class="code" href="../../d1/d62/structsort__s.html#a6ac9e89851a272fe5cb7ea096777f1cc">texture</a>;        </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}sort_t;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d2/dbc/structbase__sort__s.html">   45</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="../../d2/dbc/structbase__sort__s.html">base_sort_s</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../d2/dbc/structbase__sort__s.html#a72df3de9d00a515ca00dab88b3954c16">   47</a></span>&#160;    <a class="code" href="../../da/df7/sorts_8h.html#a26d9cfabf65a2d8874296097354bdf79">type_sort_t</a> <a class="code" href="../../d2/dbc/structbase__sort__s.html#a72df3de9d00a515ca00dab88b3954c16">type</a>;   </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d2/dbc/structbase__sort__s.html#adf93789e39530a410d643c6dd9c8fdf7">   48</a></span>&#160;    SDL_Rect <a class="code" href="../../d2/dbc/structbase__sort__s.html#adf93789e39530a410d643c6dd9c8fdf7">collision</a>; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}base_sort_t;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">extern</span> base_sort_t <a class="code" href="../../da/df7/sorts_8h.html#a6cca8065cbd6ec101b272dbf1c00e094">liste_base_sort</a>[3];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/df7/sorts_8h.html#ac32dbffac262dd38829f3400505231a6">init_liste_base_sort</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/df7/sorts_8h.html#ae58ae0350fa823a85aaff7b988b4ce9c">creer_sort_monstre</a>(monstre_t * monstre, joueur_t * joueur);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/df7/sorts_8h.html#a73273d4f131f8c311644f6ceaff90ee6">action_sort</a>(sort_t * sort);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/df7/sorts_8h.html#a780d77b20da701ce7042b3aaed80fdc2">orienter_sort_vers_joueur</a>(monstre_t * monstre, sort_t * sort, joueur_t * joueur);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="asorts_8h_html_a26d9cfabf65a2d8874296097354bdf79a41280d60537a93623845e4d68fa310a1"><div class="ttname"><a href="../../da/df7/sorts_8h.html#a26d9cfabf65a2d8874296097354bdf79a41280d60537a93623845e4d68fa310a1">SP_BOSS_SPLIT</a></div><div class="ttdeci">@ SP_BOSS_SPLIT</div><div class="ttdef"><b>Definition:</b> sorts.h:22</div></div>
+<div class="ttc" id="aaffichage_8c_html_a0843b69b213a0b2f2645ad6158e00bff"><div class="ttname"><a href="../../da/d68/affichage_8c.html#a0843b69b213a0b2f2645ad6158e00bff">next_frame_x_indice</a></div><div class="ttdeci">err_t next_frame_x_indice(t_aff *texture, const unsigned int indice)</div><div class="ttdoc">Fonction qui positionne la texture au n-ème sprite sur l'axe des x.</div><div class="ttdef"><b>Definition:</b> affichage.c:121</div></div>
+<div class="ttc" id="amap_8h_html_ae5b774340dfc7392d6911f7a2186988c"><div class="ttname"><a href="../../dc/db7/map_8h.html#ae5b774340dfc7392d6911f7a2186988c">TAILLE_CASE</a></div><div class="ttdeci">#define TAILLE_CASE</div><div class="ttdef"><b>Definition:</b> map.h:18</div></div>
+<div class="ttc" id="asorts_8h_html_a73273d4f131f8c311644f6ceaff90ee6"><div class="ttname"><a href="../../da/df7/sorts_8h.html#a73273d4f131f8c311644f6ceaff90ee6">action_sort</a></div><div class="ttdeci">void action_sort(sort_t *sort)</div><div class="ttdef"><b>Definition:</b> sorts.c:62</div></div>
+<div class="ttc" id="astructsort__s_html_a6a3ab6bd4dce93baa385497d574ac6cb"><div class="ttname"><a href="../../d1/d62/structsort__s.html#a6a3ab6bd4dce93baa385497d574ac6cb">sort_s::cible</a></div><div class="ttdeci">position_t cible</div><div class="ttdef"><b>Definition:</b> sorts.h:34</div></div>
+<div class="ttc" id="astructsort__s_html_a28183efd64dc3a3f2fd238b7df6068dc"><div class="ttname"><a href="../../d1/d62/structsort__s.html#a28183efd64dc3a3f2fd238b7df6068dc">sort_s::type</a></div><div class="ttdeci">type_sort_t type</div><div class="ttdef"><b>Definition:</b> sorts.h:33</div></div>
+<div class="ttc" id="asorts_8h_html_a780d77b20da701ce7042b3aaed80fdc2"><div class="ttname"><a href="../../da/df7/sorts_8h.html#a780d77b20da701ce7042b3aaed80fdc2">orienter_sort_vers_joueur</a></div><div class="ttdeci">void orienter_sort_vers_joueur(monstre_t *monstre, sort_t *sort, joueur_t *joueur)</div><div class="ttdef"><b>Definition:</b> sorts.c:49</div></div>
+<div class="ttc" id="asorts_8c_html_ac32dbffac262dd38829f3400505231a6"><div class="ttname"><a href="../../d0/d58/sorts_8c.html#ac32dbffac262dd38829f3400505231a6">init_liste_base_sort</a></div><div class="ttdeci">void init_liste_base_sort()</div><div class="ttdef"><b>Definition:</b> sorts.c:20</div></div>
+<div class="ttc" id="aaffichage_8h_html"><div class="ttname"><a href="../../d5/dae/affichage_8h.html">affichage.h</a></div><div class="ttdoc">Fichier contenant les définitions et les fonctions liées au module affichage.</div></div>
+<div class="ttc" id="aaffichage_8c_html_a59fc51b629cfed9815495f235dae78e0"><div class="ttname"><a href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0">creer_texture</a></div><div class="ttdeci">t_aff * creer_texture(const char *nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multiplicateur_taille)</div><div class="ttdef"><b>Definition:</b> affichage.c:156</div></div>
+<div class="ttc" id="alistes_8c_html_a5460022305fdfacd6e0864968fea1841"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841">ajout_droit</a></div><div class="ttdeci">void ajout_droit(list *mylist, void *v)</div><div class="ttdef"><b>Definition:</b> listes.c:104</div></div>
+<div class="ttc" id="asorts_8c_html_a73273d4f131f8c311644f6ceaff90ee6"><div class="ttname"><a href="../../d0/d58/sorts_8c.html#a73273d4f131f8c311644f6ceaff90ee6">action_sort</a></div><div class="ttdeci">void action_sort(sort_t *sort)</div><div class="ttdef"><b>Definition:</b> sorts.c:62</div></div>
+<div class="ttc" id="asorts_8h_html_ae58ae0350fa823a85aaff7b988b4ce9c"><div class="ttname"><a href="../../da/df7/sorts_8h.html#ae58ae0350fa823a85aaff7b988b4ce9c">creer_sort_monstre</a></div><div class="ttdeci">void creer_sort_monstre(monstre_t *monstre, joueur_t *joueur)</div><div class="ttdef"><b>Definition:</b> sorts.c:27</div></div>
+<div class="ttc" id="astructbase__sort__s_html_a72df3de9d00a515ca00dab88b3954c16"><div class="ttname"><a href="../../d2/dbc/structbase__sort__s.html#a72df3de9d00a515ca00dab88b3954c16">base_sort_s::type</a></div><div class="ttdeci">type_sort_t type</div><div class="ttdef"><b>Definition:</b> sorts.h:47</div></div>
+<div class="ttc" id="asorts_8h_html_a6cca8065cbd6ec101b272dbf1c00e094"><div class="ttname"><a href="../../da/df7/sorts_8h.html#a6cca8065cbd6ec101b272dbf1c00e094">liste_base_sort</a></div><div class="ttdeci">base_sort_t liste_base_sort[3]</div><div class="ttdef"><b>Definition:</b> sorts.c:17</div></div>
+<div class="ttc" id="asorts_8h_html_a26d9cfabf65a2d8874296097354bdf79a7ccfd0c8ddbca098482488ff37606be8"><div class="ttname"><a href="../../da/df7/sorts_8h.html#a26d9cfabf65a2d8874296097354bdf79a7ccfd0c8ddbca098482488ff37606be8">SP_BOSS_BALL</a></div><div class="ttdeci">@ SP_BOSS_BALL</div><div class="ttdef"><b>Definition:</b> sorts.h:22</div></div>
+<div class="ttc" id="amonstres_8c_html_a0ae422db30a3dda1ba20e3e77a9a4db3"><div class="ttname"><a href="../../d9/d79/monstres_8c.html#a0ae422db30a3dda1ba20e3e77a9a4db3">distance_y_joueur</a></div><div class="ttdeci">int distance_y_joueur(SDL_Rect collision, joueur_t *joueur)</div><div class="ttdef"><b>Definition:</b> monstres.c:87</div></div>
+<div class="ttc" id="asorts_8h_html_a7512ccf022700287621e5085379d372fa374542edbdf5e51cbda1a4b5908c4caf"><div class="ttname"><a href="../../da/df7/sorts_8h.html#a7512ccf022700287621e5085379d372fa374542edbdf5e51cbda1a4b5908c4caf">LANCER</a></div><div class="ttdeci">@ LANCER</div><div class="ttdef"><b>Definition:</b> sorts.h:23</div></div>
+<div class="ttc" id="amonstres_8h_html_a99490a386439839dbe510f00783d1904ad3f29ba2e9b4cefc63d62a36c0708032"><div class="ttname"><a href="../../d0/d1f/monstres_8h.html#a99490a386439839dbe510f00783d1904ad3f29ba2e9b4cefc63d62a36c0708032">WITCHER</a></div><div class="ttdeci">@ WITCHER</div><div class="ttdef"><b>Definition:</b> monstres.h:31</div></div>
+<div class="ttc" id="amap_8c_html_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae"><div class="ttname"><a href="../../d3/d7a/map_8c.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a></div><div class="ttdeci">t_map * map</div><div class="ttdef"><b>Definition:</b> map.c:22</div></div>
+<div class="ttc" id="alistes_8h_html"><div class="ttname"><a href="../../d8/dd0/listes_8h.html">listes.h</a></div></div>
+<div class="ttc" id="aaffichage_8h_html_a434c2ab7cc859955f137d4c3a08d4120"><div class="ttname"><a href="../../d5/dae/affichage_8h.html#a434c2ab7cc859955f137d4c3a08d4120">LARGEUR_ENTITE</a></div><div class="ttdeci">#define LARGEUR_ENTITE</div><div class="ttdef"><b>Definition:</b> affichage.h:41</div></div>
+<div class="ttc" id="amap_8h_html"><div class="ttname"><a href="../../dc/db7/map_8h.html">map.h</a></div><div class="ttdoc">Définitions des fonctions de gestion de la map.</div></div>
+<div class="ttc" id="asorts_8h_html_a7512ccf022700287621e5085379d372f"><div class="ttname"><a href="../../da/df7/sorts_8h.html#a7512ccf022700287621e5085379d372f">statut_sort_t</a></div><div class="ttdeci">statut_sort_t</div><div class="ttdef"><b>Definition:</b> sorts.h:23</div></div>
+<div class="ttc" id="asorts_8h_html_a7512ccf022700287621e5085379d372fa92102f6cb227ee8b5353a1760f4f1550"><div class="ttname"><a href="../../da/df7/sorts_8h.html#a7512ccf022700287621e5085379d372fa92102f6cb227ee8b5353a1760f4f1550">PARER</a></div><div class="ttdeci">@ PARER</div><div class="ttdef"><b>Definition:</b> sorts.h:23</div></div>
+<div class="ttc" id="astructpoint_html"><div class="ttname"><a href="../../d8/dae/structpoint.html">point</a></div><div class="ttdef"><b>Definition:</b> definition_commun.h:21</div></div>
+<div class="ttc" id="asorts_8h_html_a26d9cfabf65a2d8874296097354bdf79ae6218e52c98ede7ca59245663f97f3ad"><div class="ttname"><a href="../../da/df7/sorts_8h.html#a26d9cfabf65a2d8874296097354bdf79ae6218e52c98ede7ca59245663f97f3ad">SP_WITCHER</a></div><div class="ttdeci">@ SP_WITCHER</div><div class="ttdef"><b>Definition:</b> sorts.h:22</div></div>
+<div class="ttc" id="astructbase__sort__s_html"><div class="ttname"><a href="../../d2/dbc/structbase__sort__s.html">base_sort_s</a></div><div class="ttdef"><b>Definition:</b> sorts.h:45</div></div>
+<div class="ttc" id="astructsort__s_html_aa46e685d17473eb0ba33564eb23822af"><div class="ttname"><a href="../../d1/d62/structsort__s.html#aa46e685d17473eb0ba33564eb23822af">sort_s::statut</a></div><div class="ttdeci">statut_sort_t statut</div><div class="ttdef"><b>Definition:</b> sorts.h:35</div></div>
+<div class="ttc" id="aaffichage_8h_html_abdb2519521d45de8ea42fcd6f3c969ad"><div class="ttname"><a href="../../d5/dae/affichage_8h.html#abdb2519521d45de8ea42fcd6f3c969ad">LONGUEUR_ENTITE</a></div><div class="ttdeci">#define LONGUEUR_ENTITE</div><div class="ttdef"><b>Definition:</b> affichage.h:40</div></div>
+<div class="ttc" id="apersonnage_8h_html"><div class="ttname"><a href="../../d2/d2f/personnage_8h.html">personnage.h</a></div><div class="ttdoc">Fichier contenant toutes les définitions concernant le personnage.</div></div>
+<div class="ttc" id="asorts_8h_html_ac32dbffac262dd38829f3400505231a6"><div class="ttname"><a href="../../da/df7/sorts_8h.html#ac32dbffac262dd38829f3400505231a6">init_liste_base_sort</a></div><div class="ttdeci">void init_liste_base_sort()</div><div class="ttdef"><b>Definition:</b> sorts.c:20</div></div>
+<div class="ttc" id="astructsort__s_html"><div class="ttname"><a href="../../d1/d62/structsort__s.html">sort_s</a></div><div class="ttdef"><b>Definition:</b> sorts.h:32</div></div>
+<div class="ttc" id="amonstres_8h_html"><div class="ttname"><a href="../../d0/d1f/monstres_8h.html">monstres.h</a></div><div class="ttdoc">Fonctions concernant les monstres.</div></div>
+<div class="ttc" id="astructsort__s_html_a6c297e8bdce9f4b3915685005cc20404"><div class="ttname"><a href="../../d1/d62/structsort__s.html#a6c297e8bdce9f4b3915685005cc20404">sort_s::collision</a></div><div class="ttdeci">SDL_Rect collision</div><div class="ttdef"><b>Definition:</b> sorts.h:36</div></div>
+<div class="ttc" id="astructsort__s_html_a6ac9e89851a272fe5cb7ea096777f1cc"><div class="ttname"><a href="../../d1/d62/structsort__s.html#a6ac9e89851a272fe5cb7ea096777f1cc">sort_s::texture</a></div><div class="ttdeci">t_aff * texture</div><div class="ttdef"><b>Definition:</b> sorts.h:37</div></div>
+<div class="ttc" id="asorts_8c_html_a780d77b20da701ce7042b3aaed80fdc2"><div class="ttname"><a href="../../d0/d58/sorts_8c.html#a780d77b20da701ce7042b3aaed80fdc2">orienter_sort_vers_joueur</a></div><div class="ttdeci">void orienter_sort_vers_joueur(monstre_t *monstre, sort_t *sort, joueur_t *joueur)</div><div class="ttdef"><b>Definition:</b> sorts.c:49</div></div>
+<div class="ttc" id="asorts_8h_html_a26d9cfabf65a2d8874296097354bdf79a0b6d2b0866cbaf81d981aab860b3259b"><div class="ttname"><a href="../../da/df7/sorts_8h.html#a26d9cfabf65a2d8874296097354bdf79a0b6d2b0866cbaf81d981aab860b3259b">SP_BOSS_GROUP</a></div><div class="ttdeci">@ SP_BOSS_GROUP</div><div class="ttdef"><b>Definition:</b> sorts.h:22</div></div>
+<div class="ttc" id="amonstres_8c_html_a14f8330d9598f09daba245654f27af2a"><div class="ttname"><a href="../../d9/d79/monstres_8c.html#a14f8330d9598f09daba245654f27af2a">distance_x_joueur</a></div><div class="ttdeci">int distance_x_joueur(SDL_Rect collision, joueur_t *joueur)</div><div class="ttdef"><b>Definition:</b> monstres.c:83</div></div>
+<div class="ttc" id="asorts_8h_html_a26d9cfabf65a2d8874296097354bdf79"><div class="ttname"><a href="../../da/df7/sorts_8h.html#a26d9cfabf65a2d8874296097354bdf79">type_sort_t</a></div><div class="ttdeci">type_sort_t</div><div class="ttdef"><b>Definition:</b> sorts.h:22</div></div>
+<div class="ttc" id="asorts_8c_html_ae58ae0350fa823a85aaff7b988b4ce9c"><div class="ttname"><a href="../../d0/d58/sorts_8c.html#ae58ae0350fa823a85aaff7b988b4ce9c">creer_sort_monstre</a></div><div class="ttdeci">void creer_sort_monstre(monstre_t *monstre, joueur_t *joueur)</div><div class="ttdef"><b>Definition:</b> sorts.c:27</div></div>
+<div class="ttc" id="asorts_8h_html_a6dfe4e248dea91cc21f6f0849300cc49"><div class="ttname"><a href="../../da/df7/sorts_8h.html#a6dfe4e248dea91cc21f6f0849300cc49">PATH_SPELL_WITCHER</a></div><div class="ttdeci">#define PATH_SPELL_WITCHER</div><div class="ttdef"><b>Definition:</b> sorts.h:20</div></div>
+<div class="ttc" id="asorts_8c_html_a6cca8065cbd6ec101b272dbf1c00e094"><div class="ttname"><a href="../../d0/d58/sorts_8c.html#a6cca8065cbd6ec101b272dbf1c00e094">liste_base_sort</a></div><div class="ttdeci">base_sort_t liste_base_sort[3]</div><div class="ttdef"><b>Definition:</b> sorts.c:17</div></div>
+<div class="ttc" id="astructbase__sort__s_html_adf93789e39530a410d643c6dd9c8fdf7"><div class="ttname"><a href="../../d2/dbc/structbase__sort__s.html#adf93789e39530a410d643c6dd9c8fdf7">base_sort_s::collision</a></div><div class="ttdeci">SDL_Rect collision</div><div class="ttdef"><b>Definition:</b> sorts.h:48</div></div>
+<div class="ttc" id="asorts_8h_html"><div class="ttname"><a href="../../da/df7/sorts_8h.html">sorts.h</a></div><div class="ttdoc">Fichier contenant toutes les définitions concernant les sorts.</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,9 +1,10 @@
 \hypertarget{test__inventaire_8c}{}\doxysection{Référence du fichier test\+\_\+inventaire.\+c}
 \label{test__inventaire_8c}\index{test\_inventaire.c@{test\_inventaire.c}}
-{\ttfamily \#include $<$commun.\+h$>$}\newline
-{\ttfamily \#include $<$personnage.\+h$>$}\newline
-{\ttfamily \#include $<$objet.\+h$>$}\newline
-{\ttfamily \#include $<$inventaire.\+h$>$}\newline
+
+
+Programme de test du module inventaire.  
+
+
 Graphe des dépendances par inclusion de test\+\_\+inventaire.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -15,52 +16,180 @@ Graphe des dépendances par inclusion de test\+\_\+inventaire.\+c\+:
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{test__inventaire_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+int \mbox{\hyperlink{test__inventaire_8c_a11244ab0910e8dbcdf132f10630dea91}{init\+\_\+suite}} (void)
+\item 
+int \mbox{\hyperlink{test__inventaire_8c_a1277ae7ecbaaad1479cfac38aaa7891d}{clean\+\_\+suite}} (void)
+\item 
+void \mbox{\hyperlink{test__inventaire_8c_aa7b68d909750ef6bbc6de7eb31f02f6b}{generation\+\_\+inventaire}} (void)
+\item 
+void \mbox{\hyperlink{test__inventaire_8c_ae7e5e7ed7946211586fc6c19e42443d0}{modification\+\_\+inventaire}} (void)
+\item 
+int \mbox{\hyperlink{test__inventaire_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-long int \mbox{\hyperlink{test__inventaire_8c_a762704f794c8d74099d3053757266dcb_a762704f794c8d74099d3053757266dcb}{compteur}}
+long int \mbox{\hyperlink{test__inventaire_8c_a762704f794c8d74099d3053757266dcb}{compteur}}
 \item 
-\mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$ \mbox{\hyperlink{test__inventaire_8c_aed95b6163c9140265eb710ce763afafb_aed95b6163c9140265eb710ce763afafb}{test\+\_\+map}}
+\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$ \mbox{\hyperlink{test__inventaire_8c_aed95b6163c9140265eb710ce763afafb}{test\+\_\+map}}
 \item 
-unsigned int \mbox{\hyperlink{test__inventaire_8c_a28b763408ce1b0c5b625e4c409a5022a_a28b763408ce1b0c5b625e4c409a5022a}{F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+O\+N\+G\+U\+E\+UR}}
+unsigned int \mbox{\hyperlink{test__inventaire_8c_a28b763408ce1b0c5b625e4c409a5022a}{F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+O\+N\+G\+U\+E\+UR}}
 \item 
-unsigned int \mbox{\hyperlink{test__inventaire_8c_a675ea76148cd2210ee956b7358f18194_a675ea76148cd2210ee956b7358f18194}{F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+A\+R\+G\+E\+UR}}
+unsigned int \mbox{\hyperlink{test__inventaire_8c_a675ea76148cd2210ee956b7358f18194}{F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+A\+R\+G\+E\+UR}}
+\item 
+joueur\+\_\+t $\ast$ \mbox{\hyperlink{test__inventaire_8c_a5ead4748360bfbe8192d0dd51d0cac86}{perso\+\_\+principal}} = N\+U\+LL
+\item 
+objet\+\_\+t $\ast$ \mbox{\hyperlink{test__inventaire_8c_acee431661854e73ce23494d8292e3c4d}{objet\+\_\+test}} = N\+U\+LL
+\item 
+lobjet\+\_\+t $\ast$ \mbox{\hyperlink{test__inventaire_8c_a299a57fbc4d0bd4dd41065e7aaeeec0b}{sac}} = N\+U\+LL
+\item 
+lobjet\+\_\+t $\ast$ \mbox{\hyperlink{test__inventaire_8c_a309691953d7fd0a9d4dd05ee74769e84}{equipe}} = N\+U\+LL
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Description détaillée}
+\begin{DoxyAuthor}{Auteur}
+Max Descomps (\href{mailto:Max.Descomps.Etu@univ-lemans.fr}{\texttt{ Max.\+Descomps.\+Etu@univ-\/lemans.\+fr}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+02/04/2022 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{test__inventaire_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{test__inventaire_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\mbox{\Hypertarget{test__inventaire_8c_a1277ae7ecbaaad1479cfac38aaa7891d}\label{test__inventaire_8c_a1277ae7ecbaaad1479cfac38aaa7891d}} 
+\index{test\_inventaire.c@{test\_inventaire.c}!clean\_suite@{clean\_suite}}
+\index{clean\_suite@{clean\_suite}!test\_inventaire.c@{test\_inventaire.c}}
+\doxysubsubsection{\texorpdfstring{clean\_suite()}{clean\_suite()}}
+{\footnotesize\ttfamily int clean\+\_\+suite (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{d9/d66/test__inventaire_8c_a1277ae7ecbaaad1479cfac38aaa7891d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{test__inventaire_8c_aa7b68d909750ef6bbc6de7eb31f02f6b}\label{test__inventaire_8c_aa7b68d909750ef6bbc6de7eb31f02f6b}} 
+\index{test\_inventaire.c@{test\_inventaire.c}!generation\_inventaire@{generation\_inventaire}}
+\index{generation\_inventaire@{generation\_inventaire}!test\_inventaire.c@{test\_inventaire.c}}
+\doxysubsubsection{\texorpdfstring{generation\_inventaire()}{generation\_inventaire()}}
+{\footnotesize\ttfamily void generation\+\_\+inventaire (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d66/test__inventaire_8c_aa7b68d909750ef6bbc6de7eb31f02f6b_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{d9/d66/test__inventaire_8c_aa7b68d909750ef6bbc6de7eb31f02f6b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{test__inventaire_8c_a11244ab0910e8dbcdf132f10630dea91}\label{test__inventaire_8c_a11244ab0910e8dbcdf132f10630dea91}} 
+\index{test\_inventaire.c@{test\_inventaire.c}!init\_suite@{init\_suite}}
+\index{init\_suite@{init\_suite}!test\_inventaire.c@{test\_inventaire.c}}
+\doxysubsubsection{\texorpdfstring{init\_suite()}{init\_suite()}}
+{\footnotesize\ttfamily int init\+\_\+suite (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{d9/d66/test__inventaire_8c_a11244ab0910e8dbcdf132f10630dea91_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{test__inventaire_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{test__inventaire_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
 \index{test\_inventaire.c@{test\_inventaire.c}!main@{main}}
 \index{main@{main}!test\_inventaire.c@{test\_inventaire.c}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d66/test__inventaire_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{test__inventaire_8c_ae7e5e7ed7946211586fc6c19e42443d0}\label{test__inventaire_8c_ae7e5e7ed7946211586fc6c19e42443d0}} 
+\index{test\_inventaire.c@{test\_inventaire.c}!modification\_inventaire@{modification\_inventaire}}
+\index{modification\_inventaire@{modification\_inventaire}!test\_inventaire.c@{test\_inventaire.c}}
+\doxysubsubsection{\texorpdfstring{modification\_inventaire()}{modification\_inventaire()}}
+{\footnotesize\ttfamily void modification\+\_\+inventaire (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d66/test__inventaire_8c_ae7e5e7ed7946211586fc6c19e42443d0_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{d9/d66/test__inventaire_8c_ae7e5e7ed7946211586fc6c19e42443d0_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Documentation des variables}
-\mbox{\Hypertarget{test__inventaire_8c_a762704f794c8d74099d3053757266dcb_a762704f794c8d74099d3053757266dcb}\label{test__inventaire_8c_a762704f794c8d74099d3053757266dcb_a762704f794c8d74099d3053757266dcb}} 
+\mbox{\Hypertarget{test__inventaire_8c_a762704f794c8d74099d3053757266dcb}\label{test__inventaire_8c_a762704f794c8d74099d3053757266dcb}} 
 \index{test\_inventaire.c@{test\_inventaire.c}!compteur@{compteur}}
 \index{compteur@{compteur}!test\_inventaire.c@{test\_inventaire.c}}
 \doxysubsubsection{\texorpdfstring{compteur}{compteur}}
 {\footnotesize\ttfamily long int compteur}
 
-\mbox{\Hypertarget{test__inventaire_8c_a675ea76148cd2210ee956b7358f18194_a675ea76148cd2210ee956b7358f18194}\label{test__inventaire_8c_a675ea76148cd2210ee956b7358f18194_a675ea76148cd2210ee956b7358f18194}} 
+\mbox{\Hypertarget{test__inventaire_8c_a309691953d7fd0a9d4dd05ee74769e84}\label{test__inventaire_8c_a309691953d7fd0a9d4dd05ee74769e84}} 
+\index{test\_inventaire.c@{test\_inventaire.c}!equipe@{equipe}}
+\index{equipe@{equipe}!test\_inventaire.c@{test\_inventaire.c}}
+\doxysubsubsection{\texorpdfstring{equipe}{equipe}}
+{\footnotesize\ttfamily lobjet\+\_\+t$\ast$ equipe = N\+U\+LL}
+
+\mbox{\Hypertarget{test__inventaire_8c_a675ea76148cd2210ee956b7358f18194}\label{test__inventaire_8c_a675ea76148cd2210ee956b7358f18194}} 
 \index{test\_inventaire.c@{test\_inventaire.c}!FENETRE\_LARGEUR@{FENETRE\_LARGEUR}}
 \index{FENETRE\_LARGEUR@{FENETRE\_LARGEUR}!test\_inventaire.c@{test\_inventaire.c}}
 \doxysubsubsection{\texorpdfstring{FENETRE\_LARGEUR}{FENETRE\_LARGEUR}}
 {\footnotesize\ttfamily unsigned int F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+A\+R\+G\+E\+UR}
 
-\mbox{\Hypertarget{test__inventaire_8c_a28b763408ce1b0c5b625e4c409a5022a_a28b763408ce1b0c5b625e4c409a5022a}\label{test__inventaire_8c_a28b763408ce1b0c5b625e4c409a5022a_a28b763408ce1b0c5b625e4c409a5022a}} 
+\mbox{\Hypertarget{test__inventaire_8c_a28b763408ce1b0c5b625e4c409a5022a}\label{test__inventaire_8c_a28b763408ce1b0c5b625e4c409a5022a}} 
 \index{test\_inventaire.c@{test\_inventaire.c}!FENETRE\_LONGUEUR@{FENETRE\_LONGUEUR}}
 \index{FENETRE\_LONGUEUR@{FENETRE\_LONGUEUR}!test\_inventaire.c@{test\_inventaire.c}}
 \doxysubsubsection{\texorpdfstring{FENETRE\_LONGUEUR}{FENETRE\_LONGUEUR}}
 {\footnotesize\ttfamily unsigned int F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+O\+N\+G\+U\+E\+UR}
 
-\mbox{\Hypertarget{test__inventaire_8c_aed95b6163c9140265eb710ce763afafb_aed95b6163c9140265eb710ce763afafb}\label{test__inventaire_8c_aed95b6163c9140265eb710ce763afafb_aed95b6163c9140265eb710ce763afafb}} 
+\mbox{\Hypertarget{test__inventaire_8c_acee431661854e73ce23494d8292e3c4d}\label{test__inventaire_8c_acee431661854e73ce23494d8292e3c4d}} 
+\index{test\_inventaire.c@{test\_inventaire.c}!objet\_test@{objet\_test}}
+\index{objet\_test@{objet\_test}!test\_inventaire.c@{test\_inventaire.c}}
+\doxysubsubsection{\texorpdfstring{objet\_test}{objet\_test}}
+{\footnotesize\ttfamily objet\+\_\+t$\ast$ objet\+\_\+test = N\+U\+LL}
+
+\mbox{\Hypertarget{test__inventaire_8c_a5ead4748360bfbe8192d0dd51d0cac86}\label{test__inventaire_8c_a5ead4748360bfbe8192d0dd51d0cac86}} 
+\index{test\_inventaire.c@{test\_inventaire.c}!perso\_principal@{perso\_principal}}
+\index{perso\_principal@{perso\_principal}!test\_inventaire.c@{test\_inventaire.c}}
+\doxysubsubsection{\texorpdfstring{perso\_principal}{perso\_principal}}
+{\footnotesize\ttfamily joueur\+\_\+t$\ast$ perso\+\_\+principal = N\+U\+LL}
+
+\mbox{\Hypertarget{test__inventaire_8c_a299a57fbc4d0bd4dd41065e7aaeeec0b}\label{test__inventaire_8c_a299a57fbc4d0bd4dd41065e7aaeeec0b}} 
+\index{test\_inventaire.c@{test\_inventaire.c}!sac@{sac}}
+\index{sac@{sac}!test\_inventaire.c@{test\_inventaire.c}}
+\doxysubsubsection{\texorpdfstring{sac}{sac}}
+{\footnotesize\ttfamily lobjet\+\_\+t$\ast$ sac = N\+U\+LL}
+
+\mbox{\Hypertarget{test__inventaire_8c_aed95b6163c9140265eb710ce763afafb}\label{test__inventaire_8c_aed95b6163c9140265eb710ce763afafb}} 
 \index{test\_inventaire.c@{test\_inventaire.c}!test\_map@{test\_map}}
 \index{test\_map@{test\_map}!test\_inventaire.c@{test\_inventaire.c}}
 \doxysubsubsection{\texorpdfstring{test\_map}{test\_map}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structt__map}{t\+\_\+map}}$\ast$ test\+\_\+map}
+{\footnotesize\ttfamily \mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}}$\ast$ test\+\_\+map}
 

@@ -401,8 +401,8 @@ SDL_bool entite_subit_attaque(SDL_Rect * monstre_hitbox, joueur_t * joueur){
 	hitbox->y = monstre_hitbox->y;
 
 	SDL_bool statut = SDL_HasIntersection(zone_attaque, hitbox);
-	printf("zone_attaque w = %d h = %d x = %d y = %d\n",zone_attaque->w,zone_attaque->h,zone_attaque->x,zone_attaque->y);
-	printf(" hitbox w = %d h = %d x = %d y = %d\n",monstre_hitbox->w,monstre_hitbox->h,monstre_hitbox->x,monstre_hitbox->y);
+	//printf("zone_attaque w = %d h = %d x = %d y = %d\n",zone_attaque->w,zone_attaque->h,zone_attaque->x,zone_attaque->y);
+	//printf(" hitbox w = %d h = %d x = %d y = %d\n",monstre_hitbox->w,monstre_hitbox->h,monstre_hitbox->x,monstre_hitbox->y);
 	free(zone_attaque);
 	free(hitbox);
 	return statut;
