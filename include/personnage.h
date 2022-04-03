@@ -45,8 +45,7 @@ typedef struct statut_s {
 	action_t action; /**<l'action du personnage*/
 	action_t animation; /**<Animation sur le personnage*/
 	SDL_Rect zone_colision; /**<zone de colision du personnage*/
-	SDL_Rect vrai_zone_collision;
-	int x,y;
+	SDL_Rect vrai_zone_collision; /**<La vrai zone de collision du J1 sur la carte */
 }statut_t;
 
 /**
@@ -63,9 +62,8 @@ typedef struct joueur_s {
 	short int niveau; /**<Le niveau du joueur*/
 	int xp; /**<Le nombre de points d'expérience que possède le joueur */
 	byte *trigger; /**<Une variable contenant des triggers logiques concernant le personnage */
-	/** TODO : créer un type énuméré map*/
-	int maxPdv;
-	int pdv;
+	int maxPdv; /**<Le nombre de Pv max du joueur */
+	int pdv; /**<Les points de vie actuels du joueur */
 	int attaque; /**<attaque de base du joueur*/
     int defense; /**<defense de base du joueur*/
     int vitesse; /**<vitesse de déplacement de base du joueur*/
