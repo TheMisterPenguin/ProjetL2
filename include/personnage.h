@@ -38,7 +38,8 @@ typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER,J_
  */
 typedef struct statut_s {
 	bool en_mouvement; /**<personnage en mouvement*/
-	t_direction	orientation;/**<ordientation du personnage*/
+	t_direction_1 orient_dep;/**<orientation deplacement du personnage*/
+	t_direction_2 orient_att;/**<orientaiton attaqute du personnage*/
 	bool bouclier_equipe; /**<personnage à un bouclier d'équipé*/
 	int duree; /**<durée de l'action à réaliser*/
     int duree_anim; /**<durée d'une animation éventuelle sur le joueur*/
@@ -79,7 +80,7 @@ typedef struct joueur_s {
 
 extern char save_path[500];
 
-extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction orientation, const bool bouclier_equipe, const int num_j);
+extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orientation, const bool bouclier_equipe, const int num_j);
 extern joueur_t *new_joueur(const char* nom, int num_j);
 extern void detruire_joueur(joueur_t *j);
 extern joueur_t *charger_sauvegarde_joueur(char *nom_sauv);
@@ -90,6 +91,6 @@ extern void gain_xp(joueur_t* perso);
 extern void creer_sauvegarde_json(joueur_t *j);
 void check_repertoire_jeux();
 void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * joueur);
-SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_direction orientation);
+SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_direction_2 orientation);
 
 #endif

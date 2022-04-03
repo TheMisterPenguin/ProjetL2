@@ -86,7 +86,7 @@ void creer_sauvegarde_json(joueur_t *j){
 	json_object *attaque = json_object_new_int(j->attaque);
 	json_object *defense = json_object_new_int(j->defense);
 	json_object *vitesse = json_object_new_int(j->vitesse);
-	json_object *orientation = json_object_new_int(j->statut->orientation);
+	json_object *orientation = json_object_new_int(j->statut->orient_dep);
 	json_object *bouclier_equipe = json_object_new_boolean(j->statut->bouclier_equipe);
 	json_object *x_map = json_object_new_int(j->statut->zone_colision.x);
 	json_object *y_map = json_object_new_int(j->statut->zone_colision.y);
@@ -252,7 +252,7 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 joueur_t *new_joueur(const char* nom, int num_j){
 	byte *trig = calloc(TAILLE_TRIGGER, sizeof(byte));
   
-	joueur_t *j = creer_joueur(nom, 0, 0, 10, 10, 10, 10, 1, trig, NORD, faux, num_j);
+	joueur_t *j = creer_joueur(nom, 0, 0, 10, 10, 10, 10, 1, trig, NORD_1, faux, num_j);
 	free(trig); //pour l'instant inutile (refait dans creer joueur)
 
 	j->statut->zone_colision.x = 0;
@@ -261,7 +261,7 @@ joueur_t *new_joueur(const char* nom, int num_j){
 	return j;
 }
 
-joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction orientation, const bool bouclier_equipe, const int num_j)
+joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orient, const bool bouclier_equipe, const int num_j)
 {
 	joueur_t * perso = malloc(sizeof(joueur_t));
 
@@ -300,7 +300,7 @@ joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const in
 	perso->statut->duree = 0;
     perso->statut->duree_anim = 0;
 	perso->statut->en_mouvement = faux;
-	perso->statut->orientation = orientation;
+	perso->statut->orient_dep = NORD_1;
 	perso->statut->bouclier_equipe = bouclier_equipe;
 	perso->statut->action = RIEN;
 	perso->statut->animation = RIEN;
@@ -359,39 +359,51 @@ void gain_xp(joueur_t* perso){
 	}
 }
 
-SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_direction orientation){
+SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_direction_2 orient){
 	SDL_Rect * result = malloc(sizeof(SDL_Rect));
 
-	switch(orientation){
-		case NORD:
-			result->w = (sprite->w - hitbox->w) / 2 + hitbox->w;
-			result->h = sprite->h / 2;
+	result->w =  hitbox->w;
+	result->h =  hitbox->h;
+	switch(orient){
+		case NORD_2:
 			result->x = hitbox->x;
 			result->y = hitbox->y - hitbox->h ;
 			break;
-		case SUD:
-			result->w = (sprite->w - hitbox->w) / 2 + hitbox->w;
-			result->h = sprite->h / 2;
-			result->x = hitbox->x - hitbox->w;
-			result->y = hitbox->y + hitbox->h / 2;
+		case NORD_EST_2:
+			result->x = hitbox->x + hitbox->w;
+			result->y = hitbox->y - hitbox->h ;
 			break;
-		case OUEST:
-			result->w = sprite->w / 2 ;
-			result->h = (sprite->h - hitbox->h) / 2 + hitbox->h;
+		case EST_2: 
+			result->x = hitbox->x + hitbox->w;
+			result->y = hitbox->y;
+			break;
+		case SUD_EST_2:
+			result->x = hitbox->x + hitbox->w;
+			result->y = hitbox->y + hitbox->h;
+			break;
+		case SUD_2:
+			result->x = hitbox->x;
+			result->y = hitbox->y + hitbox->h;
+			break;
+		case SUD_OUEST_2:
+			result->x = hitbox->x - hitbox->w;
+			result->y = hitbox->y + hitbox->h;
+			break;
+		case OUEST_2:
+			result->x = hitbox->x - hitbox->w;
+			result->y = hitbox->y;
+			break;
+		case NORD_OUEST_2:
 			result->x = hitbox->x - hitbox->w;
 			result->y = hitbox->y - hitbox->h;
 			break;
-		case EST: 
-			result->w = sprite->w / 2 ;
-			result->h = (sprite->h - hitbox->h) / 2 + hitbox->h;
-			result->x = hitbox->x + hitbox->w / 2;
-			result->y = hitbox->y - hitbox->h;
-			break;
+		default: break;
 	}
 	return result;
 }
+
 SDL_bool entite_subit_attaque(SDL_Rect * monstre_hitbox, joueur_t * joueur){
-	SDL_Rect * zone_attaque = zone_en_dehors_hitbox(&(joueur->statut->vrai_zone_collision), joueur->textures_joueur->liste[0]->aff_fenetre, joueur->statut->orientation);
+	SDL_Rect * zone_attaque = zone_en_dehors_hitbox(&(joueur->statut->vrai_zone_collision), joueur->textures_joueur->liste[0]->aff_fenetre, joueur->statut->orient_att);
 	SDL_Rect * hitbox = malloc(sizeof(SDL_Rect));
 	SDL_RenderDrawRect(rendu_principal,zone_attaque);
 	hitbox->w = monstre_hitbox->w;
@@ -400,25 +412,20 @@ SDL_bool entite_subit_attaque(SDL_Rect * monstre_hitbox, joueur_t * joueur){
 	hitbox->y = monstre_hitbox->y;
 
 	SDL_bool statut = SDL_HasIntersection(zone_attaque, hitbox);
-	printf("zone_attaque w = %d h = %d x = %d y = %d\n",zone_attaque->w,zone_attaque->h,zone_attaque->x,zone_attaque->y);
-	printf(" hitbox w = %d h = %d x = %d y = %d\n",monstre_hitbox->w,monstre_hitbox->h,monstre_hitbox->x,monstre_hitbox->y);
+	
 	free(zone_attaque);
 	free(hitbox);
 	return statut;
 }
 
-t_direction orientation_inverse(t_direction orientation){
-	return (orientation + 2) % 4;
-}
-
-SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_direction * coter_entite_1, t_direction * coter_entite_2){
+SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_direction_1 * coter_entite_1, t_direction_1 * coter_entite_2){
 	return faux;
 }
 
 void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * joueur){
 	monstre_t * monstre;
-	t_direction coter_joueur;
-	t_direction coter_monstre;
+	t_direction_1 coter_joueur;
+	t_direction_1 coter_monstre;
 
 	en_tete(liste_monstres);
 	en_tete(liste_sorts);
@@ -438,7 +445,7 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * 
 				if(joueur->pdv <= 0)
 					running = faux;
 				else{
-					joueur->statut->orientation = coter_monstre;
+					joueur->statut->orient_dep = coter_monstre;
 					joueur->statut->action = J_BLESSE;
 					joueur->statut->duree = DUREE_JOUEUR_BLESSE;
 				}
@@ -458,7 +465,7 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, joueur_t * 
 					gain_xp(joueur);
 				}
 				else{
-					monstre->orientation = joueur->statut->orientation;
+					monstre->orientation = joueur->statut->orient_dep;
 					monstre->action = MONSTRE_BLESSE;
 					monstre->duree = DUREE_MONSTRE_BLESSE;
 				}
