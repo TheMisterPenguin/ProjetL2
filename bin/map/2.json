@@ -1,16 +1,15 @@
 {
-    "type" : "map",
-    "id" : 1,
-    "file-path" : "ressources/background/map/interieur3.bmp",
-    "width" : 15, //30 cases de 16px mais une cases de la map fait 32px en réalité
-    "height" : 13,
+    "id" : 2,
+    "file-path" : "ressources/background/map/outside_sanada.bmp",
+    "width" : 55, //30 cases de 16px mais une cases de la map fait 32px en réalité
+    "height" : 35,
     "taille case" : 32,
     "starting-point" : [5, 5],
     "monsters" : [
         {"type" : "knight",
         "position" : [8,40]},
         {"type" : "witcher",
-        "position" : [100,10]}
+        "position" : [300,100]}
     ],
     "wall" : [
         {
@@ -43,5 +42,23 @@
             "x": 0,
             "y": 0
         }
+    ],
+    "zones tp" : [
+        {
+            "x" : 7,
+            "y" : 1,
+            "w" : 2,
+            "h" : 2,
+            "destination" : 1,
+            "coords" : [0,0]
+        }
+    ],
+    "chest" : [
+        {"type" : "profilferme",
+        "position" : [15,12],
+        "id_cle": 9},
+        {"type" : "faceferme",
+        "position" : [10,10],
+        "id_cle": 0}
     ]
 }

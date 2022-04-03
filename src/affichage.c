@@ -663,12 +663,28 @@ void modif_affichage_rect(t_aff *texture, SDL_Rect r){
     texture->frame_anim->w = r.w;
 }
 
-void deplacement_x_pers(t_map *m, joueur_t * j, int x){
-
+bool deplacement_x_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_joueurs, int x){
+    joueur_t *j = *joueurs;
     int *x_map = &(map->text_map->frame_anim->x); /* La coordonnée x actuelle de la map */
     int *x_pers = &(j->statut->zone_colision.x); /* La coordonnée x actuelle du joueur */
     const long int taille_unite = floor(j->textures_joueur->liste[0]->multipli_taille); /* Calcul en nombre de pixels d'une unité de déplacement */
     SDL_Rect temp = {.x = j->statut->vrai_zone_collision.x + x * taille_unite, .y = j->statut->vrai_zone_collision.y, .w = j->statut->vrai_zone_collision.w, .h = j->statut->vrai_zone_collision.h};
+
+    /* On vérifie si le joueur se trouve sur une zone de tp */
+
+    en_tete(m->liste_zone_tp);
+
+    while(!hors_liste(m->liste_zone_tp)){
+        zone_tp *z = valeur_elt(m->liste_zone_tp);
+
+        if(SDL_HasIntersection(&z->zone, &temp)){
+            transition(&map, z->id_map, joueurs, nb_joueurs, z->dest.x, z->dest.y);
+            return vrai;
+        }
+
+        suivant(m->liste_zone_tp);
+    }
+
 
     en_tete(m->liste_collisions);
 
@@ -686,35 +702,36 @@ void deplacement_x_pers(t_map *m, joueur_t * j, int x){
         }
 
         if(SDL_HasIntersection(&temp, element)){
-            interaction_coffre(element, j);
-            return;
+            interaction_coffre(element,j);
+            return faux;
         }
         suivant(m->liste_collisions);
     }
 
     if(*x_pers  + x * taille_unite < 0)
-        return;
+        return faux;
     if(*x_pers + j->statut->zone_colision.w + x * taille_unite > fenetre_finale->frame_anim->w)
-        return;
+        return faux;
     j->statut->vrai_zone_collision.x += x * taille_unite;
     if (*x_map + x * taille_unite < 0) { /* La map ne peut pas plus aller à gauche */
             *x_pers += x * taille_unite; /* On déplace le personnage de x unités */
-            return;
+            return faux;
         }
         if (*x_map + x * taille_unite > (m->text_map->width - fenetre_finale->frame_anim->w))
             { /* L'écran est en bordure de map droite */
                 *x_pers += x * taille_unite;
-                return;
+                return faux;
             }
     if(rects_egal_x(&(j->statut->zone_colision), &tx))  /*On se trouve dans l'intervalle normal */
         *x_map += x * taille_unite; /* On déplace la map en fond */
     else
         *x_pers += x * taille_unite;
     
+    return faux;
 }
 
-void deplacement_y_pers(t_map *m, joueur_t *j, int y){
-
+bool deplacement_y_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_joueurs, int y){
+    joueur_t *j = *joueurs;
     int *y_map = &(map->text_map->frame_anim->y);                                        /* La coordonnée y actuelle de la map */
     int *y_pers = &(j->statut->zone_colision.y);                                       /* La coordonnée y actuelle du joueur */
     const long int taille_unite = floor(j->textures_joueur->liste[0]->multipli_taille); /* Calcul en nombre de pixels d'une unité de déplacement */
@@ -731,6 +748,18 @@ void deplacement_y_pers(t_map *m, joueur_t *j, int y){
         temp.y = j->statut->vrai_zone_collision.y + y * taille_unite;
         temp.h = j->statut->vrai_zone_collision.h;
         actuel.y = j->statut->vrai_zone_collision.y - 3;
+    }
+
+    en_tete(m->liste_zone_tp);
+
+    while(!hors_liste(m->liste_zone_tp)){
+        zone_tp *z = valeur_elt(m->liste_zone_tp);
+
+        if(SDL_HasIntersection(&z->zone, &temp)){
+            transition(&map, z->id_map, joueurs, nb_joueurs, z->dest.x, z->dest.y);
+            return vrai;
+        }
+        suivant(m->liste_zone_tp);
     }
 
     en_tete(m->liste_collisions);
@@ -750,29 +779,32 @@ void deplacement_y_pers(t_map *m, joueur_t *j, int y){
         }
 
         if (SDL_HasIntersection(&temp, element)){
-            interaction_coffre(element, j);
-            return;
+            interaction_coffre(element,j);
+            return faux;
+
         }
         suivant(m->liste_collisions);
     }
 
     if (*y_pers + y * taille_unite < 0) /* Le personnage ne peut pas aller en haut */
-        return;
+        return faux;
     if (*y_pers + j->statut->zone_colision.h + y * taille_unite > fenetre_finale->frame_anim->h) /* Le personnage ne peut pas aller en bas */
-        return;
+        return faux;
     j->statut->vrai_zone_collision.y += y * taille_unite;
     if (*y_map + y * taille_unite < 0){ /* La map ne peut pas plus aller en haut */
         *y_pers += y * taille_unite; /* On déplace le personnage de x unités */
-        return;
+        return faux;
     }
     if (*y_map + y * taille_unite > (m->text_map->height - fenetre_finale->frame_anim->h)){ /* L'écran est en bordure de map bas*/
         *y_pers += y * taille_unite;
-        return;
+        return faux;
     }
     if (rects_egal_y(&(j->statut->zone_colision), &ty)) /*On se trouve dans l'intervalle normal */
         *y_map += y * taille_unite;                                    /* On déplace la map en fond */
     else
         *y_pers += y * taille_unite;
+
+    return faux;
 }
 
 void text_copier_position(t_aff * a_modifier, const t_aff * const original){
@@ -1010,15 +1042,15 @@ void detruire_collision_dans_liste(list * liste_collisions, SDL_Rect * collision
 SDL_Point get_rect_center(const SDL_Rect *const r){
     SDL_Point p;
 
-    if(r->w % 2)
+    if(!(r->w % 2))
         p.x = r->w /2 + 1;
     else
-        p.x = r->w;
+        p.x = r->w / 2;
 
-    if (r->h % 2)
+    if (!(r->h % 2))
         p.y = r->h / 2 + 1;
     else
-        p.y = r->h;
+        p.y = r->h / 2;
 
     return p;
 }   
