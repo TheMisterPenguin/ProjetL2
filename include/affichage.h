@@ -15,9 +15,10 @@
 #include "SDL2/SDL.h"
 /** \endcond */
 #include "definition_commun.h"
+#include "personnage.h"
 #include "listes.h"
 #include "map.h"
-#include "personnage.h"
+
 
 
 #define NB_FPS 60 /**< Le nombre maximum de FPS */

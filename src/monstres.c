@@ -19,8 +19,6 @@
  * \copyright Copyright (c) 2022
  */
 
-typedef struct t_map t_map;
-
 liste_base_monstres_t * liste_base_monstres = NULL;
 
 void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres){

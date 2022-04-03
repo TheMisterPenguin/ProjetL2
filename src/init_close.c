@@ -12,7 +12,6 @@
  * \copyright Copyright (c) 2022
  */
 
-typedef struct t_map t_map;
 
 SDL_Window *fenetre_Principale = NULL;
 SDL_Renderer *rendu_principal = NULL;

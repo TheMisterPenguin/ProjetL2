@@ -11,14 +11,14 @@
 #define __MAP_H__ 
 
 #include "definition_commun.h"
-#include "monstres.h"
+#include "affichage.h"
 #include "listes.h"
-#include "coffres.h"
 #include "personnage.h"
 
 #define TAILLE_CASE 16
 
 typedef struct s_aff t_aff; //!< \brief Structure de texture
+typedef struct joueur_s joueur_t;
 typedef struct liste_base_monstres_s liste_base_monstres_t;
 
 /**

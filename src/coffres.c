@@ -1,5 +1,5 @@
 #include <json-c/json.h>
-#include <code_erreur.h>
+#include <coffres.h>
 #include <definition_commun.h>
 #include <map.h>
 #include <code_erreur.h>
@@ -12,8 +12,6 @@
  * \date 03/04/2022
  * \copyright Copyright (c) 2022
  */
-
-typedef struct t_map t_map;
 
 liste_base_coffres_t * liste_base_coffres = NULL;
 

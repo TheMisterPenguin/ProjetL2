@@ -25,7 +25,6 @@
 #define CHEMIN_TEXTURE "ressources/sprite"
 
 typedef struct s_aff t_aff;
-typedef struct t_map t_map;
 typedef struct joueur_s joueur_t;
 
 typedef enum {WITCHER,KNIGHT,BOSS, TYPE_MONSTRE_INCONNU}type_monstre_t;

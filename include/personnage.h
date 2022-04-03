@@ -13,6 +13,7 @@
 #define __PERSONNAGE_H__
 
 #include "definition_commun.h"
+#include "listes.h"
 #include "inventaire.h"
 
 #define DUREE_ATTAQUE_OU_CHARGEE 4

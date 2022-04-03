@@ -15,7 +15,6 @@
 #define __COFFRES_H__
 
 typedef struct s_aff t_aff; //!< \brief Structure de texture
-typedef struct t_map t_map;
 
 typedef enum {PROFIL_FERME,PROFIL_OUVERT,FACE_FERME,FACE_OUVERT}type_coffre_t;
 typedef enum {OUVERT, FERME}action_coffre_t;
