@@ -1026,12 +1026,12 @@ SDL_Point get_rect_center_coord(const SDL_Rect *const r){
     if(!(r->w % 2))
         p.x = r->x + (r->w /2 + 1);
     else
-        p.x = r->x + r->w;
+        p.x = r->x + r->w / 2;
 
     if (!(r->h % 2))
         p.y = r->y + (r->h / 2 + 1);
     else
-        p.y = r->y + r->h;
+        p.y = r->y + r->h / 2;
 
     return p;
 }   
