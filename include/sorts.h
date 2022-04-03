@@ -31,6 +31,7 @@ typedef enum {LANCER, PARER}statut_sort_t;
 
 typedef struct sort_s {
     type_sort_t type;       /**<type de sort*/
+    int degat;              /**<degat du sort*/
     position_t cible;       /**<point d'arrivé du sort*/
     statut_sort_t statut;   /**<statut du sort*/
     SDL_Rect collision;      /**<hitbox du sort*/
@@ -45,13 +46,14 @@ typedef struct sort_s {
 typedef struct base_sort_s
 {
     type_sort_t type;   /**<type de sort*/
+    int degat;          /**<degat du sort*/
     SDL_Rect collision; /**<hitbox du sort*/
 }base_sort_t;
 
 
 extern base_sort_t liste_base_sort[3];
 
-void init_liste_base_sort();
+void init_liste_base_sort(liste_base_monstres_t * liste_base_monstres);
 void creer_sort_monstre(monstre_t * monstre, joueur_t * joueur);
 void action_sort(sort_t * sort);
 void orienter_sort_vers_joueur(monstre_t * monstre, sort_t * sort, joueur_t * joueur);

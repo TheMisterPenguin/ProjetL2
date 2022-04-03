@@ -17,10 +17,11 @@
 base_sort_t liste_base_sort[3];
 
 
-void init_liste_base_sort(){
+void init_liste_base_sort(liste_base_monstres_t * liste_base_monstres){
     liste_base_sort[SP_WITCHER].type = SP_WITCHER;
     liste_base_sort[SP_WITCHER].collision.w = 15;
     liste_base_sort[SP_WITCHER].collision.h = 15;
+    liste_base_sort[SP_WITCHER].degat = liste_base_monstres->tab[WITCHER].attaque;
 }
 
 void creer_sort_monstre(monstre_t * monstre, joueur_t * joueur){
@@ -35,6 +36,7 @@ void creer_sort_monstre(monstre_t * monstre, joueur_t * joueur){
         case WITCHER :
             sort->collision.h = liste_base_sort[SP_WITCHER].collision.h * (map->taille_case / TAILLE_CASE);
             sort->collision.w = liste_base_sort[SP_WITCHER].collision.w * (map->taille_case / TAILLE_CASE);
+            sort->degat = liste_base_sort[SP_WITCHER].degat;
             sort->type = SP_WITCHER;
             sort->texture = creer_texture(PATH_SPELL_WITCHER, LARGEUR_ENTITE, LONGUEUR_ENTITE, monstre->collision.x, monstre->collision.y , map->taille_case / TAILLE_CASE);
             sort->texture->duree_frame_anim = NB_FPS;
@@ -65,26 +67,34 @@ void orienter_sort_vers_joueur(monstre_t * monstre, sort_t * sort, joueur_t * jo
 
 void action_sort(sort_t * sort){
     int orientation = current_frame_x(sort->texture);
-    
+    bool deplacer_1 = vrai;
+    bool deplacer_2 = vrai;
+
     place_rect_center_from_point(sort->texture->aff_fenetre, get_rect_center_coord(&sort->collision));
     switch(orientation){
         case 1:
-            deplacement_y_entite(map, sort->texture, -2, &(sort->collision) );
+            deplacer_1 = deplacement_y_entite(map, sort->texture, -2, &(sort->collision) ); break;
         case 0:
-            deplacement_x_entite(map, sort->texture, 2, &(sort->collision) ); break;
+            deplacer_2 = deplacement_x_entite(map, sort->texture, 2, &(sort->collision) ); break;
         case 3:
-            deplacement_y_entite(map, sort->texture, 2, &(sort->collision) );
+            deplacer_1 = deplacement_y_entite(map, sort->texture, 2, &(sort->collision) );
         case 2:
-            deplacement_x_entite(map, sort->texture, 2, &(sort->collision) ); break;
+            deplacer_2 = deplacement_x_entite(map, sort->texture, 2, &(sort->collision) ); break;
         case 5:
-            deplacement_x_entite(map, sort->texture, -2, &(sort->collision) );
+            deplacer_1 = deplacement_x_entite(map, sort->texture, -2, &(sort->collision) );
         case 4:
-            deplacement_y_entite(map, sort->texture, 2, &(sort->collision) ); break;
+            deplacer_2 = deplacement_y_entite(map, sort->texture, 2, &(sort->collision) ); break;
         case 7:
-            deplacement_y_entite(map, sort->texture, -2, &(sort->collision) );
+            deplacer_1 = deplacement_y_entite(map, sort->texture, -2, &(sort->collision) );
         case 6:
-            deplacement_x_entite(map, sort->texture, -2, &(sort->collision) ); break;
+            deplacer_2 = deplacement_x_entite(map, sort->texture, -2, &(sort->collision) ); break;
         default : break;
+    }
+
+    /* detruit sort si rencontre un obstacle */
+    if(deplacer_1 == faux || deplacer_2 == faux){
+        detruire_collision_dans_liste(map->liste_collisions, &(sort->collision));
+		oter_elt(map->liste_sorts);
     }
 
 }
