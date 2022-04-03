@@ -19,8 +19,8 @@ base_sort_t liste_base_sort[3];
 
 void init_liste_base_sort(){
     liste_base_sort[SP_WITCHER].type = SP_WITCHER;
-    liste_base_sort[SP_WITCHER].collision.w = 18;
-    liste_base_sort[SP_WITCHER].collision.h = 18;
+    liste_base_sort[SP_WITCHER].collision.w = 15;
+    liste_base_sort[SP_WITCHER].collision.h = 15;
 }
 
 void creer_sort_monstre(monstre_t * monstre, joueur_t * joueur){
@@ -38,13 +38,12 @@ void creer_sort_monstre(monstre_t * monstre, joueur_t * joueur){
             sort->type = SP_WITCHER;
             sort->texture = creer_texture(PATH_SPELL_WITCHER, LARGEUR_ENTITE, LONGUEUR_ENTITE, monstre->collision.x, monstre->collision.y , map->taille_case / TAILLE_CASE);
             sort->texture->duree_frame_anim = NB_FPS;
-            /* placer texture */
-            
             orienter_sort_vers_joueur(monstre, sort, joueur);
         default : break;
     }
     ajout_droit(map->liste_sorts , sort);
     ajout_droit(map->liste_collisions, &(sort->collision));
+    //place_rect_center_from_point(sort->texture->aff_fenetre, get_rect_center_coord(&sort->collision));
 
 }
 
