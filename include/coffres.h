@@ -14,17 +14,20 @@
 #ifndef __COFFRES_H__
 #define __COFFRES_H__
 
+#define COFFRE_FACE_OUVERT "ressources/sprite/coffrefaceouvert.bmp"
+#define COFFRE_PROFIL_OUVERT "ressources/sprite/coffreprofilouvert.bmp"
+
 typedef struct s_aff t_aff; //!< \brief Structure de texture
 
 /**
  * Type enum renseignant sur le type d'un coffre
  */
-typedef enum {PROFIL_FERME,PROFIL_OUVERT,FACE_FERME,FACE_OUVERT}type_coffre_t;
+typedef enum {PROFIL_FERME,PROFIL_OUVERT,FACE_FERME,FACE_OUVERT, COFFRE_INCONNU}type_coffre_t;
 
 /**
  * Type enum indiquant si un coffre à été ouvert par un joueur
  */
-typedef enum {OUVERT, FERME}action_coffre_t;
+typedef enum {OUVERT, FERME}etat_coffre_t;
 
 /**
  * \struct coffre_s
@@ -35,7 +38,7 @@ typedef struct coffre_s
 {
 	type_coffre_t type; /**<Type de coffre*/
     t_direction_1 orientation; /*Orientation du coffre*/
-    action_coffre_t action; /*Action en cours par le coffre*/
+    etat_coffre_t etat; /*Etat en cours par le coffre*/
     SDL_Rect collision; /**<Coordonnées*/
     t_aff* texture; /**<Texture*/
 } coffre_t;
@@ -94,7 +97,7 @@ coffre_t* creer_coffre(liste_base_coffres_t* liste_base_coffres, const char * co
  * \param nom_coffre La chaîne de caractères à convertir
  * \return Une valeur du type type_coffre_t représentant le type de coffre
  */
-type_coffre_t nom_coffre_to_type_coffre(char * nom_coffre);
+type_coffre_t nom_coffre_to_type_coffre(const char * nom_coffre);
 
 /**
  * \fn void info_coffre(coffre_t * coffre)
@@ -104,9 +107,19 @@ type_coffre_t nom_coffre_to_type_coffre(char * nom_coffre);
 void info_coffre(coffre_t * coffre);
 
 /**
- * \fn void interaction_coffre(SDL_Rect * coffre_rect)
+ * \fn void interaction_coffre(SDL_Rect * coffre_rect, joueur_t * joueur)
  * \brief Gère les interactions du joueur avec un coffre lors d'une collision
  * \param coffre_rect Les coordonnées du prochain pas du personnage
+ * \param joueur Le joueur activant le coffre
  */
-void interaction_coffre(SDL_Rect * coffre_rect);
+void interaction_coffre(SDL_Rect * coffre_rect, joueur_t * joueur);
+
+/**
+ * \fn void inverser_direction(t_direction_1 direction)
+ * \brief Inverse une direction
+ * \param direction La direction à inverser
+ * \return Un type t_direction_1
+ */
+t_direction_1 inverser_direction(t_direction_1 direction);
+
 #endif

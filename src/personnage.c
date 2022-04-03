@@ -436,7 +436,6 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, list * list
 	while(!hors_liste(liste_monstres)){
 		monstre = valeur_elt(liste_monstres);
 		//entite_en_collision renvoi un booleen ainsi qu'une orientation en paramètre
-        /* /!\Utiliser la fonction deplacement_y_pers et deplacement_x_pers pour detecter la collision /!\ */
 		if(entite_en_collision(&(monstre->collision), &(joueur->statut->zone_colision), &cote_monstre, &cote_joueur)){
 			/* si le coup est bloqué */
 			if(joueur->statut->action == BLOQUER){

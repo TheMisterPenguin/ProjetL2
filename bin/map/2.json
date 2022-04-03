@@ -55,8 +55,8 @@
     ],
     "chest" : [
         {"type" : "profilferme",
-        "position" : [15,12]}//,
-        // {"type" : "faceferme",
-        // "position" : [10,10]}
+        "position" : [15,12]},
+        {"type" : "faceferme",
+        "position" : [10,10]}
     ]
 }

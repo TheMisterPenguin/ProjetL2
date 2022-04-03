@@ -16,7 +16,7 @@
 #include "listes.h"
 #include "inventaire.h"
 
-#define DUREE_ATTAQUE_OU_CHARGEE 4
+#define DUREE_ATTAQUE_OU_CHARGEE 12
 #define DUREE_ATTAQUE 6
 #define DUREE_ATTAQUE_CHARGEE 10
 #define DUREE_BLOQUER 3
@@ -77,14 +77,14 @@ typedef struct joueur_s {
     inventaire_t * inventaire; /**<Inventaire du joueur*/
 }joueur_t;
 
+extern char save_path[500];
+
 /**
  * \fn void stoper_mouvement_joueurs(joueur_t ** joueurs)
  * \brief Stop le mouvement des joueurs en jeu
  * \param joueurs Tableau des joueurs en jeu
  */
 void stoper_mouvement_joueurs(joueur_t ** joueurs);
-
-extern char save_path[500];
 
 extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orientation, const bool bouclier_equipe, const int num_j);
 extern joueur_t *new_joueur(const char* nom, int num_j);

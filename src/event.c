@@ -253,6 +253,7 @@ void joystick_button_up(SDL_JoyButtonEvent *ev, joueur_t **j)
         {
             statut->action = ATTAQUE_CHARGEE;
             statut->orient_att = statut->orient_dep * 2;
+            next_frame_x_indice(joueur->textures_joueur->liste[TEXT_ATTAQUE_CHARGEE], (statut->orient_dep) * 2 - 1);
             statut->en_mouvement = faux;
             statut->duree = DUREE_ATTAQUE_CHARGEE;
         }
@@ -352,6 +353,7 @@ static void mouseButtonUp(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
     if(ev->button == SDL_BUTTON_LEFT){
         if(statut->action == CHARGER){
             statut->action = ATTAQUE_CHARGEE;
+            statut->orient_att = (statut->orient_dep * 2 + 7) % 8;
             statut->en_mouvement = faux;
             statut->duree = DUREE_ATTAQUE_CHARGEE;
         }

@@ -85,7 +85,6 @@ int main(int argc, char** argv)
     /* On affiche l'introduction */
     afficher_intro();
 
-
     /* On affiche l'accueil du jeu */
     if(!manette){
         SDL_ShowCursor(SDL_ENABLE);
@@ -109,7 +108,6 @@ int main(int argc, char** argv)
     
     /* On charge la map */
     map = charger_map("map/2.json");
-
 
     //TEMPORAIREMENT ICI -- test animation heal (équiper consommable puis touche e) -- TEMPORAIREMENT ICI
     heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
@@ -232,7 +230,6 @@ int main(int argc, char** argv)
                 if(nb_joueurs == 2)
                     SDL_RenderDrawRect(rendu_principal, &joueur2->statut->zone_colision);
                 if(joueur1->statut->action == ATTAQUE || joueur1->statut->action == ATTAQUE_CHARGEE){
-                    printf("%d\n", joueur1->statut->orient_dep);
                     SDL_Rect * result = zone_en_dehors_hitbox(&(joueur1->statut->vrai_zone_collision), joueur1->textures_joueur->liste[0]->aff_fenetre, joueur1->statut->orient_att);
                     SDL_RenderDrawRect(rendu_principal,result);
                 }
@@ -274,7 +271,6 @@ int main(int argc, char** argv)
                 SDL_RenderDrawRect(rendu_principal, &(joueur1->statut->zone_colision));
                 SDL_RenderDrawRect(rendu_principal, &ty);
                 SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
-
         #endif
   
         /* On cous le joueur1 */
