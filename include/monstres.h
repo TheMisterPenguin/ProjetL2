@@ -83,8 +83,8 @@ typedef struct base_monstre_s
 typedef struct liste_base_monstres_s
 {
     int nb_monstre;
-    base_monstre_t* tab;
-}liste_base_monstres_t;
+    base_monstre_t* tab; /**<nombre de modèles de monstres du jeu*/
+}liste_base_monstres_t; /**<modèles des monstres du jeu*/
 
 extern liste_base_monstres_t * liste_base_monstres;
 
