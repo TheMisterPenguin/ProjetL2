@@ -249,6 +249,9 @@ void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, 
         joueur_t *j = joueurs[i];
 
         if(i == 0) { /* Joueur principal */
+            fenetre_finale->frame_anim->x = 0;
+            fenetre_finale->frame_anim->y = 0;
+            place_rect_center_from_point(fenetre_finale->frame_anim, get_rect_center_coord(j->statut->vrai_zone_collision));
             j->statut->vrai_zone_collision.x = x;
             j->statut->vrai_zone_collision.y = y;
             
@@ -262,22 +265,22 @@ void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, 
                     fenetre_finale->frame_anim->x = map->text_map->width - fenetre_finale->frame_anim->w;
                 }
                 else {
-                    /* Centrer à l'écran */
+                    place_rect_center_from_point(&j->statut->zone_colision, get_rect_center_coord(fenetre_finale->frame_anim));
                 }
             }
             
             /* Pour y */
-            if(y < fenetre_finale->frame_anim->h / 2){ /* Extrémité gauche */
+            if(y < fenetre_finale->frame_anim->h / 2){ /* Extrémité haut */
                 j->statut->zone_colision.y = y;
                 fenetre_finale->frame_anim->y = 0;
             }
             else{
-                if(y > (map->text_map->height - fenetre_finale->frame_anim->h / 2 )){ /* Extémité droite */
+                if(y > (map->text_map->height - fenetre_finale->frame_anim->h / 2 )){ /* Extémité basse */
                     j->statut->zone_colision.y = y;
                     fenetre_finale->frame_anim->y = map->text_map->height - fenetre_finale->frame_anim->h;
                 }
                 else {
-                    /* Centrer à l'écran */
+                    place_rect_center_from_point(&j->statut->zone_colision, get_rect_center_coord(fenetre_finale->frame_anim));
                 }
             }
         }
