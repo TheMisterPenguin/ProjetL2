@@ -346,7 +346,6 @@ void afficher_menu_accueil(int * nb_joueur){
                     return;
                 }
                 if (SDL_PointInRect(&coord_souris, &boutton_coop)){
-                    char temp[510];
                     *nb_joueur = 2;
                     return;
                 }
@@ -387,13 +386,13 @@ static int draw_rect_epaisseur(const SDL_Rect * a_dessiner, SDL_Renderer *rendu,
 
     int erreur = 0;
 
-    if(erreur = SDL_RenderFillRect(rendu, &haut))
+    if((erreur = SDL_RenderFillRect(rendu, &haut)))
         return erreur;
-    if (erreur = SDL_RenderFillRect(rendu, &bas))
+    if ((erreur = SDL_RenderFillRect(rendu, &bas)))
         return erreur;
-    if (erreur = SDL_RenderFillRect(rendu, &gauche))
+    if ((erreur = SDL_RenderFillRect(rendu, &gauche)))
         return erreur;
-    if (erreur = SDL_RenderFillRect(rendu, &droit))
+    if ((erreur = SDL_RenderFillRect(rendu, &droit)))
         return erreur;
     
     return 0;
@@ -686,7 +685,6 @@ void afficher_inventaire_manette(joueur_t *joueur){
 
         SDL_Event lastEvent; /* On récupère les événements */
 
-        SDL_Point coord_souris;
         while (SDL_PollEvent(&lastEvent))
         {
             switch (lastEvent.type)
@@ -696,7 +694,8 @@ void afficher_inventaire_manette(joueur_t *joueur){
                 fermer_programme(EXIT_SUCCESS);
             case SDL_JOYBUTTONDOWN:
                 switch (((SDL_JoyButtonEvent *)&lastEvent)->button){
-                    case SDL_CONTROLLER_BUTTON_GUIDE :
+                    case SDL_CONTROLLER_BUTTON_B :
+                    case SDL_CONTROLLER_BUTTON_BACK :
                         SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "On quitte l'inventaire");
                         return;
                     case SDL_CONTROLLER_BUTTON_DPAD_DOWN:

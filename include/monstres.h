@@ -28,8 +28,8 @@ typedef struct s_aff t_aff;
 typedef struct t_map t_map;
 typedef struct joueur_s joueur_t;
 
-typedef enum {WITCHER,KNIGHT,BOSS}type_monstre_t;
-typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE, MONSTRE_BLESSE, ERREUR}action_monstre_t;
+typedef enum {WITCHER,KNIGHT,BOSS, TYPE_MONSTRE_INCONNU}type_monstre_t;
+typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE, MONSTRE_BLESSE}action_monstre_t;
 
 /**
  * \struct struct position
@@ -129,7 +129,7 @@ void action_monstre(monstre_t * monstre, joueur_t * joueur);
  * \param nom_monstre La chaîne de caractères à convertir
  * \return type_monstre_t le type de monstre
  */
-type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre);
+type_monstre_t nom_monstre_to_type_monstre(const char * const nom_monstre);
 
 int distance_x_joueur(SDL_Rect collision, joueur_t * joueur);
 int distance_y_joueur(SDL_Rect collision, joueur_t * joueur);

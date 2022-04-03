@@ -190,7 +190,7 @@ type_coffre_t nom_coffre_to_type_coffre(char * nom_coffre){
         fprintf(stderr,"Erreur, nom du coffre incorrect\n");
     }
 
-    return ERREUR;
+    fermer_programme(ERREUR_FICHIER);
 }
 
 coffre_t* creer_coffre(liste_base_coffres_t* liste_base_coffres, const char * const nom_coffre, int x, int y, t_map *map){

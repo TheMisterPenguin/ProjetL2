@@ -12,6 +12,7 @@
 #include <sorts.h>
 #include <listes.h>
 #include <coffres.h>
+#include <map.h>
 
 #ifndef _WIN32
 	#include <pwd.h>
@@ -89,8 +90,9 @@ void creer_sauvegarde_json(joueur_t *j){
 	json_object *vitesse = json_object_new_int(j->vitesse);
 	json_object *orientation = json_object_new_int(j->statut->orientation);
 	json_object *bouclier_equipe = json_object_new_boolean(j->statut->bouclier_equipe);
-	json_object *x_map = json_object_new_int(j->statut->zone_colision.x);
-	json_object *y_map = json_object_new_int(j->statut->zone_colision.y);
+	json_object *x_map = json_object_new_int(j->statut->vrai_zone_collision.x);
+	json_object *y_map = json_object_new_int(j->statut->vrai_zone_collision.y);
+	json_object *id_map = json_object_new_int(map->id_map);
 
 	/* Création des tableaux */
 	json_object *statut = json_object_new_object();
@@ -104,6 +106,7 @@ void creer_sauvegarde_json(joueur_t *j){
 
 	json_object_object_add(statut, "Orientation", orientation);
 	json_object_object_add(statut, "Bouclie equipe", bouclier_equipe);
+	json_object_object_add(statut, "id map", id_map);
 	json_object_object_add(statut, "x map", x_map);
 	json_object_object_add(statut, "y map", y_map);
 
@@ -310,9 +313,6 @@ joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const in
 	perso->statut->vrai_zone_collision.y = 0;
 	perso->statut->vrai_zone_collision.w = map->taille_case;
 	perso->statut->vrai_zone_collision.h = map->taille_case;
-	perso->statut->x = 0;
-	perso->statut->y = 0;
-
 
 	perso->statut->zone_colision.x = 0;
 	perso->statut->zone_colision.y = 0;

@@ -14,6 +14,7 @@
 #include "monstres.h"
 #include "listes.h"
 #include "coffres.h"
+#include "personnage.h"
 
 #define TAILLE_CASE 16
 
@@ -38,39 +39,30 @@ typedef struct {
  * \author Ange Despert
 */
 typedef struct t_map{
+    unsigned int id_map;
     t_aff * text_map; /**< La texture de la map */
+    t_aff *text_sol;  /**< La texture du sol */
     unsigned int width, height; /**< La largeur et la hauteur de la map */
-    list *liste_monstres; /*< La liste des monstres de la map */
-    list *liste_coffres; /*< La liste des coffres de la map */
-    list *liste_sorts; /*< La liste des sorts de la map */
-    int unite_dep_x; /**< L'unité de déplacement en x */
-    int unite_dep_y; /**< L'unité de déplacement en y */
-    t_aff * text_sol; /**< La texture du sol */
     unsigned int taille_case; /**< La taille d'une case */
     unsigned int cases_x; /**< Le nombre de cases affichées en x */
     unsigned int cases_y; /**< Le nombre de cases affichées en y */
+    list *liste_monstres; /*< La liste des monstres de la map */
+    list *liste_sorts;    /*< La liste des sorts de la map */
     list *liste_collisions; /*< La liste de toutes les les collisions */
+    list *liste_coffres; /*< La liste de tous les coffres */
 }t_map;
 
 extern t_map *map; /**< La map courante */
 
 /**
- * \brief Fonction qui charge le contenu du fichier dont le nom est donné en paramètre dans un buffer de caractères
- *
- * \param nom_map Le nom du fichier map à charger
- * \return Un buffer de caractères contenant l'intégralité du fichier
- */
-char *charger_f_map(const char *const nom_map);
-
-/**
- * \fn t_map * charger_s_map(char * buffer, liste_base_monstres_t * liste_base_monstres, liste_base_coffres_t * liste_base_coffres)
  * \brief Fonction qui récupère les informations stockées dans le buffer en entrée.
  * \param liste_base_monstres Les montres à placer sur la map
  * \param liste_base_coffres Les coffres à placer sur la map
  * \param buffer Le buffeur qui contient les informations
  * \return Une map initialisée avec toutes les informations dedans;
  */
-t_map * charger_s_map(char * buffer, liste_base_monstres_t * liste_base_monstres, liste_base_coffres_t * liste_base_coffres);
+t_map *charger_map(const char *const nom_map);
+
 
 /**
  * \brief Fonction qui renvoie la texture de la map
@@ -80,4 +72,7 @@ t_map * charger_s_map(char * buffer, liste_base_monstres_t * liste_base_monstres
  */
 t_aff *texture_map(const t_map *map);
 
+void transition(t_map **actuelle, const char *const nom_map, joueur_t **joueurs, unsigned short int nb_joueurs);
+
+void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, unsigned short int nb_joueurs);
 #endif
