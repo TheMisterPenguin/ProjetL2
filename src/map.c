@@ -8,6 +8,7 @@
 #include <monstres.h>
 #include <math.h>
 #include <fonctions.h>
+#include <personnage.h>
 
 /**
  * \file map.c

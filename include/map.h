@@ -13,6 +13,7 @@
 #include "definition_commun.h"
 #include "monstres.h"
 #include "listes.h"
+#include "personnage.h"
 
 #define TAILLE_CASE 16
 
