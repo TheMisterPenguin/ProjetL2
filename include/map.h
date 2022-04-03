@@ -81,7 +81,13 @@ void init_sousbuffer(t_map *map, joueur_t *joueur);
  */
 t_aff *texture_map(const t_map *map);
 
-void transition(t_map **actuelle, const char *const nom_map, joueur_t **joueurs, unsigned short int nb_joueurs);
+void transition(t_map **actuelle, unsigned int num_map, joueur_t **joueurs, unsigned short int nb_joueurs, unsigned int new_x, unsigned int new_y);
 
 void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, unsigned short int nb_joueurs);
+
+#ifdef DEBUG_TP
+void afficher_zone_tp(zone_tp *z);
+
+#endif
+
 #endif

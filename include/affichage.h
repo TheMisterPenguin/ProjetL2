@@ -279,7 +279,7 @@ void modif_affichage_rect(t_aff *texture, SDL_Rect r);
  * \param pers La texture du personnage elle même
  * \param x Le nombre d'unités de déplacements
  */
-void deplacement_x_pers(t_map *m, joueur_t *j, int x);
+bool deplacement_x_pers(t_map *m, joueur_t **joueurs, unsigned short int nb_joueurs, int x);
 
 /**
  * \fn t_l_aff* init_textures_joueur(joueur_t *j, int num_j)
@@ -317,7 +317,7 @@ extern t_aff *next_frame_joueur(joueur_t *j);
  * \param pers La texture du personnage elle même
  * \param y Le nombre d'unités de déplacements
  */
-void deplacement_y_pers(t_map *m, joueur_t *j, int y);
+bool deplacement_y_pers(t_map *m, joueur_t **joueurs, unsigned short int nb_joueurs, int y);
 
 /**
  * Fonction qui permet de définir exactement la taille de la texture à affichar sur l'écran

@@ -13,7 +13,7 @@
  * \copyright Copyright (c) 2022
  */
 
-objet_t *creer_objet(const char * const texture_src, const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit)
+objet_t *creer_objet(const int id, const char * const texture_src, const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit)
 {
     objet_t *obj = NULL;
     
@@ -36,6 +36,7 @@ objet_t *creer_objet(const char * const texture_src, const t_item type, const ch
     }
     strcpy(obj->texture_src, texture_src);
 
+    obj->id = id;
     obj->texture = NULL;
     obj->type = type;
     obj->niveau = niveau;

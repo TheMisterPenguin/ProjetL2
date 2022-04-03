@@ -27,6 +27,7 @@ typedef enum{quete, arme, bouclier, protection, amulette, consommable}t_item;
  */
 
 typedef struct objet_s {
+    int id; /**<Identificateur de l'objet*/
     t_aff * texture; /**<Image de l'objet*/
     char * texture_src; /**<Chemin de l'image de l'objet*/
     t_item type; /**<Le type d'objet permet de contrôler sa bonne utilisation*/
@@ -38,8 +39,9 @@ typedef struct objet_s {
 }objet_t;
 
 /**
- * \fn objet_t * creer_objet(const char * const texture_src, const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit)
+ * \fn objet_t *creer_objet(const int id, const char * const texture_src, const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit)
  * \brief Créé un objet du jeu
+ * \param id L'identificateur de l'objet
  * \param texture_src Chemin vers l'image de l'objet
  * \param type Type d'objet
  * \param nom Nom de l'objet
@@ -49,7 +51,7 @@ typedef struct objet_s {
  * \param vit Bonus de vitesse de l'objet
  * \return Instance nouvellement allouée du type objet_t ou NULL
  */
-extern objet_t * creer_objet(const char * const texture_src, const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit);
+extern objet_t *creer_objet(const int id, const char * const texture_src, const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit);
 
 /**
  * \fn void detruire_objet(objet_t **obj)

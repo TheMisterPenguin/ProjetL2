@@ -22,7 +22,7 @@ typedef struct s_aff t_aff; //!< \brief Structure de texture
 /**
  * Type enum renseignant sur le type d'un coffre
  */
-typedef enum {PROFIL_FERME,PROFIL_OUVERT,FACE_FERME,FACE_OUVERT}type_coffre_t;
+typedef enum {PROFIL_FERME,PROFIL_OUVERT,FACE_FERME,FACE_OUVERT, COFFRE_INCONNU}type_coffre_t;
 
 /**
  * Type enum indiquant si un coffre à été ouvert par un joueur
@@ -36,6 +36,7 @@ typedef enum {OUVERT, FERME}etat_coffre_t;
  */
 typedef struct coffre_s
 {
+    int id_cle; /**<Indentificateur de l'objet de quête nécessaire pour ouvrir le coffre sinon 0*/
 	type_coffre_t type; /**<Type de coffre*/
     t_direction_1 orientation; /*Orientation du coffre*/
     etat_coffre_t etat; /*Etat en cours par le coffre*/
@@ -80,8 +81,9 @@ extern liste_base_coffres_t * liste_base_coffres; /*Liste des coffres générés
 void charger_base_coffre(char * chemin_fichier, liste_base_coffres_t ** liste_base_coffres);
 
 /**
- * \fn coffre_t* creer_coffre(liste_base_coffres_t* liste_base_coffres, const char * const nom_coffre, int x, int y, t_map *map);
+ * \fn coffre_t* creer_coffre(int id_cle, liste_base_coffres_t* liste_base_coffres, const char * const nom_coffre, int x, int y, t_map *map)
  * \brief Fonction qui creer et initialise un coffre sur une carte
+ * \param id_cle L'identifaicateur de l'objet de quête nécessaire pour ouvrir le coffre, sinon 0
  * \param liste_base_coffre Les coffres de base
  * \param nom_coffre Le nom du coffre à creer
  * \param x La position en abscisse du coffre sur la map
@@ -89,7 +91,7 @@ void charger_base_coffre(char * chemin_fichier, liste_base_coffres_t ** liste_ba
  * \param map La carte dans laquelle mettre le coffre
  * \return Instance nouvellement allouée du type coffre_t contenant les informations du coffre ou NULL
  */
-coffre_t* creer_coffre(liste_base_coffres_t* liste_base_coffres, const char * const nom_coffre, int x, int y, t_map *map);
+coffre_t* creer_coffre(int id_cle, liste_base_coffres_t* liste_base_coffres, const char * const nom_coffre, int x, int y, t_map *map);
 
 /**
  * \fn type_coffre_t nom_coffre_to_type_coffre(char * nom_coffre)
@@ -97,7 +99,7 @@ coffre_t* creer_coffre(liste_base_coffres_t* liste_base_coffres, const char * co
  * \param nom_coffre La chaîne de caractères à convertir
  * \return Une valeur du type type_coffre_t représentant le type de coffre
  */
-type_coffre_t nom_coffre_to_type_coffre(char * nom_coffre);
+type_coffre_t nom_coffre_to_type_coffre(const char * nom_coffre);
 
 /**
  * \fn void info_coffre(coffre_t * coffre)
@@ -107,9 +109,19 @@ type_coffre_t nom_coffre_to_type_coffre(char * nom_coffre);
 void info_coffre(coffre_t * coffre);
 
 /**
- * \fn void interaction_coffre(SDL_Rect * coffre_rect)
+ * \fn void interaction_coffre(SDL_Rect * coffre_rect, joueur_t * joueur)
  * \brief Gère les interactions du joueur avec un coffre lors d'une collision
  * \param coffre_rect Les coordonnées du prochain pas du personnage
+ * \param joueur Le joueur activant le coffre
  */
-void interaction_coffre(SDL_Rect * coffre_rect);
+void interaction_coffre(SDL_Rect * coffre_rect, joueur_t * joueur);
+
+/**
+ * \fn void inverser_direction(t_direction_1 direction)
+ * \brief Inverse une direction
+ * \param direction La direction à inverser
+ * \return Un type t_direction_1
+ */
+t_direction_1 inverser_direction(t_direction_1 direction);
+
 #endif

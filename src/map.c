@@ -102,6 +102,11 @@ void init_sousbuffer(t_map *map, joueur_t *joueur)
 
     if (SDL_SetRenderTarget(rendu_principal, map->text_map->texture))
         erreur("Erreur lors de la création du sous buffer : %s\n", SDL_ERREUR, SDL_GetError());
+
+    if (SDL_RenderCopy(rendu_principal, map->text_sol->texture, NULL, NULL))
+        fprintf(stderr, "Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
+
+    SDL_QueryTexture(map->text_map->texture, NULL, NULL, &(map->text_map->width), &(map->text_map->height));
 }
 
 SDL_Rect taille_ecran_cases(){
@@ -140,6 +145,7 @@ t_map * charger_map(const char * const nom_map){
     json_object *x2 =                  NULL;
     json_object *y2 =                  NULL;
     json_object *nom_coffre =          NULL;
+    json_object *id_cle =              NULL;
 
     monstre_t * inserer =              NULL;
     coffre_t * nv_coffre =             NULL;
@@ -190,6 +196,10 @@ t_map * charger_map(const char * const nom_map){
     if(!m->liste_collisions)
         erreur("Impossible de charger la map", ERREUR_LISTE);
 
+    m->liste_zone_tp = init_liste(NULL, NULL, NULL);
+
+    if(!m->liste_zone_tp)
+        erreur("Impossible de charger la map", ERREUR_LISTE);
 
     /* Récupération des informations dans le fichier */
     if(!json_object_object_get_ex(JSON_fichier, "chest", &JSON_tbl_coffre))
@@ -298,12 +308,13 @@ t_map * charger_map(const char * const nom_map){
         objet_json = json_object_array_get_idx(JSON_tbl_coffre,i);
 
         nom_coffre = json_object_object_get(objet_json,"type");
+        id_cle = json_object_object_get(objet_json,"id_cle");
         JSON_position2 = json_object_object_get(objet_json,"position");
 
         x2 = json_object_array_get_idx(JSON_position2,0);
         y2 = json_object_array_get_idx(JSON_position2,1);
 
-        nv_coffre = creer_coffre(liste_base_coffres, json_object_get_string(nom_coffre), json_object_get_int(x2), json_object_get_int(y2), m);
+        nv_coffre = creer_coffre(json_object_get_int(id_cle), liste_base_coffres, json_object_get_string(nom_coffre), json_object_get_int(x2), json_object_get_int(y2), m);
         ajout_droit(m->liste_coffres, nv_coffre);
         en_queue(m->liste_collisions);
 
@@ -314,6 +325,7 @@ t_map * charger_map(const char * const nom_map){
 
         ajout_droit(m->liste_collisions, &(nv_coffre->collision));
     }
+
 
     for(unsigned int i = 0; i < json_object_array_length(JSON_zones_tp); i++){
         JSON_zone_tp = json_object_array_get_idx(JSON_zones_tp,i);
@@ -356,7 +368,17 @@ t_map * charger_map(const char * const nom_map){
         if(!z)
             erreur("Impossible de charger la map : %s", OUT_OF_MEM, json_util_get_last_err());
 
+        z->zone.x = json_object_get_int(JSON_zone_tp_x) * m->taille_case;
+        z->zone.y = json_object_get_int(JSON_zone_tp_y) * m->taille_case;
+        z->zone.w = json_object_get_int(JSON_zone_tp_w) * m->taille_case;
+        z->zone.h = json_object_get_int(JSON_zone_tp_h) * m->taille_case;
 
+        z->id_map = json_object_get_int(JSON_zone_tp_dest);
+
+        z->dest.x = json_object_get_int(JSON_zone_tp_coord_x);
+        z->dest.y = json_object_get_int(JSON_zone_tp_coord_y);
+
+        ajout_droit(m->liste_zone_tp, z);
     }
 
     json_object_put(JSON_fichier); //libération mémoire de l'objet json
@@ -379,7 +401,8 @@ void detruire_map(t_map **map){
     en_tete((*map)->liste_collisions);
 
     while(!hors_liste((*map)->liste_collisions)){
-        free(valeur_elt((*map)->liste_collisions));
+        SDL_Rect *temp = valeur_elt((*map)->liste_collisions);
+        //free(temp);
         suivant((*map)->liste_collisions);
     }
 
@@ -387,8 +410,8 @@ void detruire_map(t_map **map){
 
     /* Destruction des textures */
 
-    selectionner_element((*map)->liste_collisions, (*map)->text_sol, NULL);
-    oter_elt((*map)->liste_collisions);
+    selectionner_element(buffer_affichage, (*map)->text_sol, NULL);
+    oter_elt(buffer_affichage);
 
     detruire_texture(&(*map)->text_map);
 
@@ -397,16 +420,30 @@ void detruire_map(t_map **map){
     *map = NULL;
 }
 
-void transition(t_map **actuelle, const char * const nom_map, joueur_t ** joueurs, unsigned short int nb_joueurs){
+void transition(t_map **actuelle, unsigned int num_map, joueur_t ** joueurs, unsigned short int nb_joueurs, unsigned int new_x, unsigned int new_y){
+    char nom_fichier_map[50];
 
+    SDL_SetRenderTarget(rendu_principal, NULL);
+    SDL_SetTextureBlendMode(fenetre_finale->texture, SDL_BLENDMODE_BLEND);
+
+    for(unsigned int i = 255; i > 0; i -= 5 ){ /* Fondu (disparition de la map) */
+        if (SDL_SetTextureAlphaMod(fenetre_finale->texture, i) < 0)
+            fprintf(stderr, "Erreur lors de la modification de l'alpha : %s\n", SDL_GetError());
+        if(SDL_RenderClear(rendu_principal) < 0)
+            fprintf(stderr, "Erreur : le buffer d'affichage n'a pas pu être vidé : %s\n", SDL_GetError());
+        if (afficher_texture(fenetre_finale, rendu_principal) != 0)
+            fprintf(stderr,"Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
+        SDL_RenderPresent(rendu_principal);
+        SDL_Delay(10);
+    }
+
+    sprintf(nom_fichier_map, "map/%d.json", num_map);
     detruire_map(actuelle);
     detruire_texture(&fenetre_finale);
-    *actuelle = charger_map(nom_map);
-
+    *actuelle = charger_map(nom_fichier_map);
     init_sousbuffer(*actuelle, *joueurs);
 
     /* Mise à jour des textures du joueur */
-
     for(unsigned short int i = 0; i < nb_joueurs; i++){
         joueur_t *j = joueurs[i];
         
@@ -421,6 +458,9 @@ void transition(t_map **actuelle, const char * const nom_map, joueur_t ** joueur
             def_texture_taille(j->textures_joueur->liste[i], LONGUEUR_ENTITE * (*actuelle)->taille_case / TAILLE_CASE, LARGEUR_ENTITE * (*actuelle)->taille_case / TAILLE_CASE);
         }
     }
+
+    tp_joueurs(*actuelle, new_x, new_x, joueurs, nb_joueurs);
+
 }
 
 void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, unsigned short int nb_joueurs){
@@ -475,4 +515,11 @@ void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, 
             j->statut->zone_colision.y = y;
         }
     }
+}
+
+
+void afficher_zone_tp(zone_tp *z){
+    SDL_SetRenderDrawColor(rendu_principal, 0, 0, 255, SDL_ALPHA_OPAQUE);
+    SDL_RenderDrawRect(rendu_principal, &z->zone);
+    SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
 }
