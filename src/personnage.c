@@ -256,7 +256,7 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 joueur_t *new_joueur(const char* nom, int num_j){
 	byte *trig = calloc(TAILLE_TRIGGER, sizeof(byte));
   
-	joueur_t *j = creer_joueur(nom, 0, 0, 10, 10, 10, 10, 1, trig, NORD_1, faux, num_j);
+	joueur_t *j = creer_joueur(nom, 0, 0, 100, 50, 10, 10, 1, trig, NORD_1, faux, num_j);
 	free(trig); //pour l'instant inutile (refait dans creer joueur)
 
 	j->statut->zone_colision.x = 0;
@@ -418,16 +418,52 @@ SDL_bool entite_subit_attaque(SDL_Rect * monstre_hitbox, joueur_t * joueur){
 	return statut;
 }
 
-SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_direction_1 * coter_entite_1, t_direction_1 * coter_entite_2){
+SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_direction_1 * cote_entite_1, t_direction_1 * cote_entite_2){
+	SDL_Rect temp;
+	temp.w = entite_1->w;
+	temp.h = entite_1->h;
+	temp.y = entite_1->y;
 
+	/* test collision cote OUEST de l'entite_1 */
+	temp.x = entite_1->x - 1;
+	if(SDL_HasIntersection(&temp,  entite_2)){
+		*cote_entite_1 = OUEST_1;
+		*cote_entite_2 = EST_1;
+		return vrai;
+	}
+	/* test collision cote EST de l'entite_1 */
+	temp.x = entite_1->x + 1;
+	if(SDL_HasIntersection(&temp,  entite_2)){
+		*cote_entite_1 = EST_1;
+		*cote_entite_2 = OUEST_1;
+		return vrai;
+	}
+	/* remise à l'origine */
+	temp.x = entite_1->x;
+
+	/* test collision cote NORD de l'entite_1 */
+	temp.y = entite_1->y - 1;
+	if(SDL_HasIntersection(&temp,  entite_2)){
+		*cote_entite_1 = NORD_1;
+		*cote_entite_2 = SUD_1;
+		return vrai;
+	}
+	/* test collision cote SUD de l'entite_1 */
+	temp.y = entite_1->y + 1;
+	if(SDL_HasIntersection(&temp,  entite_2)){
+		*cote_entite_1 = SUD_1;
+		*cote_entite_2 = NORD_1;
+		return vrai;
+	}
 	return faux;
 }
 
 void environnement_joueur(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t * joueur){
 	monstre_t * monstre;
-
+	sort_t * sort;
 	t_direction_1 cote_joueur;
 	t_direction_1 cote_monstre;
+	t_direction_1 cote_sort;
 
 
 	en_tete(liste_monstres);
@@ -435,9 +471,8 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, list * list
 
 	while(!hors_liste(liste_monstres)){
 		monstre = valeur_elt(liste_monstres);
-		//entite_en_collision renvoi un booleen ainsi qu'une orientation en paramètre
-        /* /!\Utiliser la fonction deplacement_y_pers et deplacement_x_pers pour detecter la collision /!\ */
-		if(entite_en_collision(&(monstre->collision), &(joueur->statut->zone_colision), &cote_monstre, &cote_joueur)){
+			
+		if(entite_en_collision(&(monstre->collision), &(joueur->statut->vrai_zone_collision), &cote_monstre, &cote_joueur)){
 			/* si le coup est bloqué */
 			if(joueur->statut->action == BLOQUER){
 				monstre->orientation = cote_joueur;
@@ -476,17 +511,35 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, list * list
 				}
 			}
 		}
-		if(joueur->statut->action == ATTAQUE_CHARGEE){
-			//modif l'orientation du personnage pendant qu'il tourne
-			/*if(entite_subit_attaque_zone(monstre->texture, joueur->statut)){
-				
-			}*/
-		}
 		suivant(liste_monstres);
 	}
 
 	while(!hors_liste(liste_sorts)){
-		suivant(map->liste_sorts);
+		sort = valeur_elt(liste_sorts);
+		
+		if(entite_en_collision(&(sort->collision), &(joueur->statut->vrai_zone_collision), &cote_sort, &cote_joueur)){
+			if(joueur->statut->action != BLOQUER && joueur->statut->action != J_BLESSE){
+				(joueur->pdv) -= (sort->degat);
+				if(joueur->pdv <= 0)
+					running = faux;
+				else{
+					joueur->statut->orient_dep = cote_sort;
+					joueur->statut->action = J_BLESSE;
+					joueur->statut->duree = DUREE_JOUEUR_BLESSE;
+				}
+			}
+			detruire_collision_dans_liste(map->liste_collisions, &(sort->collision));
+			oter_elt(liste_sorts);
+		}
+
+		/* si un sort est attaqué */
+		else if(joueur->statut->action == ATTAQUE || joueur->statut->action == ATTAQUE_CHARGEE){
+			if(entite_subit_attaque(&(sort->collision), joueur)){
+				detruire_collision_dans_liste(map->liste_collisions, &(sort->collision));
+				oter_elt(liste_sorts);
+			}
+		}
+		suivant(liste_sorts);
 	}
 }
 
