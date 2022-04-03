@@ -25,7 +25,7 @@ lobjet_t * creer_liste_objet(char * fichier_src){
     t_item type;
     char nom[50];
     int i = 0;
-    int niveau, att, def, vit;
+    int niveau, att, def, vit, id;
     char c;
     int nb_obj = 0; //nombre d'objets dans le fichier source
     char imgsrc[100];
@@ -64,9 +64,10 @@ lobjet_t * creer_liste_objet(char * fichier_src){
             return((lobjet_t*)NULL);
         }
 
-
-        while((fscanf(obj, "%s%d%49[^:]:%d%d%d%d;", imgsrc, (int *)&type, nom, &niveau, &att, &def, &vit) == 7) && i<nb_obj){
-            liste_obj->liste[i] = creer_objet(imgsrc, type, nom, niveau, att, def, vit);
+        //récupération des informations
+        while((fscanf(obj, "%d%s%d%49[^:]:%d%d%d%d;", &id, imgsrc, (int *)&type, nom, &niveau, &att, &def, &vit) == 8) && i<nb_obj){
+            printf("%d %s %d %s %d %d %d %d\n", id, imgsrc, type, nom, niveau, att, def, vit);
+            liste_obj->liste[i] = creer_objet(id, imgsrc, type, nom, niveau, att, def, vit);
             i++;
         }
 
