@@ -35,7 +35,7 @@ $(BINDIR)jeux$(EXT) : $(OBJ)
 # Compilation de tout les fichiers source
 
 $(ODIR)%.o : $(SRC)%.c
-	$(CC) $(CFLAGS) -o $@ -c $< -g -D _DEBUG_COLLISION
+	$(CC) $(CFLAGS) -o $@ -c $< -g -D DEBUG
 
 # Génération des tests
 

@@ -17,6 +17,12 @@
 
 #include "code_erreur.h"
 
+#ifdef DEBUG
+    #define DEBUG_TP
+    #define _DEBUG_COLLISION
+    #define _DEBUG_MOUVEMENT
+#endif
+
 extern unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 typedef unsigned char byte;
 typedef struct point {int x,y;}point;
