@@ -355,7 +355,7 @@ t_map * charger_map(const char * const nom_map){
         if(!z)
             erreur("Impossible de charger la map : %s", OUT_OF_MEM, json_util_get_last_err());
 
-
+        
     }
 
     json_object_put(JSON_fichier); //libération mémoire de l'objet json
