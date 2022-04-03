@@ -5,10 +5,6 @@
 Fichier contenant toutes les fonctions concernant les objets.  
 
 
-{\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include $<$string.\+h$>$}\newline
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include $<$objet.\+h$>$}\newline
 Graphe des dépendances par inclusion de objet.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -20,25 +16,23 @@ Graphe des dépendances par inclusion de objet.\+c\+:
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{objet_8h_ad0efc27a29533dbf784e717262509caa_ad0efc27a29533dbf784e717262509caa}{objet\+\_\+t}} $\ast$ \mbox{\hyperlink{objet_8c_a1ec11e0ef4c7cee2dd60d3e544acbd84_a1ec11e0ef4c7cee2dd60d3e544acbd84}{creer\+\_\+objet}} (const char $\ast$const texture\+\_\+src, const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}} type, const char $\ast$nom, const short int niveau, const int att, const int def, const int vit)
-\item 
-void \mbox{\hyperlink{objet_8c_a0cad7222129cd23bfca9ab8d94885f39_a0cad7222129cd23bfca9ab8d94885f39}{afficher\+\_\+objet}} (\mbox{\hyperlink{objet_8h_ad0efc27a29533dbf784e717262509caa_ad0efc27a29533dbf784e717262509caa}{objet\+\_\+t}} $\ast$obj)
-\item 
-void \mbox{\hyperlink{objet_8c_a9903bbbae9d8ad00d41b6e903d459877_a9903bbbae9d8ad00d41b6e903d459877}{detruire\+\_\+objet}} (\mbox{\hyperlink{objet_8h_ad0efc27a29533dbf784e717262509caa_ad0efc27a29533dbf784e717262509caa}{objet\+\_\+t}} $\ast$$\ast$obj)
-\end{DoxyCompactItemize}
+objet\+\_\+t $\ast$ \mbox{\hyperlink{objet_8c_a9cecdb9f55f3833139a9e4358731d6fd}{creer\+\_\+objet}} (const char $\ast$const texture\+\_\+src, const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}} type, const char $\ast$nom, const short int niveau, const int att, const int def, const int vit)
+\begin{DoxyCompactList}\small\item\em Créé un objet du jeu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{objet_8c_a0cad7222129cd23bfca9ab8d94885f39}{afficher\+\_\+objet}} (objet\+\_\+t $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Affiche les caractéristiques d\textquotesingle{}un objet dans la console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{objet_8c_a9903bbbae9d8ad00d41b6e903d459877}{detruire\+\_\+objet}} (objet\+\_\+t $\ast$$\ast$obj)
+\begin{DoxyCompactList}\small\item\em Libère la mémoire allouée à un objet. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
-Fichier contenant toutes les fonctions concernant les objets. 
-
 \begin{DoxyAuthor}{Auteur}
-Descomps Max (\href{mailto:Max.Descomps.Etu@univ-lemans.fr}{\texttt{ Max.\+Descomps.\+Etu@univ-\/lemans.\+fr}}) 
+Max Descomps (\href{mailto:Max.Descomps.Etu@univ-lemans.fr}{\texttt{ Max.\+Descomps.\+Etu@univ-\/lemans.\+fr}}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 0.\+2 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-24/02/2022
+24/02/2022 
 \end{DoxyDate}
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2022 
@@ -46,21 +40,79 @@ Copyright (c) 2022
 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{objet_8c_a0cad7222129cd23bfca9ab8d94885f39_a0cad7222129cd23bfca9ab8d94885f39}\label{objet_8c_a0cad7222129cd23bfca9ab8d94885f39_a0cad7222129cd23bfca9ab8d94885f39}} 
+\mbox{\Hypertarget{objet_8c_a0cad7222129cd23bfca9ab8d94885f39}\label{objet_8c_a0cad7222129cd23bfca9ab8d94885f39}} 
 \index{objet.c@{objet.c}!afficher\_objet@{afficher\_objet}}
 \index{afficher\_objet@{afficher\_objet}!objet.c@{objet.c}}
 \doxysubsubsection{\texorpdfstring{afficher\_objet()}{afficher\_objet()}}
-{\footnotesize\ttfamily void afficher\+\_\+objet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{objet_8h_ad0efc27a29533dbf784e717262509caa_ad0efc27a29533dbf784e717262509caa}{objet\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void afficher\+\_\+objet (\begin{DoxyParamCaption}\item[{objet\+\_\+t $\ast$}]{obj }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{objet_8c_a1ec11e0ef4c7cee2dd60d3e544acbd84_a1ec11e0ef4c7cee2dd60d3e544acbd84}\label{objet_8c_a1ec11e0ef4c7cee2dd60d3e544acbd84_a1ec11e0ef4c7cee2dd60d3e544acbd84}} 
+
+\begin{DoxyParams}{Paramètres}
+{\em obj} & L\textquotesingle{}objet à afficher \\
+\hline
+\end{DoxyParams}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/objet_8c_a0cad7222129cd23bfca9ab8d94885f39_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{objet_8c_a9cecdb9f55f3833139a9e4358731d6fd}\label{objet_8c_a9cecdb9f55f3833139a9e4358731d6fd}} 
 \index{objet.c@{objet.c}!creer\_objet@{creer\_objet}}
 \index{creer\_objet@{creer\_objet}!objet.c@{objet.c}}
 \doxysubsubsection{\texorpdfstring{creer\_objet()}{creer\_objet()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{objet_8h_ad0efc27a29533dbf784e717262509caa_ad0efc27a29533dbf784e717262509caa}{objet\+\_\+t}}$\ast$ creer\+\_\+objet (\begin{DoxyParamCaption}\item[{const char $\ast$const}]{texture\+\_\+src,  }\item[{const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}}}]{type,  }\item[{const char $\ast$}]{nom,  }\item[{const short int}]{niveau,  }\item[{const int}]{att,  }\item[{const int}]{def,  }\item[{const int}]{vit }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily objet\+\_\+t $\ast$ creer\+\_\+objet (\begin{DoxyParamCaption}\item[{const char $\ast$const}]{texture\+\_\+src,  }\item[{const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}}}]{type,  }\item[{const char $\ast$}]{nom,  }\item[{const short int}]{niveau,  }\item[{const int}]{att,  }\item[{const int}]{def,  }\item[{const int}]{vit }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{objet_8c_a9903bbbae9d8ad00d41b6e903d459877_a9903bbbae9d8ad00d41b6e903d459877}\label{objet_8c_a9903bbbae9d8ad00d41b6e903d459877_a9903bbbae9d8ad00d41b6e903d459877}} 
+
+\begin{DoxyParams}{Paramètres}
+{\em texture\+\_\+src} & Chemin vers l\textquotesingle{}image de l\textquotesingle{}objet \\
+\hline
+{\em type} & Type d\textquotesingle{}objet \\
+\hline
+{\em nom} & Nom de l\textquotesingle{}objet \\
+\hline
+{\em niveau} & Niveau nécessaire pour s\textquotesingle{}équiper de l\textquotesingle{}objet \\
+\hline
+{\em att} & Bonus d\textquotesingle{}attaque de l\textquotesingle{}objet \\
+\hline
+{\em def} & Bonus de défense de l\textquotesingle{}objet \\
+\hline
+{\em vit} & Bonus de vitesse de l\textquotesingle{}objet \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Instance nouvellement allouée du type objet\+\_\+t ou N\+U\+LL 
+\end{DoxyReturn}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/objet_8c_a9cecdb9f55f3833139a9e4358731d6fd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{objet_8c_a9903bbbae9d8ad00d41b6e903d459877}\label{objet_8c_a9903bbbae9d8ad00d41b6e903d459877}} 
 \index{objet.c@{objet.c}!detruire\_objet@{detruire\_objet}}
 \index{detruire\_objet@{detruire\_objet}!objet.c@{objet.c}}
 \doxysubsubsection{\texorpdfstring{detruire\_objet()}{detruire\_objet()}}
-{\footnotesize\ttfamily void detruire\+\_\+objet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{objet_8h_ad0efc27a29533dbf784e717262509caa_ad0efc27a29533dbf784e717262509caa}{objet\+\_\+t}} $\ast$$\ast$}]{obj }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void detruire\+\_\+objet (\begin{DoxyParamCaption}\item[{objet\+\_\+t $\ast$$\ast$}]{obj }\end{DoxyParamCaption})}
 
+
+\begin{DoxyParams}{Paramètres}
+{\em obj} & L\textquotesingle{}objet à libérer \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{d2/dd1/objet_8c_a9903bbbae9d8ad00d41b6e903d459877_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/objet_8c_a9903bbbae9d8ad00d41b6e903d459877_icgraph}
+\end{center}
+\end{figure}

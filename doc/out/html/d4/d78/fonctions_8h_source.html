@@ -71,21 +71,31 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="../../d4/d78/fonctions_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef __H_FONCTION__</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define __H_FONCTION__</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d4/d78/fonctions_8h_a2858154e2009b0e6e616f313177762bc.html#a2858154e2009b0e6e616f313177762bc">init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d4/d78/fonctions_8h_a7b6ab7ddc25c37de5b94c942bbc5949c.html#a7b6ab7ddc25c37de5b94c942bbc5949c">terminate_init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef __H_FONCTION__</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define __H_FONCTION__</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/db7/map_8h.html">map.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/d2f/personnage_8h.html">personnage.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d4/d78/fonctions_8h.html#a2858154e2009b0e6e616f313177762bc">init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d4/d78/fonctions_8h.html#a7b6ab7ddc25c37de5b94c942bbc5949c">terminate_init</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d78/fonctions_8h_a9ba6aaac1f254ad54badf515822110f1.html#a9ba6aaac1f254ad54badf515822110f1">init_event</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d78/fonctions_8h.html#a9ba6aaac1f254ad54badf515822110f1">init_event</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d78/fonctions_8h.html#aad95fee9e6bf2bd4c8ae74d98e1a6821">init_sousbuffer</a>(<a class="code" href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a> *<a class="code" href="../../d3/d7a/map_8c.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>, joueur_t * joueur);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="afonctions_8h_a9ba6aaac1f254ad54badf515822110f1_html_a9ba6aaac1f254ad54badf515822110f1"><div class="ttname"><a href="../../d4/d78/fonctions_8h_a9ba6aaac1f254ad54badf515822110f1.html#a9ba6aaac1f254ad54badf515822110f1">init_event</a></div><div class="ttdeci">void init_event(void)</div><div class="ttdoc">Fonction qui initialise les fonctions liées aux évenements.</div></div>
-<div class="ttc" id="afonctions_8h_a7b6ab7ddc25c37de5b94c942bbc5949c_html_a7b6ab7ddc25c37de5b94c942bbc5949c"><div class="ttname"><a href="../../d4/d78/fonctions_8h_a7b6ab7ddc25c37de5b94c942bbc5949c.html#a7b6ab7ddc25c37de5b94c942bbc5949c">terminate_init</a></div><div class="ttdeci">void terminate_init(void)</div></div>
-<div class="ttc" id="afonctions_8h_a2858154e2009b0e6e616f313177762bc_html_a2858154e2009b0e6e616f313177762bc"><div class="ttname"><a href="../../d4/d78/fonctions_8h_a2858154e2009b0e6e616f313177762bc.html#a2858154e2009b0e6e616f313177762bc">init</a></div><div class="ttdeci">void init(void)</div><div class="ttdoc">Fonction qui initialise le Programme.</div><div class="ttdef"><b>Definition:</b> init_close.c:208</div></div>
+<div class="ttc" id="afonctions_8h_html_a7b6ab7ddc25c37de5b94c942bbc5949c"><div class="ttname"><a href="../../d4/d78/fonctions_8h.html#a7b6ab7ddc25c37de5b94c942bbc5949c">terminate_init</a></div><div class="ttdeci">void terminate_init(void)</div></div>
+<div class="ttc" id="afonctions_8h_html_a2858154e2009b0e6e616f313177762bc"><div class="ttname"><a href="../../d4/d78/fonctions_8h.html#a2858154e2009b0e6e616f313177762bc">init</a></div><div class="ttdeci">void init(void)</div><div class="ttdoc">Fonction qui initialise le Programme.</div><div class="ttdef"><b>Definition:</b> init_close.c:235</div></div>
+<div class="ttc" id="amap_8c_html_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae"><div class="ttname"><a href="../../d3/d7a/map_8c.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a></div><div class="ttdeci">t_map * map</div><div class="ttdef"><b>Definition:</b> map.c:22</div></div>
+<div class="ttc" id="amap_8h_html"><div class="ttname"><a href="../../dc/db7/map_8h.html">map.h</a></div><div class="ttdoc">Définitions des fonctions de gestion de la map.</div></div>
+<div class="ttc" id="apersonnage_8h_html"><div class="ttname"><a href="../../d2/d2f/personnage_8h.html">personnage.h</a></div><div class="ttdoc">Fichier contenant toutes les définitions concernant le personnage.</div></div>
+<div class="ttc" id="afonctions_8h_html_aad95fee9e6bf2bd4c8ae74d98e1a6821"><div class="ttname"><a href="../../d4/d78/fonctions_8h.html#aad95fee9e6bf2bd4c8ae74d98e1a6821">init_sousbuffer</a></div><div class="ttdeci">void init_sousbuffer(t_map *map, joueur_t *joueur)</div><div class="ttdef"><b>Definition:</b> init_close.c:149</div></div>
+<div class="ttc" id="afonctions_8h_html_a9ba6aaac1f254ad54badf515822110f1"><div class="ttname"><a href="../../d4/d78/fonctions_8h.html#a9ba6aaac1f254ad54badf515822110f1">init_event</a></div><div class="ttdeci">void init_event(void)</div><div class="ttdoc">Fonction qui initialise les fonctions liées aux évenements.</div></div>
+<div class="ttc" id="ainit__close_8c_html_aa6370cd7b08553210cd2ca45f421b122"><div class="ttname"><a href="../../d1/d41/init__close_8c.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a></div><div class="ttdeci">struct t_map t_map</div><div class="ttdoc">Définition de la structure map.</div><div class="ttdef"><b>Definition:</b> init_close.c:15</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">

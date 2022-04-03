@@ -2,16 +2,9 @@
 \label{affichage_8c}\index{affichage.c@{affichage.c}}
 
 
-Fichier contenant toutes les fonctions relatives à l\textquotesingle{}affichage.  
+Fonctions liées au module affichage.  
 
 
-{\ttfamily \#include $<$affichage.\+h$>$}\newline
-{\ttfamily \#include $<$listes.\+h$>$}\newline
-{\ttfamily \#include $<$code\+\_\+erreur.\+h$>$}\newline
-{\ttfamily \#include $<$personnage.\+h$>$}\newline
-{\ttfamily \#include $<$math.\+h$>$}\newline
-{\ttfamily \#include $<$map.\+h$>$}\newline
-{\ttfamily \#include $<$definition\+\_\+commun.\+h$>$}\newline
 Graphe des dépendances par inclusion de affichage.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -23,116 +16,158 @@ Graphe des dépendances par inclusion de affichage.\+c\+:
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void $\ast$ \mbox{\hyperlink{affichage_8c_ad6025b84e0d3f62a1ca7b1835d9263df_ad6025b84e0d3f62a1ca7b1835d9263df}{ajout\+\_\+text\+\_\+liste}} (void $\ast$t)
+void $\ast$ \mbox{\hyperlink{affichage_8c_ad6025b84e0d3f62a1ca7b1835d9263df}{ajout\+\_\+text\+\_\+liste}} (void $\ast$t)
 \item 
-void \mbox{\hyperlink{affichage_8c_a6e1d5af117ac87c2c309507f4750dcb9_a6e1d5af117ac87c2c309507f4750dcb9}{detruire\+\_\+texture}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$$\ast$texture)
+void \mbox{\hyperlink{affichage_8c_a6e1d5af117ac87c2c309507f4750dcb9}{detruire\+\_\+texture}} (t\+\_\+aff $\ast$$\ast$texture)
 \begin{DoxyCompactList}\small\item\em Fonction qui détruit une structure d\textquotesingle{}affichage de texture passée en paramètre. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{affichage_8c_a70cc7e744c27c15ad5763c75cf487cef_a70cc7e744c27c15ad5763c75cf487cef}{detruire\+\_\+liste\+\_\+textures}} (\mbox{\hyperlink{affichage_8h_a335b4ad9655d3aedc1d71c9f1f1fc06d_a335b4ad9655d3aedc1d71c9f1f1fc06d}{t\+\_\+l\+\_\+aff}} $\ast$$\ast$l\+\_\+texture)
+void \mbox{\hyperlink{affichage_8c_a70cc7e744c27c15ad5763c75cf487cef}{detruire\+\_\+liste\+\_\+textures}} (t\+\_\+l\+\_\+aff $\ast$$\ast$l\+\_\+texture)
 \begin{DoxyCompactList}\small\item\em Fonction qui détruit une liste de textures. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a2201c110dd65bb833da125813d849273_a2201c110dd65bb833da125813d849273}{rect\+\_\+correct\+\_\+texture}} (const S\+D\+L\+\_\+\+Rect $\ast$const to\+\_\+verify, const int width, const int height)
+\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a2201c110dd65bb833da125813d849273}{rect\+\_\+correct\+\_\+texture}} (const S\+D\+L\+\_\+\+Rect $\ast$const to\+\_\+verify, const int width, const int height)
 \begin{DoxyCompactList}\small\item\em Fonction qui détermine si la structure S\+D\+L\+\_\+\+Rect ne dépasse pas la taille de la texture. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} \mbox{\hyperlink{affichage_8c_ae758bf274706045e5903407fbaf967cc_ae758bf274706045e5903407fbaf967cc}{update\+\_\+frame\+\_\+texture}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture, const int x, const int y)
+\mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} \mbox{\hyperlink{affichage_8c_ae758bf274706045e5903407fbaf967cc}{update\+\_\+frame\+\_\+texture}} (t\+\_\+aff $\ast$texture, const int x, const int y)
 \item 
-void \mbox{\hyperlink{affichage_8c_a7adca84e118cd2c0a47dc5f754a4a5b2_a7adca84e118cd2c0a47dc5f754a4a5b2}{next\+\_\+frame\+\_\+x}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture)
+void \mbox{\hyperlink{affichage_8c_a7adca84e118cd2c0a47dc5f754a4a5b2}{next\+\_\+frame\+\_\+x}} (t\+\_\+aff $\ast$texture)
 \begin{DoxyCompactList}\small\item\em Fonction qui positionne la texture au sprite d\textquotesingle{}après sur l\textquotesingle{}axe des x. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{affichage_8c_a1e152c4ffb55530b72318cf321ef2770_a1e152c4ffb55530b72318cf321ef2770}{next\+\_\+frame\+\_\+y}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture)
+void \mbox{\hyperlink{affichage_8c_a1e152c4ffb55530b72318cf321ef2770}{next\+\_\+frame\+\_\+y}} (t\+\_\+aff $\ast$texture)
 \begin{DoxyCompactList}\small\item\em Fonction qui positionne la texture au sprite d\textquotesingle{}après sur l\textquotesingle{}axe des y. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} \mbox{\hyperlink{affichage_8c_a0843b69b213a0b2f2645ad6158e00bff_a0843b69b213a0b2f2645ad6158e00bff}{next\+\_\+frame\+\_\+x\+\_\+indice}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture, const unsigned int indice)
+\mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} \mbox{\hyperlink{affichage_8c_a912edf846a7b2241716b7c93821b5817}{next\+\_\+frame\+\_\+indice}} (t\+\_\+aff $\ast$texture, const unsigned int x, const unsigned int y)
 \begin{DoxyCompactList}\small\item\em Fonction qui positionne la texture au n-\/ème sprite sur l\textquotesingle{}axe des x. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} \mbox{\hyperlink{affichage_8c_ae4bffa3eb5b67a9316544428c25bdc44_ae4bffa3eb5b67a9316544428c25bdc44}{next\+\_\+frame\+\_\+y\+\_\+indice}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture, const unsigned int indice)
+\mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} \mbox{\hyperlink{affichage_8c_a0843b69b213a0b2f2645ad6158e00bff}{next\+\_\+frame\+\_\+x\+\_\+indice}} (t\+\_\+aff $\ast$texture, const unsigned int indice)
+\begin{DoxyCompactList}\small\item\em Fonction qui positionne la texture au n-\/ème sprite sur l\textquotesingle{}axe des x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} \mbox{\hyperlink{affichage_8c_ae4bffa3eb5b67a9316544428c25bdc44}{next\+\_\+frame\+\_\+y\+\_\+indice}} (t\+\_\+aff $\ast$texture, const unsigned int indice)
 \begin{DoxyCompactList}\small\item\em Fonction qui positionne la texture au n-\/ème sprite sur l\textquotesingle{}axe des y. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{affichage_8c_a3e6b4564952e31a2d9e9d0c98dd6ee78_a3e6b4564952e31a2d9e9d0c98dd6ee78}{def\+\_\+texture\+\_\+taille}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$a\+\_\+modifier, const int longueur, const int largeur)
+void \mbox{\hyperlink{affichage_8c_a3e6b4564952e31a2d9e9d0c98dd6ee78}{def\+\_\+texture\+\_\+taille}} (t\+\_\+aff $\ast$a\+\_\+modifier, const int longueur, const int largeur)
 \item 
-void \mbox{\hyperlink{affichage_8c_a833a9e3f93662a67ba30a73d64435286_a833a9e3f93662a67ba30a73d64435286}{info\+\_\+texture}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture)
+void \mbox{\hyperlink{affichage_8c_a833a9e3f93662a67ba30a73d64435286}{info\+\_\+texture}} (t\+\_\+aff $\ast$texture)
 \begin{DoxyCompactList}\small\item\em Affiche des informations sur une texture. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$ \mbox{\hyperlink{affichage_8c_a59fc51b629cfed9815495f235dae78e0_a59fc51b629cfed9815495f235dae78e0}{creer\+\_\+texture}} (const char $\ast$nom\+\_\+fichier, const int taille\+\_\+t\+\_\+x, const int taille\+\_\+t\+\_\+y, const int x, const int y, const float multiplicateur\+\_\+taille)
+t\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_a59fc51b629cfed9815495f235dae78e0}{creer\+\_\+texture}} (const char $\ast$nom\+\_\+fichier, const int taille\+\_\+t\+\_\+x, const int taille\+\_\+t\+\_\+y, const int x, const int y, const float multiplicateur\+\_\+taille)
 \item 
-\mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} \mbox{\hyperlink{affichage_8c_a47b9be5462def4189b86dcf60f3a29a5_a47b9be5462def4189b86dcf60f3a29a5}{afficher\+\_\+texture}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture, S\+D\+L\+\_\+\+Renderer $\ast$rendu)
+\mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} \mbox{\hyperlink{affichage_8c_a47b9be5462def4189b86dcf60f3a29a5}{afficher\+\_\+texture}} (t\+\_\+aff $\ast$texture, S\+D\+L\+\_\+\+Renderer $\ast$rendu)
 \begin{DoxyCompactList}\small\item\em Affiche la texture donnée en paramètre à l\textquotesingle{}écran. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{affichage_8h_a335b4ad9655d3aedc1d71c9f1f1fc06d_a335b4ad9655d3aedc1d71c9f1f1fc06d}{t\+\_\+l\+\_\+aff}} $\ast$ \mbox{\hyperlink{affichage_8c_af26bc06f797ad5be1d0b8fb9a3a1a338_af26bc06f797ad5be1d0b8fb9a3a1a338}{init\+\_\+textures\+\_\+joueur}} (\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$j)
-\item 
-\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$ \mbox{\hyperlink{affichage_8c_a4d69c38e3fbca3ce3bc6a299cac4a1a0_a4d69c38e3fbca3ce3bc6a299cac4a1a0}{init\+\_\+texture\+\_\+joueur}} (\mbox{\hyperlink{affichage_8h_a335b4ad9655d3aedc1d71c9f1f1fc06d_a335b4ad9655d3aedc1d71c9f1f1fc06d}{t\+\_\+l\+\_\+aff}} $\ast$textures\+\_\+joueur)
+t\+\_\+l\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_aea6ef750998e466ed9d8beef7daefc09}{init\+\_\+textures\+\_\+joueur}} (joueur\+\_\+t $\ast$j, int num\+\_\+j)
+\begin{DoxyCompactList}\small\item\em Fonction qui creer et renvoie une liste de textures pour le personnage (joueur) \end{DoxyCompactList}\item 
+t\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_aed283afbfc26ca77a0e28e04aee3cc0e}{init\+\_\+texture\+\_\+joueur}} (t\+\_\+l\+\_\+aff $\ast$textures\+\_\+joueur, joueur\+\_\+t $\ast$joueur)
 \begin{DoxyCompactList}\small\item\em Fonction qui renvoie la texture de départ du personnage (joueur) \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{affichage_8c_adf38042b72a9ceff2aebef3efe2af6bd_adf38042b72a9ceff2aebef3efe2af6bd}{appliquer\+\_\+coord\+\_\+rect}} (const S\+D\+L\+\_\+\+Rect $\ast$const a\+\_\+copier, \mbox{\hyperlink{affichage_8h_a335b4ad9655d3aedc1d71c9f1f1fc06d_a335b4ad9655d3aedc1d71c9f1f1fc06d}{t\+\_\+l\+\_\+aff}} $\ast$textures)
+void \mbox{\hyperlink{affichage_8c_adf38042b72a9ceff2aebef3efe2af6bd}{appliquer\+\_\+coord\+\_\+rect}} (const S\+D\+L\+\_\+\+Rect $\ast$const a\+\_\+copier, t\+\_\+l\+\_\+aff $\ast$textures)
 \item 
-\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$ \mbox{\hyperlink{affichage_8c_a668ba4cf805157557b09a5a71fd67c4b_a668ba4cf805157557b09a5a71fd67c4b}{next\+\_\+frame\+\_\+joueur}} (\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$j)
+t\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_a668ba4cf805157557b09a5a71fd67c4b}{next\+\_\+frame\+\_\+joueur}} (joueur\+\_\+t $\ast$j)
 \item 
-\mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} \mbox{\hyperlink{affichage_8c_ab3637688138fc059d87799ea8ec77514_ab3637688138fc059d87799ea8ec77514}{afficher\+\_\+buffer}} (\mbox{\hyperlink{structlist}{list}} $\ast$buffer, S\+D\+L\+\_\+\+Renderer $\ast$rendu)
+void \mbox{\hyperlink{affichage_8c_a9bfa693255703c0de636ceb7db7d8d2d}{afficher\+\_\+monstres}} (\mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+monstre, joueur\+\_\+t $\ast$joueur)
+\begin{DoxyCompactList}\small\item\em Fonction qui affiche les monstres. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{affichage_8c_a6d78ce42135a25accbd3bf152dc94563}{afficher\+\_\+sorts}} (\mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+sorts, joueur\+\_\+t $\ast$joueur)
+\begin{DoxyCompactList}\small\item\em Fonction qui affiche les sorts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} \mbox{\hyperlink{affichage_8c_ab3637688138fc059d87799ea8ec77514}{afficher\+\_\+buffer}} (\mbox{\hyperlink{structlist}{list}} $\ast$buffer, S\+D\+L\+\_\+\+Renderer $\ast$rendu)
 \item 
-\mbox{\hyperlink{structpoint}{point}} \mbox{\hyperlink{affichage_8c_ac0f9e4c72a1a75de6aea7bc84616f1d7_ac0f9e4c72a1a75de6aea7bc84616f1d7}{get\+\_\+screen\+\_\+center}} ()
+\mbox{\hyperlink{structpoint}{point}} \mbox{\hyperlink{affichage_8c_ac0f9e4c72a1a75de6aea7bc84616f1d7}{get\+\_\+screen\+\_\+center}} ()
 \item 
-\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a4309414813bec32b17ef18f77e1cfa7f_a4309414813bec32b17ef18f77e1cfa7f}{point\+\_\+in\+\_\+rect}} (S\+D\+L\+\_\+\+Rect r, \mbox{\hyperlink{structpoint}{point}} p)
+\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a4309414813bec32b17ef18f77e1cfa7f}{point\+\_\+in\+\_\+rect}} (S\+D\+L\+\_\+\+Rect r, \mbox{\hyperlink{structpoint}{point}} p)
 \item 
-void \mbox{\hyperlink{affichage_8c_a6bd4bd87195563a7315afb0fda7fe6d7_a6bd4bd87195563a7315afb0fda7fe6d7}{rect\+\_\+centre\+\_\+x}} (S\+D\+L\+\_\+\+Rect $\ast$rectangle)
+void \mbox{\hyperlink{affichage_8c_a6bd4bd87195563a7315afb0fda7fe6d7}{rect\+\_\+centre\+\_\+x}} (S\+D\+L\+\_\+\+Rect $\ast$rectangle)
 \item 
-void \mbox{\hyperlink{affichage_8c_adfcad3e29121806faaa438925ed845ab_adfcad3e29121806faaa438925ed845ab}{rect\+\_\+centre\+\_\+y}} (S\+D\+L\+\_\+\+Rect $\ast$rectangle)
+void \mbox{\hyperlink{affichage_8c_adfcad3e29121806faaa438925ed845ab}{rect\+\_\+centre\+\_\+y}} (S\+D\+L\+\_\+\+Rect $\ast$rectangle)
 \item 
-void \mbox{\hyperlink{affichage_8c_a508ce5ebec0cacf99a3bbddd33d6880f_a508ce5ebec0cacf99a3bbddd33d6880f}{rect\+\_\+centre}} (S\+D\+L\+\_\+\+Rect $\ast$rectangle)
+void \mbox{\hyperlink{affichage_8c_a508ce5ebec0cacf99a3bbddd33d6880f}{rect\+\_\+centre}} (S\+D\+L\+\_\+\+Rect $\ast$rectangle)
 \item 
-void \mbox{\hyperlink{affichage_8c_a5911c692b804289a22f5a161b4fe2286_a5911c692b804289a22f5a161b4fe2286}{deplacer\+\_\+texture\+\_\+centre}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture, int x, int y)
+void \mbox{\hyperlink{affichage_8c_ab74333683d8d4816aa1331794b3b9e94}{rect\+\_\+centre\+\_\+rect\+\_\+x}} (S\+D\+L\+\_\+\+Rect $\ast$rectangle, S\+D\+L\+\_\+\+Rect $\ast$rectangle\+\_\+centre)
 \item 
-void \mbox{\hyperlink{affichage_8c_ae766b650805d4bdfc2faa57ba24f6cae_ae766b650805d4bdfc2faa57ba24f6cae}{deplacer\+\_\+rect\+\_\+origine}} (S\+D\+L\+\_\+\+Rect $\ast$r, int x, int y)
+void \mbox{\hyperlink{affichage_8c_ada2e4bcab49cd7c1563aef3afa20f75d}{rect\+\_\+centre\+\_\+rect\+\_\+y}} (S\+D\+L\+\_\+\+Rect $\ast$rectangle, S\+D\+L\+\_\+\+Rect $\ast$rectangle\+\_\+centre)
 \item 
-void \mbox{\hyperlink{affichage_8c_a48d7af885eb3fdd6655cf83b85f454c9_a48d7af885eb3fdd6655cf83b85f454c9}{deplacer\+\_\+texture\+\_\+origine}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture, int x, int y)
+void \mbox{\hyperlink{affichage_8c_af70d121ff2c41380da955ae836b109eb}{rect\+\_\+centre\+\_\+rect}} (S\+D\+L\+\_\+\+Rect $\ast$rectangle, S\+D\+L\+\_\+\+Rect $\ast$rectangle\+\_\+centre)
 \item 
-void \mbox{\hyperlink{affichage_8c_a6a61a69139c9efe60f3b382747493870_a6a61a69139c9efe60f3b382747493870}{deplacer\+\_\+rect\+\_\+haut\+\_\+droit}} (S\+D\+L\+\_\+\+Rect $\ast$r, int x, int y)
+void \mbox{\hyperlink{affichage_8c_a5911c692b804289a22f5a161b4fe2286}{deplacer\+\_\+texture\+\_\+centre}} (t\+\_\+aff $\ast$texture, int x, int y)
 \item 
-void \mbox{\hyperlink{affichage_8c_ae2ee44d9a091423e00920e05b6e81750_ae2ee44d9a091423e00920e05b6e81750}{deplacer\+\_\+texture\+\_\+haut\+\_\+droit}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture, int x, int y)
+void \mbox{\hyperlink{affichage_8c_ae766b650805d4bdfc2faa57ba24f6cae}{deplacer\+\_\+rect\+\_\+origine}} (S\+D\+L\+\_\+\+Rect $\ast$r, int x, int y)
 \item 
-void \mbox{\hyperlink{affichage_8c_ae6459fb3c595a3121db1ff654bd78e93_ae6459fb3c595a3121db1ff654bd78e93}{deplacer\+\_\+texture\+\_\+bas\+\_\+gauche}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture, int x, int y)
+void \mbox{\hyperlink{affichage_8c_a48d7af885eb3fdd6655cf83b85f454c9}{deplacer\+\_\+texture\+\_\+origine}} (t\+\_\+aff $\ast$texture, int x, int y)
 \item 
-void \mbox{\hyperlink{affichage_8c_a8a05cde4c824ad13d8f2dbf73b0b741f_a8a05cde4c824ad13d8f2dbf73b0b741f}{deplacer\+\_\+texture\+\_\+bas\+\_\+droit}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture, int x, int y)
+void \mbox{\hyperlink{affichage_8c_a6a61a69139c9efe60f3b382747493870}{deplacer\+\_\+rect\+\_\+haut\+\_\+droit}} (S\+D\+L\+\_\+\+Rect $\ast$r, int x, int y)
 \item 
-void \mbox{\hyperlink{affichage_8c_a9d3a1090bb34f34aa532f12d75bfb75c_a9d3a1090bb34f34aa532f12d75bfb75c}{modif\+\_\+affichage\+\_\+rect}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture, S\+D\+L\+\_\+\+Rect r)
+void \mbox{\hyperlink{affichage_8c_ae2ee44d9a091423e00920e05b6e81750}{deplacer\+\_\+texture\+\_\+haut\+\_\+droit}} (t\+\_\+aff $\ast$texture, int x, int y)
 \item 
-void \mbox{\hyperlink{affichage_8c_a496f3ac319fd5099461ed8b705226fff_a496f3ac319fd5099461ed8b705226fff}{deplacement\+\_\+x\+\_\+pers}} (\mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$m, \mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$j, int x)
+void \mbox{\hyperlink{affichage_8c_ae6459fb3c595a3121db1ff654bd78e93}{deplacer\+\_\+texture\+\_\+bas\+\_\+gauche}} (t\+\_\+aff $\ast$texture, int x, int y)
 \item 
-void \mbox{\hyperlink{affichage_8c_a2d9aff5f49a8ad8516d9d5b5e3f43bd5_a2d9aff5f49a8ad8516d9d5b5e3f43bd5}{deplacement\+\_\+y\+\_\+pers}} (\mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$m, \mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$j, int y)
+void \mbox{\hyperlink{affichage_8c_a8a05cde4c824ad13d8f2dbf73b0b741f}{deplacer\+\_\+texture\+\_\+bas\+\_\+droit}} (t\+\_\+aff $\ast$texture, int x, int y)
 \item 
-void \mbox{\hyperlink{affichage_8c_a83f1b5ddb558420c53c41071e559a8ff_a83f1b5ddb558420c53c41071e559a8ff}{text\+\_\+copier\+\_\+position}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$a\+\_\+modifier, const \mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$const original)
+void \mbox{\hyperlink{affichage_8c_a9d3a1090bb34f34aa532f12d75bfb75c}{modif\+\_\+affichage\+\_\+rect}} (t\+\_\+aff $\ast$texture, S\+D\+L\+\_\+\+Rect r)
 \item 
-\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_aada9bf5a3890b9d12a93e50b7c19b523_aada9bf5a3890b9d12a93e50b7c19b523}{rects\+\_\+egal\+\_\+x}} (const S\+D\+L\+\_\+\+Rect $\ast$const r1, S\+D\+L\+\_\+\+Rect const $\ast$const r2)
+void \mbox{\hyperlink{affichage_8c_a496f3ac319fd5099461ed8b705226fff}{deplacement\+\_\+x\+\_\+pers}} (\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$m, joueur\+\_\+t $\ast$j, int x)
 \item 
-\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a476d6dbccccfa7149563166bf7905997_a476d6dbccccfa7149563166bf7905997}{rects\+\_\+egal\+\_\+y}} (const S\+D\+L\+\_\+\+Rect $\ast$const r1, S\+D\+L\+\_\+\+Rect const $\ast$const r2)
+void \mbox{\hyperlink{affichage_8c_a2d9aff5f49a8ad8516d9d5b5e3f43bd5}{deplacement\+\_\+y\+\_\+pers}} (\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$m, joueur\+\_\+t $\ast$j, int y)
 \item 
-S\+D\+L\+\_\+\+Color \mbox{\hyperlink{affichage_8c_a07753dec9b0d8ad58944ccd3f7406ce3_a07753dec9b0d8ad58944ccd3f7406ce3}{color}} (Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+void \mbox{\hyperlink{affichage_8c_a83f1b5ddb558420c53c41071e559a8ff}{text\+\_\+copier\+\_\+position}} (t\+\_\+aff $\ast$a\+\_\+modifier, const t\+\_\+aff $\ast$const original)
+\item 
+\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_aada9bf5a3890b9d12a93e50b7c19b523}{rects\+\_\+egal\+\_\+x}} (const S\+D\+L\+\_\+\+Rect $\ast$const r1, S\+D\+L\+\_\+\+Rect const $\ast$const r2)
+\item 
+\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a476d6dbccccfa7149563166bf7905997}{rects\+\_\+egal\+\_\+y}} (const S\+D\+L\+\_\+\+Rect $\ast$const r1, S\+D\+L\+\_\+\+Rect const $\ast$const r2)
+\item 
+S\+D\+L\+\_\+\+Color \mbox{\hyperlink{affichage_8c_a07753dec9b0d8ad58944ccd3f7406ce3}{color}} (Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 \begin{DoxyCompactList}\small\item\em Fonction qui permet de choisir une couleur S\+DL. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{affichage_8c_aef15da3b25d6635d91fa9e09f0bd4c70_aef15da3b25d6635d91fa9e09f0bd4c70}{placer\+\_\+texture}} (\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$texture, int x, int y)
-\begin{DoxyCompactList}\small\item\em Place une texture sur l\textquotesingle{}écran. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{affichage_8c_aef15da3b25d6635d91fa9e09f0bd4c70}{placer\+\_\+texture}} (t\+\_\+aff $\ast$texture, int x, int y)
+\begin{DoxyCompactList}\small\item\em Place une texture sur l\textquotesingle{}écran. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{affichage_8c_aac53a969bdaf69a4807d83bfab5738c2}{rect\+\_\+ecran\+\_\+to\+\_\+rect\+\_\+map}} (S\+D\+L\+\_\+\+Rect $\ast$ecran, S\+D\+L\+\_\+\+Rect $\ast$r\+\_\+map, int x, int y)
+\item 
+\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a7fc4f1865011306b55987cab6f1cc5a0}{deplacement\+\_\+x\+\_\+entite}} (\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$m, t\+\_\+aff $\ast$texture, int x, S\+D\+L\+\_\+\+Rect $\ast$r)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet le déplacement d\textquotesingle{}une entité \end{DoxyCompactList}\item 
+\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_ad62d8b671f591eef20a7f3347067e729}{deplacement\+\_\+y\+\_\+entite}} (\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$m, t\+\_\+aff $\ast$texture, int y, S\+D\+L\+\_\+\+Rect $\ast$r)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet le déplacement d\textquotesingle{}une entité \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{affichage_8c_a00db128b4c54ca69b10871d8eed417f9}{init\+\_\+animations}} ()
+\begin{DoxyCompactList}\small\item\em Initialise les textures des animations. \end{DoxyCompactList}\item 
+t\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_ab247b3f13df2741cc77f45e6c80d6a82}{next\+\_\+frame\+\_\+animation}} (joueur\+\_\+t $\ast$joueur)
+\begin{DoxyCompactList}\small\item\em Fait évoluer les animations en jeu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{affichage_8c_a293f0049d422a068c70def4e5608484d}{lister\+\_\+animations}} (joueur\+\_\+t $\ast$$\ast$joueurs, \mbox{\hyperlink{structlist}{list}} $\ast$animations)
+\begin{DoxyCompactList}\small\item\em Liste les animations en jeu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{affichage_8c_a8a414764c90c1cc2a104f536ef34a8dd}{afficher\+\_\+animations}} (\mbox{\hyperlink{structlist}{list}} $\ast$animations)
+\item 
+int \mbox{\hyperlink{affichage_8c_ab41df9da5f22ea2edd48f4f6d0562158}{current\+\_\+frame\+\_\+x}} (t\+\_\+aff $\ast$texture)
+\begin{DoxyCompactList}\small\item\em Fonction qui donne l\textquotesingle{}indice sur l\textquotesingle{}axe des abscisses actuelle de la texture. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{affichage_8c_ac5cde30d91e5bbd8e8b7db9c04229752}{current\+\_\+frame\+\_\+y}} (t\+\_\+aff $\ast$texture)
+\begin{DoxyCompactList}\small\item\em Fonction qui donne l\textquotesingle{}indice sur l\textquotesingle{}axe des ordonnées actuelle de la texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{affichage_8c_aa18ada4ee80cd3ec4a96012f5bfdf469}{detruire\+\_\+collision\+\_\+dans\+\_\+liste}} (\mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+collisions, S\+D\+L\+\_\+\+Rect $\ast$collision)
+\item 
+S\+D\+L\+\_\+\+Point \mbox{\hyperlink{affichage_8c_ad92b6b4765071f03f0a44087e6355bbd}{get\+\_\+rect\+\_\+center}} (const S\+D\+L\+\_\+\+Rect $\ast$const r)
+\begin{DoxyCompactList}\small\item\em Renvoie les coordonnées du centre du rectangle. \end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+Point \mbox{\hyperlink{affichage_8c_aad94b2ce0d93f581c0f82b0467a8d2ed}{get\+\_\+rect\+\_\+center\+\_\+coord}} (const S\+D\+L\+\_\+\+Rect $\ast$const r)
+\begin{DoxyCompactList}\small\item\em Renvoie les coordonnées du centre du rectangle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{affichage_8c_a26cf1d2055162e3bf7166de2f55902f9}{place\+\_\+rect\+\_\+center\+\_\+from\+\_\+point}} (S\+D\+L\+\_\+\+Rect $\ast$r, S\+D\+L\+\_\+\+Point p)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de placer le centre du rectangle donné en paramètre à un point précis. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{affichage_8c_a8377ca78d82bccc84bac70229aeac875_a8377ca78d82bccc84bac70229aeac875}{liste\+De\+Textures}}
+\mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{affichage_8c_a8377ca78d82bccc84bac70229aeac875}{liste\+De\+Textures}}
 \item 
-\mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{affichage_8c_adc1d100970d8cf56a0511e7af4c6415a_adc1d100970d8cf56a0511e7af4c6415a}{buffer\+\_\+affichage}}
+\mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{affichage_8c_adc1d100970d8cf56a0511e7af4c6415a}{buffer\+\_\+affichage}}
 \item 
-long int \mbox{\hyperlink{affichage_8c_a762704f794c8d74099d3053757266dcb_a762704f794c8d74099d3053757266dcb}{compteur}}
+t\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_a994bc98929137f8db88670c8b6f0851c}{heal}} = N\+U\+LL
 \item 
-unsigned int \mbox{\hyperlink{affichage_8c_a28b763408ce1b0c5b625e4c409a5022a_a28b763408ce1b0c5b625e4c409a5022a}{F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+O\+N\+G\+U\+E\+UR}}
+t\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_aef49d39125567f1a9d5ed0561ea60edc}{fenetre\+\_\+finale}} = N\+U\+LL
 \item 
-unsigned int \mbox{\hyperlink{affichage_8c_a675ea76148cd2210ee956b7358f18194_a675ea76148cd2210ee956b7358f18194}{F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+A\+R\+G\+E\+UR}}
+long int \mbox{\hyperlink{affichage_8c_a762704f794c8d74099d3053757266dcb}{compteur}}
 \item 
-S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{affichage_8c_adede5261ac6b86bf02adc9516dd999bf_adede5261ac6b86bf02adc9516dd999bf}{tx}}
+unsigned int \mbox{\hyperlink{affichage_8c_a28b763408ce1b0c5b625e4c409a5022a}{F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+O\+N\+G\+U\+E\+UR}}
 \item 
-S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{affichage_8c_af91959b4ed80cc07433e8e07ddeb28bb_af91959b4ed80cc07433e8e07ddeb28bb}{ty}}
+unsigned int \mbox{\hyperlink{affichage_8c_a675ea76148cd2210ee956b7358f18194}{F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+A\+R\+G\+E\+UR}}
 \item 
-float \mbox{\hyperlink{affichage_8c_ad73b9ba1a88012fd3ae8637a61b57709_ad73b9ba1a88012fd3ae8637a61b57709}{multiplicateur\+\_\+x}}
+S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{affichage_8c_adede5261ac6b86bf02adc9516dd999bf}{tx}}
 \item 
-float \mbox{\hyperlink{affichage_8c_a2c28b6f5a4c139bcb8ed3fed95ff8099_a2c28b6f5a4c139bcb8ed3fed95ff8099}{multiplicateur\+\_\+y}}
+S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{affichage_8c_af91959b4ed80cc07433e8e07ddeb28bb}{ty}}
+\item 
+float \mbox{\hyperlink{affichage_8c_ad73b9ba1a88012fd3ae8637a61b57709}{multiplicateur\+\_\+x}}
+\item 
+float \mbox{\hyperlink{affichage_8c_a2c28b6f5a4c139bcb8ed3fed95ff8099}{multiplicateur\+\_\+y}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
-Fichier contenant toutes les fonctions relatives à l\textquotesingle{}affichage. 
-
 \begin{DoxyAuthor}{Auteur}
-Despert Ange (\href{mailto:Ange.Despert.Etu@univ-lemans.fr}{\texttt{ Ange.\+Despert.\+Etu@univ-\/lemans.\+fr}}) 
+Ange Despert (\href{mailto:Ange.Despert.Etu@univ-lemans.fr}{\texttt{ Ange.\+Despert.\+Etu@univ-\/lemans.\+fr}}) 
+
+Max Descomps (\href{mailto:Max.Descomps.Etu@univ-lemans.fr}{\texttt{ Max.\+Descomps.\+Etu@univ-\/lemans.\+fr}}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-0.\+1 
+0.\+2 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-12/02/2022
+28/03/2022 
 \end{DoxyDate}
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2022 
@@ -140,11 +175,31 @@ Copyright (c) 2022
 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{affichage_8c_ab3637688138fc059d87799ea8ec77514_ab3637688138fc059d87799ea8ec77514}\label{affichage_8c_ab3637688138fc059d87799ea8ec77514_ab3637688138fc059d87799ea8ec77514}} 
+\mbox{\Hypertarget{affichage_8c_a8a414764c90c1cc2a104f536ef34a8dd}\label{affichage_8c_a8a414764c90c1cc2a104f536ef34a8dd}} 
+\index{affichage.c@{affichage.c}!afficher\_animations@{afficher\_animations}}
+\index{afficher\_animations@{afficher\_animations}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_animations()}{afficher\_animations()}}
+{\footnotesize\ttfamily void afficher\+\_\+animations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{animations }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a8a414764c90c1cc2a104f536ef34a8dd_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{da/d68/affichage_8c_a8a414764c90c1cc2a104f536ef34a8dd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_ab3637688138fc059d87799ea8ec77514}\label{affichage_8c_ab3637688138fc059d87799ea8ec77514}} 
 \index{affichage.c@{affichage.c}!afficher\_buffer@{afficher\_buffer}}
 \index{afficher\_buffer@{afficher\_buffer}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{afficher\_buffer()}{afficher\_buffer()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} afficher\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{buffer,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{rendu }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} afficher\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{buffer,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{rendu }\end{DoxyParamCaption})}
 
 Fonction qui affiche les textures contenues dans la liste en paramètre.
 
@@ -160,15 +215,72 @@ Les premiers éléments seront en arrière plan et les derniers seront en 1er pl
 \begin{DoxyReturn}{Renvoie}
 Une valeur différente à 0 lors d\textquotesingle{}une erreur 
 \end{DoxyReturn}
-\mbox{\Hypertarget{affichage_8c_a47b9be5462def4189b86dcf60f3a29a5_a47b9be5462def4189b86dcf60f3a29a5}\label{affichage_8c_a47b9be5462def4189b86dcf60f3a29a5_a47b9be5462def4189b86dcf60f3a29a5}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_ab3637688138fc059d87799ea8ec77514_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a9bfa693255703c0de636ceb7db7d8d2d}\label{affichage_8c_a9bfa693255703c0de636ceb7db7d8d2d}} 
+\index{affichage.c@{affichage.c}!afficher\_monstres@{afficher\_monstres}}
+\index{afficher\_monstres@{afficher\_monstres}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_monstres()}{afficher\_monstres()}}
+{\footnotesize\ttfamily void afficher\+\_\+monstres (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste\+\_\+monstre,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em liste\+\_\+monstre} & une liste de monstre \\
+\hline
+{\em joueur} & le joueur qui influe sur les monstres \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a9bfa693255703c0de636ceb7db7d8d2d_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{da/d68/affichage_8c_a9bfa693255703c0de636ceb7db7d8d2d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a6d78ce42135a25accbd3bf152dc94563}\label{affichage_8c_a6d78ce42135a25accbd3bf152dc94563}} 
+\index{affichage.c@{affichage.c}!afficher\_sorts@{afficher\_sorts}}
+\index{afficher\_sorts@{afficher\_sorts}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_sorts()}{afficher\_sorts()}}
+{\footnotesize\ttfamily void afficher\+\_\+sorts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste\+\_\+sorts,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em liste\+\_\+sorts} & une liste de sorts \\
+\hline
+{\em joueur} & le joueur qui influe sur les sorts \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a6d78ce42135a25accbd3bf152dc94563_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{da/d68/affichage_8c_a6d78ce42135a25accbd3bf152dc94563_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a47b9be5462def4189b86dcf60f3a29a5}\label{affichage_8c_a47b9be5462def4189b86dcf60f3a29a5}} 
 \index{affichage.c@{affichage.c}!afficher\_texture@{afficher\_texture}}
 \index{afficher\_texture@{afficher\_texture}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{afficher\_texture()}{afficher\_texture()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} afficher\+\_\+texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{texture,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{rendu }\end{DoxyParamCaption})}
-
-
-
-Affiche la texture donnée en paramètre à l\textquotesingle{}écran. 
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} afficher\+\_\+texture (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{rendu }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
@@ -178,29 +290,46 @@ Affiche la texture donnée en paramètre à l\textquotesingle{}écran.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-0 s\textquotesingle{}il n\textquotesingle{}y a pas eu d\textquotesingle{}erreur 
+0 s\textquotesingle{}il n\textquotesingle{}y a pas eu d\textquotesingle{}erreur sinon un entier négatif 
 \end{DoxyReturn}
-\mbox{\Hypertarget{affichage_8c_ad6025b84e0d3f62a1ca7b1835d9263df_ad6025b84e0d3f62a1ca7b1835d9263df}\label{affichage_8c_ad6025b84e0d3f62a1ca7b1835d9263df_ad6025b84e0d3f62a1ca7b1835d9263df}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a47b9be5462def4189b86dcf60f3a29a5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_ad6025b84e0d3f62a1ca7b1835d9263df}\label{affichage_8c_ad6025b84e0d3f62a1ca7b1835d9263df}} 
 \index{affichage.c@{affichage.c}!ajout\_text\_liste@{ajout\_text\_liste}}
 \index{ajout\_text\_liste@{ajout\_text\_liste}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{ajout\_text\_liste()}{ajout\_text\_liste()}}
 {\footnotesize\ttfamily void$\ast$ ajout\+\_\+text\+\_\+liste (\begin{DoxyParamCaption}\item[{void $\ast$}]{t }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{affichage_8c_adf38042b72a9ceff2aebef3efe2af6bd_adf38042b72a9ceff2aebef3efe2af6bd}\label{affichage_8c_adf38042b72a9ceff2aebef3efe2af6bd_adf38042b72a9ceff2aebef3efe2af6bd}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_ad6025b84e0d3f62a1ca7b1835d9263df_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_adf38042b72a9ceff2aebef3efe2af6bd}\label{affichage_8c_adf38042b72a9ceff2aebef3efe2af6bd}} 
 \index{affichage.c@{affichage.c}!appliquer\_coord\_rect@{appliquer\_coord\_rect}}
 \index{appliquer\_coord\_rect@{appliquer\_coord\_rect}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{appliquer\_coord\_rect()}{appliquer\_coord\_rect()}}
-{\footnotesize\ttfamily void appliquer\+\_\+coord\+\_\+rect (\begin{DoxyParamCaption}\item[{const S\+D\+L\+\_\+\+Rect $\ast$const}]{a\+\_\+copier,  }\item[{\mbox{\hyperlink{affichage_8h_a335b4ad9655d3aedc1d71c9f1f1fc06d_a335b4ad9655d3aedc1d71c9f1f1fc06d}{t\+\_\+l\+\_\+aff}} $\ast$}]{textures }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void appliquer\+\_\+coord\+\_\+rect (\begin{DoxyParamCaption}\item[{const S\+D\+L\+\_\+\+Rect $\ast$const}]{a\+\_\+copier,  }\item[{t\+\_\+l\+\_\+aff $\ast$}]{textures }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{affichage_8c_a07753dec9b0d8ad58944ccd3f7406ce3_a07753dec9b0d8ad58944ccd3f7406ce3}\label{affichage_8c_a07753dec9b0d8ad58944ccd3f7406ce3_a07753dec9b0d8ad58944ccd3f7406ce3}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_adf38042b72a9ceff2aebef3efe2af6bd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a07753dec9b0d8ad58944ccd3f7406ce3}\label{affichage_8c_a07753dec9b0d8ad58944ccd3f7406ce3}} 
 \index{affichage.c@{affichage.c}!color@{color}}
 \index{color@{color}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{color()}{color()}}
 {\footnotesize\ttfamily S\+D\+L\+\_\+\+Color color (\begin{DoxyParamCaption}\item[{Uint8}]{r,  }\item[{Uint8}]{g,  }\item[{Uint8}]{b,  }\item[{Uint8}]{a }\end{DoxyParamCaption})}
-
-
-
-Fonction qui permet de choisir une couleur S\+DL. 
 
 
 \begin{DoxyParams}{Paramètres}
@@ -216,17 +345,73 @@ Fonction qui permet de choisir une couleur S\+DL.
 \begin{DoxyReturn}{Renvoie}
 S\+D\+L\+\_\+\+Color une couleur S\+DL 
 \end{DoxyReturn}
-\mbox{\Hypertarget{affichage_8c_a59fc51b629cfed9815495f235dae78e0_a59fc51b629cfed9815495f235dae78e0}\label{affichage_8c_a59fc51b629cfed9815495f235dae78e0_a59fc51b629cfed9815495f235dae78e0}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{da/d68/affichage_8c_a07753dec9b0d8ad58944ccd3f7406ce3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a59fc51b629cfed9815495f235dae78e0}\label{affichage_8c_a59fc51b629cfed9815495f235dae78e0}} 
 \index{affichage.c@{affichage.c}!creer\_texture@{creer\_texture}}
 \index{creer\_texture@{creer\_texture}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{creer\_texture()}{creer\_texture()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}}$\ast$ creer\+\_\+texture (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom\+\_\+fichier,  }\item[{const int}]{taille\+\_\+t\+\_\+x,  }\item[{const int}]{taille\+\_\+t\+\_\+y,  }\item[{const int}]{x,  }\item[{const int}]{y,  }\item[{const float}]{multiplicateur\+\_\+taille }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily t\+\_\+aff$\ast$ creer\+\_\+texture (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom\+\_\+fichier,  }\item[{const int}]{taille\+\_\+t\+\_\+x,  }\item[{const int}]{taille\+\_\+t\+\_\+y,  }\item[{const int}]{x,  }\item[{const int}]{y,  }\item[{const float}]{multiplicateur\+\_\+taille }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{affichage_8c_a3e6b4564952e31a2d9e9d0c98dd6ee78_a3e6b4564952e31a2d9e9d0c98dd6ee78}\label{affichage_8c_a3e6b4564952e31a2d9e9d0c98dd6ee78_a3e6b4564952e31a2d9e9d0c98dd6ee78}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{da/d68/affichage_8c_a59fc51b629cfed9815495f235dae78e0_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a59fc51b629cfed9815495f235dae78e0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_ab41df9da5f22ea2edd48f4f6d0562158}\label{affichage_8c_ab41df9da5f22ea2edd48f4f6d0562158}} 
+\index{affichage.c@{affichage.c}!current\_frame\_x@{current\_frame\_x}}
+\index{current\_frame\_x@{current\_frame\_x}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{current\_frame\_x()}{current\_frame\_x()}}
+{\footnotesize\ttfamily int current\+\_\+frame\+\_\+x (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em texture} & une texture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un entier correspondant à l\textquotesingle{}indice 
+\end{DoxyReturn}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_ab41df9da5f22ea2edd48f4f6d0562158_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_ac5cde30d91e5bbd8e8b7db9c04229752}\label{affichage_8c_ac5cde30d91e5bbd8e8b7db9c04229752}} 
+\index{affichage.c@{affichage.c}!current\_frame\_y@{current\_frame\_y}}
+\index{current\_frame\_y@{current\_frame\_y}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{current\_frame\_y()}{current\_frame\_y()}}
+{\footnotesize\ttfamily int current\+\_\+frame\+\_\+y (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em texture} & une texture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un entier correspondant à l\textquotesingle{}indice 
+\end{DoxyReturn}
+\mbox{\Hypertarget{affichage_8c_a3e6b4564952e31a2d9e9d0c98dd6ee78}\label{affichage_8c_a3e6b4564952e31a2d9e9d0c98dd6ee78}} 
 \index{affichage.c@{affichage.c}!def\_texture\_taille@{def\_texture\_taille}}
 \index{def\_texture\_taille@{def\_texture\_taille}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{def\_texture\_taille()}{def\_texture\_taille()}}
-{\footnotesize\ttfamily void def\+\_\+texture\+\_\+taille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{a\+\_\+modifier,  }\item[{const int}]{longueur,  }\item[{const int}]{largeur }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void def\+\_\+texture\+\_\+taille (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{a\+\_\+modifier,  }\item[{const int}]{longueur,  }\item[{const int}]{largeur }\end{DoxyParamCaption})}
 
 Fonction qui permet de définir exactement la taille de la texture à affichar sur l\textquotesingle{}écran
 
@@ -239,11 +424,62 @@ Fonction qui permet de définir exactement la taille de la texture à affichar s
 {\em largeur} & La nouvelle largeur en pixel à appliquer \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_a496f3ac319fd5099461ed8b705226fff_a496f3ac319fd5099461ed8b705226fff}\label{affichage_8c_a496f3ac319fd5099461ed8b705226fff_a496f3ac319fd5099461ed8b705226fff}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a3e6b4564952e31a2d9e9d0c98dd6ee78_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a7fc4f1865011306b55987cab6f1cc5a0}\label{affichage_8c_a7fc4f1865011306b55987cab6f1cc5a0}} 
+\index{affichage.c@{affichage.c}!deplacement\_x\_entite@{deplacement\_x\_entite}}
+\index{deplacement\_x\_entite@{deplacement\_x\_entite}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{deplacement\_x\_entite()}{deplacement\_x\_entite()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} deplacement\+\_\+x\+\_\+entite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{m,  }\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{int}]{x,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{r }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction permet à une entité de se déplacer sur l\textquotesingle{}axe x. ~\newline
+Cette fonction gère les collisions et empêchera l\textquotesingle{}entité de sortir des limites de la map. ~\newline
+Cette dernière prend également les collisions définies dans la liste des collisions de la map \+: \mbox{\hyperlink{structs__map_abc1532265c403adfbc475bafca6ad747}{liste\+\_\+collisions}}. ~\newline
+ Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l\textquotesingle{}entier \mbox{\hyperlink{structs__aff_a3602f5ebcf2cd61acc2dc65a70919b81}{duree\+\_\+frame\+\_\+anim}} qui permet d\textquotesingle{}êmpécher le déplacement tout les x frames.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em m} & La map actuelle \\
+\hline
+{\em texture} & La texture de l\textquotesingle{}entité que l\textquotesingle{}on veut bouger \\
+\hline
+{\em y} & La nouvelle coordonnée du rectangle de l\textquotesingle{}entité \\
+\hline
+{\em r} & Le rectangle représentant la zone de collision de l\textquotesingle{}entité \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+vrai \+: Si l\textquotesingle{}entité a réussi à se déplacer 
+
+faux \+: Si l\textquotesingle{}entité n\textquotesingle{}a pas pu se déplacer 
+\end{DoxyReturn}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a7fc4f1865011306b55987cab6f1cc5a0_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a7fc4f1865011306b55987cab6f1cc5a0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a496f3ac319fd5099461ed8b705226fff}\label{affichage_8c_a496f3ac319fd5099461ed8b705226fff}} 
 \index{affichage.c@{affichage.c}!deplacement\_x\_pers@{deplacement\_x\_pers}}
 \index{deplacement\_x\_pers@{deplacement\_x\_pers}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{deplacement\_x\_pers()}{deplacement\_x\_pers()}}
-{\footnotesize\ttfamily void deplacement\+\_\+x\+\_\+pers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$}]{m,  }\item[{\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$}]{j,  }\item[{int}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void deplacement\+\_\+x\+\_\+pers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{m,  }\item[{joueur\+\_\+t $\ast$}]{j,  }\item[{int}]{x }\end{DoxyParamCaption})}
 
 Permet de déplacer le personnage de x unités sur la map
 
@@ -256,11 +492,69 @@ Permet de déplacer le personnage de x unités sur la map
 {\em x} & Le nombre d\textquotesingle{}unités de déplacements \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_a2d9aff5f49a8ad8516d9d5b5e3f43bd5_a2d9aff5f49a8ad8516d9d5b5e3f43bd5}\label{affichage_8c_a2d9aff5f49a8ad8516d9d5b5e3f43bd5_a2d9aff5f49a8ad8516d9d5b5e3f43bd5}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a496f3ac319fd5099461ed8b705226fff_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{da/d68/affichage_8c_a496f3ac319fd5099461ed8b705226fff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_ad62d8b671f591eef20a7f3347067e729}\label{affichage_8c_ad62d8b671f591eef20a7f3347067e729}} 
+\index{affichage.c@{affichage.c}!deplacement\_y\_entite@{deplacement\_y\_entite}}
+\index{deplacement\_y\_entite@{deplacement\_y\_entite}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{deplacement\_y\_entite()}{deplacement\_y\_entite()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} deplacement\+\_\+y\+\_\+entite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{m,  }\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{int}]{y,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{r }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction permet à une entité de se déplacer sur l\textquotesingle{}axe y. ~\newline
+Cette fonction gère les collisions et empêchera l\textquotesingle{}entité de sortir des limites de la map. ~\newline
+Cette dernière prend également les collisions définies dans la liste des collisions de la map \+: \mbox{\hyperlink{structs__map_abc1532265c403adfbc475bafca6ad747}{liste\+\_\+collisions}}. ~\newline
+ Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l\textquotesingle{}entier \mbox{\hyperlink{structs__aff_a3602f5ebcf2cd61acc2dc65a70919b81}{duree\+\_\+frame\+\_\+anim}} qui permet d\textquotesingle{}êmpécher le déplacement tout les x frames.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em m} & La map actuelle \\
+\hline
+{\em texture} & La texture de l\textquotesingle{}entité que l\textquotesingle{}on veut bouger \\
+\hline
+{\em y} & La nouvelle coordonnée du rectangle de l\textquotesingle{}entité \\
+\hline
+{\em r} & Le rectangle représentant la zone de collision de l\textquotesingle{}entité \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+vrai \+: Si l\textquotesingle{}entité a réussi à se déplacer 
+
+faux \+: Si l\textquotesingle{}entité n\textquotesingle{}a pas pu se déplacer 
+\end{DoxyReturn}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_ad62d8b671f591eef20a7f3347067e729_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_ad62d8b671f591eef20a7f3347067e729_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a2d9aff5f49a8ad8516d9d5b5e3f43bd5}\label{affichage_8c_a2d9aff5f49a8ad8516d9d5b5e3f43bd5}} 
 \index{affichage.c@{affichage.c}!deplacement\_y\_pers@{deplacement\_y\_pers}}
 \index{deplacement\_y\_pers@{deplacement\_y\_pers}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{deplacement\_y\_pers()}{deplacement\_y\_pers()}}
-{\footnotesize\ttfamily void deplacement\+\_\+y\+\_\+pers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__map}{t\+\_\+map}} $\ast$}]{m,  }\item[{\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$}]{j,  }\item[{int}]{y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void deplacement\+\_\+y\+\_\+pers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{init__close_8c_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{m,  }\item[{joueur\+\_\+t $\ast$}]{j,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
 Permet de déplacer le personnage de y unités sur la map
 
@@ -273,23 +567,51 @@ Permet de déplacer le personnage de y unités sur la map
 {\em y} & Le nombre d\textquotesingle{}unités de déplacements \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_a6a61a69139c9efe60f3b382747493870_a6a61a69139c9efe60f3b382747493870}\label{affichage_8c_a6a61a69139c9efe60f3b382747493870_a6a61a69139c9efe60f3b382747493870}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a2d9aff5f49a8ad8516d9d5b5e3f43bd5_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{da/d68/affichage_8c_a2d9aff5f49a8ad8516d9d5b5e3f43bd5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a6a61a69139c9efe60f3b382747493870}\label{affichage_8c_a6a61a69139c9efe60f3b382747493870}} 
 \index{affichage.c@{affichage.c}!deplacer\_rect\_haut\_droit@{deplacer\_rect\_haut\_droit}}
 \index{deplacer\_rect\_haut\_droit@{deplacer\_rect\_haut\_droit}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{deplacer\_rect\_haut\_droit()}{deplacer\_rect\_haut\_droit()}}
 {\footnotesize\ttfamily void deplacer\+\_\+rect\+\_\+haut\+\_\+droit (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{r,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{affichage_8c_ae766b650805d4bdfc2faa57ba24f6cae_ae766b650805d4bdfc2faa57ba24f6cae}\label{affichage_8c_ae766b650805d4bdfc2faa57ba24f6cae_ae766b650805d4bdfc2faa57ba24f6cae}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a6a61a69139c9efe60f3b382747493870_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_ae766b650805d4bdfc2faa57ba24f6cae}\label{affichage_8c_ae766b650805d4bdfc2faa57ba24f6cae}} 
 \index{affichage.c@{affichage.c}!deplacer\_rect\_origine@{deplacer\_rect\_origine}}
 \index{deplacer\_rect\_origine@{deplacer\_rect\_origine}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{deplacer\_rect\_origine()}{deplacer\_rect\_origine()}}
 {\footnotesize\ttfamily void deplacer\+\_\+rect\+\_\+origine (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{r,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{affichage_8c_a8a05cde4c824ad13d8f2dbf73b0b741f_a8a05cde4c824ad13d8f2dbf73b0b741f}\label{affichage_8c_a8a05cde4c824ad13d8f2dbf73b0b741f_a8a05cde4c824ad13d8f2dbf73b0b741f}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_ae766b650805d4bdfc2faa57ba24f6cae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a8a05cde4c824ad13d8f2dbf73b0b741f}\label{affichage_8c_a8a05cde4c824ad13d8f2dbf73b0b741f}} 
 \index{affichage.c@{affichage.c}!deplacer\_texture\_bas\_droit@{deplacer\_texture\_bas\_droit}}
 \index{deplacer\_texture\_bas\_droit@{deplacer\_texture\_bas\_droit}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{deplacer\_texture\_bas\_droit()}{deplacer\_texture\_bas\_droit()}}
-{\footnotesize\ttfamily void deplacer\+\_\+texture\+\_\+bas\+\_\+droit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void deplacer\+\_\+texture\+\_\+bas\+\_\+droit (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
 La texture est déplacée vers le coin inférieur droit de la fenêtre
 
@@ -302,11 +624,11 @@ La texture est déplacée vers le coin inférieur droit de la fenêtre
 {\em y} & Coordonnée y du coin supérieur gauche de la texture. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_ae6459fb3c595a3121db1ff654bd78e93_ae6459fb3c595a3121db1ff654bd78e93}\label{affichage_8c_ae6459fb3c595a3121db1ff654bd78e93_ae6459fb3c595a3121db1ff654bd78e93}} 
+\mbox{\Hypertarget{affichage_8c_ae6459fb3c595a3121db1ff654bd78e93}\label{affichage_8c_ae6459fb3c595a3121db1ff654bd78e93}} 
 \index{affichage.c@{affichage.c}!deplacer\_texture\_bas\_gauche@{deplacer\_texture\_bas\_gauche}}
 \index{deplacer\_texture\_bas\_gauche@{deplacer\_texture\_bas\_gauche}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{deplacer\_texture\_bas\_gauche()}{deplacer\_texture\_bas\_gauche()}}
-{\footnotesize\ttfamily void deplacer\+\_\+texture\+\_\+bas\+\_\+gauche (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void deplacer\+\_\+texture\+\_\+bas\+\_\+gauche (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
 La texture est déplacée vers le coin inférieur gauche de l\textquotesingle{}écran
 
@@ -319,11 +641,18 @@ La texture est déplacée vers le coin inférieur gauche de l\textquotesingle{}�
 {\em y} & Coordonnée y du coin supérieur gauche de la texture. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_a5911c692b804289a22f5a161b4fe2286_a5911c692b804289a22f5a161b4fe2286}\label{affichage_8c_a5911c692b804289a22f5a161b4fe2286_a5911c692b804289a22f5a161b4fe2286}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{da/d68/affichage_8c_ae6459fb3c595a3121db1ff654bd78e93_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a5911c692b804289a22f5a161b4fe2286}\label{affichage_8c_a5911c692b804289a22f5a161b4fe2286}} 
 \index{affichage.c@{affichage.c}!deplacer\_texture\_centre@{deplacer\_texture\_centre}}
 \index{deplacer\_texture\_centre@{deplacer\_texture\_centre}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{deplacer\_texture\_centre()}{deplacer\_texture\_centre()}}
-{\footnotesize\ttfamily void deplacer\+\_\+texture\+\_\+centre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void deplacer\+\_\+texture\+\_\+centre (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
 Déplacez la texture pour que son centre soit au centre de l\textquotesingle{}écran
 
@@ -336,11 +665,18 @@ Déplacez la texture pour que son centre soit au centre de l\textquotesingle{}é
 {\em y} & La coordonnée y du centre de la texture. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_ae2ee44d9a091423e00920e05b6e81750_ae2ee44d9a091423e00920e05b6e81750}\label{affichage_8c_ae2ee44d9a091423e00920e05b6e81750_ae2ee44d9a091423e00920e05b6e81750}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a5911c692b804289a22f5a161b4fe2286_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_ae2ee44d9a091423e00920e05b6e81750}\label{affichage_8c_ae2ee44d9a091423e00920e05b6e81750}} 
 \index{affichage.c@{affichage.c}!deplacer\_texture\_haut\_droit@{deplacer\_texture\_haut\_droit}}
 \index{deplacer\_texture\_haut\_droit@{deplacer\_texture\_haut\_droit}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{deplacer\_texture\_haut\_droit()}{deplacer\_texture\_haut\_droit()}}
-{\footnotesize\ttfamily void deplacer\+\_\+texture\+\_\+haut\+\_\+droit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void deplacer\+\_\+texture\+\_\+haut\+\_\+droit (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
 La texture est déplacée vers la droite et vers le haut
 
@@ -353,11 +689,11 @@ La texture est déplacée vers la droite et vers le haut
 {\em y} & Coordonnée y du coin supérieur gauche du rectangle. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_a48d7af885eb3fdd6655cf83b85f454c9_a48d7af885eb3fdd6655cf83b85f454c9}\label{affichage_8c_a48d7af885eb3fdd6655cf83b85f454c9_a48d7af885eb3fdd6655cf83b85f454c9}} 
+\mbox{\Hypertarget{affichage_8c_a48d7af885eb3fdd6655cf83b85f454c9}\label{affichage_8c_a48d7af885eb3fdd6655cf83b85f454c9}} 
 \index{affichage.c@{affichage.c}!deplacer\_texture\_origine@{deplacer\_texture\_origine}}
 \index{deplacer\_texture\_origine@{deplacer\_texture\_origine}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{deplacer\_texture\_origine()}{deplacer\_texture\_origine()}}
-{\footnotesize\ttfamily void deplacer\+\_\+texture\+\_\+origine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void deplacer\+\_\+texture\+\_\+origine (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
 Déplacez l\textquotesingle{}origine de la texture aux coordonnées données.
 
@@ -370,30 +706,56 @@ Déplacez l\textquotesingle{}origine de la texture aux coordonnées données.
 {\em y} & La coordonnée y de l\textquotesingle{}origine de la texture. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_a70cc7e744c27c15ad5763c75cf487cef_a70cc7e744c27c15ad5763c75cf487cef}\label{affichage_8c_a70cc7e744c27c15ad5763c75cf487cef_a70cc7e744c27c15ad5763c75cf487cef}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a48d7af885eb3fdd6655cf83b85f454c9_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a48d7af885eb3fdd6655cf83b85f454c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_aa18ada4ee80cd3ec4a96012f5bfdf469}\label{affichage_8c_aa18ada4ee80cd3ec4a96012f5bfdf469}} 
+\index{affichage.c@{affichage.c}!detruire\_collision\_dans\_liste@{detruire\_collision\_dans\_liste}}
+\index{detruire\_collision\_dans\_liste@{detruire\_collision\_dans\_liste}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{detruire\_collision\_dans\_liste()}{detruire\_collision\_dans\_liste()}}
+{\footnotesize\ttfamily void detruire\+\_\+collision\+\_\+dans\+\_\+liste (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste\+\_\+collisions,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{collision }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_aa18ada4ee80cd3ec4a96012f5bfdf469_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_aa18ada4ee80cd3ec4a96012f5bfdf469_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a70cc7e744c27c15ad5763c75cf487cef}\label{affichage_8c_a70cc7e744c27c15ad5763c75cf487cef}} 
 \index{affichage.c@{affichage.c}!detruire\_liste\_textures@{detruire\_liste\_textures}}
 \index{detruire\_liste\_textures@{detruire\_liste\_textures}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{detruire\_liste\_textures()}{detruire\_liste\_textures()}}
-{\footnotesize\ttfamily void detruire\+\_\+liste\+\_\+textures (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_a335b4ad9655d3aedc1d71c9f1f1fc06d_a335b4ad9655d3aedc1d71c9f1f1fc06d}{t\+\_\+l\+\_\+aff}} $\ast$$\ast$}]{l\+\_\+texture }\end{DoxyParamCaption})}
-
-
-
-Fonction qui détruit une liste de textures. 
+{\footnotesize\ttfamily void detruire\+\_\+liste\+\_\+textures (\begin{DoxyParamCaption}\item[{t\+\_\+l\+\_\+aff $\ast$$\ast$}]{l\+\_\+texture }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
 {\em l\+\_\+texture} & L\textquotesingle{}adresse de la liste de texture à détruire \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_a6e1d5af117ac87c2c309507f4750dcb9_a6e1d5af117ac87c2c309507f4750dcb9}\label{affichage_8c_a6e1d5af117ac87c2c309507f4750dcb9_a6e1d5af117ac87c2c309507f4750dcb9}} 
+\mbox{\Hypertarget{affichage_8c_a6e1d5af117ac87c2c309507f4750dcb9}\label{affichage_8c_a6e1d5af117ac87c2c309507f4750dcb9}} 
 \index{affichage.c@{affichage.c}!detruire\_texture@{detruire\_texture}}
 \index{detruire\_texture@{detruire\_texture}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{detruire\_texture()}{detruire\_texture()}}
-{\footnotesize\ttfamily void detruire\+\_\+texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$$\ast$}]{texture }\end{DoxyParamCaption})}
-
-
-
-Fonction qui détruit une structure d\textquotesingle{}affichage de texture passée en paramètre. 
+{\footnotesize\ttfamily void detruire\+\_\+texture (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$$\ast$}]{texture }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Despert Ange 
@@ -403,59 +765,193 @@ Despert Ange
 {\em texture} & L\textquotesingle{}adresse du pointeur sur la structure à détruire \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_ac0f9e4c72a1a75de6aea7bc84616f1d7_ac0f9e4c72a1a75de6aea7bc84616f1d7}\label{affichage_8c_ac0f9e4c72a1a75de6aea7bc84616f1d7_ac0f9e4c72a1a75de6aea7bc84616f1d7}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a6e1d5af117ac87c2c309507f4750dcb9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_ad92b6b4765071f03f0a44087e6355bbd}\label{affichage_8c_ad92b6b4765071f03f0a44087e6355bbd}} 
+\index{affichage.c@{affichage.c}!get\_rect\_center@{get\_rect\_center}}
+\index{get\_rect\_center@{get\_rect\_center}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{get\_rect\_center()}{get\_rect\_center()}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Point get\+\_\+rect\+\_\+center (\begin{DoxyParamCaption}\item[{const S\+D\+L\+\_\+\+Rect $\ast$const}]{r }\end{DoxyParamCaption})}
+
+Cette fonction contrairement à la fonction \mbox{\hyperlink{affichage_8h_aad94b2ce0d93f581c0f82b0467a8d2ed}{get\+\_\+rect\+\_\+center\+\_\+coord}} donne les coordonnées strictes du centre.
+
+\begin{DoxyAuthor}{Auteur}
+Ange Despert 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em r} & Le rectangle dont on veut les coordonnées du milieu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées du milieu du rectangle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{affichage_8c_aad94b2ce0d93f581c0f82b0467a8d2ed}\label{affichage_8c_aad94b2ce0d93f581c0f82b0467a8d2ed}} 
+\index{affichage.c@{affichage.c}!get\_rect\_center\_coord@{get\_rect\_center\_coord}}
+\index{get\_rect\_center\_coord@{get\_rect\_center\_coord}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{get\_rect\_center\_coord()}{get\_rect\_center\_coord()}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Point get\+\_\+rect\+\_\+center\+\_\+coord (\begin{DoxyParamCaption}\item[{const S\+D\+L\+\_\+\+Rect $\ast$const}]{r }\end{DoxyParamCaption})}
+
+Cette fonction contrairement à la fonction \mbox{\hyperlink{affichage_8h_ad92b6b4765071f03f0a44087e6355bbd}{get\+\_\+rect\+\_\+center}} donne les coordonnées du centre en prenant en compte les coordonnées actuelles du rectangle.
+
+Cette fonction est donc faite pour être utilisée conjointement à la fonction \mbox{\hyperlink{affichage_8h_a26cf1d2055162e3bf7166de2f55902f9}{place\+\_\+rect\+\_\+center\+\_\+from\+\_\+point(\+S\+D\+L\+\_\+\+Rect $\ast$r, S\+D\+L\+\_\+\+Point p)}} \begin{DoxyAuthor}{Auteur}
+Ange Despert 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em r} & Le rectangle dont on veut les coordonnées du milieu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées du milieu du rectangle. 
+\end{DoxyReturn}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_aad94b2ce0d93f581c0f82b0467a8d2ed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_ac0f9e4c72a1a75de6aea7bc84616f1d7}\label{affichage_8c_ac0f9e4c72a1a75de6aea7bc84616f1d7}} 
 \index{affichage.c@{affichage.c}!get\_screen\_center@{get\_screen\_center}}
 \index{get\_screen\_center@{get\_screen\_center}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{get\_screen\_center()}{get\_screen\_center()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structpoint}{point}} get\+\_\+screen\+\_\+center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{affichage_8c_a833a9e3f93662a67ba30a73d64435286_a833a9e3f93662a67ba30a73d64435286}\label{affichage_8c_a833a9e3f93662a67ba30a73d64435286_a833a9e3f93662a67ba30a73d64435286}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_ac0f9e4c72a1a75de6aea7bc84616f1d7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a833a9e3f93662a67ba30a73d64435286}\label{affichage_8c_a833a9e3f93662a67ba30a73d64435286}} 
 \index{affichage.c@{affichage.c}!info\_texture@{info\_texture}}
 \index{info\_texture@{info\_texture}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{info\_texture()}{info\_texture()}}
-{\footnotesize\ttfamily void info\+\_\+texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{texture }\end{DoxyParamCaption})}
-
-
-
-Affiche des informations sur une texture. 
+{\footnotesize\ttfamily void info\+\_\+texture (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
 {\em texture} & la texture sur laquelle on se renseigne \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_a4d69c38e3fbca3ce3bc6a299cac4a1a0_a4d69c38e3fbca3ce3bc6a299cac4a1a0}\label{affichage_8c_a4d69c38e3fbca3ce3bc6a299cac4a1a0_a4d69c38e3fbca3ce3bc6a299cac4a1a0}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a833a9e3f93662a67ba30a73d64435286_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a00db128b4c54ca69b10871d8eed417f9}\label{affichage_8c_a00db128b4c54ca69b10871d8eed417f9}} 
+\index{affichage.c@{affichage.c}!init\_animations@{init\_animations}}
+\index{init\_animations@{init\_animations}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{init\_animations()}{init\_animations()}}
+{\footnotesize\ttfamily void init\+\_\+animations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a00db128b4c54ca69b10871d8eed417f9_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{da/d68/affichage_8c_a00db128b4c54ca69b10871d8eed417f9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_aed283afbfc26ca77a0e28e04aee3cc0e}\label{affichage_8c_aed283afbfc26ca77a0e28e04aee3cc0e}} 
 \index{affichage.c@{affichage.c}!init\_texture\_joueur@{init\_texture\_joueur}}
 \index{init\_texture\_joueur@{init\_texture\_joueur}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{init\_texture\_joueur()}{init\_texture\_joueur()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$ init\+\_\+texture\+\_\+joueur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_a335b4ad9655d3aedc1d71c9f1f1fc06d_a335b4ad9655d3aedc1d71c9f1f1fc06d}{t\+\_\+l\+\_\+aff}} $\ast$}]{textures\+\_\+joueur }\end{DoxyParamCaption})}
-
-
-
-Fonction qui renvoie la texture de départ du personnage (joueur) 
+{\footnotesize\ttfamily t\+\_\+aff $\ast$ init\+\_\+texture\+\_\+joueur (\begin{DoxyParamCaption}\item[{t\+\_\+l\+\_\+aff $\ast$}]{textures\+\_\+joueur,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Antoine Bruneau 
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
-{\em t\+\_\+l\+\_\+aff$\ast$} & la liste de textures personnage \\
+{\em t\+\_\+l\+\_\+aff} & Liste de textures personnage \\
+\hline
+{\em joueur} & Joueur dont on veut la texture de départ \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
 t\+\_\+aff$\ast$ Une textures personnage 
 \end{DoxyReturn}
-\mbox{\Hypertarget{affichage_8c_af26bc06f797ad5be1d0b8fb9a3a1a338_af26bc06f797ad5be1d0b8fb9a3a1a338}\label{affichage_8c_af26bc06f797ad5be1d0b8fb9a3a1a338_af26bc06f797ad5be1d0b8fb9a3a1a338}} 
+\mbox{\Hypertarget{affichage_8c_aea6ef750998e466ed9d8beef7daefc09}\label{affichage_8c_aea6ef750998e466ed9d8beef7daefc09}} 
 \index{affichage.c@{affichage.c}!init\_textures\_joueur@{init\_textures\_joueur}}
 \index{init\_textures\_joueur@{init\_textures\_joueur}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{init\_textures\_joueur()}{init\_textures\_joueur()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{affichage_8h_a335b4ad9655d3aedc1d71c9f1f1fc06d_a335b4ad9655d3aedc1d71c9f1f1fc06d}{t\+\_\+l\+\_\+aff}}$\ast$ init\+\_\+textures\+\_\+joueur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$}]{j }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily t\+\_\+l\+\_\+aff $\ast$ init\+\_\+textures\+\_\+joueur (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{j,  }\item[{int}]{num\+\_\+j }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{affichage_8c_a9d3a1090bb34f34aa532f12d75bfb75c_a9d3a1090bb34f34aa532f12d75bfb75c}\label{affichage_8c_a9d3a1090bb34f34aa532f12d75bfb75c_a9d3a1090bb34f34aa532f12d75bfb75c}} 
+\begin{DoxyAuthor}{Auteur}
+Antoine Bruneau 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em j} & Le joueur dont on initialise les textures \\
+\hline
+{\em num\+\_\+j} & Indice du joueur dans le tableau des joueurs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+t\+\_\+l\+\_\+aff$\ast$ Une liste de textures 
+\end{DoxyReturn}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_aea6ef750998e466ed9d8beef7daefc09_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_aea6ef750998e466ed9d8beef7daefc09_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a293f0049d422a068c70def4e5608484d}\label{affichage_8c_a293f0049d422a068c70def4e5608484d}} 
+\index{affichage.c@{affichage.c}!lister\_animations@{lister\_animations}}
+\index{lister\_animations@{lister\_animations}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{lister\_animations()}{lister\_animations()}}
+{\footnotesize\ttfamily void lister\+\_\+animations (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{animations }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em joueurs} & Les joueurs sur lesquels placer les animation \\
+\hline
+{\em animations} & Liste regroupant les animations trouvées \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a293f0049d422a068c70def4e5608484d_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{da/d68/affichage_8c_a293f0049d422a068c70def4e5608484d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a9d3a1090bb34f34aa532f12d75bfb75c}\label{affichage_8c_a9d3a1090bb34f34aa532f12d75bfb75c}} 
 \index{affichage.c@{affichage.c}!modif\_affichage\_rect@{modif\_affichage\_rect}}
 \index{modif\_affichage\_rect@{modif\_affichage\_rect}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{modif\_affichage\_rect()}{modif\_affichage\_rect()}}
-{\footnotesize\ttfamily void modif\+\_\+affichage\+\_\+rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{texture,  }\item[{S\+D\+L\+\_\+\+Rect}]{r }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void modif\+\_\+affichage\+\_\+rect (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{S\+D\+L\+\_\+\+Rect}]{r }\end{DoxyParamCaption})}
 
 Modifie le rectangle qui définit la zone de l\textquotesingle{}écran qui sera utilisée pour le rendu de la texture
 
@@ -466,36 +962,116 @@ Modifie le rectangle qui définit la zone de l\textquotesingle{}écran qui sera 
 {\em r} & Le rectangle à appliquer. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_a668ba4cf805157557b09a5a71fd67c4b_a668ba4cf805157557b09a5a71fd67c4b}\label{affichage_8c_a668ba4cf805157557b09a5a71fd67c4b_a668ba4cf805157557b09a5a71fd67c4b}} 
+\mbox{\Hypertarget{affichage_8c_ab247b3f13df2741cc77f45e6c80d6a82}\label{affichage_8c_ab247b3f13df2741cc77f45e6c80d6a82}} 
+\index{affichage.c@{affichage.c}!next\_frame\_animation@{next\_frame\_animation}}
+\index{next\_frame\_animation@{next\_frame\_animation}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{next\_frame\_animation()}{next\_frame\_animation()}}
+{\footnotesize\ttfamily t\+\_\+aff $\ast$ next\+\_\+frame\+\_\+animation (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em joueur} & Le joueur sur lequel placer l\textquotesingle{}animation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La texture de l\textquotesingle{}animation 
+\end{DoxyReturn}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_ab247b3f13df2741cc77f45e6c80d6a82_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_ab247b3f13df2741cc77f45e6c80d6a82_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a912edf846a7b2241716b7c93821b5817}\label{affichage_8c_a912edf846a7b2241716b7c93821b5817}} 
+\index{affichage.c@{affichage.c}!next\_frame\_indice@{next\_frame\_indice}}
+\index{next\_frame\_indice@{next\_frame\_indice}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{next\_frame\_indice()}{next\_frame\_indice()}}
+{\footnotesize\ttfamily void next\+\_\+frame\+\_\+indice (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{const unsigned int}]{x,  }\item[{const unsigned int}]{y }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em texture} & une texture joueur \\
+\hline
+{\em x} & qui correspond au n-\/ème sprite sur l\textquotesingle{}axe des x ou l\textquotesingle{}on souhaite positionner la texture \\
+\hline
+{\em y} & qui correspond au n-\/ème sprite sur l\textquotesingle{}axe des y ou l\textquotesingle{}on souhaite positionner la texture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+err\+\_\+t un entier pour savoir si il y a eu une erreur 
+\end{DoxyReturn}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{da/d68/affichage_8c_a912edf846a7b2241716b7c93821b5817_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a912edf846a7b2241716b7c93821b5817_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a668ba4cf805157557b09a5a71fd67c4b}\label{affichage_8c_a668ba4cf805157557b09a5a71fd67c4b}} 
 \index{affichage.c@{affichage.c}!next\_frame\_joueur@{next\_frame\_joueur}}
 \index{next\_frame\_joueur@{next\_frame\_joueur}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{next\_frame\_joueur()}{next\_frame\_joueur()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}}$\ast$ next\+\_\+frame\+\_\+joueur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{personnage_8h_a78cda65cd9b26fc9f1ef13f89b316b94_a78cda65cd9b26fc9f1ef13f89b316b94}{joueur\+\_\+t}} $\ast$}]{j }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily t\+\_\+aff$\ast$ next\+\_\+frame\+\_\+joueur (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{j }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{affichage_8c_a7adca84e118cd2c0a47dc5f754a4a5b2_a7adca84e118cd2c0a47dc5f754a4a5b2}\label{affichage_8c_a7adca84e118cd2c0a47dc5f754a4a5b2_a7adca84e118cd2c0a47dc5f754a4a5b2}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a668ba4cf805157557b09a5a71fd67c4b_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{da/d68/affichage_8c_a668ba4cf805157557b09a5a71fd67c4b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a7adca84e118cd2c0a47dc5f754a4a5b2}\label{affichage_8c_a7adca84e118cd2c0a47dc5f754a4a5b2}} 
 \index{affichage.c@{affichage.c}!next\_frame\_x@{next\_frame\_x}}
 \index{next\_frame\_x@{next\_frame\_x}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{next\_frame\_x()}{next\_frame\_x()}}
-{\footnotesize\ttfamily void next\+\_\+frame\+\_\+x (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{texture }\end{DoxyParamCaption})}
-
-
-
-Fonction qui positionne la texture au sprite d\textquotesingle{}après sur l\textquotesingle{}axe des x. 
+{\footnotesize\ttfamily void next\+\_\+frame\+\_\+x (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
 {\em t\+\_\+aff$\ast$} & une texture joueur \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_a0843b69b213a0b2f2645ad6158e00bff_a0843b69b213a0b2f2645ad6158e00bff}\label{affichage_8c_a0843b69b213a0b2f2645ad6158e00bff_a0843b69b213a0b2f2645ad6158e00bff}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{da/d68/affichage_8c_a7adca84e118cd2c0a47dc5f754a4a5b2_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a7adca84e118cd2c0a47dc5f754a4a5b2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a0843b69b213a0b2f2645ad6158e00bff}\label{affichage_8c_a0843b69b213a0b2f2645ad6158e00bff}} 
 \index{affichage.c@{affichage.c}!next\_frame\_x\_indice@{next\_frame\_x\_indice}}
 \index{next\_frame\_x\_indice@{next\_frame\_x\_indice}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{next\_frame\_x\_indice()}{next\_frame\_x\_indice()}}
-{\footnotesize\ttfamily void next\+\_\+frame\+\_\+x\+\_\+indice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{texture,  }\item[{const unsigned int}]{indice }\end{DoxyParamCaption})}
-
-
-
-Fonction qui positionne la texture au n-\/ème sprite sur l\textquotesingle{}axe des x. 
+{\footnotesize\ttfamily void next\+\_\+frame\+\_\+x\+\_\+indice (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{const unsigned int}]{indice }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
@@ -507,30 +1083,43 @@ Fonction qui positionne la texture au n-\/ème sprite sur l\textquotesingle{}axe
 \begin{DoxyReturn}{Renvoie}
 err\+\_\+t un entier pour savoir si il y a eu une erreur 
 \end{DoxyReturn}
-\mbox{\Hypertarget{affichage_8c_a1e152c4ffb55530b72318cf321ef2770_a1e152c4ffb55530b72318cf321ef2770}\label{affichage_8c_a1e152c4ffb55530b72318cf321ef2770_a1e152c4ffb55530b72318cf321ef2770}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a0843b69b213a0b2f2645ad6158e00bff_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a0843b69b213a0b2f2645ad6158e00bff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a1e152c4ffb55530b72318cf321ef2770}\label{affichage_8c_a1e152c4ffb55530b72318cf321ef2770}} 
 \index{affichage.c@{affichage.c}!next\_frame\_y@{next\_frame\_y}}
 \index{next\_frame\_y@{next\_frame\_y}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{next\_frame\_y()}{next\_frame\_y()}}
-{\footnotesize\ttfamily void next\+\_\+frame\+\_\+y (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{texture }\end{DoxyParamCaption})}
-
-
-
-Fonction qui positionne la texture au sprite d\textquotesingle{}après sur l\textquotesingle{}axe des y. 
+{\footnotesize\ttfamily void next\+\_\+frame\+\_\+y (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
 {\em t\+\_\+aff$\ast$} & une texture joueur \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_ae4bffa3eb5b67a9316544428c25bdc44_ae4bffa3eb5b67a9316544428c25bdc44}\label{affichage_8c_ae4bffa3eb5b67a9316544428c25bdc44_ae4bffa3eb5b67a9316544428c25bdc44}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{da/d68/affichage_8c_a1e152c4ffb55530b72318cf321ef2770_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_ae4bffa3eb5b67a9316544428c25bdc44}\label{affichage_8c_ae4bffa3eb5b67a9316544428c25bdc44}} 
 \index{affichage.c@{affichage.c}!next\_frame\_y\_indice@{next\_frame\_y\_indice}}
 \index{next\_frame\_y\_indice@{next\_frame\_y\_indice}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{next\_frame\_y\_indice()}{next\_frame\_y\_indice()}}
-{\footnotesize\ttfamily void next\+\_\+frame\+\_\+y\+\_\+indice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{texture,  }\item[{const unsigned int}]{indice }\end{DoxyParamCaption})}
-
-
-
-Fonction qui positionne la texture au n-\/ème sprite sur l\textquotesingle{}axe des y. 
+{\footnotesize\ttfamily void next\+\_\+frame\+\_\+y\+\_\+indice (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{const unsigned int}]{indice }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
@@ -542,15 +1131,57 @@ Fonction qui positionne la texture au n-\/ème sprite sur l\textquotesingle{}axe
 \begin{DoxyReturn}{Renvoie}
 err\+\_\+t un entier pour savoir si il y a eu une erreur 
 \end{DoxyReturn}
-\mbox{\Hypertarget{affichage_8c_aef15da3b25d6635d91fa9e09f0bd4c70_aef15da3b25d6635d91fa9e09f0bd4c70}\label{affichage_8c_aef15da3b25d6635d91fa9e09f0bd4c70_aef15da3b25d6635d91fa9e09f0bd4c70}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_ae4bffa3eb5b67a9316544428c25bdc44_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_ae4bffa3eb5b67a9316544428c25bdc44_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a26cf1d2055162e3bf7166de2f55902f9}\label{affichage_8c_a26cf1d2055162e3bf7166de2f55902f9}} 
+\index{affichage.c@{affichage.c}!place\_rect\_center\_from\_point@{place\_rect\_center\_from\_point}}
+\index{place\_rect\_center\_from\_point@{place\_rect\_center\_from\_point}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{place\_rect\_center\_from\_point()}{place\_rect\_center\_from\_point()}}
+{\footnotesize\ttfamily void place\+\_\+rect\+\_\+center\+\_\+from\+\_\+point (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{r,  }\item[{S\+D\+L\+\_\+\+Point}]{p }\end{DoxyParamCaption})}
+
+Le but de cette fonction est de pouvoir placer plusieurs rectangles au même endroit peut importe leur taille. C\textquotesingle{}est fonction est donc très puissante si elle est utilisée conjointement à la fonction \mbox{\hyperlink{affichage_8h_aad94b2ce0d93f581c0f82b0467a8d2ed}{get\+\_\+rect\+\_\+center\+\_\+coord(const S\+D\+L\+\_\+\+Rect $\ast$const r)}}
+
+\begin{DoxyAuthor}{Auteur}
+Ange Despert 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em r} & Le rectangle que l\textquotesingle{}on veut déplacer \\
+\hline
+{\em p} & Le point où on veut placer le milieu du rectangle \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a26cf1d2055162e3bf7166de2f55902f9_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{da/d68/affichage_8c_a26cf1d2055162e3bf7166de2f55902f9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_aef15da3b25d6635d91fa9e09f0bd4c70}\label{affichage_8c_aef15da3b25d6635d91fa9e09f0bd4c70}} 
 \index{affichage.c@{affichage.c}!placer\_texture@{placer\_texture}}
 \index{placer\_texture@{placer\_texture}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{placer\_texture()}{placer\_texture()}}
-{\footnotesize\ttfamily void placer\+\_\+texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
-
-
-
-Place une texture sur l\textquotesingle{}écran. 
+{\footnotesize\ttfamily void placer\+\_\+texture (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
@@ -561,39 +1192,130 @@ Place une texture sur l\textquotesingle{}écran.
 {\em y} & Position verticale \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_a4309414813bec32b17ef18f77e1cfa7f_a4309414813bec32b17ef18f77e1cfa7f}\label{affichage_8c_a4309414813bec32b17ef18f77e1cfa7f_a4309414813bec32b17ef18f77e1cfa7f}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_aef15da3b25d6635d91fa9e09f0bd4c70_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a4309414813bec32b17ef18f77e1cfa7f}\label{affichage_8c_a4309414813bec32b17ef18f77e1cfa7f}} 
 \index{affichage.c@{affichage.c}!point\_in\_rect@{point\_in\_rect}}
 \index{point\_in\_rect@{point\_in\_rect}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{point\_in\_rect()}{point\_in\_rect()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}} point\+\_\+in\+\_\+rect (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{r,  }\item[{\mbox{\hyperlink{structpoint}{point}}}]{p }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} point\+\_\+in\+\_\+rect (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{r,  }\item[{\mbox{\hyperlink{structpoint}{point}}}]{p }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{affichage_8c_a508ce5ebec0cacf99a3bbddd33d6880f_a508ce5ebec0cacf99a3bbddd33d6880f}\label{affichage_8c_a508ce5ebec0cacf99a3bbddd33d6880f_a508ce5ebec0cacf99a3bbddd33d6880f}} 
+\mbox{\Hypertarget{affichage_8c_a508ce5ebec0cacf99a3bbddd33d6880f}\label{affichage_8c_a508ce5ebec0cacf99a3bbddd33d6880f}} 
 \index{affichage.c@{affichage.c}!rect\_centre@{rect\_centre}}
 \index{rect\_centre@{rect\_centre}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{rect\_centre()}{rect\_centre()}}
 {\footnotesize\ttfamily void rect\+\_\+centre (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{rectangle }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{affichage_8c_a6bd4bd87195563a7315afb0fda7fe6d7_a6bd4bd87195563a7315afb0fda7fe6d7}\label{affichage_8c_a6bd4bd87195563a7315afb0fda7fe6d7_a6bd4bd87195563a7315afb0fda7fe6d7}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a508ce5ebec0cacf99a3bbddd33d6880f_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{da/d68/affichage_8c_a508ce5ebec0cacf99a3bbddd33d6880f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_af70d121ff2c41380da955ae836b109eb}\label{affichage_8c_af70d121ff2c41380da955ae836b109eb}} 
+\index{affichage.c@{affichage.c}!rect\_centre\_rect@{rect\_centre\_rect}}
+\index{rect\_centre\_rect@{rect\_centre\_rect}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{rect\_centre\_rect()}{rect\_centre\_rect()}}
+{\footnotesize\ttfamily void rect\+\_\+centre\+\_\+rect (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{rectangle,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{rectangle\+\_\+centre }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{da/d68/affichage_8c_af70d121ff2c41380da955ae836b109eb_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{da/d68/affichage_8c_af70d121ff2c41380da955ae836b109eb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_ab74333683d8d4816aa1331794b3b9e94}\label{affichage_8c_ab74333683d8d4816aa1331794b3b9e94}} 
+\index{affichage.c@{affichage.c}!rect\_centre\_rect\_x@{rect\_centre\_rect\_x}}
+\index{rect\_centre\_rect\_x@{rect\_centre\_rect\_x}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{rect\_centre\_rect\_x()}{rect\_centre\_rect\_x()}}
+{\footnotesize\ttfamily void rect\+\_\+centre\+\_\+rect\+\_\+x (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{rectangle,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{rectangle\+\_\+centre }\end{DoxyParamCaption})}
+
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_ab74333683d8d4816aa1331794b3b9e94_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_ada2e4bcab49cd7c1563aef3afa20f75d}\label{affichage_8c_ada2e4bcab49cd7c1563aef3afa20f75d}} 
+\index{affichage.c@{affichage.c}!rect\_centre\_rect\_y@{rect\_centre\_rect\_y}}
+\index{rect\_centre\_rect\_y@{rect\_centre\_rect\_y}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{rect\_centre\_rect\_y()}{rect\_centre\_rect\_y()}}
+{\footnotesize\ttfamily void rect\+\_\+centre\+\_\+rect\+\_\+y (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{rectangle,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{rectangle\+\_\+centre }\end{DoxyParamCaption})}
+
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_ada2e4bcab49cd7c1563aef3afa20f75d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a6bd4bd87195563a7315afb0fda7fe6d7}\label{affichage_8c_a6bd4bd87195563a7315afb0fda7fe6d7}} 
 \index{affichage.c@{affichage.c}!rect\_centre\_x@{rect\_centre\_x}}
 \index{rect\_centre\_x@{rect\_centre\_x}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{rect\_centre\_x()}{rect\_centre\_x()}}
 {\footnotesize\ttfamily void rect\+\_\+centre\+\_\+x (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{rectangle }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{affichage_8c_adfcad3e29121806faaa438925ed845ab_adfcad3e29121806faaa438925ed845ab}\label{affichage_8c_adfcad3e29121806faaa438925ed845ab_adfcad3e29121806faaa438925ed845ab}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{da/d68/affichage_8c_a6bd4bd87195563a7315afb0fda7fe6d7_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a6bd4bd87195563a7315afb0fda7fe6d7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_adfcad3e29121806faaa438925ed845ab}\label{affichage_8c_adfcad3e29121806faaa438925ed845ab}} 
 \index{affichage.c@{affichage.c}!rect\_centre\_y@{rect\_centre\_y}}
 \index{rect\_centre\_y@{rect\_centre\_y}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{rect\_centre\_y()}{rect\_centre\_y()}}
 {\footnotesize\ttfamily void rect\+\_\+centre\+\_\+y (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{rectangle }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{affichage_8c_a2201c110dd65bb833da125813d849273_a2201c110dd65bb833da125813d849273}\label{affichage_8c_a2201c110dd65bb833da125813d849273_a2201c110dd65bb833da125813d849273}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{da/d68/affichage_8c_adfcad3e29121806faaa438925ed845ab_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_adfcad3e29121806faaa438925ed845ab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a2201c110dd65bb833da125813d849273}\label{affichage_8c_a2201c110dd65bb833da125813d849273}} 
 \index{affichage.c@{affichage.c}!rect\_correct\_texture@{rect\_correct\_texture}}
 \index{rect\_correct\_texture@{rect\_correct\_texture}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{rect\_correct\_texture()}{rect\_correct\_texture()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}} rect\+\_\+correct\+\_\+texture (\begin{DoxyParamCaption}\item[{const S\+D\+L\+\_\+\+Rect $\ast$const}]{to\+\_\+verify,  }\item[{const int}]{width,  }\item[{const int}]{height }\end{DoxyParamCaption})}
-
-
-
-Fonction qui détermine si la structure S\+D\+L\+\_\+\+Rect ne dépasse pas la taille de la texture. 
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} rect\+\_\+correct\+\_\+texture (\begin{DoxyParamCaption}\item[{const S\+D\+L\+\_\+\+Rect $\ast$const}]{to\+\_\+verify,  }\item[{const int}]{width,  }\item[{const int}]{height }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
@@ -607,23 +1329,50 @@ Fonction qui détermine si la structure S\+D\+L\+\_\+\+Rect ne dépasse pas la t
 \begin{DoxyReturn}{Renvoie}
 vrai Si tout est OK, faux sinon. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{affichage_8c_aada9bf5a3890b9d12a93e50b7c19b523_aada9bf5a3890b9d12a93e50b7c19b523}\label{affichage_8c_aada9bf5a3890b9d12a93e50b7c19b523_aada9bf5a3890b9d12a93e50b7c19b523}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a2201c110dd65bb833da125813d849273_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_aac53a969bdaf69a4807d83bfab5738c2}\label{affichage_8c_aac53a969bdaf69a4807d83bfab5738c2}} 
+\index{affichage.c@{affichage.c}!rect\_ecran\_to\_rect\_map@{rect\_ecran\_to\_rect\_map}}
+\index{rect\_ecran\_to\_rect\_map@{rect\_ecran\_to\_rect\_map}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{rect\_ecran\_to\_rect\_map()}{rect\_ecran\_to\_rect\_map()}}
+{\footnotesize\ttfamily void rect\+\_\+ecran\+\_\+to\+\_\+rect\+\_\+map (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{ecran,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{r\+\_\+map,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{affichage_8c_aada9bf5a3890b9d12a93e50b7c19b523}\label{affichage_8c_aada9bf5a3890b9d12a93e50b7c19b523}} 
 \index{affichage.c@{affichage.c}!rects\_egal\_x@{rects\_egal\_x}}
 \index{rects\_egal\_x@{rects\_egal\_x}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{rects\_egal\_x()}{rects\_egal\_x()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}} rects\+\_\+egal\+\_\+x (\begin{DoxyParamCaption}\item[{const S\+D\+L\+\_\+\+Rect $\ast$const}]{r1,  }\item[{S\+D\+L\+\_\+\+Rect const $\ast$const}]{r2 }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} rects\+\_\+egal\+\_\+x (\begin{DoxyParamCaption}\item[{const S\+D\+L\+\_\+\+Rect $\ast$const}]{r1,  }\item[{S\+D\+L\+\_\+\+Rect const $\ast$const}]{r2 }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{affichage_8c_a476d6dbccccfa7149563166bf7905997_a476d6dbccccfa7149563166bf7905997}\label{affichage_8c_a476d6dbccccfa7149563166bf7905997_a476d6dbccccfa7149563166bf7905997}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_aada9bf5a3890b9d12a93e50b7c19b523_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a476d6dbccccfa7149563166bf7905997}\label{affichage_8c_a476d6dbccccfa7149563166bf7905997}} 
 \index{affichage.c@{affichage.c}!rects\_egal\_y@{rects\_egal\_y}}
 \index{rects\_egal\_y@{rects\_egal\_y}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{rects\_egal\_y()}{rects\_egal\_y()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}} rects\+\_\+egal\+\_\+y (\begin{DoxyParamCaption}\item[{const S\+D\+L\+\_\+\+Rect $\ast$const}]{r1,  }\item[{S\+D\+L\+\_\+\+Rect const $\ast$const}]{r2 }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} rects\+\_\+egal\+\_\+y (\begin{DoxyParamCaption}\item[{const S\+D\+L\+\_\+\+Rect $\ast$const}]{r1,  }\item[{S\+D\+L\+\_\+\+Rect const $\ast$const}]{r2 }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{affichage_8c_a83f1b5ddb558420c53c41071e559a8ff_a83f1b5ddb558420c53c41071e559a8ff}\label{affichage_8c_a83f1b5ddb558420c53c41071e559a8ff_a83f1b5ddb558420c53c41071e559a8ff}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a476d6dbccccfa7149563166bf7905997_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_a83f1b5ddb558420c53c41071e559a8ff}\label{affichage_8c_a83f1b5ddb558420c53c41071e559a8ff}} 
 \index{affichage.c@{affichage.c}!text\_copier\_position@{text\_copier\_position}}
 \index{text\_copier\_position@{text\_copier\_position}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{text\_copier\_position()}{text\_copier\_position()}}
-{\footnotesize\ttfamily void text\+\_\+copier\+\_\+position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{a\+\_\+modifier,  }\item[{const \mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$const}]{original }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void text\+\_\+copier\+\_\+position (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{a\+\_\+modifier,  }\item[{const t\+\_\+aff $\ast$const}]{original }\end{DoxyParamCaption})}
 
 Fonction qui permet de placer 2 textures aux mêmes endroit à l\textquotesingle{}écran
 
@@ -634,64 +1383,90 @@ Fonction qui permet de placer 2 textures aux mêmes endroit à l\textquotesingle
 {\em original} & La texture dont on veut copier la position \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{affichage_8c_ae758bf274706045e5903407fbaf967cc_ae758bf274706045e5903407fbaf967cc}\label{affichage_8c_ae758bf274706045e5903407fbaf967cc_ae758bf274706045e5903407fbaf967cc}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_a83f1b5ddb558420c53c41071e559a8ff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{affichage_8c_ae758bf274706045e5903407fbaf967cc}\label{affichage_8c_ae758bf274706045e5903407fbaf967cc}} 
 \index{affichage.c@{affichage.c}!update\_frame\_texture@{update\_frame\_texture}}
 \index{update\_frame\_texture@{update\_frame\_texture}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{update\_frame\_texture()}{update\_frame\_texture()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} update\+\_\+frame\+\_\+texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{affichage_8h_ab2e17a80d37e499100846e778df315bd_ab2e17a80d37e499100846e778df315bd}{t\+\_\+aff}} $\ast$}]{texture,  }\item[{const int}]{x,  }\item[{const int}]{y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} update\+\_\+frame\+\_\+texture (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{const int}]{x,  }\item[{const int}]{y }\end{DoxyParamCaption})}
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d68/affichage_8c_ae758bf274706045e5903407fbaf967cc_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Documentation des variables}
-\mbox{\Hypertarget{affichage_8c_adc1d100970d8cf56a0511e7af4c6415a_adc1d100970d8cf56a0511e7af4c6415a}\label{affichage_8c_adc1d100970d8cf56a0511e7af4c6415a_adc1d100970d8cf56a0511e7af4c6415a}} 
+\mbox{\Hypertarget{affichage_8c_adc1d100970d8cf56a0511e7af4c6415a}\label{affichage_8c_adc1d100970d8cf56a0511e7af4c6415a}} 
 \index{affichage.c@{affichage.c}!buffer\_affichage@{buffer\_affichage}}
 \index{buffer\_affichage@{buffer\_affichage}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{buffer\_affichage}{buffer\_affichage}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structlist}{list}}$\ast$ buffer\+\_\+affichage}
 
-\mbox{\Hypertarget{affichage_8c_a762704f794c8d74099d3053757266dcb_a762704f794c8d74099d3053757266dcb}\label{affichage_8c_a762704f794c8d74099d3053757266dcb_a762704f794c8d74099d3053757266dcb}} 
+\mbox{\Hypertarget{affichage_8c_a762704f794c8d74099d3053757266dcb}\label{affichage_8c_a762704f794c8d74099d3053757266dcb}} 
 \index{affichage.c@{affichage.c}!compteur@{compteur}}
 \index{compteur@{compteur}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{compteur}{compteur}}
 {\footnotesize\ttfamily long int compteur}
 
-\mbox{\Hypertarget{affichage_8c_a675ea76148cd2210ee956b7358f18194_a675ea76148cd2210ee956b7358f18194}\label{affichage_8c_a675ea76148cd2210ee956b7358f18194_a675ea76148cd2210ee956b7358f18194}} 
+\mbox{\Hypertarget{affichage_8c_aef49d39125567f1a9d5ed0561ea60edc}\label{affichage_8c_aef49d39125567f1a9d5ed0561ea60edc}} 
+\index{affichage.c@{affichage.c}!fenetre\_finale@{fenetre\_finale}}
+\index{fenetre\_finale@{fenetre\_finale}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{fenetre\_finale}{fenetre\_finale}}
+{\footnotesize\ttfamily t\+\_\+aff$\ast$ fenetre\+\_\+finale = N\+U\+LL}
+
+\mbox{\Hypertarget{affichage_8c_a675ea76148cd2210ee956b7358f18194}\label{affichage_8c_a675ea76148cd2210ee956b7358f18194}} 
 \index{affichage.c@{affichage.c}!FENETRE\_LARGEUR@{FENETRE\_LARGEUR}}
 \index{FENETRE\_LARGEUR@{FENETRE\_LARGEUR}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{FENETRE\_LARGEUR}{FENETRE\_LARGEUR}}
 {\footnotesize\ttfamily unsigned int F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+A\+R\+G\+E\+UR}
 
-\mbox{\Hypertarget{affichage_8c_a28b763408ce1b0c5b625e4c409a5022a_a28b763408ce1b0c5b625e4c409a5022a}\label{affichage_8c_a28b763408ce1b0c5b625e4c409a5022a_a28b763408ce1b0c5b625e4c409a5022a}} 
+\mbox{\Hypertarget{affichage_8c_a28b763408ce1b0c5b625e4c409a5022a}\label{affichage_8c_a28b763408ce1b0c5b625e4c409a5022a}} 
 \index{affichage.c@{affichage.c}!FENETRE\_LONGUEUR@{FENETRE\_LONGUEUR}}
 \index{FENETRE\_LONGUEUR@{FENETRE\_LONGUEUR}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{FENETRE\_LONGUEUR}{FENETRE\_LONGUEUR}}
 {\footnotesize\ttfamily unsigned int F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+O\+N\+G\+U\+E\+UR}
 
-\mbox{\Hypertarget{affichage_8c_a8377ca78d82bccc84bac70229aeac875_a8377ca78d82bccc84bac70229aeac875}\label{affichage_8c_a8377ca78d82bccc84bac70229aeac875_a8377ca78d82bccc84bac70229aeac875}} 
+\mbox{\Hypertarget{affichage_8c_a994bc98929137f8db88670c8b6f0851c}\label{affichage_8c_a994bc98929137f8db88670c8b6f0851c}} 
+\index{affichage.c@{affichage.c}!heal@{heal}}
+\index{heal@{heal}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{heal}{heal}}
+{\footnotesize\ttfamily t\+\_\+aff$\ast$ heal = N\+U\+LL}
+
+\mbox{\Hypertarget{affichage_8c_a8377ca78d82bccc84bac70229aeac875}\label{affichage_8c_a8377ca78d82bccc84bac70229aeac875}} 
 \index{affichage.c@{affichage.c}!listeDeTextures@{listeDeTextures}}
 \index{listeDeTextures@{listeDeTextures}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{listeDeTextures}{listeDeTextures}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structlist}{list}}$\ast$ liste\+De\+Textures}
 
-\mbox{\Hypertarget{affichage_8c_ad73b9ba1a88012fd3ae8637a61b57709_ad73b9ba1a88012fd3ae8637a61b57709}\label{affichage_8c_ad73b9ba1a88012fd3ae8637a61b57709_ad73b9ba1a88012fd3ae8637a61b57709}} 
+\mbox{\Hypertarget{affichage_8c_ad73b9ba1a88012fd3ae8637a61b57709}\label{affichage_8c_ad73b9ba1a88012fd3ae8637a61b57709}} 
 \index{affichage.c@{affichage.c}!multiplicateur\_x@{multiplicateur\_x}}
 \index{multiplicateur\_x@{multiplicateur\_x}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{multiplicateur\_x}{multiplicateur\_x}}
 {\footnotesize\ttfamily float multiplicateur\+\_\+x}
 
-\mbox{\Hypertarget{affichage_8c_a2c28b6f5a4c139bcb8ed3fed95ff8099_a2c28b6f5a4c139bcb8ed3fed95ff8099}\label{affichage_8c_a2c28b6f5a4c139bcb8ed3fed95ff8099_a2c28b6f5a4c139bcb8ed3fed95ff8099}} 
+\mbox{\Hypertarget{affichage_8c_a2c28b6f5a4c139bcb8ed3fed95ff8099}\label{affichage_8c_a2c28b6f5a4c139bcb8ed3fed95ff8099}} 
 \index{affichage.c@{affichage.c}!multiplicateur\_y@{multiplicateur\_y}}
 \index{multiplicateur\_y@{multiplicateur\_y}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{multiplicateur\_y}{multiplicateur\_y}}
 {\footnotesize\ttfamily float multiplicateur\+\_\+y}
 
-\mbox{\Hypertarget{affichage_8c_adede5261ac6b86bf02adc9516dd999bf_adede5261ac6b86bf02adc9516dd999bf}\label{affichage_8c_adede5261ac6b86bf02adc9516dd999bf_adede5261ac6b86bf02adc9516dd999bf}} 
+\mbox{\Hypertarget{affichage_8c_adede5261ac6b86bf02adc9516dd999bf}\label{affichage_8c_adede5261ac6b86bf02adc9516dd999bf}} 
 \index{affichage.c@{affichage.c}!tx@{tx}}
 \index{tx@{tx}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{tx}{tx}}
 {\footnotesize\ttfamily S\+D\+L\+\_\+\+Rect tx}
 
-\mbox{\Hypertarget{affichage_8c_af91959b4ed80cc07433e8e07ddeb28bb_af91959b4ed80cc07433e8e07ddeb28bb}\label{affichage_8c_af91959b4ed80cc07433e8e07ddeb28bb_af91959b4ed80cc07433e8e07ddeb28bb}} 
+\mbox{\Hypertarget{affichage_8c_af91959b4ed80cc07433e8e07ddeb28bb}\label{affichage_8c_af91959b4ed80cc07433e8e07ddeb28bb}} 
 \index{affichage.c@{affichage.c}!ty@{ty}}
 \index{ty@{ty}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{ty}{ty}}

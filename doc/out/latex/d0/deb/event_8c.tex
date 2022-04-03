@@ -2,12 +2,9 @@
 \label{event_8c}\index{event.c@{event.c}}
 
 
-Fichier qui appelle différentes fonctions en fonction du déclenchement d\textquotesingle{}évenements.  
+Fonctions de gestion des événements du jeu.  
 
 
-{\ttfamily \#include $<$commun.\+h$>$}\newline
-{\ttfamily \#include $<$event.\+h$>$}\newline
-{\ttfamily \#include $<$personnage.\+h$>$}\newline
 Graphe des dépendances par inclusion de event.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -19,31 +16,42 @@ Graphe des dépendances par inclusion de event.\+c\+:
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-static void \mbox{\hyperlink{event_8c_a49b2a857f5eb92cffc24e3db887f08d4_a49b2a857f5eb92cffc24e3db887f08d4}{key\+Down}} (S\+D\+L\+\_\+\+Keyboard\+Event $\ast$ev)
-\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand une touche du clavier est pressée. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{event_8c_a3d44f780c008868fddbb6daa9238b828_a3d44f780c008868fddbb6daa9238b828}{key\+Up}} (S\+D\+L\+\_\+\+Keyboard\+Event $\ast$ev)
-\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand une touche du clavier est relachée. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{event_8c_a27fd8724d19878c122a916d94f848415_a27fd8724d19878c122a916d94f848415}{mouse\+Button\+Down}} (S\+D\+L\+\_\+\+Mouse\+Button\+Event $\ast$ev)
-\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand un bouton de la souris est pressée. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{event_8c_a947ade8ec59b845047ae96a8c9ea146a_a947ade8ec59b845047ae96a8c9ea146a}{mouse\+Button\+Up}} (S\+D\+L\+\_\+\+Mouse\+Button\+Event $\ast$ev)
-\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand un bouton de la souris est relachée. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{event_8c_ac5aaa329d1cae78f44676d63b58eec4a_ac5aaa329d1cae78f44676d63b58eec4a}{jeu\+\_\+event}} (void)
+static void \mbox{\hyperlink{event_8c_afe551917ddc29ee5ade1c65a26a61537}{key\+Down}} (S\+D\+L\+\_\+\+Keyboard\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$joueurs)
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand une touche du clavier est pressée par un joueur. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{event_8c_ad024139f09670512c89309b5261a96b1}{key\+Up}} (S\+D\+L\+\_\+\+Keyboard\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$joueurs)
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand une touche du clavier est relachée par un joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{event_8c_ac367042c66a1868384bac213a1ecbb99}{joystick\+\_\+button\+\_\+down}} (S\+D\+L\+\_\+\+Joy\+Button\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$j)
+\item 
+void \mbox{\hyperlink{event_8c_a3d363d383d39de072c4b66e4bc202809}{joystick\+\_\+button\+\_\+up}} (S\+D\+L\+\_\+\+Joy\+Button\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$j)
+\item 
+void \mbox{\hyperlink{event_8c_a5399cdc6a8a5f4af8c2488ac077899ce}{joystick\+\_\+stick}} (joueur\+\_\+t $\ast$$\ast$j)
+\item 
+static void \mbox{\hyperlink{event_8c_a3ee3a73779375a42cd72dde0da991e41}{mouse\+Button\+Down}} (S\+D\+L\+\_\+\+Mouse\+Button\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$joueurs)
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand un bouton de la souris est pressée par un joueur. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{event_8c_ad82a0fa86ea18b0674c6807f8951e1a3}{mouse\+Button\+Up}} (S\+D\+L\+\_\+\+Mouse\+Button\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$joueurs)
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand un bouton de la souris est relachée par un joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{event_8c_ac27091daa86f31b79780d6a91801fd11}{jeu\+\_\+event\+\_\+manette}} (joueur\+\_\+t $\ast$$\ast$joueurs)
+\item 
+void \mbox{\hyperlink{event_8c_aded23e2ea2ac3df851674e2292250166}{jeu\+\_\+event}} (joueur\+\_\+t $\ast$$\ast$joueurs)
 \begin{DoxyCompactList}\small\item\em Fonction qui gère les événements. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{event_8c_ac8d571cc4da84ae88b13211ec29eb2e3_ac8d571cc4da84ae88b13211ec29eb2e3}{logo\+\_\+passer}} (void)
+\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{event_8c_ac8d571cc4da84ae88b13211ec29eb2e3}{logo\+\_\+passer}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+S\+D\+L\+\_\+\+Game\+Controller $\ast$ \mbox{\hyperlink{event_8c_a3fcb970d4a71cf584b59951228186d91}{manette}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
-Fichier qui appelle différentes fonctions en fonction du déclenchement d\textquotesingle{}évenements. 
-
 \begin{DoxyAuthor}{Auteur}
-Despert Ange (\href{mailto:Ange.Despert.Etu@univ-lemans.fr}{\texttt{ Ange.\+Despert.\+Etu@univ-\/lemans.\+fr}}) 
+Ange Despert (\href{mailto:Ange.Despert.Etu@univ-lemans.fr}{\texttt{ Ange.\+Despert.\+Etu@univ-\/lemans.\+fr}}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 0.\+1 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-02/02/2022
+02/02/2022 
 \end{DoxyDate}
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2022 
@@ -51,94 +59,232 @@ Copyright (c) 2022
 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{event_8c_ac5aaa329d1cae78f44676d63b58eec4a_ac5aaa329d1cae78f44676d63b58eec4a}\label{event_8c_ac5aaa329d1cae78f44676d63b58eec4a_ac5aaa329d1cae78f44676d63b58eec4a}} 
+\mbox{\Hypertarget{event_8c_aded23e2ea2ac3df851674e2292250166}\label{event_8c_aded23e2ea2ac3df851674e2292250166}} 
 \index{event.c@{event.c}!jeu\_event@{jeu\_event}}
 \index{jeu\_event@{jeu\_event}!event.c@{event.c}}
 \doxysubsubsection{\texorpdfstring{jeu\_event()}{jeu\_event()}}
-{\footnotesize\ttfamily void jeu\+\_\+event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
-
-
-
-Fonction qui gère les événements. 
+{\footnotesize\ttfamily void jeu\+\_\+event (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Despert Ange 
 \end{DoxyAuthor}
-\mbox{\Hypertarget{event_8c_a49b2a857f5eb92cffc24e3db887f08d4_a49b2a857f5eb92cffc24e3db887f08d4}\label{event_8c_a49b2a857f5eb92cffc24e3db887f08d4_a49b2a857f5eb92cffc24e3db887f08d4}} 
+
+\begin{DoxyParams}{Paramètres}
+{\em joueur} & Joueurs pouvant provoquer l\textquotesingle{}événement \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/deb/event_8c_aded23e2ea2ac3df851674e2292250166_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{d0/deb/event_8c_aded23e2ea2ac3df851674e2292250166_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{event_8c_ac27091daa86f31b79780d6a91801fd11}\label{event_8c_ac27091daa86f31b79780d6a91801fd11}} 
+\index{event.c@{event.c}!jeu\_event\_manette@{jeu\_event\_manette}}
+\index{jeu\_event\_manette@{jeu\_event\_manette}!event.c@{event.c}}
+\doxysubsubsection{\texorpdfstring{jeu\_event\_manette()}{jeu\_event\_manette()}}
+{\footnotesize\ttfamily void jeu\+\_\+event\+\_\+manette (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/deb/event_8c_ac27091daa86f31b79780d6a91801fd11_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{d0/deb/event_8c_ac27091daa86f31b79780d6a91801fd11_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{event_8c_ac367042c66a1868384bac213a1ecbb99}\label{event_8c_ac367042c66a1868384bac213a1ecbb99}} 
+\index{event.c@{event.c}!joystick\_button\_down@{joystick\_button\_down}}
+\index{joystick\_button\_down@{joystick\_button\_down}!event.c@{event.c}}
+\doxysubsubsection{\texorpdfstring{joystick\_button\_down()}{joystick\_button\_down()}}
+{\footnotesize\ttfamily void joystick\+\_\+button\+\_\+down (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Joy\+Button\+Event $\ast$}]{ev,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{j }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/deb/event_8c_ac367042c66a1868384bac213a1ecbb99_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/deb/event_8c_ac367042c66a1868384bac213a1ecbb99_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{event_8c_a3d363d383d39de072c4b66e4bc202809}\label{event_8c_a3d363d383d39de072c4b66e4bc202809}} 
+\index{event.c@{event.c}!joystick\_button\_up@{joystick\_button\_up}}
+\index{joystick\_button\_up@{joystick\_button\_up}!event.c@{event.c}}
+\doxysubsubsection{\texorpdfstring{joystick\_button\_up()}{joystick\_button\_up()}}
+{\footnotesize\ttfamily void joystick\+\_\+button\+\_\+up (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Joy\+Button\+Event $\ast$}]{ev,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{j }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{d0/deb/event_8c_a3d363d383d39de072c4b66e4bc202809_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/deb/event_8c_a3d363d383d39de072c4b66e4bc202809_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{event_8c_a5399cdc6a8a5f4af8c2488ac077899ce}\label{event_8c_a5399cdc6a8a5f4af8c2488ac077899ce}} 
+\index{event.c@{event.c}!joystick\_stick@{joystick\_stick}}
+\index{joystick\_stick@{joystick\_stick}!event.c@{event.c}}
+\doxysubsubsection{\texorpdfstring{joystick\_stick()}{joystick\_stick()}}
+{\footnotesize\ttfamily void joystick\+\_\+stick (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$$\ast$}]{j }\end{DoxyParamCaption})}
+
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/deb/event_8c_a5399cdc6a8a5f4af8c2488ac077899ce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{event_8c_afe551917ddc29ee5ade1c65a26a61537}\label{event_8c_afe551917ddc29ee5ade1c65a26a61537}} 
 \index{event.c@{event.c}!keyDown@{keyDown}}
 \index{keyDown@{keyDown}!event.c@{event.c}}
 \doxysubsubsection{\texorpdfstring{keyDown()}{keyDown()}}
-{\footnotesize\ttfamily void key\+Down (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Keyboard\+Event $\ast$}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Fonction qui gère les événements quand une touche du clavier est pressée. 
+{\footnotesize\ttfamily void key\+Down (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Keyboard\+Event $\ast$}]{ev,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \begin{DoxyAuthor}{Auteur}
 Antoine Bruneau 
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
-{\em S\+D\+L\+\_\+\+Keyboard\+Event$\ast$} & une structure contenant l\textquotesingle{}évênement \\
+{\em ev} & Structure contenant l\textquotesingle{}événement \\
+\hline
+{\em joueurs} & Joueurs pouvant provoquer l\textquotesingle{}événement \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{event_8c_a3d44f780c008868fddbb6daa9238b828_a3d44f780c008868fddbb6daa9238b828}\label{event_8c_a3d44f780c008868fddbb6daa9238b828_a3d44f780c008868fddbb6daa9238b828}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/deb/event_8c_afe551917ddc29ee5ade1c65a26a61537_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d0/deb/event_8c_afe551917ddc29ee5ade1c65a26a61537_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{event_8c_ad024139f09670512c89309b5261a96b1}\label{event_8c_ad024139f09670512c89309b5261a96b1}} 
 \index{event.c@{event.c}!keyUp@{keyUp}}
 \index{keyUp@{keyUp}!event.c@{event.c}}
 \doxysubsubsection{\texorpdfstring{keyUp()}{keyUp()}}
-{\footnotesize\ttfamily void key\+Up (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Keyboard\+Event $\ast$}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Fonction qui gère les événements quand une touche du clavier est relachée. 
+{\footnotesize\ttfamily void key\+Up (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Keyboard\+Event $\ast$}]{ev,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \begin{DoxyAuthor}{Auteur}
 Antoine Bruneau 
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
-{\em S\+D\+L\+\_\+\+Keyboard\+Event$\ast$} & une structure contenant l\textquotesingle{}évênement \\
+{\em ev} & Structure contenant l\textquotesingle{}événement \\
+\hline
+{\em joueurs} & Joueurs pouvant provoquer l\textquotesingle{}événement \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{event_8c_ac8d571cc4da84ae88b13211ec29eb2e3_ac8d571cc4da84ae88b13211ec29eb2e3}\label{event_8c_ac8d571cc4da84ae88b13211ec29eb2e3_ac8d571cc4da84ae88b13211ec29eb2e3}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{d0/deb/event_8c_ad024139f09670512c89309b5261a96b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{event_8c_ac8d571cc4da84ae88b13211ec29eb2e3}\label{event_8c_ac8d571cc4da84ae88b13211ec29eb2e3}} 
 \index{event.c@{event.c}!logo\_passer@{logo\_passer}}
 \index{logo\_passer@{logo\_passer}!event.c@{event.c}}
 \doxysubsubsection{\texorpdfstring{logo\_passer()}{logo\_passer()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b_abb452686968e48b67397da5f97445f5b}{bool}} logo\+\_\+passer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} logo\+\_\+passer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{event_8c_a27fd8724d19878c122a916d94f848415_a27fd8724d19878c122a916d94f848415}\label{event_8c_a27fd8724d19878c122a916d94f848415_a27fd8724d19878c122a916d94f848415}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/deb/event_8c_ac8d571cc4da84ae88b13211ec29eb2e3_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{d0/deb/event_8c_ac8d571cc4da84ae88b13211ec29eb2e3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{event_8c_a3ee3a73779375a42cd72dde0da991e41}\label{event_8c_a3ee3a73779375a42cd72dde0da991e41}} 
 \index{event.c@{event.c}!mouseButtonDown@{mouseButtonDown}}
 \index{mouseButtonDown@{mouseButtonDown}!event.c@{event.c}}
 \doxysubsubsection{\texorpdfstring{mouseButtonDown()}{mouseButtonDown()}}
-{\footnotesize\ttfamily void mouse\+Button\+Down (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Mouse\+Button\+Event $\ast$}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Fonction qui gère les événements quand un bouton de la souris est pressée. 
+{\footnotesize\ttfamily void mouse\+Button\+Down (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Mouse\+Button\+Event $\ast$}]{ev,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \begin{DoxyAuthor}{Auteur}
 Antoine Bruneau 
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
-{\em S\+D\+L\+\_\+\+Keyboard\+Event$\ast$} & une structure contenant l\textquotesingle{}évênement \\
+{\em ev} & Structure contenant l\textquotesingle{}événement \\
+\hline
+{\em joueurs} & Joueurs pouvant provoquer l\textquotesingle{}événement \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{event_8c_a947ade8ec59b845047ae96a8c9ea146a_a947ade8ec59b845047ae96a8c9ea146a}\label{event_8c_a947ade8ec59b845047ae96a8c9ea146a_a947ade8ec59b845047ae96a8c9ea146a}} 
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/deb/event_8c_a3ee3a73779375a42cd72dde0da991e41_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{event_8c_ad82a0fa86ea18b0674c6807f8951e1a3}\label{event_8c_ad82a0fa86ea18b0674c6807f8951e1a3}} 
 \index{event.c@{event.c}!mouseButtonUp@{mouseButtonUp}}
 \index{mouseButtonUp@{mouseButtonUp}!event.c@{event.c}}
 \doxysubsubsection{\texorpdfstring{mouseButtonUp()}{mouseButtonUp()}}
-{\footnotesize\ttfamily void mouse\+Button\+Up (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Mouse\+Button\+Event $\ast$}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Fonction qui gère les événements quand un bouton de la souris est relachée. 
+{\footnotesize\ttfamily void mouse\+Button\+Up (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Mouse\+Button\+Event $\ast$}]{ev,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \begin{DoxyAuthor}{Auteur}
 Antoine Bruneau 
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
-{\em S\+D\+L\+\_\+\+Keyboard\+Event$\ast$} & une structure contenant l\textquotesingle{}évênement \\
+{\em ev} & Structure contenant l\textquotesingle{}évênement \\
+\hline
+{\em joueurs} & Joueurs pouvant provoquer l\textquotesingle{}événement \\
 \hline
 \end{DoxyParams}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/deb/event_8c_ad82a0fa86ea18b0674c6807f8951e1a3_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\Hypertarget{event_8c_a3fcb970d4a71cf584b59951228186d91}\label{event_8c_a3fcb970d4a71cf584b59951228186d91}} 
+\index{event.c@{event.c}!manette@{manette}}
+\index{manette@{manette}!event.c@{event.c}}
+\doxysubsubsection{\texorpdfstring{manette}{manette}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Game\+Controller$\ast$ manette}
+

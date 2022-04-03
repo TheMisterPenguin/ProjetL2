@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['keydown_479',['keyDown',['../d0/deb/event_8c_a49b2a857f5eb92cffc24e3db887f08d4.html#a49b2a857f5eb92cffc24e3db887f08d4',1,'event.c']]],
-  ['keyup_480',['keyUp',['../d0/deb/event_8c_a3d44f780c008868fddbb6daa9238b828.html#a3d44f780c008868fddbb6daa9238b828',1,'event.c']]]
+  ['keydown_696',['keyDown',['../d0/deb/event_8c.html#afe551917ddc29ee5ade1c65a26a61537',1,'event.c']]],
+  ['keyup_697',['keyUp',['../d0/deb/event_8c.html#ad024139f09670512c89309b5261a96b1',1,'event.c']]]
 ];
