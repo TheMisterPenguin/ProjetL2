@@ -73,6 +73,7 @@ int main(int argc, char** argv)
     joueur_t * joueur1 = NULL;
     joueur_t * joueur2 = NULL;
     list * animations = init_liste(NULL, NULL, (void (*)(void *))info_texture);
+    bool apparaitre = vrai; /**<Si l'écran doit apparaitre avec un fondu*/
 
     /* On initialise le programme */
     SDL_SetMainReady();
@@ -107,7 +108,7 @@ int main(int argc, char** argv)
     init_liste_base_sort();
     
     /* On charge la map */
-    map = charger_map("2.json");
+    map = charger_map("map/2.json");
 
 
     //TEMPORAIREMENT ICI -- test animation heal (équiper consommable puis touche e) -- TEMPORAIREMENT ICI
@@ -151,11 +152,6 @@ int main(int argc, char** argv)
 
     SDL_RenderClear(rendu_principal);
 
-    if(SDL_RenderCopy(rendu_principal, map->text_sol->texture, NULL, NULL))
-        fprintf(stderr, "Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
-
-    SDL_QueryTexture(map->text_map->texture, NULL, NULL, &(map->text_map->width), &(map->text_map->height));
-
     /* On place le J1 au centre de l'écran */
 
     rect_centre_rect(&joueur1->statut->zone_colision, fenetre_finale->frame_anim);
@@ -176,16 +172,20 @@ int main(int argc, char** argv)
             switch (joueur1->statut->orient_dep)
             {
             case NORD_1:
-                deplacement_y_pers(map, joueur1, -1);
+                if((apparaitre = deplacement_y_pers(map, joueurs, nb_joueurs, -1)))
+                    continue;
                 break;
             case SUD_1:
-                deplacement_y_pers(map, joueur1, 1);
+                if((apparaitre = deplacement_y_pers(map, joueurs, nb_joueurs, 1)))
+                    continue;
                 break;
             case OUEST_1:
-                deplacement_x_pers(map, joueur1, -1);
+                if((apparaitre = deplacement_x_pers(map, joueurs, nb_joueurs, -1)))
+                    continue;
                 break;
             case EST_1:
-                deplacement_x_pers(map, joueur1, 1);
+                if((apparaitre = deplacement_x_pers(map, joueurs, nb_joueurs, 1)))
+                    continue;
                 break;
             }
         }
@@ -246,6 +246,12 @@ int main(int argc, char** argv)
                 SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
         #endif
 
+        #ifdef DEBUG_TP
+            en_tete(map->liste_zone_tp);
+            zone_tp *z = valeur_elt(map->liste_zone_tp);
+            afficher_zone_tp(z);
+        #endif
+
         afficher_monstres(map->liste_monstres, joueur1);
         afficher_sorts(map->liste_sorts, joueur1);
 
@@ -285,6 +291,23 @@ int main(int argc, char** argv)
 
         /* On affiche le rendu principal final */
         afficher_texture(fenetre_finale, rendu_principal);
+
+        if(apparaitre){ /* On fait apparaitre la map à l'aide d'un fondu*/
+            SDL_SetTextureBlendMode(fenetre_finale->texture, SDL_BLENDMODE_BLEND);
+
+            for(unsigned int i = 0; i < 256; i += 5 ){ /* Fondu (disparition de la map) */
+                if (SDL_SetTextureAlphaMod(fenetre_finale->texture, i) < 0)
+                    fprintf(stderr, "Erreur lors de la modification de l'alpha : %s\n", SDL_GetError());
+                if(SDL_RenderClear(rendu_principal) < 0)
+                    fprintf(stderr, "Erreur : le buffer d'affichage n'a pas pu être vidé : %s\n", SDL_GetError());
+                if (afficher_texture(fenetre_finale, rendu_principal) != 0)
+                    fprintf(stderr,"Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
+                SDL_RenderPresent(rendu_principal);
+                SDL_Delay(10);
+            }
+
+            apparaitre = faux;
+        }
 
         /* On affiche l'interface */
         //barre de vie joueur1
