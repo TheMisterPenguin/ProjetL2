@@ -35,7 +35,7 @@ float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépendent de l
 void * ajout_text_liste(void * t){return t;}
 
 void detruire_texture(t_aff **texture){
-    if(texture == NULL)
+    if(*texture == NULL)
         return;
     
     if((*texture)->aff_fenetre != NULL)
@@ -973,4 +973,44 @@ void detruire_collision_dans_liste(list * liste_collisions, SDL_Rect * collision
         }
         suivant(liste_collisions);
     }
+}
+
+SDL_Point get_rect_center(const SDL_Rect *const r){
+    SDL_Point p;
+
+    if(r->w % 2)
+        p.x = r->w /2 + 1;
+    else
+        p.x = r->w;
+
+    if (r->h % 2)
+        p.y = r->h / 2 + 1;
+    else
+        p.y = r->h;
+
+    return p;
+}   
+
+SDL_Point get_rect_center_coord(const SDL_Rect *const r){
+    SDL_Point p;
+
+    if(r->w % 2)
+        p.x = r->x + (r->w /2 + 1);
+    else
+        p.x = r->x + r->w;
+
+    if (r->h % 2)
+        p.y = r->y + (r->h / 2 + 1);
+    else
+        p.y = r->y + r->h;
+
+    return p;
+}   
+
+void place_rect_center_from_point(SDL_Rect *r, SDL_Point p){
+
+    SDL_Point centre_rect = get_rect_center_coord(r);
+
+    r->x += p.x - centre_rect.x;
+    r->y += p.y - centre_rect.y;
 }

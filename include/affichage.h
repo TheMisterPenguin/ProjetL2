@@ -432,4 +432,10 @@ bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r);
 
 void detruire_collision_dans_liste(list * liste_collisions, SDL_Rect * collision);
 
+SDL_Point get_rect_center(const SDL_Rect *const r);
+
+SDL_Point get_rect_center_coord(const SDL_Rect *const r);
+
+void place_rect_center_from_point(SDL_Rect *r, SDL_Point p);
+
 #endif
