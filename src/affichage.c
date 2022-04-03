@@ -787,7 +787,7 @@ bool rects_egal_x(const SDL_Rect * const r1, SDL_Rect const * const r2){
 
 bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2){
 
-    return (r1->h == r2->h);
+    return (r1->y == r2->y);
 
     return faux;
 }
@@ -1023,15 +1023,15 @@ SDL_Point get_rect_center(const SDL_Rect *const r){
 SDL_Point get_rect_center_coord(const SDL_Rect *const r){
     SDL_Point p;
 
-    if(r->w % 2)
+    if(!(r->w % 2))
         p.x = r->x + (r->w /2 + 1);
     else
-        p.x = r->x + r->w;
+        p.x = r->x + r->w / 2;
 
-    if (r->h % 2)
+    if (!(r->h % 2))
         p.y = r->y + (r->h / 2 + 1);
     else
-        p.y = r->y + r->h;
+        p.y = r->y + r->h / 2;
 
     return p;
 }   

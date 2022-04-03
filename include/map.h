@@ -29,9 +29,9 @@ typedef struct liste_base_monstres_s liste_base_monstres_t;
  * \author Ange Despert
  */
 typedef struct {
-    point p1,p2; /**< Rectangle représentant la zone de tp */
+    SDL_Rect zone; /**< Rectangle représentant la zone de tp */
     unsigned int id_map; /**< l'id de la map de destination */
-    point dest; /**< Les coordonnées du point d'apparition sur la map */
+    SDL_Point dest; /**< Les coordonnées du point d'apparition sur la map */
 }zone_tp;
 
 /**

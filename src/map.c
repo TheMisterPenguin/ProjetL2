@@ -316,7 +316,47 @@ t_map * charger_map(const char * const nom_map){
     }
 
     for(unsigned int i = 0; i < json_object_array_length(JSON_zones_tp); i++){
-        
+        JSON_zone_tp = json_object_array_get_idx(JSON_zones_tp,i);
+
+        /* Récupération des informations de la zone de TP */
+        if(!JSON_zone_tp)
+            erreur("Impossible de charger la map : %s", ERREUR_FICHIER, json_util_get_last_err());
+
+        if(!json_object_object_get_ex(JSON_zone_tp, "x", &JSON_zone_tp_x))
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+        if(!json_object_object_get_ex(JSON_zone_tp, "y", &JSON_zone_tp_y))
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+        if(!json_object_object_get_ex(JSON_zone_tp, "w", &JSON_zone_tp_w))
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+        if(!json_object_object_get_ex(JSON_zone_tp, "h", &JSON_zone_tp_h))
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+        if(!json_object_object_get_ex(JSON_zone_tp, "destination", &JSON_zone_tp_dest))
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+    
+        if(!json_object_object_get_ex(JSON_zone_tp, "coords", &JSON_zone_tp_coords))
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+        JSON_zone_tp_coord_x = json_object_array_get_idx(JSON_zone_tp_coords,0);
+
+        if(!JSON_zone_tp_coord_x)
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+        JSON_zone_tp_coord_y = json_object_array_get_idx(JSON_zone_tp_coords,1);
+
+        if(!JSON_zone_tp_coord_y)
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+        /* Création de la zone de TP */
+        zone_tp *z = malloc(sizeof(zone_tp));
+
+        if(!z)
+            erreur("Impossible de charger la map : %s", OUT_OF_MEM, json_util_get_last_err());
+
+
     }
 
     json_object_put(JSON_fichier); //libération mémoire de l'objet json
