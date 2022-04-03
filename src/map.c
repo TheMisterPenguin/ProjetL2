@@ -229,6 +229,7 @@ t_map * charger_map(const char * const nom_map){
     if(!m->text_sol)
         erreur("Impossible de charger la map : %s", ERREUR_TEXTURE, SDL_GetError());
 
+    //Génération des collisions de la carte
     for(unsigned int i = 0; i < json_object_array_length(JSON_tbl_wall); i++){
         JSON_object_wall = json_object_array_get_idx(JSON_tbl_wall, i);
 
@@ -260,6 +261,7 @@ t_map * charger_map(const char * const nom_map){
         ajout_droit(m->liste_collisions, valeur);
     }
 
+    //Génération des monstres
     for(unsigned int i = 0; i < json_object_array_length(JSON_tbl_monstre); i++){
         JSON_objet_monstre = json_object_array_get_idx(JSON_tbl_monstre,i);
 
@@ -291,6 +293,7 @@ t_map * charger_map(const char * const nom_map){
         ajout_droit(m->liste_collisions, &(inserer->collision));
     }
 
+    //Génération des coffres
     for(unsigned int i = 0; i < json_object_array_length(JSON_tbl_coffre); i++){
         objet_json = json_object_array_get_idx(JSON_tbl_coffre,i);
 
@@ -299,11 +302,9 @@ t_map * charger_map(const char * const nom_map){
 
         x2 = json_object_array_get_idx(JSON_position2,0);
         y2 = json_object_array_get_idx(JSON_position2,1);
-        
+
         nv_coffre = creer_coffre(liste_base_coffres, json_object_get_string(nom_coffre), json_object_get_int(x2), json_object_get_int(y2), m);
-        info_coffre(nv_coffre);
         ajout_droit(m->liste_coffres, nv_coffre);
-        info_coffre(m->liste_coffres->ec->valeur);
         en_queue(m->liste_collisions);
 
         //sprite des coffres de profile de 2*3 mais hitbox de 2*2, on baisse la hitbox d'une case pour faire correspondre au sprite

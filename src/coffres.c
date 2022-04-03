@@ -205,11 +205,10 @@ coffre_t* creer_coffre(liste_base_coffres_t* liste_base_coffres, const char * co
             coffre->collision.h = liste_base_coffres->tab[i].hitbox.h * TAILLE_CASE;
 
             coffre->orientation = NORD_1; //à changer selon le type
-            coffre->action = FERME;
+            coffre->etat = FERME;
 
             /*copie les informations de base_coffre dans coffre*/
             coffre->texture = creer_texture(liste_base_coffres->tab[i].fichier_image, -1, -1, coffre->collision.x, coffre->collision.y, map->taille_case /(float)32);
-            info_coffre(coffre);
             coffre->texture->duree_frame_anim = NB_FPS;
 
             return coffre;
@@ -219,7 +218,7 @@ coffre_t* creer_coffre(liste_base_coffres_t* liste_base_coffres, const char * co
 }
 
 void info_coffre(coffre_t * coffre){
-    printf("Coffre: %p\ntype: %d\norientation: %d\naction%d\ncollision:{x:%d y:%d w:%d h:%d}\n", coffre, coffre->type, coffre->orientation, coffre->action,
+    printf("Coffre: %p\ntype: %d\norientation: %d\netat%d\ncollision:{x:%d y:%d w:%d h:%d}\n", coffre, coffre->type, coffre->orientation, coffre->etat,
     coffre->collision.x, coffre->collision.y, coffre->collision.w, coffre->collision.h);
     info_texture(coffre->texture);
 }
@@ -233,7 +232,13 @@ void interaction_coffre(SDL_Rect * coffre_rect){
         coffre = valeur_elt(map->liste_coffres);
 
         if(&(coffre->collision) == coffre_rect){
-            printf("ouverture du coffre\n");
+            if(coffre->etat == FERME){
+                if(coffre->type == PROFIL_FERME)
+                    coffre->texture = creer_texture(COFFRE_PROFIL_OUVERT, -1, -1, coffre->collision.x, coffre->collision.y - TAILLE_CASE, map->taille_case /(float)32);
+                if(coffre->type == FACE_FERME){
+                    coffre->texture = creer_texture(COFFRE_FACE_OUVERT, -1, -1, coffre->collision.x, coffre->collision.y, map->taille_case /(float)32);
+                }
+            }
             //changer la texture coffre
             //ajouter un bouton d'ouverture
             //ajouter gestion direction
