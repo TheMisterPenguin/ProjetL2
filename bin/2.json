@@ -43,6 +43,16 @@
             "y": 0
         }
     ],
+    "zones tp" : [
+        {
+            "x" : 0,
+            "y" : 0,
+            "w" : 6,
+            "h" : 3,
+            "destination" : 1,
+            "coords" : [0,0]
+        }
+    ],
     "chest" : [
         {"type" : "profilferme",
         "position" : [15,12]}//,
