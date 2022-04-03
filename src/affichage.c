@@ -158,17 +158,17 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
     t_aff *texture = NULL;
 
     texture = malloc(sizeof(t_aff));
+
+    if(!texture){
+        warning("Erreur lors de la création de la texture", OUT_OF_MEM);
+        return NULL;
+    }
+
     /* Chargement de la texture dans une surface */
     if(nom_fichier != NULL){
         chargement = SDL_LoadBMP(nom_fichier);
         if(! chargement){
-            char *msp = malloc(sizeof(char) * (500));
-
-            sprintf(msp, "Erreur lors de la création de la texture : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_FICHIER);
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, msp);
-
-            free(msp);
+            warning("Erreur lors de la création de la texture : %s", ERREUR_FICHIER, SDL_GetError());
             return NULL;
         }
     
@@ -176,23 +176,27 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
         texture->texture = SDL_CreateTextureFromSurface(rendu_principal, chargement);
         SDL_FreeSurface(chargement); 
         if(! texture->texture){
-            char *msp = malloc(sizeof(char) * (500));
-
-            sprintf(msp, "Erreur lors de la convertion de la surface : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_SURFACE);
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors de la convertion de la surface : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_SURFACE);
-
-            free(msp);
+            warning("Erreur lors de la création de la texture : %s", ERREUR_FICHIER, SDL_GetError());
             free(texture);
             return NULL;
         }
 
-        SDL_QueryTexture(texture->texture, NULL, NULL, &texture->width, &texture->height);
+        if(SDL_QueryTexture(texture->texture, NULL, NULL, &texture->width, &texture->height)){
+            warning("Erreur lors de la création de la texture : %s", ERREUR_FICHIER, SDL_GetError());
+            free(texture);
+            return NULL;
+        }
     }
 
 
     if(taille_t_x > -1 && taille_t_y > -1){
         texture->frame_anim = malloc(sizeof(SDL_Rect));
+
+        if(!texture->frame_anim){
+            warning("Erreur lors de la création de la texture", OUT_OF_MEM);
+            free(texture);
+            return NULL;
+        }
 
         /* Création de la vue d'animation */
         texture->frame_anim->w = taille_t_x;
@@ -205,6 +209,12 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
 
 
     texture->aff_fenetre = malloc(sizeof(SDL_Rect));
+
+    if(!texture->aff_fenetre){
+        warning("Erreur lors de la création de la texture", OUT_OF_MEM);
+        free(texture);
+        return NULL;
+    }
 
     /* Création de la vue de la fenêtre */
     texture->aff_fenetre->x = x;
