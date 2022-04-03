@@ -39,7 +39,8 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, const char 
         if(strcmp(liste_base_monstres->tab[i].nom_monstre,nom_monstre) == 0){
             monstre->type = nom_monstre_to_type_monstre(nom_monstre);
 
-            
+            if(monstre->type == TYPE_MONSTRE_INCONNU)
+                erreur("Erreur lors de la création du monstre : le monstre %s n'existe pas !", ERREUR_MAP, nom_monstre);
 
             monstre->collision.x = x;
             monstre->collision.y = y;
@@ -75,9 +76,8 @@ type_monstre_t nom_monstre_to_type_monstre(const char * const nom_monstre){
         return BOSS;
     else{
         fprintf(stderr,"Erreur, nom du monstre incorrect\n");
+        return TYPE_MONSTRE_INCONNU;
     }
-
-    return ERREUR;
 }
 
 int distance_x_joueur(SDL_Rect collision, joueur_t * joueur){

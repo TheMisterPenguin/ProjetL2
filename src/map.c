@@ -168,6 +168,10 @@ t_map * charger_map(const char * const nom_map){
             erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
 
         inserer = creer_monstre(liste_base_monstres, json_object_get_string(JSON_nom_monstre), json_object_get_int(JSON_x), json_object_get_int(JSON_y), m);
+
+        if(!inserer)
+            erreur("Erreur lors de la création du monstre : le monstre \"%s\" n'existe pas !", ERREUR_MAP, json_object_get_string(JSON_nom_monstre));
+
         ajout_droit(m->liste_monstres, inserer);
         en_queue(m->liste_collisions);
         ajout_droit(m->liste_collisions, &(inserer->collision));
