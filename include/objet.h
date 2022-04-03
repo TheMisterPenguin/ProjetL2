@@ -12,7 +12,6 @@
 #define NB_TYPE_OBJ 6
 
 #include "definition_commun.h"
-#include "affichage.h"
 
 typedef struct s_aff t_aff;
 

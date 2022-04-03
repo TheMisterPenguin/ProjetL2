@@ -1,10 +1,5 @@
-#include <fonctions.h>
-#include <event.h>
-#include <affichage.h>
-#include <definition_commun.h>
-#include <map.h>
+#include <commun.h>
 #include <stdio.h>
-#include <monstres.h>
 
 /**
  * \file test_map.c

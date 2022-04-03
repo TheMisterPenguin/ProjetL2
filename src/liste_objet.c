@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <inventaire.h>
+#include <affichage.h>
 
 /**
  * \file liste_objet.c

@@ -1,6 +1,5 @@
 #include <commun.h>
-#include <listes.h>
-#include <affichage.h>
+
 
 /**
  * \file test_listes.c

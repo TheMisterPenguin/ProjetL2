@@ -1,5 +1,4 @@
-#include <liste_objet.h>
-#include <fonctions.h>
+#include <commun.h>
 
 /**
  * \file test_liste_objet.c

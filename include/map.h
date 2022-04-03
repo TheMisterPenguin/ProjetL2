@@ -36,7 +36,7 @@ typedef struct {
 
 /**
  * \brief Structure représentant une map
- * \author Ange Despert
+ * \authors Ange Despert Antoine Bruneau Descomps Max
 */
 typedef struct s_map{
     unsigned int id_map;
@@ -46,10 +46,11 @@ typedef struct s_map{
     unsigned int taille_case; /**< La taille d'une case */
     unsigned int cases_x; /**< Le nombre de cases affichées en x */
     unsigned int cases_y; /**< Le nombre de cases affichées en y */
-    list *liste_monstres; /*< La liste des monstres de la map */
-    list *liste_sorts;    /*< La liste des sorts de la map */
-    list *liste_collisions; /*< La liste de toutes les les collisions */
-    list *liste_coffres; /*< La liste de tous les coffres */
+    list *liste_monstres; /**< La liste des monstres de la map */
+    list *liste_sorts;    /**< La liste des sorts de la map */
+    list *liste_collisions; /**< La liste de toutes les les collisions */
+    list *liste_coffres; /**< La liste de tous les coffres */
+    list *liste_zone_tp; /**<La liste des points de téléportation */
 }t_map;
 
 extern t_map *map; /**< La map courante */
@@ -63,6 +64,14 @@ extern t_map *map; /**< La map courante */
  */
 t_map *charger_map(const char *const nom_map);
 
+/**
+ * \fn void init_sousbuffer(t_map *map, joueur_t * joueur)
+ * \brief
+ * \author Ange Despert
+ * \param map
+ * \param joueur Joueur autour duquel se fait la fenêtre d'affichage de la carte
+ */
+void init_sousbuffer(t_map *map, joueur_t *joueur);
 
 /**
  * \brief Fonction qui renvoie la texture de la map

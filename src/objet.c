@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <objet.h>
+#include <affichage.h>
 
 /**
  * \file objet.c

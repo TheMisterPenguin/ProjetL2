@@ -496,7 +496,7 @@ void detruire_collision_dans_liste(list * liste_collisions, SDL_Rect * collision
  * \param r Le rectangle dont on veut les coordonnées du milieu
  * \return Les coordonnées du milieu du rectangle
  */
-SDL_Point get_rect_center(const SDL_Rect *const r);
+extern SDL_Point get_rect_center(const SDL_Rect *const r);
 
 /**
  * \brief Renvoie les coordonnées du centre du rectangle.
@@ -508,7 +508,7 @@ SDL_Point get_rect_center(const SDL_Rect *const r);
  * \param r Le rectangle dont on veut les coordonnées du milieu.
  * \return Les coordonnées du milieu du rectangle.
  */
-SDL_Point get_rect_center_coord(const SDL_Rect *const r);
+extern SDL_Point get_rect_center_coord(const SDL_Rect *const r);
 
 /**
  * \brief Fonction qui permet de placer le centre du rectangle donné en paramètre à un point précis.

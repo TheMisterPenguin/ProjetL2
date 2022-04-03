@@ -1,9 +1,7 @@
 #include <sorts.h>
 #include <monstres.h>
 #include <personnage.h>
-#include <affichage.h>
 #include <listes.h>
-#include <map.h>
 
 /**
  * \file sorts.c

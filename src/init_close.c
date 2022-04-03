@@ -1,8 +1,8 @@
-#include <commun.h>
 #include <stdio.h>
-#include <listes.h>
 #include <time.h>
-
+#include <listes.h>
+#include <map.h>
+#include <event.h>
 /** 
  * \file init_close.c
  * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
@@ -143,87 +143,6 @@ void init_affichage(){
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Multiplicateur initialisés : %f, %f", multiplicateur_x, multiplicateur_y);
 
     buffer_affichage = init_liste(NULL,NULL,NULL);
-}
-
-void init_sousbuffer(t_map *map, joueur_t * joueur){
-
-    SDL_Texture *sous_buffer = SDL_CreateTexture(rendu_principal, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, floor(map->text_sol->width * map->text_sol->multipli_taille), floor(map->text_sol->height * map->text_sol->multipli_taille));
-    if(!sous_buffer)
-        erreur("Erreur lors de la création de la texture de sous-buffer : %s", SDL_ERREUR, SDL_GetError());
-    /* On alloue le second  buffer */
-    map->text_map = malloc(sizeof(t_aff));
-
-    if(!map->text_map)
-        erreur("Erreur : Plus de mémoire", OUT_OF_MEM);
-
-    map->text_map->aff_fenetre = malloc(sizeof(SDL_Rect));
-
-    if (!map->text_map->aff_fenetre)
-        erreur("Erreur : Plus de mémoire", OUT_OF_MEM);
-
-    map->text_map->frame_anim = malloc(sizeof(SDL_Rect));
-
-    if (!map->text_map->frame_anim)
-        erreur("Erreur : Plus de mémoire", OUT_OF_MEM);
-
-    /* On alloue le troisième  buffer */
-    fenetre_finale = malloc(sizeof(t_aff));
-
-    if (!fenetre_finale)
-        erreur("Erreur : Plus de mémoire", OUT_OF_MEM);
-
-    fenetre_finale->texture = SDL_CreateTexture(rendu_principal, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, floor(map->text_sol->width * map->text_sol->multipli_taille), floor(map->text_sol->height * map->text_sol->multipli_taille));
-    
-    if (!fenetre_finale->texture)
-        erreur("Erreur lors de la créations des buffers : %s", SDL_ERREUR , SDL_GetError());
-
-    fenetre_finale->aff_fenetre = malloc(sizeof(SDL_Rect));
-
-    if (!fenetre_finale->aff_fenetre)
-        erreur("Erreur : Plus de mémoire", OUT_OF_MEM);
-
-    fenetre_finale->frame_anim = malloc(sizeof(SDL_Rect));
-
-    if (!fenetre_finale->frame_anim)
-        erreur("Erreur : Plus de mémoire", OUT_OF_MEM);
-
-    fenetre_finale->frame_anim->x = 0;
-    fenetre_finale->frame_anim->y = 0;
-    fenetre_finale->frame_anim->w = floor(FENETRE_LONGUEUR / (float)floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3))) * map->taille_case;
-    fenetre_finale->frame_anim->h = floor(FENETRE_LARGEUR / (float)floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3))) * map->taille_case;
-
-    fenetre_finale->aff_fenetre->x = 0;
-    fenetre_finale->aff_fenetre->y = 0;
-    fenetre_finale->aff_fenetre->w = FENETRE_LONGUEUR;
-    fenetre_finale->aff_fenetre->h = FENETRE_LARGEUR;
-
-    map->text_map->texture = sous_buffer;
-
-    /* On définit la partie de la map que l'on voie à l'écran */
-    map->text_map->aff_fenetre->w = floor(FENETRE_LONGUEUR / (float)floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3))) * map->taille_case;
-    map->text_map->aff_fenetre->h = floor(FENETRE_LARGEUR / (float)floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3))) * map->taille_case;
-
-    map->text_map->aff_fenetre->x = 0;
-    map->text_map->aff_fenetre->y = 0;
-
-    /* On place la partie de la map que l'on voit */
-    map->text_map->frame_anim->w = floor(FENETRE_LONGUEUR / (float)floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3))) * map->taille_case;
-    map->text_map->frame_anim->h = floor(FENETRE_LARGEUR / (float)floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3))) * map->taille_case;
-
-    map->text_map->frame_anim->x = 0;
-    map->text_map->frame_anim->y = 0;
-
-    ty.w = fenetre_finale->frame_anim->w;
-    ty.h = joueur->statut->zone_colision.h;
-
-    tx.h = fenetre_finale->frame_anim->h;
-    tx.w = joueur->statut->zone_colision.w;
-
-    rect_centre_rect_y(&ty, fenetre_finale->frame_anim);
-    rect_centre_rect_x(&tx, fenetre_finale->frame_anim);
-
-    if (SDL_SetRenderTarget(rendu_principal, map->text_map->texture))
-        erreur("Erreur lors de la création du sous buffer : %s\n", SDL_ERREUR, SDL_GetError());
 }
 
 /**

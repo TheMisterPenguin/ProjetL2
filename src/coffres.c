@@ -1,7 +1,6 @@
 #include <json-c/json.h>
 #include <coffres.h>
 #include <definition_commun.h>
-#include <map.h>
 #include <code_erreur.h>
 
 /**

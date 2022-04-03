@@ -22,6 +22,88 @@
 
 t_map *map;
 
+void init_sousbuffer(t_map *map, joueur_t *joueur)
+{
+
+    SDL_Texture *sous_buffer = SDL_CreateTexture(rendu_principal, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, floor(map->text_sol->width * map->text_sol->multipli_taille), floor(map->text_sol->height * map->text_sol->multipli_taille));
+    if (!sous_buffer)
+        erreur("Erreur lors de la création de la texture de sous-buffer : %s", SDL_ERREUR, SDL_GetError());
+    /* On alloue le second  buffer */
+    map->text_map = malloc(sizeof(t_aff));
+
+    if (!map->text_map)
+        erreur("Erreur : Plus de mémoire", OUT_OF_MEM);
+
+    map->text_map->aff_fenetre = malloc(sizeof(SDL_Rect));
+
+    if (!map->text_map->aff_fenetre)
+        erreur("Erreur : Plus de mémoire", OUT_OF_MEM);
+
+    map->text_map->frame_anim = malloc(sizeof(SDL_Rect));
+
+    if (!map->text_map->frame_anim)
+        erreur("Erreur : Plus de mémoire", OUT_OF_MEM);
+
+    /* On alloue le troisième  buffer */
+    fenetre_finale = malloc(sizeof(t_aff));
+
+    if (!fenetre_finale)
+        erreur("Erreur : Plus de mémoire", OUT_OF_MEM);
+
+    fenetre_finale->texture = SDL_CreateTexture(rendu_principal, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, floor(map->text_sol->width * map->text_sol->multipli_taille), floor(map->text_sol->height * map->text_sol->multipli_taille));
+
+    if (!fenetre_finale->texture)
+        erreur("Erreur lors de la créations des buffers : %s", SDL_ERREUR, SDL_GetError());
+
+    fenetre_finale->aff_fenetre = malloc(sizeof(SDL_Rect));
+
+    if (!fenetre_finale->aff_fenetre)
+        erreur("Erreur : Plus de mémoire", OUT_OF_MEM);
+
+    fenetre_finale->frame_anim = malloc(sizeof(SDL_Rect));
+
+    if (!fenetre_finale->frame_anim)
+        erreur("Erreur : Plus de mémoire", OUT_OF_MEM);
+
+    fenetre_finale->frame_anim->x = 0;
+    fenetre_finale->frame_anim->y = 0;
+    fenetre_finale->frame_anim->w = floor(FENETRE_LONGUEUR / (float)floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3))) * map->taille_case;
+    fenetre_finale->frame_anim->h = floor(FENETRE_LARGEUR / (float)floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3))) * map->taille_case;
+
+    fenetre_finale->aff_fenetre->x = 0;
+    fenetre_finale->aff_fenetre->y = 0;
+    fenetre_finale->aff_fenetre->w = FENETRE_LONGUEUR;
+    fenetre_finale->aff_fenetre->h = FENETRE_LARGEUR;
+
+    map->text_map->texture = sous_buffer;
+
+    /* On définit la partie de la map que l'on voie à l'écran */
+    map->text_map->aff_fenetre->w = floor(FENETRE_LONGUEUR / (float)floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3))) * map->taille_case;
+    map->text_map->aff_fenetre->h = floor(FENETRE_LARGEUR / (float)floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3))) * map->taille_case;
+
+    map->text_map->aff_fenetre->x = 0;
+    map->text_map->aff_fenetre->y = 0;
+
+    /* On place la partie de la map que l'on voit */
+    map->text_map->frame_anim->w = floor(FENETRE_LONGUEUR / (float)floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3))) * map->taille_case;
+    map->text_map->frame_anim->h = floor(FENETRE_LARGEUR / (float)floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3))) * map->taille_case;
+
+    map->text_map->frame_anim->x = 0;
+    map->text_map->frame_anim->y = 0;
+
+    ty.w = fenetre_finale->frame_anim->w;
+    ty.h = joueur->statut->zone_colision.h;
+
+    tx.h = fenetre_finale->frame_anim->h;
+    tx.w = joueur->statut->zone_colision.w;
+
+    rect_centre_rect_y(&ty, fenetre_finale->frame_anim);
+    rect_centre_rect_x(&tx, fenetre_finale->frame_anim);
+
+    if (SDL_SetRenderTarget(rendu_principal, map->text_map->texture))
+        erreur("Erreur lors de la création du sous buffer : %s\n", SDL_ERREUR, SDL_GetError());
+}
+
 SDL_Rect taille_ecran_cases(){
     SDL_Rect p;
 
@@ -68,6 +150,18 @@ t_map * charger_map(const char * const nom_map){
     json_object *JSON_wall_y =         NULL;
     json_object *JSON_wall_h =         NULL;
     json_object *JSON_wall_w =         NULL;
+
+    json_object *JSON_zones_tp =       NULL;
+    json_object *JSON_zone_tp =        NULL;
+    json_object *JSON_zone_tp_x =      NULL;
+    json_object *JSON_zone_tp_y =      NULL;
+    json_object *JSON_zone_tp_h =      NULL;
+    json_object *JSON_zone_tp_w =      NULL;
+    json_object *JSON_zone_tp_dest =   NULL;
+    json_object *JSON_zone_tp_coords = NULL;
+    json_object *JSON_zone_tp_coord_x= NULL;
+    json_object *JSON_zone_tp_coord_y= NULL;
+
 
     /* Allocation de la mémoire pour la map */
     m = malloc(sizeof(t_map));
@@ -120,6 +214,9 @@ t_map * charger_map(const char * const nom_map){
         erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
 
     if(!json_object_object_get_ex(JSON_fichier, "wall", &JSON_tbl_wall))
+        erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+    if(!json_object_object_get_ex(JSON_fichier, "zones tp", &JSON_zones_tp))
         erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
 
     /* Récupération des informations */
@@ -216,6 +313,11 @@ t_map * charger_map(const char * const nom_map){
 
         ajout_droit(m->liste_collisions, &(nv_coffre->collision));
     }
+
+    for(unsigned int i = 0; i < json_object_array_length(JSON_zones_tp); i++){
+        
+    }
+
     json_object_put(JSON_fichier); //libération mémoire de l'objet json
     return m;
 }

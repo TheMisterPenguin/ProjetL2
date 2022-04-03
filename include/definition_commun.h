@@ -13,6 +13,7 @@
 /** \cond */
 #include "SDL2/SDL.h"
 /** \endcond */
+#include "code_erreur.h"
 
 extern unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 

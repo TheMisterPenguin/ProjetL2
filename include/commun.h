@@ -25,5 +25,11 @@
 #include "sorts.h"
 #include "coffres.h"
 
+/**
+ * \fn void init(void);
+ * \brief Fonction qui initialise le Programme
+ * \author Ange Despert
+ */
+extern void init(void);
 #endif
 

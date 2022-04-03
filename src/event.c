@@ -1,7 +1,9 @@
-#include <commun.h>
 #include <event.h>
+#include <menus.h>
+#include <code_erreur.h>
 #include <personnage.h>
 #include <affichage.h>
+
 
 /**
  * \file event.c
