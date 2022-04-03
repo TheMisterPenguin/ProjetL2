@@ -53,7 +53,8 @@ enum types_erreur
     ERREUR_SDL_TIMER_STOP, /**< Une erreur liée à l'arrêt du timer */
     ERREUR_LISTE, /**< Une erreur liée à une liste */
     ERR_CREATION_REPERTOIRE_SAUVEGARDE, /**< Une erreur liée à la création du répertoire de sauvegarde */
-    ERR_RECTANGLE_TOO_BIG /**< Une erreur liée au rectangle trop grand */
+    ERR_RECTANGLE_TOO_BIG, /**< Une erreur liée au rectangle trop grand */
+    ERREUR_JSON_CLE_NON_TROUVEE
 };
 
 #endif
