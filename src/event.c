@@ -232,7 +232,7 @@ void joystick_button_down(SDL_JoyButtonEvent *ev, joueur_t **j){
             statut->action = ATTAQUE_OU_CHARGER;
             statut->duree = DUREE_ATTAQUE_OU_CHARGEE;
             break;
-        case SDL_CONTROLLER_BUTTON_GUIDE :
+        case SDL_CONTROLLER_BUTTON_BACK :
             afficher_inventaire_manette(joueur);
 
             break;
@@ -258,6 +258,16 @@ void joystick_button_up(SDL_JoyButtonEvent *ev, joueur_t **j)
             statut->action = ATTAQUE;
             statut->duree = DUREE_ATTAQUE;
         }
+        break;
+    case SDL_CONTROLLER_BUTTON_LEFTSHOULDER :
+            if(joueur->inventaire->equipe->liste[consommable] != NULL){
+                joueur->statut->en_mouvement = faux;
+                consommer_objet(joueur);
+                text_copier_position(heal, joueur->textures_joueur->liste[0]); // amélioration: centrer pour toutes les tailles
+                joueur->statut->duree_anim = DUREE_SOIN;
+                joueur->statut->animation = SOIN;
+            }
+            break;
         break;
     }
 }

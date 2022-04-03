@@ -696,7 +696,8 @@ void afficher_inventaire_manette(joueur_t *joueur){
                 fermer_programme(EXIT_SUCCESS);
             case SDL_JOYBUTTONDOWN:
                 switch (((SDL_JoyButtonEvent *)&lastEvent)->button){
-                    case SDL_CONTROLLER_BUTTON_GUIDE :
+                    case SDL_CONTROLLER_BUTTON_B :
+                    case SDL_CONTROLLER_BUTTON_BACK :
                         SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "On quitte l'inventaire");
                         return;
                     case SDL_CONTROLLER_BUTTON_DPAD_DOWN:
