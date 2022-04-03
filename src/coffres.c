@@ -2,6 +2,7 @@
 #include <definition_commun.h>
 #include <code_erreur.h>
 #include <map.h>
+#include <coffres.h>
 
 /**
  * \file coffres.c
@@ -11,8 +12,6 @@
  * \date 03/04/2022
  * \copyright Copyright (c) 2022
  */
-
-typedef struct t_map t_map;
 
 liste_base_coffres_t * liste_base_coffres = NULL;
 
@@ -205,7 +204,7 @@ coffre_t* creer_coffre(liste_base_coffres_t* liste_base_coffres, const char * co
             coffre->collision.w = liste_base_coffres->tab[i].hitbox.w * TAILLE_CASE;
             coffre->collision.h = liste_base_coffres->tab[i].hitbox.h * TAILLE_CASE;
 
-            coffre->orientation = NORD; //à changer selon le type
+            coffre->orientation = NORD_1; //à changer selon le type
             coffre->action = FERME;
 
             /*copie les informations de base_coffre dans coffre*/
