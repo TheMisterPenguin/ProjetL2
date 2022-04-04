@@ -112,14 +112,14 @@ int main(int argc, char** argv)
     heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
 
     /* On créer le joueur */    
-    joueurs[0] = new_joueur("joueur1", 0);
+    joueurs[0] = new_joueur("joueur1", 0, "ressources/objet/objet.txt");
     joueur1 = joueurs[0];
     joueur1->pdv = 50;
     /* On créer les animations */
     init_animations();
 
 
-    objets = creer_liste_objet("../ressource/objet.txt");
+    objets = creer_liste_objet("ressources/objet/objet.txt");
     creer_textures_objets(objets);
     ramasser_objet(objets->liste[8], joueur1->inventaire);
     ramasser_objet(objets->liste[7], joueur1->inventaire);
@@ -132,7 +132,7 @@ int main(int argc, char** argv)
 
     //même création pour le joueur2 si le mode coop est sélectionné
     if(nb_joueurs == 2){
-        joueurs[1] = new_joueur("joueur2", 1);
+        joueurs[1] = new_joueur("joueur2", 1, "ressources/objet/objet.txt");
         joueur2 = joueurs[1];
         joueur2->pdv = 7;
         next_texture_joueur2 = joueur2->textures_joueur->liste[TEXT_MARCHER];
@@ -160,7 +160,7 @@ int main(int argc, char** argv)
         debut = SDL_GetPerformanceCounter();
 
         if(!manette)
-            jeu_event(joueurs);
+            jeu_event(joueurs, "ressources/objet/objet.txt");
         else
             jeu_event_manette(joueurs);
 

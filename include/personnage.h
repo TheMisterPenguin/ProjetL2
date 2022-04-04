@@ -87,10 +87,10 @@ extern char save_path[500];
  */
 void stoper_mouvement_joueurs(joueur_t ** joueurs);
 
-extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orientation, const bool bouclier_equipe, const int num_j);
-extern joueur_t *new_joueur(const char* nom, int num_j);
+extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orient, const bool bouclier_equipe, const int num_j, char * fichier_src);
+extern joueur_t *new_joueur(const char* nom, int num_j, char * f_src_obj);
 extern void detruire_joueur(joueur_t *j);
-extern joueur_t *charger_sauvegarde_joueur(char *nom_sauv);
+extern joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj);
 extern void caracteristiques(joueur_t* perso);
 extern void afficher_statistiques(joueur_t* perso);
 extern void levelup(joueur_t* perso);

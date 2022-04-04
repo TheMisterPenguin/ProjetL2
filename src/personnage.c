@@ -151,7 +151,7 @@ bool sauv_existe(char *nom_sauv){
 	return faux;
 }
 
-joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
+joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj){
 
 	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Chargement de la sauvegarde...\n");
 
@@ -241,7 +241,8 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 		trigger_tab,
 		json_object_get_int(orientation),
 		json_object_get_boolean(bouclier_equipe),
-        0
+        0,
+        f_src_obj
 	);
 	free(trigger_tab);
 
@@ -253,10 +254,10 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv){
 	return j;
 }
 
-joueur_t *new_joueur(const char* nom, int num_j){
+joueur_t *new_joueur(const char* nom, int num_j, char * f_src_obj){
 	byte *trig = calloc(TAILLE_TRIGGER, sizeof(byte));
   
-	joueur_t *j = creer_joueur(nom, 0, 0, 100, 50, 10, 10, 1, trig, NORD_1, faux, num_j);
+	joueur_t *j = creer_joueur(nom, 0, 0, 100, 50, 10, 10, 1, trig, NORD_1, faux, num_j, f_src_obj);
 	free(trig); //pour l'instant inutile (refait dans creer joueur)
 
 	j->statut->zone_colision.x = 0;
@@ -265,7 +266,7 @@ joueur_t *new_joueur(const char* nom, int num_j){
 	return j;
 }
 
-joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orient, const bool bouclier_equipe, const int num_j)
+joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orient, const bool bouclier_equipe, const int num_j, char * fichier_src)
 {
 	joueur_t * perso = malloc(sizeof(joueur_t));
 
@@ -317,7 +318,7 @@ joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const in
 	perso->statut->zone_colision.x = 0;
 	perso->statut->zone_colision.y = 0;
 	perso->textures_joueur = init_textures_joueur(perso, num_j);
-	perso->inventaire = creer_inventaire();
+	perso->inventaire = creer_inventaire(fichier_src);
 	perso->statut->texture_prec = perso->textures_joueur->liste[TEXT_MARCHER];
 
 	return perso;

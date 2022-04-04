@@ -20,7 +20,7 @@ int init_suite(void) { return 0; }
 int clean_suite(void) { return 0; }
 
 void creation_personnage(void) {
-    CU_ASSERT_NOT_EQUAL(perso_principal = new_joueur("test", 0), NULL);
+    CU_ASSERT_NOT_EQUAL(perso_principal = new_joueur("test", 0, "ressources/objet/objet.txt"), NULL);
     CU_ASSERT_STRING_EQUAL(perso_principal->nom_pers, "test");
 
     //statistiques

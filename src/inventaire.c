@@ -100,7 +100,7 @@ void desequiper(joueur_t * joueur, objet_t ** objet){
     */
 }
 
-inventaire_t * creer_inventaire(){ //refaire fonction##################
+inventaire_t * creer_inventaire(char * fichier_src){ //refaire fonction##################
     inventaire_t * inventaire = NULL;
 
     if(( inventaire = malloc(sizeof(inventaire_t))) == NULL ){
@@ -109,7 +109,7 @@ inventaire_t * creer_inventaire(){ //refaire fonction##################
     }
 
     inventaire->equipe = creer_liste_objet_equipe();
-    inventaire->sac = creer_liste_objet_vide("../ressource/objet.txt");
+    inventaire->sac = creer_liste_objet_vide(fichier_src);
 
     if(inventaire->equipe == NULL || inventaire->sac == NULL){
         fprintf( stderr , "creer_inventaire: erreur de création du sac ou du équipé\n");

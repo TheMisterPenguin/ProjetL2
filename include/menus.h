@@ -27,11 +27,12 @@ extern t_aff * text_accueil;
 //extern void afficher_menu(menus_t * menu);
 
 /**
- * \fn void afficher_menu_pause(joueur_t * joueur)
+ * \fn void afficher_menu_pause(joueur_t * joueur, char * f_src_objet)
  * \brief Affiche le menu pause et gère les interactions avec le joueur
  * \param joueur Joueur qui ouvre le menu
+ * \param f_src_objet Liste des objets du jeux utilisée dans certaines fonctionnalités du menu pause
  */
-extern void afficher_menu_pause(joueur_t * joueur);
+extern void afficher_menu_pause(joueur_t * joueur, char * f_src_objet);
 
 void afficher_menu_pause_manette(joueur_t *joueur);
 
