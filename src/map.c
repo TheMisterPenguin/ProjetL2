@@ -88,6 +88,12 @@ void init_sousbuffer(t_map *map, joueur_t *joueur)
     map->text_map->frame_anim->w = floor(FENETRE_LONGUEUR / (float)floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3))) * map->taille_case;
     map->text_map->frame_anim->h = floor(FENETRE_LARGEUR / (float)floor(TAILLE_PERSONNAGE * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3))) * map->taille_case;
 
+    if(map->texture_superposition){
+        map->texture_superposition->frame_anim = map->text_map->frame_anim;
+        map->texture_superposition->aff_fenetre->w = map->text_map->aff_fenetre->w;
+        map->texture_superposition->aff_fenetre->h = map->text_map->aff_fenetre->h;
+    }
+
     map->text_map->frame_anim->x = 0;
     map->text_map->frame_anim->y = 0;
 
@@ -129,6 +135,7 @@ t_map * charger_map(const char * const nom_map){
     json_object *JSON_fichier = json_object_from_file(nom_map);
     json_object *JSON_id_map =         NULL;
     json_object *JSON_texture_map =    NULL;
+    json_object *JSON_text_superpos =  NULL;
     json_object *JSON_width =          NULL;
     json_object *JSON_height =         NULL;
     json_object *JSON_taille_case =    NULL;
@@ -167,6 +174,7 @@ t_map * charger_map(const char * const nom_map){
     json_object *JSON_zone_tp_coords = NULL;
     json_object *JSON_zone_tp_coord_x= NULL;
     json_object *JSON_zone_tp_coord_y= NULL;
+
 
 
     /* Allocation de la mémoire pour la map */
@@ -228,6 +236,13 @@ t_map * charger_map(const char * const nom_map){
 
     if(!json_object_object_get_ex(JSON_fichier, "zones tp", &JSON_zones_tp))
         erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+
+    if(!json_object_object_get_ex(JSON_fichier, "superposition", &JSON_text_superpos)){
+        m->texture_superposition = NULL;
+    }
+    else{
+        m->texture_superposition = creer_texture(json_object_get_string(JSON_text_superpos), -1, -1, 0, 0, 1);
+    }
 
     /* Récupération des informations */
     m->id_map = json_object_get_int(JSON_id_map);
@@ -487,8 +502,8 @@ void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, 
             }
             else{
                 if(x > (map->text_map->width - map->text_map->frame_anim->w / 2 )){ /* Extémité droite */
-                    j->statut->zone_colision.x = x;
                     map->text_map->frame_anim->x = map->text_map->width - map->text_map->frame_anim->w;
+                    j->statut->zone_colision.x = x - map->text_map->x;
                 }
                 else {
                     place_rect_center_from_point(&j->statut->zone_colision, get_rect_center(map->text_map->frame_anim));
@@ -502,8 +517,8 @@ void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, 
             }
             else{
                 if(y > (map->text_map->height - map->text_map->frame_anim->h / 2 )){ /* Extémité basse */
-                    j->statut->zone_colision.y = y;
                     map->text_map->frame_anim->y = map->text_map->height - map->text_map->frame_anim->h;
+                    j->statut->zone_colision.y = y - map->text_map->frame_anim->y;
                 }
                 else {
                     int x_temp = map->text_map->frame_anim->x;
