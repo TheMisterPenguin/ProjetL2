@@ -185,7 +185,7 @@ t_map * charger_map(const char * const nom_map){
         erreur("Impossible de charger la map : Plus de mémoire", OUT_OF_MEM);
 
     /* Initialisation des listes */
-    m->liste_monstres =  init_liste(ajouter_monstre,detruire_monstre,NULL);
+    m->liste_monstres =  init_liste(ajouter_monstre_cb,detruire_monstre_cb,NULL);
 
     if(!m->liste_monstres)
         erreur("Impossible de charger la map", ERREUR_LISTE);
