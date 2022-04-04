@@ -32,8 +32,4 @@ typedef struct boss_s{
     t_aff * texture_temp[2];
 }boss_t;
 
-
-
-
-
 #endif

@@ -123,7 +123,9 @@ int main(int argc, char** argv)
 
     objets = creer_liste_objet("../ressource/objet.txt");
     creer_textures_objets(objets);
-    tout_ramasser(objets, joueur1->inventaire);
+    ramasser_objet(objets->liste[8], joueur1->inventaire);
+    ramasser_objet(objets->liste[7], joueur1->inventaire);
+    ramasser_objet(objets->liste[0], joueur1->inventaire);
 
     /*test de l'allocation des textures*/
     for (i = 0; i < joueur1->textures_joueur->nb_valeurs; i++)
@@ -170,19 +172,19 @@ int main(int argc, char** argv)
             switch (joueur1->statut->orient_dep)
             {
             case NORD_1:
-                if((apparaitre = deplacement_y_pers(map, joueurs, nb_joueurs, -1)))
+                if((apparaitre = deplacement_y_pers(map, joueurs, nb_joueurs, -1, objets)))
                     continue;
                 break;
             case SUD_1:
-                if((apparaitre = deplacement_y_pers(map, joueurs, nb_joueurs, 1)))
+                if((apparaitre = deplacement_y_pers(map, joueurs, nb_joueurs, 1, objets)))
                     continue;
                 break;
             case OUEST_1:
-                if((apparaitre = deplacement_x_pers(map, joueurs, nb_joueurs, -1)))
+                if((apparaitre = deplacement_x_pers(map, joueurs, nb_joueurs, -1, objets)))
                     continue;
                 break;
             case EST_1:
-                if((apparaitre = deplacement_x_pers(map, joueurs, nb_joueurs, 1)))
+                if((apparaitre = deplacement_x_pers(map, joueurs, nb_joueurs, 1, objets)))
                     continue;
                 break;
             }

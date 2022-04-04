@@ -669,7 +669,7 @@ void modif_affichage_rect(t_aff *texture, SDL_Rect r){
     texture->frame_anim->w = r.w;
 }
 
-bool deplacement_x_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_joueurs, int x){
+bool deplacement_x_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_joueurs, int x, lobjet_t * objets){
     joueur_t *j = *joueurs;
     int *x_map = &(map->text_map->frame_anim->x); /* La coordonnée x actuelle de la map */
     int *x_pers = &(j->statut->zone_colision.x); /* La coordonnée x actuelle du joueur */
@@ -708,7 +708,7 @@ bool deplacement_x_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_jou
         }
 
         if(SDL_HasIntersection(&temp, element)){
-            interaction_coffre(element,j);
+            interaction_coffre(element,j, objets);
             return faux;
         }
         suivant(m->liste_collisions);
@@ -736,7 +736,7 @@ bool deplacement_x_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_jou
     return faux;
 }
 
-bool deplacement_y_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_joueurs, int y){
+bool deplacement_y_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_joueurs, int y, lobjet_t * objets){
     joueur_t *j = *joueurs;
     int *y_map = &(map->text_map->frame_anim->y);                                        /* La coordonnée y actuelle de la map */
     int *y_pers = &(j->statut->zone_colision.y);                                       /* La coordonnée y actuelle du joueur */
@@ -785,7 +785,7 @@ bool deplacement_y_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_jou
         }
 
         if (SDL_HasIntersection(&temp, element)){
-            interaction_coffre(element,j);
+            interaction_coffre(element,j, objets);
             return faux;
 
         }
