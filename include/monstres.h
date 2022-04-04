@@ -132,5 +132,6 @@ type_monstre_t nom_monstre_to_type_monstre(const char * const nom_monstre);
 
 int distance_x_joueur(SDL_Rect collision, joueur_t * joueur);
 int distance_y_joueur(SDL_Rect collision, joueur_t * joueur);
-
+void * ajouter_monstre_cb(void * monstre);
+void detruire_monstre_cb(void * monstre);
 #endif
