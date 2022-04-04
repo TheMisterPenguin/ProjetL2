@@ -459,7 +459,7 @@ void transition(t_map **actuelle, unsigned int num_map, joueur_t ** joueurs, uns
         }
     }
 
-    tp_joueurs(*actuelle, new_x, new_x, joueurs, nb_joueurs);
+    tp_joueurs(*actuelle, new_x, new_y, joueurs, nb_joueurs);
 
 }
 
@@ -475,38 +475,43 @@ void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, 
         joueur_t *j = joueurs[i];
 
         if(i == 0) { /* Joueur principal */
-            fenetre_finale->frame_anim->x = 0;
-            fenetre_finale->frame_anim->y = 0;
-            place_rect_center_from_point(fenetre_finale->frame_anim, get_rect_center_coord(&j->statut->vrai_zone_collision));
+            map->text_map->frame_anim->x = x;
+            map->text_map->frame_anim->y = y;
             j->statut->vrai_zone_collision.x = x;
             j->statut->vrai_zone_collision.y = y;
+            place_rect_center_from_point(map->text_map->frame_anim, get_rect_center_coord(&j->statut->vrai_zone_collision));
             
-            if(x < fenetre_finale->frame_anim->w / 2){ /* Extrémité gauche */
+            if(x < map->text_map->frame_anim->w / 2){ /* Extrémité gauche */
                 j->statut->zone_colision.x = x;
-                fenetre_finale->frame_anim->x = 0;
+                map->text_map->frame_anim->x = 0;
             }
             else{
-                if(x > (map->text_map->width - fenetre_finale->frame_anim->w / 2 )){ /* Extémité droite */
+                if(x > (map->text_map->width - map->text_map->frame_anim->w / 2 )){ /* Extémité droite */
                     j->statut->zone_colision.x = x;
-                    fenetre_finale->frame_anim->x = map->text_map->width - fenetre_finale->frame_anim->w;
+                    map->text_map->frame_anim->x = map->text_map->width - map->text_map->frame_anim->w;
                 }
                 else {
-                    place_rect_center_from_point(&j->statut->zone_colision, get_rect_center_coord(fenetre_finale->frame_anim));
+                    place_rect_center_from_point(&j->statut->zone_colision, get_rect_center(map->text_map->frame_anim));
                 }
             }
             
             /* Pour y */
-            if(y < fenetre_finale->frame_anim->h / 2){ /* Extrémité haut */
+            if(y < map->text_map->frame_anim->h / 2){ /* Extrémité haut */
                 j->statut->zone_colision.y = y;
-                fenetre_finale->frame_anim->y = 0;
+                map->text_map->frame_anim->y = 0;
             }
             else{
-                if(y > (map->text_map->height - fenetre_finale->frame_anim->h / 2 )){ /* Extémité basse */
+                if(y > (map->text_map->height - map->text_map->frame_anim->h / 2 )){ /* Extémité basse */
                     j->statut->zone_colision.y = y;
-                    fenetre_finale->frame_anim->y = map->text_map->height - fenetre_finale->frame_anim->h;
+                    map->text_map->frame_anim->y = map->text_map->height - map->text_map->frame_anim->h;
                 }
                 else {
-                    place_rect_center_from_point(&j->statut->zone_colision, get_rect_center_coord(fenetre_finale->frame_anim));
+                    int x_temp = map->text_map->frame_anim->x;
+                    int x_temp_bis = j->statut->zone_colision.x;
+                    place_rect_center_from_point(&j->statut->zone_colision, get_rect_center(map->text_map->frame_anim));
+                    place_rect_center_from_point(map->text_map->frame_anim, get_rect_center_coord(&j->statut->vrai_zone_collision));
+                    map->text_map->frame_anim->x = x_temp; 
+                    j->statut->zone_colision.x = x_temp_bis;
                 }
             }
         }
