@@ -108,6 +108,7 @@ extern float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépende
 extern t_aff * heal;
 extern t_aff * bloquer;
 extern t_aff *fenetre_finale; /* La fenêtre de jeu finale sans l'interface */
+extern list * liste_animations;
 
 /* Définition des fonctions */
 

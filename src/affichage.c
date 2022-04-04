@@ -23,6 +23,7 @@
 list *listeDeTextures; 
 list *buffer_affichage;
 
+list * liste_animations = NULL;
 t_aff * heal = NULL; //init_animations()
 t_aff * bloquer = NULL; //init_animations()
 t_aff *fenetre_finale = NULL; /* La fenêtre de jeu finale sans l'interface */
@@ -922,8 +923,7 @@ bool deplacement_y_joueur_secondaire(t_map *m, joueur_t * joueur, int y, SDL_Rec
 }
 
 void text_copier_position(t_aff * a_modifier, const t_aff * const original){
-    a_modifier->aff_fenetre->x = original->aff_fenetre->x;
-    a_modifier->aff_fenetre->y = original->aff_fenetre->y;
+    a_modifier->aff_fenetre = original->aff_fenetre;
 }
 
 
@@ -1078,11 +1078,16 @@ bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
 }
 
 void init_animations(){
+    liste_animations = init_liste(NULL, NULL, NULL);
+
     heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
+    ajout_droit(liste_animations, heal);
+
     bloquer = (creer_texture("ressources/sprite/bloquer.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
+    ajout_droit(liste_animations, bloquer);
 }
 
-t_aff * next_frame_animation(joueur_t * joueur){
+t_aff * next_frame_animation(joueur_t * joueur){ //actualiser position anim!
     statut_t * statut = joueur->statut;
 
     if (statut->animation == SOIN)
@@ -1120,6 +1125,7 @@ void lister_animations(joueur_t ** joueurs, list * animations){
 void afficher_animations(list * animations){
     en_tete(animations);
 
+    //La liste d'animation permet de gérer les animations sur plusieurs entités en même temps
     while(!hors_liste(animations) && animations->ec->valeur != NULL){ //évite de boucler à l'infini en cas d'erreur
         afficher_texture(animations->ec->valeur, rendu_principal);
 
