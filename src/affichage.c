@@ -324,7 +324,6 @@ t_aff *next_frame_joueur(joueur_t *j)
     t_l_aff *textures_joueur = j->textures_joueur;
     statut_t *statut = j->statut;
     t_aff **textures = textures_joueur->liste;
-    int pause = 0;
 
     appliquer_coord_rect(&(j->statut->zone_colision), textures_joueur);
 
@@ -337,8 +336,10 @@ t_aff *next_frame_joueur(joueur_t *j)
             if(compteur % 2)
                 return NULL;
         }
-        else
+        else{
             statut->action = RIEN;
+            statut->en_mouvement = faux;
+        }
     }
 
     if (statut->action == ATTAQUE_OU_CHARGER && statut->duree == 0)
@@ -360,7 +361,7 @@ t_aff *next_frame_joueur(joueur_t *j)
                 return textures[TEXT_MARCHER];
             }
         else
-            pause = 1;
+            return statut->texture_prec;
     }
     else
     {
@@ -370,8 +371,8 @@ t_aff *next_frame_joueur(joueur_t *j)
         }
         else if (statut->action == CHARGER)
         {
-            if ((compteur % 4) == 0)
-            { /*compteur%5 pour la vitesse d'affichage*/
+            if ((compteur % 4) == 0) /*compteur%5 pour la vitesse d'affichage*/
+            { 
                 next_frame_x(textures[TEXT_CHARGER]);
                 if(statut->en_mouvement)
                     next_frame_y_indice(textures[TEXT_CHARGER], statut->orient_dep*2 + (textures[TEXT_CHARGER]->frame_anim->x) / (int) LONGUEUR_ENTITE );
@@ -380,12 +381,12 @@ t_aff *next_frame_joueur(joueur_t *j)
                 return textures[TEXT_CHARGER];
             }
             else
-                pause = 1;
+                return statut->texture_prec;
         }
         else if (statut->action == ATTAQUE)
         {
-            if ((compteur % 4) == 0)
-            { /*compteur%4 pour la vitesse d'affichage*/
+            if ((compteur % 4) == 0) /*compteur%4 pour la vitesse d'affichage*/
+            { 
                 next_frame_x(textures[TEXT_ATTAQUE]);
                 if(statut->orient_dep != EST_1)
                     statut->orient_att = (statut->orient_att + 7) % 8;
@@ -397,14 +398,12 @@ t_aff *next_frame_joueur(joueur_t *j)
                 return textures[TEXT_ATTAQUE];
             }
             else
-                pause = 1;
+                return statut->texture_prec;
         }
         else if (statut->action == ATTAQUE_CHARGEE)
         {
-            if ((compteur % 2) == 0)
-            { /*compteur%3 pour la vitesse d'affichage*/
-                // lorseque l'on rentre pour la première fois dans cette phase d'attaque chargée
-                
+            if ((compteur % 2) == 0) /*compteur%2 pour la vitesse d'affichage*/
+            {
                 next_frame_x(textures[TEXT_ATTAQUE_CHARGEE]);
                 statut->orient_att = (statut->orient_att + 1) % 8;
                 /*si il a fait le tour du fichier sprite attaque, l'action est terminée*/
@@ -413,16 +412,10 @@ t_aff *next_frame_joueur(joueur_t *j)
                 return textures[TEXT_ATTAQUE_CHARGEE];
             }
             else
-                pause = 1;
+                return statut->texture_prec;
         }
     }
-    /*si aucune des conditions*/
-    if (pause)
-        return NULL;
-    else if (statut->bouclier_equipe)
-        return textures[TEXT_MARCHER_BOUCLIER];
-    else
-        return textures[TEXT_MARCHER];
+    return statut->texture_prec;
 }
 
 void afficher_monstres(list * liste_monstre, joueur_t * joueur){
@@ -464,7 +457,7 @@ void afficher_sorts(list * liste_sorts, joueur_t * joueur){
     en_tete(liste_sorts);
     while(!hors_liste(liste_sorts)){
         sort = valeur_elt(liste_sorts);
-        action_sort(sort);
+        action_sort(sort, joueur);
         afficher_texture(sort->texture ,rendu_principal);
         suivant(liste_sorts);
     }

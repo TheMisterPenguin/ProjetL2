@@ -318,6 +318,7 @@ joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const in
 	perso->statut->zone_colision.y = 0;
 	perso->textures_joueur = init_textures_joueur(perso, num_j);
 	perso->inventaire = creer_inventaire();
+	perso->statut->texture_prec = perso->textures_joueur->liste[TEXT_MARCHER];
 
 	return perso;
 }
@@ -485,9 +486,9 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, list * list
 					running = faux;
 				else{
 					joueur->statut->orient_dep = cote_monstre;
-
 					joueur->statut->action = J_BLESSE;
 					joueur->statut->duree = DUREE_JOUEUR_BLESSE;
+					joueur->statut->en_mouvement = vrai;
 				}
 			}
 		}
@@ -526,6 +527,7 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, list * list
 					joueur->statut->orient_dep = cote_sort;
 					joueur->statut->action = J_BLESSE;
 					joueur->statut->duree = DUREE_JOUEUR_BLESSE;
+					joueur->statut->en_mouvement = vrai;
 				}
 			}
 			detruire_collision_dans_liste(map->liste_collisions, &(sort->collision));

@@ -64,7 +64,6 @@ int main(int argc, char** argv)
     int nb_joueurs;
     int debut, fin; /* le temps pour calculer les performances */
     int i;
-    t_aff *next_texture_joueur1 = NULL;
     t_aff *next_texture_joueur2 = NULL;
     t_aff *texture_temp1 = NULL;
     t_aff *texture_temp2 = NULL;
@@ -119,7 +118,6 @@ int main(int argc, char** argv)
     /* On créer les animations */
     init_animations();
 
-    next_texture_joueur1 = joueur1->textures_joueur->liste[TEXT_MARCHER];
 
     objets = creer_liste_objet("../ressource/objet.txt");
     creer_textures_objets(objets);
@@ -190,7 +188,7 @@ int main(int argc, char** argv)
 
         texture_temp1 = next_frame_joueur(joueur1);
         if (texture_temp1)
-            next_texture_joueur1 = texture_temp1;
+            joueur1->statut->texture_prec = texture_temp1;
 
         if(nb_joueurs == 2){
             if (joueur2->statut->en_mouvement){
@@ -274,7 +272,8 @@ int main(int argc, char** argv)
         #endif
   
         /* On cous le joueur1 */
-        afficher_texture(next_texture_joueur1, rendu_principal);
+        if(texture_temp1)
+            afficher_texture(texture_temp1, rendu_principal);
 
         // Afficher les animations eventuelles
         lister_animations(joueurs, animations);

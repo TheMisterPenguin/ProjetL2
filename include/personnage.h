@@ -48,6 +48,7 @@ typedef struct statut_s {
 	action_t animation; /**<Animation sur le personnage*/
 	SDL_Rect zone_colision; /**<zone de colision du personnage*/
 	SDL_Rect vrai_zone_collision; /**<La vrai zone de collision du J1 sur la carte */
+	t_aff * texture_prec; /**<la texture precedente du personnage*/
 }statut_t;
 
 /**
