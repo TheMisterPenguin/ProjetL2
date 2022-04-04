@@ -194,7 +194,7 @@ extern err_t next_frame_indice(t_aff *texture, const unsigned int x, const unsig
 extern err_t next_frame_x_indice(t_aff *texture, const unsigned int indice);
 
 /**
- * \fn void next_frame_y_indice(t_aff *texture, const unsigned int indice);
+ * \fn void next_frame_y_indice(t_aff *texture, const unsigned int indice)
  * \brief Fonction qui positionne la texture au n-ème sprite sur l'axe des y
  *
  * \param t_aff* une texture joueur
@@ -203,6 +203,13 @@ extern err_t next_frame_x_indice(t_aff *texture, const unsigned int indice);
  */
 extern err_t next_frame_y_indice(t_aff *texture, const unsigned int indice); 
 
+/**
+ * \fn void *ajout_text_liste(void *t)
+ * \brief Fonction qui ajoute une texture dans une liste générique
+ *
+ * \param t une texture
+ * \return void * l'element à ajouter à la liste
+ */
 void *ajout_text_liste(void *t);
 
 /**
@@ -225,17 +232,35 @@ extern err_t afficher_buffer(list *buffer, SDL_Renderer *rendu);
  */
 void deplacer_texture_centre(t_aff *texture, int x, int y);
 
+/**
+ * Déplace un rectangle depuis l'origine de l'écran
+ * 
+ * \author Max Descomps
+ * \param r Le rectangle à déplacer
+ * \param x La position horizontale du rectangle
+ * \param y La position verticale du rectangle
+ * \return Une valeur différente à 0 lors d'une erreur
+ */
 extern void deplacer_rect_origine(SDL_Rect *r, int x, int y);
 
 /**
- * Déplacez l'origine de la texture aux coordonnées données.
+ * Déplace l'origine de la texture aux coordonnées données.
  *
- * @param texture la texture à déplacer
- * @param x La coordonnée x de l'origine de la texture.
- * @param y La coordonnée y de l'origine de la texture.
+ * \author Max Descomps
+ * \param texture La texture à déplacer
+ * \param x La coordonnée x de l'origine de la texture.
+ * \param y La coordonnée y de l'origine de la texture.
  */
 void deplacer_texture_origine(t_aff *texture, int x, int y);
 
+
+/**
+ * Place un rectangle en haut à droite de l'écran puis le replace à partir de cette origine
+ *
+ * @param r Le rectangle à placer
+ * @param x La coordonnée x du rectangle depuis la nouvelle origine.
+ * @param x La coordonnée y du rectangle depuis la nouvelle origine.
+ */
 void deplacer_rect_haut_droit(SDL_Rect *r, int x, int y);
 
 /**
@@ -366,6 +391,7 @@ void def_texture_taille(t_aff *a_modifier, const int longueur, const int largeur
 /**
  * Fonction qui permet de placer 2 textures aux mêmes endroit à l'écran
  * 
+ * \author Max Descomps
  * \param a_modifier La texture dont on veut modifier la position
  * \param original La texture dont on veut copier la position
  */
