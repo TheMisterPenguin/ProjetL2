@@ -21,6 +21,23 @@
 
 liste_base_monstres_t * liste_base_monstres = NULL;
 
+void detruire_monstre(monstre_t ** monstre){
+    free(*monstre);
+    *monstre = NULL;
+}
+
+void detruire_monstre_cb(void * monstre){
+    detruire_monstre(monstre);
+}
+
+monstre_t * ajouter_monstre(monstre_t* monstre){
+    return monstre;
+}
+
+void * ajouter_monstre_cb(void * monstre){
+    return ajouter_monstre(monstre);
+}
+
 void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres){
 
     free((**liste_base_monstres).tab);
