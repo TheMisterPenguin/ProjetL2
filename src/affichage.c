@@ -928,17 +928,11 @@ void text_copier_position(t_aff * a_modifier, const t_aff * const original){
 
 
 bool rects_egal_x(const SDL_Rect * const r1, SDL_Rect const * const r2){
-
     return (r1->x == r2->x);
-
-    return faux;
 }
 
 bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2){
-
     return (r1->y == r2->y);
-
-    return faux;
 }
 
 SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a) {

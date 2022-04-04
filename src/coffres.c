@@ -127,7 +127,6 @@ coffre_t* creer_coffre(int id_cle, int id_loot, liste_base_coffres_t* liste_base
                 coffre->orientation = EST_1;
             else{
                 coffre->orientation = SUD_1;
-                printf("sud\n");
             }
 
             //état du coffre
