@@ -17,7 +17,12 @@
 #define COFFRE_FACE_OUVERT "ressources/sprite/coffrefaceouvert.bmp"
 #define COFFRE_PROFIL_OUVERT "ressources/sprite/coffreprofilouvert.bmp"
 
-typedef struct s_aff t_aff; //!< \brief Structure de texture
+/**
+ * \brief Définition de la structure de texture
+ * 
+ * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref coffres.h et \ref affichage.h .
+ */
+typedef struct s_aff t_aff;
 
 /**
  * Type enum renseignant sur le type d'un coffre

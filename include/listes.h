@@ -13,7 +13,6 @@
 
 /**
  * \brief Définition du type liste
- * 
  */
 typedef struct element
 {

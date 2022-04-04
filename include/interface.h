@@ -15,6 +15,7 @@
 /**
  * \fn void RenderHPBar(int x, int y, int w, int h, float pourcent, SDL_Color vie, SDL_Color jauge)
  * \brief Fonction qui affiche une barre de vie horizontale
+ * \author Max Descomps
  * \param x position horizontale de la barre
  * \param y position verticale de la barre
  * \param w largeur de la barre
