@@ -61,6 +61,6 @@
         {"type" : "faceferme",
         "position" : [10,10],
         "id_cle": 0,
-        "id_loot": 0}
+        "id_loot": 5}
     ]
 }
