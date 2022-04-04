@@ -806,6 +806,130 @@ bool deplacement_y_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_jou
     return faux;
 }
 
+bool deplacement_x_joueur_secondaire(t_map *m, joueur_t * joueur, int x, SDL_Rect *r, lobjet_t * objets)
+{
+    t_aff *texture = joueur->textures_joueur->liste[0];
+    const int taille_unite = floor(map->taille_case / TAILLE_PERSONNAGE);
+    SDL_Rect temp = {.x = r->x + x * taille_unite, .y = r->y, .w = r->w, .h = r->h};
+
+    en_tete(m->liste_collisions);
+
+    while (!hors_liste(m->liste_collisions))
+    {
+        SDL_Rect *element = valeur_elt(m->liste_collisions);
+
+        if (element == r){ /* Si la collision nouss concerne */
+            suivant(m->liste_collisions);
+            continue;
+        }
+
+        if (SDL_HasIntersection(r, element)){ /* Si la collision nou concerne */
+            suivant(m->liste_collisions);
+            continue;
+        }
+
+        if (SDL_HasIntersection(&temp, element)){
+            interaction_coffre(element,joueur, objets);
+            return faux;
+        }
+        suivant(m->liste_collisions);
+    }
+
+    if (r)
+    {
+        if (r->x + x * taille_unite < 0) /* Le personnage ne peut pas aller en haut */
+            return faux;
+        if (r->x + r->w + x * taille_unite > m->text_map->width) /* Le personnage ne peut pas aller en bas */
+            return faux;
+        if (texture->compteur_frame_anim % texture->duree_frame_anim)
+            r->x += x * taille_unite;
+    }
+    else
+    {
+        if (texture->aff_fenetre->x + x * taille_unite < 0) /* Le personnage ne peut pas aller en haut */
+            return faux;
+        if (texture->aff_fenetre->x + texture->aff_fenetre->w + x * taille_unite > m->text_map->width) /* Le personnage ne peut pas aller en bas */
+            return faux;
+        if (texture->compteur_frame_anim % texture->duree_frame_anim)
+            r->x += x * taille_unite;
+    }
+
+    if (texture->compteur_frame_anim == NB_FPS)
+        (texture->compteur_frame_anim) = 0;
+    else
+        (texture->compteur_frame_anim)++;
+
+    return vrai;
+}
+
+bool deplacement_y_joueur_secondaire(t_map *m, joueur_t * joueur, int y, SDL_Rect *r, lobjet_t * objets)
+{
+    t_aff *texture = joueur->textures_joueur->liste[0];
+    const int taille_unite = floor(map->taille_case / TAILLE_PERSONNAGE);
+    SDL_Rect temp = {.x = r->x, .y = r->y + y * taille_unite, .w = r->w, .h = r->h};
+    SDL_Rect actuel = {.x = r->x, .w = r->w, .h = floor(texture->multipli_taille) * 3};
+
+    if(y < 0){
+        temp.y = r->y + y * taille_unite + (r->h - 3);
+        actuel.y = r->y + (r->h - 3);
+    }
+    else {
+        temp.y = r->y + y * taille_unite;
+        temp.h = r->h;
+        actuel.y = r->y - 3;
+    }
+
+    en_tete(m->liste_collisions);
+
+    while (!hors_liste(m->liste_collisions)){
+        SDL_Rect *element = valeur_elt(m->liste_collisions);
+
+        if (element == r){ /* Si la collision nou concerne */
+            suivant(m->liste_collisions);
+            continue;
+        }
+
+        if (SDL_HasIntersection(&actuel, element))
+        {
+            suivant(m->liste_collisions);
+            continue;
+        }
+
+        if (SDL_HasIntersection(&temp, element)){
+            interaction_coffre(element,joueur, objets);
+            return faux;
+        }
+        suivant(m->liste_collisions);
+    }
+
+    if(r)
+    {
+        if(r->y + y * taille_unite  < 0) /* Le personnage ne peut pas aller en haut */
+            return faux;
+        if (r->y + r->h + y * taille_unite > m->text_map->height) /* Le personnage ne peut pas aller en bas */
+            return faux;
+        if(texture->compteur_frame_anim % texture->duree_frame_anim)
+            r->y += y * taille_unite;
+    }
+    else
+    {
+        if (texture->aff_fenetre->y + y * taille_unite< 0) /* Le personnage ne peut pas aller en haut */
+            return faux;
+        if (texture->aff_fenetre->y + texture->aff_fenetre->h + y * taille_unite> m->text_map->height) /* Le personnage ne peut pas aller en bas */
+            return faux;
+        if (texture->compteur_frame_anim % texture->duree_frame_anim)
+            r->y += y * taille_unite;
+    }
+
+
+    if(texture->compteur_frame_anim == NB_FPS)
+        (texture->compteur_frame_anim) = 0;
+    else
+        (texture->compteur_frame_anim)++;
+
+    return vrai;
+}
+
 void text_copier_position(t_aff * a_modifier, const t_aff * const original){
     a_modifier->aff_fenetre->x = original->aff_fenetre->x;
     a_modifier->aff_fenetre->y = original->aff_fenetre->y;

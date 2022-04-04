@@ -136,7 +136,6 @@ int main(int argc, char** argv)
         joueur2 = joueurs[1];
         joueur2->pdv = 7;
         next_texture_joueur2 = joueur2->textures_joueur->liste[TEXT_MARCHER];
-        tout_ramasser(objets, joueur2->inventaire);
 
         for (i = 0; i < joueur2->textures_joueur->nb_valeurs; i++)
             if (joueur2->textures_joueur->liste == NULL)
@@ -197,16 +196,16 @@ int main(int argc, char** argv)
                 switch (joueur2->statut->orient_dep)
                 {
                 case NORD_1:
-                    deplacement_y_entite(map, joueur2->textures_joueur->liste[0], -1, &joueur2->statut->zone_colision);
+                    deplacement_y_joueur_secondaire(map, joueur2, -1, &joueur2->statut->zone_colision, objets);
                     break;
                 case SUD_1:
-                    deplacement_y_entite(map, joueur2->textures_joueur->liste[0], 1, &joueur2->statut->zone_colision);
+                    deplacement_y_joueur_secondaire(map, joueur2, 1, &joueur2->statut->zone_colision, objets);
                     break;
                 case OUEST_1:
-                    deplacement_x_entite(map, joueur2->textures_joueur->liste[0], -1, &joueur2->statut->zone_colision);
+                    deplacement_x_joueur_secondaire(map, joueur2, -1, &joueur2->statut->zone_colision, objets);
                     break;
                 case EST_1:
-                    deplacement_x_entite(map, joueur2->textures_joueur->liste[0], 1, &joueur2->statut->zone_colision);
+                    deplacement_x_joueur_secondaire(map, joueur2, 1, &joueur2->statut->zone_colision, objets);
                     break;
                 }
             }
