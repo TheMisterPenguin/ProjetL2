@@ -24,6 +24,7 @@ list *listeDeTextures;
 list *buffer_affichage;
 
 t_aff * heal = NULL; //init_animations()
+t_aff * bloquer = NULL; //init_animations()
 t_aff *fenetre_finale = NULL; /* La fenêtre de jeu finale sans l'interface */
 
 long int compteur;
@@ -1090,6 +1091,7 @@ bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
 
 void init_animations(){
     heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
+    bloquer = (creer_texture("ressources/sprite/bloquer.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
 }
 
 t_aff * next_frame_animation(joueur_t * joueur){
@@ -1109,6 +1111,8 @@ t_aff * next_frame_animation(joueur_t * joueur){
         }
             return heal;
     }
+    if (statut->animation == BLOQUER )
+        return bloquer;
     else{
         return NULL;
     }
