@@ -64,7 +64,6 @@ int main(int argc, char** argv)
     int nb_joueurs;
     int debut, fin; /* le temps pour calculer les performances */
     int i;
-    t_aff *next_texture_joueur1 = NULL;
     t_aff *next_texture_joueur2 = NULL;
     t_aff *texture_temp1 = NULL;
     t_aff *texture_temp2 = NULL;
@@ -119,11 +118,12 @@ int main(int argc, char** argv)
     /* On créer les animations */
     init_animations();
 
-    next_texture_joueur1 = joueur1->textures_joueur->liste[TEXT_MARCHER];
 
     objets = creer_liste_objet("../ressource/objet.txt");
     creer_textures_objets(objets);
-    tout_ramasser(objets, joueur1->inventaire);
+    ramasser_objet(objets->liste[8], joueur1->inventaire);
+    ramasser_objet(objets->liste[7], joueur1->inventaire);
+    ramasser_objet(objets->liste[0], joueur1->inventaire);
 
     /*test de l'allocation des textures*/
     for (i = 0; i < joueur1->textures_joueur->nb_valeurs; i++)
@@ -136,7 +136,6 @@ int main(int argc, char** argv)
         joueur2 = joueurs[1];
         joueur2->pdv = 7;
         next_texture_joueur2 = joueur2->textures_joueur->liste[TEXT_MARCHER];
-        tout_ramasser(objets, joueur2->inventaire);
 
         for (i = 0; i < joueur2->textures_joueur->nb_valeurs; i++)
             if (joueur2->textures_joueur->liste == NULL)
@@ -170,19 +169,19 @@ int main(int argc, char** argv)
             switch (joueur1->statut->orient_dep)
             {
             case NORD_1:
-                if((apparaitre = deplacement_y_pers(map, joueurs, nb_joueurs, -1)))
+                if((apparaitre = deplacement_y_pers(map, joueurs, nb_joueurs, -1, objets)))
                     continue;
                 break;
             case SUD_1:
-                if((apparaitre = deplacement_y_pers(map, joueurs, nb_joueurs, 1)))
+                if((apparaitre = deplacement_y_pers(map, joueurs, nb_joueurs, 1, objets)))
                     continue;
                 break;
             case OUEST_1:
-                if((apparaitre = deplacement_x_pers(map, joueurs, nb_joueurs, -1)))
+                if((apparaitre = deplacement_x_pers(map, joueurs, nb_joueurs, -1, objets)))
                     continue;
                 break;
             case EST_1:
-                if((apparaitre = deplacement_x_pers(map, joueurs, nb_joueurs, 1)))
+                if((apparaitre = deplacement_x_pers(map, joueurs, nb_joueurs, 1, objets)))
                     continue;
                 break;
             }
@@ -190,23 +189,23 @@ int main(int argc, char** argv)
 
         texture_temp1 = next_frame_joueur(joueur1);
         if (texture_temp1)
-            next_texture_joueur1 = texture_temp1;
+            joueur1->statut->texture_prec = texture_temp1;
 
         if(nb_joueurs == 2){
             if (joueur2->statut->en_mouvement){
                 switch (joueur2->statut->orient_dep)
                 {
                 case NORD_1:
-                    deplacement_y_entite(map, joueur2->textures_joueur->liste[0], -1, &joueur2->statut->zone_colision);
+                    deplacement_y_joueur_secondaire(map, joueur2, -1, &joueur2->statut->zone_colision, objets);
                     break;
                 case SUD_1:
-                    deplacement_y_entite(map, joueur2->textures_joueur->liste[0], 1, &joueur2->statut->zone_colision);
+                    deplacement_y_joueur_secondaire(map, joueur2, 1, &joueur2->statut->zone_colision, objets);
                     break;
                 case OUEST_1:
-                    deplacement_x_entite(map, joueur2->textures_joueur->liste[0], -1, &joueur2->statut->zone_colision);
+                    deplacement_x_joueur_secondaire(map, joueur2, -1, &joueur2->statut->zone_colision, objets);
                     break;
                 case EST_1:
-                    deplacement_x_entite(map, joueur2->textures_joueur->liste[0], 1, &joueur2->statut->zone_colision);
+                    deplacement_x_joueur_secondaire(map, joueur2, 1, &joueur2->statut->zone_colision, objets);
                     break;
                 }
             }
@@ -274,7 +273,8 @@ int main(int argc, char** argv)
         #endif
   
         /* On cous le joueur1 */
-        afficher_texture(next_texture_joueur1, rendu_principal);
+        if(texture_temp1)
+            afficher_texture(texture_temp1, rendu_principal);
 
         if(map->texture_superposition)
             afficher_texture(map->texture_superposition, rendu_principal);

@@ -273,15 +273,6 @@ void deplacer_texture_bas_droit(t_aff *texture, int x, int y);
 void modif_affichage_rect(t_aff *texture, SDL_Rect r);
 
 /**
- * Permet de déplacer le personnage de x unités sur la map
- * 
- * \param map La map sur laquelle le personnage ce déplace
- * \param pers La texture du personnage elle même
- * \param x Le nombre d'unités de déplacements
- */
-bool deplacement_x_pers(t_map *m, joueur_t **joueurs, unsigned short int nb_joueurs, int x);
-
-/**
  * \fn t_l_aff* init_textures_joueur(joueur_t *j, int num_j)
  * \brief Fonction qui creer et renvoie une liste de textures pour le personnage (joueur)
  * \author Antoine Bruneau
@@ -311,13 +302,56 @@ extern t_aff *init_texture_joueur(t_l_aff *textures_joueur, joueur_t * joueur);
 extern t_aff *next_frame_joueur(joueur_t *j);
 
 /**
- * Permet de déplacer le personnage de y unités sur la map
+ * Permet de déplacer le personnage de x unités horizontales sur la map
+ * 
+ * \param map La map sur laquelle le personnage ce déplace
+ * \param joueurs Les joueurs en jeu
+ * \param nb_joueurs Le nombre de joueurs en jeu
+ * \param x Le nombre d'unités de déplacements
+ * \param objets Les objets du jeu
+ * \return vrai : Si le joueur a réussi à se déplacer
+ * \return faux : Si le joueur n'a pas pu se déplacer
+ */
+bool deplacement_x_pers(t_map *map, joueur_t ** joueurs, unsigned short int nb_joueurs, int x, lobjet_t * objets);
+
+/**
+ * Permet de déplacer le personnage principal de y unités verticales sur la map
  *
  * \param map La map sur laquelle le personnage ce déplace
- * \param pers La texture du personnage elle même
+ * \param joueurs Les joueurs en jeu
+ * \param nb_joueurs Le nombre de joueurs en jeu
  * \param y Le nombre d'unités de déplacements
+ * \param objets Les objets du jeu
+ * \return vrai : Si le joueur a réussi à se déplacer
+ * \return faux : Si le joueur n'a pas pu se déplacer
  */
-bool deplacement_y_pers(t_map *m, joueur_t **joueurs, unsigned short int nb_joueurs, int y);
+bool deplacement_y_pers(t_map *map, joueur_t ** joueurs, unsigned short int nb_joueurs, int y, lobjet_t * objets);
+
+/**
+ * Permet de déplacer un joueur secondaire de y unités verticales sur la map
+ *
+ * \param map La map sur laquelle le personnage ce déplace
+ * \param joueur Le joueur qui se déplace
+ * \param y Le nombre d'unités de déplacements
+ * \param r La zone de collision du joueur
+ * \param objets Les objets du jeu
+ * \return vrai : Si le joueur a réussi à se déplacer
+ * \return faux : Si le joueur n'a pas pu se déplacer
+ */
+bool deplacement_y_joueur_secondaire(t_map *map, joueur_t * joueur, int y, SDL_Rect *r, lobjet_t * objets);
+
+/**
+ * Permet de déplacer un joueur secondaire de x unités horizontales sur la map
+ *
+ * \param map La map sur laquelle le personnage ce déplace
+ * \param joueur Le joueur qui se déplace
+ * \param x Le nombre d'unités de déplacements
+ * \param r La zone de collision du joueur
+ * \param objets Les objets du jeu
+ * \return vrai : Si le joueur a réussi à se déplacer
+ * \return faux : Si le joueur n'a pas pu se déplacer
+ */
+bool deplacement_x_joueur_secondaire(t_map *map, joueur_t * joueur, int x, SDL_Rect *r, lobjet_t * objets);
 
 /**
  * Fonction qui permet de définir exactement la taille de la texture à affichar sur l'écran

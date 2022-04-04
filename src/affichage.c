@@ -320,7 +320,6 @@ t_aff *next_frame_joueur(joueur_t *j)
     t_l_aff *textures_joueur = j->textures_joueur;
     statut_t *statut = j->statut;
     t_aff **textures = textures_joueur->liste;
-    int pause = 0;
 
     appliquer_coord_rect(&(j->statut->zone_colision), textures_joueur);
 
@@ -333,8 +332,10 @@ t_aff *next_frame_joueur(joueur_t *j)
             if(compteur % 2)
                 return NULL;
         }
-        else
+        else{
             statut->action = RIEN;
+            statut->en_mouvement = faux;
+        }
     }
 
     if (statut->action == ATTAQUE_OU_CHARGER && statut->duree == 0)
@@ -356,7 +357,7 @@ t_aff *next_frame_joueur(joueur_t *j)
                 return textures[TEXT_MARCHER];
             }
         else
-            pause = 1;
+            return statut->texture_prec;
     }
     else
     {
@@ -366,8 +367,8 @@ t_aff *next_frame_joueur(joueur_t *j)
         }
         else if (statut->action == CHARGER)
         {
-            if ((compteur % 4) == 0)
-            { /*compteur%5 pour la vitesse d'affichage*/
+            if ((compteur % 4) == 0) /*compteur%5 pour la vitesse d'affichage*/
+            { 
                 next_frame_x(textures[TEXT_CHARGER]);
                 if(statut->en_mouvement)
                     next_frame_y_indice(textures[TEXT_CHARGER], statut->orient_dep*2 + (textures[TEXT_CHARGER]->frame_anim->x) / (int) LONGUEUR_ENTITE );
@@ -376,12 +377,12 @@ t_aff *next_frame_joueur(joueur_t *j)
                 return textures[TEXT_CHARGER];
             }
             else
-                pause = 1;
+                return statut->texture_prec;
         }
         else if (statut->action == ATTAQUE)
         {
-            if ((compteur % 4) == 0)
-            { /*compteur%4 pour la vitesse d'affichage*/
+            if ((compteur % 4) == 0) /*compteur%4 pour la vitesse d'affichage*/
+            { 
                 next_frame_x(textures[TEXT_ATTAQUE]);
                 if(statut->orient_dep != EST_1)
                     statut->orient_att = (statut->orient_att + 7) % 8;
@@ -393,14 +394,12 @@ t_aff *next_frame_joueur(joueur_t *j)
                 return textures[TEXT_ATTAQUE];
             }
             else
-                pause = 1;
+                return statut->texture_prec;
         }
         else if (statut->action == ATTAQUE_CHARGEE)
         {
-            if ((compteur % 2) == 0)
-            { /*compteur%3 pour la vitesse d'affichage*/
-                // lorseque l'on rentre pour la première fois dans cette phase d'attaque chargée
-                
+            if ((compteur % 2) == 0) /*compteur%2 pour la vitesse d'affichage*/
+            {
                 next_frame_x(textures[TEXT_ATTAQUE_CHARGEE]);
                 statut->orient_att = (statut->orient_att + 1) % 8;
                 /*si il a fait le tour du fichier sprite attaque, l'action est terminée*/
@@ -409,16 +408,10 @@ t_aff *next_frame_joueur(joueur_t *j)
                 return textures[TEXT_ATTAQUE_CHARGEE];
             }
             else
-                pause = 1;
+                return statut->texture_prec;
         }
     }
-    /*si aucune des conditions*/
-    if (pause)
-        return NULL;
-    else if (statut->bouclier_equipe)
-        return textures[TEXT_MARCHER_BOUCLIER];
-    else
-        return textures[TEXT_MARCHER];
+    return statut->texture_prec;
 }
 
 void afficher_monstres(list * liste_monstre, joueur_t * joueur){
@@ -460,7 +453,7 @@ void afficher_sorts(list * liste_sorts, joueur_t * joueur){
     en_tete(liste_sorts);
     while(!hors_liste(liste_sorts)){
         sort = valeur_elt(liste_sorts);
-        action_sort(sort);
+        action_sort(sort, joueur);
         afficher_texture(sort->texture ,rendu_principal);
         suivant(liste_sorts);
     }
@@ -665,7 +658,7 @@ void modif_affichage_rect(t_aff *texture, SDL_Rect r){
     texture->frame_anim->w = r.w;
 }
 
-bool deplacement_x_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_joueurs, int x){
+bool deplacement_x_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_joueurs, int x, lobjet_t * objets){
     joueur_t *j = *joueurs;
     int *x_map = &(map->text_map->frame_anim->x); /* La coordonnée x actuelle de la map */
     int *x_pers = &(j->statut->zone_colision.x); /* La coordonnée x actuelle du joueur */
@@ -704,7 +697,7 @@ bool deplacement_x_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_jou
         }
 
         if(SDL_HasIntersection(&temp, element)){
-            interaction_coffre(element,j);
+            interaction_coffre(element,j, objets);
             return faux;
         }
         suivant(m->liste_collisions);
@@ -732,7 +725,7 @@ bool deplacement_x_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_jou
     return faux;
 }
 
-bool deplacement_y_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_joueurs, int y){
+bool deplacement_y_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_joueurs, int y, lobjet_t * objets){
     joueur_t *j = *joueurs;
     int *y_map = &(map->text_map->frame_anim->y);                                        /* La coordonnée y actuelle de la map */
     int *y_pers = &(j->statut->zone_colision.y);                                       /* La coordonnée y actuelle du joueur */
@@ -781,7 +774,7 @@ bool deplacement_y_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_jou
         }
 
         if (SDL_HasIntersection(&temp, element)){
-            interaction_coffre(element,j);
+            interaction_coffre(element,j, objets);
             return faux;
 
         }
@@ -807,6 +800,130 @@ bool deplacement_y_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_jou
         *y_pers += y * taille_unite;
 
     return faux;
+}
+
+bool deplacement_x_joueur_secondaire(t_map *m, joueur_t * joueur, int x, SDL_Rect *r, lobjet_t * objets)
+{
+    t_aff *texture = joueur->textures_joueur->liste[0];
+    const int taille_unite = floor(map->taille_case / TAILLE_PERSONNAGE);
+    SDL_Rect temp = {.x = r->x + x * taille_unite, .y = r->y, .w = r->w, .h = r->h};
+
+    en_tete(m->liste_collisions);
+
+    while (!hors_liste(m->liste_collisions))
+    {
+        SDL_Rect *element = valeur_elt(m->liste_collisions);
+
+        if (element == r){ /* Si la collision nouss concerne */
+            suivant(m->liste_collisions);
+            continue;
+        }
+
+        if (SDL_HasIntersection(r, element)){ /* Si la collision nou concerne */
+            suivant(m->liste_collisions);
+            continue;
+        }
+
+        if (SDL_HasIntersection(&temp, element)){
+            interaction_coffre(element,joueur, objets);
+            return faux;
+        }
+        suivant(m->liste_collisions);
+    }
+
+    if (r)
+    {
+        if (r->x + x * taille_unite < 0) /* Le personnage ne peut pas aller en haut */
+            return faux;
+        if (r->x + r->w + x * taille_unite > m->text_map->width) /* Le personnage ne peut pas aller en bas */
+            return faux;
+        if (texture->compteur_frame_anim % texture->duree_frame_anim)
+            r->x += x * taille_unite;
+    }
+    else
+    {
+        if (texture->aff_fenetre->x + x * taille_unite < 0) /* Le personnage ne peut pas aller en haut */
+            return faux;
+        if (texture->aff_fenetre->x + texture->aff_fenetre->w + x * taille_unite > m->text_map->width) /* Le personnage ne peut pas aller en bas */
+            return faux;
+        if (texture->compteur_frame_anim % texture->duree_frame_anim)
+            r->x += x * taille_unite;
+    }
+
+    if (texture->compteur_frame_anim == NB_FPS)
+        (texture->compteur_frame_anim) = 0;
+    else
+        (texture->compteur_frame_anim)++;
+
+    return vrai;
+}
+
+bool deplacement_y_joueur_secondaire(t_map *m, joueur_t * joueur, int y, SDL_Rect *r, lobjet_t * objets)
+{
+    t_aff *texture = joueur->textures_joueur->liste[0];
+    const int taille_unite = floor(map->taille_case / TAILLE_PERSONNAGE);
+    SDL_Rect temp = {.x = r->x, .y = r->y + y * taille_unite, .w = r->w, .h = r->h};
+    SDL_Rect actuel = {.x = r->x, .w = r->w, .h = floor(texture->multipli_taille) * 3};
+
+    if(y < 0){
+        temp.y = r->y + y * taille_unite + (r->h - 3);
+        actuel.y = r->y + (r->h - 3);
+    }
+    else {
+        temp.y = r->y + y * taille_unite;
+        temp.h = r->h;
+        actuel.y = r->y - 3;
+    }
+
+    en_tete(m->liste_collisions);
+
+    while (!hors_liste(m->liste_collisions)){
+        SDL_Rect *element = valeur_elt(m->liste_collisions);
+
+        if (element == r){ /* Si la collision nou concerne */
+            suivant(m->liste_collisions);
+            continue;
+        }
+
+        if (SDL_HasIntersection(&actuel, element))
+        {
+            suivant(m->liste_collisions);
+            continue;
+        }
+
+        if (SDL_HasIntersection(&temp, element)){
+            interaction_coffre(element,joueur, objets);
+            return faux;
+        }
+        suivant(m->liste_collisions);
+    }
+
+    if(r)
+    {
+        if(r->y + y * taille_unite  < 0) /* Le personnage ne peut pas aller en haut */
+            return faux;
+        if (r->y + r->h + y * taille_unite > m->text_map->height) /* Le personnage ne peut pas aller en bas */
+            return faux;
+        if(texture->compteur_frame_anim % texture->duree_frame_anim)
+            r->y += y * taille_unite;
+    }
+    else
+    {
+        if (texture->aff_fenetre->y + y * taille_unite< 0) /* Le personnage ne peut pas aller en haut */
+            return faux;
+        if (texture->aff_fenetre->y + texture->aff_fenetre->h + y * taille_unite> m->text_map->height) /* Le personnage ne peut pas aller en bas */
+            return faux;
+        if (texture->compteur_frame_anim % texture->duree_frame_anim)
+            r->y += y * taille_unite;
+    }
+
+
+    if(texture->compteur_frame_anim == NB_FPS)
+        (texture->compteur_frame_anim) = 0;
+    else
+        (texture->compteur_frame_anim)++;
+
+    return vrai;
 }
 
 void text_copier_position(t_aff * a_modifier, const t_aff * const original){

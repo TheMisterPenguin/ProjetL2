@@ -65,7 +65,7 @@ void orienter_sort_vers_joueur(monstre_t * monstre, sort_t * sort, joueur_t * jo
         next_frame_x_indice(sort->texture, round(teta/(double)45));
 }
 
-void action_sort(sort_t * sort){
+void action_sort(sort_t * sort, joueur_t joueur[2]){
     int orientation = current_frame_x(sort->texture);
     bool deplacer_1 = vrai;
     bool deplacer_2 = vrai;
@@ -91,10 +91,13 @@ void action_sort(sort_t * sort){
         default : break;
     }
 
-    /* detruit sort si rencontre un obstacle */
-    if(deplacer_1 == faux || deplacer_2 == faux){
-        detruire_collision_dans_liste(map->liste_collisions, &(sort->collision));
-		oter_elt(map->liste_sorts);
-    }
+    
+    /* detruit sort si rencontre un obstacle qui n'est pas un joueur*/
+    if(deplacer_1 == faux || deplacer_2 == faux)
+        if(valeur_elt(map->liste_collisions) != &(joueur[0].statut->vrai_zone_collision)){
+            detruire_collision_dans_liste(map->liste_collisions, &(sort->collision));
+		    oter_elt(map->liste_sorts);
+            printf("c'est un mur\n");
+        }
 
 }

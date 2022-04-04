@@ -127,8 +127,13 @@ void detruire_inventaire(inventaire_t ** inventaire){
 }
 
 void ramasser_objet(objet_t * objet, inventaire_t * inventaire){
-    inventaire->sac->liste[inventaire->sac->nb] = objet;
-    inventaire->sac->nb++;
+    int i;
+
+    //chercher une case libre dans le sac
+    for(i=0; i<inventaire->sac->nb && inventaire->sac->liste[i] != NULL; i++);
+
+    inventaire->sac->liste[i] = objet;
+    (inventaire->sac->nb)++;
 }
 
 void tout_ramasser(lobjet_t * objets, inventaire_t * inventaire){
