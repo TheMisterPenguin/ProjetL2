@@ -505,7 +505,7 @@ void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, 
             else{
                 if(x > (map->text_map->width - map->text_map->frame_anim->w / 2 )){ /* Extémité droite */
                     map->text_map->frame_anim->x = map->text_map->width - map->text_map->frame_anim->w;
-                    j->statut->zone_colision.x = x - map->text_map->x;
+                    j->statut->zone_colision.x = x - map->text_map->frame_anim->x;
                 }
                 else {
                     place_rect_center_from_point(&j->statut->zone_colision, get_rect_center(map->text_map->frame_anim));
