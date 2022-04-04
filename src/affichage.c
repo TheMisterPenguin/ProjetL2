@@ -500,9 +500,7 @@ bool point_in_rect(SDL_Rect r, point p){
 }
 
 void rect_centre_x(SDL_Rect *rectangle){
-    unsigned int centre_x = get_screen_center().x;
-
-    rectangle->x = centre_x;
+    rectangle->x = get_screen_center().x;
 
     if (rectangle->w % 2)
     {
@@ -515,9 +513,7 @@ void rect_centre_x(SDL_Rect *rectangle){
 }
 
 void rect_centre_y(SDL_Rect *rectangle){
-    unsigned int centre_y = get_screen_center().y;
-
-    rectangle->y = centre_y;
+    rectangle->y = get_screen_center().y;
 
     if (rectangle->h % 2)
     {
@@ -537,9 +533,7 @@ void rect_centre(SDL_Rect *rectangle){
 }
 
 void rect_centre_rect_x(SDL_Rect *rectangle, SDL_Rect *rectangle_centre){
-    unsigned int centre_x = rectangle_centre->w / 2;
-
-    rectangle->x = centre_x;
+    rectangle->x = rectangle_centre->w / 2;
 
     if (rectangle->w % 2)
     {
@@ -964,8 +958,8 @@ void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y){
     const double multipli_x = (double) map->text_map->frame_anim->w / FENETRE_LONGUEUR;
     const double multipli_y = (double)map->text_map->frame_anim->h / FENETRE_LARGEUR;
 
-    r_map->h = floor(ecran->h * multipli_y);
     r_map->w = floor(ecran->w * multipli_x);
+    r_map->h = floor(ecran->h * multipli_y);
 
     r_map->x = floor((ecran->x + x) * multipli_x);
     r_map->y = floor((ecran->y + y) * multipli_y);
