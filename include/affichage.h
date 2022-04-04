@@ -106,6 +106,7 @@ extern long int compteur;      /*compteur utilisé pour gérer la vitesse d'affi
 extern SDL_Rect tx, ty;
 extern float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépendent de la résolution */
 extern t_aff * heal;
+extern t_aff * bloquer;
 extern t_aff *fenetre_finale; /* La fenêtre de jeu finale sans l'interface */
 
 /* Définition des fonctions */
