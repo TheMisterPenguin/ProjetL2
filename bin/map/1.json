@@ -47,7 +47,7 @@
             "w" : 3,
             "h" : 1,
             "destination" : 2,
-            "coords" : [0,0]
+            "coords" : [240,100]
         }
     ],
     "chest" : [
