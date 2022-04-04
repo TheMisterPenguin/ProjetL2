@@ -254,10 +254,6 @@ err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
         else
             return SDL_RenderCopy(rendu, texture->texture, NULL, texture->aff_fenetre);
     }
-    else{
-        printf("erreur afficher_texture(): texture == NULL\n");
-        return(-1);
-    }
 }
 
 t_l_aff* init_textures_joueur(joueur_t *j, int num_j){
@@ -1048,12 +1044,12 @@ void detruire_collision_dans_liste(list * liste_collisions, SDL_Rect * collision
 SDL_Point get_rect_center(const SDL_Rect *const r){
     SDL_Point p;
 
-    if(!(r->w % 2))
+    if((r->w % 2))
         p.x = r->w /2 + 1;
     else
         p.x = r->w / 2;
 
-    if (!(r->h % 2))
+    if ((r->h % 2))
         p.y = r->h / 2 + 1;
     else
         p.y = r->h / 2;
@@ -1064,12 +1060,12 @@ SDL_Point get_rect_center(const SDL_Rect *const r){
 SDL_Point get_rect_center_coord(const SDL_Rect *const r){
     SDL_Point p;
 
-    if(!(r->w % 2))
+    if((r->w % 2))
         p.x = r->x + (r->w /2 + 1);
     else
         p.x = r->x + r->w / 2;
 
-    if (!(r->h % 2))
+    if ((r->h % 2))
         p.y = r->y + (r->h / 2 + 1);
     else
         p.y = r->y + r->h / 2;

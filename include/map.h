@@ -42,6 +42,7 @@ typedef struct s_map{
     unsigned int id_map;
     t_aff * text_map; /**< La texture de la map */
     t_aff *text_sol;  /**< La texture du sol */
+    t_aff *texture_superposition; /**<La texture à supperposer devant le personnage */
     unsigned int width, height; /**< La largeur et la hauteur de la map */
     unsigned int taille_case; /**< La taille d'une case */
     unsigned int cases_x; /**< Le nombre de cases affichées en x */

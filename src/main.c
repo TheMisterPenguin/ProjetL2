@@ -276,6 +276,9 @@ int main(int argc, char** argv)
         /* On cous le joueur1 */
         afficher_texture(next_texture_joueur1, rendu_principal);
 
+        if(map->texture_superposition)
+            afficher_texture(map->texture_superposition, rendu_principal);
+
         // Afficher les animations eventuelles
         lister_animations(joueurs, animations);
         afficher_animations(animations);
