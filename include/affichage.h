@@ -304,7 +304,7 @@ extern t_aff *next_frame_joueur(joueur_t *j);
 /**
  * Permet de déplacer le personnage de x unités horizontales sur la map
  * 
- * \param map La map sur laquelle le personnage ce déplace
+ * \param map La map sur laquelle le personnage se déplace
  * \param joueurs Les joueurs en jeu
  * \param nb_joueurs Le nombre de joueurs en jeu
  * \param x Le nombre d'unités de déplacements
@@ -317,7 +317,7 @@ bool deplacement_x_pers(t_map *map, joueur_t ** joueurs, unsigned short int nb_j
 /**
  * Permet de déplacer le personnage principal de y unités verticales sur la map
  *
- * \param map La map sur laquelle le personnage ce déplace
+ * \param map La map sur laquelle le personnage se déplace
  * \param joueurs Les joueurs en jeu
  * \param nb_joueurs Le nombre de joueurs en jeu
  * \param y Le nombre d'unités de déplacements
@@ -330,7 +330,7 @@ bool deplacement_y_pers(t_map *map, joueur_t ** joueurs, unsigned short int nb_j
 /**
  * Permet de déplacer un joueur secondaire de y unités verticales sur la map
  *
- * \param map La map sur laquelle le personnage ce déplace
+ * \param map La map sur laquelle le personnage se déplace
  * \param joueur Le joueur qui se déplace
  * \param y Le nombre d'unités de déplacements
  * \param r La zone de collision du joueur
@@ -343,7 +343,7 @@ bool deplacement_y_joueur_secondaire(t_map *map, joueur_t * joueur, int y, SDL_R
 /**
  * Permet de déplacer un joueur secondaire de x unités horizontales sur la map
  *
- * \param map La map sur laquelle le personnage ce déplace
+ * \param map La map sur laquelle le personnage se déplace
  * \param joueur Le joueur qui se déplace
  * \param x Le nombre d'unités de déplacements
  * \param r La zone de collision du joueur
