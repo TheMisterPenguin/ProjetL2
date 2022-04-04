@@ -2,6 +2,7 @@
     "type" : "map",
     "id" : 1,
     "file-path" : "ressources/background/map/interieur3.bmp",
+    "superposition" : "ressources/background/map/house_walls.bmp",
     "width" : 15, //30 cases de 16px mais une cases de la map fait 32px en réalité
     "height" : 13,
     "taille case" : 32,
