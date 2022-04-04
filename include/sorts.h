@@ -55,6 +55,6 @@ extern base_sort_t liste_base_sort[3];
 
 void init_liste_base_sort(liste_base_monstres_t * liste_base_monstres);
 void creer_sort_monstre(monstre_t * monstre, joueur_t * joueur);
-void action_sort(sort_t * sort);
+void action_sort(sort_t * sort, joueur_t * joueur);
 void orienter_sort_vers_joueur(monstre_t * monstre, sort_t * sort, joueur_t * joueur);
 #endif
