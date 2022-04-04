@@ -23,7 +23,7 @@ SDL_GameController * manette;
  * \param ev Structure contenant l'événement
  * \param joueurs Joueurs pouvant provoquer l'événement
  */
-static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
+static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs, char * f_src_objet){
     joueur_t * joueur1 = joueurs[0];
     joueur_t * joueur2 = joueurs[1];
 
@@ -36,7 +36,7 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
         stoper_mouvement_joueurs(joueurs);
 
         SDL_ShowCursor(SDL_ENABLE);
-        afficher_menu_pause(joueur1);
+        afficher_menu_pause(joueur1, f_src_objet);
         SDL_ShowCursor(SDL_DISABLE);
     }
     if((joueur1->statut->action == RIEN || joueur1->statut->action == CHARGER) && (joueur2 == NULL || (joueur2->statut->action == RIEN || joueur2->statut->action == CHARGER)))
@@ -394,13 +394,13 @@ void jeu_event_manette(joueur_t **joueurs){
     }
 }
 
-void jeu_event(joueur_t ** joueurs){
+void jeu_event(joueur_t ** joueurs, char * f_src_obj){
     SDL_Event lastEvent;
 
     while(SDL_PollEvent(&lastEvent)){
         switch(lastEvent.type){
             case SDL_QUIT : printf("Détection de la fermeture de la fenêtre\n");fermer_programme(EXIT_SUCCESS);
-            case SDL_KEYDOWN : keyDown((SDL_KeyboardEvent*)&lastEvent.key, joueurs); break;
+            case SDL_KEYDOWN : keyDown((SDL_KeyboardEvent*)&lastEvent.key, joueurs, f_src_obj); break;
             case SDL_KEYUP : keyUp((SDL_KeyboardEvent*)&lastEvent.key, joueurs); break;
             case SDL_MOUSEBUTTONDOWN : mouseButtonDown((SDL_MouseButtonEvent*)&lastEvent.button, joueurs); break;
             case SDL_MOUSEBUTTONUP : mouseButtonUp((SDL_MouseButtonEvent*)&lastEvent.button, joueurs); break;

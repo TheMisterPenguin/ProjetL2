@@ -94,7 +94,7 @@ lobjet_t * creer_liste_objet_vide(char * fichier_src){
       return((lobjet_t *)NULL);
     }
 
-    obj = fopen("../ressource/objet.txt", "r");
+    obj = fopen(fichier_src, "r");
 
     if(obj == NULL){
         fprintf( stderr, "fichier source objet inaccessible\n") ;

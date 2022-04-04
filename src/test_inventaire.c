@@ -24,7 +24,7 @@ int clean_suite(void) { return 0; }
 
 void generation_inventaire(void) {
     //création inventaire
-    inventaire_t * inventaire = creer_inventaire();
+    inventaire_t * inventaire = creer_inventaire("ressources/objet/objet.txt");
     
     CU_ASSERT_NOT_EQUAL(inventaire, NULL);
     CU_ASSERT_NOT_EQUAL(inventaire->sac, NULL);
@@ -45,7 +45,7 @@ void modification_inventaire(void) {
     int type;
 
     //création objets
-    CU_ASSERT_NOT_EQUAL(objets = creer_liste_objet("../ressource/objet.txt"), NULL);
+    CU_ASSERT_NOT_EQUAL(objets = creer_liste_objet("ressources/objet/objet.txt"), NULL);
     CU_ASSERT_NOT_EQUAL(objet_test = creer_objet("ressources/objet/old_sword.bmp", arme, "sabre du purificateur", 0, 5, 2, 2), NULL);
 
     //modification inventaire (sac)
@@ -91,7 +91,7 @@ int main(){
     init();
 
     map = charger_s_map(charger_f_map("map.json"), liste_base_monstres);
-    perso_principal = new_joueur("test", 0);
+    perso_principal = new_joueur("test", 0, "ressources/objet/objets.txt");
 
     sac = perso_principal->inventaire->sac;
     equipe = perso_principal->inventaire->equipe;

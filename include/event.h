@@ -26,12 +26,13 @@ extern SDL_GameController *manette;
 extern _Bool logo_passer(void);
 
 /**
- * \fn void jeu_event(joueur_t ** joueurs)
+ * \fn void jeu_event(joueur_t ** joueurs, char * f_src_obj)
  * \brief Fonction qui gère les événements
  * \author Despert Ange
  * \param joueur Joueurs pouvant provoquer l'événement
+ * \param f_src_obj Fichier source des objets du jeu utile à certains événements
  */
-extern void jeu_event(joueur_t ** joueurs);
+extern void jeu_event(joueur_t ** joueurs, char * f_src_obj);
 
 void jeu_event_manette(joueur_t **joueurs);
 #endif
