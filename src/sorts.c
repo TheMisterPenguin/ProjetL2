@@ -44,8 +44,6 @@ void init_liste_base_sort(liste_base_monstres_t * liste_base_monstres){
 void creer_sort_monstre(monstre_t * monstre, joueur_t * joueur){
     sort_t * sort = malloc(sizeof(sort_t));
 
-    sort->cible.x = joueur->statut->vrai_zone_collision.x;
-    sort->cible.y = joueur->statut->vrai_zone_collision.x;
     sort->statut = LANCER;
     sort->collision.x = monstre->collision.x;
     sort->collision.y = monstre->collision.y;

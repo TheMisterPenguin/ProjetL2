@@ -190,7 +190,45 @@ void check_repertoire_jeux();
  */
 void environnement_joueurs(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t ** joueurs, int nb_joueur);
 
+/**
+ * \fn distance_x_joueur(SDL_Rect collision, joueur_t * joueur);
+ * \brief Renvoie la distance séparant le joueur d'une entité définit par sa collision sur l'axe des abscisses
+ * \author Bruneau Antoine
+ * \param collision la zone de collision de l'entité
+ * \param joueur le joueur
+ * \return int la distance entre l'entité et le joueur sur l'axe des abscisses
+ */
+extern int distance_x_joueur(SDL_Rect collision, joueur_t * joueur);
+
+/**
+ * \fn distance_y_joueur(SDL_Rect collision, joueur_t * joueur);
+ * \brief Renvoie la distance séparant le joueur d'une entité définit par sa collision sur l'axe des ordonnées
+ * \author Bruneau Antoine
+ * \param collision la zone de collision de l'entité
+ * \param joueur le joueur
+ * \return int la distance entre l'entité et le joueur sur l'axe des ordonnées
+ */
+extern int distance_y_joueur(SDL_Rect collision, joueur_t * joueur);
+
+/**
+ * \fn distance_joueur(SDL_Rect collision, joueur_t * joueur);
+ * \brief Renvoie la distance séparant le joueur d'une entité définit par sa collision
+ * \author Bruneau Antoine
+ * \param collision la zone de collision de l'entité
+ * \param joueur le joueur
+ * \return int la distance entre l'entité et le joueur
+ */
+extern int distance_joueur(SDL_Rect collision, joueur_t * joueur);
+
+
+
+
 SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_direction_2 orientation);
+
+
+
+
+
 
 
 #endif

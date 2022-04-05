@@ -32,7 +32,6 @@ typedef enum {LANCER, PARER}statut_sort_t;
 typedef struct sort_s {
     type_sort_t type;       /**<type de sort*/
     int degat;              /**<degat du sort*/
-    position_t cible;       /**<point d'arrivé du sort*/
     statut_sort_t statut;   /**<statut du sort*/
     SDL_Rect collision;      /**<hitbox du sort*/
     t_aff * texture;        /**<texture du sort*/
