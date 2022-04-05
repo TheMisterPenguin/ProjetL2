@@ -53,6 +53,8 @@ typedef struct base_sort_s
 
 extern base_sort_t liste_base_sort[3];
 
+void detruire_sort_cb(void * sort);
+void * ajouter_sort_cb(void * sort);
 void init_liste_base_sort(liste_base_monstres_t * liste_base_monstres);
 void creer_sort_monstre(monstre_t * monstre, joueur_t * joueur);
 void action_sort(sort_t * sort, joueur_t * joueur);

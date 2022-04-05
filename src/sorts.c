@@ -14,13 +14,30 @@
  * \copyright Copyright (c) 2022
  */
 
-base_sort_t liste_base_sort[3];
+void detruire_sort(sort_t ** sort){
+    free((*sort)->texture);
+    free(*sort);
+    *sort = NULL;
+}
 
+void detruire_sort_cb(void * sort){
+    detruire_sort(sort);
+}
+
+sort_t * ajouter_sort(sort_t* sort){
+    return sort;
+}
+
+void * ajouter_sort_cb(void * sort){
+    return ajouter_sort(sort);
+}
+
+base_sort_t liste_base_sort[3];
 
 void init_liste_base_sort(liste_base_monstres_t * liste_base_monstres){
     liste_base_sort[SP_WITCHER].type = SP_WITCHER;
-    liste_base_sort[SP_WITCHER].collision.w = 15;
-    liste_base_sort[SP_WITCHER].collision.h = 15;
+    liste_base_sort[SP_WITCHER].collision.w = TAILLE_CASE;
+    liste_base_sort[SP_WITCHER].collision.h = TAILLE_CASE;
     liste_base_sort[SP_WITCHER].degat = liste_base_monstres->tab[WITCHER].attaque;
 }
 
@@ -71,17 +88,12 @@ void action_sort(sort_t * sort, joueur_t joueur[2]){
     bool deplacer_2 = vrai;
 
     place_rect_center_from_point(sort->texture->aff_fenetre, get_rect_center_coord(&sort->collision));
-    printf("orientation = %d\n", orientation);
     switch(orientation){
         case 0:
-            deplacer_1 = deplacement_y_entite(map, sort->texture, -2, &(sort->collision) ); 
-            printf("deplacement_1 = %d\n", deplacer_1);break;
+            deplacer_1 = deplacement_y_entite(map, sort->texture, -2, &(sort->collision) ); break; 
         case 1:
             deplacer_1 = deplacement_x_entite(map, sort->texture, 1, &(sort->collision) );
-            printf("deplacement_1 = %d\n", deplacer_1);
-            deplacer_2 = deplacement_y_entite(map, sort->texture, -1, &(sort->collision) );
-            printf("deplacement_2 = %d\n", deplacer_2);
-            break;
+            deplacer_2 = deplacement_y_entite(map, sort->texture, -1, &(sort->collision) ); break;
         case 2:
             deplacer_1 = deplacement_x_entite(map, sort->texture, 2, &(sort->collision) ); break;
         case 3:
@@ -105,7 +117,6 @@ void action_sort(sort_t * sort, joueur_t joueur[2]){
         if(valeur_elt(map->liste_collisions) != &(joueur[0].statut->vrai_zone_collision)){
             detruire_collision_dans_liste(map->liste_collisions, &(sort->collision));
 		    oter_elt(map->liste_sorts);
-            printf("c'est un mur\n");
         }
 
 }

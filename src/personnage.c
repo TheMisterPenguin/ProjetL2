@@ -451,7 +451,6 @@ SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_directio
 SDL_bool entite_subit_attaque(SDL_Rect * monstre_hitbox, joueur_t * joueur){
 	SDL_Rect * zone_attaque = zone_en_dehors_hitbox(&(joueur->statut->vrai_zone_collision), joueur->textures_joueur->liste[0]->aff_fenetre, joueur->statut->orient_att);
 	SDL_Rect * hitbox = malloc(sizeof(SDL_Rect));
-	SDL_RenderDrawRect(rendu_principal,zone_attaque);
 	hitbox->w = monstre_hitbox->w;
 	hitbox->h = monstre_hitbox->h;
 	hitbox->x = monstre_hitbox->x;
@@ -506,41 +505,44 @@ SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_directi
 void environnement_joueurs(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t ** joueurs, int nb_joueur){
 	monstre_t * monstre;
 	sort_t * sort;
+	statut_t * statut;
 	t_direction_1 cote_joueur;
 	t_direction_1 cote_monstre;
 	t_direction_1 cote_sort;
 	int i;
 
 	for(i=0; i < nb_joueur; i++){
+		statut = joueurs[i]->statut;
 
 		en_tete(liste_monstres);
 		while(!hors_liste(liste_monstres)){
 			monstre = valeur_elt(liste_monstres);
 			
-			if(entite_en_collision(&(monstre->collision), &(joueurs[i]->statut->vrai_zone_collision), &cote_monstre, &cote_joueur)){
+			if(entite_en_collision(&(monstre->collision), &(statut->vrai_zone_collision), &cote_monstre, &cote_joueur)){
 				/* si le coup est bloqué */
-				if(joueurs[i]->statut->animation == BLOQUER){
+				if(statut->animation == BLOQUER){
 					monstre->orientation = cote_joueur;
 					monstre->action = MONSTRE_BLESSE;
 					monstre->duree = DUREE_MONSTRE_BLESSE;
 				}
-				else if(joueurs[i]->statut->action != J_BLESSE){
+				else if(statut->action != J_BLESSE){
 					(joueurs[i]->pdv) -= (monstre->attaque);
 					if(joueurs[i]->pdv <= 0)
 						running = faux;
 					else{
-						joueurs[i]->statut->orient_dep = cote_monstre;
-						joueurs[i]->statut->action = J_BLESSE;
-						joueurs[i]->statut->duree = DUREE_JOUEUR_BLESSE;
-						joueurs[i]->statut->en_mouvement = vrai;
+						statut->orient_dep = cote_monstre;
+						statut->action = J_BLESSE;
+						statut->duree = DUREE_JOUEUR_BLESSE;
+						statut->en_mouvement = vrai;
 						/* laisser au joueur le temps de se replier */
-						monstre->action = MONSTRE_EN_GARDE;
+						monstre->action = MONSTRE_PAUSE;
+						monstre->duree = DUREE_MONSTRE_PAUSE;
 						
 					}
 				}
 			}
 			/* si un monstre est touché */
-			if(joueurs[i]->statut->action == ATTAQUE || joueurs[i]->statut->action == ATTAQUE_CHARGEE){
+			if(statut->action == ATTAQUE || statut->action == ATTAQUE_CHARGEE){
 				if(entite_subit_attaque(&(monstre->collision), joueurs[i]) && monstre->action != MONSTRE_BLESSE){
 					(monstre->pdv) -= joueurs[i]->attaque_actif;
 					if(monstre->pdv <= 0){
@@ -553,7 +555,7 @@ void environnement_joueurs(list * liste_monstres, list * liste_sorts, list * lis
 						gain_xp(joueurs[i]);
 					}
 					else{
-						monstre->orientation = joueurs[i]->statut->orient_dep;
+						monstre->orientation = statut->orient_dep;
 						monstre->action = MONSTRE_BLESSE;
 						monstre->duree = DUREE_MONSTRE_BLESSE;
 					}
@@ -566,16 +568,16 @@ void environnement_joueurs(list * liste_monstres, list * liste_sorts, list * lis
 		while(!hors_liste(liste_sorts)){
 			sort = valeur_elt(liste_sorts);
 			
-			if(entite_en_collision(&(sort->collision), &(joueurs[i]->statut->vrai_zone_collision), &cote_sort, &cote_joueur)){
-				if(joueurs[i]->statut->animation != BLOQUER && joueurs[i]->statut->action != J_BLESSE){
+			if(entite_en_collision(&(sort->collision), &(statut->vrai_zone_collision), &cote_sort, &cote_joueur)){
+				if(statut->animation != BLOQUER && statut->action != J_BLESSE){
 					(joueurs[i]->pdv) -= (sort->degat);
 					if(joueurs[i]->pdv <= 0)
 						running = faux;
 					else{
-						joueurs[i]->statut->orient_dep = cote_sort;
-						joueurs[i]->statut->action = J_BLESSE;
-						joueurs[i]->statut->duree = DUREE_JOUEUR_BLESSE;
-						joueurs[i]->statut->en_mouvement = vrai;
+						statut->orient_dep = cote_sort;
+						statut->action = J_BLESSE;
+						statut->duree = DUREE_JOUEUR_BLESSE;
+						statut->en_mouvement = vrai;
 					}
 				}
 				detruire_collision_dans_liste(map->liste_collisions, &(sort->collision));
@@ -583,7 +585,7 @@ void environnement_joueurs(list * liste_monstres, list * liste_sorts, list * lis
 			}
 
 			/* si un sort est attaqué */
-			else if(joueurs[i]->statut->action == ATTAQUE || joueurs[i]->statut->action == ATTAQUE_CHARGEE){
+			else if(statut->action == ATTAQUE || statut->action == ATTAQUE_CHARGEE){
 				if(entite_subit_attaque(&(sort->collision), joueurs[i])){
 					detruire_collision_dans_liste(map->liste_collisions, &(sort->collision));
 					oter_elt(liste_sorts);

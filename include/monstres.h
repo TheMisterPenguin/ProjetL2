@@ -15,12 +15,13 @@
 #include "map.h"
 #include "personnage.h"
 
-#define DISTANCE_AGRO 150
-#define DUREE_MONSTRE_MARCHER 100
-#define DUREE_MONSTRE_EN_GARDE 140
-#define DUREE_RUSH_OU_FUITE 70
-#define DUREE_MONSTRE_ATTAQUE 100
+#define DISTANCE_AGRO 130
+#define DUREE_MONSTRE_MARCHER 60
+#define DUREE_MONSTRE_EN_GARDE 80
+#define DUREE_RUSH_OU_FUITE 40
+#define DUREE_MONSTRE_ATTAQUE 50
 #define DUREE_MONSTRE_BLESSE 30
+#define DUREE_MONSTRE_PAUSE 15
 
 #define CHEMIN_TEXTURE "ressources/sprite"
 
@@ -28,7 +29,7 @@ typedef struct s_aff t_aff;
 typedef struct joueur_s joueur_t;
 
 typedef enum {WITCHER,KNIGHT,BOSS, TYPE_MONSTRE_INCONNU}type_monstre_t;
-typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE, MONSTRE_BLESSE}action_monstre_t;
+typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE, MONSTRE_BLESSE, MONSTRE_PAUSE}action_monstre_t;
 
 /**
  * \struct struct position

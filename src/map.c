@@ -196,7 +196,7 @@ t_map * charger_map(const char * const nom_map){
     if(!m->liste_coffres)
         erreur("Impossible de charger la map", ERREUR_LISTE);
 
-    m->liste_sorts = init_liste(NULL,NULL,NULL);
+    m->liste_sorts = init_liste(ajouter_sort_cb,detruire_sort_cb,NULL);
 
     if(!m->liste_sorts)
         erreur("Impossible de charger la map", ERREUR_LISTE);

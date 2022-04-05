@@ -338,6 +338,7 @@ t_aff *next_frame_joueur(joueur_t *j)
         }
         else{
             statut->action = RIEN;
+            statut->orient_dep = current_frame_y(statut->texture_prec);
             statut->en_mouvement = faux;
         }
     }
