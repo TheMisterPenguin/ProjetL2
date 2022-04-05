@@ -13,6 +13,11 @@
 
 #include "definition_commun.h"
 
+/**
+ * \brief Définition de la structure de texture
+ * 
+ * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref objet.h et \ref affichage.h .
+ */
 typedef struct s_aff t_aff;
 
 /**
@@ -23,7 +28,7 @@ typedef enum{quete, arme, bouclier, protection, amulette, consommable}t_item;
 /**
  * \struct struct objet
  * \brief Structure objet
- * \author Descomps Max
+ * \author Max Descomps
  */
 
 typedef struct objet_s {
@@ -41,6 +46,7 @@ typedef struct objet_s {
 /**
  * \fn objet_t *creer_objet(const int id, const char * const texture_src, const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit)
  * \brief Créé un objet du jeu
+ * \author Max Descomps
  * \param id L'identificateur de l'objet
  * \param texture_src Chemin vers l'image de l'objet
  * \param type Type d'objet
@@ -56,6 +62,7 @@ extern objet_t *creer_objet(const int id, const char * const texture_src, const 
 /**
  * \fn void detruire_objet(objet_t **obj)
  * \brief Libère la mémoire allouée à un objet
+ * \author Max Descomps
  * \param obj L'objet à libérer
  */
 extern void detruire_objet(objet_t **obj);
@@ -63,6 +70,7 @@ extern void detruire_objet(objet_t **obj);
 /**
  * \fn void afficher_objet(objet_t * obj)
  * \brief Affiche les caractéristiques d'un objet dans la console
+ * \author Max Descomps
  * \param obj L'objet à afficher
  */
 extern void afficher_objet(objet_t * obj);

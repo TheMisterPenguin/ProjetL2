@@ -87,7 +87,7 @@ typedef struct s_aff
     int height; /**< Hauteur de la texture */
     float multipli_taille; /**<Sauvegarde du multiplicateur de taille de la texture*/
     unsigned int duree_frame_anim; /**<Durée d'une frame*/
-    unsigned int compteur_frame_anim; 
+    unsigned int compteur_frame_anim;
 } t_aff;
 
 /**
@@ -108,6 +108,7 @@ extern float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépende
 extern t_aff * heal;
 extern t_aff * bloquer;
 extern t_aff *fenetre_finale; /* La fenêtre de jeu finale sans l'interface */
+extern list * liste_animations;
 
 /* Définition des fonctions */
 
@@ -118,21 +119,24 @@ extern t_aff *fenetre_finale; /* La fenêtre de jeu finale sans l'interface */
  * \param texture L'adresse du pointeur sur la structure à détruire
  */
 extern void detruire_texture(t_aff **texture); /**<La liste des textures créées */
+
 /**
  * \brief Fonction qui détruit une liste de textures
  *
  * \param l_texture L'adresse de la liste de texture à détruire
  */
 extern void detruire_liste_textures(t_l_aff **l_texture);
+
 /**
  * \brief Fonction qui détermine si la structure SDL_Rect ne dépasse pas la taille de la texture.
  *
  * \param to_verify La structure SDL_Rect à vérifier
  * \param width La longueur de la texture
  * \param height La largeur de la texture
- * \return vrai Si tout est OK, faux sinon.
+ * \return Un booléen
  */
 extern _Bool rect_correct_texture(const SDL_Rect *const to_verify, const int width, const int height);
+
 /**
  * \fn t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const int multiplicateur_taille)
  * \brief Fonction qui renvoie, charge une texture et la prépare à se faire afficher
@@ -252,7 +256,6 @@ extern void deplacer_rect_origine(SDL_Rect *r, int x, int y);
  * \param y La coordonnée y de l'origine de la texture.
  */
 void deplacer_texture_origine(t_aff *texture, int x, int y);
-
 
 /**
  * Place un rectangle en haut à droite de l'écran puis le replace à partir de cette origine
@@ -397,19 +400,50 @@ void def_texture_taille(t_aff *a_modifier, const int longueur, const int largeur
  */
 void text_copier_position(t_aff *a_modifier, const t_aff *const original);
 
+/**
+ * Fonction qui permet de placer un rectangle au centre de l'écran sur l'axe des x
+ * 
+ * \param rectangle Le rectangle à placer
+ */
 void rect_centre_x(SDL_Rect *rectangle);
 
+/**
+ * Fonction qui permet de placer un rectangle au centre de l'écran sur l'axe des y
+ * 
+ * \param rectangle Le rectangle à placer
+ */
 void rect_centre_y(SDL_Rect *rectangle);
 
+/**
+ * Fonction qui permet de placer un rectangle au centre de l'écran
+ * 
+ * \param rectangle Le rectangle à placer
+ * \return Un booléen
+ */
 void rect_centre(SDL_Rect *rectangle);
 
+/**
+ * Fonction qui permet de savoir si deux rectangles sont sur le même axe des x
+ * 
+ * \param r1 Le premier rectangle à comparer
+ * \param r2 Le deuxième rectangle à comparer
+ * \return Un booléen
+ */
 bool rects_egal_x(const SDL_Rect *const r1, SDL_Rect const *const r2);
 
+/**
+ * Fonction qui permet de savoir si deux rectangles sont sur le même axe des y
+ * 
+ * \param r1 Le premier rectangle à comparer
+ * \param r2 Le deuxième rectangle à comparer
+ * \return Un booléen
+ */
 bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2);
 
 /**
  * \fn SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
  * \brief Fonction qui permet de choisir une couleur SDL
+ * \author Max Descomps
  * \param r niveau de rouge
  * \param g niveau de vert
  * \param b niveau de bleu
@@ -420,7 +454,8 @@ extern SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 
 /**
  * \fn void info_texture(t_aff * texture)
- * \brief Affiche des informations sur une texture
+ * \brief Affiche des informations en console sur une texture
+ * \author Max Descomps
  * \param texture la texture sur laquelle on se renseigne
  */
 extern void info_texture(t_aff * texture);
@@ -462,6 +497,7 @@ extern void afficher_sorts(list * liste_sorts, joueur_t * joueur);
 /**
  * \fn void placer_texture(t_aff *texture, int x, int y)
  * \brief Place une texture sur l'écran
+ * \author Max Descomps
  * \param texture Texture à placer
  * \param x Position horizontale
  * \param y Position verticale
@@ -471,12 +507,14 @@ void placer_texture(t_aff *texture, int x, int y);
 /**
  * \fn void init_animations(void)
  * \brief Initialise les textures des animations
+ * \author Max Descomps
  */
 void init_animations(void);
 
 /**
  * \fn t_aff * next_frame_animation(joueur_t * joueur)
  * \brief Fait évoluer les animations en jeu
+ * \author Max Descomps
  * \param joueur Le joueur sur lequel placer l'animation
  * \return La texture de l'animation
  */
@@ -485,6 +523,7 @@ t_aff * next_frame_animation(joueur_t * joueur);
 /**
  * \fn void lister_animations(joueur_t ** joueurs, list * animations)
  * \brief Liste les animations en jeu
+ * \author Max Descomps
  * \param joueurs Les joueurs sur lesquels placer les animation
  * \param animations Liste regroupant les animations trouvées
  */
@@ -492,19 +531,44 @@ void lister_animations(joueur_t ** joueurs, list * animations);
 
 /**
 * \fn void afficher_coffres(list * liste_coffre)
- * \brief Fonction qui affiche les coffres
- * \param liste_monstre une liste de coffres
+ * \brief Fonction qui affiche la texture des coffres
+ * \author Max Descomps
+ * \param liste_coffre Une liste de coffres
  */
 void afficher_coffres(list * liste_coffre);
 
 void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y);
 
+/**
+ * Fonction qui permet de placer un rectangle au centre d'un autre sur l'axe des x
+ * 
+ * \param rectangle Le rectangle à centrer
+ * \param rectangle_centre Le rectangle dans lequel en centre un autre
+ */
 void rect_centre_rect_x(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
 
+/**
+ * Fonction qui permet de placer un rectangle au centre d'un autre sur l'axe des y
+ * 
+ * \param rectangle Le rectangle à centrer
+ * \param rectangle_centre Le rectangle dans lequel en centre un autre
+ */
 void rect_centre_rect_y(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
 
+/**
+ * Fonction qui permet de placer un rectangle au centre d'un autre
+ * 
+ * \param rectangle Le rectangle à centrer
+ * \param rectangle_centre Le rectangle dans lequel en centre un autre
+ */
 void rect_centre_rect(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
 
+/**
+* \fn void afficher_animations(list * animations)
+ * \brief Fonction qui affiche la texture des animations
+ * \author Max Descomps
+ * \param animations Une liste d'animations
+ */
 void afficher_animations(list * animations);
 
 /**
@@ -546,6 +610,12 @@ bool deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r);
  */
 bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r);
 
+/**
+* \fn void detruire_collision_dans_liste(list * liste_collisions, SDL_Rect * collision)
+ * \brief Fonction qui détruit une collision donnée dans une liste de collisions
+ * \param liste_collisions Une liste de collisions
+ * \param collision La collision à détruire dans la liste
+ */
 void detruire_collision_dans_liste(list * liste_collisions, SDL_Rect * collision);
 
 /**

@@ -17,8 +17,25 @@
 
 #define TAILLE_CASE 16
 
-typedef struct s_aff t_aff; //!< \brief Structure de texture
+/**
+ * \brief Définition de la structure de texture
+ * 
+ * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref map.h et \ref affichage.h .
+ */
+typedef struct s_aff t_aff;
+
+/**
+ * \brief Définition de la structure joueur
+ * 
+ * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref map.h et \ref personnage.h .
+ */
 typedef struct joueur_s joueur_t;
+
+/**
+ * \brief Définition de la structure liste_base_monstre
+ * 
+ * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref map.h et \ref monstre.h .
+ */
 typedef struct liste_base_monstres_s liste_base_monstres_t;
 
 /**
@@ -44,7 +61,7 @@ typedef struct {
  * \authors Ange Despert Antoine Bruneau Descomps Max
 */
 typedef struct s_map{
-    unsigned int id_map;
+    unsigned int id_map; /**< L'identificateur de la map */
     t_aff * text_map; /**< La texture de la map */
     t_aff *text_sol;  /**< La texture du sol */
     t_aff *texture_superposition; /**<La texture à supperposer devant le personnage */

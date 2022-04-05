@@ -46,7 +46,7 @@ void modification_inventaire(void) {
 
     //création objets
     CU_ASSERT_NOT_EQUAL(objets = creer_liste_objet("ressources/objet/objet.txt"), NULL);
-    CU_ASSERT_NOT_EQUAL(objet_test = creer_objet("ressources/objet/old_sword.bmp", arme, "sabre du purificateur", 0, 5, 2, 2), NULL);
+    CU_ASSERT_NOT_EQUAL(objet_test = creer_objet(1, "ressources/objet/old_sword.bmp", arme, "sabre du purificateur", 0, 5, 2, 2), NULL);
 
     //modification inventaire (sac)
     ramasser_objet(objet_test, perso_principal->inventaire);
@@ -90,7 +90,7 @@ void modification_inventaire(void) {
 int main(){
     init();
 
-    map = charger_s_map(charger_f_map("map.json"), liste_base_monstres);
+    test_map = charger_map("../bin/map/1.json");
     perso_principal = new_joueur("test", 0, "ressources/objet/objets.txt");
 
     sac = perso_principal->inventaire->sac;

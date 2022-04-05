@@ -3,6 +3,7 @@
 #include <listes.h>
 #include <map.h>
 #include <event.h>
+
 /** 
  * \file init_close.c
  * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
@@ -11,6 +12,8 @@
  * \date 27/03/22
  * \copyright Copyright (c) 2022
  */
+
+typedef struct s_aff t_aff;
 
 
 SDL_Window *fenetre_Principale = NULL;
@@ -25,6 +28,16 @@ SDL_Rect * hors_hitbox = NULL;
 list *f_close = NULL; /**< Liste des fonctions à appeler lors de la fermeture du programme*/
 
 void fermer_programme(int code_erreur){
+    //éviter erreurs SDL_DestroyRenderer sur les SDL_Rect provoquées par text_copier_position() 
+    t_aff * text_anim = NULL;
+    en_tete(liste_animations);
+    while(!hors_liste(liste_animations)){
+        text_anim = valeur_elt(liste_animations);
+        text_anim->aff_fenetre = NULL;
+        suivant(liste_animations);
+    }
+    
+
     en_queue(f_close);
 
     while(!hors_liste(f_close)){

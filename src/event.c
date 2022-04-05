@@ -93,7 +93,6 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs, char * f_src_ob
                 break;
             case TOUCHE_CONSOMMABLE :
                 if(joueur1->inventaire->equipe->liste[consommable] != NULL){
-                    joueur1->statut->en_mouvement = faux;
                     consommer_objet(joueur1);
                     text_copier_position(heal, joueur1->textures_joueur->liste[0]); // amélioration: centrer pour toutes les tailles
                     joueur1->statut->duree_anim = DUREE_SOIN;
@@ -130,7 +129,6 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs, char * f_src_ob
                 break;
             case SDLK_RETURN :
                 if(joueur2->inventaire->equipe->liste[consommable] != NULL){
-                    joueur2->statut->en_mouvement = faux;
                     consommer_objet(joueur2);
                     text_copier_position(heal, joueur2->textures_joueur->liste[0]); // amélioration: centrer pour toutes les tailles
                     joueur2->statut->duree_anim = DUREE_SOIN;
@@ -328,14 +326,10 @@ static void mouseButtonDown(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
     joueur_t * joueur = joueurs[0];
     statut_t* statut = joueur->statut;
 
-    if(statut->action == RIEN && statut->duree == 0){
+    if(statut->action == RIEN && statut->duree <= 0){
         if(ev->button == SDL_BUTTON_LEFT){
             statut->action = ATTAQUE_OU_CHARGER;
             statut->duree = DUREE_ATTAQUE_OU_CHARGEE;
-        }
-        else if(ev->button == SDL_BUTTON_RIGHT && statut->bouclier_equipe){
-            statut->action = BLOQUER;
-            statut->duree = DUREE_BLOQUER;
         }
     }
 }
@@ -354,7 +348,8 @@ static void mouseButtonUp(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
     if(ev->button == SDL_BUTTON_LEFT){
         if(statut->action == CHARGER){
             statut->action = ATTAQUE_CHARGEE;
-            statut->orient_att = (statut->orient_dep * 2 + 7) % 8;
+            statut->orient_att = (statut->orient_dep * 2) % 8;
+            next_frame_x_indice(joueur->textures_joueur->liste[TEXT_ATTAQUE_CHARGEE], statut->orient_att);
             statut->en_mouvement = faux;
             statut->duree = DUREE_ATTAQUE_CHARGEE;
         }
@@ -369,8 +364,14 @@ static void mouseButtonUp(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
             statut->duree_anim = 0;
         }
     }
-    else if( ev->button == SDL_BUTTON_RIGHT && (statut->action == BLOQUER || statut->action == CHARGER) )
-        joueur->statut->action = RIEN;    
+    else if( ev->button == SDL_BUTTON_RIGHT){
+        if(statut->action == CHARGER)
+            statut->animation = RIEN;
+        else if(statut->bouclier_equipe == vrai && statut->duree_anim <= 0){
+            statut->animation = BLOQUER;
+            statut->duree_anim = DUREE_BLOQUER;
+        }
+    }
 }
 
 void jeu_event_manette(joueur_t **joueurs){

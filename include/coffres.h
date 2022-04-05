@@ -17,7 +17,12 @@
 #define COFFRE_FACE_OUVERT "ressources/sprite/coffrefaceouvert.bmp"
 #define COFFRE_PROFIL_OUVERT "ressources/sprite/coffreprofilouvert.bmp"
 
-typedef struct s_aff t_aff; //!< \brief Structure de texture
+/**
+ * \brief Définition de la structure de texture
+ * 
+ * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref coffres.h et \ref affichage.h .
+ */
+typedef struct s_aff t_aff;
 
 /**
  * Type enum renseignant sur le type d'un coffre
@@ -76,6 +81,7 @@ extern liste_base_coffres_t * liste_base_coffres; /*Liste des coffres générés
 /**
  * \fn void charger_base_coffre(char * chemin_fichier, liste_base_coffres_t ** liste_base_coffres)
  * \brief Fonction qui recopie les informations d'un fichier json pour les insérer dans la structure liste_base_coffres
+ * \author Max Descomps
  * \param nom_fichier Le nom du fichier à lire
  * \param liste_base_coffres La base dans laquelle enregistrer les coffres
  */
@@ -84,6 +90,7 @@ void charger_base_coffre(char * chemin_fichier, liste_base_coffres_t ** liste_ba
 /**
  * \fn coffre_t* creer_coffre(int id_cle, int id_loot, liste_base_coffres_t* liste_base_coffres, const char * const nom_coffre, int x, int y, t_map *map)
  * \brief Fonction qui creer et initialise un coffre sur une carte
+ * \author Max Descomps
  * \param id_cle L'identificateur de l'objet de quête nécessaire pour ouvrir le coffre, sinon 0
  * \param id_loot L'identificateur de l'objet obtenu en ouvrant le coffre, sinon 0
  * \param liste_base_coffre Les coffres de base
@@ -98,6 +105,7 @@ coffre_t* creer_coffre(int id_cle, int id_loot, liste_base_coffres_t* liste_base
 /**
  * \fn type_coffre_t nom_coffre_to_type_coffre(char * nom_coffre)
  * \brief Convertit une chaîne de caractères en type de coffre
+ * \author Max Descomps
  * \param nom_coffre La chaîne de caractères à convertir
  * \return Une valeur du type type_coffre_t représentant le type de coffre
  */
@@ -106,6 +114,7 @@ type_coffre_t nom_coffre_to_type_coffre(const char * nom_coffre);
 /**
  * \fn void info_coffre(coffre_t * coffre)
  * \brief Affcihe les informations sur un coffre dans la console
+ * \author Max Descomps
  * \param coffre Le coffre sur lequel on se renseigne
  */
 void info_coffre(coffre_t * coffre);
@@ -113,6 +122,7 @@ void info_coffre(coffre_t * coffre);
 /**
  * \fn void interaction_coffre(SDL_Rect * coffre_rect, joueur_t * joueur, lobjet_t * objets)
  * \brief Gère les interactions du joueur avec un coffre lors d'une collision
+ * \author Max Descomps
  * \param coffre_rect Les coordonnées du prochain pas du personnage
  * \param joueur Le joueur activant le coffre
  * \param objets Les objets du jeu
@@ -122,6 +132,7 @@ void interaction_coffre(SDL_Rect * coffre_rect, joueur_t * joueur, lobjet_t * ob
 /**
  * \fn void inverser_direction(t_direction_1 direction)
  * \brief Inverse une direction
+ * \author Max Descomps
  * \param direction La direction à inverser
  * \return Un type t_direction_1
  */

@@ -9,15 +9,17 @@
  * \copyright Copyright (c) 2022
  */
 
+// TEST_OBSOLETE VOIR AUTRE TEST AVEC CUNIT
+
 long int compteur;
 t_map *test_map;
 unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 
 int main(){
 
-    init();
-    creer_texture("ressources/background/logo.bmp", -1, -1, 0, 0, 0);
+    // init();
+    // creer_texture("ressources/background/logo.bmp", -1, -1, 0, 0, 0);
     
-    fermer_programme(EXIT_SUCCESS);
+    // fermer_programme(EXIT_SUCCESS);
     return 0;
 }

@@ -47,6 +47,7 @@ void charger_base_coffre(char * chemin_fichier, liste_base_coffres_t ** liste_ba
     (*liste_base_coffres)->tab = malloc(sizeof(base_coffre_t) * nb_coffres);
     (*liste_base_coffres)->nb_coffre = nb_coffres;
 
+    //lecture de toutes les prototypes de coffres
     for(unsigned int i = 0; i < nb_coffres; i++){
     
         JSON_coffre = json_object_array_get_idx(JSON_tbl_coffre, i);
@@ -127,7 +128,6 @@ coffre_t* creer_coffre(int id_cle, int id_loot, liste_base_coffres_t* liste_base
                 coffre->orientation = EST_1;
             else{
                 coffre->orientation = SUD_1;
-                printf("sud\n");
             }
 
             //état du coffre
@@ -183,9 +183,6 @@ void interaction_coffre(SDL_Rect * coffre_rect, joueur_t * joueur, lobjet_t * ob
                     coffre->texture = creer_texture(COFFRE_FACE_OUVERT, -1, -1, coffre->collision.x, coffre->collision.y, map->taille_case /(float)32);
                 }
             }
-            //changer la texture coffre
-            //ajouter un bouton d'ouverture
-            //ajouter gestion direction
         }
     suivant(map->liste_coffres);
     }

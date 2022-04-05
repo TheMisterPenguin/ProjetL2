@@ -11,39 +11,41 @@
  * \copyright Copyright (c) 2022
  */
 
+//TEST OBSOLETE VOIR AUTRE TEST AVEC CUNIT
+
 long int compteur;
 t_map *test_map;
 unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 
 int main(int argc, char **argv){
-    SDL_Event e;
-    char * fichier_map = NULL;
-    t_map *test_map = NULL;
-    t_aff *text = NULL;
+    // SDL_Event e;
+    // char * fichier_map = NULL;
+    // t_map *test_map = NULL;
+    // t_aff *text = NULL;
 
 
-    init();
+    // init();
 
-    printf("----- Analyse du fichier json -----\n");
-    fichier_map = charger_f_map("map.json");
+    // printf("----- Analyse du fichier json -----\n");
+    // fichier_map = charger_f_map("map.json");
 
-    printf("----- Création de texture map et traitement des informations json -----\n");
-    test_map = charger_s_map(fichier_map, liste_base_monstres);
+    // printf("----- Création de texture map et traitement des informations json -----\n");
+    // test_map = charger_s_map(fichier_map, liste_base_monstres);
 
-    text = texture_map(test_map);
+    // text = texture_map(test_map);
 
-    while (vrai){
-        if (!text)
-            fermer_programme(EXIT_FAILURE);
+    // while (vrai){
+    //     if (!text)
+    //         fermer_programme(EXIT_FAILURE);
 
-        SDL_RenderClear(rendu_principal);
-        afficher_texture(text, rendu_principal);
-        SDL_RenderPresent(rendu_principal);
+    //     SDL_RenderClear(rendu_principal);
+    //     afficher_texture(text, rendu_principal);
+    //     SDL_RenderPresent(rendu_principal);
 
-        SDL_WaitEvent(&e);
+    //     SDL_WaitEvent(&e);
 
-        if(e.key.keysym.sym == SDLK_ESCAPE)
-            fermer_programme(EXIT_SUCCESS);
-    }
+    //     if(e.key.keysym.sym == SDLK_ESCAPE)
+    //         fermer_programme(EXIT_SUCCESS);
+    // }
     return 0;
 }
