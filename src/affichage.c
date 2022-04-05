@@ -1025,16 +1025,13 @@ bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
 {
     const int taille_unite = floor(map->taille_case / TAILLE_PERSONNAGE);
     SDL_Rect temp = {.x = r->x, .y = r->y + y * taille_unite, .w = r->w, .h = r->h};
-    SDL_Rect actuel = {.x = r->x, .w = r->w, .h = floor(texture->multipli_taille) * 3};
 
     if(y < 0){
         temp.y = r->y + y * taille_unite + (r->h - 3);
-        actuel.y = r->y + (r->h - 3);
     }
     else {
         temp.y = r->y + y * taille_unite;
         temp.h = r->h;
-        actuel.y = r->y - 3;
     }
 
     en_tete(m->liste_collisions);
@@ -1047,7 +1044,7 @@ bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
             continue;
         }
 
-        if (SDL_HasIntersection(&actuel, element))
+        if (SDL_HasIntersection(r, element))
         {
             suivant(m->liste_collisions);
             continue;
