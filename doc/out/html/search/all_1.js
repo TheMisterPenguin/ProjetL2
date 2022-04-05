@@ -12,7 +12,6 @@ var searchData=
   ['boss_5fs_68',['boss_s',['../db/d0a/structboss__s.html',1,'']]],
   ['bouclier_69',['bouclier',['../d4/d0b/objet_8h.html#a5164672bbab2547df809744bf0af3dc9a83c2b989ed29d2c5f79d0c2b7b5fca99',1,'objet.h']]],
   ['bouclier_5fequipe_70',['bouclier_equipe',['../dd/d33/structstatut__s.html#a3eeb16e0defbebd231bc9f7e3adbddb4',1,'statut_s']]],
-  ['buffer_5faffichage_71',['buffer_affichage',['../da/d68/affichage_8c.html#adc1d100970d8cf56a0511e7af4c6415a',1,'buffer_affichage():&#160;affichage.c'],['../d5/dae/affichage_8h.html#adc1d100970d8cf56a0511e7af4c6415a',1,'buffer_affichage():&#160;affichage.c']]],
-  ['buffer_5fempty_72',['BUFFER_EMPTY',['../da/de9/code__erreur_8h.html#a1194d81ecc1ecab50ca1d136e78bee9da78d7168c875c46a0fbb5835cd160e2ba',1,'code_erreur.h']]],
-  ['byte_73',['byte',['../d1/daa/definition__commun_8h.html#a0c8186d9b9b7880309c27230bbb5e69d',1,'byte():&#160;definition_commun.h'],['../d2/d2f/personnage_8h.html#a0c8186d9b9b7880309c27230bbb5e69d',1,'byte():&#160;personnage.h']]]
+  ['buffer_5fempty_71',['BUFFER_EMPTY',['../da/de9/code__erreur_8h.html#a1194d81ecc1ecab50ca1d136e78bee9da78d7168c875c46a0fbb5835cd160e2ba',1,'code_erreur.h']]],
+  ['byte_72',['byte',['../d1/daa/definition__commun_8h.html#a0c8186d9b9b7880309c27230bbb5e69d',1,'byte():&#160;definition_commun.h'],['../d2/d2f/personnage_8h.html#a0c8186d9b9b7880309c27230bbb5e69d',1,'byte():&#160;personnage.h']]]
 ];

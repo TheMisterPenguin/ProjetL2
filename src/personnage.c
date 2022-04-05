@@ -602,3 +602,18 @@ void stoper_mouvement_joueurs(joueur_t ** joueurs){
     if(joueurs[1])
         joueurs[1]->statut->en_mouvement = faux;
 }
+
+int distance_x_joueur(SDL_Rect collision, joueur_t * joueur){
+    return joueur->statut->vrai_zone_collision.x - collision.x;
+}
+
+int distance_y_joueur(SDL_Rect collision, joueur_t * joueur){
+    return joueur->statut->vrai_zone_collision.y - collision.y;
+}
+
+int distance_joueur(SDL_Rect collision, joueur_t * joueur){
+    int x = distance_x_joueur(collision, joueur);
+    int y = distance_y_joueur(collision, joueur);
+
+    return sqrt(x*x + y*y);
+}

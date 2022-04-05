@@ -15,28 +15,41 @@
 #include "map.h"
 #include "personnage.h"
 
-#define DISTANCE_AGRO 130
+#define DISTANCE_AGRO 130           /* distance à partir de laquelle le joueur n'est pas détecté par les monstres*/
 #define DUREE_MONSTRE_MARCHER 60
 #define DUREE_MONSTRE_EN_GARDE 80
 #define DUREE_RUSH_OU_FUITE 40
 #define DUREE_MONSTRE_ATTAQUE 50
-#define DUREE_MONSTRE_BLESSE 30
+#define DUREE_MONSTRE_BLESSE 20
 #define DUREE_MONSTRE_PAUSE 15
 
-#define CHEMIN_TEXTURE "ressources/sprite"
-
-typedef struct s_aff t_aff;
-typedef struct joueur_s joueur_t;
-
-typedef enum {WITCHER,KNIGHT,BOSS, TYPE_MONSTRE_INCONNU}type_monstre_t;
-typedef enum {MONSTRE_MARCHER, MONSTRE_EN_GARDE, MONSTRE_ATTAQUE, RUSH_OU_FUITE, MONSTRE_BLESSE, MONSTRE_PAUSE}action_monstre_t;
+/**
+ * \brief L'énumération des types de monstre
+ * 
+ * Cela permet de différencier les monstres pour réaliser des actions particulières en fonction de celui-ci.
+ */
+typedef enum
+{   
+    WITCHER,
+    KNIGHT,
+    BOSS,
+    TYPE_MONSTRE_INCONNU /* pour pouvoir retourner une erreur */
+}type_monstre_t;
 
 /**
- * \struct struct position
- * \brief Structure regroupant les coordonnées
- * \author Bruneau Antoine
+ * \brief L'énumération des actions du monstre
+ * 
+ * Cela permet de savoir dans quelle état est le monstre
  */
-typedef point position_t;
+typedef enum
+{
+    MONSTRE_MARCHER, /**<le monstre marche normalement*/
+    MONSTRE_EN_GARDE, /**<le monstre est immobile*/
+    MONSTRE_ATTAQUE, /**<le monstre attaque*/
+    RUSH_OU_FUITE, /**<le monstre va vers le joueur ou le fuit*/
+    MONSTRE_BLESSE, /**<le monstre prend des dégats*/
+    MONSTRE_PAUSE /**<le monstre se stop (après avoir bléssé un joueur)*/
+}action_monstre_t;
 
 /**
  * \struct struct monstre
@@ -50,23 +63,21 @@ typedef struct monstre_s
     int attaque; /**<attaque*/
     float vitesse; /**<vitesse de déplacement*/
     int gainXp; /**<gain d'xp pour le joueur*/
-
     t_direction_1 orientation; /*orientation deplacement du monstre*/
-    int duree; /*duree de l'action*/
     action_monstre_t action; /*action en cours par le monstre*/
-
-    SDL_Rect collision; /**<coordonnées*/
-    t_aff* texture; /**<texture*/
+    int duree; /*duree de l'action*/
+    SDL_Rect collision; /**<zone de collision du monstre (hitbox) + ses coordonnées*/
+    t_aff* texture; /**<texture du monstre*/
 } monstre_t;
 
 /**
  * \struct struct base_monstre
- * \brief Structure contenant les propiétées du monstre importé
+ * \brief Structure contenant les propiétées du modèle d'un monstre
  * \author Bruneau Antoine
  */
 typedef struct base_monstre_s
 {
-    char fichier_image[50]; /**<nom fichier image*/
+    char fichier_image[50]; /**<chemin d'accès du sprite du monstre*/
     char nom_monstre[25]; /**<nom du monstre*/
     int pdv; /**<points de vie*/
     int attaque; /**<attaque*/
@@ -77,62 +88,82 @@ typedef struct base_monstre_s
 
 /**
  * \struct struct liste_base_monstres
- * \brief Structure contenant un tableau avec tous les monstres différent que l'on peut utiliser dans le jeu 
+ * \brief Structure contenant un tableau avec tous les monstres différent(modèle de monstre) que l'on peut utiliser dans le jeu 
  * \author Bruneau Antoine
  */
 typedef struct liste_base_monstres_s
 {
-    int nb_monstre;
-    base_monstre_t* tab; /**<nombre de modèles de monstres du jeu*/
-}liste_base_monstres_t; /**<modèles des monstres du jeu*/
+    int nb_monstre; /**<nombre de modèles de monstre*/
+    base_monstre_t* tab; /**<tableau de modèles de monstre*/
+}liste_base_monstres_t; 
 
-extern liste_base_monstres_t * liste_base_monstres;
+extern liste_base_monstres_t * liste_base_monstres; /* le tableau de modèles de monstre */
 
 /**
- * \fn void detruire_liste_base_monstres(liste_base_monstre_t* liste_base_monstre)
- * \brief Fonction qui désalloue la structure liste_base_monstres
- * \param base_monstres structure base_monstres_t à détruire
+ * \fn void * ajouter_monstre_cb(void * monstre);
+ * \brief Fonction de "call back" qui retourne une structure monstre
+ * \author Bruneau Antoine
+ * \param monstre le monstre à retourner
+ * \return void* un pointeur générique sur une structure monstre
  */
-
-void detruire_liste_base_monstres(liste_base_monstres_t ** liste_base_monstres);
+extern void * ajouter_monstre_cb(void * monstre);
 
 /**
- * \fn void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t ** liste_base_monstres)
- * \brief Fonction qui recopie les informations d'un fichier json pour les insérer dans la structure liste_base_monstres
- * \param nom_fichier nom du fichier à lire
- * \param liste_base_monstres Base dans laquelle enregistrer les monstres
+ * \fn void detruire_monstre_cb(void * monstre);
+ * \brief Fonction de "call back" qui détruit une structure monstre
+ * \author Bruneau Antoine
+ * \param monstre le monstre à détruire
  */
-void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t ** liste_base_monstres);
+extern void detruire_monstre_cb(void * monstre);
 
 /**
- * \fn monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, int x, int y);
+ * \fn monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstre, char* nom_monstre, int x, int y, t_map *map);
  * \brief Fonction qui creer et initialise un monstre
+ * \author Bruneau Antoine
  * \param liste_base_monstre les monstres de base
  * \param nom_monstre le nom du monstre à creer
  * \param x la position en abscisse du monstre sur la map
  * \param y la position en ordonnée du monstre sur la map
+ * \param map la map dans laquelle apparaît le monstre
  * \return monstres_t* une structure contenant les informations du monstre
  */
-monstre_t *creer_monstre(liste_base_monstres_t *liste_base_monstres, const char *const nom_monstre, int x, int y, t_map *map);
+extern monstre_t *creer_monstre(liste_base_monstres_t *liste_base_monstres, const char *const nom_monstre, int x, int y, t_map *map);
 
 /**
- * \fn void action_monstre(monstre_t * monstre)
- * \brief Fonction qui met à jour le sprite d'un monstre
+ * \fn void detruire_liste_base_monstres(liste_base_monstre_t* liste_base_monstre)
+ * \brief Fonction qui désalloue la structure liste_base_monstres
+ * \author Bruneau Antoine
+ * \param base_monstres structure base_monstres_t à détruire
+ */
+extern void detruire_liste_base_monstres(liste_base_monstres_t ** liste_base_monstres);
+
+/**
+ * \fn void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t ** liste_base_monstres)
+ * \brief Fonction qui recopie les informations d'un fichier json pour les insérer dans la structure liste_base_monstres
+ * \author Bruneau Antoine
+ * \param nom_fichier nom du fichier à lire
+ * \param liste_base_monstres tableau dans lequel enregistrer les monstres
+ */
+extern void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t ** liste_base_monstres);
+
+/**
+ * \fn void action_monstre(monstre_t * monstre, joueur_t * joueur);
+ * \brief Fonction qui met à jour le sprite d'un monstre en fonction d'un joueur
+ * \author Bruneau Antoine
  * \param monstre le monstre à mettre à jour
  * \param joueur le joueur qui provoque l'action du monstre
  */
-void action_monstre(monstre_t * monstre, joueur_t * joueur);
+extern void action_monstre(monstre_t * monstre, joueur_t * joueur);
 
 /**
- * \fn type_monstre_t nom_monstre_to_type_monstre(char * nom_monstre)
+ * \fn type_monstre_t nom_monstre_to_type_monstre(const char * const nom_monstre)
  * \brief Convertit une chaîne de caractères en type de monstre
+ * \author Bruneau Antoine
  * \param nom_monstre La chaîne de caractères à convertir
  * \return type_monstre_t le type de monstre
  */
-type_monstre_t nom_monstre_to_type_monstre(const char * const nom_monstre);
+extern type_monstre_t nom_monstre_to_type_monstre(const char * const nom_monstre);
 
-int distance_x_joueur(SDL_Rect collision, joueur_t * joueur);
-int distance_y_joueur(SDL_Rect collision, joueur_t * joueur);
-void * ajouter_monstre_cb(void * monstre);
-void detruire_monstre_cb(void * monstre);
+
+
 #endif

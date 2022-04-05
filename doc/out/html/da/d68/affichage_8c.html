@@ -85,7 +85,7 @@ Graphe des dépendances par inclusion de affichage.c:</div>
 <area shape="rect" href="../../d5/dae/affichage_8h.html" title="Fichier contenant les définitions et les fonctions liées au module affichage." alt="" coords="411,229,505,256"/>
 <area shape="rect" href="../../d1/daa/definition__commun_8h.html" title="Contient toutes les définitions communes à tout les fichiers." alt="" coords="208,453,367,480"/>
 <area shape="rect" href="../../d2/d2f/personnage_8h.html" title="Fichier contenant toutes les définitions concernant le personnage." alt="" coords="325,379,436,405"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html" title=" " alt="" coords="589,453,658,480"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html" title="Fonction relatives au type de structure liste générique." alt="" coords="589,453,658,480"/>
 <area shape="rect" href="../../dc/db7/map_8h.html" title="Définitions des fonctions de gestion de la map." alt="" coords="439,304,501,331"/>
 <area shape="rect" href="../../d0/d1f/monstres_8h.html" title="Fonctions concernant les monstres." alt="" coords="275,155,369,181"/>
 <area shape="rect" title=" " alt="" coords="492,80,560,107"/>
@@ -276,8 +276,6 @@ Fonctions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a8377ca78d82bccc84bac70229aeac875"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d10/structlist.html">list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d68/affichage_8c.html#a8377ca78d82bccc84bac70229aeac875">listeDeTextures</a></td></tr>
 <tr class="separator:a8377ca78d82bccc84bac70229aeac875"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc1d100970d8cf56a0511e7af4c6415a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d10/structlist.html">list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d68/affichage_8c.html#adc1d100970d8cf56a0511e7af4c6415a">buffer_affichage</a></td></tr>
-<tr class="separator:adc1d100970d8cf56a0511e7af4c6415a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af67eb43ba900105fcb0daaea9251bc7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d10/structlist.html">list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d68/affichage_8c.html#af67eb43ba900105fcb0daaea9251bc7c">liste_animations</a> = NULL</td></tr>
 <tr class="separator:af67eb43ba900105fcb0daaea9251bc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a994bc98929137f8db88670c8b6f0851c"><td class="memItemLeft" align="right" valign="top">t_aff *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d68/affichage_8c.html#a994bc98929137f8db88670c8b6f0851c">heal</a> = NULL</td></tr>
@@ -338,9 +336,9 @@ Voici le graphe d'appel pour cette fonction :</div>
 <map name="da/d68/affichage_8c_a8a414764c90c1cc2a104f536ef34a8dd_cgraph" id="da/d68/affichage_8c_a8a414764c90c1cc2a104f536ef34a8dd_cgraph">
 <area shape="rect" title="Fonction qui affiche la texture des animations." alt="" coords="5,81,156,108"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a47b9be5462def4189b86dcf60f3a29a5" title="Affiche la texture donnée en paramètre à l&#39;écran." alt="" coords="204,5,329,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="231,56,302,83"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="377,132,463,159"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="231,157,302,184"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="231,56,302,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="377,132,463,159"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="231,157,302,184"/>
 </map>
 </div>
 <div class="dynheader">
@@ -397,11 +395,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <map name="da/d68/affichage_8c_ab3637688138fc059d87799ea8ec77514_cgraph" id="da/d68/affichage_8c_ab3637688138fc059d87799ea8ec77514_cgraph">
 <area shape="rect" title="Fonction qui affiche les textures contenues dans la liste en paramètre." alt="" coords="5,132,121,159"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a47b9be5462def4189b86dcf60f3a29a5" title="Affiche la texture donnée en paramètre à l&#39;écran." alt="" coords="169,5,295,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="197,56,267,83"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title=" " alt="" coords="343,81,428,108"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="343,208,428,235"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="197,208,267,235"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="189,259,275,285"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="197,56,267,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title="Fonction booléenne qui permet de savoir si la liste est vide." alt="" coords="343,81,428,108"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="343,208,428,235"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="197,208,267,235"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="189,259,275,285"/>
 </map>
 </div>
 
@@ -436,11 +434,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <map name="da/d68/affichage_8c_a373b7b6959133fba94c4030ebfa75155_cgraph" id="da/d68/affichage_8c_a373b7b6959133fba94c4030ebfa75155_cgraph">
 <area shape="rect" title="Fonction qui affiche la texture des coffres." alt="" coords="5,132,128,159"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a47b9be5462def4189b86dcf60f3a29a5" title="Affiche la texture donnée en paramètre à l&#39;écran." alt="" coords="176,5,301,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="203,56,274,83"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title=" " alt="" coords="349,81,435,108"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="349,208,435,235"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="203,208,274,235"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="195,259,282,285"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="203,56,274,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title="Fonction booléenne qui permet de savoir si la liste est vide." alt="" coords="349,81,435,108"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="349,208,435,235"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="203,208,274,235"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="195,259,282,285"/>
 </map>
 </div>
 <div class="dynheader">
@@ -495,11 +493,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <area shape="rect" title="Fonction qui affiche les monstres." alt="" coords="5,157,144,184"/>
 <area shape="rect" href="../../d9/d79/monstres_8c.html#a52b27e40a8e179d58dbf20268f75e988" title=" " alt="" coords="193,5,316,32"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a47b9be5462def4189b86dcf60f3a29a5" title="Affiche la texture donnée en paramètre à l&#39;écran." alt="" coords="192,56,317,83"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="219,107,290,133"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title=" " alt="" coords="365,132,451,159"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="365,259,451,285"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="219,259,290,285"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="211,309,298,336"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="219,107,290,133"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title="Fonction booléenne qui permet de savoir si la liste est vide." alt="" coords="365,132,451,159"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="365,259,451,285"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="219,259,290,285"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="211,309,298,336"/>
 </map>
 </div>
 <div class="dynheader">
@@ -553,12 +551,12 @@ Voici le graphe d'appel pour cette fonction :</div>
 <map name="da/d68/affichage_8c_a6d78ce42135a25accbd3bf152dc94563_cgraph" id="da/d68/affichage_8c_a6d78ce42135a25accbd3bf152dc94563_cgraph">
 <area shape="rect" title="Fonction qui affiche les sorts." alt="" coords="5,157,116,184"/>
 <area shape="rect" href="../../d0/d58/sorts_8c.html#a5a9bb7c6be7a6d5073e48d50f014e299" title=" " alt="" coords="179,5,274,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="337,56,424,83"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="472,107,557,133"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="337,56,424,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="472,107,557,133"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a47b9be5462def4189b86dcf60f3a29a5" title="Affiche la texture donnée en paramètre à l&#39;écran." alt="" coords="164,157,289,184"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="191,208,262,235"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title=" " alt="" coords="338,233,423,260"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="345,296,416,323"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="191,208,262,235"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title="Fonction booléenne qui permet de savoir si la liste est vide." alt="" coords="338,233,423,260"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="345,296,416,323"/>
 </map>
 </div>
 <div class="dynheader">
@@ -859,7 +857,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="center"><img src="../../da/d68/affichage_8c_a59fc51b629cfed9815495f235dae78e0_cgraph.png" border="0" usemap="#da/d68/affichage_8c_a59fc51b629cfed9815495f235dae78e0_cgraph" alt=""/></div>
 <map name="da/d68/affichage_8c_a59fc51b629cfed9815495f235dae78e0_cgraph" id="da/d68/affichage_8c_a59fc51b629cfed9815495f235dae78e0_cgraph">
 <area shape="rect" title="Fonction qui renvoie, charge une texture et la prépare à se faire afficher." alt="" coords="5,5,115,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title=" " alt="" coords="163,5,255,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title="Fonction qui permet d&#39;ajouter un élément à droite de l&#39;élément courant." alt="" coords="163,5,255,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1066,17 +1064,17 @@ Cette dernière prend également les collisions définies dans la liste des coll
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai : Si l'entité a réussi à se déplacer </dd>
 <dd>
-faux : Si l'entité n'a pas pu se déplacer </dd></dl>
+faux : Si l'entité n'a pas pu se déplacer &lt;Définition du type booléen </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d68/affichage_8c_a7fc4f1865011306b55987cab6f1cc5a0_cgraph.png" border="0" usemap="#da/d68/affichage_8c_a7fc4f1865011306b55987cab6f1cc5a0_cgraph" alt=""/></div>
 <map name="da/d68/affichage_8c_a7fc4f1865011306b55987cab6f1cc5a0_cgraph" id="da/d68/affichage_8c_a7fc4f1865011306b55987cab6f1cc5a0_cgraph">
 <area shape="rect" title="Fonction qui permet le déplacement d&#39;une entité" alt="" coords="5,81,172,108"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="228,5,299,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="355,107,440,133"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="228,107,299,133"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="220,157,307,184"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="228,5,299,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="355,107,440,133"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="228,107,299,133"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="220,157,307,184"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1147,18 +1145,18 @@ Voici le graphe des appelants de cette fonction :</div>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai : Si le joueur a réussi à se déplacer </dd>
 <dd>
-faux : Si le joueur n'a pas pu se déplacer </dd></dl>
+faux : Si le joueur n'a pas pu se déplacer &lt;Définition du type booléen </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d68/affichage_8c_afd72b18ff9aedec07f7fafd296322043_cgraph.png" border="0" usemap="#da/d68/affichage_8c_afd72b18ff9aedec07f7fafd296322043_cgraph" alt=""/></div>
 <map name="da/d68/affichage_8c_afd72b18ff9aedec07f7fafd296322043_cgraph" id="da/d68/affichage_8c_afd72b18ff9aedec07f7fafd296322043_cgraph">
 <area shape="rect" title="Permet de déplacer un joueur secondaire de x unités horizontales sur la map." alt="" coords="5,99,176,141"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="416,56,487,83"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="543,132,628,159"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="416,56,487,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="543,132,628,159"/>
 <area shape="rect" href="../../d4/db3/coffres_8c.html#afaede33891b4fa55d0b68267a6207487" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="224,107,360,133"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="416,5,487,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="408,157,495,184"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="416,5,487,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="408,157,495,184"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1232,18 +1230,18 @@ Elle empêche le personnage de sortir des bordures de la map. <br  />
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai : Si le joueur s'est téléporté </dd>
 <dd>
-faux : Si le joueur ne s'est pas téléporté </dd></dl>
+faux : Si le joueur ne s'est pas téléporté &lt;Définition du type booléen </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d68/affichage_8c_a113b955d03c898c51a06f8f270aa418a_cgraph.png" border="0" usemap="#da/d68/affichage_8c_a113b955d03c898c51a06f8f270aa418a_cgraph" alt=""/></div>
 <map name="da/d68/affichage_8c_a113b955d03c898c51a06f8f270aa418a_cgraph" id="da/d68/affichage_8c_a113b955d03c898c51a06f8f270aa418a_cgraph">
 <area shape="rect" title="Permet de déplacer le personnage de x unités horizontales sur la map." alt="" coords="5,157,163,184"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="403,56,473,83"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="529,132,615,159"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="403,56,473,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="529,132,615,159"/>
 <area shape="rect" href="../../d4/db3/coffres_8c.html#afaede33891b4fa55d0b68267a6207487" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="211,107,347,133"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="403,5,473,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="395,157,481,184"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="403,5,473,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="395,157,481,184"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#aada9bf5a3890b9d12a93e50b7c19b523" title="Fonction qui permet de savoir si deux rectangles sont égaux sur l&#39;axe x." alt="" coords="227,259,331,285"/>
 <area shape="rect" href="../../d3/d7a/map_8c.html#a87fdc73350f70425b5529472974ecbbb" title=" " alt="" coords="237,309,321,336"/>
 </map>
@@ -1314,17 +1312,17 @@ Cette dernière prend également les collisions définies dans la liste des coll
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai : Si l'entité a réussi à se déplacer </dd>
 <dd>
-faux : Si l'entité n'a pas pu se déplacer </dd></dl>
+faux : Si l'entité n'a pas pu se déplacer &lt;Définition du type booléen </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d68/affichage_8c_ad62d8b671f591eef20a7f3347067e729_cgraph.png" border="0" usemap="#da/d68/affichage_8c_ad62d8b671f591eef20a7f3347067e729_cgraph" alt=""/></div>
 <map name="da/d68/affichage_8c_ad62d8b671f591eef20a7f3347067e729_cgraph" id="da/d68/affichage_8c_ad62d8b671f591eef20a7f3347067e729_cgraph">
 <area shape="rect" title="Fonction qui permet le déplacement d&#39;une entité" alt="" coords="5,81,172,108"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="228,5,299,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="355,107,440,133"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="228,107,299,133"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="220,157,307,184"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="228,5,299,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="355,107,440,133"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="228,107,299,133"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="220,157,307,184"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1395,18 +1393,18 @@ Voici le graphe des appelants de cette fonction :</div>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai : Si le joueur a réussi à se déplacer </dd>
 <dd>
-faux : Si le joueur n'a pas pu se déplacer </dd></dl>
+faux : Si le joueur n'a pas pu se déplacer &lt;Définition du type booléen </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d68/affichage_8c_a643df6a35c630438417f9aa6bd6166bf_cgraph.png" border="0" usemap="#da/d68/affichage_8c_a643df6a35c630438417f9aa6bd6166bf_cgraph" alt=""/></div>
 <map name="da/d68/affichage_8c_a643df6a35c630438417f9aa6bd6166bf_cgraph" id="da/d68/affichage_8c_a643df6a35c630438417f9aa6bd6166bf_cgraph">
 <area shape="rect" title="Permet de déplacer un joueur secondaire de y unités verticales sur la map." alt="" coords="5,99,176,141"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="416,56,487,83"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="543,132,628,159"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="416,56,487,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="543,132,628,159"/>
 <area shape="rect" href="../../d4/db3/coffres_8c.html#afaede33891b4fa55d0b68267a6207487" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="224,107,360,133"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="416,5,487,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="408,157,495,184"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="416,5,487,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="408,157,495,184"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1480,18 +1478,18 @@ Elle empêche le personnage de sortir des bordures de la map. <br  />
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai : Si le joueur s'est téléporté </dd>
 <dd>
-faux : Si le joueur ne s'est pas téléporté </dd></dl>
+faux : Si le joueur ne s'est pas téléporté &lt;Définition du type booléen </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d68/affichage_8c_a5aa7ec7dd10a36d55c4a42976622a7ea_cgraph.png" border="0" usemap="#da/d68/affichage_8c_a5aa7ec7dd10a36d55c4a42976622a7ea_cgraph" alt=""/></div>
 <map name="da/d68/affichage_8c_a5aa7ec7dd10a36d55c4a42976622a7ea_cgraph" id="da/d68/affichage_8c_a5aa7ec7dd10a36d55c4a42976622a7ea_cgraph">
 <area shape="rect" title="Permet de déplacer le personnage principal de y unités verticales sur la map." alt="" coords="5,157,163,184"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="403,56,473,83"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="529,132,615,159"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="403,56,473,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="529,132,615,159"/>
 <area shape="rect" href="../../d4/db3/coffres_8c.html#afaede33891b4fa55d0b68267a6207487" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="211,107,347,133"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="403,5,473,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="395,157,481,184"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="403,5,473,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="395,157,481,184"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a476d6dbccccfa7149563166bf7905997" title="Fonction qui permet de savoir si deux rectangles sont égaux sur l&#39;axe y." alt="" coords="227,259,331,285"/>
 <area shape="rect" href="../../d3/d7a/map_8c.html#a87fdc73350f70425b5529472974ecbbb" title=" " alt="" coords="237,309,321,336"/>
 </map>
@@ -1913,11 +1911,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="center"><img src="../../da/d68/affichage_8c_aa18ada4ee80cd3ec4a96012f5bfdf469_cgraph.png" border="0" usemap="#da/d68/affichage_8c_aa18ada4ee80cd3ec4a96012f5bfdf469_cgraph" alt=""/></div>
 <map name="da/d68/affichage_8c_aa18ada4ee80cd3ec4a96012f5bfdf469_cgraph" id="da/d68/affichage_8c_aa18ada4ee80cd3ec4a96012f5bfdf469_cgraph">
 <area shape="rect" title="Fonction qui détruit une collision donnée dans une liste de collisions." alt="" coords="5,99,140,141"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="189,5,259,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="443,132,528,159"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title=" " alt="" coords="188,107,260,133"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="316,157,387,184"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="308,208,395,235"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="189,5,259,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="443,132,528,159"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title="Fonction qui permet de supprimer un élément de la liste." alt="" coords="188,107,260,133"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="316,157,387,184"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="308,208,395,235"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2155,9 +2153,9 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="center"><img src="../../da/d68/affichage_8c_a00db128b4c54ca69b10871d8eed417f9_cgraph.png" border="0" usemap="#da/d68/affichage_8c_a00db128b4c54ca69b10871d8eed417f9_cgraph" alt=""/></div>
 <map name="da/d68/affichage_8c_a00db128b4c54ca69b10871d8eed417f9_cgraph" id="da/d68/affichage_8c_a00db128b4c54ca69b10871d8eed417f9_cgraph">
 <area shape="rect" title="Initialise les textures des animations." alt="" coords="5,31,128,57"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title=" " alt="" coords="333,5,425,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title="Fonction qui permet d&#39;ajouter un élément à droite de l&#39;élément courant." alt="" coords="333,5,425,32"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0" title="Fonction qui renvoie, charge une texture et la prépare à se faire afficher." alt="" coords="176,31,285,57"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a44494ff9efed6cd1416119b4a4f3dca2" title=" " alt="" coords="191,81,270,108"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a44494ff9efed6cd1416119b4a4f3dca2" title="Fonction qui permet de créer une liste." alt="" coords="191,81,270,108"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2249,7 +2247,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="center"><img src="../../da/d68/affichage_8c_aea6ef750998e466ed9d8beef7daefc09_cgraph.png" border="0" usemap="#da/d68/affichage_8c_aea6ef750998e466ed9d8beef7daefc09_cgraph" alt=""/></div>
 <map name="da/d68/affichage_8c_aea6ef750998e466ed9d8beef7daefc09_cgraph" id="da/d68/affichage_8c_aea6ef750998e466ed9d8beef7daefc09_cgraph">
 <area shape="rect" title="Fonction qui creer et renvoie une liste de textures pour le personnage (joueur)" alt="" coords="5,31,157,57"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title=" " alt="" coords="412,5,504,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title="Fonction qui permet d&#39;ajouter un élément à droite de l&#39;élément courant." alt="" coords="412,5,504,32"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0" title="Fonction qui renvoie, charge une texture et la prépare à se faire afficher." alt="" coords="230,31,339,57"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a0843b69b213a0b2f2645ad6158e00bff" title="Fonction qui positionne la texture au n&#45;ème sprite sur l&#39;axe des x." alt="" coords="205,81,364,108"/>
 </map>
@@ -2305,7 +2303,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="center"><img src="../../da/d68/affichage_8c_a293f0049d422a068c70def4e5608484d_cgraph.png" border="0" usemap="#da/d68/affichage_8c_a293f0049d422a068c70def4e5608484d_cgraph" alt=""/></div>
 <map name="da/d68/affichage_8c_a293f0049d422a068c70def4e5608484d_cgraph" id="da/d68/affichage_8c_a293f0049d422a068c70def4e5608484d_cgraph">
 <area shape="rect" title="Liste les animations en jeu." alt="" coords="5,31,140,57"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title=" " alt="" coords="227,5,319,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title="Fonction qui permet d&#39;ajouter un élément à droite de l&#39;élément courant." alt="" coords="227,5,319,32"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#ab247b3f13df2741cc77f45e6c80d6a82" title="Fait évoluer les animations en jeu." alt="" coords="188,56,359,83"/>
 </map>
 </div>
@@ -3272,7 +3270,7 @@ Cette fonction est utilisée par la fonction <a class="el" href="../../d5/dae/af
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Un booléen </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un booléen &lt;Définition du type booléen </dd></dl>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -3320,7 +3318,7 @@ Cette fonction est utilisée par la fonction <a class="el" href="../../d5/dae/af
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Un booléen </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un booléen &lt;Définition du type booléen </dd></dl>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -3435,20 +3433,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="adc1d100970d8cf56a0511e7af4c6415a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc1d100970d8cf56a0511e7af4c6415a">&#9670;&nbsp;</a></span>buffer_affichage</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/d10/structlist.html">list</a>* buffer_affichage</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>La texture de l'animation de blocage </p>
 
 </div>
 </div>
@@ -3463,6 +3448,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Un compteur d'ips qui va de 0 à <a class="el" href="../../d5/dae/affichage_8h.html#afb773ba23c068f4f166d05461ea1d8e0">NB_FPS</a> </p>
 
 </div>
 </div>
@@ -3477,6 +3463,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>La texture de la fenêtre de jeu finale sans l'interface </p>
 
 </div>
 </div>
@@ -3491,6 +3478,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>La largeur de la fenêtre obtenue par requête SDL </p>
 
 </div>
 </div>
@@ -3505,6 +3493,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>La longueur de la fenêtre obtenue par requête SDL </p>
 
 </div>
 </div>
@@ -3519,6 +3508,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>La texture de l'animation de heal </p>
 
 </div>
 </div>
@@ -3533,6 +3523,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>La liste des animation à jouer </p>
 
 </div>
 </div>
@@ -3547,6 +3538,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>La liste de toutes les textures qui ont été crées. Sert à leur destruction </p>
 
 </div>
 </div>
@@ -3561,6 +3553,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Multiplicateur qui dépend de la résolution (longueur), vaut 1 pour 1920 </p>
 
 </div>
 </div>
@@ -3575,6 +3568,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Multiplicateur qui dépend de la résolution (largeur), vaut 1 pour 1080 </p>
 
 </div>
 </div>
@@ -3589,6 +3583,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Rectangle servant au déplacement du personnage principal en x </p>
 
 </div>
 </div>
@@ -3603,6 +3598,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Rectangle servant au déplacement du personnage principal en y </p>
 
 </div>
 </div>
@@ -3613,13 +3609,13 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="ttc" id="atest__SDL_8c_html_a11244ab0910e8dbcdf132f10630dea91"><div class="ttname"><a href="../../d4/db2/test__SDL_8c.html#a11244ab0910e8dbcdf132f10630dea91">init_suite</a></div><div class="ttdeci">int init_suite(void)</div><div class="ttdef"><b>Definition:</b> test_SDL.c:18</div></div>
 <div class="ttc" id="ainventaire_8c_html_a699ab6b7030b61f08e85b59355360a04"><div class="ttname"><a href="../../d4/d04/inventaire_8c.html#a699ab6b7030b61f08e85b59355360a04">equiper_objet</a></div><div class="ttdeci">void equiper_objet(joueur_t *joueur, objet_t **objet)</div><div class="ttdoc">Fonction qui permet de passer un objet du sac(non-équipé) à un emplacement d'équipement(équipé) dans ...</div><div class="ttdef"><b>Definition:</b> inventaire.c:48</div></div>
 <div class="ttc" id="ainit__close_8c_html_a02fd73d861ef2e4aabb38c0c9ff82947"><div class="ttname"><a href="../../d1/d41/init__close_8c.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Fonction qui initialise le Programme.</div><div class="ttdef"><b>Definition:</b> init_close.c:166</div></div>
-<div class="ttc" id="aobjet_8h_html_a5164672bbab2547df809744bf0af3dc9a882df57686c5802d5cfb3c1ecaa8fb91"><div class="ttname"><a href="../../d4/d0b/objet_8h.html#a5164672bbab2547df809744bf0af3dc9a882df57686c5802d5cfb3c1ecaa8fb91">arme</a></div><div class="ttdeci">@ arme</div><div class="ttdef"><b>Definition:</b> objet.h:26</div></div>
+<div class="ttc" id="aobjet_8h_html_a5164672bbab2547df809744bf0af3dc9a882df57686c5802d5cfb3c1ecaa8fb91"><div class="ttname"><a href="../../d4/d0b/objet_8h.html#a5164672bbab2547df809744bf0af3dc9a882df57686c5802d5cfb3c1ecaa8fb91">arme</a></div><div class="ttdeci">@ arme</div><div class="ttdef"><b>Definition:</b> objet.h:28</div></div>
 <div class="ttc" id="atest__listes_8c_html_a28b763408ce1b0c5b625e4c409a5022a"><div class="ttname"><a href="../../d7/d17/test__listes_8c.html#a28b763408ce1b0c5b625e4c409a5022a">FENETRE_LONGUEUR</a></div><div class="ttdeci">unsigned int FENETRE_LONGUEUR</div><div class="ttdef"><b>Definition:</b> test_listes.c:17</div></div>
 <div class="ttc" id="atest__listes_8c_html_aa26e9630ecb8c3dc062d883e20589a71"><div class="ttname"><a href="../../d7/d17/test__listes_8c.html#aa26e9630ecb8c3dc062d883e20589a71">afficher_int</a></div><div class="ttdeci">void afficher_int(int *nb)</div><div class="ttdef"><b>Definition:</b> test_listes.c:19</div></div>
 <div class="ttc" id="astructinventaire__t_html"><div class="ttname"><a href="../../de/dbc/structinventaire__t.html">inventaire_t</a></div><div class="ttdoc">Structure inventaire diviser en deux parties: le sac et les objets équipés.</div></div>
 <div class="ttc" id="atest__inventaire_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="../../d9/d66/test__inventaire_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> test_inventaire.c:90</div></div>
 <div class="ttc" id="atest__inventaire_8c_html_ae7e5e7ed7946211586fc6c19e42443d0"><div class="ttname"><a href="../../d9/d66/test__inventaire_8c.html#ae7e5e7ed7946211586fc6c19e42443d0">modification_inventaire</a></div><div class="ttdeci">void modification_inventaire(void)</div><div class="ttdef"><b>Definition:</b> test_inventaire.c:44</div></div>
-<div class="ttc" id="ainventaire_8c_html_a1e5fdcf008cdbc2f1f2629e19bf69856"><div class="ttname"><a href="../../d4/d04/inventaire_8c.html#a1e5fdcf008cdbc2f1f2629e19bf69856">creer_inventaire</a></div><div class="ttdeci">inventaire_t * creer_inventaire(char *fichier_src)</div><div class="ttdef"><b>Definition:</b> inventaire.c:108</div></div>
+<div class="ttc" id="ainventaire_8c_html_a1e5fdcf008cdbc2f1f2629e19bf69856"><div class="ttname"><a href="../../d4/d04/inventaire_8c.html#a1e5fdcf008cdbc2f1f2629e19bf69856">creer_inventaire</a></div><div class="ttdeci">inventaire_t * creer_inventaire(char *fichier_src)</div><div class="ttdef"><b>Definition:</b> inventaire.c:107</div></div>
 <div class="ttc" id="atest__listes_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="../../d7/d17/test__listes_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> test_listes.c:23</div></div>
 <div class="ttc" id="adefinition__commun_8h_html"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html">definition_commun.h</a></div><div class="ttdoc">Contient toutes les définitions communes à tout les fichiers.</div></div>
 <div class="ttc" id="atest__personnage_8c_html_a28b763408ce1b0c5b625e4c409a5022a"><div class="ttname"><a href="../../d3/d9d/test__personnage_8c.html#a28b763408ce1b0c5b625e4c409a5022a">FENETRE_LONGUEUR</a></div><div class="ttdeci">unsigned int FENETRE_LONGUEUR</div><div class="ttdef"><b>Definition:</b> test_personnage.c:16</div></div>
@@ -3631,7 +3627,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="ttc" id="atest__inventaire_8c_html_a5ead4748360bfbe8192d0dd51d0cac86"><div class="ttname"><a href="../../d9/d66/test__inventaire_8c.html#a5ead4748360bfbe8192d0dd51d0cac86">perso_principal</a></div><div class="ttdeci">joueur_t * perso_principal</div><div class="ttdef"><b>Definition:</b> test_inventaire.c:17</div></div>
 <div class="ttc" id="atest__monstres_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="../../d0/db4/test__monstres_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> test_monstres.c:16</div></div>
 <div class="ttc" id="atest__liste__objet_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="../../dc/de4/test__liste__objet_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> test_liste_objet.c:18</div></div>
-<div class="ttc" id="ainventaire_8c_html_a1144d923a9a0174ae254109cd825c758"><div class="ttname"><a href="../../d4/d04/inventaire_8c.html#a1144d923a9a0174ae254109cd825c758">ramasser_objet</a></div><div class="ttdeci">void ramasser_objet(objet_t *objet, inventaire_t *inventaire)</div><div class="ttdoc">Fonction qui permet de mettre un objet trouvé dans le sac(inventaire)</div><div class="ttdef"><b>Definition:</b> inventaire.c:135</div></div>
+<div class="ttc" id="ainventaire_8c_html_a1144d923a9a0174ae254109cd825c758"><div class="ttname"><a href="../../d4/d04/inventaire_8c.html#a1144d923a9a0174ae254109cd825c758">ramasser_objet</a></div><div class="ttdeci">void ramasser_objet(objet_t *objet, inventaire_t *inventaire)</div><div class="ttdoc">Fonction qui permet de mettre un objet trouvé dans le sac(inventaire)</div><div class="ttdef"><b>Definition:</b> inventaire.c:134</div></div>
 <div class="ttc" id="atest__inventaire_8c_html_acee431661854e73ce23494d8292e3c4d"><div class="ttname"><a href="../../d9/d66/test__inventaire_8c.html#acee431661854e73ce23494d8292e3c4d">objet_test</a></div><div class="ttdeci">objet_t * objet_test</div><div class="ttdef"><b>Definition:</b> test_inventaire.c:18</div></div>
 <div class="ttc" id="aliste__objet_8c_html_af2f7b32a8689d07adfac15f8f1c23dec"><div class="ttname"><a href="../../d5/d17/liste__objet_8c.html#af2f7b32a8689d07adfac15f8f1c23dec">creer_liste_objet</a></div><div class="ttdeci">lobjet_t * creer_liste_objet(char *fichier_src)</div><div class="ttdoc">Créé une liste d'objets et la remplit à l'aide du fichier des objets du jeu.</div><div class="ttdef"><b>Definition:</b> liste_objet.c:20</div></div>
 <div class="ttc" id="apersonnage_8c_html_a5036a38157418caf698d5662fddeb947"><div class="ttname"><a href="../../dd/dce/personnage_8c.html#a5036a38157418caf698d5662fddeb947">afficher_statistiques</a></div><div class="ttdeci">void afficher_statistiques(joueur_t *perso)</div><div class="ttdoc">Fonction qui affiche les statistiques d'un joueur dans la console.</div><div class="ttdef"><b>Definition:</b> personnage.c:387</div></div>
@@ -3652,7 +3648,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="ttc" id="atest__map_8c_html_a762704f794c8d74099d3053757266dcb"><div class="ttname"><a href="../../d8/dda/test__map_8c.html#a762704f794c8d74099d3053757266dcb">compteur</a></div><div class="ttdeci">long int compteur</div><div class="ttdef"><b>Definition:</b> test_map.c:16</div></div>
 <div class="ttc" id="atest__personnage_8c_html_a0307fbb1e4265af351172693ba4ecdc6"><div class="ttname"><a href="../../d3/d9d/test__personnage_8c.html#a0307fbb1e4265af351172693ba4ecdc6">modification_personnage</a></div><div class="ttdeci">void modification_personnage(void)</div><div class="ttdef"><b>Definition:</b> test_personnage.c:61</div></div>
 <div class="ttc" id="atest__SDL_8c_html_a760de443d1a045170cadd7adfef6653c"><div class="ttname"><a href="../../d4/db2/test__SDL_8c.html#a760de443d1a045170cadd7adfef6653c">fenetre_Principale</a></div><div class="ttdeci">SDL_Window * fenetre_Principale</div><div class="ttdef"><b>Definition:</b> test_SDL.c:15</div></div>
-<div class="ttc" id="ainventaire_8c_html_ad5b47c7ac8715bcc4b4c2b331370fcd2"><div class="ttname"><a href="../../d4/d04/inventaire_8c.html#ad5b47c7ac8715bcc4b4c2b331370fcd2">detruire_inventaire</a></div><div class="ttdeci">void detruire_inventaire(inventaire_t **inventaire)</div><div class="ttdoc">Détruit un inventaire.</div><div class="ttdef"><b>Definition:</b> inventaire.c:127</div></div>
+<div class="ttc" id="ainventaire_8c_html_ad5b47c7ac8715bcc4b4c2b331370fcd2"><div class="ttname"><a href="../../d4/d04/inventaire_8c.html#ad5b47c7ac8715bcc4b4c2b331370fcd2">detruire_inventaire</a></div><div class="ttdeci">void detruire_inventaire(inventaire_t **inventaire)</div><div class="ttdoc">Détruit un inventaire.</div><div class="ttdef"><b>Definition:</b> inventaire.c:126</div></div>
 <div class="ttc" id="atest__liste__objet_8c_html_aed95b6163c9140265eb710ce763afafb"><div class="ttname"><a href="../../dc/de4/test__liste__objet_8c.html#aed95b6163c9140265eb710ce763afafb">test_map</a></div><div class="ttdeci">t_map * test_map</div><div class="ttdef"><b>Definition:</b> test_liste_objet.c:15</div></div>
 <div class="ttc" id="ainit__close_8c_html_affaacddc6fe16ed3d818bf7e0c9798eb"><div class="ttname"><a href="../../d1/d41/init__close_8c.html#affaacddc6fe16ed3d818bf7e0c9798eb">fermer_programme</a></div><div class="ttdeci">void fermer_programme(int code_erreur)</div><div class="ttdoc">Fonction qui appelle les fonctions pour terminer le programme.</div><div class="ttdef"><b>Definition:</b> init_close.c:30</div></div>
 <div class="ttc" id="atest__inventaire_8c_html_a309691953d7fd0a9d4dd05ee74769e84"><div class="ttname"><a href="../../d9/d66/test__inventaire_8c.html#a309691953d7fd0a9d4dd05ee74769e84">equipe</a></div><div class="ttdeci">lobjet_t * equipe</div><div class="ttdef"><b>Definition:</b> test_inventaire.c:20</div></div>
@@ -3662,12 +3658,12 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="ttc" id="atest__affichage_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="../../d3/dd5/test__affichage_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> test_affichage.c:18</div></div>
 <div class="ttc" id="atest__SDL_8c_html_a7643e050b8365f82aabc8e471a952932"><div class="ttname"><a href="../../d4/db2/test__SDL_8c.html#a7643e050b8365f82aabc8e471a952932">test_SDL_init</a></div><div class="ttdeci">void test_SDL_init(void)</div><div class="ttdef"><b>Definition:</b> test_SDL.c:21</div></div>
 <div class="ttc" id="aobjet_8c_html_a2dbf71e4c727780c5ab234b0cb22611f"><div class="ttname"><a href="../../d2/dd1/objet_8c.html#a2dbf71e4c727780c5ab234b0cb22611f">creer_objet</a></div><div class="ttdeci">objet_t * creer_objet(const int id, const char *const texture_src, const t_item type, const char *nom, const short int niveau, const int att, const int def, const int vit)</div><div class="ttdoc">Créé un objet du jeu.</div><div class="ttdef"><b>Definition:</b> objet.c:16</div></div>
-<div class="ttc" id="adefinition__commun_8h_html_a13e1e2bc88dbbeed269e17c3f1ba831facc4ba0e66edb6df8f19ed8062f2cb7b3"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831facc4ba0e66edb6df8f19ed8062f2cb7b3">NORD_1</a></div><div class="ttdeci">@ NORD_1</div><div class="ttdef"><b>Definition:</b> definition_commun.h:36</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a13e1e2bc88dbbeed269e17c3f1ba831facc4ba0e66edb6df8f19ed8062f2cb7b3"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831facc4ba0e66edb6df8f19ed8062f2cb7b3">NORD_1</a></div><div class="ttdeci">@ NORD_1</div><div class="ttdef"><b>Definition:</b> definition_commun.h:37</div></div>
 <div class="ttc" id="atest__inventaire_8c_html_aed95b6163c9140265eb710ce763afafb"><div class="ttname"><a href="../../d9/d66/test__inventaire_8c.html#aed95b6163c9140265eb710ce763afafb">test_map</a></div><div class="ttdeci">t_map * test_map</div><div class="ttdef"><b>Definition:</b> test_inventaire.c:15</div></div>
 <div class="ttc" id="atest__liste__objet_8c_html_a675ea76148cd2210ee956b7358f18194"><div class="ttname"><a href="../../dc/de4/test__liste__objet_8c.html#a675ea76148cd2210ee956b7358f18194">FENETRE_LARGEUR</a></div><div class="ttdeci">unsigned int FENETRE_LARGEUR</div><div class="ttdef"><b>Definition:</b> test_liste_objet.c:16</div></div>
 <div class="ttc" id="atest__map_8c_html_a675ea76148cd2210ee956b7358f18194"><div class="ttname"><a href="../../d8/dda/test__map_8c.html#a675ea76148cd2210ee956b7358f18194">FENETRE_LARGEUR</a></div><div class="ttdeci">unsigned int FENETRE_LARGEUR</div><div class="ttdef"><b>Definition:</b> test_map.c:18</div></div>
 <div class="ttc" id="atest__listes_8c_html_a675ea76148cd2210ee956b7358f18194"><div class="ttname"><a href="../../d7/d17/test__listes_8c.html#a675ea76148cd2210ee956b7358f18194">FENETRE_LARGEUR</a></div><div class="ttdeci">unsigned int FENETRE_LARGEUR</div><div class="ttdef"><b>Definition:</b> test_listes.c:17</div></div>
-<div class="ttc" id="adefinition__commun_8h_html_a02b37ade0ca9321842b5ed7445f1a9cd"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a02b37ade0ca9321842b5ed7445f1a9cd">faux</a></div><div class="ttdeci">#define faux</div><div class="ttdef"><b>Definition:</b> definition_commun.h:60</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a02b37ade0ca9321842b5ed7445f1a9cd"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a02b37ade0ca9321842b5ed7445f1a9cd">faux</a></div><div class="ttdeci">#define faux</div><div class="ttdef"><b>Definition:</b> definition_commun.h:61</div></div>
 <div class="ttc" id="atest__personnage_8c_html_aed95b6163c9140265eb710ce763afafb"><div class="ttname"><a href="../../d3/d9d/test__personnage_8c.html#aed95b6163c9140265eb710ce763afafb">test_map</a></div><div class="ttdeci">t_map * test_map</div><div class="ttdef"><b>Definition:</b> test_personnage.c:15</div></div>
 <div class="ttc" id="atest__liste__objet_8c_html_a762704f794c8d74099d3053757266dcb"><div class="ttname"><a href="../../dc/de4/test__liste__objet_8c.html#a762704f794c8d74099d3053757266dcb">compteur</a></div><div class="ttdeci">long int compteur</div><div class="ttdef"><b>Definition:</b> test_liste_objet.c:14</div></div>
 <div class="ttc" id="atest__personnage_8c_html_a5ead4748360bfbe8192d0dd51d0cac86"><div class="ttname"><a href="../../d3/d9d/test__personnage_8c.html#a5ead4748360bfbe8192d0dd51d0cac86">perso_principal</a></div><div class="ttdeci">joueur_t * perso_principal</div><div class="ttdef"><b>Definition:</b> test_personnage.c:17</div></div>

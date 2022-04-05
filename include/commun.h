@@ -2,8 +2,8 @@
  * \file commun.h
  * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
  * \brief Fichier contenant les headers nécessaires au programme principal
- * \version 2.0
- * \date 28/03/2022
+ * \version 1.0
+ * \date 05/04/22
  * \copyright Copyright (c) 2022
  */
 
