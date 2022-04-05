@@ -108,16 +108,12 @@ int main(int argc, char** argv)
     /* On charge la map */
     map = charger_map("map/2.json");
 
-    //TEMPORAIREMENT ICI -- test animation heal (équiper consommable puis touche e) -- TEMPORAIREMENT ICI
-    heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
-
     /* On créer le joueur */    
     joueurs[0] = new_joueur("joueur1", 0, "ressources/objet/objet.txt");
     joueur1 = joueurs[0];
     joueur1->pdv = 50;
     /* On créer les animations */
     init_animations();
-
 
     objets = creer_liste_objet("ressources/objet/objet.txt");
     creer_textures_objets(objets);
@@ -221,7 +217,7 @@ int main(int argc, char** argv)
         SDL_SetRenderTarget(rendu_principal, map->text_map->texture);
         SDL_RenderClear(rendu_principal);
         
-        /* On cous les objets à la map */
+        /* On coud les objets à la map */
 
         if (SDL_RenderCopy(rendu_principal, map->text_sol->texture, NULL, NULL))
             fprintf(stderr, "Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
@@ -257,7 +253,7 @@ int main(int argc, char** argv)
 
         afficher_coffres(map->liste_coffres);
 
-        /* On cous le joueur2 s'il existe*/
+        /* On coud le joueur2 s'il existe*/
         if(nb_joueurs == 2)
             afficher_texture(next_texture_joueur2, rendu_principal);
 
@@ -265,7 +261,7 @@ int main(int argc, char** argv)
         SDL_SetRenderTarget(rendu_principal, fenetre_finale->texture);
         SDL_RenderClear(rendu_principal);
 
-        /* On cous la map */
+        /* On coud la map */
         afficher_texture(map->text_map, rendu_principal);
                 
         #ifdef _DEBUG_MOUVEMENT /* On affiche les informations liées au mouvement du personnage */
@@ -276,7 +272,7 @@ int main(int argc, char** argv)
                 SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
         #endif
   
-        /* On cous le joueur1 */
+        /* On coud le joueur1 */
         if(texture_temp1)
             afficher_texture(texture_temp1, rendu_principal);
 
