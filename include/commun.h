@@ -11,7 +11,6 @@
 #define __H_COMMUN__
 
 #include "definition_commun.h"
-#include "fonctions.h"
 #include "monstres.h"
 #include "personnage.h"
 #include "affichage.h"

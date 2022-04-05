@@ -17,26 +17,11 @@
 
 #define TAILLE_CASE 16
 
-/**
- * \brief Définition de la structure de texture
- * 
- * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref map.h et \ref affichage.h .
- */
-typedef struct s_aff t_aff;
+typedef struct s_aff t_aff;  /* Cette définition est la pour éviter une inclusion mutuelle des fichiers map.h et affichage.h */
 
-/**
- * \brief Définition de la structure joueur
- * 
- * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref map.h et \ref personnage.h .
- */
-typedef struct joueur_s joueur_t;
+typedef struct joueur_s joueur_t; /* Cette définition est la pour éviter une inclusion mutuelle des fichiers map.h et personnage.h */
 
-/**
- * \brief Définition de la structure liste_base_monstre
- * 
- * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref map.h et \ref monstre.h .
- */
-typedef struct liste_base_monstres_s liste_base_monstres_t;
+typedef struct liste_base_monstres_s liste_base_monstres_t; /* Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref map.h et \ref monstre.h */
 
 /**
  * \brief Structure représentant une zone de tp.
@@ -58,7 +43,9 @@ typedef struct {
  * Pour cela, On va stocké sous forme de listes toutes les \ref s_map.liste_collisions "zones de collisions", \ref s_map.liste_sorts "les sorts", \ref s_map.liste_monstres "les monstres", \ref s_map.liste_coffres "les coffres" et enfin \ref s_map.liste_zone_tp "les zones de tp". \n
  * 
  * On retient également des informations importantes comme des textures : \ref s_map.text_sol "la texture de fond", \ref s_map.texture_superposition "une texture à supperposer" et enfin \ref s_map.text_map "la map avec toutes les entitées".
- * \authors Ange Despert Antoine Bruneau Descomps Max
+ * \authors Ange Despert 
+ * \authors Antoine Bruneau 
+ * \authors Max Descomps
 */
 typedef struct s_map{
     unsigned int id_map; /**< L'identificateur de la map */

@@ -197,6 +197,15 @@ Fonctions</h2></td></tr>
 <tr class="separator:a1674d581294113dd43ec58636bd57802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadc96b5c1e76a0574f5759d63bc46e39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39">environnement_joueurs</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *liste_monstres, <a class="el" href="../../d8/d10/structlist.html">list</a> *liste_sorts, <a class="el" href="../../d8/d10/structlist.html">list</a> *liste_coffres, joueur_t **joueurs, int nb_joueur)</td></tr>
 <tr class="separator:aadc96b5c1e76a0574f5759d63bc46e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14f8330d9598f09daba245654f27af2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d2f/personnage_8h.html#a14f8330d9598f09daba245654f27af2a">distance_x_joueur</a> (SDL_Rect collision, joueur_t *joueur)</td></tr>
+<tr class="memdesc:a14f8330d9598f09daba245654f27af2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la distance séparant le joueur d'une entité définit par sa collision sur l'axe des abscisses.  <a href="../../d2/d2f/personnage_8h.html#a14f8330d9598f09daba245654f27af2a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a14f8330d9598f09daba245654f27af2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ae422db30a3dda1ba20e3e77a9a4db3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d2f/personnage_8h.html#a0ae422db30a3dda1ba20e3e77a9a4db3">distance_y_joueur</a> (SDL_Rect collision, joueur_t *joueur)</td></tr>
+<tr class="memdesc:a0ae422db30a3dda1ba20e3e77a9a4db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la distance séparant le joueur d'une entité définit par sa collision sur l'axe des ordonnées.  <a href="../../d2/d2f/personnage_8h.html#a0ae422db30a3dda1ba20e3e77a9a4db3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0ae422db30a3dda1ba20e3e77a9a4db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ba18ba0f6072ebcfceca1d6b8ade72f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d2f/personnage_8h.html#a6ba18ba0f6072ebcfceca1d6b8ade72f">distance_joueur</a> (SDL_Rect collision, joueur_t *joueur)</td></tr>
+<tr class="memdesc:a6ba18ba0f6072ebcfceca1d6b8ade72f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la distance séparant le joueur d'une entité définit par sa collision.  <a href="../../d2/d2f/personnage_8h.html#a6ba18ba0f6072ebcfceca1d6b8ade72f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6ba18ba0f6072ebcfceca1d6b8ade72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1fe246c62ab7b3137615051c3d74509"><td class="memItemLeft" align="right" valign="top">SDL_Rect *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d2f/personnage_8h.html#ae1fe246c62ab7b3137615051c3d74509">zone_en_dehors_hitbox</a> (SDL_Rect *hitbox, SDL_Rect *sprite, <a class="el" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1">t_direction_2</a> orientation)</td></tr>
 <tr class="separator:ae1fe246c62ab7b3137615051c3d74509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -395,10 +404,9 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d2/d2f/personnage_8h_a5036a38157418caf698d5662fddeb947_icgraph.png" border="0" usemap="#d2/d2f/personnage_8h_a5036a38157418caf698d5662fddeb947_icgraph" alt=""/></div>
 <map name="d2/d2f/personnage_8h_a5036a38157418caf698d5662fddeb947_icgraph" id="d2/d2f/personnage_8h_a5036a38157418caf698d5662fddeb947_icgraph">
-<area shape="rect" title="Fonction qui affiche les statistiques d&#39;un joueur dans la console." alt="" coords="164,56,319,83"/>
-<area shape="rect" href="../../d2/d9f/inventaire_8h.html#afbcc0f721ebc471ac4fb9cafd97fb77a" title="Fonction qui permet de passer un objet d&#39;un emplacement d&#39;équipement(équipé) au sac(non&#45;équipé) dans ..." alt="" coords="13,5,108,32"/>
-<area shape="rect" href="../../d2/d9f/inventaire_8h.html#a699ab6b7030b61f08e85b59355360a04" title="Fonction qui permet de passer un objet du sac(non&#45;équipé) à un emplacement d&#39;équipement(équipé) dans ..." alt="" coords="5,56,116,83"/>
-<area shape="rect" href="../../d9/d66/test__inventaire_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="33,107,88,133"/>
+<area shape="rect" title="Fonction qui affiche les statistiques d&#39;un joueur dans la console." alt="" coords="148,31,303,57"/>
+<area shape="rect" href="../../d2/d9f/inventaire_8h.html#afbcc0f721ebc471ac4fb9cafd97fb77a" title="Fonction qui permet de passer un objet d&#39;un emplacement d&#39;équipement(équipé) au sac(non&#45;équipé) dans ..." alt="" coords="5,5,100,32"/>
+<area shape="rect" href="../../d9/d66/test__inventaire_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="25,56,80,83"/>
 </map>
 </div>
 
@@ -665,6 +673,161 @@ Voici le graphe des appelants de cette fonction :</div>
 <map name="d2/d2f/personnage_8h_a33613b3a2b55cb1d1855a39a288fb230_icgraph" id="d2/d2f/personnage_8h_a33613b3a2b55cb1d1855a39a288fb230_icgraph">
 <area shape="rect" title="Fonction qui détruit un joueur." alt="" coords="215,5,336,32"/>
 <area shape="rect" href="../../d6/d46/menus_8h.html#a1ff516df4d202f56e051c3c040ee87b5" title=" " alt="" coords="5,5,167,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6ba18ba0f6072ebcfceca1d6b8ade72f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ba18ba0f6072ebcfceca1d6b8ade72f">&#9670;&nbsp;</a></span>distance_joueur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int distance_joueur </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Rect&#160;</td>
+          <td class="paramname"><em>collision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>joueur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Bruneau Antoine </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collision</td><td>la zone de collision de l'entité </td></tr>
+    <tr><td class="paramname">joueur</td><td>le joueur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int la distance entre l'entité et le joueur </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d2f/personnage_8h_a6ba18ba0f6072ebcfceca1d6b8ade72f_cgraph.png" border="0" usemap="#d2/d2f/personnage_8h_a6ba18ba0f6072ebcfceca1d6b8ade72f_cgraph" alt=""/></div>
+<map name="d2/d2f/personnage_8h_a6ba18ba0f6072ebcfceca1d6b8ade72f_cgraph" id="d2/d2f/personnage_8h_a6ba18ba0f6072ebcfceca1d6b8ade72f_cgraph">
+<area shape="rect" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision." alt="" coords="5,31,131,57"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a18d648a90aa6d5e19507093449173ced" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision sur l&#39;axe des abscisses." alt="" coords="179,5,319,32"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a4b121b256058246d32d23d14f23924e1" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision sur l&#39;axe des ordonnées." alt="" coords="179,56,319,83"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d2f/personnage_8h_a6ba18ba0f6072ebcfceca1d6b8ade72f_icgraph.png" border="0" usemap="#d2/d2f/personnage_8h_a6ba18ba0f6072ebcfceca1d6b8ade72f_icgraph" alt=""/></div>
+<map name="d2/d2f/personnage_8h_a6ba18ba0f6072ebcfceca1d6b8ade72f_icgraph" id="d2/d2f/personnage_8h_a6ba18ba0f6072ebcfceca1d6b8ade72f_icgraph">
+<area shape="rect" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision." alt="" coords="176,31,301,57"/>
+<area shape="rect" href="../../d0/d1f/monstres_8h.html#a52b27e40a8e179d58dbf20268f75e988" title="Fonction qui met à jour le sprite d&#39;un monstre en fonction d&#39;un joueur." alt="" coords="5,5,128,32"/>
+<area shape="rect" href="../../de/dde/boss_8c.html#a9de096805953d1628c74d869cf75e741" title=" " alt="" coords="22,56,111,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a14f8330d9598f09daba245654f27af2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14f8330d9598f09daba245654f27af2a">&#9670;&nbsp;</a></span>distance_x_joueur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int distance_x_joueur </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Rect&#160;</td>
+          <td class="paramname"><em>collision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>joueur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Bruneau Antoine </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collision</td><td>la zone de collision de l'entité </td></tr>
+    <tr><td class="paramname">joueur</td><td>le joueur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int la distance entre l'entité et le joueur sur l'axe des abscisses </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d2f/personnage_8h_a14f8330d9598f09daba245654f27af2a_icgraph.png" border="0" usemap="#d2/d2f/personnage_8h_a14f8330d9598f09daba245654f27af2a_icgraph" alt=""/></div>
+<map name="d2/d2f/personnage_8h_a14f8330d9598f09daba245654f27af2a_icgraph" id="d2/d2f/personnage_8h_a14f8330d9598f09daba245654f27af2a_icgraph">
+<area shape="rect" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision sur l&#39;axe des abscisses." alt="" coords="223,85,363,112"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#a6ba18ba0f6072ebcfceca1d6b8ade72f" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision." alt="" coords="27,5,153,32"/>
+<area shape="rect" href="../../d9/d79/monstres_8c.html#ade193545f6db261984a8721ee32529c1" title=" " alt="" coords="44,56,136,83"/>
+<area shape="rect" href="../../d9/d79/monstres_8c.html#abe4995c32e5ac7e7a45096df239baa52" title=" " alt="" coords="5,107,175,149"/>
+<area shape="rect" href="../../da/df7/sorts_8h.html#a780d77b20da701ce7042b3aaed80fdc2" title=" " alt="" coords="20,173,160,214"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0ae422db30a3dda1ba20e3e77a9a4db3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ae422db30a3dda1ba20e3e77a9a4db3">&#9670;&nbsp;</a></span>distance_y_joueur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int distance_y_joueur </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Rect&#160;</td>
+          <td class="paramname"><em>collision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>joueur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Bruneau Antoine </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collision</td><td>la zone de collision de l'entité </td></tr>
+    <tr><td class="paramname">joueur</td><td>le joueur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int la distance entre l'entité et le joueur sur l'axe des ordonnées </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d2f/personnage_8h_a0ae422db30a3dda1ba20e3e77a9a4db3_icgraph.png" border="0" usemap="#d2/d2f/personnage_8h_a0ae422db30a3dda1ba20e3e77a9a4db3_icgraph" alt=""/></div>
+<map name="d2/d2f/personnage_8h_a0ae422db30a3dda1ba20e3e77a9a4db3_icgraph" id="d2/d2f/personnage_8h_a0ae422db30a3dda1ba20e3e77a9a4db3_icgraph">
+<area shape="rect" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision sur l&#39;axe des ordonnées." alt="" coords="223,85,363,112"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#a6ba18ba0f6072ebcfceca1d6b8ade72f" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision." alt="" coords="27,5,153,32"/>
+<area shape="rect" href="../../d9/d79/monstres_8c.html#ade193545f6db261984a8721ee32529c1" title=" " alt="" coords="44,56,136,83"/>
+<area shape="rect" href="../../d9/d79/monstres_8c.html#abe4995c32e5ac7e7a45096df239baa52" title=" " alt="" coords="5,107,175,149"/>
+<area shape="rect" href="../../da/df7/sorts_8h.html#a780d77b20da701ce7042b3aaed80fdc2" title=" " alt="" coords="20,173,160,214"/>
 </map>
 </div>
 

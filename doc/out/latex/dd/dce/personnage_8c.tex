@@ -48,7 +48,13 @@ S\+D\+L\+\_\+bool \mbox{\hyperlink{personnage_8c_af2dceb23f5144e7a12b009f113a8e2
 void \mbox{\hyperlink{personnage_8c_aadc96b5c1e76a0574f5759d63bc46e39}{environnement\+\_\+joueurs}} (\mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+monstres, \mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+sorts, \mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+coffres, joueur\+\_\+t $\ast$$\ast$joueurs, int nb\+\_\+joueur)
 \item 
 void \mbox{\hyperlink{personnage_8c_a1a3324d2dc734d1d45b92a562e61ae18}{stoper\+\_\+mouvement\+\_\+joueurs}} (joueur\+\_\+t $\ast$$\ast$joueurs)
-\begin{DoxyCompactList}\small\item\em Stop le mouvement des joueurs en jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Stop le mouvement des joueurs en jeu. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{personnage_8c_a18d648a90aa6d5e19507093449173ced}{distance\+\_\+x\+\_\+joueur}} (S\+D\+L\+\_\+\+Rect collision, joueur\+\_\+t $\ast$joueur)
+\begin{DoxyCompactList}\small\item\em Renvoie la distance séparant le joueur d\textquotesingle{}une entité définit par sa collision sur l\textquotesingle{}axe des abscisses. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{personnage_8c_a4b121b256058246d32d23d14f23924e1}{distance\+\_\+y\+\_\+joueur}} (S\+D\+L\+\_\+\+Rect collision, joueur\+\_\+t $\ast$joueur)
+\begin{DoxyCompactList}\small\item\em Renvoie la distance séparant le joueur d\textquotesingle{}une entité définit par sa collision sur l\textquotesingle{}axe des ordonnées. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{personnage_8c_ab68f6351493aa149688eead017c960bb}{distance\+\_\+joueur}} (S\+D\+L\+\_\+\+Rect collision, joueur\+\_\+t $\ast$joueur)
+\begin{DoxyCompactList}\small\item\em Renvoie la distance séparant le joueur d\textquotesingle{}une entité définit par sa collision. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -88,11 +94,12 @@ Max Descomps
 {\em perso} & Le joueur sur lequel on se renseigne \\
 \hline
 \end{DoxyParams}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=315pt]{dd/dce/personnage_8c_a5036a38157418caf698d5662fddeb947_icgraph}
+\includegraphics[width=303pt]{dd/dce/personnage_8c_a5036a38157418caf698d5662fddeb947_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639}\label{personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639}} 
@@ -236,6 +243,95 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \includegraphics[width=328pt]{dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{personnage_8c_ab68f6351493aa149688eead017c960bb}\label{personnage_8c_ab68f6351493aa149688eead017c960bb}} 
+\index{personnage.c@{personnage.c}!distance\_joueur@{distance\_joueur}}
+\index{distance\_joueur@{distance\_joueur}!personnage.c@{personnage.c}}
+\doxysubsubsection{\texorpdfstring{distance\_joueur()}{distance\_joueur()}}
+{\footnotesize\ttfamily distance\+\_\+joueur (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{collision,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em collision} & la zone de collision de l\textquotesingle{}entité \\
+\hline
+{\em joueur} & le joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int la distance entre l\textquotesingle{}entité et le joueur 
+\end{DoxyReturn}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{dd/dce/personnage_8c_ab68f6351493aa149688eead017c960bb_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{dd/dce/personnage_8c_ab68f6351493aa149688eead017c960bb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{personnage_8c_a18d648a90aa6d5e19507093449173ced}\label{personnage_8c_a18d648a90aa6d5e19507093449173ced}} 
+\index{personnage.c@{personnage.c}!distance\_x\_joueur@{distance\_x\_joueur}}
+\index{distance\_x\_joueur@{distance\_x\_joueur}!personnage.c@{personnage.c}}
+\doxysubsubsection{\texorpdfstring{distance\_x\_joueur()}{distance\_x\_joueur()}}
+{\footnotesize\ttfamily distance\+\_\+x\+\_\+joueur (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{collision,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em collision} & la zone de collision de l\textquotesingle{}entité \\
+\hline
+{\em joueur} & le joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int la distance entre l\textquotesingle{}entité et le joueur sur l\textquotesingle{}axe des abscisses 
+\end{DoxyReturn}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{dd/dce/personnage_8c_a18d648a90aa6d5e19507093449173ced_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{personnage_8c_a4b121b256058246d32d23d14f23924e1}\label{personnage_8c_a4b121b256058246d32d23d14f23924e1}} 
+\index{personnage.c@{personnage.c}!distance\_y\_joueur@{distance\_y\_joueur}}
+\index{distance\_y\_joueur@{distance\_y\_joueur}!personnage.c@{personnage.c}}
+\doxysubsubsection{\texorpdfstring{distance\_y\_joueur()}{distance\_y\_joueur()}}
+{\footnotesize\ttfamily distance\+\_\+y\+\_\+joueur (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{collision,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em collision} & la zone de collision de l\textquotesingle{}entité \\
+\hline
+{\em joueur} & le joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int la distance entre l\textquotesingle{}entité et le joueur sur l\textquotesingle{}axe des ordonnées 
+\end{DoxyReturn}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{dd/dce/personnage_8c_a4b121b256058246d32d23d14f23924e1_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{personnage_8c_af2dceb23f5144e7a12b009f113a8e203}\label{personnage_8c_af2dceb23f5144e7a12b009f113a8e203}} 
 \index{personnage.c@{personnage.c}!entite\_en\_collision@{entite\_en\_collision}}
 \index{entite\_en\_collision@{entite\_en\_collision}!personnage.c@{personnage.c}}
@@ -275,8 +371,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{environnement\_joueurs()}{environnement\_joueurs()}}
 {\footnotesize\ttfamily void environnement\+\_\+joueurs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste\+\_\+monstres,  }\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste\+\_\+sorts,  }\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste\+\_\+coffres,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{int}]{nb\+\_\+joueur }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
