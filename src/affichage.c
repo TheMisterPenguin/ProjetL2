@@ -971,7 +971,9 @@ void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y){
 bool deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
 {
     const int taille_unite = floor(map->taille_case / TAILLE_PERSONNAGE);
-    SDL_Rect temp = {.x = r->x + x * taille_unite, .y = r->y, .w = r->w, .h = r->h};
+    SDL_Rect temp = {.x = r->x + x * taille_unite, .y = r->y, .w = r->w, .h = floor(texture->multipli_taille) * 3};
+
+    temp.y = r->y + (r->h - floor(texture->multipli_taille) * 3);
 
     en_tete(m->liste_collisions);
 
@@ -1024,7 +1026,7 @@ bool deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r)
 bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
 {
     const int taille_unite = floor(map->taille_case / TAILLE_PERSONNAGE);
-    SDL_Rect temp = {.x = r->x, .y = r->y + y * taille_unite, .w = r->w, .h = r->h};
+    SDL_Rect temp = {.x = r->x, .y = r->y + y * taille_unite, .w = r->w, .h = floor(texture->multipli_taille) * 3};
 
     if(y < 0){
         temp.y = r->y + y * taille_unite + (r->h - 3);
