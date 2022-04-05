@@ -22,6 +22,7 @@ for the JavaScript code in this file
 */
 var menudata={children:[
 {text:"Page principale",url:"index.html"},
+{text:"Pages associées",url:"pages.html"},
 {text:"Classes",url:"annotated.html",children:[
 {text:"Liste des classes",url:"annotated.html"},
 {text:"Index des classes",url:"classes.html"},
@@ -142,7 +143,6 @@ var menudata={children:[
 {text:"d",url:"globals_eval.html#index_d"},
 {text:"e",url:"globals_eval.html#index_e"},
 {text:"f",url:"globals_eval.html#index_f"},
-{text:"i",url:"globals_eval.html#index_i"},
 {text:"j",url:"globals_eval.html#index_j"},
 {text:"k",url:"globals_eval.html#index_k"},
 {text:"l",url:"globals_eval.html#index_l"},

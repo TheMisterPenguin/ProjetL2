@@ -5,16 +5,14 @@
 Définition des fonctions relatives au module inventaire.  
 
 
-Graphe des dépendances par inclusion de inventaire.\+h\+:
-\nopagebreak
+Graphe des dépendances par inclusion de inventaire.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=258pt]{da/da5/inventaire_8h__incl}
 \end{center}
 \end{figure}
-Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
-\nopagebreak
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -34,7 +32,7 @@ struct \mbox{\hyperlink{structinventaire__s}{inventaire\+\_\+t}}
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$ \mbox{\hyperlink{inventaire_8h_a04985ed606c1860dcdee97c4ac5d3aaa}{creer\+\_\+inventaire}} ()
+\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$ \mbox{\hyperlink{inventaire_8h_a1ee5b996c2d2ca56746853c114efc34f}{creer\+\_\+inventaire}} ()
 \begin{DoxyCompactList}\small\item\em Créé un inventaire. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{inventaire_8h_a1b70bc002675692d62ba7d5343341fd3}{changement\+\_\+statistiques}} (joueur\+\_\+t $\ast$joueur)
 \begin{DoxyCompactList}\small\item\em Fonction qui permet de modifier les statistiques du joueur selon ses objets équipés. \end{DoxyCompactList}\item 
@@ -87,13 +85,15 @@ Copyright (c) 2022
 \doxysubsubsection{\texorpdfstring{changement\_statistiques()}{changement\_statistiques()}}
 {\footnotesize\ttfamily void changement\+\_\+statistiques (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em joueur} & Joueur dont on change les statistiques \\
 \hline
 \end{DoxyParams}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -106,49 +106,42 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{consommer\_objet()}{consommer\_objet()}}
 {\footnotesize\ttfamily void consommer\+\_\+objet (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em joueur} & Le joueur qui consomme un objet \\
 \hline
 \end{DoxyParams}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=329pt]{d2/d9f/inventaire_8h_a085bd391d754f81253408e0754ded991_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{inventaire_8h_a04985ed606c1860dcdee97c4ac5d3aaa}\label{inventaire_8h_a04985ed606c1860dcdee97c4ac5d3aaa}} 
+\mbox{\Hypertarget{inventaire_8h_a1ee5b996c2d2ca56746853c114efc34f}\label{inventaire_8h_a1ee5b996c2d2ca56746853c114efc34f}} 
 \index{inventaire.h@{inventaire.h}!creer\_inventaire@{creer\_inventaire}}
 \index{creer\_inventaire@{creer\_inventaire}!inventaire.h@{inventaire.h}}
 \doxysubsubsection{\texorpdfstring{creer\_inventaire()}{creer\_inventaire()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}}$\ast$ creer\+\_\+inventaire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$ creer\+\_\+inventaire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 \begin{DoxyReturn}{Renvoie}
 Instance nouvellement allouée du type \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} ou N\+U\+LL 
 \end{DoxyReturn}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=348pt]{d2/d9f/inventaire_8h_a04985ed606c1860dcdee97c4ac5d3aaa_cgraph}
-\end{center}
-\end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=336pt]{d2/d9f/inventaire_8h_a04985ed606c1860dcdee97c4ac5d3aaa_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{inventaire_8h_afbcc0f721ebc471ac4fb9cafd97fb77a}\label{inventaire_8h_afbcc0f721ebc471ac4fb9cafd97fb77a}} 
 \index{inventaire.h@{inventaire.h}!desequiper@{desequiper}}
 \index{desequiper@{desequiper}!inventaire.h@{inventaire.h}}
 \doxysubsubsection{\texorpdfstring{desequiper()}{desequiper()}}
 {\footnotesize\ttfamily void desequiper (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{objet\+\_\+t $\ast$$\ast$}]{objet }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em joueur} & Joueur à déséquiper \\
@@ -163,8 +156,7 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \includegraphics[width=327pt]{d2/d9f/inventaire_8h_afbcc0f721ebc471ac4fb9cafd97fb77a_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -177,6 +169,9 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{desequiper\_slot()}{desequiper\_slot()}}
 {\footnotesize\ttfamily void desequiper\+\_\+slot (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{int}]{slot }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em slot} & Le slot de l\textquotesingle{}objet à déséquiper \\
@@ -184,16 +179,14 @@ Voici le graphe des appelants de cette fonction \+:
 {\em joueur} & Le joueur à déséquiper \\
 \hline
 \end{DoxyParams}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=281pt]{d2/d9f/inventaire_8h_a8aa9d5f1d7be0ac4221f7343d329c4c4_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -206,6 +199,9 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{detruire\_inventaire()}{detruire\_inventaire()}}
 {\footnotesize\ttfamily void detruire\+\_\+inventaire (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$$\ast$}]{inventaire }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em inventaire} & Adresse du pointeur sur \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} \\
@@ -218,8 +214,7 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \includegraphics[width=333pt]{d2/d9f/inventaire_8h_a5475fde997270b9d30ea85049950f141_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -232,6 +227,9 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{equiper\_objet()}{equiper\_objet()}}
 {\footnotesize\ttfamily void equiper\+\_\+objet (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{objet\+\_\+t $\ast$$\ast$}]{objet }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em joueur} & Joueur à équiper \\
@@ -246,8 +244,7 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \includegraphics[width=339pt]{d2/d9f/inventaire_8h_a699ab6b7030b61f08e85b59355360a04_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -260,6 +257,9 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{equiper\_sac\_slot()}{equiper\_sac\_slot()}}
 {\footnotesize\ttfamily void equiper\+\_\+sac\+\_\+slot (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{int}]{slot }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em slot} & Le slot de l\textquotesingle{}objet à équiper \\
@@ -267,16 +267,14 @@ Voici le graphe des appelants de cette fonction \+:
 {\em joueur} & Le joueur à équiper \\
 \hline
 \end{DoxyParams}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=297pt]{d2/d9f/inventaire_8h_af4759298331c6887427f1a2137910ad2_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -289,13 +287,15 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{ramasser\_objet()}{ramasser\_objet()}}
 {\footnotesize\ttfamily void ramasser\+\_\+objet (\begin{DoxyParamCaption}\item[{objet\+\_\+t $\ast$}]{objet,  }\item[{\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$}]{inventaire }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em objet} & Objet trouvé \\
 \hline
 \end{DoxyParams}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -308,6 +308,9 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{tout\_ramasser()}{tout\_ramasser()}}
 {\footnotesize\ttfamily void tout\+\_\+ramasser (\begin{DoxyParamCaption}\item[{lobjet\+\_\+t $\ast$}]{objets,  }\item[{\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$}]{inventaire }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em objets} & Liste d\textquotesingle{}objets du jeu \\
@@ -320,12 +323,5 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=295pt]{d2/d9f/inventaire_8h_a8e7fe87d00260fd538a5b966b7cfec05_cgraph}
-\end{center}
-\end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=244pt]{d2/d9f/inventaire_8h_a8e7fe87d00260fd538a5b966b7cfec05_icgraph}
 \end{center}
 \end{figure}

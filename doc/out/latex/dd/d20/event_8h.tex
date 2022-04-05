@@ -5,16 +5,14 @@
 Définitions relatives aux événements.  
 
 
-Graphe des dépendances par inclusion de event.\+h\+:
-\nopagebreak
+Graphe des dépendances par inclusion de event.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=292pt]{d9/d06/event_8h__incl}
 \end{center}
 \end{figure}
-Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
-\nopagebreak
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -43,7 +41,7 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \item 
 \+\_\+\+Bool \mbox{\hyperlink{event_8h_a950ad08652f1a6177a5b55912280e63c}{logo\+\_\+passer}} (void)
 \item 
-void \mbox{\hyperlink{event_8h_aded23e2ea2ac3df851674e2292250166}{jeu\+\_\+event}} (joueur\+\_\+t $\ast$$\ast$joueurs)
+void \mbox{\hyperlink{event_8h_a5f8eef7cc98d022db9987ee0634804e6}{jeu\+\_\+event}} (joueur\+\_\+t $\ast$$\ast$joueurs, char $\ast$f\+\_\+src\+\_\+obj)
 \begin{DoxyCompactList}\small\item\em Fonction qui gère les événements. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{event_8h_ac27091daa86f31b79780d6a91801fd11}{jeu\+\_\+event\+\_\+manette}} (joueur\+\_\+t $\ast$$\ast$joueurs)
 \end{DoxyCompactItemize}
@@ -115,11 +113,11 @@ Copyright (c) 2022
 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{event_8h_aded23e2ea2ac3df851674e2292250166}\label{event_8h_aded23e2ea2ac3df851674e2292250166}} 
+\mbox{\Hypertarget{event_8h_a5f8eef7cc98d022db9987ee0634804e6}\label{event_8h_a5f8eef7cc98d022db9987ee0634804e6}} 
 \index{event.h@{event.h}!jeu\_event@{jeu\_event}}
 \index{jeu\_event@{jeu\_event}!event.h@{event.h}}
 \doxysubsubsection{\texorpdfstring{jeu\_event()}{jeu\_event()}}
-{\footnotesize\ttfamily void jeu\+\_\+event (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void jeu\+\_\+event (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Despert Ange 
@@ -128,20 +126,21 @@ Despert Ange
 \begin{DoxyParams}{Paramètres}
 {\em joueur} & Joueurs pouvant provoquer l\textquotesingle{}événement \\
 \hline
+{\em f\+\_\+src\+\_\+obj} & Fichier source des objets du jeu utile à certains événements \\
+\hline
 \end{DoxyParams}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{dd/d20/event_8h_aded23e2ea2ac3df851674e2292250166_cgraph}
+\includegraphics[width=293pt]{dd/d20/event_8h_a5f8eef7cc98d022db9987ee0634804e6_cgraph}
 \end{center}
 \end{figure}
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=222pt]{dd/d20/event_8h_aded23e2ea2ac3df851674e2292250166_icgraph}
+\includegraphics[width=222pt]{dd/d20/event_8h_a5f8eef7cc98d022db9987ee0634804e6_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{event_8h_ac27091daa86f31b79780d6a91801fd11}\label{event_8h_ac27091daa86f31b79780d6a91801fd11}} 
@@ -150,8 +149,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{jeu\_event\_manette()}{jeu\_event\_manette()}}
 {\footnotesize\ttfamily void jeu\+\_\+event\+\_\+manette (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -171,16 +169,14 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{logo\_passer()}{logo\_passer()}}
 {\footnotesize\ttfamily \+\_\+\+Bool logo\+\_\+passer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=303pt]{dd/d20/event_8h_a950ad08652f1a6177a5b55912280e63c_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

@@ -108,7 +108,7 @@ void transition(t_map **actuelle, unsigned int num_map, joueur_t **joueurs, unsi
 
 void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, unsigned short int nb_joueurs);
 
-void detruire_map(t_map **map);
+void detruire_map(t_map **map, joueur_t *joueurs[], unsigned short int nb_joueurs);
 
 #ifdef DEBUG_TP
     void afficher_zone_tp(zone_tp *z);

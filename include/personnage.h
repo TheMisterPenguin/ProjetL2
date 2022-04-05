@@ -136,7 +136,7 @@ extern void detruire_joueur(joueur_t *j);
  * \param f_src_obj Le fichier source contenant les objets du jeu
  * \return Instance nouvellement allouée du type joueur_t contenant les informations du joueur
  */
-extern joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj);
+joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char *f_src_obj, joueur_t *joueurs[], unsigned short int nb_joueurs);
 
 /**
  * \fn void maj_statistiques(joueur_t* perso)

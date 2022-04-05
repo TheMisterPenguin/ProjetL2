@@ -36,7 +36,7 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs, char * f_src_ob
         stoper_mouvement_joueurs(joueurs);
 
         SDL_ShowCursor(SDL_ENABLE);
-        afficher_menu_pause(joueurs, f_src_objet);
+        afficher_menu_pause(joueurs, f_src_objet, 2);
         SDL_ShowCursor(SDL_DISABLE);
         return;
     }
@@ -51,27 +51,12 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs, char * f_src_ob
                 flags = SDL_GetWindowFlags(fenetre_Principale);
 
                 if(flags & SDL_WINDOW_FULLSCREEN_DESKTOP){
-                    if(SDL_SetWindowFullscreen(fenetre_Principale, 0)){
-                        char *msp = malloc(sizeof(char) * (500));
-
-                        sprintf(msp, "Erreur lors du changement d'état de la fenêtre : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_WINDOW);
-                        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-
-                        free(msp);
-                        fermer_programme(ERREUR_SDL_WINDOW);
-                    }
-
+                    if(SDL_SetWindowFullscreen(fenetre_Principale, 0))
+                        erreur("Erreur lors du changement d'état de la fenêtre : %s", ERREUR_SDL_WINDOW, SDL_GetError());
                 }
                 else{
-                    if(SDL_SetWindowFullscreen(fenetre_Principale, SDL_WINDOW_FULLSCREEN)){
-                        char *msp = malloc(sizeof(char) * (500));
-
-                        sprintf(msp, "Erreur lors du changement d'état de la fenêtre : %s\nErreur : 0x%X\n", SDL_GetError(), ERREUR_SDL_WINDOW);
-                        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", msp, NULL);
-
-                        free(msp);
-                        fermer_programme(ERREUR_SDL_WINDOW);
-                    }
+                    if(SDL_SetWindowFullscreen(fenetre_Principale, SDL_WINDOW_FULLSCREEN))
+                        erreur("Erreur lors du changement d'état de la fenêtre : %s", ERREUR_SDL_WINDOW, SDL_GetError());
                 }
                 break;
         }

@@ -31,7 +31,7 @@ t_aff * text_accueil = NULL;
     }
 }*/
 
-void afficher_menu_pause(joueur_t *joueur[], char * f_src_objet){
+void afficher_menu_pause(joueur_t *joueur[], char * f_src_objet, unsigned short int nb_joueurs){
 
     int debut, fin; /* le temps pour calculer les performances */
 
@@ -107,7 +107,7 @@ void afficher_menu_pause(joueur_t *joueur[], char * f_src_objet){
                     char temp[510];
                     sprintf(temp,"%s/perso.sav", save_path);
                     detruire_joueur(*joueur);
-                    joueur[0] = charger_sauvegarde_joueur(temp, f_src_objet);
+                    joueur[0] = charger_sauvegarde_joueur(temp, f_src_objet, joueur, nb_joueurs);
 
                     joueur[1] = NULL;
 

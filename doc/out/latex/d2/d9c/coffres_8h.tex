@@ -5,16 +5,14 @@
 Fonctions concernant les coffres.  
 
 
-Graphe des dépendances par inclusion de coffres.\+h\+:
-\nopagebreak
+Graphe des dépendances par inclusion de coffres.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=215pt]{de/d71/coffres_8h__incl}
 \end{center}
 \end{figure}
-Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
-\nopagebreak
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,32 +28,44 @@ struct \mbox{\hyperlink{structbase__coffre__s}{base\+\_\+coffre\+\_\+s}}
 \begin{DoxyCompactList}\small\item\em Structure contenant les propiétées du coffre importé \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structliste__base__coffres__s}{liste\+\_\+base\+\_\+coffres\+\_\+s}}
 \begin{DoxyCompactList}\small\item\em Structure contenant un tableau avec tous les coffres possibles du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{coffres_8h_a85784c5cfbde434991ff8f2432642afc}{C\+O\+F\+F\+R\+E\+\_\+\+F\+A\+C\+E\+\_\+\+O\+U\+V\+E\+RT}}~\char`\"{}ressources/sprite/coffrefaceouvert.\+bmp\char`\"{}
+\item 
+\#define \mbox{\hyperlink{coffres_8h_ad61871f7a4232bfdec35d2f5c605985a}{C\+O\+F\+F\+R\+E\+\_\+\+P\+R\+O\+F\+I\+L\+\_\+\+O\+U\+V\+E\+RT}}~\char`\"{}ressources/sprite/coffreprofilouvert.\+bmp\char`\"{}
+\end{DoxyCompactItemize}
 \doxysubsection*{Énumérations}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{coffres_8h_a00a8529a492da49a620058ce9c9e86ec}{type\+\_\+coffre\+\_\+t}} \{ \mbox{\hyperlink{coffres_8h_a00a8529a492da49a620058ce9c9e86eca2f569acd59579be94f88e08ca8f47600}{P\+R\+O\+F\+I\+L\+\_\+\+F\+E\+R\+ME}}, 
+enum \mbox{\hyperlink{coffres_8h_a00a8529a492da49a620058ce9c9e86ec}{type\+\_\+coffre\+\_\+t}} \{ \newline
+\mbox{\hyperlink{coffres_8h_a00a8529a492da49a620058ce9c9e86eca2f569acd59579be94f88e08ca8f47600}{P\+R\+O\+F\+I\+L\+\_\+\+F\+E\+R\+ME}}, 
 \mbox{\hyperlink{coffres_8h_a00a8529a492da49a620058ce9c9e86eca0a7b37f54c72f28cb34ab9860c0f17a0}{P\+R\+O\+F\+I\+L\+\_\+\+O\+U\+V\+E\+RT}}, 
 \mbox{\hyperlink{coffres_8h_a00a8529a492da49a620058ce9c9e86ecac377d18a82325eb432058f9fc22122ea}{F\+A\+C\+E\+\_\+\+F\+E\+R\+ME}}, 
-\mbox{\hyperlink{coffres_8h_a00a8529a492da49a620058ce9c9e86eca4341eb19b5df3b37fb4717f90d1c9c14}{F\+A\+C\+E\+\_\+\+O\+U\+V\+E\+RT}}
+\mbox{\hyperlink{coffres_8h_a00a8529a492da49a620058ce9c9e86eca4341eb19b5df3b37fb4717f90d1c9c14}{F\+A\+C\+E\+\_\+\+O\+U\+V\+E\+RT}}, 
+\newline
+\mbox{\hyperlink{coffres_8h_a00a8529a492da49a620058ce9c9e86eca170e0a479579eb78c1834b6ade68fd09}{C\+O\+F\+F\+R\+E\+\_\+\+I\+N\+C\+O\+N\+NU}}
  \}
 \item 
-enum \mbox{\hyperlink{coffres_8h_ac465716f22ad6cccedf85e8c7899c7f8}{action\+\_\+coffre\+\_\+t}} \{ \mbox{\hyperlink{coffres_8h_ac465716f22ad6cccedf85e8c7899c7f8a9947185083273520715b7dc48cecb50c}{O\+U\+V\+E\+RT}}, 
-\mbox{\hyperlink{coffres_8h_ac465716f22ad6cccedf85e8c7899c7f8af33dd4dbb60f26ab46629aa042a06cf0}{F\+E\+R\+ME}}
+enum \mbox{\hyperlink{coffres_8h_a1ed9bf2ef0cb98998ba84a8903ab0796}{etat\+\_\+coffre\+\_\+t}} \{ \mbox{\hyperlink{coffres_8h_a1ed9bf2ef0cb98998ba84a8903ab0796a9947185083273520715b7dc48cecb50c}{O\+U\+V\+E\+RT}}, 
+\mbox{\hyperlink{coffres_8h_a1ed9bf2ef0cb98998ba84a8903ab0796af33dd4dbb60f26ab46629aa042a06cf0}{F\+E\+R\+ME}}
  \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{coffres_8h_a2c9c6ec91da6b419ceaac9ed69a66316}{charger\+\_\+base\+\_\+coffre}} (char $\ast$chemin\+\_\+fichier, liste\+\_\+base\+\_\+coffres\+\_\+t $\ast$$\ast$\mbox{\hyperlink{coffres_8h_ad9ec43edbee4491e915e009207e2bd07}{liste\+\_\+base\+\_\+coffres}})
-\begin{DoxyCompactList}\small\item\em Fonction qui recopie les informations d\textquotesingle{}un fichier json pour les insérrer dans la structure liste\+\_\+base\+\_\+coffres. \end{DoxyCompactList}\item 
-coffre\+\_\+t $\ast$ \mbox{\hyperlink{coffres_8h_a89c39cf40bda420fcca8ee7c7afbfd96}{creer\+\_\+coffre}} (liste\+\_\+base\+\_\+coffres\+\_\+t $\ast$\mbox{\hyperlink{coffres_8h_ad9ec43edbee4491e915e009207e2bd07}{liste\+\_\+base\+\_\+coffres}}, const char $\ast$const nom\+\_\+coffre, int x, int y, t\+\_\+map $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
+\begin{DoxyCompactList}\small\item\em Fonction qui recopie les informations d\textquotesingle{}un fichier json pour les insérer dans la structure liste\+\_\+base\+\_\+coffres. \end{DoxyCompactList}\item 
+coffre\+\_\+t $\ast$ \mbox{\hyperlink{coffres_8h_a4d05e5a75f401b57f5e6958a50a6a780}{creer\+\_\+coffre}} (int id\+\_\+cle, int id\+\_\+loot, liste\+\_\+base\+\_\+coffres\+\_\+t $\ast$\mbox{\hyperlink{coffres_8h_ad9ec43edbee4491e915e009207e2bd07}{liste\+\_\+base\+\_\+coffres}}, const char $\ast$const nom\+\_\+coffre, int x, int y, t\+\_\+map $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
 \begin{DoxyCompactList}\small\item\em Fonction qui creer et initialise un coffre sur une carte. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{coffres_8h_a00a8529a492da49a620058ce9c9e86ec}{type\+\_\+coffre\+\_\+t}} \mbox{\hyperlink{coffres_8h_a24b867dce7ad1cd18ea7afa0c254f399}{nom\+\_\+coffre\+\_\+to\+\_\+type\+\_\+coffre}} (char $\ast$nom\+\_\+coffre)
-\begin{DoxyCompactList}\small\item\em Convertit une chaîne de caractères en type de coffre. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{coffres_8h_a00a8529a492da49a620058ce9c9e86ec}{type\+\_\+coffre\+\_\+t}} \mbox{\hyperlink{coffres_8h_a429c13dfc5bc32612208892805c750ad}{nom\+\_\+coffre\+\_\+to\+\_\+type\+\_\+coffre}} (const char $\ast$nom\+\_\+coffre)
+\item 
 void \mbox{\hyperlink{coffres_8h_ad339236e720fb2e7e16c44ebbd7c414b}{info\+\_\+coffre}} (coffre\+\_\+t $\ast$coffre)
 \begin{DoxyCompactList}\small\item\em Affcihe les informations sur un coffre dans la console. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{coffres_8h_ac1910591e488a6a7a3f836706f80d9f8}{interaction\+\_\+coffre}} (S\+D\+L\+\_\+\+Rect $\ast$coffre\+\_\+rect)
-\begin{DoxyCompactList}\small\item\em Gère les interactions du joueur avec un coffre lors d\textquotesingle{}une collision. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{coffres_8h_afaede33891b4fa55d0b68267a6207487}{interaction\+\_\+coffre}} (S\+D\+L\+\_\+\+Rect $\ast$coffre\+\_\+rect, joueur\+\_\+t $\ast$joueur, lobjet\+\_\+t $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}})
+\begin{DoxyCompactList}\small\item\em Gère les interactions du joueur avec un coffre lors d\textquotesingle{}une collision. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} \mbox{\hyperlink{coffres_8h_add26f80bfe853e6f02c6d0e6e633d8a5}{inverser\+\_\+direction}} (\mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} direction)
+\begin{DoxyCompactList}\small\item\em Inverse une direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -78,19 +88,34 @@ Copyright (c) 2022
 \end{DoxyCopyright}
 
 
+\doxysubsection{Documentation des macros}
+\mbox{\Hypertarget{coffres_8h_a85784c5cfbde434991ff8f2432642afc}\label{coffres_8h_a85784c5cfbde434991ff8f2432642afc}} 
+\index{coffres.h@{coffres.h}!COFFRE\_FACE\_OUVERT@{COFFRE\_FACE\_OUVERT}}
+\index{COFFRE\_FACE\_OUVERT@{COFFRE\_FACE\_OUVERT}!coffres.h@{coffres.h}}
+\doxysubsubsection{\texorpdfstring{COFFRE\_FACE\_OUVERT}{COFFRE\_FACE\_OUVERT}}
+{\footnotesize\ttfamily \#define C\+O\+F\+F\+R\+E\+\_\+\+F\+A\+C\+E\+\_\+\+O\+U\+V\+E\+RT~\char`\"{}ressources/sprite/coffrefaceouvert.\+bmp\char`\"{}}
+
+\mbox{\Hypertarget{coffres_8h_ad61871f7a4232bfdec35d2f5c605985a}\label{coffres_8h_ad61871f7a4232bfdec35d2f5c605985a}} 
+\index{coffres.h@{coffres.h}!COFFRE\_PROFIL\_OUVERT@{COFFRE\_PROFIL\_OUVERT}}
+\index{COFFRE\_PROFIL\_OUVERT@{COFFRE\_PROFIL\_OUVERT}!coffres.h@{coffres.h}}
+\doxysubsubsection{\texorpdfstring{COFFRE\_PROFIL\_OUVERT}{COFFRE\_PROFIL\_OUVERT}}
+{\footnotesize\ttfamily \#define C\+O\+F\+F\+R\+E\+\_\+\+P\+R\+O\+F\+I\+L\+\_\+\+O\+U\+V\+E\+RT~\char`\"{}ressources/sprite/coffreprofilouvert.\+bmp\char`\"{}}
+
+
+
 \doxysubsection{Documentation du type de l\textquotesingle{}énumération}
-\mbox{\Hypertarget{coffres_8h_ac465716f22ad6cccedf85e8c7899c7f8}\label{coffres_8h_ac465716f22ad6cccedf85e8c7899c7f8}} 
-\index{coffres.h@{coffres.h}!action\_coffre\_t@{action\_coffre\_t}}
-\index{action\_coffre\_t@{action\_coffre\_t}!coffres.h@{coffres.h}}
-\doxysubsubsection{\texorpdfstring{action\_coffre\_t}{action\_coffre\_t}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{coffres_8h_ac465716f22ad6cccedf85e8c7899c7f8}{action\+\_\+coffre\+\_\+t}}}
+\mbox{\Hypertarget{coffres_8h_a1ed9bf2ef0cb98998ba84a8903ab0796}\label{coffres_8h_a1ed9bf2ef0cb98998ba84a8903ab0796}} 
+\index{coffres.h@{coffres.h}!etat\_coffre\_t@{etat\_coffre\_t}}
+\index{etat\_coffre\_t@{etat\_coffre\_t}!coffres.h@{coffres.h}}
+\doxysubsubsection{\texorpdfstring{etat\_coffre\_t}{etat\_coffre\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{coffres_8h_a1ed9bf2ef0cb98998ba84a8903ab0796}{etat\+\_\+coffre\+\_\+t}}}
 
 Type enum indiquant si un coffre à été ouvert par un joueur \begin{DoxyEnumFields}{Valeurs énumérées}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{OUVERT@{OUVERT}!coffres.h@{coffres.h}}\index{coffres.h@{coffres.h}!OUVERT@{OUVERT}}}\mbox{\Hypertarget{coffres_8h_ac465716f22ad6cccedf85e8c7899c7f8a9947185083273520715b7dc48cecb50c}\label{coffres_8h_ac465716f22ad6cccedf85e8c7899c7f8a9947185083273520715b7dc48cecb50c}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OUVERT@{OUVERT}!coffres.h@{coffres.h}}\index{coffres.h@{coffres.h}!OUVERT@{OUVERT}}}\mbox{\Hypertarget{coffres_8h_a1ed9bf2ef0cb98998ba84a8903ab0796a9947185083273520715b7dc48cecb50c}\label{coffres_8h_a1ed9bf2ef0cb98998ba84a8903ab0796a9947185083273520715b7dc48cecb50c}} 
 O\+U\+V\+E\+RT&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{FERME@{FERME}!coffres.h@{coffres.h}}\index{coffres.h@{coffres.h}!FERME@{FERME}}}\mbox{\Hypertarget{coffres_8h_ac465716f22ad6cccedf85e8c7899c7f8af33dd4dbb60f26ab46629aa042a06cf0}\label{coffres_8h_ac465716f22ad6cccedf85e8c7899c7f8af33dd4dbb60f26ab46629aa042a06cf0}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FERME@{FERME}!coffres.h@{coffres.h}}\index{coffres.h@{coffres.h}!FERME@{FERME}}}\mbox{\Hypertarget{coffres_8h_a1ed9bf2ef0cb98998ba84a8903ab0796af33dd4dbb60f26ab46629aa042a06cf0}\label{coffres_8h_a1ed9bf2ef0cb98998ba84a8903ab0796af33dd4dbb60f26ab46629aa042a06cf0}} 
 F\+E\+R\+ME&\\
 \hline
 
@@ -118,6 +143,10 @@ F\+A\+C\+E\+\_\+\+F\+E\+R\+ME&\\
 F\+A\+C\+E\+\_\+\+O\+U\+V\+E\+RT&\\
 \hline
 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COFFRE\_INCONNU@{COFFRE\_INCONNU}!coffres.h@{coffres.h}}\index{coffres.h@{coffres.h}!COFFRE\_INCONNU@{COFFRE\_INCONNU}}}\mbox{\Hypertarget{coffres_8h_a00a8529a492da49a620058ce9c9e86eca170e0a479579eb78c1834b6ade68fd09}\label{coffres_8h_a00a8529a492da49a620058ce9c9e86eca170e0a479579eb78c1834b6ade68fd09}} 
+C\+O\+F\+F\+R\+E\+\_\+\+I\+N\+C\+O\+N\+NU&\\
+\hline
+
 \end{DoxyEnumFields}
 
 
@@ -128,6 +157,9 @@ F\+A\+C\+E\+\_\+\+O\+U\+V\+E\+RT&\\
 \doxysubsubsection{\texorpdfstring{charger\_base\_coffre()}{charger\_base\_coffre()}}
 {\footnotesize\ttfamily void charger\+\_\+base\+\_\+coffre (\begin{DoxyParamCaption}\item[{char $\ast$}]{chemin\+\_\+fichier,  }\item[{liste\+\_\+base\+\_\+coffres\+\_\+t $\ast$$\ast$}]{liste\+\_\+base\+\_\+coffres }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em nom\+\_\+fichier} & Le nom du fichier à lire \\
@@ -135,14 +167,6 @@ F\+A\+C\+E\+\_\+\+O\+U\+V\+E\+RT&\\
 {\em liste\+\_\+base\+\_\+coffres} & La base dans laquelle enregistrer les coffres \\
 \hline
 \end{DoxyParams}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=343pt]{d2/d9c/coffres_8h_a2c9c6ec91da6b419ceaac9ed69a66316_cgraph}
-\end{center}
-\end{figure}
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -150,14 +174,21 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \includegraphics[width=272pt]{d2/d9c/coffres_8h_a2c9c6ec91da6b419ceaac9ed69a66316_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{coffres_8h_a89c39cf40bda420fcca8ee7c7afbfd96}\label{coffres_8h_a89c39cf40bda420fcca8ee7c7afbfd96}} 
+\mbox{\Hypertarget{coffres_8h_a4d05e5a75f401b57f5e6958a50a6a780}\label{coffres_8h_a4d05e5a75f401b57f5e6958a50a6a780}} 
 \index{coffres.h@{coffres.h}!creer\_coffre@{creer\_coffre}}
 \index{creer\_coffre@{creer\_coffre}!coffres.h@{coffres.h}}
 \doxysubsubsection{\texorpdfstring{creer\_coffre()}{creer\_coffre()}}
-{\footnotesize\ttfamily coffre\+\_\+t$\ast$ creer\+\_\+coffre (\begin{DoxyParamCaption}\item[{liste\+\_\+base\+\_\+coffres\+\_\+t $\ast$}]{liste\+\_\+base\+\_\+coffres,  }\item[{const char $\ast$const}]{nom\+\_\+coffre,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{t\+\_\+map $\ast$}]{map }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily coffre\+\_\+t$\ast$ creer\+\_\+coffre (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+cle,  }\item[{int}]{id\+\_\+loot,  }\item[{liste\+\_\+base\+\_\+coffres\+\_\+t $\ast$}]{liste\+\_\+base\+\_\+coffres,  }\item[{const char $\ast$const}]{nom\+\_\+coffre,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{t\+\_\+map $\ast$}]{map }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
+{\em id\+\_\+cle} & L\textquotesingle{}identificateur de l\textquotesingle{}objet de quête nécessaire pour ouvrir le coffre, sinon 0 \\
+\hline
+{\em id\+\_\+loot} & L\textquotesingle{}identificateur de l\textquotesingle{}objet obtenu en ouvrant le coffre, sinon 0 \\
+\hline
 {\em liste\+\_\+base\+\_\+coffre} & Les coffres de base \\
 \hline
 {\em nom\+\_\+coffre} & Le nom du coffre à creer \\
@@ -172,20 +203,18 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{DoxyReturn}{Renvoie}
 Instance nouvellement allouée du type coffre\+\_\+t contenant les informations du coffre ou N\+U\+LL 
 \end{DoxyReturn}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=303pt]{d2/d9c/coffres_8h_a89c39cf40bda420fcca8ee7c7afbfd96_cgraph}
+\includegraphics[width=303pt]{d2/d9c/coffres_8h_a4d05e5a75f401b57f5e6958a50a6a780_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=270pt]{d2/d9c/coffres_8h_a89c39cf40bda420fcca8ee7c7afbfd96_icgraph}
+\includegraphics[width=270pt]{d2/d9c/coffres_8h_a4d05e5a75f401b57f5e6958a50a6a780_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{coffres_8h_ad339236e720fb2e7e16c44ebbd7c414b}\label{coffres_8h_ad339236e720fb2e7e16c44ebbd7c414b}} 
@@ -194,6 +223,9 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{info\_coffre()}{info\_coffre()}}
 {\footnotesize\ttfamily void info\+\_\+coffre (\begin{DoxyParamCaption}\item[{coffre\+\_\+t $\ast$}]{coffre }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em coffre} & Le coffre sur lequel on se renseigne \\
@@ -206,69 +238,73 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \includegraphics[width=260pt]{d2/d9c/coffres_8h_ad339236e720fb2e7e16c44ebbd7c414b_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d2/d9c/coffres_8h_ad339236e720fb2e7e16c44ebbd7c414b_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{coffres_8h_ac1910591e488a6a7a3f836706f80d9f8}\label{coffres_8h_ac1910591e488a6a7a3f836706f80d9f8}} 
+\mbox{\Hypertarget{coffres_8h_afaede33891b4fa55d0b68267a6207487}\label{coffres_8h_afaede33891b4fa55d0b68267a6207487}} 
 \index{coffres.h@{coffres.h}!interaction\_coffre@{interaction\_coffre}}
 \index{interaction\_coffre@{interaction\_coffre}!coffres.h@{coffres.h}}
 \doxysubsubsection{\texorpdfstring{interaction\_coffre()}{interaction\_coffre()}}
-{\footnotesize\ttfamily void interaction\+\_\+coffre (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{coffre\+\_\+rect }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void interaction\+\_\+coffre (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{coffre\+\_\+rect,  }\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{lobjet\+\_\+t $\ast$}]{objets }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em coffre\+\_\+rect} & Les coordonnées du prochain pas du personnage \\
 \hline
+{\em joueur} & Le joueur activant le coffre \\
+\hline
+{\em objets} & Les objets du jeu \\
+\hline
 \end{DoxyParams}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d2/d9c/coffres_8h_ac1910591e488a6a7a3f836706f80d9f8_cgraph}
+\includegraphics[width=350pt]{d2/d9c/coffres_8h_afaede33891b4fa55d0b68267a6207487_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{d2/d9c/coffres_8h_ac1910591e488a6a7a3f836706f80d9f8_icgraph}
+\includegraphics[width=346pt]{d2/d9c/coffres_8h_afaede33891b4fa55d0b68267a6207487_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{coffres_8h_a24b867dce7ad1cd18ea7afa0c254f399}\label{coffres_8h_a24b867dce7ad1cd18ea7afa0c254f399}} 
-\index{coffres.h@{coffres.h}!nom\_coffre\_to\_type\_coffre@{nom\_coffre\_to\_type\_coffre}}
-\index{nom\_coffre\_to\_type\_coffre@{nom\_coffre\_to\_type\_coffre}!coffres.h@{coffres.h}}
-\doxysubsubsection{\texorpdfstring{nom\_coffre\_to\_type\_coffre()}{nom\_coffre\_to\_type\_coffre()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{coffres_8h_a00a8529a492da49a620058ce9c9e86ec}{type\+\_\+coffre\+\_\+t}} nom\+\_\+coffre\+\_\+to\+\_\+type\+\_\+coffre (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom\+\_\+coffre }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{coffres_8h_add26f80bfe853e6f02c6d0e6e633d8a5}\label{coffres_8h_add26f80bfe853e6f02c6d0e6e633d8a5}} 
+\index{coffres.h@{coffres.h}!inverser\_direction@{inverser\_direction}}
+\index{inverser\_direction@{inverser\_direction}!coffres.h@{coffres.h}}
+\doxysubsubsection{\texorpdfstring{inverser\_direction()}{inverser\_direction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} inverser\+\_\+direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}}}]{direction }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
-{\em nom\+\_\+coffre} & La chaîne de caractères à convertir \\
+{\em direction} & La direction à inverser \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-Une valeur du type type\+\_\+coffre\+\_\+t représentant le type de coffre 
+Un type t\+\_\+direction\+\_\+1 
 \end{DoxyReturn}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=341pt]{d2/d9c/coffres_8h_a24b867dce7ad1cd18ea7afa0c254f399_cgraph}
+\includegraphics[width=322pt]{d2/d9c/coffres_8h_add26f80bfe853e6f02c6d0e6e633d8a5_icgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+\mbox{\Hypertarget{coffres_8h_a429c13dfc5bc32612208892805c750ad}\label{coffres_8h_a429c13dfc5bc32612208892805c750ad}} 
+\index{coffres.h@{coffres.h}!nom\_coffre\_to\_type\_coffre@{nom\_coffre\_to\_type\_coffre}}
+\index{nom\_coffre\_to\_type\_coffre@{nom\_coffre\_to\_type\_coffre}!coffres.h@{coffres.h}}
+\doxysubsubsection{\texorpdfstring{nom\_coffre\_to\_type\_coffre()}{nom\_coffre\_to\_type\_coffre()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{coffres_8h_a00a8529a492da49a620058ce9c9e86ec}{type\+\_\+coffre\+\_\+t}} nom\+\_\+coffre\+\_\+to\+\_\+type\+\_\+coffre (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom\+\_\+coffre }\end{DoxyParamCaption})}
+
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=303pt]{d2/d9c/coffres_8h_a24b867dce7ad1cd18ea7afa0c254f399_icgraph}
+\includegraphics[width=303pt]{d2/d9c/coffres_8h_a429c13dfc5bc32612208892805c750ad_icgraph}
 \end{center}
 \end{figure}
 

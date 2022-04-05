@@ -5,14 +5,25 @@
 Fichier contenant les codes d\textquotesingle{}erreur du programme.  
 
 
-Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
-\nopagebreak
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{df/d72/code__erreur_8h__dep__incl}
 \end{center}
 \end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{code__erreur_8h_a3d8d9c26c72488a18f77f3cdfa0a30a1}{erreur}}(msg,  code\+\_\+erreur, ...)
+\item 
+\#define \mbox{\hyperlink{code__erreur_8h_a850cf4166d97a3fbf32aa892b7a5963c}{warning}}(msg,  code\+\_\+erreur, ...)
+\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \mbox{\hyperlink{code__erreur_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Énumérations}
 \begin{DoxyCompactItemize}
 \item 
@@ -75,6 +86,59 @@ Ange Despert (\href{mailto:Ange.Despert.Etu@univ-lemans.fr}{\texttt{ Ange.\+Desp
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2022 
 \end{DoxyCopyright}
+
+
+\doxysubsection{Documentation des macros}
+\mbox{\Hypertarget{code__erreur_8h_a3d8d9c26c72488a18f77f3cdfa0a30a1}\label{code__erreur_8h_a3d8d9c26c72488a18f77f3cdfa0a30a1}} 
+\index{code\_erreur.h@{code\_erreur.h}!erreur@{erreur}}
+\index{erreur@{erreur}!code\_erreur.h@{code\_erreur.h}}
+\doxysubsubsection{\texorpdfstring{erreur}{erreur}}
+{\footnotesize\ttfamily \#define erreur(\begin{DoxyParamCaption}\item[{}]{msg,  }\item[{}]{code\+\_\+erreur,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                                                                         \(\backslash\)}
+\DoxyCodeLine{        char *msp = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}) * (500));                                             \(\backslash\)}
+\DoxyCodeLine{        char *mspbis = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}) * (500));                                          \(\backslash\)}
+\DoxyCodeLine{        sprintf(msp, msg, \#\#\_\_VA\_ARGS\_\_);                                                     \(\backslash\)}
+\DoxyCodeLine{        SDL\_LogError(SDL\_LOG\_CATEGORY\_APPLICATION, \textcolor{stringliteral}{"\%s\(\backslash\)nErreur : 0x\%X\(\backslash\)n"}, msp, code\_erreur);  \(\backslash\)}
+\DoxyCodeLine{        sprintf(mspbis, \textcolor{stringliteral}{"\%s\(\backslash\)nErreur : 0x\%X\(\backslash\)n"}, msp, code\_erreur);                             \(\backslash\)}
+\DoxyCodeLine{        SDL\_ShowSimpleMessageBox(SDL\_MESSAGEBOX\_ERROR, \textcolor{stringliteral}{"Erreur"}, mspbis, NULL);               \(\backslash\)}
+\DoxyCodeLine{        free(msp);                                                                            \(\backslash\)}
+\DoxyCodeLine{        free(mspbis);                                                                         \(\backslash\)}
+\DoxyCodeLine{        fermer\_programme(code\_erreur);                                                        \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{code__erreur_8h_a850cf4166d97a3fbf32aa892b7a5963c}\label{code__erreur_8h_a850cf4166d97a3fbf32aa892b7a5963c}} 
+\index{code\_erreur.h@{code\_erreur.h}!warning@{warning}}
+\index{warning@{warning}!code\_erreur.h@{code\_erreur.h}}
+\doxysubsubsection{\texorpdfstring{warning}{warning}}
+{\footnotesize\ttfamily \#define warning(\begin{DoxyParamCaption}\item[{}]{msg,  }\item[{}]{code\+\_\+erreur,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                                                                        \(\backslash\)}
+\DoxyCodeLine{        char *msp = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}) * (500));                                            \(\backslash\)}
+\DoxyCodeLine{        char *mspbis = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}) * (500));                                         \(\backslash\)}
+\DoxyCodeLine{        sprintf(msp, msg, \#\#\_\_VA\_ARGS\_\_);                                                    \(\backslash\)}
+\DoxyCodeLine{        SDL\_LogWarn(SDL\_LOG\_CATEGORY\_APPLICATION, \textcolor{stringliteral}{"\%s\(\backslash\)nErreur : 0x\%X\(\backslash\)n"}, msp, code\_erreur);  \(\backslash\)}
+\DoxyCodeLine{        sprintf(mspbis, \textcolor{stringliteral}{"\%s\(\backslash\)nErreur : 0x\%X\(\backslash\)n"}, msp, code\_erreur);                            \(\backslash\)}
+\DoxyCodeLine{        SDL\_ShowSimpleMessageBox(SDL\_MESSAGEBOX\_WARNING, \textcolor{stringliteral}{"Attention"}, mspbis, NULL);         \(\backslash\)}
+\DoxyCodeLine{        free(msp);                                                                           \(\backslash\)}
+\DoxyCodeLine{        free(mspbis);                                                                        \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\Hypertarget{code__erreur_8h_a2156a134798b01e3fd1fe853a1943418}\label{code__erreur_8h_a2156a134798b01e3fd1fe853a1943418}} 
+\index{code\_erreur.h@{code\_erreur.h}!err\_t@{err\_t}}
+\index{err\_t@{err\_t}!code\_erreur.h@{code\_erreur.h}}
+\doxysubsubsection{\texorpdfstring{err\_t}{err\_t}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{code__erreur_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}}}
+
 
 
 \doxysubsection{Documentation du type de l\textquotesingle{}énumération}

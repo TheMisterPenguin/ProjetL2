@@ -10,6 +10,7 @@
 #include <coffres.h>
 #include <fonctions.h>
 #include <personnage.h>
+#include <sorts.h>
 
 /**
  * \file map.c
@@ -406,24 +407,71 @@ t_aff * texture_map(const t_map * map){
     return map->text_sol;
 }
 
-void detruire_map(t_map **map){
-    
+void detruire_map(t_map **map, joueur_t *joueurs[], unsigned short int nb_joueurs){
+
+    /* Destruction des collisions */
+    en_tete((*map)->liste_collisions);
+
+    while (!hors_liste((*map)->liste_collisions))
+    {
+        SDL_Rect *temp = valeur_elt((*map)->liste_collisions); /* On parcourt la liste des collisions de la map */
+
+        for (unsigned short int i = 0; i < nb_joueurs; i++) /* On vérifie que ce n'est pas une collision de joueur */
+        {
+            if (i == 0)
+            {                                                         /* Joueur 1 */
+                if (temp == &joueurs[0]->statut->vrai_zone_collision) /* On évite la collision du joueur (variable statique) */
+                    goto next_collision;                              /* On passe à la collision suivante */
+            }
+            else
+            {                                                         /* Les autres joueurs */
+                if (temp == &joueurs[0]->statut->vrai_zone_collision) /* On évite la collision du joueur (variable statique) */
+                    goto next_collision;                              /* On passe à la collision suivante */
+            }
+        }
+
+        en_tete((*map)->liste_monstres); /* On vérifie que la coliision n'est pas celle d'un monstre */
+
+        while(!hors_liste((*map)->liste_monstres)){
+            monstre_t *monstre_temp = valeur_elt((*map)->liste_monstres);
+            if(temp == &monstre_temp->collision)
+                goto next_collision; /* On passe à la collision suivante */
+
+            suivant((*map)->liste_monstres);
+        }
+
+        en_tete((*map)->liste_sorts); /* On vérifie que la coliision n'est pas celle d'un sort */
+
+        while(!hors_liste((*map)->liste_sorts)){
+            sort_t *sort_temp = valeur_elt((*map)->liste_sorts);
+            if(temp == &sort_temp->collision)
+                goto next_collision; /* On passe à la collision suivante */
+            suivant((*map)->liste_sorts);
+        }
+
+        en_tete((*map)->liste_coffres); /* On vérifie que la coliision n'est pas celle d'un coffre */
+
+        while(!hors_liste((*map)->liste_coffres)){
+            coffre_t *coffre_temp = valeur_elt((*map)->liste_coffres);
+            if(temp == &coffre_temp->collision)
+                goto next_collision; /* On passe à la collision suivante */
+            suivant((*map)->liste_coffres);
+        }
+
+        free(temp); /* On libère la mémoire allouée */
+    next_collision:
+        suivant((*map)->liste_collisions); /* On passe à la collision suivante */
+    }
+
+    /* Enfin, on dédruit la liste */
+    detruire_liste(&(*map)->liste_collisions);
+
     /* Destruction des monstres */
     detruire_liste(&(*map)->liste_monstres);
 
     /* Destruction des sorts */
     detruire_liste(&(*map)->liste_sorts);
 
-    /* Destruction des collisions */
-    en_tete((*map)->liste_collisions);
-
-    while(!hors_liste((*map)->liste_collisions)){
-        SDL_Rect *temp = valeur_elt((*map)->liste_collisions);
-        //free(temp);
-        suivant((*map)->liste_collisions);
-    }
-
-    detruire_liste(&(*map)->liste_collisions);
 
     /* Destruction des textures */
 
@@ -455,7 +503,7 @@ void transition(t_map **actuelle, unsigned int num_map, joueur_t ** joueurs, uns
     }
 
     sprintf(nom_fichier_map, "map/%d.json", num_map);
-    detruire_map(actuelle);
+    detruire_map(actuelle, joueurs, nb_joueurs);
     detruire_texture(&fenetre_finale);
     *actuelle = charger_map(nom_fichier_map);
     init_sousbuffer(*actuelle, *joueurs);

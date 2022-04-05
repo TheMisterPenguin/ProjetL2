@@ -5,8 +5,7 @@
 Fichier contenant toutes les fonctions concernant les sorts.  
 
 
-Graphe des dépendances par inclusion de sorts.\+c\+:
-\nopagebreak
+Graphe des dépendances par inclusion de sorts.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,13 +15,13 @@ Graphe des dépendances par inclusion de sorts.\+c\+:
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{sorts_8c_ac32dbffac262dd38829f3400505231a6}{init\+\_\+liste\+\_\+base\+\_\+sort}} ()
+void \mbox{\hyperlink{sorts_8c_ae82fb5b016e1dedf4926b1d5434ce4c3}{init\+\_\+liste\+\_\+base\+\_\+sort}} (liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$\mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}})
 \item 
 void \mbox{\hyperlink{sorts_8c_ae58ae0350fa823a85aaff7b988b4ce9c}{creer\+\_\+sort\+\_\+monstre}} (monstre\+\_\+t $\ast$monstre, joueur\+\_\+t $\ast$joueur)
 \item 
 void \mbox{\hyperlink{sorts_8c_a780d77b20da701ce7042b3aaed80fdc2}{orienter\+\_\+sort\+\_\+vers\+\_\+joueur}} (monstre\+\_\+t $\ast$monstre, sort\+\_\+t $\ast$sort, joueur\+\_\+t $\ast$joueur)
 \item 
-void \mbox{\hyperlink{sorts_8c_a73273d4f131f8c311644f6ceaff90ee6}{action\+\_\+sort}} (sort\+\_\+t $\ast$sort)
+void \mbox{\hyperlink{sorts_8c_a5a9bb7c6be7a6d5073e48d50f014e299}{action\+\_\+sort}} (sort\+\_\+t $\ast$sort, joueur\+\_\+t joueur\mbox{[}2\mbox{]})
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -47,18 +46,24 @@ Copyright (c) 2022
 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{sorts_8c_a73273d4f131f8c311644f6ceaff90ee6}\label{sorts_8c_a73273d4f131f8c311644f6ceaff90ee6}} 
+\mbox{\Hypertarget{sorts_8c_a5a9bb7c6be7a6d5073e48d50f014e299}\label{sorts_8c_a5a9bb7c6be7a6d5073e48d50f014e299}} 
 \index{sorts.c@{sorts.c}!action\_sort@{action\_sort}}
 \index{action\_sort@{action\_sort}!sorts.c@{sorts.c}}
 \doxysubsubsection{\texorpdfstring{action\_sort()}{action\_sort()}}
-{\footnotesize\ttfamily void action\+\_\+sort (\begin{DoxyParamCaption}\item[{sort\+\_\+t $\ast$}]{sort }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void action\+\_\+sort (\begin{DoxyParamCaption}\item[{sort\+\_\+t $\ast$}]{sort,  }\item[{joueur\+\_\+t}]{joueur\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
 
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=270pt]{d0/d58/sorts_8c_a73273d4f131f8c311644f6ceaff90ee6_icgraph}
+\includegraphics[width=350pt]{d0/d58/sorts_8c_a5a9bb7c6be7a6d5073e48d50f014e299_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{d0/d58/sorts_8c_a5a9bb7c6be7a6d5073e48d50f014e299_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{sorts_8c_ae58ae0350fa823a85aaff7b988b4ce9c}\label{sorts_8c_ae58ae0350fa823a85aaff7b988b4ce9c}} 
@@ -67,33 +72,31 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{creer\_sort\_monstre()}{creer\_sort\_monstre()}}
 {\footnotesize\ttfamily void creer\+\_\+sort\+\_\+monstre (\begin{DoxyParamCaption}\item[{monstre\+\_\+t $\ast$}]{monstre,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d0/d58/sorts_8c_ae58ae0350fa823a85aaff7b988b4ce9c_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=307pt]{d0/d58/sorts_8c_ae58ae0350fa823a85aaff7b988b4ce9c_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{sorts_8c_ac32dbffac262dd38829f3400505231a6}\label{sorts_8c_ac32dbffac262dd38829f3400505231a6}} 
+\mbox{\Hypertarget{sorts_8c_ae82fb5b016e1dedf4926b1d5434ce4c3}\label{sorts_8c_ae82fb5b016e1dedf4926b1d5434ce4c3}} 
 \index{sorts.c@{sorts.c}!init\_liste\_base\_sort@{init\_liste\_base\_sort}}
 \index{init\_liste\_base\_sort@{init\_liste\_base\_sort}!sorts.c@{sorts.c}}
 \doxysubsubsection{\texorpdfstring{init\_liste\_base\_sort()}{init\_liste\_base\_sort()}}
-{\footnotesize\ttfamily void init\+\_\+liste\+\_\+base\+\_\+sort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void init\+\_\+liste\+\_\+base\+\_\+sort (\begin{DoxyParamCaption}\item[{liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$}]{liste\+\_\+base\+\_\+monstres }\end{DoxyParamCaption})}
 
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=268pt]{d0/d58/sorts_8c_ac32dbffac262dd38829f3400505231a6_icgraph}
+\includegraphics[width=268pt]{d0/d58/sorts_8c_ae82fb5b016e1dedf4926b1d5434ce4c3_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{sorts_8c_a780d77b20da701ce7042b3aaed80fdc2}\label{sorts_8c_a780d77b20da701ce7042b3aaed80fdc2}} 
@@ -102,16 +105,14 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{orienter\_sort\_vers\_joueur()}{orienter\_sort\_vers\_joueur()}}
 {\footnotesize\ttfamily void orienter\+\_\+sort\+\_\+vers\+\_\+joueur (\begin{DoxyParamCaption}\item[{monstre\+\_\+t $\ast$}]{monstre,  }\item[{sort\+\_\+t $\ast$}]{sort,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=340pt]{d0/d58/sorts_8c_a780d77b20da701ce7042b3aaed80fdc2_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

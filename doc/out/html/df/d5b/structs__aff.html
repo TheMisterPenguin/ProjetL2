@@ -93,7 +93,7 @@ Attributs publics</h2></td></tr>
 <tr class="separator:a834fbb65cd111e547c54c274c5b58fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Structure de texture.</p>
+<div class="textblock"><p>Définition de la structure de texture.</p>
 <h1><a class="anchor" id="autotoc_md0"></a>
 Le but de la structure</h1>
 <p>Cette structure à pour but de permettre l'affichage d'une texture à l'écran de manière précise. Ainsi, on peut facilement placer une texture où l'on veut sans savoir utiliser la SDL.</p>
@@ -106,8 +106,11 @@ Le but de la structure</h1>
 <li>width : La largeur de la texture. Cette valeur est obtenue grâce à une requête SDL et renseignée dans la structure par la fonction creer_texture.</li>
 <li>height : La hauteur de la texture. Cette valeur est obtenue grâce à une requête SDL et renseignée dans la structure par la fonction creer_texture.</li>
 <li>multipli_taille : Un multiplicateur qui permet de modifier la taille de la texture. Il s'agit de celui que l'on renseigne dans la fonction creer_texture.</li>
-<li>duree_frame_anim : entier qui permet de savoir combien de temps une frame dure. C'est à dire, combien de temps une frame dure sur l'écran. </li>
+<li>duree_frame_anim : entier qui permet de savoir combien de temps une frame dure. C'est à dire, combien de temps une frame dure sur l'écran.</li>
 </ul>
+<p>Cette définition est la pour éviter une inclusion mutuelle des fichiers <a class="el" href="../../d2/d9c/coffres_8h.html">coffres.h</a> et <a class="el" href="../../d5/dae/affichage_8h.html">affichage.h</a> .</p>
+<p>Cette définition est la pour éviter une inclusion mutuelle des fichiers <a class="el" href="../../dc/db7/map_8h.html">map.h</a> et <a class="el" href="../../d5/dae/affichage_8h.html">affichage.h</a> .</p>
+<p>Cette définition est la pour éviter une inclusion mutuelle des fichiers <a class="el" href="../../d4/d0b/objet_8h.html">objet.h</a> et <a class="el" href="../../d5/dae/affichage_8h.html">affichage.h</a> . </p>
 </div><h2 class="groupheader">Documentation des données membres</h2>
 <a id="a7f7e29a1c85002df85bc122f6836b20c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f7e29a1c85002df85bc122f6836b20c">&#9670;&nbsp;</a></span>aff_fenetre</h2>
