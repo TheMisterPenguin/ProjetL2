@@ -234,6 +234,7 @@ int main(int argc, char** argv)
                 if(joueur1->statut->action == ATTAQUE || joueur1->statut->action == ATTAQUE_CHARGEE){
                     SDL_Rect * result = zone_en_dehors_hitbox(&(joueur1->statut->vrai_zone_collision), joueur1->textures_joueur->liste[0]->aff_fenetre, joueur1->statut->orient_att);
                     SDL_RenderDrawRect(rendu_principal,result);
+                    free(result);
                 }
 
                 en_tete(map->liste_collisions);
@@ -332,9 +333,6 @@ int main(int argc, char** argv)
             compteur = 0;
         compteur++;
 
-        #ifdef _DEBUG_COLLISION
-                free(hors_hitbox);
-        #endif
     }
 
     return AUCUNE_ERREUR;

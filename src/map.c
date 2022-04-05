@@ -593,3 +593,27 @@ void afficher_zone_tp(zone_tp *z){
     SDL_RenderDrawRect(rendu_principal, &z->zone);
     SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
 }
+
+/**
+ * \fn bool hors_map_monstre(SDL_Rect * collision, t_map * map);
+ * \brief Fonction qui regarde si l'entité est hors_map
+ * \author Bruneau Antoine
+ * \param collision la collision de l'entité
+ * \param map la map
+ * \return bool 1 si l'entité est en dehors de la map, 0 sinon
+ */
+bool hors_map_monstre(SDL_Rect * collision, t_map * map){
+    //test gauche
+    if(collision->x <= 0)
+        return 1;
+    //test haut
+    if(collision->y <= 0)
+        return 1;
+    //test droit
+    if(collision->w + collision->x >= map->text_map->width)
+        return 1;
+    //test bas
+    if(collision->h + collision->y >= map->text_map->height)
+        return 1;
+    return 0;
+}

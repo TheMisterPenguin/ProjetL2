@@ -12,19 +12,38 @@
 #ifndef __BOSS_H__
 #define __BOSS_H__
 
-#define CHEMIN_BOSS "ressources/sprite/boss.bmp"
+#include <definition_commun.h>
 
+#define CHEMIN_BOSS "ressources/sprite/boss.bmp"
 #define DUREE_CLONAGE 60
 
-typedef enum {PRINCIPAL,CLONE}type_boss_1_t;
-typedef enum {AVANT_ATTAQUE,AVANT_DISPARITION,DISPARITION,APPARITION,DEPLACEMENT,ATTAQUE,MORT,CLONAGE,SOMMEIL,BLESSE}action_boss_1_t;
+typedef enum 
+{
+    PRINCIPAL, /**<le boss*/
+    CLONE  /**<un clone du boss*/
+}type_boss_1_t;
+
+typedef enum
+{   
+    AVANT_ATTAQUE,
+    AVANT_DISPARITION,
+    DISPARITION,
+    APPARITION,
+    DEPLACEMENT,
+    ATTAQUE,
+    MORT,
+    CLONAGE,
+    SOMMEIL,
+    BLESSE
+}action_boss_1_t;
+
 
 typedef struct boss_s{
     type_boss_1_t type;
     int pdv;
     int attaque;
     int xp;
-    position_t cible;
+    point cible;
     action_boss_1_t action;
     int duree;
     SDL_Rect collision;

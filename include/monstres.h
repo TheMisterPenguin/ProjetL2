@@ -13,7 +13,6 @@
 #include "definition_commun.h"
 #include "affichage.h"
 #include "map.h"
-#include "personnage.h"
 
 #define DISTANCE_AGRO 130           /* distance à partir de laquelle le joueur n'est pas détecté par les monstres*/
 #define DUREE_MONSTRE_MARCHER 60
@@ -32,7 +31,6 @@ typedef enum
 {   
     WITCHER,
     KNIGHT,
-    BOSS,
     TYPE_MONSTRE_INCONNU /* pour pouvoir retourner une erreur */
 }type_monstre_t;
 

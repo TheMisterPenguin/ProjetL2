@@ -64,7 +64,6 @@ extern SDL_Renderer *rendu_principal;
 extern SDL_Window *fenetre_sous_rendu;
 extern SDL_Renderer *sous_rendu;
 extern bool running;
-extern SDL_Rect * hors_hitbox;
 
 #ifndef _WIN32
 #define SAVE_PATH "Bloody_Sanada"

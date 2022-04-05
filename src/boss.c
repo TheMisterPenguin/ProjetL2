@@ -3,7 +3,7 @@
 #include <sorts.h>
 #include <monstres.h>
 
-void deplacement_boss_aleatoir(boss_t * boss,){
+void deplacement_boss_aleatoir(boss_t * boss){
     
 }
 
@@ -23,7 +23,12 @@ boss_t * creer_boss_clone(boss_t * boss, t_aff * texture){
     return clone;
 }
 
-
+/**
+ * \fn void affichage_chargement_attaque_boss(t_aff * boule_1, t_aff * boule_2, int phase);
+ * \brief   animation lancement d'un sort
+ * \author Bruneau Antoine
+ * \param sort le sort à détruire
+ */
 void affichage_chargement_attaque_boss(t_aff * boule_1, t_aff * boule_2, int phase){
     switch(phase){
         case 1: 
@@ -112,10 +117,6 @@ void afficher_bosses(boss_t * boss[3]){
             action_boss_1(boss[i]);
         }
     }
-
-
-
-
 
     if(boss[0].action == ATTAQUE){
         t_aff * boule_1 = creer_texture(PATH_SPELL_BOSS,);
