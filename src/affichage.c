@@ -332,24 +332,26 @@ t_aff *next_frame_joueur(joueur_t *j)
         (statut->duree)--;
 
     if(statut->action == J_BLESSE){
-        /* faire clignoter le personnage */
+        /* action non terminé */
         if(statut->duree > 0){
+            /* faire clignoter le joueur en renvoyant NULL 1 fois sur 2*/
             if(compteur % 2)
                 return NULL;
         }
+        /* action terminé */
         else{
             statut->action = RIEN;
             statut->orient_dep = current_frame_y(statut->texture_prec);
             statut->en_mouvement = faux;
         }
     }
-
-    if (statut->action == ATTAQUE_OU_CHARGER && statut->duree == 0)
+    if (statut->action == ATTAQUE_OU_CHARGER && statut->duree <= 0)
         statut->action = CHARGER;
 
+    /* faire marcher le joueur lorsqu'il n'éffectue aucune action particulière et qu'il est en mouvement */
     if ((statut->action == RIEN || statut->action == ATTAQUE_OU_CHARGER) && statut->en_mouvement)
     {
-        if ((compteur % 5) == 0) /*compteur%5 pour la vitesse d'affichage*/
+        if ((compteur % 5) == 0) /*vitesse d'animation*/
             if (statut->bouclier_equipe)
             {
                 next_frame_y_indice(textures[TEXT_MARCHER_BOUCLIER], statut->orient_dep);
@@ -362,6 +364,7 @@ t_aff *next_frame_joueur(joueur_t *j)
                 next_frame_x(textures[TEXT_MARCHER]);
                 return textures[TEXT_MARCHER];
             }
+        /* ne passe pas à l'animation suivant */
         else
             return statut->texture_prec;
     }
@@ -369,25 +372,31 @@ t_aff *next_frame_joueur(joueur_t *j)
     {
         if (statut->action == CHARGER)
         {
-            if ((compteur % 4) == 0) /*compteur%5 pour la vitesse d'affichage*/
-            { 
+            if ((compteur % 4) == 0) /*vitesse d'animation*/
+            {
+                /* scintillement de l'épée */
                 next_frame_x(textures[TEXT_CHARGER]);
+            
                 if(statut->en_mouvement)
                     next_frame_y_indice(textures[TEXT_CHARGER], statut->orient_dep*2 + (textures[TEXT_CHARGER]->frame_anim->x) / (int) LONGUEUR_ENTITE );
+                
                 else
                     next_frame_y_indice(textures[TEXT_CHARGER], statut->orient_dep*2);
                 return textures[TEXT_CHARGER];
             }
+            /* ne passe pas à l'animation suivant */
             else
                 return statut->texture_prec;
         }
         else if (statut->action == ATTAQUE)
         {
-            if ((compteur % 3) == 0) /*compteur%4 pour la vitesse d'affichage*/
+            if ((compteur % 3) == 0) /*vitesse d'animation*/
             { 
                 next_frame_x(textures[TEXT_ATTAQUE]);
+                /* mouvement de l'épée dans le sens anti-horraire pour les directions OUEST, NORD et SUD */
                 if(statut->orient_dep != EST_1)
                     statut->orient_att = (statut->orient_att + 7) % 8;
+                /* mouvement de l'épée dans le sens horraire pour la direction EST */
                 else
                     statut->orient_att = (statut->orient_att + 1) % 8;
                 /*si il a fait le tour du fichier sprite attaque, l'action est terminée*/
@@ -397,15 +406,18 @@ t_aff *next_frame_joueur(joueur_t *j)
                 }
                 return textures[TEXT_ATTAQUE];
             }
+            /* ne passe pas à l'animation suivant */
             else
                 return statut->texture_prec;
         }
         else if (statut->action == ATTAQUE_CHARGEE)
         {
-            if ((compteur % 2) == 0) /*compteur%2 pour la vitesse d'affichage*/
-            {
+            if ((compteur % 2) == 0) /*vitesse d'animation*/
+            {   
+                /* mouvement de l'épée dans le sens horraire */
                 next_frame_x(textures[TEXT_ATTAQUE_CHARGEE]);
                 statut->orient_att = (statut->orient_att + 1) % 8;
+
                 /*si il a fait le tour du fichier sprite attaque, l'action est terminée*/
                 if( (statut->orient_att) == (statut->orient_dep*2) && (statut->duree < (DUREE_ATTAQUE_CHARGEE-4) ) ){
                     statut->action = RIEN;
@@ -414,8 +426,10 @@ t_aff *next_frame_joueur(joueur_t *j)
                 return textures[TEXT_ATTAQUE_CHARGEE];
             }
             else
+            /* ne passe pas à l'animation suivant */
                 return statut->texture_prec;
         }
+        /* lorsque le joueur est immobile */
         else if (statut->action == RIEN){
             if(statut->bouclier_equipe == vrai)
                 return textures[TEXT_MARCHER_BOUCLIER];
@@ -435,7 +449,9 @@ void afficher_monstres(list * liste_monstre, joueur_t * joueur){
     en_tete(liste_monstre);
     while(!hors_liste(liste_monstre)){
         monstre = valeur_elt(liste_monstre);
+        /* mettre à jour la texture du monstre */
         action_monstre(monstre, joueur);
+        /* clignotement du monstre lorsqu'il est bléssé (l'affiche 1 fois sur 2) */
         if(monstre->action != MONSTRE_BLESSE || (monstre->action == MONSTRE_BLESSE && compteur%2) )
             afficher_texture(monstre->texture ,rendu_principal);
         suivant(liste_monstre);
@@ -451,7 +467,7 @@ void afficher_coffres(list * liste_coffre){
     en_tete(liste_coffre);
     while(!hors_liste(liste_coffre)){
         coffre = valeur_elt(liste_coffre);
-            afficher_texture(coffre->texture ,rendu_principal);
+        afficher_texture(coffre->texture ,rendu_principal);
         suivant(liste_coffre);
     }
 }
@@ -465,6 +481,7 @@ void afficher_sorts(list * liste_sorts, joueur_t * joueur){
     en_tete(liste_sorts);
     while(!hors_liste(liste_sorts)){
         sort = valeur_elt(liste_sorts);
+        /* mettre à jour la texture du sort */
         action_sort(sort, joueur);
         afficher_texture(sort->texture ,rendu_principal);
         suivant(liste_sorts);
@@ -935,7 +952,8 @@ bool deplacement_y_joueur_secondaire(t_map *m, joueur_t * joueur, int y, SDL_Rec
 }
 
 void text_copier_position(t_aff * a_modifier, const t_aff * const original){
-    a_modifier->aff_fenetre = original->aff_fenetre;
+    a_modifier->aff_fenetre->x = original->aff_fenetre->x;
+    a_modifier->aff_fenetre->y = original->aff_fenetre->y;
 }
 
 
@@ -1102,6 +1120,7 @@ t_aff * next_frame_animation(joueur_t * joueur){ //actualiser position anim!
     statut_t * statut = joueur->statut;
 
      statut->duree_anim--;
+
     if (statut->animation == SOIN)
     {
         if ((compteur % 2) == 0 || statut->duree_anim == DUREE_SOIN) //cadence d'affichage et avec premier affichage immédiat dans tous les cas
@@ -1115,16 +1134,21 @@ t_aff * next_frame_animation(joueur_t * joueur){ //actualiser position anim!
         }
             return heal;
     }
+
     if (statut->animation == BLOQUER)
     {
+        /* animation terminé */
         if (statut->duree_anim <= 0){
                 statut->animation = RIEN;
                 statut->duree_anim = DUREE_BLOQUER*1.5;
         }
+        /* animation non terminé */
         else
-        {
-            if ((compteur % 2) == 0)
-            {
+        {   
+            /* clignotement de l'animtion bouclier */
+            if ((compteur % 2) == 0) 
+            {   
+                /* centrer l'animation sur la texture du joueur */
                 place_rect_center_from_point(bloquer->aff_fenetre, get_rect_center_coord(joueur->textures_joueur->liste[0]->aff_fenetre) );
                 return bloquer;
             }

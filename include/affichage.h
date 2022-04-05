@@ -545,20 +545,20 @@ extern SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 extern void info_texture(t_aff * texture);
 
 /**
-* \fn extern int current_frame_x(t_aff * texture);
+ * \fn int current_frame_x(t_aff * texture);
  * \brief Fonction qui donne l'indice sur l'axe des abscisses actuelle de la texture 
- *
+ * \author Bruneau Antoine
  * \param texture une texture
- * \return un entier correspondant à l'indice
+ * \return int un entier correspondant à l'indice
  */
 extern int current_frame_x(t_aff * texture);
 
 /**
-* \fn extern int current_frame_y(t_aff * texture);
+ * \fn int current_frame_y(t_aff * texture);
  * \brief Fonction qui donne l'indice sur l'axe des ordonnées actuelle de la texture 
- *
+ * \author Bruneau Antoine
  * \param texture une texture
- * \return un entier correspondant à l'indice
+ * \return int un entier correspondant à l'indice
  */
 extern int current_frame_y(t_aff * texture);
 

@@ -7,7 +7,7 @@
  * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
  * \brief Programme de test du module personnage
  * \version 0.2
- * \date 02/04/2022
+ * \date 05/04/2022
  * \copyright Copyright (c) 2022
  */
 
@@ -26,8 +26,8 @@ void creation_personnage(void) {
     //statistiques
     CU_ASSERT_EQUAL(perso_principal->niveau, 0);
     CU_ASSERT_EQUAL(perso_principal->xp, 0);
-    CU_ASSERT_EQUAL(perso_principal->maxPdv, 10);
-    CU_ASSERT_EQUAL(perso_principal->pdv, 10);
+    CU_ASSERT_EQUAL(perso_principal->maxPdv, 100);
+    CU_ASSERT_EQUAL(perso_principal->pdv, 50);
     CU_ASSERT_EQUAL(perso_principal->attaque, 10);
     CU_ASSERT_EQUAL(perso_principal->defense, 10);
     CU_ASSERT_EQUAL(perso_principal->vitesse, 1);
@@ -58,15 +58,14 @@ void creation_personnage(void) {
     CU_ASSERT_NOT_EQUAL(perso_principal->textures_joueur, NULL);
 }
 
-void modification_personnage(void) {
-}
-
-
 int main(){
     init();
 
+    charger_base_coffre("coffres.json", &liste_base_coffres);
     charger_base_monstre("monstres.json", &liste_base_monstres);
+
     map = charger_map("../bin/map/1.json");
+    init_animations();
     
     CU_pSuite pSuite = NULL;
     
@@ -80,9 +79,7 @@ int main(){
     }
     
 
-    if ( (NULL == CU_add_test(pSuite, "creation_personnage", creation_personnage)) ||
-        (NULL == CU_add_test(pSuite, "modification_personnage", modification_personnage))
-        )
+    if (NULL == CU_add_test(pSuite, "creation_personnage", creation_personnage))
     {
         CU_cleanup_registry();
         return CU_get_error();

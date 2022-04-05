@@ -33,6 +33,7 @@ void fermer_programme(int code_erreur){
     en_tete(liste_animations);
     while(!hors_liste(liste_animations)){
         text_anim = valeur_elt(liste_animations);
+        free(text_anim->aff_fenetre);
         text_anim->aff_fenetre = NULL;
         suivant(liste_animations);
     }
@@ -161,7 +162,7 @@ void init_affichage(){
  */
 void init(){
     srand(time(NULL)); //initialisation des nombres aléatoires
-    f_close = init_liste(NULL, NULL, NULL); 
+    f_close = init_liste(NULL, NULL, NULL);
 
     if(!f_close)
         erreur("Erreur lors de l'initialisation de la liste de fermeture", ERREUR_LISTE);
