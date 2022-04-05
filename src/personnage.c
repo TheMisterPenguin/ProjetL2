@@ -151,7 +151,7 @@ bool sauv_existe(char *nom_sauv){
 	return faux;
 }
 
-joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj){
+joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj, joueur_t *joueurs[], unsigned short int nb_joueurs){
 
 	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Chargement de la sauvegarde...\n");
 
@@ -250,7 +250,7 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj){
     }
 
     sprintf(nom_fichier_map, "map/%d.json", json_object_get_int(id_map));
-    detruire_map(&map);
+    detruire_map(&map,  joueurs, nb_joueurs);
     detruire_texture(&fenetre_finale);
     map = charger_map(nom_fichier_map);
 

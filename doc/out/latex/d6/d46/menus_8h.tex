@@ -5,36 +5,25 @@
 Définitions relatives à la gestion des menus du jeu.  
 
 
-Graphe des dépendances par inclusion de menus.\+h\+:
-\nopagebreak
+Graphe des dépendances par inclusion de menus.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=199pt]{de/d74/menus_8h__incl}
 \end{center}
 \end{figure}
-Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
-\nopagebreak
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=220pt]{df/d9f/menus_8h__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Énumérations}
-\begin{DoxyCompactItemize}
-\item 
-enum \mbox{\hyperlink{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4ba}{menus\+\_\+t}} \{ \mbox{\hyperlink{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4baad58838bb1d9efb9bd2361ba7a1bece91}{J\+EU}}, 
-\mbox{\hyperlink{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4baa56b36d0d0bb01b339cf1041adc08e262}{P\+A\+U\+SE}}, 
-\mbox{\hyperlink{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4baab393d5de1ff6210cd0b14c1ddc7bfa0b}{P\+R\+I\+N\+C\+I\+P\+AL}}, 
-\mbox{\hyperlink{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4baaa2b413b30c704acd8ae296fffadd1d73}{I\+N\+V\+E\+N\+T\+A\+I\+RE}}
- \}
-\end{DoxyCompactItemize}
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{menus_8h_acc47fe54070e003622ad3a68d3d6d310}{afficher\+\_\+menu\+\_\+pause}} (joueur\+\_\+t $\ast$joueur)
-\begin{DoxyCompactList}\small\item\em Affiche le menu pause et gère les interactions avec le joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menus_8h_a1ff516df4d202f56e051c3c040ee87b5}{afficher\+\_\+menu\+\_\+pause}} (joueur\+\_\+t $\ast$joueur\mbox{[}$\,$\mbox{]}, char $\ast$f\+\_\+src\+\_\+objet, unsigned short int nb\+\_\+joueurs)
+\item 
 void \mbox{\hyperlink{menus_8h_a4da3c6c1c4423889f8735c91a92e20d9}{afficher\+\_\+menu\+\_\+pause\+\_\+manette}} (joueur\+\_\+t $\ast$joueur)
 \item 
 void \mbox{\hyperlink{menus_8h_a1c8778affd5380fae88f7ce24787c8ea}{afficher\+\_\+menu\+\_\+accueil}} (int $\ast$nb\+\_\+joueur)
@@ -51,8 +40,6 @@ void \mbox{\hyperlink{menus_8h_acd5468808be152074a36a5baca990cfe}{creer\+\_\+inv
 \begin{DoxyCompactList}\small\item\em Créer l\textquotesingle{}inventaire du joueur 2. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4ba}{menus\+\_\+t}} \mbox{\hyperlink{menus_8h_a5754038b10e89bfad05455ed7f82cd00}{menus}}
 \item 
 t\+\_\+aff $\ast$ \mbox{\hyperlink{menus_8h_a474b2217a25d81cac4b50e464f19c488}{text\+\_\+pause}}
 \item 
@@ -79,33 +66,6 @@ Copyright (c) 2022
 \end{DoxyCopyright}
 
 
-\doxysubsection{Documentation du type de l\textquotesingle{}énumération}
-\mbox{\Hypertarget{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4ba}\label{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4ba}} 
-\index{menus.h@{menus.h}!menus\_t@{menus\_t}}
-\index{menus\_t@{menus\_t}!menus.h@{menus.h}}
-\doxysubsubsection{\texorpdfstring{menus\_t}{menus\_t}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4ba}{menus\+\_\+t}}}
-
-Différentes interfaces du jeu \begin{DoxyEnumFields}{Valeurs énumérées}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{JEU@{JEU}!menus.h@{menus.h}}\index{menus.h@{menus.h}!JEU@{JEU}}}\mbox{\Hypertarget{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4baad58838bb1d9efb9bd2361ba7a1bece91}\label{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4baad58838bb1d9efb9bd2361ba7a1bece91}} 
-J\+EU&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{PAUSE@{PAUSE}!menus.h@{menus.h}}\index{menus.h@{menus.h}!PAUSE@{PAUSE}}}\mbox{\Hypertarget{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4baa56b36d0d0bb01b339cf1041adc08e262}\label{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4baa56b36d0d0bb01b339cf1041adc08e262}} 
-P\+A\+U\+SE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{PRINCIPAL@{PRINCIPAL}!menus.h@{menus.h}}\index{menus.h@{menus.h}!PRINCIPAL@{PRINCIPAL}}}\mbox{\Hypertarget{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4baab393d5de1ff6210cd0b14c1ddc7bfa0b}\label{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4baab393d5de1ff6210cd0b14c1ddc7bfa0b}} 
-P\+R\+I\+N\+C\+I\+P\+AL&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTAIRE@{INVENTAIRE}!menus.h@{menus.h}}\index{menus.h@{menus.h}!INVENTAIRE@{INVENTAIRE}}}\mbox{\Hypertarget{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4baaa2b413b30c704acd8ae296fffadd1d73}\label{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4baaa2b413b30c704acd8ae296fffadd1d73}} 
-I\+N\+V\+E\+N\+T\+A\+I\+RE&\\
-\hline
-
-\end{DoxyEnumFields}
-
-
 \doxysubsection{Documentation des fonctions}
 \mbox{\Hypertarget{menus_8h_a98b87de7b6779d1ea4db3543621cc3cb}\label{menus_8h_a98b87de7b6779d1ea4db3543621cc3cb}} 
 \index{menus.h@{menus.h}!afficher\_inventaire@{afficher\_inventaire}}
@@ -113,16 +73,14 @@ I\+N\+V\+E\+N\+T\+A\+I\+RE&\\
 \doxysubsubsection{\texorpdfstring{afficher\_inventaire()}{afficher\_inventaire()}}
 {\footnotesize\ttfamily void afficher\+\_\+inventaire (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{S\+D\+L\+\_\+\+Key\+Code}]{touche\+\_\+inventaire }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d6/d46/menus_8h_a98b87de7b6779d1ea4db3543621cc3cb_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -135,16 +93,14 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{afficher\_inventaire\_manette()}{afficher\_inventaire\_manette()}}
 {\footnotesize\ttfamily void afficher\+\_\+inventaire\+\_\+manette (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d6/d46/menus_8h_afcde784ea1d5fb8c9fd6436fa063c5f2_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -157,6 +113,9 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{afficher\_menu\_accueil()}{afficher\_menu\_accueil()}}
 {\footnotesize\ttfamily void afficher\+\_\+menu\+\_\+accueil (\begin{DoxyParamCaption}\item[{int $\ast$}]{nb\+\_\+joueur }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em nb\+\_\+joueur} & Le nombre de joueurs souhaitant commencer une partie \\
@@ -183,8 +142,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{afficher\_menu\_accueil\_manette()}{afficher\_menu\_accueil\_manette()}}
 {\footnotesize\ttfamily void afficher\+\_\+menu\+\_\+accueil\+\_\+manette (\begin{DoxyParamCaption}\item[{int $\ast$}]{nb\+\_\+joueur }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -198,31 +156,25 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \includegraphics[width=283pt]{d6/d46/menus_8h_aa1042f350a66ae56b754f3bf22556405_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{menus_8h_acc47fe54070e003622ad3a68d3d6d310}\label{menus_8h_acc47fe54070e003622ad3a68d3d6d310}} 
+\mbox{\Hypertarget{menus_8h_a1ff516df4d202f56e051c3c040ee87b5}\label{menus_8h_a1ff516df4d202f56e051c3c040ee87b5}} 
 \index{menus.h@{menus.h}!afficher\_menu\_pause@{afficher\_menu\_pause}}
 \index{afficher\_menu\_pause@{afficher\_menu\_pause}!menus.h@{menus.h}}
 \doxysubsubsection{\texorpdfstring{afficher\_menu\_pause()}{afficher\_menu\_pause()}}
-{\footnotesize\ttfamily void afficher\+\_\+menu\+\_\+pause (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void afficher\+\_\+menu\+\_\+pause (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur\mbox{[}$\,$\mbox{]},  }\item[{char $\ast$}]{f\+\_\+src\+\_\+objet,  }\item[{unsigned short int}]{nb\+\_\+joueurs }\end{DoxyParamCaption})}
 
-
-\begin{DoxyParams}{Paramètres}
-{\em joueur} & Joueur qui ouvre le menu \\
-\hline
-\end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d6/d46/menus_8h_acc47fe54070e003622ad3a68d3d6d310_cgraph}
+\includegraphics[width=350pt]{d6/d46/menus_8h_a1ff516df4d202f56e051c3c040ee87b5_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=299pt]{d6/d46/menus_8h_acc47fe54070e003622ad3a68d3d6d310_icgraph}
+\includegraphics[width=299pt]{d6/d46/menus_8h_a1ff516df4d202f56e051c3c040ee87b5_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{menus_8h_a4da3c6c1c4423889f8735c91a92e20d9}\label{menus_8h_a4da3c6c1c4423889f8735c91a92e20d9}} 
@@ -231,16 +183,14 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{afficher\_menu\_pause\_manette()}{afficher\_menu\_pause\_manette()}}
 {\footnotesize\ttfamily void afficher\+\_\+menu\+\_\+pause\+\_\+manette (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d6/d46/menus_8h_a4da3c6c1c4423889f8735c91a92e20d9_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -251,10 +201,12 @@ Voici le graphe des appelants de cette fonction \+:
 \index{menus.h@{menus.h}!creer\_inventaire\_j2@{creer\_inventaire\_j2}}
 \index{creer\_inventaire\_j2@{creer\_inventaire\_j2}!menus.h@{menus.h}}
 \doxysubsubsection{\texorpdfstring{creer\_inventaire\_j2()}{creer\_inventaire\_j2()}}
-{\footnotesize\ttfamily void creer\+\_\+inventaire\+\_\+j2 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void creer\+\_\+inventaire\+\_\+j2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -274,15 +226,12 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{init\_text\_menus()}{init\_text\_menus()}}
 {\footnotesize\ttfamily void init\+\_\+text\+\_\+menus (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 
 \doxysubsection{Documentation des variables}
-\mbox{\Hypertarget{menus_8h_a5754038b10e89bfad05455ed7f82cd00}\label{menus_8h_a5754038b10e89bfad05455ed7f82cd00}} 
-\index{menus.h@{menus.h}!menus@{menus}}
-\index{menus@{menus}!menus.h@{menus.h}}
-\doxysubsubsection{\texorpdfstring{menus}{menus}}
-{\footnotesize\ttfamily \mbox{\hyperlink{menus_8h_a04b2a6ddf4aac2773ff8affc629ee4ba}{menus\+\_\+t}} menus}
-
 \mbox{\Hypertarget{menus_8h_a46857835f05e29154215fa6d272dd48d}\label{menus_8h_a46857835f05e29154215fa6d272dd48d}} 
 \index{menus.h@{menus.h}!text\_accueil@{text\_accueil}}
 \index{text\_accueil@{text\_accueil}!menus.h@{menus.h}}

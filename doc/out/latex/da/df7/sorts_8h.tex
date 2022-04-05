@@ -5,16 +5,14 @@
 Fichier contenant toutes les définitions concernant les sorts.  
 
 
-Graphe des dépendances par inclusion de sorts.\+h\+:
-\nopagebreak
+Graphe des dépendances par inclusion de sorts.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=183pt]{de/d3b/sorts_8h__incl}
 \end{center}
 \end{figure}
-Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
-\nopagebreak
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -34,6 +32,8 @@ struct \mbox{\hyperlink{structbase__sort__s}{base\+\_\+sort\+\_\+s}}
 \#define \mbox{\hyperlink{sorts_8h_a9cd471f27c29037f280640407c0eea10}{P\+A\+T\+H\+\_\+\+S\+P\+E\+L\+L\+\_\+\+B\+O\+SS}}~\char`\"{}ressources/sprite/spell\+\_\+boss.\+bmp\char`\"{}
 \item 
 \#define \mbox{\hyperlink{sorts_8h_a6dfe4e248dea91cc21f6f0849300cc49}{P\+A\+T\+H\+\_\+\+S\+P\+E\+L\+L\+\_\+\+W\+I\+T\+C\+H\+ER}}~\char`\"{}ressources/sprite/spell\+\_\+witcher.\+bmp\char`\"{}
+\item 
+\#define \mbox{\hyperlink{sorts_8h_ad1661b885e1dcd8d21b2e5212a502161}{C\+O\+N\+V\+E\+R\+T\+I\+R\+\_\+\+R\+A\+D\+I\+A\+N\+T\+\_\+\+D\+E\+G\+R\+EE}}~57.\+3
 \end{DoxyCompactItemize}
 \doxysubsection*{Énumérations}
 \begin{DoxyCompactItemize}
@@ -51,11 +51,15 @@ enum \mbox{\hyperlink{sorts_8h_a7512ccf022700287621e5085379d372f}{statut\+\_\+so
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{sorts_8h_ac32dbffac262dd38829f3400505231a6}{init\+\_\+liste\+\_\+base\+\_\+sort}} ()
+void \mbox{\hyperlink{sorts_8h_a74e6634055a4bff2d4549dcdd61d2fe1}{detruire\+\_\+sort\+\_\+cb}} (void $\ast$sort)
+\item 
+void $\ast$ \mbox{\hyperlink{sorts_8h_a5d205646ab54eca44ee60431d4e50d2f}{ajouter\+\_\+sort\+\_\+cb}} (void $\ast$sort)
+\item 
+void \mbox{\hyperlink{sorts_8h_ae82fb5b016e1dedf4926b1d5434ce4c3}{init\+\_\+liste\+\_\+base\+\_\+sort}} (liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$\mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}})
 \item 
 void \mbox{\hyperlink{sorts_8h_ae58ae0350fa823a85aaff7b988b4ce9c}{creer\+\_\+sort\+\_\+monstre}} (monstre\+\_\+t $\ast$monstre, joueur\+\_\+t $\ast$joueur)
 \item 
-void \mbox{\hyperlink{sorts_8h_a73273d4f131f8c311644f6ceaff90ee6}{action\+\_\+sort}} (sort\+\_\+t $\ast$sort)
+void \mbox{\hyperlink{sorts_8h_a44a3ba7f362e1bc16846beb415ee22f6}{action\+\_\+sort}} (sort\+\_\+t $\ast$sort, joueur\+\_\+t $\ast$joueur)
 \item 
 void \mbox{\hyperlink{sorts_8h_a780d77b20da701ce7042b3aaed80fdc2}{orienter\+\_\+sort\+\_\+vers\+\_\+joueur}} (monstre\+\_\+t $\ast$monstre, sort\+\_\+t $\ast$sort, joueur\+\_\+t $\ast$joueur)
 \end{DoxyCompactItemize}
@@ -82,6 +86,12 @@ Copyright (c) 2022
 
 
 \doxysubsection{Documentation des macros}
+\mbox{\Hypertarget{sorts_8h_ad1661b885e1dcd8d21b2e5212a502161}\label{sorts_8h_ad1661b885e1dcd8d21b2e5212a502161}} 
+\index{sorts.h@{sorts.h}!CONVERTIR\_RADIANT\_DEGREE@{CONVERTIR\_RADIANT\_DEGREE}}
+\index{CONVERTIR\_RADIANT\_DEGREE@{CONVERTIR\_RADIANT\_DEGREE}!sorts.h@{sorts.h}}
+\doxysubsubsection{\texorpdfstring{CONVERTIR\_RADIANT\_DEGREE}{CONVERTIR\_RADIANT\_DEGREE}}
+{\footnotesize\ttfamily \#define C\+O\+N\+V\+E\+R\+T\+I\+R\+\_\+\+R\+A\+D\+I\+A\+N\+T\+\_\+\+D\+E\+G\+R\+EE~57.\+3}
+
 \mbox{\Hypertarget{sorts_8h_a9cd471f27c29037f280640407c0eea10}\label{sorts_8h_a9cd471f27c29037f280640407c0eea10}} 
 \index{sorts.h@{sorts.h}!PATH\_SPELL\_BOSS@{PATH\_SPELL\_BOSS}}
 \index{PATH\_SPELL\_BOSS@{PATH\_SPELL\_BOSS}!sorts.h@{sorts.h}}
@@ -140,18 +150,30 @@ S\+P\+\_\+\+B\+O\+S\+S\+\_\+\+S\+P\+L\+IT&\\
 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{sorts_8h_a73273d4f131f8c311644f6ceaff90ee6}\label{sorts_8h_a73273d4f131f8c311644f6ceaff90ee6}} 
+\mbox{\Hypertarget{sorts_8h_a44a3ba7f362e1bc16846beb415ee22f6}\label{sorts_8h_a44a3ba7f362e1bc16846beb415ee22f6}} 
 \index{sorts.h@{sorts.h}!action\_sort@{action\_sort}}
 \index{action\_sort@{action\_sort}!sorts.h@{sorts.h}}
 \doxysubsubsection{\texorpdfstring{action\_sort()}{action\_sort()}}
-{\footnotesize\ttfamily void action\+\_\+sort (\begin{DoxyParamCaption}\item[{sort\+\_\+t $\ast$}]{sort }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void action\+\_\+sort (\begin{DoxyParamCaption}\item[{sort\+\_\+t $\ast$}]{sort,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+\mbox{\Hypertarget{sorts_8h_a5d205646ab54eca44ee60431d4e50d2f}\label{sorts_8h_a5d205646ab54eca44ee60431d4e50d2f}} 
+\index{sorts.h@{sorts.h}!ajouter\_sort\_cb@{ajouter\_sort\_cb}}
+\index{ajouter\_sort\_cb@{ajouter\_sort\_cb}!sorts.h@{sorts.h}}
+\doxysubsubsection{\texorpdfstring{ajouter\_sort\_cb()}{ajouter\_sort\_cb()}}
+{\footnotesize\ttfamily void$\ast$ ajouter\+\_\+sort\+\_\+cb (\begin{DoxyParamCaption}\item[{void $\ast$}]{sort }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=270pt]{da/df7/sorts_8h_a73273d4f131f8c311644f6ceaff90ee6_icgraph}
+\includegraphics[width=283pt]{da/df7/sorts_8h_a5d205646ab54eca44ee60431d4e50d2f_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{da/df7/sorts_8h_a5d205646ab54eca44ee60431d4e50d2f_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{sorts_8h_ae58ae0350fa823a85aaff7b988b4ce9c}\label{sorts_8h_ae58ae0350fa823a85aaff7b988b4ce9c}} 
@@ -160,33 +182,51 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{creer\_sort\_monstre()}{creer\_sort\_monstre()}}
 {\footnotesize\ttfamily void creer\+\_\+sort\+\_\+monstre (\begin{DoxyParamCaption}\item[{monstre\+\_\+t $\ast$}]{monstre,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{da/df7/sorts_8h_ae58ae0350fa823a85aaff7b988b4ce9c_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=307pt]{da/df7/sorts_8h_ae58ae0350fa823a85aaff7b988b4ce9c_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{sorts_8h_ac32dbffac262dd38829f3400505231a6}\label{sorts_8h_ac32dbffac262dd38829f3400505231a6}} 
+\mbox{\Hypertarget{sorts_8h_a74e6634055a4bff2d4549dcdd61d2fe1}\label{sorts_8h_a74e6634055a4bff2d4549dcdd61d2fe1}} 
+\index{sorts.h@{sorts.h}!detruire\_sort\_cb@{detruire\_sort\_cb}}
+\index{detruire\_sort\_cb@{detruire\_sort\_cb}!sorts.h@{sorts.h}}
+\doxysubsubsection{\texorpdfstring{detruire\_sort\_cb()}{detruire\_sort\_cb()}}
+{\footnotesize\ttfamily void detruire\+\_\+sort\+\_\+cb (\begin{DoxyParamCaption}\item[{void $\ast$}]{sort }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{da/df7/sorts_8h_a74e6634055a4bff2d4549dcdd61d2fe1_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{da/df7/sorts_8h_a74e6634055a4bff2d4549dcdd61d2fe1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sorts_8h_ae82fb5b016e1dedf4926b1d5434ce4c3}\label{sorts_8h_ae82fb5b016e1dedf4926b1d5434ce4c3}} 
 \index{sorts.h@{sorts.h}!init\_liste\_base\_sort@{init\_liste\_base\_sort}}
 \index{init\_liste\_base\_sort@{init\_liste\_base\_sort}!sorts.h@{sorts.h}}
 \doxysubsubsection{\texorpdfstring{init\_liste\_base\_sort()}{init\_liste\_base\_sort()}}
-{\footnotesize\ttfamily void init\+\_\+liste\+\_\+base\+\_\+sort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void init\+\_\+liste\+\_\+base\+\_\+sort (\begin{DoxyParamCaption}\item[{liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$}]{liste\+\_\+base\+\_\+monstres }\end{DoxyParamCaption})}
 
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=268pt]{da/df7/sorts_8h_ac32dbffac262dd38829f3400505231a6_icgraph}
+\includegraphics[width=268pt]{da/df7/sorts_8h_ae82fb5b016e1dedf4926b1d5434ce4c3_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{sorts_8h_a780d77b20da701ce7042b3aaed80fdc2}\label{sorts_8h_a780d77b20da701ce7042b3aaed80fdc2}} 
@@ -195,16 +235,14 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{orienter\_sort\_vers\_joueur()}{orienter\_sort\_vers\_joueur()}}
 {\footnotesize\ttfamily void orienter\+\_\+sort\+\_\+vers\+\_\+joueur (\begin{DoxyParamCaption}\item[{monstre\+\_\+t $\ast$}]{monstre,  }\item[{sort\+\_\+t $\ast$}]{sort,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=340pt]{da/df7/sorts_8h_a780d77b20da701ce7042b3aaed80fdc2_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

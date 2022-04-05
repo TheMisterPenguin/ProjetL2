@@ -3,7 +3,7 @@
  * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
  * \brief Définitions concernant les objets
  * \version 0.3
- * \date 24/02/2022
+ * \date 05/04/2022
  * \copyright Copyright (c) 2022
  */
 
@@ -23,7 +23,14 @@ typedef struct s_aff t_aff;
 /**
  * Types d'objets du jeu
  */
-typedef enum{quete, arme, bouclier, protection, amulette, consommable}t_item;
+typedef enum{
+    quete, /**< objet de quête */
+    arme, /**< objet de la catégorie arme */
+    bouclier, /**< objet de la catégorie bouclier */
+    protection, /**< objet de la catégorie protection */
+    amulette, /**< objet de la catégorie amulette */
+    consommable /**< objet consommable */
+}t_item;
 
 /**
  * \struct struct objet

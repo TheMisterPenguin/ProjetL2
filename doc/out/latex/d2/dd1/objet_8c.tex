@@ -5,8 +5,7 @@
 Fichier contenant toutes les fonctions concernant les objets.  
 
 
-Graphe des dépendances par inclusion de objet.\+c\+:
-\nopagebreak
+Graphe des dépendances par inclusion de objet.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,7 +15,7 @@ Graphe des dépendances par inclusion de objet.\+c\+:
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-objet\+\_\+t $\ast$ \mbox{\hyperlink{objet_8c_a9cecdb9f55f3833139a9e4358731d6fd}{creer\+\_\+objet}} (const char $\ast$const texture\+\_\+src, const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}} type, const char $\ast$nom, const short int niveau, const int att, const int def, const int vit)
+objet\+\_\+t $\ast$ \mbox{\hyperlink{objet_8c_a2dbf71e4c727780c5ab234b0cb22611f}{creer\+\_\+objet}} (const int id, const char $\ast$const texture\+\_\+src, const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}} type, const char $\ast$nom, const short int niveau, const int att, const int def, const int vit)
 \begin{DoxyCompactList}\small\item\em Créé un objet du jeu. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{objet_8c_a0cad7222129cd23bfca9ab8d94885f39}{afficher\+\_\+objet}} (objet\+\_\+t $\ast$obj)
 \begin{DoxyCompactList}\small\item\em Affiche les caractéristiques d\textquotesingle{}un objet dans la console. \end{DoxyCompactList}\item 
@@ -46,27 +45,34 @@ Copyright (c) 2022
 \doxysubsubsection{\texorpdfstring{afficher\_objet()}{afficher\_objet()}}
 {\footnotesize\ttfamily void afficher\+\_\+objet (\begin{DoxyParamCaption}\item[{objet\+\_\+t $\ast$}]{obj }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em obj} & L\textquotesingle{}objet à afficher \\
 \hline
 \end{DoxyParams}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=309pt]{d2/dd1/objet_8c_a0cad7222129cd23bfca9ab8d94885f39_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{objet_8c_a9cecdb9f55f3833139a9e4358731d6fd}\label{objet_8c_a9cecdb9f55f3833139a9e4358731d6fd}} 
+\mbox{\Hypertarget{objet_8c_a2dbf71e4c727780c5ab234b0cb22611f}\label{objet_8c_a2dbf71e4c727780c5ab234b0cb22611f}} 
 \index{objet.c@{objet.c}!creer\_objet@{creer\_objet}}
 \index{creer\_objet@{creer\_objet}!objet.c@{objet.c}}
 \doxysubsubsection{\texorpdfstring{creer\_objet()}{creer\_objet()}}
-{\footnotesize\ttfamily objet\+\_\+t $\ast$ creer\+\_\+objet (\begin{DoxyParamCaption}\item[{const char $\ast$const}]{texture\+\_\+src,  }\item[{const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}}}]{type,  }\item[{const char $\ast$}]{nom,  }\item[{const short int}]{niveau,  }\item[{const int}]{att,  }\item[{const int}]{def,  }\item[{const int}]{vit }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily objet\+\_\+t $\ast$ creer\+\_\+objet (\begin{DoxyParamCaption}\item[{const int}]{id,  }\item[{const char $\ast$const}]{texture\+\_\+src,  }\item[{const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}}}]{type,  }\item[{const char $\ast$}]{nom,  }\item[{const short int}]{niveau,  }\item[{const int}]{att,  }\item[{const int}]{def,  }\item[{const int}]{vit }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
+{\em id} & L\textquotesingle{}identificateur de l\textquotesingle{}objet \\
+\hline
 {\em texture\+\_\+src} & Chemin vers l\textquotesingle{}image de l\textquotesingle{}objet \\
 \hline
 {\em type} & Type d\textquotesingle{}objet \\
@@ -85,12 +91,11 @@ Voici le graphe des appelants de cette fonction \+:
 \begin{DoxyReturn}{Renvoie}
 Instance nouvellement allouée du type objet\+\_\+t ou N\+U\+LL 
 \end{DoxyReturn}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d2/dd1/objet_8c_a9cecdb9f55f3833139a9e4358731d6fd_icgraph}
+\includegraphics[width=350pt]{d2/dd1/objet_8c_a2dbf71e4c727780c5ab234b0cb22611f_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{objet_8c_a9903bbbae9d8ad00d41b6e903d459877}\label{objet_8c_a9903bbbae9d8ad00d41b6e903d459877}} 
@@ -99,6 +104,9 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{detruire\_objet()}{detruire\_objet()}}
 {\footnotesize\ttfamily void detruire\+\_\+objet (\begin{DoxyParamCaption}\item[{objet\+\_\+t $\ast$$\ast$}]{obj }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em obj} & L\textquotesingle{}objet à libérer \\
@@ -111,8 +119,7 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \includegraphics[width=296pt]{d2/dd1/objet_8c_a9903bbbae9d8ad00d41b6e903d459877_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

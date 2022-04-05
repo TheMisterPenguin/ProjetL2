@@ -103,6 +103,7 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7d/structobjet__s.html">objet_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définition de la structure objet.  <a href="../../da/d7d/structobjet__s.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -126,9 +127,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a1ec11e0ef4c7cee2dd60d3e544acbd84"><td class="memItemLeft" align="right" valign="top">objet_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0b/objet_8h.html#a1ec11e0ef4c7cee2dd60d3e544acbd84">creer_objet</a> (const char *const texture_src, const <a class="el" href="../../d4/d0b/objet_8h.html#a5164672bbab2547df809744bf0af3dc9">t_item</a> type, const char *nom, const short int niveau, const int att, const int def, const int vit)</td></tr>
-<tr class="memdesc:a1ec11e0ef4c7cee2dd60d3e544acbd84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créé un objet du jeu.  <a href="../../d4/d0b/objet_8h.html#a1ec11e0ef4c7cee2dd60d3e544acbd84">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a1ec11e0ef4c7cee2dd60d3e544acbd84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85e95708f68baa868d64811e0259c340"><td class="memItemLeft" align="right" valign="top">objet_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0b/objet_8h.html#a85e95708f68baa868d64811e0259c340">creer_objet</a> (const int id, const char *const texture_src, const <a class="el" href="../../d4/d0b/objet_8h.html#a5164672bbab2547df809744bf0af3dc9">t_item</a> type, const char *nom, const short int niveau, const int att, const int def, const int vit)</td></tr>
+<tr class="memdesc:a85e95708f68baa868d64811e0259c340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créé un objet du jeu.  <a href="../../d4/d0b/objet_8h.html#a85e95708f68baa868d64811e0259c340">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a85e95708f68baa868d64811e0259c340"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9903bbbae9d8ad00d41b6e903d459877"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0b/objet_8h.html#a9903bbbae9d8ad00d41b6e903d459877">detruire_objet</a> (objet_t **obj)</td></tr>
 <tr class="memdesc:a9903bbbae9d8ad00d41b6e903d459877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la mémoire allouée à un objet.  <a href="../../d4/d0b/objet_8h.html#a9903bbbae9d8ad00d41b6e903d459877">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a9903bbbae9d8ad00d41b6e903d459877"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -196,6 +197,7 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Max Descomps </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>L'objet à afficher </td></tr>
@@ -214,8 +216,8 @@ Voici le graphe des appelants de cette fonction :</div>
 
 </div>
 </div>
-<a id="a1ec11e0ef4c7cee2dd60d3e544acbd84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ec11e0ef4c7cee2dd60d3e544acbd84">&#9670;&nbsp;</a></span>creer_objet()</h2>
+<a id="a85e95708f68baa868d64811e0259c340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85e95708f68baa868d64811e0259c340">&#9670;&nbsp;</a></span>creer_objet()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,6 +225,12 @@ Voici le graphe des appelants de cette fonction :</div>
         <tr>
           <td class="memname">objet_t* creer_objet </td>
           <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const char *const&#160;</td>
           <td class="paramname"><em>texture_src</em>, </td>
         </tr>
@@ -269,8 +277,10 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Max Descomps </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
+    <tr><td class="paramname">id</td><td>L'identificateur de l'objet </td></tr>
     <tr><td class="paramname">texture_src</td><td>Chemin vers l'image de l'objet </td></tr>
     <tr><td class="paramname">type</td><td>Type d'objet </td></tr>
     <tr><td class="paramname">nom</td><td>Nom de l'objet </td></tr>
@@ -285,8 +295,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d4/d0b/objet_8h_a1ec11e0ef4c7cee2dd60d3e544acbd84_icgraph.png" border="0" usemap="#d4/d0b/objet_8h_a1ec11e0ef4c7cee2dd60d3e544acbd84_icgraph" alt=""/></div>
-<map name="d4/d0b/objet_8h_a1ec11e0ef4c7cee2dd60d3e544acbd84_icgraph" id="d4/d0b/objet_8h_a1ec11e0ef4c7cee2dd60d3e544acbd84_icgraph">
+<div class="center"><img src="../../d4/d0b/objet_8h_a85e95708f68baa868d64811e0259c340_icgraph.png" border="0" usemap="#d4/d0b/objet_8h_a85e95708f68baa868d64811e0259c340_icgraph" alt=""/></div>
+<map name="d4/d0b/objet_8h_a85e95708f68baa868d64811e0259c340_icgraph" id="d4/d0b/objet_8h_a85e95708f68baa868d64811e0259c340_icgraph">
 <area shape="rect" title="Créé un objet du jeu." alt="" coords="408,31,503,57"/>
 <area shape="rect" href="../../d7/d64/liste__objet_8h.html#aaff80db1b5b4d0f49ddb960a94d4be95" title="Créé une liste d&#39;objets et la remplit à l&#39;aide du fichier des objets du jeu." alt="" coords="229,5,360,32"/>
 <area shape="rect" href="../../d9/d66/test__inventaire_8c.html#ae7e5e7ed7946211586fc6c19e42443d0" title=" " alt="" coords="5,31,181,57"/>
@@ -310,6 +320,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Max Descomps </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>L'objet à libérer </td></tr>

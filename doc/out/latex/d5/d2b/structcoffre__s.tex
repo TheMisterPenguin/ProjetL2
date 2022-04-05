@@ -8,11 +8,15 @@ Structure contenant les propriétées du coffre.
 \doxysubsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
+int \mbox{\hyperlink{structcoffre__s_a42be78b657fbbce283a90409c75c5d5e}{id\+\_\+cle}}
+\item 
+int \mbox{\hyperlink{structcoffre__s_ac0e2c77504a27f3228c3fd5f02b6509e}{id\+\_\+loot}}
+\item 
 \mbox{\hyperlink{coffres_8h_a00a8529a492da49a620058ce9c9e86ec}{type\+\_\+coffre\+\_\+t}} \mbox{\hyperlink{structcoffre__s_aa4098f752fe2561856de63bfcd892439}{type}}
 \item 
-\mbox{\hyperlink{definition__commun_8h_aec4e3894aa763e81148b2241ff730790}{t\+\_\+direction}} \mbox{\hyperlink{structcoffre__s_a88ffa6a17e4a11e5a72255f597742abc}{orientation}}
+\mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} \mbox{\hyperlink{structcoffre__s_a5d63249892a40ee1abd21f3bcec03bb2}{orientation}}
 \item 
-\mbox{\hyperlink{coffres_8h_ac465716f22ad6cccedf85e8c7899c7f8}{action\+\_\+coffre\+\_\+t}} \mbox{\hyperlink{structcoffre__s_abbd3134ef5fdeefbd4db5ee0e5c24d38}{action}}
+\mbox{\hyperlink{coffres_8h_a1ed9bf2ef0cb98998ba84a8903ab0796}{etat\+\_\+coffre\+\_\+t}} \mbox{\hyperlink{structcoffre__s_ad1dd228d464e7f7ebd2dee6b093d8f42}{etat}}
 \item 
 S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{structcoffre__s_ab76ec0502fb97b5e049453dd37f89a31}{collision}}
 \item 
@@ -27,23 +31,35 @@ Max Descomps
 
 
 \doxysubsection{Documentation des données membres}
-\mbox{\Hypertarget{structcoffre__s_abbd3134ef5fdeefbd4db5ee0e5c24d38}\label{structcoffre__s_abbd3134ef5fdeefbd4db5ee0e5c24d38}} 
-\index{coffre\_s@{coffre\_s}!action@{action}}
-\index{action@{action}!coffre\_s@{coffre\_s}}
-\doxysubsubsection{\texorpdfstring{action}{action}}
-{\footnotesize\ttfamily \mbox{\hyperlink{coffres_8h_ac465716f22ad6cccedf85e8c7899c7f8}{action\+\_\+coffre\+\_\+t}} coffre\+\_\+s\+::action}
-
 \mbox{\Hypertarget{structcoffre__s_ab76ec0502fb97b5e049453dd37f89a31}\label{structcoffre__s_ab76ec0502fb97b5e049453dd37f89a31}} 
 \index{coffre\_s@{coffre\_s}!collision@{collision}}
 \index{collision@{collision}!coffre\_s@{coffre\_s}}
 \doxysubsubsection{\texorpdfstring{collision}{collision}}
 {\footnotesize\ttfamily S\+D\+L\+\_\+\+Rect coffre\+\_\+s\+::collision}
 
-Coordonnées \mbox{\Hypertarget{structcoffre__s_a88ffa6a17e4a11e5a72255f597742abc}\label{structcoffre__s_a88ffa6a17e4a11e5a72255f597742abc}} 
+Coordonnées \mbox{\Hypertarget{structcoffre__s_ad1dd228d464e7f7ebd2dee6b093d8f42}\label{structcoffre__s_ad1dd228d464e7f7ebd2dee6b093d8f42}} 
+\index{coffre\_s@{coffre\_s}!etat@{etat}}
+\index{etat@{etat}!coffre\_s@{coffre\_s}}
+\doxysubsubsection{\texorpdfstring{etat}{etat}}
+{\footnotesize\ttfamily \mbox{\hyperlink{coffres_8h_a1ed9bf2ef0cb98998ba84a8903ab0796}{etat\+\_\+coffre\+\_\+t}} coffre\+\_\+s\+::etat}
+
+\mbox{\Hypertarget{structcoffre__s_a42be78b657fbbce283a90409c75c5d5e}\label{structcoffre__s_a42be78b657fbbce283a90409c75c5d5e}} 
+\index{coffre\_s@{coffre\_s}!id\_cle@{id\_cle}}
+\index{id\_cle@{id\_cle}!coffre\_s@{coffre\_s}}
+\doxysubsubsection{\texorpdfstring{id\_cle}{id\_cle}}
+{\footnotesize\ttfamily int coffre\+\_\+s\+::id\+\_\+cle}
+
+Indentificateur de l\textquotesingle{}objet de quête nécessaire pour ouvrir le coffre sinon 0 \mbox{\Hypertarget{structcoffre__s_ac0e2c77504a27f3228c3fd5f02b6509e}\label{structcoffre__s_ac0e2c77504a27f3228c3fd5f02b6509e}} 
+\index{coffre\_s@{coffre\_s}!id\_loot@{id\_loot}}
+\index{id\_loot@{id\_loot}!coffre\_s@{coffre\_s}}
+\doxysubsubsection{\texorpdfstring{id\_loot}{id\_loot}}
+{\footnotesize\ttfamily int coffre\+\_\+s\+::id\+\_\+loot}
+
+Indentificateur de l\textquotesingle{}objet obtenu en ouvrant le coffre sinon 0 \mbox{\Hypertarget{structcoffre__s_a5d63249892a40ee1abd21f3bcec03bb2}\label{structcoffre__s_a5d63249892a40ee1abd21f3bcec03bb2}} 
 \index{coffre\_s@{coffre\_s}!orientation@{orientation}}
 \index{orientation@{orientation}!coffre\_s@{coffre\_s}}
 \doxysubsubsection{\texorpdfstring{orientation}{orientation}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_aec4e3894aa763e81148b2241ff730790}{t\+\_\+direction}} coffre\+\_\+s\+::orientation}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} coffre\+\_\+s\+::orientation}
 
 \mbox{\Hypertarget{structcoffre__s_a066c5bbab2baa9385c02d8ba762ade68}\label{structcoffre__s_a066c5bbab2baa9385c02d8ba762ade68}} 
 \index{coffre\_s@{coffre\_s}!texture@{texture}}

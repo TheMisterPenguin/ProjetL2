@@ -35,16 +35,6 @@ void changement_statistiques(joueur_t * joueur){
         joueur->vitesse_actif = vit;
 }
 
-/*
-on clique sur un item de l'inventaire (sac) qui s'équipe automatiquement
-on clique sur un item de l'inventaire (équipé) qui s'enlève automatiquement
-*/
-
-/* 
-on n'utilise pas de liste pour les objets de l'inventaire (sac) car on équipe beaucoup plus souvent qu'on deséquipe donc on préfère profiter
-de la rapidité de l'indexage plutôt que de parcourir la liste à chaque équipement pour trouver l'objet équipé. 
-*/
-
 void equiper_objet(joueur_t * joueur,objet_t ** objet){
     lobjet_t * equipe = joueur->inventaire->equipe;
     lobjet_t * sac = joueur->inventaire->sac;
@@ -52,7 +42,6 @@ void equiper_objet(joueur_t * joueur,objet_t ** objet){
 
     //vérifie que le joueur ait un niveau suffisant
     if(joueur->niveau < (*objet)->niveau){
-        printf("Niveau insuffisant pour équiper\n");
         return;
     }
 
@@ -69,7 +58,6 @@ void equiper_objet(joueur_t * joueur,objet_t ** objet){
     //application des bonus de statistiques
     if(temp->type != consommable && temp->type != quete){
         changement_statistiques(joueur);
-        afficher_statistiques(joueur);
 
         if(temp->type == bouclier){
             joueur->statut->bouclier_equipe = 1;

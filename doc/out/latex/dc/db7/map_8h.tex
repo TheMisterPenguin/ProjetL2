@@ -5,16 +5,14 @@
 Définitions des fonctions de gestion de la map.  
 
 
-Graphe des dépendances par inclusion de map.\+h\+:
-\nopagebreak
+Graphe des dépendances par inclusion de map.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=274pt]{d7/dd6/map_8h__incl}
 \end{center}
 \end{figure}
-Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
-\nopagebreak
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -42,9 +40,11 @@ void \mbox{\hyperlink{map_8h_aad95fee9e6bf2bd4c8ae74d98e1a6821}{init\+\_\+sousbu
 \item 
 t\+\_\+aff $\ast$ \mbox{\hyperlink{map_8h_abd78a434afc7dae4de6de6e0b879ccb8}{texture\+\_\+map}} (const t\+\_\+map $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
 \begin{DoxyCompactList}\small\item\em Fonction qui renvoie la texture de la map. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{map_8h_a1a36cad71a42c80da1f12a50caff8d00}{transition}} (t\+\_\+map $\ast$$\ast$actuelle, const char $\ast$const nom\+\_\+map, joueur\+\_\+t $\ast$$\ast$joueurs, unsigned short int nb\+\_\+joueurs)
+void \mbox{\hyperlink{map_8h_a87fdc73350f70425b5529472974ecbbb}{transition}} (t\+\_\+map $\ast$$\ast$actuelle, unsigned int num\+\_\+map, joueur\+\_\+t $\ast$$\ast$joueurs, unsigned short int nb\+\_\+joueurs, unsigned int new\+\_\+x, unsigned int new\+\_\+y)
 \item 
 void \mbox{\hyperlink{map_8h_a7e9c15657f08efce7a84ec6822c064e2}{tp\+\_\+joueurs}} (t\+\_\+map $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}}, unsigned int x, unsigned int y, joueur\+\_\+t $\ast$$\ast$joueurs, unsigned short int nb\+\_\+joueurs)
+\item 
+void \mbox{\hyperlink{map_8h_af837acc6ac888e66589d3ff48f4eec12}{detruire\+\_\+map}} (t\+\_\+map $\ast$$\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}}, joueur\+\_\+t $\ast$joueurs\mbox{[}$\,$\mbox{]}, unsigned short int nb\+\_\+joueurs)
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -96,8 +96,7 @@ Copyright (c) 2022
 \begin{DoxyReturn}{Renvoie}
 Une map initialisée avec toutes les informations dedans; 
 \end{DoxyReturn}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -108,7 +107,27 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=259pt]{dc/db7/map_8h_af6448083132a6591f73061457f30ebb3_icgraph}
+\includegraphics[width=312pt]{dc/db7/map_8h_af6448083132a6591f73061457f30ebb3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{map_8h_af837acc6ac888e66589d3ff48f4eec12}\label{map_8h_af837acc6ac888e66589d3ff48f4eec12}} 
+\index{map.h@{map.h}!detruire\_map@{detruire\_map}}
+\index{detruire\_map@{detruire\_map}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{detruire\_map()}{detruire\_map()}}
+{\footnotesize\ttfamily void detruire\+\_\+map (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$$\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$}]{joueurs\mbox{[}$\,$\mbox{]},  }\item[{unsigned short int}]{nb\+\_\+joueurs }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db7/map_8h_af837acc6ac888e66589d3ff48f4eec12_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{dc/db7/map_8h_af837acc6ac888e66589d3ff48f4eec12_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{map_8h_aad95fee9e6bf2bd4c8ae74d98e1a6821}\label{map_8h_aad95fee9e6bf2bd4c8ae74d98e1a6821}} 
@@ -138,7 +157,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=268pt]{dc/db7/map_8h_aad95fee9e6bf2bd4c8ae74d98e1a6821_icgraph}
+\includegraphics[width=321pt]{dc/db7/map_8h_aad95fee9e6bf2bd4c8ae74d98e1a6821_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{map_8h_abd78a434afc7dae4de6de6e0b879ccb8}\label{map_8h_abd78a434afc7dae4de6de6e0b879ccb8}} 
@@ -155,13 +174,6 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{DoxyReturn}{Renvoie}
 La texture de la map 
 \end{DoxyReturn}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=236pt]{dc/db7/map_8h_abd78a434afc7dae4de6de6e0b879ccb8_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{map_8h_a7e9c15657f08efce7a84ec6822c064e2}\label{map_8h_a7e9c15657f08efce7a84ec6822c064e2}} 
 \index{map.h@{map.h}!tp\_joueurs@{tp\_joueurs}}
 \index{tp\_joueurs@{tp\_joueurs}!map.h@{map.h}}
@@ -175,18 +187,31 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \includegraphics[width=350pt]{dc/db7/map_8h_a7e9c15657f08efce7a84ec6822c064e2_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{map_8h_a1a36cad71a42c80da1f12a50caff8d00}\label{map_8h_a1a36cad71a42c80da1f12a50caff8d00}} 
-\index{map.h@{map.h}!transition@{transition}}
-\index{transition@{transition}!map.h@{map.h}}
-\doxysubsubsection{\texorpdfstring{transition()}{transition()}}
-{\footnotesize\ttfamily void transition (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$$\ast$}]{actuelle,  }\item[{const char $\ast$const}]{nom\+\_\+map,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{unsigned short int}]{nb\+\_\+joueurs }\end{DoxyParamCaption})}
-
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{dc/db7/map_8h_a1a36cad71a42c80da1f12a50caff8d00_cgraph}
+\includegraphics[width=300pt]{dc/db7/map_8h_a7e9c15657f08efce7a84ec6822c064e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{map_8h_a87fdc73350f70425b5529472974ecbbb}\label{map_8h_a87fdc73350f70425b5529472974ecbbb}} 
+\index{map.h@{map.h}!transition@{transition}}
+\index{transition@{transition}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{transition()}{transition()}}
+{\footnotesize\ttfamily void transition (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$$\ast$}]{actuelle,  }\item[{unsigned int}]{num\+\_\+map,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{unsigned short int}]{nb\+\_\+joueurs,  }\item[{unsigned int}]{new\+\_\+x,  }\item[{unsigned int}]{new\+\_\+y }\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db7/map_8h_a87fdc73350f70425b5529472974ecbbb_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{dc/db7/map_8h_a87fdc73350f70425b5529472974ecbbb_icgraph}
 \end{center}
 \end{figure}
 

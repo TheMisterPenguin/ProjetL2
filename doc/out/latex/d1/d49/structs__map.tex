@@ -23,6 +23,8 @@ t\+\_\+aff $\ast$ \mbox{\hyperlink{structs__map_a8da9748668e62eeea8e210d3ba81df5
 \item 
 t\+\_\+aff $\ast$ \mbox{\hyperlink{structs__map_a889c64ca7ac5725b8ba0e93e7c3ee057}{text\+\_\+sol}}
 \item 
+t\+\_\+aff $\ast$ \mbox{\hyperlink{structs__map_a0cf21a0c0aaa32c99f1c0daff8f277bc}{texture\+\_\+superposition}}
+\item 
 unsigned int \mbox{\hyperlink{structs__map_a4bd0554ddfe12e87dfbb9405093cfecc}{width}}
 \item 
 unsigned int \mbox{\hyperlink{structs__map_af5a0e110f70dea1156fca46c53f1c6da}{height}}
@@ -46,12 +48,12 @@ unsigned int \mbox{\hyperlink{structs__map_af49bd6e471e7f802244cb14f180d886f}{ca
 
 
 \doxysubsection{Description détaillée}
-Définition de la structure map.
-
-\begin{DoxyAuthor}{Auteurs}
-Ange Despert Antoine Bruneau Descomps Max
+Cette structure doit permettre de stocker toutes les informations liées à la map. ~\newline
+Pour cela, On va stocké sous forme de listes toutes les \mbox{\hyperlink{structs__map_abc1532265c403adfbc475bafca6ad747}{zones de collisions}}, \mbox{\hyperlink{structs__map_a909aa57f45ea83c8c494488e315cd02f}{les sorts}}, \mbox{\hyperlink{structs__map_a865072c99e4600fdfaeabe30d7981d7b}{les monstres}}, \mbox{\hyperlink{structs__map_af10961161860e31e9a4bc894a37de932}{les coffres}} et enfin \mbox{\hyperlink{structs__map_a8d1bfc8107f70a1d462ca92468896ab1}{les zones de tp}}. ~\newline
+ On retient également des informations importantes comme des textures \+: \mbox{\hyperlink{structs__map_a889c64ca7ac5725b8ba0e93e7c3ee057}{la texture de fond}}, \mbox{\hyperlink{structs__map_a0cf21a0c0aaa32c99f1c0daff8f277bc}{une texture à supperposer}} et enfin \mbox{\hyperlink{structs__map_a8da9748668e62eeea8e210d3ba81df50}{la map avec toutes les entitées}}. \begin{DoxyAuthor}{Auteurs}
+Ange Despert Antoine Bruneau Descomps Max 
 \end{DoxyAuthor}
-Cette définition est la pour éviter une inclusion mutuelle des fichiers \mbox{\hyperlink{affichage_8h}{affichage.\+h}} et \mbox{\hyperlink{map_8h}{map.\+h}} . 
+
 
 \doxysubsection{Documentation des données membres}
 \mbox{\Hypertarget{structs__map_a09b2aabbbc6a94c633eb92658c8d286e}\label{structs__map_a09b2aabbbc6a94c633eb92658c8d286e}} 
@@ -78,7 +80,7 @@ La largeur et la hauteur de la map \mbox{\Hypertarget{structs__map_ada908676f9fb
 \doxysubsubsection{\texorpdfstring{id\_map}{id\_map}}
 {\footnotesize\ttfamily unsigned int t\+\_\+map\+::id\+\_\+map}
 
-\mbox{\Hypertarget{structs__map_af10961161860e31e9a4bc894a37de932}\label{structs__map_af10961161860e31e9a4bc894a37de932}} 
+L\textquotesingle{}identificateur de la map \mbox{\Hypertarget{structs__map_af10961161860e31e9a4bc894a37de932}\label{structs__map_af10961161860e31e9a4bc894a37de932}} 
 \index{t\_map@{t\_map}!liste\_coffres@{liste\_coffres}}
 \index{liste\_coffres@{liste\_coffres}!t\_map@{t\_map}}
 \doxysubsubsection{\texorpdfstring{liste\_coffres}{liste\_coffres}}
@@ -126,7 +128,13 @@ La texture de la map \mbox{\Hypertarget{structs__map_a889c64ca7ac5725b8ba0e93e7c
 \doxysubsubsection{\texorpdfstring{text\_sol}{text\_sol}}
 {\footnotesize\ttfamily t\+\_\+aff$\ast$ t\+\_\+map\+::text\+\_\+sol}
 
-La texture du sol \mbox{\Hypertarget{structs__map_a4bd0554ddfe12e87dfbb9405093cfecc}\label{structs__map_a4bd0554ddfe12e87dfbb9405093cfecc}} 
+La texture du sol \mbox{\Hypertarget{structs__map_a0cf21a0c0aaa32c99f1c0daff8f277bc}\label{structs__map_a0cf21a0c0aaa32c99f1c0daff8f277bc}} 
+\index{t\_map@{t\_map}!texture\_superposition@{texture\_superposition}}
+\index{texture\_superposition@{texture\_superposition}!t\_map@{t\_map}}
+\doxysubsubsection{\texorpdfstring{texture\_superposition}{texture\_superposition}}
+{\footnotesize\ttfamily t\+\_\+aff$\ast$ t\+\_\+map\+::texture\+\_\+superposition}
+
+La texture à supperposer devant le personnage \mbox{\Hypertarget{structs__map_a4bd0554ddfe12e87dfbb9405093cfecc}\label{structs__map_a4bd0554ddfe12e87dfbb9405093cfecc}} 
 \index{t\_map@{t\_map}!width@{width}}
 \index{width@{width}!t\_map@{t\_map}}
 \doxysubsubsection{\texorpdfstring{width}{width}}

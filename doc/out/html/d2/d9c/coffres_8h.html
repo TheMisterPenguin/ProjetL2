@@ -68,6 +68,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Énumérations</a> &#124;
 <a href="#func-members">Fonctions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -117,36 +118,49 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure contenant un tableau avec tous les coffres possibles du jeu.  <a href="../../de/dc8/structliste__base__coffres__s.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a85784c5cfbde434991ff8f2432642afc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9c/coffres_8h.html#a85784c5cfbde434991ff8f2432642afc">COFFRE_FACE_OUVERT</a>&#160;&#160;&#160;&quot;ressources/sprite/coffrefaceouvert.bmp&quot;</td></tr>
+<tr class="separator:a85784c5cfbde434991ff8f2432642afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad61871f7a4232bfdec35d2f5c605985a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9c/coffres_8h.html#ad61871f7a4232bfdec35d2f5c605985a">COFFRE_PROFIL_OUVERT</a>&#160;&#160;&#160;&quot;ressources/sprite/coffreprofilouvert.bmp&quot;</td></tr>
+<tr class="separator:ad61871f7a4232bfdec35d2f5c605985a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Énumérations</h2></td></tr>
-<tr class="memitem:a00a8529a492da49a620058ce9c9e86ec"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86ec">type_coffre_t</a> { <a class="el" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca2f569acd59579be94f88e08ca8f47600">PROFIL_FERME</a>, 
+<tr class="memitem:a00a8529a492da49a620058ce9c9e86ec"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86ec">type_coffre_t</a> { <br />
+&#160;&#160;<a class="el" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca2f569acd59579be94f88e08ca8f47600">PROFIL_FERME</a>, 
 <a class="el" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca0a7b37f54c72f28cb34ab9860c0f17a0">PROFIL_OUVERT</a>, 
 <a class="el" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86ecac377d18a82325eb432058f9fc22122ea">FACE_FERME</a>, 
-<a class="el" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca4341eb19b5df3b37fb4717f90d1c9c14">FACE_OUVERT</a>
+<a class="el" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca4341eb19b5df3b37fb4717f90d1c9c14">FACE_OUVERT</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca170e0a479579eb78c1834b6ade68fd09">COFFRE_INCONNU</a>
+<br />
  }</td></tr>
 <tr class="separator:a00a8529a492da49a620058ce9c9e86ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac465716f22ad6cccedf85e8c7899c7f8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9c/coffres_8h.html#ac465716f22ad6cccedf85e8c7899c7f8">action_coffre_t</a> { <a class="el" href="../../d2/d9c/coffres_8h.html#ac465716f22ad6cccedf85e8c7899c7f8a9947185083273520715b7dc48cecb50c">OUVERT</a>, 
-<a class="el" href="../../d2/d9c/coffres_8h.html#ac465716f22ad6cccedf85e8c7899c7f8af33dd4dbb60f26ab46629aa042a06cf0">FERME</a>
+<tr class="memitem:a1ed9bf2ef0cb98998ba84a8903ab0796"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9c/coffres_8h.html#a1ed9bf2ef0cb98998ba84a8903ab0796">etat_coffre_t</a> { <a class="el" href="../../d2/d9c/coffres_8h.html#a1ed9bf2ef0cb98998ba84a8903ab0796a9947185083273520715b7dc48cecb50c">OUVERT</a>, 
+<a class="el" href="../../d2/d9c/coffres_8h.html#a1ed9bf2ef0cb98998ba84a8903ab0796af33dd4dbb60f26ab46629aa042a06cf0">FERME</a>
  }</td></tr>
-<tr class="separator:ac465716f22ad6cccedf85e8c7899c7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a1ed9bf2ef0cb98998ba84a8903ab0796"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a2c9c6ec91da6b419ceaac9ed69a66316"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9c/coffres_8h.html#a2c9c6ec91da6b419ceaac9ed69a66316">charger_base_coffre</a> (char *chemin_fichier, liste_base_coffres_t **<a class="el" href="../../d2/d9c/coffres_8h.html#ad9ec43edbee4491e915e009207e2bd07">liste_base_coffres</a>)</td></tr>
-<tr class="memdesc:a2c9c6ec91da6b419ceaac9ed69a66316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui recopie les informations d'un fichier json pour les insérrer dans la structure liste_base_coffres.  <a href="../../d2/d9c/coffres_8h.html#a2c9c6ec91da6b419ceaac9ed69a66316">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a2c9c6ec91da6b419ceaac9ed69a66316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui recopie les informations d'un fichier json pour les insérer dans la structure liste_base_coffres.  <a href="../../d2/d9c/coffres_8h.html#a2c9c6ec91da6b419ceaac9ed69a66316">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2c9c6ec91da6b419ceaac9ed69a66316"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89c39cf40bda420fcca8ee7c7afbfd96"><td class="memItemLeft" align="right" valign="top">coffre_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9c/coffres_8h.html#a89c39cf40bda420fcca8ee7c7afbfd96">creer_coffre</a> (liste_base_coffres_t *<a class="el" href="../../d2/d9c/coffres_8h.html#ad9ec43edbee4491e915e009207e2bd07">liste_base_coffres</a>, const char *const nom_coffre, int x, int y, t_map *<a class="el" href="../../dc/db7/map_8h.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>)</td></tr>
-<tr class="memdesc:a89c39cf40bda420fcca8ee7c7afbfd96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui creer et initialise un coffre sur une carte.  <a href="../../d2/d9c/coffres_8h.html#a89c39cf40bda420fcca8ee7c7afbfd96">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a89c39cf40bda420fcca8ee7c7afbfd96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24b867dce7ad1cd18ea7afa0c254f399"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86ec">type_coffre_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9c/coffres_8h.html#a24b867dce7ad1cd18ea7afa0c254f399">nom_coffre_to_type_coffre</a> (char *nom_coffre)</td></tr>
-<tr class="memdesc:a24b867dce7ad1cd18ea7afa0c254f399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit une chaîne de caractères en type de coffre.  <a href="../../d2/d9c/coffres_8h.html#a24b867dce7ad1cd18ea7afa0c254f399">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a24b867dce7ad1cd18ea7afa0c254f399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d05e5a75f401b57f5e6958a50a6a780"><td class="memItemLeft" align="right" valign="top">coffre_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9c/coffres_8h.html#a4d05e5a75f401b57f5e6958a50a6a780">creer_coffre</a> (int id_cle, int id_loot, liste_base_coffres_t *<a class="el" href="../../d2/d9c/coffres_8h.html#ad9ec43edbee4491e915e009207e2bd07">liste_base_coffres</a>, const char *const nom_coffre, int x, int y, t_map *<a class="el" href="../../dc/db7/map_8h.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>)</td></tr>
+<tr class="memdesc:a4d05e5a75f401b57f5e6958a50a6a780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui creer et initialise un coffre sur une carte.  <a href="../../d2/d9c/coffres_8h.html#a4d05e5a75f401b57f5e6958a50a6a780">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4d05e5a75f401b57f5e6958a50a6a780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a429c13dfc5bc32612208892805c750ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86ec">type_coffre_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9c/coffres_8h.html#a429c13dfc5bc32612208892805c750ad">nom_coffre_to_type_coffre</a> (const char *nom_coffre)</td></tr>
+<tr class="separator:a429c13dfc5bc32612208892805c750ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad339236e720fb2e7e16c44ebbd7c414b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9c/coffres_8h.html#ad339236e720fb2e7e16c44ebbd7c414b">info_coffre</a> (coffre_t *coffre)</td></tr>
 <tr class="memdesc:ad339236e720fb2e7e16c44ebbd7c414b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affcihe les informations sur un coffre dans la console.  <a href="../../d2/d9c/coffres_8h.html#ad339236e720fb2e7e16c44ebbd7c414b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad339236e720fb2e7e16c44ebbd7c414b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1910591e488a6a7a3f836706f80d9f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9c/coffres_8h.html#ac1910591e488a6a7a3f836706f80d9f8">interaction_coffre</a> (SDL_Rect *coffre_rect)</td></tr>
-<tr class="memdesc:ac1910591e488a6a7a3f836706f80d9f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gère les interactions du joueur avec un coffre lors d'une collision.  <a href="../../d2/d9c/coffres_8h.html#ac1910591e488a6a7a3f836706f80d9f8">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ac1910591e488a6a7a3f836706f80d9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaede33891b4fa55d0b68267a6207487"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9c/coffres_8h.html#afaede33891b4fa55d0b68267a6207487">interaction_coffre</a> (SDL_Rect *coffre_rect, joueur_t *joueur, lobjet_t *<a class="el" href="../../d7/d64/liste__objet_8h.html#ad412be52cbf2eb978fac0c2c2e8e3c82">objets</a>)</td></tr>
+<tr class="memdesc:afaede33891b4fa55d0b68267a6207487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gère les interactions du joueur avec un coffre lors d'une collision.  <a href="../../d2/d9c/coffres_8h.html#afaede33891b4fa55d0b68267a6207487">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afaede33891b4fa55d0b68267a6207487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add26f80bfe853e6f02c6d0e6e633d8a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831f">t_direction_1</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9c/coffres_8h.html#add26f80bfe853e6f02c6d0e6e633d8a5">inverser_direction</a> (<a class="el" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831f">t_direction_1</a> direction)</td></tr>
+<tr class="memdesc:add26f80bfe853e6f02c6d0e6e633d8a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse une direction.  <a href="../../d2/d9c/coffres_8h.html#add26f80bfe853e6f02c6d0e6e633d8a5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:add26f80bfe853e6f02c6d0e6e633d8a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -158,22 +172,51 @@ Variables</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>04/03/2022 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
-</div><h2 class="groupheader">Documentation du type de l'énumération</h2>
-<a id="ac465716f22ad6cccedf85e8c7899c7f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac465716f22ad6cccedf85e8c7899c7f8">&#9670;&nbsp;</a></span>action_coffre_t</h2>
+</div><h2 class="groupheader">Documentation des macros</h2>
+<a id="a85784c5cfbde434991ff8f2432642afc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85784c5cfbde434991ff8f2432642afc">&#9670;&nbsp;</a></span>COFFRE_FACE_OUVERT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="../../d2/d9c/coffres_8h.html#ac465716f22ad6cccedf85e8c7899c7f8">action_coffre_t</a></td>
+          <td class="memname">#define COFFRE_FACE_OUVERT&#160;&#160;&#160;&quot;ressources/sprite/coffrefaceouvert.bmp&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad61871f7a4232bfdec35d2f5c605985a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad61871f7a4232bfdec35d2f5c605985a">&#9670;&nbsp;</a></span>COFFRE_PROFIL_OUVERT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COFFRE_PROFIL_OUVERT&#160;&#160;&#160;&quot;ressources/sprite/coffreprofilouvert.bmp&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="a1ed9bf2ef0cb98998ba84a8903ab0796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ed9bf2ef0cb98998ba84a8903ab0796">&#9670;&nbsp;</a></span>etat_coffre_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d2/d9c/coffres_8h.html#a1ed9bf2ef0cb98998ba84a8903ab0796">etat_coffre_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Type enum indiquant si un coffre à été ouvert par un joueur </p>
 <table class="fieldtable">
-<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="ac465716f22ad6cccedf85e8c7899c7f8a9947185083273520715b7dc48cecb50c"></a>OUVERT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac465716f22ad6cccedf85e8c7899c7f8af33dd4dbb60f26ab46629aa042a06cf0"></a>FERME&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="a1ed9bf2ef0cb98998ba84a8903ab0796a9947185083273520715b7dc48cecb50c"></a>OUVERT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1ed9bf2ef0cb98998ba84a8903ab0796af33dd4dbb60f26ab46629aa042a06cf0"></a>FERME&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -195,6 +238,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a00a8529a492da49a620058ce9c9e86eca0a7b37f54c72f28cb34ab9860c0f17a0"></a>PROFIL_OUVERT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a00a8529a492da49a620058ce9c9e86ecac377d18a82325eb432058f9fc22122ea"></a>FACE_FERME&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a00a8529a492da49a620058ce9c9e86eca4341eb19b5df3b37fb4717f90d1c9c14"></a>FACE_OUVERT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a00a8529a492da49a620058ce9c9e86eca170e0a479579eb78c1834b6ade68fd09"></a>COFFRE_INCONNU&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -225,6 +269,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Max Descomps </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">nom_fichier</td><td>Le nom du fichier à lire </td></tr>
@@ -233,28 +278,19 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <div class="dynheader">
-Voici le graphe d'appel pour cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d2/d9c/coffres_8h_a2c9c6ec91da6b419ceaac9ed69a66316_cgraph.png" border="0" usemap="#d2/d9c/coffres_8h_a2c9c6ec91da6b419ceaac9ed69a66316_cgraph" alt=""/></div>
-<map name="d2/d9c/coffres_8h_a2c9c6ec91da6b419ceaac9ed69a66316_cgraph" id="d2/d9c/coffres_8h_a2c9c6ec91da6b419ceaac9ed69a66316_cgraph">
-<area shape="rect" title="Fonction qui recopie les informations d&#39;un fichier json pour les insérrer dans la structure liste_bas..." alt="" coords="5,5,159,32"/>
-<area shape="rect" href="../../d1/d41/init__close_8c.html#affaacddc6fe16ed3d818bf7e0c9798eb" title="Fonction qui appelle les fonctions pour terminer le programme." alt="" coords="207,5,356,32"/>
-</map>
-</div>
-<div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d2/d9c/coffres_8h_a2c9c6ec91da6b419ceaac9ed69a66316_icgraph.png" border="0" usemap="#d2/d9c/coffres_8h_a2c9c6ec91da6b419ceaac9ed69a66316_icgraph" alt=""/></div>
 <map name="d2/d9c/coffres_8h_a2c9c6ec91da6b419ceaac9ed69a66316_icgraph" id="d2/d9c/coffres_8h_a2c9c6ec91da6b419ceaac9ed69a66316_icgraph">
-<area shape="rect" title="Fonction qui recopie les informations d&#39;un fichier json pour les insérrer dans la structure liste_bas..." alt="" coords="108,5,261,32"/>
+<area shape="rect" title="Fonction qui recopie les informations d&#39;un fichier json pour les insérer dans la structure liste_base..." alt="" coords="108,5,261,32"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a89c39cf40bda420fcca8ee7c7afbfd96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89c39cf40bda420fcca8ee7c7afbfd96">&#9670;&nbsp;</a></span>creer_coffre()</h2>
+<a id="a4d05e5a75f401b57f5e6958a50a6a780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d05e5a75f401b57f5e6958a50a6a780">&#9670;&nbsp;</a></span>creer_coffre()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -262,6 +298,18 @@ Voici le graphe des appelants de cette fonction :</div>
         <tr>
           <td class="memname">coffre_t* creer_coffre </td>
           <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id_cle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id_loot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">liste_base_coffres_t *&#160;</td>
           <td class="paramname"><em>liste_base_coffres</em>, </td>
         </tr>
@@ -296,8 +344,11 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Max Descomps </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
+    <tr><td class="paramname">id_cle</td><td>L'identificateur de l'objet de quête nécessaire pour ouvrir le coffre, sinon 0 </td></tr>
+    <tr><td class="paramname">id_loot</td><td>L'identificateur de l'objet obtenu en ouvrant le coffre, sinon 0 </td></tr>
     <tr><td class="paramname">liste_base_coffre</td><td>Les coffres de base </td></tr>
     <tr><td class="paramname">nom_coffre</td><td>Le nom du coffre à creer </td></tr>
     <tr><td class="paramname">x</td><td>La position en abscisse du coffre sur la map </td></tr>
@@ -310,19 +361,18 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d2/d9c/coffres_8h_a89c39cf40bda420fcca8ee7c7afbfd96_cgraph.png" border="0" usemap="#d2/d9c/coffres_8h_a89c39cf40bda420fcca8ee7c7afbfd96_cgraph" alt=""/></div>
-<map name="d2/d9c/coffres_8h_a89c39cf40bda420fcca8ee7c7afbfd96_cgraph" id="d2/d9c/coffres_8h_a89c39cf40bda420fcca8ee7c7afbfd96_cgraph">
-<area shape="rect" title="Fonction qui creer et initialise un coffre sur une carte." alt="" coords="5,56,104,83"/>
-<area shape="rect" href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0" title=" " alt="" coords="173,5,282,32"/>
-<area shape="rect" href="../../d4/db3/coffres_8c.html#ad339236e720fb2e7e16c44ebbd7c414b" title="Affcihe les informations sur un coffre dans la console." alt="" coords="182,56,273,83"/>
-<area shape="rect" href="../../d4/db3/coffres_8c.html#a24b867dce7ad1cd18ea7afa0c254f399" title="Convertit une chaîne de caractères en type de coffre." alt="" coords="152,107,303,149"/>
+<div class="center"><img src="../../d2/d9c/coffres_8h_a4d05e5a75f401b57f5e6958a50a6a780_cgraph.png" border="0" usemap="#d2/d9c/coffres_8h_a4d05e5a75f401b57f5e6958a50a6a780_cgraph" alt=""/></div>
+<map name="d2/d9c/coffres_8h_a4d05e5a75f401b57f5e6958a50a6a780_cgraph" id="d2/d9c/coffres_8h_a4d05e5a75f401b57f5e6958a50a6a780_cgraph">
+<area shape="rect" title="Fonction qui creer et initialise un coffre sur une carte." alt="" coords="5,35,104,61"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0" title="Fonction qui renvoie, charge une texture et la prépare à se faire afficher." alt="" coords="173,5,282,32"/>
+<area shape="rect" href="../../d4/db3/coffres_8c.html#a429c13dfc5bc32612208892805c750ad" title=" " alt="" coords="152,57,303,98"/>
 </map>
 </div>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d2/d9c/coffres_8h_a89c39cf40bda420fcca8ee7c7afbfd96_icgraph.png" border="0" usemap="#d2/d9c/coffres_8h_a89c39cf40bda420fcca8ee7c7afbfd96_icgraph" alt=""/></div>
-<map name="d2/d9c/coffres_8h_a89c39cf40bda420fcca8ee7c7afbfd96_icgraph" id="d2/d9c/coffres_8h_a89c39cf40bda420fcca8ee7c7afbfd96_icgraph">
+<div class="center"><img src="../../d2/d9c/coffres_8h_a4d05e5a75f401b57f5e6958a50a6a780_icgraph.png" border="0" usemap="#d2/d9c/coffres_8h_a4d05e5a75f401b57f5e6958a50a6a780_icgraph" alt=""/></div>
+<map name="d2/d9c/coffres_8h_a4d05e5a75f401b57f5e6958a50a6a780_icgraph" id="d2/d9c/coffres_8h_a4d05e5a75f401b57f5e6958a50a6a780_icgraph">
 <area shape="rect" title="Fonction qui creer et initialise un coffre sur une carte." alt="" coords="160,5,259,32"/>
 <area shape="rect" href="../../dc/db7/map_8h.html#af6448083132a6591f73061457f30ebb3" title="Fonction qui récupère les informations stockées dans le buffer en entrée." alt="" coords="5,5,112,32"/>
 </map>
@@ -345,6 +395,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Max Descomps </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">coffre</td><td>Le coffre sur lequel on se renseigne </td></tr>
@@ -357,24 +408,14 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="center"><img src="../../d2/d9c/coffres_8h_ad339236e720fb2e7e16c44ebbd7c414b_cgraph.png" border="0" usemap="#d2/d9c/coffres_8h_ad339236e720fb2e7e16c44ebbd7c414b_cgraph" alt=""/></div>
 <map name="d2/d9c/coffres_8h_ad339236e720fb2e7e16c44ebbd7c414b_cgraph" id="d2/d9c/coffres_8h_ad339236e720fb2e7e16c44ebbd7c414b_cgraph">
 <area shape="rect" title="Affcihe les informations sur un coffre dans la console." alt="" coords="5,5,96,32"/>
-<area shape="rect" href="../../da/d68/affichage_8c.html#a833a9e3f93662a67ba30a73d64435286" title="Affiche des informations sur une texture." alt="" coords="144,5,245,32"/>
-</map>
-</div>
-<div class="dynheader">
-Voici le graphe des appelants de cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d2/d9c/coffres_8h_ad339236e720fb2e7e16c44ebbd7c414b_icgraph.png" border="0" usemap="#d2/d9c/coffres_8h_ad339236e720fb2e7e16c44ebbd7c414b_icgraph" alt=""/></div>
-<map name="d2/d9c/coffres_8h_ad339236e720fb2e7e16c44ebbd7c414b_icgraph" id="d2/d9c/coffres_8h_ad339236e720fb2e7e16c44ebbd7c414b_icgraph">
-<area shape="rect" title="Affcihe les informations sur un coffre dans la console." alt="" coords="307,5,397,32"/>
-<area shape="rect" href="../../dc/db7/map_8h.html#af6448083132a6591f73061457f30ebb3" title="Fonction qui récupère les informations stockées dans le buffer en entrée." alt="" coords="5,5,112,32"/>
-<area shape="rect" href="../../d2/d9c/coffres_8h.html#a89c39cf40bda420fcca8ee7c7afbfd96" title="Fonction qui creer et initialise un coffre sur une carte." alt="" coords="160,31,259,57"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a833a9e3f93662a67ba30a73d64435286" title="Affiche des informations en console sur une texture." alt="" coords="144,5,245,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ac1910591e488a6a7a3f836706f80d9f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1910591e488a6a7a3f836706f80d9f8">&#9670;&nbsp;</a></span>interaction_coffre()</h2>
+<a id="afaede33891b4fa55d0b68267a6207487"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaede33891b4fa55d0b68267a6207487">&#9670;&nbsp;</a></span>interaction_coffre()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -383,44 +424,103 @@ Voici le graphe des appelants de cette fonction :</div>
           <td class="memname">void interaction_coffre </td>
           <td>(</td>
           <td class="paramtype">SDL_Rect *&#160;</td>
-          <td class="paramname"><em>coffre_rect</em></td><td>)</td>
+          <td class="paramname"><em>coffre_rect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">lobjet_t *&#160;</td>
+          <td class="paramname"><em>objets</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Max Descomps </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">coffre_rect</td><td>Les coordonnées du prochain pas du personnage </td></tr>
+    <tr><td class="paramname">joueur</td><td>Le joueur activant le coffre </td></tr>
+    <tr><td class="paramname">objets</td><td>Les objets du jeu </td></tr>
   </table>
   </dd>
 </dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d2/d9c/coffres_8h_ac1910591e488a6a7a3f836706f80d9f8_cgraph.png" border="0" usemap="#d2/d9c/coffres_8h_ac1910591e488a6a7a3f836706f80d9f8_cgraph" alt=""/></div>
-<map name="d2/d9c/coffres_8h_ac1910591e488a6a7a3f836706f80d9f8_cgraph" id="d2/d9c/coffres_8h_ac1910591e488a6a7a3f836706f80d9f8_cgraph">
-<area shape="rect" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="5,81,141,108"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="197,5,268,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="324,107,409,133"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="197,107,268,133"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="189,157,276,184"/>
+<div class="center"><img src="../../d2/d9c/coffres_8h_afaede33891b4fa55d0b68267a6207487_cgraph.png" border="0" usemap="#d2/d9c/coffres_8h_afaede33891b4fa55d0b68267a6207487_cgraph" alt=""/></div>
+<map name="d2/d9c/coffres_8h_afaede33891b4fa55d0b68267a6207487_cgraph" id="d2/d9c/coffres_8h_afaede33891b4fa55d0b68267a6207487_cgraph">
+<area shape="rect" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="5,157,141,184"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0" title="Fonction qui renvoie, charge une texture et la prépare à se faire afficher." alt="" coords="204,5,313,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="223,56,294,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="376,259,461,285"/>
+<area shape="rect" href="../../d4/db3/coffres_8c.html#a8c96f10738b816af414262aad4445c70" title="Inverse une direction." alt="" coords="189,157,328,184"/>
+<area shape="rect" href="../../d4/d04/inventaire_8c.html#a1144d923a9a0174ae254109cd825c758" title="Fonction qui permet de mettre un objet trouvé dans le sac(inventaire)" alt="" coords="197,208,320,235"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="223,259,294,285"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="215,309,302,336"/>
 </map>
 </div>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d2/d9c/coffres_8h_ac1910591e488a6a7a3f836706f80d9f8_icgraph.png" border="0" usemap="#d2/d9c/coffres_8h_ac1910591e488a6a7a3f836706f80d9f8_icgraph" alt=""/></div>
-<map name="d2/d9c/coffres_8h_ac1910591e488a6a7a3f836706f80d9f8_icgraph" id="d2/d9c/coffres_8h_ac1910591e488a6a7a3f836706f80d9f8_icgraph">
-<area shape="rect" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="211,31,347,57"/>
-<area shape="rect" href="../../d5/dae/affichage_8h.html#a496f3ac319fd5099461ed8b705226fff" title=" " alt="" coords="5,5,163,32"/>
-<area shape="rect" href="../../d5/dae/affichage_8h.html#a2d9aff5f49a8ad8516d9d5b5e3f43bd5" title=" " alt="" coords="5,56,163,83"/>
+<div class="center"><img src="../../d2/d9c/coffres_8h_afaede33891b4fa55d0b68267a6207487_icgraph.png" border="0" usemap="#d2/d9c/coffres_8h_afaede33891b4fa55d0b68267a6207487_icgraph" alt=""/></div>
+<map name="d2/d9c/coffres_8h_afaede33891b4fa55d0b68267a6207487_icgraph" id="d2/d9c/coffres_8h_afaede33891b4fa55d0b68267a6207487_icgraph">
+<area shape="rect" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="224,101,360,127"/>
+<area shape="rect" href="../../d5/dae/affichage_8h.html#a2a84ccb2d94dcced9d8a95eed9bc413b" title="Permet de déplacer un joueur secondaire de x unités horizontales sur la map." alt="" coords="5,5,176,47"/>
+<area shape="rect" href="../../d5/dae/affichage_8h.html#aa536721b7c2a9adac6ef4f2ffb83074e" title="Permet de déplacer le personnage de x unités horizontales sur la map." alt="" coords="12,71,169,98"/>
+<area shape="rect" href="../../d5/dae/affichage_8h.html#a06c50666787c24c1a3ca91501e9f772d" title="Permet de déplacer un joueur secondaire de y unités verticales sur la map." alt="" coords="5,123,176,164"/>
+<area shape="rect" href="../../d5/dae/affichage_8h.html#a1479d2bcf35df66e73306d28d9ea0e13" title="Permet de déplacer le personnage principal de y unités verticales sur la map." alt="" coords="12,189,169,215"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a24b867dce7ad1cd18ea7afa0c254f399"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24b867dce7ad1cd18ea7afa0c254f399">&#9670;&nbsp;</a></span>nom_coffre_to_type_coffre()</h2>
+<a id="add26f80bfe853e6f02c6d0e6e633d8a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add26f80bfe853e6f02c6d0e6e633d8a5">&#9670;&nbsp;</a></span>inverser_direction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831f">t_direction_1</a> inverser_direction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831f">t_direction_1</a>&#160;</td>
+          <td class="paramname"><em>direction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Max Descomps </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">direction</td><td>La direction à inverser </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un type t_direction_1 </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d9c/coffres_8h_add26f80bfe853e6f02c6d0e6e633d8a5_icgraph.png" border="0" usemap="#d2/d9c/coffres_8h_add26f80bfe853e6f02c6d0e6e633d8a5_icgraph" alt=""/></div>
+<map name="d2/d9c/coffres_8h_add26f80bfe853e6f02c6d0e6e633d8a5_icgraph" id="d2/d9c/coffres_8h_add26f80bfe853e6f02c6d0e6e633d8a5_icgraph">
+<area shape="rect" title="Inverse une direction." alt="" coords="189,5,328,32"/>
+<area shape="rect" href="../../d2/d9c/coffres_8h.html#afaede33891b4fa55d0b68267a6207487" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="5,5,141,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a429c13dfc5bc32612208892805c750ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a429c13dfc5bc32612208892805c750ad">&#9670;&nbsp;</a></span>nom_coffre_to_type_coffre()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -428,35 +528,19 @@ Voici le graphe des appelants de cette fonction :</div>
         <tr>
           <td class="memname"><a class="el" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86ec">type_coffre_t</a> nom_coffre_to_type_coffre </td>
           <td>(</td>
-          <td class="paramtype">char *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>nom_coffre</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nom_coffre</td><td>La chaîne de caractères à convertir </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Une valeur du type type_coffre_t représentant le type de coffre </dd></dl>
-<div class="dynheader">
-Voici le graphe d'appel pour cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d2/d9c/coffres_8h_a24b867dce7ad1cd18ea7afa0c254f399_cgraph.png" border="0" usemap="#d2/d9c/coffres_8h_a24b867dce7ad1cd18ea7afa0c254f399_cgraph" alt=""/></div>
-<map name="d2/d9c/coffres_8h_a24b867dce7ad1cd18ea7afa0c254f399_cgraph" id="d2/d9c/coffres_8h_a24b867dce7ad1cd18ea7afa0c254f399_cgraph">
-<area shape="rect" title="Convertit une chaîne de caractères en type de coffre." alt="" coords="5,5,156,47"/>
-<area shape="rect" href="../../d1/d41/init__close_8c.html#affaacddc6fe16ed3d818bf7e0c9798eb" title="Fonction qui appelle les fonctions pour terminer le programme." alt="" coords="204,13,353,39"/>
-</map>
-</div>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d2/d9c/coffres_8h_a24b867dce7ad1cd18ea7afa0c254f399_icgraph.png" border="0" usemap="#d2/d9c/coffres_8h_a24b867dce7ad1cd18ea7afa0c254f399_icgraph" alt=""/></div>
-<map name="d2/d9c/coffres_8h_a24b867dce7ad1cd18ea7afa0c254f399_icgraph" id="d2/d9c/coffres_8h_a24b867dce7ad1cd18ea7afa0c254f399_icgraph">
-<area shape="rect" title="Convertit une chaîne de caractères en type de coffre." alt="" coords="152,5,303,47"/>
-<area shape="rect" href="../../d2/d9c/coffres_8h.html#a89c39cf40bda420fcca8ee7c7afbfd96" title="Fonction qui creer et initialise un coffre sur une carte." alt="" coords="5,13,104,39"/>
+<div class="center"><img src="../../d2/d9c/coffres_8h_a429c13dfc5bc32612208892805c750ad_icgraph.png" border="0" usemap="#d2/d9c/coffres_8h_a429c13dfc5bc32612208892805c750ad_icgraph" alt=""/></div>
+<map name="d2/d9c/coffres_8h_a429c13dfc5bc32612208892805c750ad_icgraph" id="d2/d9c/coffres_8h_a429c13dfc5bc32612208892805c750ad_icgraph">
+<area shape="rect" title=" " alt="" coords="152,5,303,47"/>
+<area shape="rect" href="../../d2/d9c/coffres_8h.html#a4d05e5a75f401b57f5e6958a50a6a780" title="Fonction qui creer et initialise un coffre sur une carte." alt="" coords="5,13,104,39"/>
 </map>
 </div>
 

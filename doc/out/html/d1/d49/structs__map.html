@@ -90,6 +90,8 @@ Attributs publics</h2></td></tr>
 <tr class="separator:a8da9748668e62eeea8e210d3ba81df50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a889c64ca7ac5725b8ba0e93e7c3ee057"><td class="memItemLeft" align="right" valign="top">t_aff *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d49/structs__map.html#a889c64ca7ac5725b8ba0e93e7c3ee057">text_sol</a></td></tr>
 <tr class="separator:a889c64ca7ac5725b8ba0e93e7c3ee057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cf21a0c0aaa32c99f1c0daff8f277bc"><td class="memItemLeft" align="right" valign="top">t_aff *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d49/structs__map.html#a0cf21a0c0aaa32c99f1c0daff8f277bc">texture_superposition</a></td></tr>
+<tr class="separator:a0cf21a0c0aaa32c99f1c0daff8f277bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bd0554ddfe12e87dfbb9405093cfecc"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d49/structs__map.html#a4bd0554ddfe12e87dfbb9405093cfecc">width</a></td></tr>
 <tr class="separator:a4bd0554ddfe12e87dfbb9405093cfecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5a0e110f70dea1156fca46c53f1c6da"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d49/structs__map.html#af5a0e110f70dea1156fca46c53f1c6da">height</a></td></tr>
@@ -112,9 +114,9 @@ Attributs publics</h2></td></tr>
 <tr class="separator:a8d1bfc8107f70a1d462ca92468896ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Définition de la structure map.</p>
-<dl class="section author"><dt>Auteurs</dt><dd>Ange Despert Antoine Bruneau Descomps Max</dd></dl>
-<p>Cette définition est la pour éviter une inclusion mutuelle des fichiers <a class="el" href="../../d5/dae/affichage_8h.html">affichage.h</a> et <a class="el" href="../../dc/db7/map_8h.html">map.h</a> . </p>
+<div class="textblock"><p>Cette structure doit permettre de stocker toutes les informations liées à la map. <br  />
+Pour cela, On va stocké sous forme de listes toutes les <a class="el" href="../../d1/d49/structs__map.html#abc1532265c403adfbc475bafca6ad747">zones de collisions</a>, <a class="el" href="../../d1/d49/structs__map.html#a909aa57f45ea83c8c494488e315cd02f">les sorts</a>, <a class="el" href="../../d1/d49/structs__map.html#a865072c99e4600fdfaeabe30d7981d7b">les monstres</a>, <a class="el" href="../../d1/d49/structs__map.html#af10961161860e31e9a4bc894a37de932">les coffres</a> et enfin <a class="el" href="../../d1/d49/structs__map.html#a8d1bfc8107f70a1d462ca92468896ab1">les zones de tp</a>. <br  />
+ On retient également des informations importantes comme des textures : <a class="el" href="../../d1/d49/structs__map.html#a889c64ca7ac5725b8ba0e93e7c3ee057">la texture de fond</a>, <a class="el" href="../../d1/d49/structs__map.html#a0cf21a0c0aaa32c99f1c0daff8f277bc">une texture à supperposer</a> et enfin <a class="el" href="../../d1/d49/structs__map.html#a8da9748668e62eeea8e210d3ba81df50">la map avec toutes les entitées</a>. </p><dl class="section author"><dt>Auteurs</dt><dd>Ange Despert Antoine Bruneau Descomps Max </dd></dl>
 </div><h2 class="groupheader">Documentation des données membres</h2>
 <a id="a09b2aabbbc6a94c633eb92658c8d286e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a09b2aabbbc6a94c633eb92658c8d286e">&#9670;&nbsp;</a></span>cases_x</h2>
@@ -172,6 +174,7 @@ Attributs publics</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>L'identificateur de la map </p>
 
 </div>
 </div>
@@ -292,6 +295,21 @@ Attributs publics</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>La texture du sol </p>
+
+</div>
+</div>
+<a id="a0cf21a0c0aaa32c99f1c0daff8f277bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cf21a0c0aaa32c99f1c0daff8f277bc">&#9670;&nbsp;</a></span>texture_superposition</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">t_aff* t_map::texture_superposition</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>La texture à supperposer devant le personnage </p>
 
 </div>
 </div>

@@ -27,7 +27,7 @@ unsigned int \mbox{\hyperlink{structs__aff_a834fbb65cd111e547c54c274c5b58fc0}{co
 
 
 \doxysubsection{Description détaillée}
-Structure de texture.\hypertarget{structs__aff_autotoc_md0}{}\doxysubsection{Le but de la structure}\label{structs__aff_autotoc_md0}
+Définition de la structure de texture.\hypertarget{structs__aff_autotoc_md0}{}\doxysubsection{Le but de la structure}\label{structs__aff_autotoc_md0}
 Cette structure à pour but de permettre l\textquotesingle{}affichage d\textquotesingle{}une texture à l\textquotesingle{}écran de manière précise. Ainsi, on peut facilement placer une texture où l\textquotesingle{}on veut sans savoir utiliser la S\+DL.\hypertarget{structs__aff_autotoc_md1}{}\doxysubsection{Éléments de la structure}\label{structs__aff_autotoc_md1}
 
 \begin{DoxyItemize}
@@ -37,8 +37,14 @@ Cette structure à pour but de permettre l\textquotesingle{}affichage d\textquot
 \item width \+: La largeur de la texture. Cette valeur est obtenue grâce à une requête S\+DL et renseignée dans la structure par la fonction creer\+\_\+texture.
 \item height \+: La hauteur de la texture. Cette valeur est obtenue grâce à une requête S\+DL et renseignée dans la structure par la fonction creer\+\_\+texture.
 \item multipli\+\_\+taille \+: Un multiplicateur qui permet de modifier la taille de la texture. Il s\textquotesingle{}agit de celui que l\textquotesingle{}on renseigne dans la fonction creer\+\_\+texture.
-\item duree\+\_\+frame\+\_\+anim \+: entier qui permet de savoir combien de temps une frame dure. C\textquotesingle{}est à dire, combien de temps une frame dure sur l\textquotesingle{}écran. 
+\item duree\+\_\+frame\+\_\+anim \+: entier qui permet de savoir combien de temps une frame dure. C\textquotesingle{}est à dire, combien de temps une frame dure sur l\textquotesingle{}écran.
 \end{DoxyItemize}
+
+Cette définition est la pour éviter une inclusion mutuelle des fichiers \mbox{\hyperlink{coffres_8h}{coffres.\+h}} et \mbox{\hyperlink{affichage_8h}{affichage.\+h}} .
+
+Cette définition est la pour éviter une inclusion mutuelle des fichiers \mbox{\hyperlink{map_8h}{map.\+h}} et \mbox{\hyperlink{affichage_8h}{affichage.\+h}} .
+
+Cette définition est la pour éviter une inclusion mutuelle des fichiers \mbox{\hyperlink{objet_8h}{objet.\+h}} et \mbox{\hyperlink{affichage_8h}{affichage.\+h}} . 
 
 \doxysubsection{Documentation des données membres}
 \mbox{\Hypertarget{structs__aff_a7f7e29a1c85002df85bc122f6836b20c}\label{structs__aff_a7f7e29a1c85002df85bc122f6836b20c}} 

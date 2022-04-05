@@ -5,7 +5,9 @@
 \item 
 \+\_\+\+Bool \mbox{\hyperlink{structstatut__s_a58839a3792888bbac103e8aebd38d2bf}{en\+\_\+mouvement}}
 \item 
-\mbox{\hyperlink{definition__commun_8h_aec4e3894aa763e81148b2241ff730790}{t\+\_\+direction}} \mbox{\hyperlink{structstatut__s_a6f33bfa2a4042ead4f47fd1d00a9f64c}{orientation}}
+\mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} \mbox{\hyperlink{structstatut__s_a5e37a83526819f1ffbc1d2529629048d}{orient\+\_\+dep}}
+\item 
+\mbox{\hyperlink{definition__commun_8h_a7f49efdfdf08d70d9980031175207fc1}{t\+\_\+direction\+\_\+2}} \mbox{\hyperlink{structstatut__s_a438e53f1122950818a121d0f11773ea5}{orient\+\_\+att}}
 \item 
 \+\_\+\+Bool \mbox{\hyperlink{structstatut__s_a3eeb16e0defbebd231bc9f7e3adbddb4}{bouclier\+\_\+equipe}}
 \item 
@@ -20,6 +22,8 @@ int \mbox{\hyperlink{structstatut__s_af3e3d5b5aab762470c5ca24b3d4a38b8}{duree\+\
 S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{structstatut__s_a400b82377d9e4d7d0f643a4082ebb895}{zone\+\_\+colision}}
 \item 
 S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{structstatut__s_ae3479b9a0f40feea0272e22b630ee6e6}{vrai\+\_\+zone\+\_\+collision}}
+\item 
+t\+\_\+aff $\ast$ \mbox{\hyperlink{structstatut__s_a445db43d20761922e3683a0a2e92f358}{texture\+\_\+prec}}
 \end{DoxyCompactItemize}
 
 
@@ -60,13 +64,25 @@ durée d\textquotesingle{}une animation éventuelle sur le joueur \mbox{\Hyperta
 \doxysubsubsection{\texorpdfstring{en\_mouvement}{en\_mouvement}}
 {\footnotesize\ttfamily \+\_\+\+Bool statut\+\_\+s\+::en\+\_\+mouvement}
 
-personnage en mouvement \mbox{\Hypertarget{structstatut__s_a6f33bfa2a4042ead4f47fd1d00a9f64c}\label{structstatut__s_a6f33bfa2a4042ead4f47fd1d00a9f64c}} 
-\index{statut\_s@{statut\_s}!orientation@{orientation}}
-\index{orientation@{orientation}!statut\_s@{statut\_s}}
-\doxysubsubsection{\texorpdfstring{orientation}{orientation}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_aec4e3894aa763e81148b2241ff730790}{t\+\_\+direction}} statut\+\_\+s\+::orientation}
+personnage en mouvement \mbox{\Hypertarget{structstatut__s_a438e53f1122950818a121d0f11773ea5}\label{structstatut__s_a438e53f1122950818a121d0f11773ea5}} 
+\index{statut\_s@{statut\_s}!orient\_att@{orient\_att}}
+\index{orient\_att@{orient\_att}!statut\_s@{statut\_s}}
+\doxysubsubsection{\texorpdfstring{orient\_att}{orient\_att}}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_a7f49efdfdf08d70d9980031175207fc1}{t\+\_\+direction\+\_\+2}} statut\+\_\+s\+::orient\+\_\+att}
 
-ordientation du personnage \mbox{\Hypertarget{structstatut__s_ae3479b9a0f40feea0272e22b630ee6e6}\label{structstatut__s_ae3479b9a0f40feea0272e22b630ee6e6}} 
+orientaiton attaqute du personnage \mbox{\Hypertarget{structstatut__s_a5e37a83526819f1ffbc1d2529629048d}\label{structstatut__s_a5e37a83526819f1ffbc1d2529629048d}} 
+\index{statut\_s@{statut\_s}!orient\_dep@{orient\_dep}}
+\index{orient\_dep@{orient\_dep}!statut\_s@{statut\_s}}
+\doxysubsubsection{\texorpdfstring{orient\_dep}{orient\_dep}}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} statut\+\_\+s\+::orient\+\_\+dep}
+
+orientation deplacement du personnage \mbox{\Hypertarget{structstatut__s_a445db43d20761922e3683a0a2e92f358}\label{structstatut__s_a445db43d20761922e3683a0a2e92f358}} 
+\index{statut\_s@{statut\_s}!texture\_prec@{texture\_prec}}
+\index{texture\_prec@{texture\_prec}!statut\_s@{statut\_s}}
+\doxysubsubsection{\texorpdfstring{texture\_prec}{texture\_prec}}
+{\footnotesize\ttfamily t\+\_\+aff$\ast$ statut\+\_\+s\+::texture\+\_\+prec}
+
+la texture precedente du personnage \mbox{\Hypertarget{structstatut__s_ae3479b9a0f40feea0272e22b630ee6e6}\label{structstatut__s_ae3479b9a0f40feea0272e22b630ee6e6}} 
 \index{statut\_s@{statut\_s}!vrai\_zone\_collision@{vrai\_zone\_collision}}
 \index{vrai\_zone\_collision@{vrai\_zone\_collision}!statut\_s@{statut\_s}}
 \doxysubsubsection{\texorpdfstring{vrai\_zone\_collision}{vrai\_zone\_collision}}

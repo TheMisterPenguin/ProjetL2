@@ -12,19 +12,10 @@
 
 #include "definition_commun.h"
 
-/**
- * Différentes interfaces du jeu
- */
-typedef enum{JEU,PAUSE,PRINCIPAL,INVENTAIRE}menus_t;
-
-extern menus_t menus;
-
 extern t_aff * text_pause;
 extern t_aff * text_inventaire1;
 extern t_aff * text_inventaire2;
 extern t_aff * text_accueil;
-
-//extern void afficher_menu(menus_t * menu);
 
 /**
  * \fn void afficher_menu_pause(joueur_t * joueur, char * f_src_objet)
@@ -32,7 +23,7 @@ extern t_aff * text_accueil;
  * \param joueur Joueur qui ouvre le menu
  * \param f_src_objet Liste des objets du jeux utilisée dans certaines fonctionnalités du menu pause
  */
-extern void afficher_menu_pause(joueur_t ** joueur, char * f_src_objet);
+extern void afficher_menu_pause(joueur_t *joueur[], char *f_src_objet, unsigned short int nb_joueurs);
 
 void afficher_menu_pause_manette(joueur_t *joueur);
 

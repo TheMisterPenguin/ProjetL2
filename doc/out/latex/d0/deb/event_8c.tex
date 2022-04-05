@@ -5,8 +5,7 @@
 Fonctions de gestion des événements du jeu.  
 
 
-Graphe des dépendances par inclusion de event.\+c\+:
-\nopagebreak
+Graphe des dépendances par inclusion de event.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +15,8 @@ Graphe des dépendances par inclusion de event.\+c\+:
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-static void \mbox{\hyperlink{event_8c_afe551917ddc29ee5ade1c65a26a61537}{key\+Down}} (S\+D\+L\+\_\+\+Keyboard\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$joueurs)
-\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand une touche du clavier est pressée par un joueur. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{event_8c_ab35bbcfaf1fe479bd4f5d158db01d9e4}{key\+Down}} (S\+D\+L\+\_\+\+Keyboard\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$joueurs, char $\ast$f\+\_\+src\+\_\+objet)
+\item 
 static void \mbox{\hyperlink{event_8c_ad024139f09670512c89309b5261a96b1}{key\+Up}} (S\+D\+L\+\_\+\+Keyboard\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$joueurs)
 \begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand une touche du clavier est relachée par un joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{event_8c_ac367042c66a1868384bac213a1ecbb99}{joystick\+\_\+button\+\_\+down}} (S\+D\+L\+\_\+\+Joy\+Button\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$j)
@@ -32,7 +31,7 @@ static void \mbox{\hyperlink{event_8c_ad82a0fa86ea18b0674c6807f8951e1a3}{mouse\+
 \begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand un bouton de la souris est relachée par un joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{event_8c_ac27091daa86f31b79780d6a91801fd11}{jeu\+\_\+event\+\_\+manette}} (joueur\+\_\+t $\ast$$\ast$joueurs)
 \item 
-void \mbox{\hyperlink{event_8c_aded23e2ea2ac3df851674e2292250166}{jeu\+\_\+event}} (joueur\+\_\+t $\ast$$\ast$joueurs)
+void \mbox{\hyperlink{event_8c_a5f8eef7cc98d022db9987ee0634804e6}{jeu\+\_\+event}} (joueur\+\_\+t $\ast$$\ast$joueurs, char $\ast$f\+\_\+src\+\_\+obj)
 \begin{DoxyCompactList}\small\item\em Fonction qui gère les événements. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{event_8c_ac8d571cc4da84ae88b13211ec29eb2e3}{logo\+\_\+passer}} (void)
 \end{DoxyCompactItemize}
@@ -59,11 +58,11 @@ Copyright (c) 2022
 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{event_8c_aded23e2ea2ac3df851674e2292250166}\label{event_8c_aded23e2ea2ac3df851674e2292250166}} 
+\mbox{\Hypertarget{event_8c_a5f8eef7cc98d022db9987ee0634804e6}\label{event_8c_a5f8eef7cc98d022db9987ee0634804e6}} 
 \index{event.c@{event.c}!jeu\_event@{jeu\_event}}
 \index{jeu\_event@{jeu\_event}!event.c@{event.c}}
 \doxysubsubsection{\texorpdfstring{jeu\_event()}{jeu\_event()}}
-{\footnotesize\ttfamily void jeu\+\_\+event (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void jeu\+\_\+event (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Despert Ange 
@@ -72,20 +71,21 @@ Despert Ange
 \begin{DoxyParams}{Paramètres}
 {\em joueur} & Joueurs pouvant provoquer l\textquotesingle{}événement \\
 \hline
+{\em f\+\_\+src\+\_\+obj} & Fichier source des objets du jeu utile à certains événements \\
+\hline
 \end{DoxyParams}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/deb/event_8c_aded23e2ea2ac3df851674e2292250166_cgraph}
+\includegraphics[width=293pt]{d0/deb/event_8c_a5f8eef7cc98d022db9987ee0634804e6_cgraph}
 \end{center}
 \end{figure}
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=222pt]{d0/deb/event_8c_aded23e2ea2ac3df851674e2292250166_icgraph}
+\includegraphics[width=222pt]{d0/deb/event_8c_a5f8eef7cc98d022db9987ee0634804e6_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{event_8c_ac27091daa86f31b79780d6a91801fd11}\label{event_8c_ac27091daa86f31b79780d6a91801fd11}} 
@@ -94,8 +94,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{jeu\_event\_manette()}{jeu\_event\_manette()}}
 {\footnotesize\ttfamily void jeu\+\_\+event\+\_\+manette (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -115,16 +114,14 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{joystick\_button\_down()}{joystick\_button\_down()}}
 {\footnotesize\ttfamily void joystick\+\_\+button\+\_\+down (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Joy\+Button\+Event $\ast$}]{ev,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{j }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d0/deb/event_8c_ac367042c66a1868384bac213a1ecbb99_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -141,11 +138,10 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=341pt]{d0/deb/event_8c_a3d363d383d39de072c4b66e4bc202809_cgraph}
+\includegraphics[width=344pt]{d0/deb/event_8c_a3d363d383d39de072c4b66e4bc202809_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -158,44 +154,31 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{joystick\_stick()}{joystick\_stick()}}
 {\footnotesize\ttfamily void joystick\+\_\+stick (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$$\ast$}]{j }\end{DoxyParamCaption})}
 
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=310pt]{d0/deb/event_8c_a5399cdc6a8a5f4af8c2488ac077899ce_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{event_8c_afe551917ddc29ee5ade1c65a26a61537}\label{event_8c_afe551917ddc29ee5ade1c65a26a61537}} 
+\mbox{\Hypertarget{event_8c_ab35bbcfaf1fe479bd4f5d158db01d9e4}\label{event_8c_ab35bbcfaf1fe479bd4f5d158db01d9e4}} 
 \index{event.c@{event.c}!keyDown@{keyDown}}
 \index{keyDown@{keyDown}!event.c@{event.c}}
 \doxysubsubsection{\texorpdfstring{keyDown()}{keyDown()}}
-{\footnotesize\ttfamily void key\+Down (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Keyboard\+Event $\ast$}]{ev,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static void key\+Down (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Keyboard\+Event $\ast$}]{ev,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+objet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\begin{DoxyAuthor}{Auteur}
-Antoine Bruneau 
-\end{DoxyAuthor}
-
-\begin{DoxyParams}{Paramètres}
-{\em ev} & Structure contenant l\textquotesingle{}événement \\
-\hline
-{\em joueurs} & Joueurs pouvant provoquer l\textquotesingle{}événement \\
-\hline
-\end{DoxyParams}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/deb/event_8c_afe551917ddc29ee5ade1c65a26a61537_cgraph}
+\includegraphics[width=331pt]{d0/deb/event_8c_ab35bbcfaf1fe479bd4f5d158db01d9e4_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=243pt]{d0/deb/event_8c_afe551917ddc29ee5ade1c65a26a61537_icgraph}
+\includegraphics[width=243pt]{d0/deb/event_8c_ab35bbcfaf1fe479bd4f5d158db01d9e4_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{event_8c_ad024139f09670512c89309b5261a96b1}\label{event_8c_ad024139f09670512c89309b5261a96b1}} 
@@ -214,8 +197,7 @@ Antoine Bruneau
 {\em joueurs} & Joueurs pouvant provoquer l\textquotesingle{}événement \\
 \hline
 \end{DoxyParams}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -228,16 +210,14 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{logo\_passer()}{logo\_passer()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} logo\+\_\+passer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=303pt]{d0/deb/event_8c_ac8d571cc4da84ae88b13211ec29eb2e3_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -260,8 +240,7 @@ Antoine Bruneau
 {\em joueurs} & Joueurs pouvant provoquer l\textquotesingle{}événement \\
 \hline
 \end{DoxyParams}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -284,8 +263,14 @@ Antoine Bruneau
 {\em joueurs} & Joueurs pouvant provoquer l\textquotesingle{}événement \\
 \hline
 \end{DoxyParams}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{d0/deb/event_8c_ad82a0fa86ea18b0674c6807f8951e1a3_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
