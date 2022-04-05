@@ -339,6 +339,7 @@ static void mouseButtonDown(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
     joueur_t * joueur = joueurs[0];
     statut_t* statut = joueur->statut;
 
+    /* à cet instant on ne peux pas savoir si l'action est une attaque ou une attaque chargée */
     if(statut->action == RIEN && statut->duree <= 0){
         if(ev->button == SDL_BUTTON_LEFT){
             statut->action = ATTAQUE_OU_CHARGER;
@@ -361,15 +362,19 @@ static void mouseButtonUp(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
     if(ev->button == SDL_BUTTON_LEFT){
         if(statut->action == CHARGER){
             statut->action = ATTAQUE_CHARGEE;
-            statut->orient_att = (statut->orient_dep * 2) % 8;
+            /* placement de la frame à l'orientation actuelle du personnage */
+            statut->orient_att = (statut->orient_dep * 2);
             next_frame_x_indice(joueur->textures_joueur->liste[TEXT_ATTAQUE_CHARGEE], statut->orient_att);
             statut->en_mouvement = faux;
             statut->duree = DUREE_ATTAQUE_CHARGEE;
         }
+        /* on sait que l'action est une simple attaque */
         else if(statut->action == ATTAQUE_OU_CHARGER){
             statut->action = ATTAQUE;
             next_frame_y_indice(joueur->textures_joueur->liste[TEXT_ATTAQUE], statut->orient_dep);
+            /* l'attaque vers l'EST a une animation à contre sens des autres animations */
             if(statut->orient_dep != EST_1)
+                /* placement de l'orient_att 2 orientations avant l'orentation actuelle */
                 statut->orient_att = (statut->orient_dep * 2 + 2) % 8;
             else
                 statut->orient_att = 0;
@@ -378,8 +383,10 @@ static void mouseButtonUp(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
         }
     }
     else if( ev->button == SDL_BUTTON_RIGHT){
+        /* stoper le chargerment de l'attaque */
         if(statut->action == CHARGER)
             statut->animation = RIEN;
+        /* faire l'animation de protection du personnage */
         else if(statut->bouclier_equipe == vrai && statut->duree_anim <= 0){
             statut->animation = BLOQUER;
             statut->duree_anim = DUREE_BLOQUER;
