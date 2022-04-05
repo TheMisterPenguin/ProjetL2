@@ -664,7 +664,9 @@ bool deplacement_x_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_jou
     int *x_map = &(map->text_map->frame_anim->x); /* La coordonnée x actuelle de la map */
     int *x_pers = &(j->statut->zone_colision.x); /* La coordonnée x actuelle du joueur */
     const long int taille_unite = floor(j->textures_joueur->liste[0]->multipli_taille); /* Calcul en nombre de pixels d'une unité de déplacement */
-    SDL_Rect temp = {.x = j->statut->vrai_zone_collision.x + x * taille_unite, .y = j->statut->vrai_zone_collision.y, .w = j->statut->vrai_zone_collision.w, .h = j->statut->vrai_zone_collision.h};
+    SDL_Rect temp = {.x = j->statut->vrai_zone_collision.x + x * taille_unite, .w = j->statut->vrai_zone_collision.w, .h = floor(j->textures_joueur->liste[0]->multipli_taille) * 3};
+
+    temp.y = j->statut->vrai_zone_collision.y + (j->statut->vrai_zone_collision.h - floor(j->textures_joueur->liste[0]->multipli_taille) * 3);
 
     /* On vérifie si le joueur se trouve sur une zone de tp */
 
