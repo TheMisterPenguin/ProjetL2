@@ -5,7 +5,7 @@
  *
  * Ce fichier contient une enumeration des codes d'erreur du programme, permettant ainsi une modification simple et une gestion plus facile des erreurs.
  * \version 1.0
- * \date 02/02/2022
+ * \date 05/04/22
  * \copyright Copyright (c) 2022
  */
 
@@ -56,9 +56,16 @@ enum types_erreur
     ERREUR_LISTE, /**< Une erreur liée à une liste */
     ERR_CREATION_REPERTOIRE_SAUVEGARDE, /**< Une erreur liée à la création du répertoire de sauvegarde */
     ERR_RECTANGLE_TOO_BIG, /**< Une erreur liée au rectangle trop grand */
-    ERREUR_JSON_CLE_NON_TROUVEE
+    ERREUR_JSON_CLE_NON_TROUVEE /**Une Erreur liée à l'impossibilité de trouver une clé dans un fichier JSON */
 };
 
+/**
+ * \brief Macro qui permet de facilement afficher une erreur
+ * \author Ange Despert
+ * 
+ * Attention, cette macro quitte le programme.
+ * 
+ */
 #define erreur(msg, code_erreur, ...)                                                         \
     {                                                                                         \
         char *msp = malloc(sizeof(char) * (500));                                             \
@@ -72,6 +79,10 @@ enum types_erreur
         fermer_programme(code_erreur);                                                        \
     }
 
+/**
+ * \brief Macro qui permet de facilement afficher un Warning
+ * \author Ange Despert
+ */
 #define warning(msg, code_erreur, ...)                                                       \
     {                                                                                        \
         char *msp = malloc(sizeof(char) * (500));                                            \

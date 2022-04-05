@@ -1,10 +1,10 @@
 /**
- * \file liste.h
- * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
- * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \file listes.h
+ * \authors Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \authors Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
  * \brief Fonction relatives au type de structure liste générique
  * \version 2.0
- * \date 27/03/2022
+ * \date 03/04/2022
  * \copyright Copyright (c) 2022
  */
 
@@ -12,7 +12,8 @@
 #define __LISTE_H__
 
 /**
- * \brief Définition du type liste
+ * \brief Définition dy type element : un élément d'une liste.
+ * \author Ange Despert
  */
 typedef struct element
 {
@@ -21,6 +22,10 @@ typedef struct element
     struct element *succ;
 } t_element;
 
+/**
+ * \brief Définition du type list : une liste générique.
+ * 
+ */
 typedef struct list{
     t_element *flag;
     t_element *ec;
@@ -30,7 +35,9 @@ typedef struct list{
     void (*aff)(void *);
 }list;
 /**
- * Fonction qui permet de créer une liste
+ * \brief Fonction qui permet de créer une liste.
+ * \authors Ange Despert
+ * \authors Max Descomps
  *
  * On peut préciser des fonction pour l'insertion et la supprésion des objets.
  *
@@ -48,7 +55,8 @@ typedef struct list{
 extern list *init_liste(void *(*fonction_ajout)(void *), void (*f_suppresion)(void *), void (*fonction_affichage)(void *));
 
 /**
- * Fonction booléenne qui permet de savoir si la liste est vide.
+ * \brief Fonction booléenne qui permet de savoir si la liste est vide.
+ * \author Ange Despert
  * 
  * \param to_verify La liste que l'on doit vérifier
  * \return Vrai si la liste est vide, faux sinon
@@ -56,7 +64,8 @@ extern list *init_liste(void *(*fonction_ajout)(void *), void (*f_suppresion)(vo
 extern _Bool liste_vide(const list * const to_verify);
 
 /**
- * Fonction booléenne qui permet de savoir si ll'on est actuellement hors de la liste.
+ * \brief Fonction booléenne qui permet de savoir si ll'on est actuellement hors de la liste.
+ * \author Ange Despert
  * 
  * \param to_verify La liste que l'on doit vérifier
  * \return Vrai si on se trouve en dehors de la liste, faux sinon
@@ -64,35 +73,40 @@ extern _Bool liste_vide(const list * const to_verify);
 extern _Bool hors_liste(const list * const to_verify);
 
 /**
- * Fonction qui permet de se placer en tête de la liste.
+ * \brief Fonction qui permet de se placer en tête de la liste.
+ * \author Ange Despert
  * 
  * \param mylist La liste dans laquelle on se déplace
  */
 extern void en_tete(list *mylist);
 
 /**
- * Fonction qui permet de se placer en queue de la liste.
+ * \brief Fonction qui permet de se placer en queue de la liste.
+ * \author Ange Despert
  * 
  * \param mylist La liste dans laquelle on se déplace
  */
 extern void en_queue(list *mylist);
 
 /**
- * Fonction qui permet de passer à l'élément suivant dans la liste
+ * \brief Fonction qui permet de passer à l'élément suivant dans la liste.
+ * \author Ange Despert
  * 
  * \param mylist La liste dans laquelle on se déplace
  */
 extern void suivant(list *mylist);
 
 /**
- * \Fonction qui permet de passer à l'élément suivant dans la liste
+ * \brief Fonction qui permet de passer à l'élément suivant dans la liste.
+ * \author Ange Despert
  * 
  * \param mylist La liste dans laquelle on se déplace
  */
 extern void precedent(list *mylist);
 
 /**
- * Fonction qui renvoie l'élément courant
+ * \brief Fonction qui renvoie l'élément courant.
+ * \author Ange Despert
  * 
  * \param mylist La liste dont on veut l'élément
  * \return L'élément que l'on convoite
@@ -100,7 +114,8 @@ extern void precedent(list *mylist);
 extern void * valeur_elt(const list *const mylist);
 
 /**
- * Fonction qui permet de modifier l'élément courant. 
+ * \brief Fonction qui permet de modifier l'élément courant. 
+ * \author Ange Despert
  * 
  * ATTENTION : si les élément sont placés dans la liste par référencement cela détruira l'élément précédent !
  * 
@@ -110,7 +125,8 @@ extern void * valeur_elt(const list *const mylist);
 extern void modif_elt(list *mylist, void *v);
 
 /**
- * Fonction qui permet de supprimer un élément de la liste.
+ * \brief Fonction qui permet de supprimer un élément de la liste.
+ * \author Ange Despert
  *
  * ATTENTION : si les élements sont placés dans la liste par référencement cela détruira l'élément (ne pas y accéder après) !
  *
@@ -121,7 +137,8 @@ extern void modif_elt(list *mylist, void *v);
 extern void oter_elt(list *mylist);
 
 /**
- * Fonction qui permet d'ajouter un élément à droite de l'élément courant
+ * \brief Fonction qui permet d'ajouter un élément à droite de l'élément courant.
+ * \author Ange Despert
  * 
  * \param mylist La liste où on veut ajouter l'élément
  * \param v L'élément que l'on veut ajouter
@@ -129,7 +146,8 @@ extern void oter_elt(list *mylist);
 extern void ajout_droit(list *mylist, void *v);
 
 /**
- * Fonction qui permet d'ajouter un élément à gauche de l'élément courant
+ * \brief Fonction qui permet d'ajouter un élément à gauche de l'élément courant.
+ * \author Ange Despert
  *
  * \param mylist La liste où on veut ajouter l'élément
  * \param v L'élément que l'on veut ajouter
@@ -137,7 +155,8 @@ extern void ajout_droit(list *mylist, void *v);
 extern void ajout_gauche(list *mylist, void *v);
 
 /**
- * Fonction qui renvoie le nombre d'éléments dans la liste
+ * \brief Fonction qui renvoie le nombre d'éléments dans la liste.
+ * \author Ange Despert
  * 
  * \param mylist La liste dont on veut conaitre le nombre d'éléments
  * \return Le nombre d'élements dans la liste
@@ -145,7 +164,8 @@ extern void ajout_gauche(list *mylist, void *v);
 extern unsigned int taille_liste(const list *const mylist);
 
 /**
- * Fonction qui supprimme tout les éléments de la liste. 
+ * \brief Fonction qui supprimme tout les éléments de la liste. 
+ * \author Ange Despert
  * 
  * ATTENTION : si les éléments sont insérés par référencement, ils seront tous détruits ! 
  * 
@@ -156,26 +176,26 @@ extern unsigned int taille_liste(const list *const mylist);
 extern void vider_liste(list *mylist);
 
 /**
- * \fn void detruire_liste(list ** liste)
- * \brief Détruit une structure liste
- * \param liste Adresse du pointeur sur la liste
+ * \brief Détruit une liste en détruisant tout ses éléménts.
+ * \author Ange Despert
+ * \param liste Adresse de la liste
  */
 extern void detruire_liste(list ** liste);
 
 /**
- * \fn void afficher_liste(list * liste)
- * \brief Affiche une liste d'objets génériques
+ * \brief Affiche une liste d'objets génériques.
  * \param liste Pointeur sur la liste
  */
 void afficher_liste(list * liste);
 
 /**
- * \brief Fonction qui permet de selectionner l'élément courant à partor d'un élément précis
+ * \brief Fonction qui permet de selectionner l'élément courant à partir d'un élément précis.
+ * \author Ange Despert
  * 
  * \param liste La liste dans laquelle on veut faire la recherche
  * \param element L'élément que l'on veut rechercher
  * \param f_egalite Une fonction de comparaison qui renvoie vrai si les deux valeurs sont égales ou NULL si on veut comparer les adresses
- * \return si l'élément à été trouvé
+ * \return Vrai si l'élément à été trouvé
  */
 _Bool selectionner_element(list *liste, void *element, _Bool (*f_egalite)(void *, void *));
 #endif

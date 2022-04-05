@@ -96,15 +96,16 @@ typedef struct s_l_aff{
 }t_l_aff;
 
 /* Variables globales */
-extern list *listeDeTextures;
-extern list *buffer_affichage; /*<Buffer contenant toutes les textures à afficher */
-extern long int compteur;      /*compteur utilisé pour gérer la vitesse d'affichage (fps)*/
-extern SDL_Rect tx, ty;
-extern float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépendent de la résolution */
-extern t_aff * heal;
-extern t_aff * bloquer;
-extern t_aff *fenetre_finale; /* La fenêtre de jeu finale sans l'interface */
-extern list * liste_animations;
+extern list *listeDeTextures; /**< La liste de toutes les textures qui ont été crées. Sert à leur destruction */
+extern long int compteur; /**< Un compteur d'ips qui va de 0 à \ref NB_FPS */
+extern SDL_Rect tx; /**<Rectangle servant au déplacement du personnage principal en x*/
+extern SDL_Rect ty; /**<Rectangle servant au déplacement du personnage principal en y*/
+extern float multiplicateur_x; /**< Multiplicateur qui dépend de la résolution (longueur), vaut 1 pour 1920 */
+extern float multiplicateur_y; /**< Multiplicateur qui dépend de la résolution (largeur), vaut 1 pour 1080 */
+extern t_aff * heal; /**<La texture de l'animation de heal */
+extern t_aff * bloquer; /**<La texture de l'animation de blocage*/
+extern t_aff * fenetre_finale; /**<La texture de la fenêtre de jeu finale sans l'interface */
+extern list * liste_animations; /**<La liste des animation à jouer */
 
 /* Définition des fonctions */
 
