@@ -52,7 +52,6 @@ void equiper_objet(joueur_t * joueur,objet_t ** objet){
 
     //vérifie que le joueur ait un niveau suffisant
     if(joueur->niveau < (*objet)->niveau){
-        printf("Niveau insuffisant pour équiper\n");
         return;
     }
 
