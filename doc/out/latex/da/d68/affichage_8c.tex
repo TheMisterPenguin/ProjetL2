@@ -36,11 +36,11 @@ void \mbox{\hyperlink{affichage_8c_a1e152c4ffb55530b72318cf321ef2770}{next\+\_\+
 \mbox{\hyperlink{code__erreur_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} \mbox{\hyperlink{affichage_8c_ae4bffa3eb5b67a9316544428c25bdc44}{next\+\_\+frame\+\_\+y\+\_\+indice}} (t\+\_\+aff $\ast$texture, const unsigned int indice)
 \begin{DoxyCompactList}\small\item\em Fonction qui positionne la texture au n-\/ème sprite sur l\textquotesingle{}axe des y. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_a3e6b4564952e31a2d9e9d0c98dd6ee78}{def\+\_\+texture\+\_\+taille}} (t\+\_\+aff $\ast$a\+\_\+modifier, const int longueur, const int largeur)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de définir exactement la taille de la texture. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_a833a9e3f93662a67ba30a73d64435286}{info\+\_\+texture}} (t\+\_\+aff $\ast$texture)
 \begin{DoxyCompactList}\small\item\em Affiche des informations en console sur une texture. \end{DoxyCompactList}\item 
 t\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_a59fc51b629cfed9815495f235dae78e0}{creer\+\_\+texture}} (const char $\ast$nom\+\_\+fichier, const int taille\+\_\+t\+\_\+x, const int taille\+\_\+t\+\_\+y, const int x, const int y, const float multiplicateur\+\_\+taille)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui renvoie, charge une texture et la prépare à se faire afficher. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{code__erreur_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} \mbox{\hyperlink{affichage_8c_a47b9be5462def4189b86dcf60f3a29a5}{afficher\+\_\+texture}} (t\+\_\+aff $\ast$texture, S\+D\+L\+\_\+\+Renderer $\ast$rendu)
 \begin{DoxyCompactList}\small\item\em Affiche la texture donnée en paramètre à l\textquotesingle{}écran. \end{DoxyCompactList}\item 
 t\+\_\+l\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_aea6ef750998e466ed9d8beef7daefc09}{init\+\_\+textures\+\_\+joueur}} (joueur\+\_\+t $\ast$j, int num\+\_\+j)
@@ -58,7 +58,7 @@ void \mbox{\hyperlink{affichage_8c_a373b7b6959133fba94c4030ebfa75155}{afficher\+
 void \mbox{\hyperlink{affichage_8c_a6d78ce42135a25accbd3bf152dc94563}{afficher\+\_\+sorts}} (\mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+sorts, joueur\+\_\+t $\ast$joueur)
 \begin{DoxyCompactList}\small\item\em Fonction qui affiche les sorts. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{code__erreur_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} \mbox{\hyperlink{affichage_8c_ab3637688138fc059d87799ea8ec77514}{afficher\+\_\+buffer}} (\mbox{\hyperlink{structlist}{list}} $\ast$buffer, S\+D\+L\+\_\+\+Renderer $\ast$rendu)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui affiche les textures contenues dans la liste en paramètre. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structpoint}{point}} \mbox{\hyperlink{affichage_8c_ac0f9e4c72a1a75de6aea7bc84616f1d7}{get\+\_\+screen\+\_\+center}} ()
 \item 
 \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a4309414813bec32b17ef18f77e1cfa7f}{point\+\_\+in\+\_\+rect}} (S\+D\+L\+\_\+\+Rect r, \mbox{\hyperlink{structpoint}{point}} p)
@@ -74,35 +74,35 @@ void \mbox{\hyperlink{affichage_8c_ab74333683d8d4816aa1331794b3b9e94}{rect\+\_\+
 void \mbox{\hyperlink{affichage_8c_ada2e4bcab49cd7c1563aef3afa20f75d}{rect\+\_\+centre\+\_\+rect\+\_\+y}} (S\+D\+L\+\_\+\+Rect $\ast$rectangle, S\+D\+L\+\_\+\+Rect $\ast$rectangle\+\_\+centre)
 \begin{DoxyCompactList}\small\item\em Fonction qui permet de placer un rectangle au centre d\textquotesingle{}un autre sur l\textquotesingle{}axe des y. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_af70d121ff2c41380da955ae836b109eb}{rect\+\_\+centre\+\_\+rect}} (S\+D\+L\+\_\+\+Rect $\ast$rectangle, S\+D\+L\+\_\+\+Rect $\ast$rectangle\+\_\+centre)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de placer un rectangle au centre d\textquotesingle{}un autre. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_a5911c692b804289a22f5a161b4fe2286}{deplacer\+\_\+texture\+\_\+centre}} (t\+\_\+aff $\ast$texture, int x, int y)
 \begin{DoxyCompactList}\small\item\em Déplace la texture pour que son centre soit au centre de l\textquotesingle{}écran. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_ae766b650805d4bdfc2faa57ba24f6cae}{deplacer\+\_\+rect\+\_\+origine}} (S\+D\+L\+\_\+\+Rect $\ast$r, int x, int y)
 \begin{DoxyCompactList}\small\item\em Déplace un rectangle depuis l\textquotesingle{}origine de l\textquotesingle{}écran. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_a48d7af885eb3fdd6655cf83b85f454c9}{deplacer\+\_\+texture\+\_\+origine}} (t\+\_\+aff $\ast$texture, int x, int y)
-\item 
+\begin{DoxyCompactList}\small\item\em Déplace l\textquotesingle{}origine de la texture aux coordonnées données. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_a6a61a69139c9efe60f3b382747493870}{deplacer\+\_\+rect\+\_\+haut\+\_\+droit}} (S\+D\+L\+\_\+\+Rect $\ast$r, int x, int y)
-\item 
+\begin{DoxyCompactList}\small\item\em Place un rectangle en haut à droite de l\textquotesingle{}écran puis le replace à partir de cette origine. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_ae2ee44d9a091423e00920e05b6e81750}{deplacer\+\_\+texture\+\_\+haut\+\_\+droit}} (t\+\_\+aff $\ast$texture, int x, int y)
-\item 
+\begin{DoxyCompactList}\small\item\em La texture est déplacée vers la droite et vers le haut. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_ae6459fb3c595a3121db1ff654bd78e93}{deplacer\+\_\+texture\+\_\+bas\+\_\+gauche}} (t\+\_\+aff $\ast$texture, int x, int y)
-\item 
+\begin{DoxyCompactList}\small\item\em La texture est déplacée vers le coin inférieur gauche de l\textquotesingle{}écran. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_a8a05cde4c824ad13d8f2dbf73b0b741f}{deplacer\+\_\+texture\+\_\+bas\+\_\+droit}} (t\+\_\+aff $\ast$texture, int x, int y)
-\item 
+\begin{DoxyCompactList}\small\item\em La texture est déplacée vers le coin inférieur droit de la fenêtre. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_a9d3a1090bb34f34aa532f12d75bfb75c}{modif\+\_\+affichage\+\_\+rect}} (t\+\_\+aff $\ast$texture, S\+D\+L\+\_\+\+Rect r)
-\item 
+\begin{DoxyCompactList}\small\item\em Modifie le rectangle qui définit la zone de l\textquotesingle{}écran qui sera utilisée pour le rendu de la texture. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a113b955d03c898c51a06f8f270aa418a}{deplacement\+\_\+x\+\_\+pers}} (t\+\_\+map $\ast$m, joueur\+\_\+t $\ast$$\ast$joueurs, unsigned short int nb\+\_\+joueurs, int x, lobjet\+\_\+t $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}})
-\item 
+\begin{DoxyCompactList}\small\item\em Permet de déplacer le personnage de x unités horizontales sur la map. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a5aa7ec7dd10a36d55c4a42976622a7ea}{deplacement\+\_\+y\+\_\+pers}} (t\+\_\+map $\ast$m, joueur\+\_\+t $\ast$$\ast$joueurs, unsigned short int nb\+\_\+joueurs, int y, lobjet\+\_\+t $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}})
-\item 
+\begin{DoxyCompactList}\small\item\em Permet de déplacer le personnage principal de y unités verticales sur la map. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_afd72b18ff9aedec07f7fafd296322043}{deplacement\+\_\+x\+\_\+joueur\+\_\+secondaire}} (t\+\_\+map $\ast$m, joueur\+\_\+t $\ast$joueur, int x, S\+D\+L\+\_\+\+Rect $\ast$r, lobjet\+\_\+t $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}})
-\item 
+\begin{DoxyCompactList}\small\item\em Permet de déplacer un joueur secondaire de x unités horizontales sur la map. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a643df6a35c630438417f9aa6bd6166bf}{deplacement\+\_\+y\+\_\+joueur\+\_\+secondaire}} (t\+\_\+map $\ast$m, joueur\+\_\+t $\ast$joueur, int y, S\+D\+L\+\_\+\+Rect $\ast$r, lobjet\+\_\+t $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}})
-\item 
+\begin{DoxyCompactList}\small\item\em Permet de déplacer un joueur secondaire de y unités verticales sur la map. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_a83f1b5ddb558420c53c41071e559a8ff}{text\+\_\+copier\+\_\+position}} (t\+\_\+aff $\ast$a\+\_\+modifier, const t\+\_\+aff $\ast$const original)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de placer 2 textures aux mêmes endroit à l\textquotesingle{}écran. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_aada9bf5a3890b9d12a93e50b7c19b523}{rects\+\_\+egal\+\_\+x}} (const S\+D\+L\+\_\+\+Rect $\ast$const r1, S\+D\+L\+\_\+\+Rect const $\ast$const r2)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de savoir si deux rectangles sont égaux sur l\textquotesingle{}axe x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a476d6dbccccfa7149563166bf7905997}{rects\+\_\+egal\+\_\+y}} (const S\+D\+L\+\_\+\+Rect $\ast$const r1, S\+D\+L\+\_\+\+Rect const $\ast$const r2)
 \begin{DoxyCompactList}\small\item\em Fonction qui permet de savoir si deux rectangles sont égaux sur l\textquotesingle{}axe y. \end{DoxyCompactList}\item 
 S\+D\+L\+\_\+\+Color \mbox{\hyperlink{affichage_8c_a07753dec9b0d8ad58944ccd3f7406ce3}{color}} (Uint8 r, Uint8 g, Uint8 b, Uint8 a)
@@ -218,8 +218,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{afficher\_buffer()}{afficher\_buffer()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{code__erreur_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} afficher\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{buffer,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{rendu }\end{DoxyParamCaption})}
 
-Fonction qui affiche les textures contenues dans la liste en paramètre.
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 Les premiers éléments seront en arrière plan et les derniers seront en 1er plan.
 
 
@@ -232,7 +233,8 @@ Les premiers éléments seront en arrière plan et les derniers seront en 1er pl
 \begin{DoxyReturn}{Renvoie}
 Une valeur différente à 0 lors d\textquotesingle{}une erreur 
 \end{DoxyReturn}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -327,6 +329,12 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{afficher\_texture()}{afficher\_texture()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{code__erreur_8h_a2156a134798b01e3fd1fe853a1943418}{err\+\_\+t}} afficher\+\_\+texture (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{rendu }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction permet d\textquotesingle{}afficher à l\textquotesingle{}écran une texture utilisant le type personalisé \mbox{\hyperlink{structs__aff}{t\+\_\+aff}} à l\textquotesingle{}écran avec le rendu donné en paramètre. ~\newline
+ Rien ne sera afficher si la texture donnée en entrée est égalle à N\+U\+LL.
+
 
 \begin{DoxyParams}{Paramètres}
 {\em texture} & La texture à afficher \\
@@ -337,7 +345,8 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{DoxyReturn}{Renvoie}
 0 s\textquotesingle{}il n\textquotesingle{}y a pas eu d\textquotesingle{}erreur sinon un entier négatif 
 \end{DoxyReturn}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -419,6 +428,40 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{creer\_texture()}{creer\_texture()}}
 {\footnotesize\ttfamily t\+\_\+aff$\ast$ creer\+\_\+texture (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom\+\_\+fichier,  }\item[{const int}]{taille\+\_\+t\+\_\+x,  }\item[{const int}]{taille\+\_\+t\+\_\+y,  }\item[{const int}]{x,  }\item[{const int}]{y,  }\item[{const float}]{multiplicateur\+\_\+taille }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Fonction qui permet de créer un texture sous forme d\textquotesingle{}un type personnalisé \mbox{\hyperlink{structs__aff}{t\+\_\+aff}} qui contient pleins d\textquotesingle{}informations sur la texture. ~\newline
+ \hypertarget{affichage_8h_autotoc_md2}{}\doxysubsubsection{Déroulement}\label{affichage_8h_autotoc_md2}
+Le fichier de la texture est chargé dans une surface. ~\newline
+ On va converir cette surface en texture. ~\newline
+On va remplir les informations de la structure \mbox{\hyperlink{structs__aff}{t\+\_\+aff}} avec les information en entrée et des informations obtenues via requêtes S\+DL. ~\newline
+Bien entendu, on testera pour être sur qu\textquotesingle{}il n\textquotesingle{}y a aucune erreur.\hypertarget{affichage_8h_autotoc_md3}{}\doxysubsubsection{Lors d\textquotesingle{}une erreur}\label{affichage_8h_autotoc_md3}
+Contrairement à la plupart des fonctions qui gèrent les textures, celle-\/ci affichera surement un warning à l\textquotesingle{}écran si l\textquotesingle{}on ne peut pas créer la texture. Il est donc important de ce rendre compte que cette fonction ne ferme pas le programme lors d\textquotesingle{}une erreur. C\textquotesingle{}est donc au développeur de décider si une impossibilité de créer une texture est une raison de fermer le programme.\hypertarget{affichage_8h_autotoc_md4}{}\doxysubsubsection{A noter}\label{affichage_8h_autotoc_md4}
+Si l\textquotesingle{}on donne -\/1 et -\/1 pour les paramètres taille\+\_\+t\+\_\+x et taille\+\_\+t\+\_\+y le rectangle \mbox{\hyperlink{structs__aff_aefd6b2f2f56383a8cba0193ff88593dc}{frame\+\_\+anim}} de la structure \mbox{\hyperlink{structs__aff}{t\+\_\+aff}} sera N\+U\+LL. ~\newline
+ Il est donc important de prendre cela en compte pour ne pas causer des erreurs de segmentation. ~\newline
+ Donner N\+U\+LL en nom de texture ne la créra pas mais créra tout les autres attributs de la structure \mbox{\hyperlink{structs__aff}{t\+\_\+aff}}. ~\newline
+ ~\newline
+Donner 0 en multiplicateur de taille agrandira la texture pour qu\textquotesingle{}elle face la taille de l\textquotesingle{}écran.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\+\_\+fichier} & Le nom du fichier contenant la texture \\
+\hline
+{\em taille\+\_\+t\+\_\+x} & La longueur de la texture à montrer \\
+\hline
+{\em taille\+\_\+t\+\_\+y} & La largeur de la texture à montrer \\
+\hline
+{\em x} & La coordonnée x où afficher la texture à l\textquotesingle{}écran \\
+\hline
+{\em y} & La coordonnée y où afficher la texture à l\textquotesingle{}écran \\
+\hline
+{\em multiplicateur\+\_\+taille} & Une valeur par laquelle multiplier la taille de la texture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+t\+\_\+aff$\ast$ Une structure qui permet l\textquotesingle{}affichage de la texture à l\textquotesingle{}écran ou N\+U\+LL s\textquotesingle{}il y a eu une érreur 
+\end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -468,13 +511,27 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{DoxyReturn}{Renvoie}
 un entier correspondant à l\textquotesingle{}indice 
 \end{DoxyReturn}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{da/d68/affichage_8c_ac5cde30d91e5bbd8e8b7db9c04229752_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{affichage_8c_a3e6b4564952e31a2d9e9d0c98dd6ee78}\label{affichage_8c_a3e6b4564952e31a2d9e9d0c98dd6ee78}} 
 \index{affichage.c@{affichage.c}!def\_texture\_taille@{def\_texture\_taille}}
 \index{def\_texture\_taille@{def\_texture\_taille}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{def\_texture\_taille()}{def\_texture\_taille()}}
 {\footnotesize\ttfamily void def\+\_\+texture\+\_\+taille (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{a\+\_\+modifier,  }\item[{const int}]{longueur,  }\item[{const int}]{largeur }\end{DoxyParamCaption})}
 
-Fonction qui permet de définir exactement la taille de la texture à affichar sur l\textquotesingle{}écran
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Obsolète}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Obsolète}}]L\textquotesingle{}utilisation de cette fonction n\textquotesingle{}a plus trop de sens étant donné que le moteur gère automatiquement la taille des textures.\end{DoxyRefDesc}
+
+
+Fonction qui permet de modifier le rectangle de la structure \mbox{\hyperlink{structs__aff}{t\+\_\+aff}} \+: aff\+\_\+ecran avec de nouvelles valeurs.
 
 
 \begin{DoxyParams}{Paramètres}
@@ -504,7 +561,8 @@ Ange Despert
 Cette fonction permet à une entité de se déplacer sur l\textquotesingle{}axe x. ~\newline
 Cette fonction gère les collisions et empêchera l\textquotesingle{}entité de sortir des limites de la map. ~\newline
 Cette dernière prend également les collisions définies dans la liste des collisions de la map \+: \mbox{\hyperlink{structs__map_abc1532265c403adfbc475bafca6ad747}{liste\+\_\+collisions}}. ~\newline
- Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l\textquotesingle{}entier \mbox{\hyperlink{structs__aff_a3602f5ebcf2cd61acc2dc65a70919b81}{duree\+\_\+frame\+\_\+anim}} qui permet d\textquotesingle{}êmpécher le déplacement tout les x frames.
+ Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l\textquotesingle{}entier \mbox{\hyperlink{structs__aff_a3602f5ebcf2cd61acc2dc65a70919b81}{duree\+\_\+frame\+\_\+anim}} qui permet d\textquotesingle{}êmpécher le déplacement tout les x frames. ~\newline
+ On peut récupérer l\textquotesingle{}élément que l\textquotesingle{}entité a touché en regardant l\textquotesingle{}élément courant de la \mbox{\hyperlink{structs__map_abc1532265c403adfbc475bafca6ad747}{liste de collisions}} de la map.
 
 
 \begin{DoxyParams}{Paramètres}
@@ -541,8 +599,6 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{deplacement\_x\_joueur\_secondaire@{deplacement\_x\_joueur\_secondaire}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{deplacement\_x\_joueur\_secondaire()}{deplacement\_x\_joueur\_secondaire()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} deplacement\+\_\+x\+\_\+joueur\+\_\+secondaire (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{int}]{x,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{r,  }\item[{lobjet\+\_\+t $\ast$}]{objets }\end{DoxyParamCaption})}
-
-Permet de déplacer un joueur secondaire de x unités horizontales sur la map
 
 
 \begin{DoxyParams}{Paramètres}
@@ -582,9 +638,13 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{deplacement\_x\_pers()}{deplacement\_x\_pers()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} deplacement\+\_\+x\+\_\+pers (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{unsigned short int}]{nb\+\_\+joueurs,  }\item[{int}]{x,  }\item[{lobjet\+\_\+t $\ast$}]{objets }\end{DoxyParamCaption})}
 
-Permet de déplacer le personnage de x unités horizontales sur la map
-
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction utilise un rectangle \mbox{\hyperlink{affichage_8h_adede5261ac6b86bf02adc9516dd999bf}{tx}} pour savoir quand elle doit bouger le personnage ou bien déplacer la camera. ~\newline
+Elle prendra en compte les collisions de la \mbox{\hyperlink{structs__map_abc1532265c403adfbc475bafca6ad747}{liste de collisions de la map}}. ~\newline
+Elle empêche le personnage de sortir des bordures de la map. ~\newline
+ 
 \begin{DoxyParams}{Paramètres}
 {\em map} & La map sur laquelle le personnage se déplace \\
 \hline
@@ -598,9 +658,9 @@ Permet de déplacer le personnage de x unités horizontales sur la map
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-vrai \+: Si le joueur a réussi à se déplacer 
+vrai \+: Si le joueur s\textquotesingle{}est téléporté 
 
-faux \+: Si le joueur n\textquotesingle{}a pas pu se déplacer 
+faux \+: Si le joueur ne s\textquotesingle{}est pas téléporté 
 \end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
@@ -628,7 +688,8 @@ Ange Despert
 Cette fonction permet à une entité de se déplacer sur l\textquotesingle{}axe y. ~\newline
 Cette fonction gère les collisions et empêchera l\textquotesingle{}entité de sortir des limites de la map. ~\newline
 Cette dernière prend également les collisions définies dans la liste des collisions de la map \+: \mbox{\hyperlink{structs__map_abc1532265c403adfbc475bafca6ad747}{liste\+\_\+collisions}}. ~\newline
- Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l\textquotesingle{}entier \mbox{\hyperlink{structs__aff_a3602f5ebcf2cd61acc2dc65a70919b81}{duree\+\_\+frame\+\_\+anim}} qui permet d\textquotesingle{}êmpécher le déplacement tout les x frames.
+ Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l\textquotesingle{}entier \mbox{\hyperlink{structs__aff_a3602f5ebcf2cd61acc2dc65a70919b81}{duree\+\_\+frame\+\_\+anim}} qui permet d\textquotesingle{}êmpécher le déplacement tout les x frames. ~\newline
+ On peut récupérer l\textquotesingle{}élément que l\textquotesingle{}entité a touché en regardant l\textquotesingle{}élément courant de la \mbox{\hyperlink{structs__map_abc1532265c403adfbc475bafca6ad747}{liste de collisions}} de la map.
 
 
 \begin{DoxyParams}{Paramètres}
@@ -665,8 +726,6 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{deplacement\_y\_joueur\_secondaire@{deplacement\_y\_joueur\_secondaire}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{deplacement\_y\_joueur\_secondaire()}{deplacement\_y\_joueur\_secondaire()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} deplacement\+\_\+y\+\_\+joueur\+\_\+secondaire (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{int}]{y,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{r,  }\item[{lobjet\+\_\+t $\ast$}]{objets }\end{DoxyParamCaption})}
-
-Permet de déplacer un joueur secondaire de y unités verticales sur la map
 
 
 \begin{DoxyParams}{Paramètres}
@@ -706,9 +765,13 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{deplacement\_y\_pers()}{deplacement\_y\_pers()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} deplacement\+\_\+y\+\_\+pers (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{unsigned short int}]{nb\+\_\+joueurs,  }\item[{int}]{y,  }\item[{lobjet\+\_\+t $\ast$}]{objets }\end{DoxyParamCaption})}
 
-Permet de déplacer le personnage principal de y unités verticales sur la map
-
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction utilise un rectangle \mbox{\hyperlink{affichage_8h_af91959b4ed80cc07433e8e07ddeb28bb}{ty}} pour savoir quand elle doit bouger le personnage ou bien déplacer la camera. ~\newline
+Elle prendra en compte les collisions de la \mbox{\hyperlink{structs__map_abc1532265c403adfbc475bafca6ad747}{liste de collisions de la map}}. ~\newline
+Elle empêche le personnage de sortir des bordures de la map. ~\newline
+ 
 \begin{DoxyParams}{Paramètres}
 {\em map} & La map sur laquelle le personnage se déplace \\
 \hline
@@ -722,9 +785,9 @@ Permet de déplacer le personnage principal de y unités verticales sur la map
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-vrai \+: Si le joueur a réussi à se déplacer 
+vrai \+: Si le joueur s\textquotesingle{}est téléporté 
 
-faux \+: Si le joueur n\textquotesingle{}a pas pu se déplacer 
+faux \+: Si le joueur ne s\textquotesingle{}est pas téléporté 
 \end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
@@ -746,8 +809,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{deplacer\_rect\_haut\_droit()}{deplacer\_rect\_haut\_droit()}}
 {\footnotesize\ttfamily void deplacer\+\_\+rect\+\_\+haut\+\_\+droit (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{r,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
-Place un rectangle en haut à droite de l\textquotesingle{}écran puis le replace à partir de cette origine
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em r} & Le rectangle à placer \\
@@ -757,7 +821,8 @@ Place un rectangle en haut à droite de l\textquotesingle{}écran puis le replac
 {\em x} & La coordonnée y du rectangle depuis la nouvelle origine. \\
 \hline
 \end{DoxyParams}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -799,8 +864,9 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{deplacer\_texture\_bas\_droit()}{deplacer\_texture\_bas\_droit()}}
 {\footnotesize\ttfamily void deplacer\+\_\+texture\+\_\+bas\+\_\+droit (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
-La texture est déplacée vers le coin inférieur droit de la fenêtre
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em texture} & la texture à déplacer \\
@@ -816,8 +882,9 @@ La texture est déplacée vers le coin inférieur droit de la fenêtre
 \doxysubsubsection{\texorpdfstring{deplacer\_texture\_bas\_gauche()}{deplacer\_texture\_bas\_gauche()}}
 {\footnotesize\ttfamily void deplacer\+\_\+texture\+\_\+bas\+\_\+gauche (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
-La texture est déplacée vers le coin inférieur gauche de l\textquotesingle{}écran
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em texture} & la texture à déplacer \\
@@ -827,7 +894,8 @@ La texture est déplacée vers le coin inférieur gauche de l\textquotesingle{}�
 {\em y} & Coordonnée y du coin supérieur gauche de la texture. \\
 \hline
 \end{DoxyParams}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -870,8 +938,9 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{deplacer\_texture\_haut\_droit()}{deplacer\_texture\_haut\_droit()}}
 {\footnotesize\ttfamily void deplacer\+\_\+texture\+\_\+haut\+\_\+droit (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
-La texture est déplacée vers la droite et vers le haut
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em texture} & la texture à déplacer \\
@@ -887,10 +956,8 @@ La texture est déplacée vers la droite et vers le haut
 \doxysubsubsection{\texorpdfstring{deplacer\_texture\_origine()}{deplacer\_texture\_origine()}}
 {\footnotesize\ttfamily void deplacer\+\_\+texture\+\_\+origine (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
-Déplace l\textquotesingle{}origine de la texture aux coordonnées données.
-
 \begin{DoxyAuthor}{Auteur}
-Max Descomps 
+Ange Despert 
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
@@ -909,7 +976,8 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
 \includegraphics[width=350pt]{da/d68/affichage_8c_a48d7af885eb3fdd6655cf83b85f454c9_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -949,6 +1017,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{detruire\_liste\_textures()}{detruire\_liste\_textures()}}
 {\footnotesize\ttfamily void detruire\+\_\+liste\+\_\+textures (\begin{DoxyParamCaption}\item[{t\+\_\+l\+\_\+aff $\ast$$\ast$}]{l\+\_\+texture }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em l\+\_\+texture} & L\textquotesingle{}adresse de la liste de texture à détruire \\
@@ -961,9 +1032,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 {\footnotesize\ttfamily void detruire\+\_\+texture (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$$\ast$}]{texture }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
-Despert Ange 
+Despert Ange
 \end{DoxyAuthor}
-
+Libère la mémoire allouée à la texture et la mets à N\+U\+LL. 
 \begin{DoxyParams}{Paramètres}
 {\em texture} & L\textquotesingle{}adresse du pointeur sur la structure à détruire \\
 \hline
@@ -1172,8 +1243,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{modif\_affichage\_rect()}{modif\_affichage\_rect()}}
 {\footnotesize\ttfamily void modif\+\_\+affichage\+\_\+rect (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{S\+D\+L\+\_\+\+Rect}]{r }\end{DoxyParamCaption})}
 
-Modifie le rectangle qui définit la zone de l\textquotesingle{}écran qui sera utilisée pour le rendu de la texture
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em texture} & La texture à modifier. \\
@@ -1217,6 +1289,14 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{next\_frame\_indice@{next\_frame\_indice}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{next\_frame\_indice()}{next\_frame\_indice()}}
 {\footnotesize\ttfamily void next\+\_\+frame\+\_\+indice (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture,  }\item[{const unsigned int}]{x,  }\item[{const unsigned int}]{y }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Despert Ange
+\end{DoxyAuthor}
+Fonction qui permet de choisir le sprite a un cetain indice de l\textquotesingle{}image. ~\newline
+ Cette fonction est concue pour être utiliser avec une texture qui contient plusieurs sprites de même taille. ~\newline
+La fonction utilisera la taille du \mbox{\hyperlink{structs__aff_aefd6b2f2f56383a8cba0193ff88593dc}{rectangle}} charger d\textquotesingle{}afficher qu\textquotesingle{}une partie d\textquotesingle{}une image. ~\newline
+ Cette fonction est la pour éviter deux appels de fonctions, en l\textquotesingle{}ocurence \mbox{\hyperlink{affichage_8h_a2184b77dfc56657f52d72e3c2f766db8}{next\+\_\+frame\+\_\+x\+\_\+indice}} et \mbox{\hyperlink{affichage_8h_a81e972fd3cad23381f37fc901733d7e2}{next\+\_\+frame\+\_\+y\+\_\+indice}}
 
 
 \begin{DoxyParams}{Paramètres}
@@ -1269,6 +1349,13 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{next\_frame\_x@{next\_frame\_x}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{next\_frame\_x()}{next\_frame\_x()}}
 {\footnotesize\ttfamily void next\+\_\+frame\+\_\+x (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Fonction qui passe au sprite suivant dans l\textquotesingle{}axe x. Cette fonction fera une boucle complête de l\textquotesingle{}image, il n\textquotesingle{}y a donc pas à s\textquotesingle{}inquiéter d\textquotesingle{}arriver à la fin de l\textquotesingle{}image. ~\newline
+Comme les fonction à indice, cette fonction fait appel au rectangle \mbox{\hyperlink{structs__aff_aefd6b2f2f56383a8cba0193ff88593dc}{frame\+\_\+anim}} de la structure \mbox{\hyperlink{structs__aff}{d\textquotesingle{}affichage}}. ~\newline
+
 
 
 \begin{DoxyParams}{Paramètres}
@@ -1332,7 +1419,11 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{next\_frame\_y()}{next\_frame\_y()}}
 {\footnotesize\ttfamily void next\+\_\+frame\+\_\+y (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{texture }\end{DoxyParamCaption})}
 
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Fonction qui passe au sprite suivant dans l\textquotesingle{}axe y. Cette fonction fera une boucle complête de l\textquotesingle{}image, il n\textquotesingle{}y a donc pas à s\textquotesingle{}inquiéter d\textquotesingle{}arriver à la fin de l\textquotesingle{}image. ~\newline
+Comme les fonction à indice, cette fonction fait appel au rectangle \mbox{\hyperlink{structs__aff_aefd6b2f2f56383a8cba0193ff88593dc}{frame\+\_\+anim}} de la structure \mbox{\hyperlink{structs__aff}{d\textquotesingle{}affichage}}. 
 \begin{DoxyParams}{Paramètres}
 {\em t\+\_\+aff$\ast$} & une texture joueur \\
 \hline
@@ -1447,7 +1538,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 Ange Despert
 \end{DoxyAuthor}
 \begin{DoxyRefDesc}{Obsolète}
-\item[\mbox{\hyperlink{deprecated__deprecated000004}{Obsolète}}]Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. ~\newline
+\item[\mbox{\hyperlink{deprecated__deprecated000005}{Obsolète}}]Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. ~\newline
  Utilisez \mbox{\hyperlink{affichage_8h_a26cf1d2055162e3bf7166de2f55902f9}{place\+\_\+rect\+\_\+center\+\_\+from\+\_\+point}} à l\textquotesingle{}aide du rectangle \mbox{\hyperlink{structs__aff_aefd6b2f2f56383a8cba0193ff88593dc}{frame\+\_\+anim}} de la varaible \mbox{\hyperlink{affichage_8h_aef49d39125567f1a9d5ed0561ea60edc}{fenetre\+\_\+finale}} .\end{DoxyRefDesc}
 
 
@@ -1479,7 +1570,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{rect\_centre\_rect()}{rect\_centre\_rect()}}
 {\footnotesize\ttfamily void rect\+\_\+centre\+\_\+rect (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{rectangle,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{rectangle\+\_\+centre }\end{DoxyParamCaption})}
 
-Fonction qui permet de placer un rectangle au centre d\textquotesingle{}un autre \begin{DoxyAuthor}{Auteur}
+\begin{DoxyAuthor}{Auteur}
 Ange Despert
 \end{DoxyAuthor}
 Fonctionnement simillaire à l\textquotesingle{}utilisation conjointe des fonctions placer\+\_\+rect\+\_\+center\+\_\+from\+\_\+point et \mbox{\hyperlink{affichage_8h_aad94b2ce0d93f581c0f82b0467a8d2ed}{get\+\_\+rect\+\_\+center\+\_\+coord}} .
@@ -1563,7 +1654,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 Ange Despert
 \end{DoxyAuthor}
 \begin{DoxyRefDesc}{Obsolète}
-\item[\mbox{\hyperlink{deprecated__deprecated000002}{Obsolète}}]Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. ~\newline
+\item[\mbox{\hyperlink{deprecated__deprecated000003}{Obsolète}}]Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. ~\newline
  Utilisez \mbox{\hyperlink{affichage_8h_a26cf1d2055162e3bf7166de2f55902f9}{place\+\_\+rect\+\_\+center\+\_\+from\+\_\+point}} à l\textquotesingle{}aide du rectangle \mbox{\hyperlink{structs__aff_aefd6b2f2f56383a8cba0193ff88593dc}{frame\+\_\+anim}} de la varaible \mbox{\hyperlink{affichage_8h_aef49d39125567f1a9d5ed0561ea60edc}{fenetre\+\_\+finale}} .\end{DoxyRefDesc}
 
 
@@ -1596,7 +1687,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 Ange Despert
 \end{DoxyAuthor}
 \begin{DoxyRefDesc}{Obsolète}
-\item[\mbox{\hyperlink{deprecated__deprecated000003}{Obsolète}}]Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. ~\newline
+\item[\mbox{\hyperlink{deprecated__deprecated000004}{Obsolète}}]Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. ~\newline
  Utilisez \mbox{\hyperlink{affichage_8h_a26cf1d2055162e3bf7166de2f55902f9}{place\+\_\+rect\+\_\+center\+\_\+from\+\_\+point}} à l\textquotesingle{}aide du rectangle \mbox{\hyperlink{structs__aff_aefd6b2f2f56383a8cba0193ff88593dc}{frame\+\_\+anim}} de la varaible \mbox{\hyperlink{affichage_8h_aef49d39125567f1a9d5ed0561ea60edc}{fenetre\+\_\+finale}} .\end{DoxyRefDesc}
 
 
@@ -1624,6 +1715,12 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{rect\_correct\_texture@{rect\_correct\_texture}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{rect\_correct\_texture()}{rect\_correct\_texture()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} rect\+\_\+correct\+\_\+texture (\begin{DoxyParamCaption}\item[{const S\+D\+L\+\_\+\+Rect $\ast$const}]{to\+\_\+verify,  }\item[{const int}]{width,  }\item[{const int}]{height }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction est appellée par les fonction de déplacement de frame tel que \mbox{\hyperlink{affichage_8h_a7adca84e118cd2c0a47dc5f754a4a5b2}{next\+\_\+frame\+\_\+x}} pour s\textquotesingle{}assurer qu\textquotesingle{}il n\textquotesingle{}y a aucune erreur. ~\newline
+
 
 
 \begin{DoxyParams}{Paramètres}
@@ -1656,7 +1753,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{rects\_egal\_x()}{rects\_egal\_x()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} rects\+\_\+egal\+\_\+x (\begin{DoxyParamCaption}\item[{const S\+D\+L\+\_\+\+Rect $\ast$const}]{r1,  }\item[{S\+D\+L\+\_\+\+Rect const $\ast$const}]{r2 }\end{DoxyParamCaption})}
 
-Fonction qui permet de savoir si deux rectangles sont égaux sur l\textquotesingle{}axe x \begin{DoxyAuthor}{Auteur}
+\begin{DoxyAuthor}{Auteur}
 Ange Despert
 \end{DoxyAuthor}
 Cette fonction permet de savoir si deux rectangles sont égaux mais en prenant seulement en compte l\textquotesingle{}axe x. ~\newline
@@ -1711,8 +1808,6 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{text\_copier\_position@{text\_copier\_position}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{text\_copier\_position()}{text\_copier\_position()}}
 {\footnotesize\ttfamily void text\+\_\+copier\+\_\+position (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{a\+\_\+modifier,  }\item[{const t\+\_\+aff $\ast$const}]{original }\end{DoxyParamCaption})}
-
-Fonction qui permet de placer 2 textures aux mêmes endroit à l\textquotesingle{}écran
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 

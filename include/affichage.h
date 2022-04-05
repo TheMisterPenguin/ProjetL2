@@ -262,7 +262,8 @@ extern err_t next_frame_y_indice(t_aff *texture, const unsigned int indice);
 extern void *ajout_text_liste(void *t);
 
 /**
- * Fonction qui affiche les textures contenues dans la liste en paramètre. 
+ * \brief Fonction qui affiche les textures contenues dans la liste en paramètre. 
+ * \author Ange Despert
  * 
  * Les premiers éléments seront en arrière plan et les derniers seront en 1er plan.
  * 
@@ -296,9 +297,9 @@ extern void deplacer_texture_centre(t_aff *texture, int x, int y);
 extern void deplacer_rect_origine(SDL_Rect *r, int x, int y);
 
 /**
- * Déplace l'origine de la texture aux coordonnées données.
+ * \brief Déplace l'origine de la texture aux coordonnées données.
  *
- * \author Max Descomps
+ * \author Ange Despert
  * \param texture La texture à déplacer
  * \param x La coordonnée x de l'origine de la texture.
  * \param y La coordonnée y de l'origine de la texture.
@@ -306,8 +307,9 @@ extern void deplacer_rect_origine(SDL_Rect *r, int x, int y);
 extern void deplacer_texture_origine(t_aff *texture, int x, int y);
 
 /**
- * Place un rectangle en haut à droite de l'écran puis le replace à partir de cette origine
- *
+ * \brief Place un rectangle en haut à droite de l'écran puis le replace à partir de cette origine
+ * \author Ange Despert
+ * 
  * @param r Le rectangle à placer
  * @param x La coordonnée x du rectangle depuis la nouvelle origine.
  * @param x La coordonnée y du rectangle depuis la nouvelle origine.
@@ -315,8 +317,9 @@ extern void deplacer_texture_origine(t_aff *texture, int x, int y);
 extern void deplacer_rect_haut_droit(SDL_Rect *r, int x, int y);
 
 /**
- * La texture est déplacée vers la droite et vers le haut
- *
+ * \brief La texture est déplacée vers la droite et vers le haut
+ * \author Ange Despert
+ * 
  * @param texture la texture à déplacer
  * @param x La coordonnée x du coin supérieur gauche de la texture.
  * @param y Coordonnée y du coin supérieur gauche du rectangle.
@@ -324,8 +327,9 @@ extern void deplacer_rect_haut_droit(SDL_Rect *r, int x, int y);
 extern void deplacer_texture_haut_droit(t_aff *texture, int x, int y);
 
 /**
- * La texture est déplacée vers le coin inférieur gauche de l'écran
- *
+ * \brief La texture est déplacée vers le coin inférieur gauche de l'écran
+ * \author Ange Despert
+ * 
  * @param texture la texture à déplacer
  * @param x La coordonnée x du coin supérieur gauche de la texture.
  * @param y Coordonnée y du coin supérieur gauche de la texture.
@@ -333,8 +337,9 @@ extern void deplacer_texture_haut_droit(t_aff *texture, int x, int y);
 extern void deplacer_texture_bas_gauche(t_aff *texture, int x, int y);
 
 /**
- * La texture est déplacée vers le coin inférieur droit de la fenêtre
- *
+ * \brief La texture est déplacée vers le coin inférieur droit de la fenêtre
+ * \author Ange Despert
+ * 
  * @param texture la texture à déplacer
  * @param x Coordonnée x du coin supérieur gauche de la texture.
  * @param y Coordonnée y du coin supérieur gauche de la texture.
@@ -342,8 +347,9 @@ extern void deplacer_texture_bas_gauche(t_aff *texture, int x, int y);
 extern void deplacer_texture_bas_droit(t_aff *texture, int x, int y);
 
 /**
- * Modifie le rectangle qui définit la zone de l'écran qui sera utilisée pour le rendu de la texture
- *
+ * \brief Modifie le rectangle qui définit la zone de l'écran qui sera utilisée pour le rendu de la texture
+ * \author Ange Despert
+ * 
  * @param texture La texture à modifier.
  * @param r Le rectangle à appliquer.
  */
@@ -379,33 +385,43 @@ extern t_aff *init_texture_joueur(t_l_aff *textures_joueur, joueur_t * joueur);
 extern t_aff *next_frame_joueur(joueur_t *j);
 
 /**
- * Permet de déplacer le personnage de x unités horizontales sur la map
+ * \brief Permet de déplacer le personnage de x unités horizontales sur la map
+ * \author Ange Despert
+ *
+ * Cette fonction utilise un rectangle \ref tx pour savoir quand elle doit bouger le personnage ou bien déplacer la camera. \n
+ * Elle prendra en compte les collisions de la \ref s_map.liste_collisions "liste de collisions de la map". \n
+ * Elle empêche le personnage de sortir des bordures de la map. \n
  * 
  * \param map La map sur laquelle le personnage se déplace
  * \param joueurs Les joueurs en jeu
  * \param nb_joueurs Le nombre de joueurs en jeu
  * \param x Le nombre d'unités de déplacements
  * \param objets Les objets du jeu
- * \return vrai : Si le joueur a réussi à se déplacer
- * \return faux : Si le joueur n'a pas pu se déplacer
+ * \return vrai : Si le joueur s'est téléporté
+ * \return faux : Si le joueur ne s'est pas téléporté
  */
 extern bool deplacement_x_pers(t_map *map, joueur_t ** joueurs, unsigned short int nb_joueurs, int x, lobjet_t * objets);
 
 /**
- * Permet de déplacer le personnage principal de y unités verticales sur la map
- *
+ * \brief Permet de déplacer le personnage principal de y unités verticales sur la map
+ * \author Ange Despert
+ * 
+ * Cette fonction utilise un rectangle \ref ty pour savoir quand elle doit bouger le personnage ou bien déplacer la camera. \n
+ * Elle prendra en compte les collisions de la \ref s_map.liste_collisions "liste de collisions de la map". \n
+ * Elle empêche le personnage de sortir des bordures de la map. \n
+ * 
  * \param map La map sur laquelle le personnage se déplace
  * \param joueurs Les joueurs en jeu
  * \param nb_joueurs Le nombre de joueurs en jeu
  * \param y Le nombre d'unités de déplacements
  * \param objets Les objets du jeu
- * \return vrai : Si le joueur a réussi à se déplacer
- * \return faux : Si le joueur n'a pas pu se déplacer
+ * \return vrai : Si le joueur s'est téléporté
+ * \return faux : Si le joueur ne s'est pas téléporté
  */
 extern bool deplacement_y_pers(t_map *map, joueur_t ** joueurs, unsigned short int nb_joueurs, int y, lobjet_t * objets);
 
 /**
- * Permet de déplacer un joueur secondaire de y unités verticales sur la map
+ * \brief Permet de déplacer un joueur secondaire de y unités verticales sur la map
  *
  * \param map La map sur laquelle le personnage se déplace
  * \param joueur Le joueur qui se déplace
@@ -418,7 +434,7 @@ extern bool deplacement_y_pers(t_map *map, joueur_t ** joueurs, unsigned short i
 extern bool deplacement_y_joueur_secondaire(t_map *map, joueur_t * joueur, int y, SDL_Rect *r, lobjet_t * objets);
 
 /**
- * Permet de déplacer un joueur secondaire de x unités horizontales sur la map
+ * \brief Permet de déplacer un joueur secondaire de x unités horizontales sur la map
  *
  * \param map La map sur laquelle le personnage se déplace
  * \param joueur Le joueur qui se déplace
@@ -431,7 +447,12 @@ extern bool deplacement_y_joueur_secondaire(t_map *map, joueur_t * joueur, int y
 extern bool deplacement_x_joueur_secondaire(t_map *map, joueur_t * joueur, int x, SDL_Rect *r, lobjet_t * objets);
 
 /**
- * Fonction qui permet de définir exactement la taille de la texture à affichar sur l'écran
+ * \brief Fonction qui permet de définir exactement la taille de la texture
+ * \author Ange Despert
+ * 
+ * \deprecated L'utilisation de cette fonction n'a plus trop de sens étant donné que le moteur gère automatiquement la taille des textures.
+ * 
+ * Fonction qui permet de modifier le rectangle de la structure \ref s_aff "t_aff" : \ref s_aff.aff_ecran "aff_ecran" avec de nouvelles valeurs. 
  * 
  * \param a_modifier La texture à modifier
  * \param longueur La nouvelle longueure en pixel à appliquer
@@ -440,7 +461,7 @@ extern bool deplacement_x_joueur_secondaire(t_map *map, joueur_t * joueur, int x
 extern void def_texture_taille(t_aff *a_modifier, const int longueur, const int largeur);
 
 /**
- * Fonction qui permet de placer 2 textures aux mêmes endroit à l'écran
+ * \brief Fonction qui permet de placer 2 textures aux mêmes endroit à l'écran
  * 
  * \author Max Descomps
  * \param a_modifier La texture dont on veut modifier la position
@@ -480,7 +501,7 @@ extern void rect_centre_y(SDL_Rect *rectangle);
 extern void rect_centre(SDL_Rect *rectangle);
 
 /**
- * Fonction qui permet de savoir si deux rectangles sont égaux sur l'axe x
+ * \brief Fonction qui permet de savoir si deux rectangles sont égaux sur l'axe x
  * \author Ange Despert
  *
  * Cette fonction permet de savoir si deux rectangles sont égaux mais en prenant seulement en compte l'axe x. \n
@@ -623,7 +644,7 @@ extern void rect_centre_rect_x(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
 extern void rect_centre_rect_y(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
 
 /**
- * Fonction qui permet de placer un rectangle au centre d'un autre
+ * \brief Fonction qui permet de placer un rectangle au centre d'un autre
  * \author Ange Despert 
  * 
  * Fonctionnement simillaire à l'utilisation conjointe des fonctions \ref placer_rect_center_from_point et \ref get_rect_center_coord .
@@ -644,13 +665,14 @@ extern void afficher_animations(list * animations);
 /**
  * \brief Fonction qui permet le déplacement d'une entité
  * \author Ange Despert
- * 
+ *
  * Cette fonction permet à une entité de se déplacer sur l'axe x. \n
  * Cette fonction gère les collisions et empêchera l'entité de sortir des limites de la map. \n
  * Cette dernière prend également les collisions définies dans la liste des collisions de la map : \ref s_map.liste_collisions "liste_collisions".  \n
  *
- * Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l'entier \ref s_aff.duree_frame_anim "duree_frame_anim" qui permet d'êmpécher le déplacement tout les x frames.
+ * Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l'entier \ref s_aff.duree_frame_anim "duree_frame_anim" qui permet d'êmpécher le déplacement tout les x frames. \n
  *
+ * On peut récupérer l'élément que l'entité a touché en regardant l'élément courant de la \ref s_map.liste_collisions "liste de collisions" de la map.
  * 
  * \param m La map actuelle
  * \param texture La texture de l'entité que l'on veut bouger
@@ -669,7 +691,9 @@ extern bool deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r);
  * Cette fonction gère les collisions et empêchera l'entité de sortir des limites de la map. \n
  * Cette dernière prend également les collisions définies dans la liste des collisions de la map : \ref s_map.liste_collisions "liste_collisions".  \n
  *
- * Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l'entier \ref s_aff.duree_frame_anim "duree_frame_anim" qui permet d'êmpécher le déplacement tout les x frames.
+ * Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l'entier \ref s_aff.duree_frame_anim "duree_frame_anim" qui permet d'êmpécher le déplacement tout les x frames. \n
+ * 
+ * On peut récupérer l'élément que l'entité a touché en regardant l'élément courant de la \ref s_map.liste_collisions "liste de collisions" de la map.
  *
  * \param m La map actuelle
  * \param texture La texture de l'entité que l'on veut bouger
