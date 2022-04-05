@@ -12,9 +12,11 @@
 #define __LOBJET_H__
 
 #include "objet.h"
+#include "inventaire.h"
 
-typedef struct objet_s objet_t;
-typedef struct inventaire_s inventaire_t;
+typedef struct objet_s objet_t; /*Cette définition est la pour éviter une inclusion mutuelle des fichiers liste_objet.h et objet.h*/
+
+typedef struct inventaire_s inventaire_t; /*Cette définition est la pour éviter une inclusion mutuelle des fichiers liste_objet.h et inventaire.h*/
 
 /**
  * \struct struct lobjet
@@ -27,10 +29,8 @@ typedef struct lobjet_s {
     objet_t ** liste; /**<Objets stockés*/
 }lobjet_t;
 
-
-extern lobjet_t * objets;
-
-#include "inventaire.h"
+/* Variables globales */
+extern lobjet_t * objets; /**< La liste des objets du jeu */
 
 /**
  * \fn lobjet_t * creer_liste_objet(char * fichier_src)
