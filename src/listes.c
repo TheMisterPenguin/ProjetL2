@@ -97,8 +97,6 @@ void oter_elt(list *mylist){
 
         free(t);
     }
-    else
-        printf("hors liste\n");
 }
 
 void ajout_droit(list *mylist, void * v){
