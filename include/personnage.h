@@ -22,11 +22,13 @@
 #define DUREE_BLOQUER 14
 #define DUREE_JOUEUR_BLESSE 12
 
-#define DUREE_SOIN 25 //(nb sprites du spritesheet)
+#define DUREE_SOIN 25 /**< Nombre de sprites dans le spritesheet de soin */
 
 #define TAILLE_PERSONNAGE 16 /*La taille du personnage en pixels*/
 
 #define TAILLE_TRIGGER 200
+
+typedef unsigned char byte;
 
 /**
  * \brief Définition de la structure l_aff
@@ -42,7 +44,17 @@ typedef struct s_l_aff t_l_aff;
  */
 typedef struct inventaire_s inventaire_t;
 
-typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER, J_BLESSE, SOIN}action_t; /**<l'action qu'est en train de faire le personnage*/
+typedef enum {
+    RIEN, /**< Aucune action */
+    ATTAQUE, /**< Action d'attaque */
+    ATTAQUE_CHARGEE, /**< Action d'attaque chargée */
+    CHARGER, /**< Action de charge */
+    BLOQUER, /**< Action de bloquage */
+    ATTAQUE_OU_CHARGER, /**< Action d'attaque ou de charge */
+    J_BLESSE, /**< Action de blessure */
+    SOIN /**< Action de soin */
+}action_t; /**<l'action qu'est en train de faire le personnage*/
+
 /**
  * \struct struct statut_s
  * \brief Structure contenant les éléments nécéssaires au choix de l'affichage des sprites du personnage
@@ -68,10 +80,8 @@ typedef struct statut_s {
  * \brief Structure non manipulable hors des fonctions du personnage contenant les informations sur le joueur
  * 
  * \author Despert Ange
+ * \author Max Descomps
  */
-
-typedef unsigned char byte;
-
 typedef struct joueur_s {
 	char * nom_pers; /**<Le nom du personnage*/
 	short int niveau; /**<Le niveau du joueur*/
@@ -155,6 +165,7 @@ extern void maj_statistiques(joueur_t* perso);
 /**
  * \fn void afficher_statistiques(joueur_t* perso)
  * \brief Fonction qui affiche les statistiques d'un joueur dans la console
+ * \author Rafael Doneau
  * \author Max Descomps
  * \param perso Le joueur sur lequel on se renseigne
  */
