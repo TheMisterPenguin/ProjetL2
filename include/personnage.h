@@ -55,7 +55,7 @@ typedef enum {
 typedef struct statut_s {
 	bool en_mouvement; /**<personnage en mouvement*/
 	t_direction_1 orient_dep;/**<orientation deplacement du personnage*/
-	t_direction_2 orient_att;/**<orientaiton attaqute du personnage*/
+	t_direction_2 orient_att;/**<orientaiton attaque du personnage*/
 	bool bouclier_equipe; /**<personnage à un bouclier d'équipé*/
 	int duree; /**<durée de l'action à réaliser*/
     int duree_anim; /**<durée d'une animation éventuelle sur le joueur*/
@@ -239,15 +239,6 @@ extern int distance_y_joueur(SDL_Rect collision, joueur_t * joueur);
  * \return int la distance entre l'entité et le joueur
  */
 extern int distance_joueur(SDL_Rect collision, joueur_t * joueur);
-
-
-
-
-SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_direction_2 orientation);
-
-
-
-
 
 
 
