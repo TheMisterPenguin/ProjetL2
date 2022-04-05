@@ -60,9 +60,9 @@ void orienter_sort_vers_joueur(monstre_t * monstre, sort_t * sort, joueur_t * jo
     teta = acos(cos0) * CONVERTIR_RADIANT_DEGREE;
     //change d'orientation
     if(x_joueur < 0)
-        next_frame_x_indice(sort->texture, round((360-teta)/(double)45));
+        next_frame_x_indice(sort->texture, (int)round((360-teta)/(double)45) % 8);
     else
-        next_frame_x_indice(sort->texture, round(teta/(double)45));
+        next_frame_x_indice(sort->texture, (int)round(teta/(double)45) % 8);
 }
 
 void action_sort(sort_t * sort, joueur_t joueur[2]){
@@ -71,27 +71,35 @@ void action_sort(sort_t * sort, joueur_t joueur[2]){
     bool deplacer_2 = vrai;
 
     place_rect_center_from_point(sort->texture->aff_fenetre, get_rect_center_coord(&sort->collision));
+    printf("orientation = %d\n", orientation);
     switch(orientation){
-        case 1:
-            deplacer_1 = deplacement_y_entite(map, sort->texture, -2, &(sort->collision) ); break;
         case 0:
-            deplacer_2 = deplacement_x_entite(map, sort->texture, 2, &(sort->collision) ); break;
-        case 3:
-            deplacer_1 = deplacement_y_entite(map, sort->texture, 2, &(sort->collision) );
+            deplacer_1 = deplacement_y_entite(map, sort->texture, -2, &(sort->collision) ); 
+            printf("deplacement_1 = %d\n", deplacer_1);break;
+        case 1:
+            deplacer_1 = deplacement_x_entite(map, sort->texture, 1, &(sort->collision) );
+            printf("deplacement_1 = %d\n", deplacer_1);
+            deplacer_2 = deplacement_y_entite(map, sort->texture, -1, &(sort->collision) );
+            printf("deplacement_2 = %d\n", deplacer_2);
+            break;
         case 2:
-            deplacer_2 = deplacement_x_entite(map, sort->texture, 2, &(sort->collision) ); break;
-        case 5:
-            deplacer_1 = deplacement_x_entite(map, sort->texture, -2, &(sort->collision) );
+            deplacer_1 = deplacement_x_entite(map, sort->texture, 2, &(sort->collision) ); break;
+        case 3:
+            deplacer_1 = deplacement_x_entite(map, sort->texture, 1, &(sort->collision) );
+            deplacer_2 = deplacement_y_entite(map, sort->texture, 1, &(sort->collision) ); break;
         case 4:
-            deplacer_2 = deplacement_y_entite(map, sort->texture, 2, &(sort->collision) ); break;
-        case 7:
-            deplacer_1 = deplacement_y_entite(map, sort->texture, -2, &(sort->collision) );
+            deplacer_1 = deplacement_y_entite(map, sort->texture, 2, &(sort->collision) ); break;
+        case 5:
+            deplacer_1 = deplacement_x_entite(map, sort->texture, -1, &(sort->collision) );
+            deplacer_2 = deplacement_y_entite(map, sort->texture, 1, &(sort->collision) ); break;
         case 6:
-            deplacer_2 = deplacement_x_entite(map, sort->texture, -2, &(sort->collision) ); break;
+            deplacer_1 = deplacement_x_entite(map, sort->texture, -2, &(sort->collision) ); break;
+        case 7:
+            deplacer_1 = deplacement_x_entite(map, sort->texture, -1, &(sort->collision) ); 
+            deplacer_2 = deplacement_y_entite(map, sort->texture, -1, &(sort->collision) ); break;
         default : break;
     }
 
-    
     /* detruit sort si rencontre un obstacle qui n'est pas un joueur*/
     if(deplacer_1 == faux || deplacer_2 == faux)
         if(valeur_elt(map->liste_collisions) != &(joueur[0].statut->vrai_zone_collision)){

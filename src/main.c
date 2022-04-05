@@ -216,7 +216,7 @@ int main(int argc, char** argv)
             if (texture_temp2)
                 next_texture_joueur2 = texture_temp2;
         }    
-        environnement_joueur(map->liste_monstres, map->liste_sorts, map->liste_coffres, joueur1);
+        environnement_joueurs(map->liste_monstres, map->liste_sorts, map->liste_coffres, joueurs, nb_joueurs);
         /* On affiche toutes les entitées sur la map */
         SDL_SetRenderTarget(rendu_principal, map->text_map->texture);
         SDL_RenderClear(rendu_principal);
