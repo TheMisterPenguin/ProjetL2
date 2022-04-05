@@ -29,9 +29,9 @@ void \mbox{\hyperlink{liste__objet_8c_af785d71f7a4b48b956bb4c6b024d2b6e}{affiche
 \begin{DoxyCompactList}\small\item\em Affiche une liste d\textquotesingle{}objets dans la console. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{liste__objet_8c_a77d9896eda8e07e16cb235a43780d405}{placer\+\_\+objet\+\_\+sac}} (objet\+\_\+t $\ast$objet, int slot)
 \begin{DoxyCompactList}\small\item\em Place la texture d\textquotesingle{}un objet contenu dans une liste d\textquotesingle{}objet dans le sac depuis le menu inventaire selon son numéro de slot. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{liste__objet_8c_a4fe93e1fc39988acec686660009ed240}{afficher\+\_\+textures\+\_\+sac}} (\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$const inventaire)
+void \mbox{\hyperlink{liste__objet_8c_a4fe93e1fc39988acec686660009ed240}{afficher\+\_\+textures\+\_\+sac}} (inventaire\+\_\+t $\ast$const inventaire)
 \begin{DoxyCompactList}\small\item\em Affiche les textures des objets du sac dans le menu inventaire. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{liste__objet_8c_a2955c31ed7471524e38adb3ed821402e}{afficher\+\_\+textures\+\_\+equipe}} (\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$const inventaire)
+void \mbox{\hyperlink{liste__objet_8c_a2955c31ed7471524e38adb3ed821402e}{afficher\+\_\+textures\+\_\+equipe}} (inventaire\+\_\+t $\ast$const inventaire)
 \begin{DoxyCompactList}\small\item\em Affiche les textures des objets équipés dans le menu inventaire. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{liste__objet_8c_a320f115c92d3d6ed1eada45db42abce0}{creer\+\_\+textures\+\_\+objets}} (lobjet\+\_\+t $\ast$liste\+\_\+obj)
 \begin{DoxyCompactList}\small\item\em Creer toutes les textures d\textquotesingle{}une structure lobjet\+\_\+t. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -83,7 +83,7 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \index{liste\_objet.c@{liste\_objet.c}!afficher\_textures\_equipe@{afficher\_textures\_equipe}}
 \index{afficher\_textures\_equipe@{afficher\_textures\_equipe}!liste\_objet.c@{liste\_objet.c}}
 \doxysubsubsection{\texorpdfstring{afficher\_textures\_equipe()}{afficher\_textures\_equipe()}}
-{\footnotesize\ttfamily void afficher\+\_\+textures\+\_\+equipe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$const}]{inventaire }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void afficher\+\_\+textures\+\_\+equipe (\begin{DoxyParamCaption}\item[{inventaire\+\_\+t $\ast$const}]{inventaire }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -111,7 +111,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{liste\_objet.c@{liste\_objet.c}!afficher\_textures\_sac@{afficher\_textures\_sac}}
 \index{afficher\_textures\_sac@{afficher\_textures\_sac}!liste\_objet.c@{liste\_objet.c}}
 \doxysubsubsection{\texorpdfstring{afficher\_textures\_sac()}{afficher\_textures\_sac()}}
-{\footnotesize\ttfamily void afficher\+\_\+textures\+\_\+sac (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$const}]{inventaire }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void afficher\+\_\+textures\+\_\+sac (\begin{DoxyParamCaption}\item[{inventaire\+\_\+t $\ast$const}]{inventaire }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -318,3 +318,4 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{objets}{objets}}
 {\footnotesize\ttfamily lobjet\+\_\+t$\ast$ objets = N\+U\+LL}
 
+La liste des objets du jeu 

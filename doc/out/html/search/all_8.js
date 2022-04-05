@@ -27,6 +27,5 @@ var searchData=
   ['inventaire_2ec_284',['inventaire.c',['../d4/d04/inventaire_8c.html',1,'']]],
   ['inventaire_2eh_285',['inventaire.h',['../d2/d9f/inventaire_8h.html',1,'']]],
   ['inventaire_5fs_286',['inventaire_s',['../d8/d9c/structinventaire__s.html',1,'']]],
-  ['inventaire_5ft_287',['inventaire_t',['../de/dbc/structinventaire__t.html',1,'']]],
-  ['inverser_5fdirection_288',['inverser_direction',['../d4/db3/coffres_8c.html#a8c96f10738b816af414262aad4445c70',1,'inverser_direction(t_direction_1 direction):&#160;coffres.c'],['../d2/d9c/coffres_8h.html#add26f80bfe853e6f02c6d0e6e633d8a5',1,'inverser_direction(t_direction_1 direction):&#160;coffres.c']]]
+  ['inverser_5fdirection_287',['inverser_direction',['../d4/db3/coffres_8c.html#a8c96f10738b816af414262aad4445c70',1,'inverser_direction(t_direction_1 direction):&#160;coffres.c'],['../d2/d9c/coffres_8h.html#add26f80bfe853e6f02c6d0e6e633d8a5',1,'inverser_direction(t_direction_1 direction):&#160;coffres.c']]]
 ];

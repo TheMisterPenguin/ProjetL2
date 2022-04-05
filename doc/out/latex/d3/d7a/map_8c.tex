@@ -16,15 +16,15 @@ Graphe des dépendances par inclusion de map.\+c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{map_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821}{init\+\_\+sousbuffer}} (t\+\_\+map $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}}, joueur\+\_\+t $\ast$joueur)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui initialise les textures qui serviront de buffer d\textquotesingle{}affichage au moteur du jeu. \end{DoxyCompactList}\item 
 S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{map_8c_a7ea38c5f7f7daf29e01fbc3a4d560a0a}{taille\+\_\+ecran\+\_\+cases}} ()
 \item 
 t\+\_\+map $\ast$ \mbox{\hyperlink{map_8c_af6448083132a6591f73061457f30ebb3}{charger\+\_\+map}} (const char $\ast$const nom\+\_\+map)
-\begin{DoxyCompactList}\small\item\em Fonction qui récupère les informations stockées dans le buffer en entrée. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui récupère les informations stockées dans le fichier don le nom est donne en entrée. \end{DoxyCompactList}\item 
 t\+\_\+aff $\ast$ \mbox{\hyperlink{map_8c_abd78a434afc7dae4de6de6e0b879ccb8}{texture\+\_\+map}} (const t\+\_\+map $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
 \begin{DoxyCompactList}\small\item\em Fonction qui renvoie la texture de la map. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{map_8c_af837acc6ac888e66589d3ff48f4eec12}{detruire\+\_\+map}} (t\+\_\+map $\ast$$\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}}, joueur\+\_\+t $\ast$joueurs\mbox{[}$\,$\mbox{]}, unsigned short int nb\+\_\+joueurs)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de détruire une map. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{map_8c_a87fdc73350f70425b5529472974ecbbb}{transition}} (t\+\_\+map $\ast$$\ast$actuelle, unsigned int num\+\_\+map, joueur\+\_\+t $\ast$$\ast$joueurs, unsigned short int nb\+\_\+joueurs, unsigned int new\+\_\+x, unsigned int new\+\_\+y)
 \item 
 void \mbox{\hyperlink{map_8c_a7e9c15657f08efce7a84ec6822c064e2}{tp\+\_\+joueurs}} (t\+\_\+map $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}}, unsigned int x, unsigned int y, joueur\+\_\+t $\ast$$\ast$joueurs, unsigned short int nb\+\_\+joueurs)
@@ -73,27 +73,26 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{charger\_map()}{charger\_map()}}
 {\footnotesize\ttfamily t\+\_\+map$\ast$ charger\+\_\+map (\begin{DoxyParamCaption}\item[{const char $\ast$const}]{nom\+\_\+map }\end{DoxyParamCaption})}
 
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Fonction qui fait appel à la librairie J\+S\+O\+N-\/C pour charger les informations de la map au format J\+S\+ON. 
 \begin{DoxyParams}{Paramètres}
-{\em liste\+\_\+base\+\_\+monstres} & Les montres à placer sur la map \\
-\hline
-{\em liste\+\_\+base\+\_\+coffres} & Les coffres à placer sur la map \\
-\hline
-{\em buffer} & Le buffeur qui contient les informations \\
+{\em nom\+\_\+map} & Le nom du fichier qui contient les informations sur la map \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-Une map initialisée avec toutes les informations dedans; 
+Une map initialisée avec toutes les informations dedans 
 \end{DoxyReturn}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -106,6 +105,21 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{detruire\_map()}{detruire\_map()}}
 {\footnotesize\ttfamily void detruire\+\_\+map (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$$\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$}]{joueurs\mbox{[}$\,$\mbox{]},  }\item[{unsigned short int}]{nb\+\_\+joueurs }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction libèrera toute la mémoire allouée a la map. Elle détruira égalament les éléments des listes de la map. ~\newline
+En ce qui concerne la liste de collision, étant donné que certains rectangle ne sont pas dynamiques, la fonction va d\textquotesingle{}abord s\textquotesingle{}assurer qu\textquotesingle{}ils peuvent être supprimer.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em map} & L\textquotesingle{}addresse de la map que l\textquotesingle{}on veut détruire \\
+\hline
+{\em joueurs} & Les joueurs qui existent \\
+\hline
+{\em nb\+\_\+joueurs} & Le nombre de joueurs qui existent \\
+\hline
+\end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
 \nopagebreak
 \begin{figure}[H]
@@ -114,7 +128,8 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
 \includegraphics[width=350pt]{d3/d7a/map_8c_af837acc6ac888e66589d3ff48f4eec12_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -128,11 +143,13 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 {\footnotesize\ttfamily void init\+\_\+sousbuffer (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
-Ange Despert 
+Ange Despert
 \end{DoxyAuthor}
+On va initialiser 2 sous buffer \+: l\textquotesingle{}un pour le \mbox{\hyperlink{structs__map_a8da9748668e62eeea8e210d3ba81df50}{plan principal}} et l\textquotesingle{}un pour le \mbox{\hyperlink{affichage_8h_aef49d39125567f1a9d5ed0561ea60edc}{1er plan}}.
+
 
 \begin{DoxyParams}{Paramètres}
-{\em map} & \\
+{\em map} & La mat qui contiendra l\textquotesingle{}un des sous buffer \\
 \hline
 {\em joueur} & Joueur autour duquel se fait la fenêtre d\textquotesingle{}affichage de la carte \\
 \hline
@@ -144,7 +161,8 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \includegraphics[width=312pt]{d3/d7a/map_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -162,6 +180,11 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{texture\_map@{texture\_map}!map.c@{map.c}}
 \doxysubsubsection{\texorpdfstring{texture\_map()}{texture\_map()}}
 {\footnotesize\ttfamily t\+\_\+aff$\ast$ texture\+\_\+map (\begin{DoxyParamCaption}\item[{const t\+\_\+map $\ast$}]{map }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+On va directement chercher cette information dans la structure \mbox{\hyperlink{structs__map}{de la map}}.
 
 
 \begin{DoxyParams}{Paramètres}
@@ -184,7 +207,8 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \includegraphics[width=350pt]{d3/d7a/map_8c_a7e9c15657f08efce7a84ec6822c064e2_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -197,7 +221,8 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{transition()}{transition()}}
 {\footnotesize\ttfamily void transition (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$$\ast$}]{actuelle,  }\item[{unsigned int}]{num\+\_\+map,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{unsigned short int}]{nb\+\_\+joueurs,  }\item[{unsigned int}]{new\+\_\+x,  }\item[{unsigned int}]{new\+\_\+y }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

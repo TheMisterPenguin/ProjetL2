@@ -107,6 +107,7 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d9c/structinventaire__s.html">inventaire_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure inventaire diviser en deux parties: le sac et les objets équipés.  <a href="../../d8/d9c/structinventaire__s.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -116,7 +117,7 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a1ee5b996c2d2ca56746853c114efc34f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dbc/structinventaire__t.html">inventaire_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9f/inventaire_8h.html#a1ee5b996c2d2ca56746853c114efc34f">creer_inventaire</a> ()</td></tr>
+<tr class="memitem:a1ee5b996c2d2ca56746853c114efc34f"><td class="memItemLeft" align="right" valign="top">inventaire_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9f/inventaire_8h.html#a1ee5b996c2d2ca56746853c114efc34f">creer_inventaire</a> ()</td></tr>
 <tr class="memdesc:a1ee5b996c2d2ca56746853c114efc34f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créé un inventaire.  <a href="../../d2/d9f/inventaire_8h.html#a1ee5b996c2d2ca56746853c114efc34f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a1ee5b996c2d2ca56746853c114efc34f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b70bc002675692d62ba7d5343341fd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9f/inventaire_8h.html#a1b70bc002675692d62ba7d5343341fd3">changement_statistiques</a> (joueur_t *joueur)</td></tr>
@@ -128,13 +129,13 @@ Fonctions</h2></td></tr>
 <tr class="memitem:afbcc0f721ebc471ac4fb9cafd97fb77a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9f/inventaire_8h.html#afbcc0f721ebc471ac4fb9cafd97fb77a">desequiper</a> (joueur_t *joueur, objet_t **objet)</td></tr>
 <tr class="memdesc:afbcc0f721ebc471ac4fb9cafd97fb77a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de passer un objet d'un emplacement d'équipement(équipé) au sac(non-équipé) dans l'inventaire.  <a href="../../d2/d9f/inventaire_8h.html#afbcc0f721ebc471ac4fb9cafd97fb77a">Plus de détails...</a><br /></td></tr>
 <tr class="separator:afbcc0f721ebc471ac4fb9cafd97fb77a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1144d923a9a0174ae254109cd825c758"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9f/inventaire_8h.html#a1144d923a9a0174ae254109cd825c758">ramasser_objet</a> (objet_t *objet, <a class="el" href="../../de/dbc/structinventaire__t.html">inventaire_t</a> *inventaire)</td></tr>
+<tr class="memitem:a1144d923a9a0174ae254109cd825c758"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9f/inventaire_8h.html#a1144d923a9a0174ae254109cd825c758">ramasser_objet</a> (objet_t *objet, inventaire_t *inventaire)</td></tr>
 <tr class="memdesc:a1144d923a9a0174ae254109cd825c758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de mettre un objet trouvé dans le sac(inventaire)  <a href="../../d2/d9f/inventaire_8h.html#a1144d923a9a0174ae254109cd825c758">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a1144d923a9a0174ae254109cd825c758"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e7fe87d00260fd538a5b966b7cfec05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9f/inventaire_8h.html#a8e7fe87d00260fd538a5b966b7cfec05">tout_ramasser</a> (lobjet_t *<a class="el" href="../../d7/d64/liste__objet_8h.html#ad412be52cbf2eb978fac0c2c2e8e3c82">objets</a>, <a class="el" href="../../de/dbc/structinventaire__t.html">inventaire_t</a> *inventaire)</td></tr>
+<tr class="memitem:a8e7fe87d00260fd538a5b966b7cfec05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9f/inventaire_8h.html#a8e7fe87d00260fd538a5b966b7cfec05">tout_ramasser</a> (lobjet_t *<a class="el" href="../../d7/d64/liste__objet_8h.html#ad412be52cbf2eb978fac0c2c2e8e3c82">objets</a>, inventaire_t *inventaire)</td></tr>
 <tr class="memdesc:a8e7fe87d00260fd538a5b966b7cfec05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met tous les objets du jeu dans l'inventaire (sac)  <a href="../../d2/d9f/inventaire_8h.html#a8e7fe87d00260fd538a5b966b7cfec05">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8e7fe87d00260fd538a5b966b7cfec05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5475fde997270b9d30ea85049950f141"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9f/inventaire_8h.html#a5475fde997270b9d30ea85049950f141">detruire_inventaire</a> (<a class="el" href="../../de/dbc/structinventaire__t.html">inventaire_t</a> **inventaire)</td></tr>
+<tr class="memitem:a5475fde997270b9d30ea85049950f141"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9f/inventaire_8h.html#a5475fde997270b9d30ea85049950f141">detruire_inventaire</a> (inventaire_t **inventaire)</td></tr>
 <tr class="memdesc:a5475fde997270b9d30ea85049950f141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détruit un inventaire.  <a href="../../d2/d9f/inventaire_8h.html#a5475fde997270b9d30ea85049950f141">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5475fde997270b9d30ea85049950f141"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4759298331c6887427f1a2137910ad2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9f/inventaire_8h.html#af4759298331c6887427f1a2137910ad2">equiper_sac_slot</a> (joueur_t *joueur, int slot)</td></tr>
@@ -164,6 +165,7 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>La capacité maximum du sac dans l'inventaire en nombre d'objets </p>
 
 </div>
 </div>
@@ -245,7 +247,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../de/dbc/structinventaire__t.html">inventaire_t</a> * creer_inventaire </td>
+          <td class="memname">inventaire_t * creer_inventaire </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -253,7 +255,7 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 <dl class="section author"><dt>Auteur</dt><dd>Max Descomps </dd></dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Instance nouvellement allouée du type <a class="el" href="../../de/dbc/structinventaire__t.html" title="Structure inventaire diviser en deux parties: le sac et les objets équipés.">inventaire_t</a> ou NULL </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Instance nouvellement allouée du type inventaire_t ou NULL </dd></dl>
 
 </div>
 </div>
@@ -376,7 +378,7 @@ Voici le graphe des appelants de cette fonction :</div>
         <tr>
           <td class="memname">void detruire_inventaire </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../de/dbc/structinventaire__t.html">inventaire_t</a> **&#160;</td>
+          <td class="paramtype">inventaire_t **&#160;</td>
           <td class="paramname"><em>inventaire</em></td><td>)</td>
           <td></td>
         </tr>
@@ -385,7 +387,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <dl class="section author"><dt>Auteur</dt><dd>Max Descomps </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">inventaire</td><td>Adresse du pointeur sur <a class="el" href="../../de/dbc/structinventaire__t.html" title="Structure inventaire diviser en deux parties: le sac et les objets équipés.">inventaire_t</a> </td></tr>
+    <tr><td class="paramname">inventaire</td><td>Adresse du pointeur sur inventaire_t </td></tr>
   </table>
   </dd>
 </dl>
@@ -536,7 +538,7 @@ Voici le graphe des appelants de cette fonction :</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../de/dbc/structinventaire__t.html">inventaire_t</a> *&#160;</td>
+          <td class="paramtype">inventaire_t *&#160;</td>
           <td class="paramname"><em>inventaire</em>&#160;</td>
         </tr>
         <tr>
@@ -583,7 +585,7 @@ Voici le graphe des appelants de cette fonction :</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../de/dbc/structinventaire__t.html">inventaire_t</a> *&#160;</td>
+          <td class="paramtype">inventaire_t *&#160;</td>
           <td class="paramname"><em>inventaire</em>&#160;</td>
         </tr>
         <tr>

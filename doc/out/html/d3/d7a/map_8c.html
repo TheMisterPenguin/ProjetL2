@@ -81,7 +81,7 @@ Graphe des dépendances par inclusion de map.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d4/d5f/map_8c__incl.png" border="0" usemap="#map_8c" alt=""/></div>
 <map name="map_8c" id="map_8c">
-<area shape="rect" title="Fonctions de gestion de la map." alt="" coords="457,5,519,32"/>
+<area shape="rect" title="Fonctions de gestion de la map." alt="" coords="421,5,483,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,109,107"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html" title="Fichier contenant les définitions et les fonctions liées au module affichage." alt="" coords="305,229,399,256"/>
 <area shape="rect" href="../../d2/d2f/personnage_8h.html" title="Fichier contenant toutes les définitions concernant le personnage." alt="" coords="297,379,407,405"/>
@@ -93,7 +93,6 @@ Graphe des dépendances par inclusion de map.c:</div>
 <area shape="rect" href="../../d0/d1f/monstres_8h.html" title="Fonctions concernant les monstres." alt="" coords="441,155,535,181"/>
 <area shape="rect" title=" " alt="" coords="942,80,1010,107"/>
 <area shape="rect" href="../../d2/d9c/coffres_8h.html" title="Fonctions concernant les coffres." alt="" coords="235,155,314,181"/>
-<area shape="rect" title=" " alt="" coords="1034,80,1129,107"/>
 <area shape="rect" href="../../da/df7/sorts_8h.html" title="Fichier contenant toutes les définitions concernant les sorts." alt="" coords="384,80,451,107"/>
 </map>
 </div>
@@ -101,16 +100,18 @@ Graphe des dépendances par inclusion de map.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:aad95fee9e6bf2bd4c8ae74d98e1a6821"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c.html#aad95fee9e6bf2bd4c8ae74d98e1a6821">init_sousbuffer</a> (t_map *<a class="el" href="../../dc/db7/map_8h.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>, joueur_t *joueur)</td></tr>
+<tr class="memdesc:aad95fee9e6bf2bd4c8ae74d98e1a6821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui initialise les textures qui serviront de buffer d'affichage au moteur du jeu.  <a href="../../d3/d7a/map_8c.html#aad95fee9e6bf2bd4c8ae74d98e1a6821">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aad95fee9e6bf2bd4c8ae74d98e1a6821"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ea38c5f7f7daf29e01fbc3a4d560a0a"><td class="memItemLeft" align="right" valign="top">SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c.html#a7ea38c5f7f7daf29e01fbc3a4d560a0a">taille_ecran_cases</a> ()</td></tr>
 <tr class="separator:a7ea38c5f7f7daf29e01fbc3a4d560a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6448083132a6591f73061457f30ebb3"><td class="memItemLeft" align="right" valign="top">t_map *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c.html#af6448083132a6591f73061457f30ebb3">charger_map</a> (const char *const nom_map)</td></tr>
-<tr class="memdesc:af6448083132a6591f73061457f30ebb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui récupère les informations stockées dans le buffer en entrée.  <a href="../../d3/d7a/map_8c.html#af6448083132a6591f73061457f30ebb3">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:af6448083132a6591f73061457f30ebb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui récupère les informations stockées dans le fichier don le nom est donne en entrée.  <a href="../../d3/d7a/map_8c.html#af6448083132a6591f73061457f30ebb3">Plus de détails...</a><br /></td></tr>
 <tr class="separator:af6448083132a6591f73061457f30ebb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd78a434afc7dae4de6de6e0b879ccb8"><td class="memItemLeft" align="right" valign="top">t_aff *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c.html#abd78a434afc7dae4de6de6e0b879ccb8">texture_map</a> (const t_map *<a class="el" href="../../dc/db7/map_8h.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>)</td></tr>
 <tr class="memdesc:abd78a434afc7dae4de6de6e0b879ccb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui renvoie la texture de la map.  <a href="../../d3/d7a/map_8c.html#abd78a434afc7dae4de6de6e0b879ccb8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abd78a434afc7dae4de6de6e0b879ccb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af837acc6ac888e66589d3ff48f4eec12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c.html#af837acc6ac888e66589d3ff48f4eec12">detruire_map</a> (t_map **<a class="el" href="../../dc/db7/map_8h.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>, joueur_t *joueurs[], unsigned short int nb_joueurs)</td></tr>
+<tr class="memdesc:af837acc6ac888e66589d3ff48f4eec12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de détruire une map.  <a href="../../d3/d7a/map_8c.html#af837acc6ac888e66589d3ff48f4eec12">Plus de détails...</a><br /></td></tr>
 <tr class="separator:af837acc6ac888e66589d3ff48f4eec12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87fdc73350f70425b5529472974ecbbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/map_8c.html#a87fdc73350f70425b5529472974ecbbb">transition</a> (t_map **actuelle, unsigned int num_map, joueur_t **joueurs, unsigned short int nb_joueurs, unsigned int new_x, unsigned int new_y)</td></tr>
 <tr class="separator:a87fdc73350f70425b5529472974ecbbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,21 +173,20 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Paramètres</dt><dd>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<p>Fonction qui fait appel à la librairie JSON-C pour charger les informations de la map au format JSON. </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">liste_base_monstres</td><td>Les montres à placer sur la map </td></tr>
-    <tr><td class="paramname">liste_base_coffres</td><td>Les coffres à placer sur la map </td></tr>
-    <tr><td class="paramname">buffer</td><td>Le buffeur qui contient les informations </td></tr>
+    <tr><td class="paramname">nom_map</td><td>Le nom du fichier qui contient les informations sur la map </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Une map initialisée avec toutes les informations dedans; </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Une map initialisée avec toutes les informations dedans </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_cgraph.png" border="0" usemap="#d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_cgraph" alt=""/></div>
 <map name="d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_cgraph" id="d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_cgraph">
-<area shape="rect" title="Fonction qui récupère les informations stockées dans le buffer en entrée." alt="" coords="5,225,112,251"/>
+<area shape="rect" title="Fonction qui récupère les informations stockées dans le fichier don le nom est donne en entrée." alt="" coords="5,225,112,251"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title="Fonction qui permet d&#39;ajouter un élément à droite de l&#39;élément courant." alt="" coords="521,98,613,125"/>
 <area shape="rect" href="../../d9/d79/monstres_8c.html#a1955982e594ca28688b59e46a01a633f" title="Fonction de &quot;call back&quot; qui retourne une structure monstre." alt="" coords="163,47,313,74"/>
 <area shape="rect" href="../../d0/d58/sorts_8c.html#a5d205646ab54eca44ee60431d4e50d2f" title=" " alt="" coords="177,98,299,125"/>
@@ -204,10 +204,10 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_icgraph.png" border="0" usemap="#d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_icgraph" alt=""/></div>
 <map name="d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_icgraph" id="d3/d7a/map_8c_af6448083132a6591f73061457f30ebb3_icgraph">
-<area shape="rect" title="Fonction qui récupère les informations stockées dans le buffer en entrée." alt="" coords="208,71,315,98"/>
+<area shape="rect" title="Fonction qui récupère les informations stockées dans le fichier don le nom est donne en entrée." alt="" coords="208,71,315,98"/>
 <area shape="rect" href="../../d2/d2f/personnage_8h.html#ad8c439be63cc83e7b5c4a0d33f62f639" title=" " alt="" coords="5,5,160,47"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="55,71,110,98"/>
-<area shape="rect" href="../../dc/db7/map_8h.html#a87fdc73350f70425b5529472974ecbbb" title=" " alt="" coords="41,122,125,149"/>
+<area shape="rect" href="../../d3/d7a/map_8c.html#a87fdc73350f70425b5529472974ecbbb" title=" " alt="" coords="41,122,125,149"/>
 </map>
 </div>
 
@@ -244,12 +244,23 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<p>Cette fonction libèrera toute la mémoire allouée a la map. Elle détruira égalament les éléments des listes de la map. <br  />
+En ce qui concerne la liste de collision, étant donné que certains rectangle ne sont pas dynamiques, la fonction va d'abord s'assurer qu'ils peuvent être supprimer.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td>L'addresse de la map que l'on veut détruire </td></tr>
+    <tr><td class="paramname">joueurs</td><td>Les joueurs qui existent </td></tr>
+    <tr><td class="paramname">nb_joueurs</td><td>Le nombre de joueurs qui existent </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/d7a/map_8c_af837acc6ac888e66589d3ff48f4eec12_cgraph.png" border="0" usemap="#d3/d7a/map_8c_af837acc6ac888e66589d3ff48f4eec12_cgraph" alt=""/></div>
 <map name="d3/d7a/map_8c_af837acc6ac888e66589d3ff48f4eec12_cgraph" id="d3/d7a/map_8c_af837acc6ac888e66589d3ff48f4eec12_cgraph">
-<area shape="rect" title=" " alt="" coords="5,183,115,209"/>
+<area shape="rect" title="Fonction qui permet de détruire une map." alt="" coords="5,183,115,209"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a4597d1c1550e48dc54b54b240ab3c0e9" title="Détruit une liste en détruisant tout ses éléménts." alt="" coords="190,5,298,32"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a6e1d5af117ac87c2c309507f4750dcb9" title="Fonction qui détruit une structure d&#39;affichage de texture passée en paramètre." alt="" coords="181,56,307,83"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="381,259,452,285"/>
@@ -265,9 +276,9 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/d7a/map_8c_af837acc6ac888e66589d3ff48f4eec12_icgraph.png" border="0" usemap="#d3/d7a/map_8c_af837acc6ac888e66589d3ff48f4eec12_icgraph" alt=""/></div>
 <map name="d3/d7a/map_8c_af837acc6ac888e66589d3ff48f4eec12_icgraph" id="d3/d7a/map_8c_af837acc6ac888e66589d3ff48f4eec12_icgraph">
-<area shape="rect" title=" " alt="" coords="208,42,317,69"/>
+<area shape="rect" title="Fonction qui permet de détruire une map." alt="" coords="208,42,317,69"/>
 <area shape="rect" href="../../d2/d2f/personnage_8h.html#ad8c439be63cc83e7b5c4a0d33f62f639" title=" " alt="" coords="5,5,160,47"/>
-<area shape="rect" href="../../dc/db7/map_8h.html#a87fdc73350f70425b5529472974ecbbb" title=" " alt="" coords="41,71,125,98"/>
+<area shape="rect" href="../../d3/d7a/map_8c.html#a87fdc73350f70425b5529472974ecbbb" title=" " alt="" coords="41,71,125,98"/>
 </map>
 </div>
 
@@ -298,10 +309,11 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section author"><dt>Auteur</dt><dd>Ange Despert </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<p>On va initialiser 2 sous buffer : l'un pour le <a class="el" href="../../d1/d49/structs__map.html#a8da9748668e62eeea8e210d3ba81df50">plan principal</a> et l'un pour le <a class="el" href="../../d5/dae/affichage_8h.html#aef49d39125567f1a9d5ed0561ea60edc">1er plan</a>.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">map</td><td></td></tr>
+    <tr><td class="paramname">map</td><td>La mat qui contiendra l'un des sous buffer </td></tr>
     <tr><td class="paramname">joueur</td><td>Joueur autour duquel se fait la fenêtre d'affichage de la carte </td></tr>
   </table>
   </dd>
@@ -311,7 +323,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/d7a/map_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_cgraph.png" border="0" usemap="#d3/d7a/map_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_cgraph" alt=""/></div>
 <map name="d3/d7a/map_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_cgraph" id="d3/d7a/map_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,124,57"/>
+<area shape="rect" title="Fonction qui initialise les textures qui serviront de buffer d&#39;affichage au moteur du jeu." alt="" coords="5,31,124,57"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#ab74333683d8d4816aa1331794b3b9e94" title="Fonction qui permet de placer un rectangle au centre d&#39;un autre sur l&#39;axe des x." alt="" coords="172,5,315,32"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#ada2e4bcab49cd7c1563aef3afa20f75d" title="Fonction qui permet de placer un rectangle au centre d&#39;un autre sur l&#39;axe des y." alt="" coords="172,56,315,83"/>
 </map>
@@ -321,10 +333,10 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/d7a/map_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_icgraph.png" border="0" usemap="#d3/d7a/map_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_icgraph" alt=""/></div>
 <map name="d3/d7a/map_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_icgraph" id="d3/d7a/map_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821_icgraph">
-<area shape="rect" title=" " alt="" coords="208,71,327,98"/>
+<area shape="rect" title="Fonction qui initialise les textures qui serviront de buffer d&#39;affichage au moteur du jeu." alt="" coords="208,71,327,98"/>
 <area shape="rect" href="../../d2/d2f/personnage_8h.html#ad8c439be63cc83e7b5c4a0d33f62f639" title=" " alt="" coords="5,5,160,47"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="55,71,110,98"/>
-<area shape="rect" href="../../dc/db7/map_8h.html#a87fdc73350f70425b5529472974ecbbb" title=" " alt="" coords="41,122,125,149"/>
+<area shape="rect" href="../../d3/d7a/map_8c.html#a87fdc73350f70425b5529472974ecbbb" title=" " alt="" coords="41,122,125,149"/>
 </map>
 </div>
 
@@ -362,6 +374,8 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<p>On va directement chercher cette information dans la structure <a class="el" href="../../d1/d49/structs__map.html">de la map</a>.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">map</td><td>La map dont on veut la texture </td></tr>
@@ -433,7 +447,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <map name="d3/d7a/map_8c_a7e9c15657f08efce7a84ec6822c064e2_icgraph" id="d3/d7a/map_8c_a7e9c15657f08efce7a84ec6822c064e2_icgraph">
 <area shape="rect" title=" " alt="" coords="208,42,299,69"/>
 <area shape="rect" href="../../d2/d2f/personnage_8h.html#ad8c439be63cc83e7b5c4a0d33f62f639" title=" " alt="" coords="5,5,160,47"/>
-<area shape="rect" href="../../dc/db7/map_8h.html#a87fdc73350f70425b5529472974ecbbb" title=" " alt="" coords="41,71,125,98"/>
+<area shape="rect" href="../../d3/d7a/map_8c.html#a87fdc73350f70425b5529472974ecbbb" title=" " alt="" coords="41,71,125,98"/>
 </map>
 </div>
 
@@ -495,11 +509,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <map name="d3/d7a/map_8c_a87fdc73350f70425b5529472974ecbbb_cgraph" id="d3/d7a/map_8c_a87fdc73350f70425b5529472974ecbbb_cgraph">
 <area shape="rect" title=" " alt="" coords="5,157,89,184"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a47b9be5462def4189b86dcf60f3a29a5" title="Affiche la texture donnée en paramètre à l&#39;écran." alt="" coords="143,5,269,32"/>
-<area shape="rect" href="../../d3/d7a/map_8c.html#af6448083132a6591f73061457f30ebb3" title="Fonction qui récupère les informations stockées dans le buffer en entrée." alt="" coords="153,56,259,83"/>
+<area shape="rect" href="../../d3/d7a/map_8c.html#af6448083132a6591f73061457f30ebb3" title="Fonction qui récupère les informations stockées dans le fichier don le nom est donne en entrée." alt="" coords="153,56,259,83"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a3e6b4564952e31a2d9e9d0c98dd6ee78" title="Fonction qui permet de définir exactement la taille de la texture." alt="" coords="137,107,275,133"/>
-<area shape="rect" href="../../d3/d7a/map_8c.html#af837acc6ac888e66589d3ff48f4eec12" title=" " alt="" coords="151,157,261,184"/>
+<area shape="rect" href="../../d3/d7a/map_8c.html#af837acc6ac888e66589d3ff48f4eec12" title="Fonction qui permet de détruire une map." alt="" coords="151,157,261,184"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a6e1d5af117ac87c2c309507f4750dcb9" title="Fonction qui détruit une structure d&#39;affichage de texture passée en paramètre." alt="" coords="323,183,449,209"/>
-<area shape="rect" href="../../d3/d7a/map_8c.html#aad95fee9e6bf2bd4c8ae74d98e1a6821" title=" " alt="" coords="147,259,265,285"/>
+<area shape="rect" href="../../d3/d7a/map_8c.html#aad95fee9e6bf2bd4c8ae74d98e1a6821" title="Fonction qui initialise les textures qui serviront de buffer d&#39;affichage au moteur du jeu." alt="" coords="147,259,265,285"/>
 <area shape="rect" href="../../d3/d7a/map_8c.html#a7e9c15657f08efce7a84ec6822c064e2" title=" " alt="" coords="161,309,251,336"/>
 </map>
 </div>
