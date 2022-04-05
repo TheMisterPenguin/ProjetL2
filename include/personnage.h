@@ -35,6 +35,13 @@
  */
 typedef struct s_l_aff t_l_aff;
 
+/**
+ * \brief Définition de la structure l_aff
+ * 
+ * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref personnage.h et \ref inventaire.h .
+ */
+typedef struct inventaire_s inventaire_t;
+
 typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER, J_BLESSE, SOIN}action_t; /**<l'action qu'est en train de faire le personnage*/
 /**
  * \struct struct statut_s
