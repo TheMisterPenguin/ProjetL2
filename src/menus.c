@@ -273,7 +273,6 @@ void afficher_inventaire(joueur_t * joueur, SDL_KeyCode touche_inventaire)
                     slot_selectionne = 15;
 
                 if(slot_selectionne > -1){
-                    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "On a selectionné le slot %d\n", slot_selectionne);
                     if(slot_selectionne < 10){
                         /* Fonction pour équiper l'item */
                         equiper_sac_slot(joueur, slot_selectionne);
