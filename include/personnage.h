@@ -22,7 +22,7 @@
 #define DUREE_BLOQUER 14
 #define DUREE_JOUEUR_BLESSE 12
 
-#define DUREE_SOIN 25 //(nb sprites du spritesheet)
+#define DUREE_SOIN 25 /**< Nombre de sprites dans le spritesheet de soin */
 
 #define TAILLE_PERSONNAGE 16 /*La taille du personnage en pixels*/
 
@@ -32,8 +32,20 @@ typedef struct s_l_aff t_l_aff; /* Cette définition est la pour éviter une inc
 
 typedef struct inventaire_s inventaire_t; /* Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref personnage.h et \ref inventaire.h */
 
+typedef unsigned char byte;
 
-typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER, J_BLESSE, SOIN}action_t; /**<l'action qu'est en train de faire le personnage*/
+
+typedef enum {
+    RIEN, /**< Aucune action */
+    ATTAQUE, /**< Action d'attaque */
+    ATTAQUE_CHARGEE, /**< Action d'attaque chargée */
+    CHARGER, /**< Action de charge */
+    BLOQUER, /**< Action de bloquage */
+    ATTAQUE_OU_CHARGER, /**< Action d'attaque ou de charge */
+    J_BLESSE, /**< Action de blessure */
+    SOIN /**< Action de soin */
+}action_t; /**<l'action qu'est en train de faire le personnage*/
+
 /**
  * \brief Structure contenant les éléments nécéssaires au choix de l'affichage des sprites du personnage
  * 
@@ -165,6 +177,7 @@ extern void maj_statistiques(joueur_t* perso);
 /**
  * \fn void afficher_statistiques(joueur_t* perso)
  * \brief Fonction qui affiche les statistiques d'un joueur dans la console
+ * \author Rafael Doneau
  * \author Max Descomps
  * \param perso Le joueur sur lequel on se renseigne
  */

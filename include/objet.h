@@ -9,9 +9,10 @@
 
 #ifndef __OBJET_H__
 #define __OBJET_H__
-#define NB_TYPE_OBJ 6
 
 #include "definition_commun.h"
+
+#define NB_TYPE_OBJ 6 /**< Nombre de types d'objets dans le jeu */
 
 /**
  * \brief Définition de la structure de texture
@@ -33,11 +34,10 @@ typedef enum{
 }t_item;
 
 /**
- * \struct struct objet
+ * \struct struct objet_t
  * \brief Structure objet
  * \author Max Descomps
  */
-
 typedef struct objet_s {
     int id; /**<Identificateur de l'objet*/
     t_aff * texture; /**<Image de l'objet*/

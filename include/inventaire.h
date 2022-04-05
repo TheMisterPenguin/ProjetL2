@@ -37,7 +37,7 @@ typedef struct objet_s objet_t;
 typedef struct joueur_s joueur_t;
 
 /**
- * \struct inventaire_s
+ * \struct inventaire_t
  * \brief Structure inventaire diviser en deux parties: le sac et les objets équipés
  * \author Max Descomps
  * \author Rafael Doneau

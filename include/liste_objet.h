@@ -19,11 +19,10 @@ typedef struct objet_s objet_t; /*Cette définition est la pour éviter une incl
 typedef struct inventaire_s inventaire_t; /*Cette définition est la pour éviter une inclusion mutuelle des fichiers liste_objet.h et inventaire.h*/
 
 /**
- * \struct struct lobjet
+ * \struct struct lobjet_t
  * \brief Structure de liste d'objets
  * \author Descomps Max
  */
-
 typedef struct lobjet_s {
     int nb; /**<Nombre d'objets stockés*/
     objet_t ** liste; /**<Objets stockés*/

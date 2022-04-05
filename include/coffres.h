@@ -44,7 +44,7 @@ typedef enum {
 }etat_coffre_t;
 
 /**
- * \struct coffre_s
+ * \struct coffre_t
  * \brief Structure contenant les propriétées du coffre
  * \author Max Descomps
  */
