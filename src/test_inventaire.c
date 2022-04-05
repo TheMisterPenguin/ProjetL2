@@ -12,7 +12,7 @@
  */
 
 long int compteur;
-t_map *test_map;
+t_map *map;
 unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 joueur_t * perso_principal = NULL;
 objet_t * objet_test = NULL;
@@ -58,8 +58,8 @@ void modification_inventaire(void) {
     //statistiques inchangées
     CU_ASSERT_EQUAL(perso_principal->niveau, 0);
     CU_ASSERT_EQUAL(perso_principal->xp, 0);
-    CU_ASSERT_EQUAL(perso_principal->maxPdv, 10);
-    CU_ASSERT_EQUAL(perso_principal->pdv, 10);
+    CU_ASSERT_EQUAL(perso_principal->maxPdv, 100);
+    CU_ASSERT_EQUAL(perso_principal->pdv, 50);
     CU_ASSERT_EQUAL(perso_principal->attaque, 10);
     CU_ASSERT_EQUAL(perso_principal->defense, 10);
     CU_ASSERT_EQUAL(perso_principal->vitesse, 1);
@@ -88,10 +88,22 @@ void modification_inventaire(void) {
 
 
 int main(){
+    SDL_SetMainReady();
     init();
+  
+    /* On charge la base monstre*/
+    charger_base_monstre("monstres.json", &liste_base_monstres);
 
-    test_map = charger_map("../bin/map/1.json");
-    perso_principal = new_joueur("test", 0, "ressources/objet/objets.txt");
+    /* On charge la base coffre*/
+    charger_base_coffre("coffres.json", &liste_base_coffres);
+    
+    /* On charge la map */
+    map = charger_map("map/2.json");
+
+    /* On créer le joueur */    
+    perso_principal = new_joueur("joueur1", 0, "ressources/objet/objet.txt");
+
+    objets = creer_liste_objet("ressources/objet/objet.txt");
 
     sac = perso_principal->inventaire->sac;
     equipe = perso_principal->inventaire->equipe;

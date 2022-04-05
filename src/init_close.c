@@ -29,13 +29,15 @@ list *f_close = NULL; /**< Liste des fonctions à appeler lors de la fermeture d
 
 void fermer_programme(int code_erreur){
     //éviter erreurs SDL_DestroyRenderer sur les SDL_Rect provoquées par text_copier_position() 
-    t_aff * text_anim = NULL;
-    en_tete(liste_animations);
-    while(!hors_liste(liste_animations)){
-        text_anim = valeur_elt(liste_animations);
-        free(text_anim->aff_fenetre);
-        text_anim->aff_fenetre = NULL;
-        suivant(liste_animations);
+    if(liste_animations){
+        t_aff * text_anim = NULL;
+        en_tete(liste_animations);
+        while(!hors_liste(liste_animations)){
+            text_anim = valeur_elt(liste_animations);
+            free(text_anim->aff_fenetre);
+            text_anim->aff_fenetre = NULL;
+            suivant(liste_animations);
+        }
     }
 
     en_queue(f_close);

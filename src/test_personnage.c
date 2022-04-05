@@ -59,6 +59,7 @@ void creation_personnage(void) {
 }
 
 int main(){
+    SDL_SetMainReady();
     init();
 
     charger_base_coffre("coffres.json", &liste_base_coffres);
