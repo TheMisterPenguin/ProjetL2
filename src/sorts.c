@@ -14,8 +14,25 @@
  * \copyright Copyright (c) 2022
  */
 
-base_sort_t liste_base_sort[3];
+void detruire_sort(sort_t ** sort){
+    free((*sort)->texture);
+    free(*sort);
+    *sort = NULL;
+}
 
+void detruire_sort_cb(void * sort){
+    detruire_sort(sort);
+}
+
+sort_t * ajouter_sort(sort_t* sort){
+    return sort;
+}
+
+void * ajouter_sort_cb(void * sort){
+    return ajouter_sort(sort);
+}
+
+base_sort_t liste_base_sort[3];
 
 void init_liste_base_sort(liste_base_monstres_t * liste_base_monstres){
     liste_base_sort[SP_WITCHER].type = SP_WITCHER;
