@@ -217,6 +217,10 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj){
 	if (!y_map)
 		erreur("Erreur lors de la lecture de la sauvegarde : %s\n", ERREUR_FICHIER, json_util_get_last_err());
 
+	json_object *id_map = json_object_object_get(statut, "id map");
+	if(!id_map)
+		erreur("Erreur lors de la lecture de la sauvegarde : %s\n", ERREUR_FICHIER, json_util_get_last_err());
+
 	byte *trigger_tab = calloc(TAILLE_TRIGGER, sizeof(byte));
 
 	if(!trigger_tab)
@@ -228,6 +232,27 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj){
 		element_trig = json_object_array_get_idx(trigger, i);
 		trigger_tab[i] = (byte) json_object_get_int(element_trig);
 	}
+
+	char nom_fichier_map[50];
+
+    SDL_SetRenderTarget(rendu_principal, NULL);
+    SDL_SetTextureBlendMode(fenetre_finale->texture, SDL_BLENDMODE_BLEND);
+
+    for(unsigned int i = 255; i > 0; i -= 5 ){ /* Fondu (disparition de la map) */
+        if (SDL_SetTextureAlphaMod(fenetre_finale->texture, i) < 0)
+            fprintf(stderr, "Erreur lors de la modification de l'alpha : %s\n", SDL_GetError());
+        if(SDL_RenderClear(rendu_principal) < 0)
+            fprintf(stderr, "Erreur : le buffer d'affichage n'a pas pu être vidé : %s\n", SDL_GetError());
+        if (afficher_texture(fenetre_finale, rendu_principal) != 0)
+            fprintf(stderr,"Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
+        SDL_RenderPresent(rendu_principal);
+        SDL_Delay(10);
+    }
+
+    sprintf(nom_fichier_map, "map/%d.json", json_object_get_int(id_map));
+    detruire_map(&map);
+    detruire_texture(&fenetre_finale);
+    map = charger_map(nom_fichier_map);
 
 	joueur_t * j = creer_joueur(
 		json_object_get_string(nom_joueur),
@@ -246,8 +271,25 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj){
 	);
 	free(trigger_tab);
 
-	j->statut->zone_colision.x = json_object_get_int(x_map);
-	j->statut->zone_colision.y = json_object_get_int(y_map);
+    init_sousbuffer(map, j);
+
+    /* Mise à jour des textures du joueur */
+    for(unsigned short int i = 0; i < 1; i++){
+        
+        j->statut->zone_colision.h = (map)->taille_case;
+        j->statut->zone_colision.w = (map)->taille_case;
+
+        j->statut->vrai_zone_collision.h = (map)->taille_case;
+        j->statut->vrai_zone_collision.w = (map)->taille_case;
+
+        for(unsigned int y = 0; y < j->textures_joueur->nb_valeurs; y++){
+            j->textures_joueur->liste[y]->multipli_taille = (map)->taille_case / TAILLE_CASE;
+            def_texture_taille(j->textures_joueur->liste[i], LONGUEUR_ENTITE * (map)->taille_case / TAILLE_CASE, LARGEUR_ENTITE * (map)->taille_case / TAILLE_CASE);
+        }
+    }
+
+    tp_joueurs(map, json_object_get_int(x_map), json_object_get_int(y_map), &j, 1);
+
 
 	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Chargement de la sauvegarde réussi !");
 
@@ -330,8 +372,9 @@ void detruire_joueur(joueur_t *j){
 	free(j->trigger);
 	free(j->statut);
 	// detruire_liste_textures(&(j->textures_joueur));
+	detruire_inventaire(&(j->inventaire));
+
 	free(j);
-    detruire_inventaire(&(j->inventaire));
 }
 
 void caracteristiques(joueur_t* perso){

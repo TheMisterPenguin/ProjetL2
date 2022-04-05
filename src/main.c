@@ -164,6 +164,9 @@ int main(int argc, char** argv)
         else
             jeu_event_manette(joueurs);
 
+        joueur1 = joueurs[0];
+        joueur2 = joueurs[1];
+
         // en_tete(buffer_affichage);
         if (joueur1->statut->en_mouvement){ /* Déplacement map */
             switch (joueur1->statut->orient_dep)
