@@ -87,11 +87,12 @@ Graphe des dépendances par inclusion de boss.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a911aa82b4f9762b9e766843d532a7637"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dde/boss_8c.html#a911aa82b4f9762b9e766843d532a7637">deplacement_boss_aleatoir</a> (boss_t *boss,)</td></tr>
-<tr class="separator:a911aa82b4f9762b9e766843d532a7637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8756f68836b9cba4a3ea84e2967eb00c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dde/boss_8c.html#a8756f68836b9cba4a3ea84e2967eb00c">deplacement_boss_aleatoir</a> (boss_t *boss)</td></tr>
+<tr class="separator:a8756f68836b9cba4a3ea84e2967eb00c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca09f56edd7fd69814a0ec7987a143b1"><td class="memItemLeft" align="right" valign="top">boss_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dde/boss_8c.html#aca09f56edd7fd69814a0ec7987a143b1">creer_boss_clone</a> (boss_t *boss, t_aff *texture)</td></tr>
 <tr class="separator:aca09f56edd7fd69814a0ec7987a143b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1376d3f4d23e17f497b76c7fae99be05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dde/boss_8c.html#a1376d3f4d23e17f497b76c7fae99be05">affichage_chargement_attaque_boss</a> (t_aff *boule_1, t_aff *boule_2, int phase)</td></tr>
+<tr class="memdesc:a1376d3f4d23e17f497b76c7fae99be05"><td class="mdescLeft">&#160;</td><td class="mdescRight">animation lancement d'un sort  <a href="../../de/dde/boss_8c.html#a1376d3f4d23e17f497b76c7fae99be05">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a1376d3f4d23e17f497b76c7fae99be05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4458a2c395fa467f57e350a2f13096f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dde/boss_8c.html#a4458a2c395fa467f57e350a2f13096f2">affichage_clonage_boss</a> (t_aff *boss, t_aff *clone_1, t_aff *clone_2, int phase)</td></tr>
 <tr class="separator:a4458a2c395fa467f57e350a2f13096f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,12 +135,19 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Bruneau Antoine </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sort</td><td>le sort à détruire </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../de/dde/boss_8c_a1376d3f4d23e17f497b76c7fae99be05_cgraph.png" border="0" usemap="#de/dde/boss_8c_a1376d3f4d23e17f497b76c7fae99be05_cgraph" alt=""/></div>
 <map name="de/dde/boss_8c_a1376d3f4d23e17f497b76c7fae99be05_cgraph" id="de/dde/boss_8c_a1376d3f4d23e17f497b76c7fae99be05_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,172,47"/>
+<area shape="rect" title="animation lancement d&#39;un sort" alt="" coords="5,5,172,47"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a912edf846a7b2241716b7c93821b5817" title="Fonction qui positionne la texture au n&#45;ème sprite sur l&#39;axe des x." alt="" coords="220,13,363,39"/>
 </map>
 </div>
@@ -148,7 +156,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../de/dde/boss_8c_a1376d3f4d23e17f497b76c7fae99be05_icgraph.png" border="0" usemap="#de/dde/boss_8c_a1376d3f4d23e17f497b76c7fae99be05_icgraph" alt=""/></div>
 <map name="de/dde/boss_8c_a1376d3f4d23e17f497b76c7fae99be05_icgraph" id="de/dde/boss_8c_a1376d3f4d23e17f497b76c7fae99be05_icgraph">
-<area shape="rect" title=" " alt="" coords="176,5,343,47"/>
+<area shape="rect" title="animation lancement d&#39;un sort" alt="" coords="176,5,343,47"/>
 <area shape="rect" href="../../de/dde/boss_8c.html#a1ce280469cd40ab2361f088050c1bbe3" title=" " alt="" coords="5,13,128,39"/>
 </map>
 </div>
@@ -263,7 +271,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="center"><img src="../../de/dde/boss_8c_a1ce280469cd40ab2361f088050c1bbe3_cgraph.png" border="0" usemap="#de/dde/boss_8c_a1ce280469cd40ab2361f088050c1bbe3_cgraph" alt=""/></div>
 <map name="de/dde/boss_8c_a1ce280469cd40ab2361f088050c1bbe3_cgraph" id="de/dde/boss_8c_a1ce280469cd40ab2361f088050c1bbe3_cgraph">
 <area shape="rect" title=" " alt="" coords="5,42,128,69"/>
-<area shape="rect" href="../../de/dde/boss_8c.html#a1376d3f4d23e17f497b76c7fae99be05" title=" " alt="" coords="176,5,343,47"/>
+<area shape="rect" href="../../de/dde/boss_8c.html#a1376d3f4d23e17f497b76c7fae99be05" title="animation lancement d&#39;un sort" alt="" coords="176,5,343,47"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0" title="Fonction qui renvoie, charge une texture et la prépare à se faire afficher." alt="" coords="205,71,314,98"/>
 </map>
 </div>
@@ -307,8 +315,8 @@ Voici le graphe des appelants de cette fonction :</div>
 
 </div>
 </div>
-<a id="a911aa82b4f9762b9e766843d532a7637"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a911aa82b4f9762b9e766843d532a7637">&#9670;&nbsp;</a></span>deplacement_boss_aleatoir()</h2>
+<a id="a8756f68836b9cba4a3ea84e2967eb00c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8756f68836b9cba4a3ea84e2967eb00c">&#9670;&nbsp;</a></span>deplacement_boss_aleatoir()</h2>
 
 <div class="memitem">
 <div class="memproto">

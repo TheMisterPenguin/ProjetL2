@@ -1,6 +1,7 @@
 \hypertarget{boss_8c}{}\doxysection{Référence du fichier boss.\+c}
 \label{boss_8c}\index{boss.c@{boss.c}}
-Graphe des dépendances par inclusion de boss.\+c\+:\nopagebreak
+Graphe des dépendances par inclusion de boss.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,12 +11,12 @@ Graphe des dépendances par inclusion de boss.\+c\+:\nopagebreak
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{boss_8c_a911aa82b4f9762b9e766843d532a7637}{deplacement\+\_\+boss\+\_\+aleatoir}} (boss\+\_\+t $\ast$boss,)
+void \mbox{\hyperlink{boss_8c_a8756f68836b9cba4a3ea84e2967eb00c}{deplacement\+\_\+boss\+\_\+aleatoir}} (boss\+\_\+t $\ast$boss)
 \item 
 boss\+\_\+t $\ast$ \mbox{\hyperlink{boss_8c_aca09f56edd7fd69814a0ec7987a143b1}{creer\+\_\+boss\+\_\+clone}} (boss\+\_\+t $\ast$boss, t\+\_\+aff $\ast$texture)
 \item 
 void \mbox{\hyperlink{boss_8c_a1376d3f4d23e17f497b76c7fae99be05}{affichage\+\_\+chargement\+\_\+attaque\+\_\+boss}} (t\+\_\+aff $\ast$boule\+\_\+1, t\+\_\+aff $\ast$boule\+\_\+2, int phase)
-\item 
+\begin{DoxyCompactList}\small\item\em animation lancement d\textquotesingle{}un sort \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{boss_8c_a4458a2c395fa467f57e350a2f13096f2}{affichage\+\_\+clonage\+\_\+boss}} (t\+\_\+aff $\ast$boss, t\+\_\+aff $\ast$clone\+\_\+1, t\+\_\+aff $\ast$clone\+\_\+2, int phase)
 \item 
 void \mbox{\hyperlink{boss_8c_a9de096805953d1628c74d869cf75e741}{intro\+\_\+boss}} (boss\+\_\+t $\ast$boss, boss\+\_\+t $\ast$clone\+\_\+1, boss\+\_\+t $\ast$clone\+\_\+2)
@@ -33,14 +34,24 @@ void \mbox{\hyperlink{boss_8c_a1ce280469cd40ab2361f088050c1bbe3}{afficher\+\_\+b
 \doxysubsubsection{\texorpdfstring{affichage\_chargement\_attaque\_boss()}{affichage\_chargement\_attaque\_boss()}}
 {\footnotesize\ttfamily void affichage\+\_\+chargement\+\_\+attaque\+\_\+boss (\begin{DoxyParamCaption}\item[{t\+\_\+aff $\ast$}]{boule\+\_\+1,  }\item[{t\+\_\+aff $\ast$}]{boule\+\_\+2,  }\item[{int}]{phase }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em sort} & le sort à détruire \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=348pt]{de/dde/boss_8c_a1376d3f4d23e17f497b76c7fae99be05_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -86,7 +97,8 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{afficher\_bosses()}{afficher\_bosses()}}
 {\footnotesize\ttfamily void afficher\+\_\+bosses (\begin{DoxyParamCaption}\item[{boss\+\_\+t $\ast$}]{boss\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -106,7 +118,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \includegraphics[width=284pt]{de/dde/boss_8c_aca09f56edd7fd69814a0ec7987a143b1_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{boss_8c_a911aa82b4f9762b9e766843d532a7637}\label{boss_8c_a911aa82b4f9762b9e766843d532a7637}} 
+\mbox{\Hypertarget{boss_8c_a8756f68836b9cba4a3ea84e2967eb00c}\label{boss_8c_a8756f68836b9cba4a3ea84e2967eb00c}} 
 \index{boss.c@{boss.c}!deplacement\_boss\_aleatoir@{deplacement\_boss\_aleatoir}}
 \index{deplacement\_boss\_aleatoir@{deplacement\_boss\_aleatoir}!boss.c@{boss.c}}
 \doxysubsubsection{\texorpdfstring{deplacement\_boss\_aleatoir()}{deplacement\_boss\_aleatoir()}}
