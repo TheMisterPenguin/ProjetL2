@@ -3,7 +3,7 @@
  * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
  * \brief Définitions concernant les objets
  * \version 0.3
- * \date 24/02/2022
+ * \date 05/04/2022
  * \copyright Copyright (c) 2022
  */
 

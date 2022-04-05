@@ -19,7 +19,7 @@
  * \copyright Copyright (c) 2022
  */
 
-liste_base_monstres_t * liste_base_monstres = NULL;
+liste_base_monstres_t * liste_base_monstres = NULL; /* le tableau de modèles de monstre */
 
 void detruire_monstre(monstre_t ** monstre){
     free((*monstre)->texture);
@@ -95,21 +95,6 @@ type_monstre_t nom_monstre_to_type_monstre(const char * const nom_monstre){
         fprintf(stderr,"Erreur, nom du monstre incorrect\n");
         return TYPE_MONSTRE_INCONNU;
     }
-}
-
-int distance_x_joueur(SDL_Rect collision, joueur_t * joueur){
-    return joueur->statut->vrai_zone_collision.x - collision.x;
-}
-
-int distance_y_joueur(SDL_Rect collision, joueur_t * joueur){
-    return joueur->statut->vrai_zone_collision.y - collision.y;
-}
-
-int distance_joueur(SDL_Rect collision, joueur_t * joueur){
-    int x = distance_x_joueur(collision, joueur);
-    int y = distance_y_joueur(collision, joueur);
-
-    return sqrt(x*x + y*y);
 }
 
 void marcher_monstre(monstre_t * monstre){
