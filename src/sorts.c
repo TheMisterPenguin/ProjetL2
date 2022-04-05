@@ -3,8 +3,6 @@
 #include <personnage.h>
 #include <listes.h>
 
-
-
 /**
  * \file sorts.c
  * \author Antoine Bruneau (Antoine.Bruneau.Etu@univ-lemans.fr)
@@ -32,7 +30,7 @@ void * ajouter_sort_cb(void * sort){
     return ajouter_sort(sort);
 }
 
-base_sort_t liste_base_sort[3];
+base_sort_t liste_base_sort[3]; /* le tableau des différents sorts (modèles de sort) */
 
 void init_liste_base_sort(liste_base_monstres_t * liste_base_monstres){
     liste_base_sort[SP_WITCHER].type = SP_WITCHER;
@@ -44,21 +42,26 @@ void init_liste_base_sort(liste_base_monstres_t * liste_base_monstres){
 void creer_sort_monstre(monstre_t * monstre, joueur_t * joueur){
     sort_t * sort = malloc(sizeof(sort_t));
 
-    sort->statut = LANCER;
+    /* positionner le sort sur la map à la même position que le monstre qui l'a créé */
     sort->collision.x = monstre->collision.x;
     sort->collision.y = monstre->collision.y;
+
+    /* copier les propriétées du modèle de sort correspondant dans le sort créé */
     switch(monstre->type){
         case WITCHER :
             sort->collision.h = liste_base_sort[SP_WITCHER].collision.h * (map->taille_case / TAILLE_CASE);
             sort->collision.w = liste_base_sort[SP_WITCHER].collision.w * (map->taille_case / TAILLE_CASE);
             sort->degat = liste_base_sort[SP_WITCHER].degat;
             sort->type = SP_WITCHER;
+            /* création de la texture du sort */
             sort->texture = creer_texture(PATH_SPELL_WITCHER, LARGEUR_ENTITE, LONGUEUR_ENTITE, monstre->collision.x, monstre->collision.y , map->taille_case / TAILLE_CASE);
             sort->texture->duree_frame_anim = NB_FPS;
-            orienter_sort_vers_joueur(monstre, sort, joueur);
         default : break;
     }
+    orienter_sort_vers_joueur(monstre, sort, joueur);
+    /* ajout du sort à la liste des sorts en jeu */
     ajout_droit(map->liste_sorts , sort);
+    /* ajout du sort à la liste des collisons en jeu*/
     ajout_droit(map->liste_collisions, &(sort->collision));
 
 }
@@ -75,7 +78,7 @@ void orienter_sort_vers_joueur(monstre_t * monstre, sort_t * sort, joueur_t * jo
     teta = acos(cos0) * CONVERTIR_RADIANT_DEGREE;
     //change d'orientation
     if(x_joueur < 0)
-        next_frame_x_indice(sort->texture, (int)round((360-teta)/(double)45) % 8);
+        next_frame_x_indice(sort->texture, (int)round((360-teta)/(double)45) % 8); /* %8 correspond au nombre nb d'orrientation du sprite du sort */
     else
         next_frame_x_indice(sort->texture, (int)round(teta/(double)45) % 8);
 }
@@ -85,33 +88,35 @@ void action_sort(sort_t * sort, joueur_t joueur[2]){
     bool deplacer_1 = vrai;
     bool deplacer_2 = vrai;
 
+    /* centre la texture du sort sur la zone de collision (hitbox) de celui-ci */
     place_rect_center_from_point(sort->texture->aff_fenetre, get_rect_center_coord(&sort->collision));
     switch(orientation){
-        case 0:
+        case NORD_2:
             deplacer_1 = deplacement_y_entite(map, sort->texture, -2, &(sort->collision) ); break; 
-        case 1:
+        case NORD_EST_2:
             deplacer_1 = deplacement_x_entite(map, sort->texture, 1, &(sort->collision) );
             deplacer_2 = deplacement_y_entite(map, sort->texture, -1, &(sort->collision) ); break;
-        case 2:
+        case EST_2:
             deplacer_1 = deplacement_x_entite(map, sort->texture, 2, &(sort->collision) ); break;
-        case 3:
+        case SUD_EST_2:
             deplacer_1 = deplacement_x_entite(map, sort->texture, 1, &(sort->collision) );
             deplacer_2 = deplacement_y_entite(map, sort->texture, 1, &(sort->collision) ); break;
-        case 4:
+        case SUD_2:
             deplacer_1 = deplacement_y_entite(map, sort->texture, 2, &(sort->collision) ); break;
-        case 5:
+        case SUD_OUEST_2:
             deplacer_1 = deplacement_x_entite(map, sort->texture, -1, &(sort->collision) );
             deplacer_2 = deplacement_y_entite(map, sort->texture, 1, &(sort->collision) ); break;
-        case 6:
+        case OUEST_2:
             deplacer_1 = deplacement_x_entite(map, sort->texture, -2, &(sort->collision) ); break;
-        case 7:
+        case NORD_OUEST_2:
             deplacer_1 = deplacement_x_entite(map, sort->texture, -1, &(sort->collision) ); 
             deplacer_2 = deplacement_y_entite(map, sort->texture, -1, &(sort->collision) ); break;
         default : break;
     }
 
-    /* detruit sort si rencontre un obstacle qui n'est pas un joueur*/
+    /* rencontre un obstacle */
     if(deplacer_1 == faux || deplacer_2 == faux)
+        /*detruit sort si l'obstacle n'est pas un joueur*/
         if(valeur_elt(map->liste_collisions) != &(joueur[0].statut->vrai_zone_collision)){
             detruire_collision_dans_liste(map->liste_collisions, &(sort->collision));
 		    oter_elt(map->liste_sorts);

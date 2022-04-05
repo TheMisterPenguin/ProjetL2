@@ -48,33 +48,32 @@ void detruire_liste_base_monstres(liste_base_monstres_t** liste_base_monstres){
 
 monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, const char * const nom_monstre, int x, int y, t_map *map){
     int i;
+    monstre_t* monstre = malloc(sizeof(monstre_t)); /* allocation monstre_t*/
+    base_monstre_t* base_monstre = NULL;
 
-    /* allocation monstre_t*/
-    monstre_t* monstre = malloc(sizeof(monstre_t));
     for(i=0; i<liste_base_monstres->nb_monstre; i++){
-        if(strcmp(liste_base_monstres->tab[i].nom_monstre,nom_monstre) == 0){
+        base_monstre = &(liste_base_monstres->tab[i]);
+        if(strcmp(base_monstre->nom_monstre, nom_monstre) == 0){
             monstre->type = nom_monstre_to_type_monstre(nom_monstre);
 
             if(monstre->type == TYPE_MONSTRE_INCONNU)
                 erreur("Erreur lors de la création du monstre : le monstre %s n'existe pas !", ERREUR_MAP, nom_monstre);
-
-            monstre->collision.x = x;
-
-            monstre->collision.y = y;
-            monstre->collision.w = liste_base_monstres->tab[i].hitbox.w * (map->taille_case / TAILLE_CASE);
-            monstre->collision.h = liste_base_monstres->tab[i].hitbox.h * (map->taille_case / TAILLE_CASE);
-
+            
+            /* initialisation du monstre */
             monstre->orientation = NORD_1;
             monstre->duree = 0;
             monstre->action = MONSTRE_EN_GARDE;
-
-            /*copie les informations de base_monstre dans monstre*/
-            monstre->pdv = liste_base_monstres->tab[i].pdv;
-            monstre->attaque = liste_base_monstres->tab[i].attaque;
-            monstre->vitesse = liste_base_monstres->tab[i].vitesse;
-            monstre->gainXp = liste_base_monstres->tab[i].gainXp;
-
-            monstre->texture = creer_texture(liste_base_monstres->tab[i].fichier_image, LARGEUR_ENTITE, LONGUEUR_ENTITE, -100, -100, map->taille_case / TAILLE_CASE);
+            monstre->collision.x = x;
+            monstre->collision.y = y;
+            /* copie les informations de base_monstre dans monstre */
+            monstre->collision.w = base_monstre->hitbox.w * (map->taille_case / TAILLE_CASE); /* adaptation de la largeur en fonction de la taille d'une case de la map */
+            monstre->collision.h = base_monstre->hitbox.h * (map->taille_case / TAILLE_CASE); /* adaptation de la hauteur en fonction de la taille d'une case de la map */
+            monstre->pdv = base_monstre->pdv;
+            monstre->attaque = base_monstre->attaque;
+            monstre->vitesse = base_monstre->vitesse;
+            monstre->gainXp = base_monstre->gainXp;
+            /* creation de la texture */
+            monstre->texture = creer_texture(base_monstre->fichier_image, LARGEUR_ENTITE, LONGUEUR_ENTITE, x, y, map->taille_case / TAILLE_CASE);
             monstre->texture->duree_frame_anim = NB_FPS;
 
             return monstre;
@@ -83,20 +82,23 @@ monstre_t* creer_monstre(liste_base_monstres_t* liste_base_monstres, const char 
     return NULL;
 }
 
-
 type_monstre_t nom_monstre_to_type_monstre(const char * const nom_monstre){
     if(strcmp(nom_monstre,"witcher") == 0)
         return WITCHER;
     else if(strcmp(nom_monstre,"knight") == 0)
         return KNIGHT;
-    else if(strcmp(nom_monstre,"boss") == 0)
-        return BOSS;
     else{
         fprintf(stderr,"Erreur, nom du monstre incorrect\n");
         return TYPE_MONSTRE_INCONNU;
     }
 }
 
+/**
+ * \fn void marcher_monstre(monstre_t * monstre);
+ * \brief Fonction qui met à jour la texture du monstre pour ses déplacements
+ * \author Bruneau Antoine
+ * \param monstre le monstre à mettre à jour
+ */
 void marcher_monstre(monstre_t * monstre){
     switch(monstre->type){
         case(KNIGHT): next_frame_x_indice(monstre->texture, (current_frame_x(monstre->texture)+1) % 2);
@@ -104,20 +106,33 @@ void marcher_monstre(monstre_t * monstre){
     }
 }
 
+/**
+ * \fn void orienter_monstre(monstre_t * monstre)
+ * \brief Fonction qui met à jour la texture du monstre par rapport à son orientation
+ * \author Bruneau Antoine
+ * \param monstre le monstre à mettre à jour
+ */
 void orienter_monstre(monstre_t * monstre){
     switch(monstre->type){
         case(WITCHER): next_frame_x_indice(monstre->texture, monstre->orientation); break;
         case(KNIGHT): next_frame_y_indice(monstre->texture, monstre->orientation); break;
-        case(BOSS): /**/ break;
         default : break; 
     }
 }
 
+/**
+ * \fn void orienter_monstre_vers_joueur(monstre_t * monstre, joueur_t * joueur);
+ * \brief Fonction qui met à jour la texture du monstre pour qu'il soit orienté vers le joueur
+ * \author Bruneau Antoine
+ * \param monstre le monstre à mettre à jour
+ * \param joueur le joueur ciblé
+ */
 void orienter_monstre_vers_joueur(monstre_t * monstre, joueur_t * joueur){
     int y_diff, x_diff;
     x_diff = distance_x_joueur(monstre->collision, joueur);
     y_diff = distance_y_joueur(monstre->collision, joueur);
 
+    /* choisit le chemin le plus court en comparant la distance x à y pour avoir la meilleur orientaiton possible vers le joueur*/
     if( abs(x_diff) < abs(y_diff) ){
         if(y_diff < 0)
             monstre->orientation = NORD_1;
@@ -130,9 +145,16 @@ void orienter_monstre_vers_joueur(monstre_t * monstre, joueur_t * joueur){
         else
             monstre->orientation = EST_1;
     }
+    /* oriente le monstre grâce à l'orientation trouvé */
     orienter_monstre(monstre);
 }
 
+/**
+ * \fn void monstre_en_garde(monstre_t * monstre);
+ * \brief Fonction qui met à jour la texture du monstre sur la position de garde (immobile) 
+ * \author Bruneau Antoine
+ * \param monstre le monstre à mettre à jour
+ */
 void monstre_en_garde(monstre_t * monstre){
     switch(monstre->type){
         case(KNIGHT): next_frame_x_indice(monstre->texture, 2); break;
@@ -140,19 +162,32 @@ void monstre_en_garde(monstre_t * monstre){
     }
 }
 
-void monstre_attaque(monstre_t * monstre /*liste texture sort*/){
+/**
+ * \fn void monstre_attaque(monstre_t * monstre);
+ * \brief Fonction qui met à jour la texture du monstre sur la position d'attaque 
+ * \author Bruneau Antoine
+ * \param monstre le monstre à mettre à jour
+ */
+void monstre_attaque(monstre_t * monstre){
     switch(monstre->type){
         case(WITCHER): next_frame_y_indice(monstre->texture, 1); break ;
         default: break;
-    //creation texture sort + insertion dans liste sorts
     }
 }
 
+/**
+ * \fn void fuir_joueur(monstre_t *monstre, joueur_t * joueur);
+ * \brief Fonction qui met à jour la texture du monstre de sorte à ce qu'il fuit le joueur
+ * \author Bruneau Antoine
+ * \param monstre le monstre à mettre à jour
+ * \param joueur le joueur à fuire
+ */
 void fuir_joueur(monstre_t *monstre, joueur_t * joueur){
     int y_diff, x_diff;
     x_diff = distance_x_joueur(monstre->collision, joueur);
     y_diff = distance_y_joueur(monstre->collision, joueur);
 
+    /* choisit la direction opposé au joueur */
     if( abs(x_diff) < abs(y_diff) ){
         if(y_diff < 0)
             monstre->orientation = SUD_1;
@@ -165,52 +200,87 @@ void fuir_joueur(monstre_t *monstre, joueur_t * joueur){
         else
             monstre->orientation = OUEST_1;
     }
+    /* oriente le monstre dans cette direction */
     orienter_monstre(monstre);
     marcher_monstre(monstre);
 }
 
+/**
+ * \fn void rush_joueur(monstre_t * monstre, joueur_t * joueur);
+ * \brief Fonction qui met à jour la texture du monstre de sorte à ce qu'il se deplace vers le joueur
+ * \author Bruneau Antoine
+ * \param monstre le monstre à mettre à jour
+ * \param joueur le joueur à atteindre
+ */
 void rush_joueur(monstre_t * monstre, joueur_t * joueur){
-    
     orienter_monstre_vers_joueur(monstre, joueur);
     marcher_monstre(monstre);
 }
 
+/**
+ * \fn void agro_witcher(monstre_t * monstre, joueur_t * joueur);
+ * \brief Fonction qui met à jour la texture du monstre "witcher" lorsqu'il est dans sa phase d'attaque
+ * \author Bruneau Antoine
+ * \param monstre le monstre à mettre à jour
+ * \param joueur le joueur à attaquer
+ */
 void agro_witcher(monstre_t * monstre, joueur_t * joueur){
+    /* replie ou rush du joueur */
     if(monstre->action == RUSH_OU_FUITE)
+        /* l'action n'est pas terminé */
         if(monstre->duree > 0){
-            if(compteur%5 == 0)
+            if(compteur%5 == 0) /* vitesse de l'animation */
                 fuir_joueur(monstre, joueur);
         }
+        /* l'action est terminé */
         else{
             monstre->action = MONSTRE_ATTAQUE;
             monstre->duree = DUREE_MONSTRE_ATTAQUE;
             orienter_monstre_vers_joueur(monstre, joueur);
             creer_sort_monstre(monstre, joueur);
         }
+    /* attaque du joueur */
     else
+        /* l'action n'est pas terminé */
         if(monstre->duree > 0){
-            if(compteur%5 == 0)
+            if(compteur%5 == 0) /* vitesse de l'animation */
                 monstre_attaque(monstre);
         }
+        /* l'action est terminé */
         else{
             monstre->action = RUSH_OU_FUITE;
             monstre->duree = DUREE_RUSH_OU_FUITE;
-            next_frame_y_indice(monstre->texture, 0);
+            next_frame_y_indice(monstre->texture, 0); /* repositionnement sur le sprite correspondant à l'action RUSH_OU_FUITE */
         }  
 }
 
+/**
+ * \fn void agro_knight(monstre_t * monstre, joueur_t * joueur);
+ * \brief Fonction qui met à jour la texture du monstre "knight" lorsqu'il est dans sa phase d'attaque (reboucle la même action)
+ * \author Bruneau Antoine
+ * \param monstre le monstre à mettre à jour
+ * \param joueur le joueur à attaquer
+ */
 void agro_knight(monstre_t * monstre, joueur_t * joueur){
     if(monstre->action == RUSH_OU_FUITE){
+        /* l'action n'est pas terminé */
         if(monstre->duree > 0){
-            if(compteur%5 == 0){
+            if(compteur%5 == 0) /* vitesse de l'animation */
                 rush_joueur(monstre, joueur);
-            }
         }
+        /* l'action est terminé */
         else
             monstre->duree = DUREE_RUSH_OU_FUITE;
     }
 }
 
+/**
+ * \fn void agro_monstre(monstre_t * monstre, joueur_t * joueur);
+ * \brief Fonction qui met à jour la texture d'un monstre lorsqu'il est dans sa phase d'attaque
+ * \author Bruneau Antoine
+ * \param monstre le monstre à mettre à jour
+ * \param joueur le joueur à attaquer
+ */
 void agro_monstre(monstre_t * monstre, joueur_t * joueur){
     switch(monstre->type){
         case(WITCHER): agro_witcher(monstre, joueur); break;
@@ -219,69 +289,54 @@ void agro_monstre(monstre_t * monstre, joueur_t * joueur){
     }
 }
 
+/**
+ * \fn void ronde_monstre(monstre_t * monstre);
+ * \brief Fonction qui met à jour la texture d'un monstre lorsqu'il est dans sa phase passive
+ * \author Bruneau Antoine
+ * \param monstre le monstre à mettre à jour
+ */
 void ronde_monstre(monstre_t * monstre){
+    /* l'action est terminé */
     if(monstre->duree <= 0){
+        /* 2 chance sur 3 que le monstre marche */ 
         if(rand()%3){
             monstre->action = MONSTRE_MARCHER;
             monstre->duree = DUREE_MONSTRE_MARCHER;
             monstre->orientation = rand()%4;
             orienter_monstre(monstre);
+        /* 1 chance sur 3 que le monstre s'arrète */ 
         }else{
             monstre->action = MONSTRE_EN_GARDE;
             monstre->duree = DUREE_MONSTRE_EN_GARDE;
         }
     }
+    /* faire marcher */
     if(monstre->action == MONSTRE_MARCHER){
-        if(compteur%16 == 0){
+        if(compteur%16 == 0) /* vitesse de l'animation */
             marcher_monstre(monstre);
-        }
     }
+    /* faire s'arrèter */
     else
         monstre_en_garde(monstre);
-}
-
-bool hors_map_monstre(monstre_t * monstre){
-    //test gauche
-    if(monstre->collision.x <= 0)
-        return 1;
-    //test haut
-    if(monstre->collision.y <= 0)
-        return 1;
-    //test droit
-    if(monstre->collision.w + monstre->collision.x >= map->text_map->width)
-        return 1;
-    //test bas
-    if(monstre->collision.h + monstre->collision.y >= map->text_map->height)
-        return 1;
-    return 0;
-}
-
-void deplacer_entite(SDL_Rect collision, t_direction_1 orientation, int nb_pixel){
-    
-}
-
-void monstre_blesse(monstre_t * monstre){
-    if(monstre->duree <= 0)
-            monstre->action = MONSTRE_EN_GARDE;
-    else{
-        //clignotement affichage frame
-
-    }
 }
 
 void action_monstre(monstre_t * monstre, joueur_t * joueur){
     bool deplacement = vrai;
 
+    /* faire correspondre les coordonnées de la texture monstre à celles de la zone de collison du monstre */
     monstre->texture->aff_fenetre->x = monstre->collision.x - floor(13 * monstre->texture->multipli_taille);
     monstre->texture->aff_fenetre->y = monstre->collision.y - floor(13 * monstre->texture->multipli_taille);
+
     (monstre->duree)--;
 
     if(monstre->action == MONSTRE_BLESSE){
-        monstre_blesse(monstre);
+        /* l'action est terminé */
+        if(monstre->duree <= 0)
+            monstre->action = MONSTRE_EN_GARDE;
     }
-
+    /* monstre est dans sa phase passive */
     else if(monstre->action != MONSTRE_ATTAQUE && monstre->action != RUSH_OU_FUITE){
-        //si le monstre détecte le joueur
+        /* le monstre détecte le joueur */
         if(distance_joueur(monstre->collision, joueur) < DISTANCE_AGRO && monstre->action != MONSTRE_PAUSE){
             monstre->action = RUSH_OU_FUITE;
             monstre->duree = DUREE_RUSH_OU_FUITE;
@@ -289,25 +344,25 @@ void action_monstre(monstre_t * monstre, joueur_t * joueur){
         else
             ronde_monstre(monstre);
     }
+    /* monstre est dans sa phase aggresive */
     else
         agro_monstre(monstre, joueur);
     
-    if(compteur%2 == 0 && (monstre->action == MONSTRE_MARCHER || monstre->action == RUSH_OU_FUITE || monstre->action == MONSTRE_BLESSE) ){
-
-        switch(monstre->orientation){
-            case(NORD_1): deplacement = deplacement_y_entite(map, monstre->texture, -1, &(monstre->collision) ); break;
-            case(EST_1): deplacement = deplacement_x_entite(map, monstre->texture, 1, &(monstre->collision) ); break;
-            case(SUD_1): deplacement = deplacement_y_entite(map, monstre->texture, 1, &(monstre->collision) ); break;
-            case(OUEST_1): deplacement = deplacement_x_entite(map, monstre->texture, -1, &(monstre->collision) ); break;
-            default: break;
+    /* deplacement du monstre sur la map en fonction de son action*/
+    if( monstre->action == MONSTRE_MARCHER || monstre->action == RUSH_OU_FUITE || monstre->action == MONSTRE_BLESSE )
+        if(compteur%2 == 0){ /* vitesse de deplacement */
+            switch(monstre->orientation){
+                case(NORD_1): deplacement = deplacement_y_entite(map, monstre->texture, -1, &(monstre->collision) ); break;
+                case(EST_1): deplacement = deplacement_x_entite(map, monstre->texture, 1, &(monstre->collision) ); break;
+                case(SUD_1): deplacement = deplacement_y_entite(map, monstre->texture, 1, &(monstre->collision) ); break;
+                case(OUEST_1): deplacement = deplacement_x_entite(map, monstre->texture, -1, &(monstre->collision) ); break;
+                default: break;
+            }
+            //si bloquer par une entité, faire une action
+            if(deplacement == faux)
+                monstre->duree = 0;
         }
-        //si bloquer par une entité, faire une action
-        if(deplacement == faux)
-            monstre->duree = 0;
-    }
 }
-
-
 
 void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t ** liste_base_monstres){
 

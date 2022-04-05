@@ -61,7 +61,7 @@ typedef enum
 extern SDL_Window *fenetre_Principale; /**<Pointeur sur la fenêtre principale du programme*/
 extern SDL_Renderer *rendu_principal; /**<Le rendu principal du programme*/
 extern bool running; /**<Booléen qui permet de savoir si le programme doit s'arrêter*/
-extern SDL_Rect * hors_hitbox;
+
 
 #define SAVE_PATH "Bloody_Sanada"/**<L'emplacement de la sauvegarde */
 
