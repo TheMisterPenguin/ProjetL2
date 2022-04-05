@@ -20,7 +20,7 @@
  * \copyright Copyright (c) 2022
  */
 
-t_map *map;
+t_map *map = NULL;
 
 void init_sousbuffer(t_map *map, joueur_t *joueur)
 {
