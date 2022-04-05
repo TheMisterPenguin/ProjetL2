@@ -27,12 +27,21 @@ typedef struct s_aff t_aff;
 /**
  * Type enum renseignant sur le type d'un coffre
  */
-typedef enum {PROFIL_FERME,PROFIL_OUVERT,FACE_FERME,FACE_OUVERT, COFFRE_INCONNU}type_coffre_t;
+typedef enum {
+    PROFIL_FERME, /**<Modèle de coffre fermé vu de profil*/
+    PROFIL_OUVERT, /**<Modèle de coffre ouvert vu de profil*/
+    FACE_FERME, /**<Modèle de coffre fermé vu de face*/
+    FACE_OUVERT, /**<Modèle de coffre ouvert vu de face*/
+     COFFRE_INCONNU /**<Modèle de coffre inconnu du programme*/
+}type_coffre_t;
 
 /**
  * Type enum indiquant si un coffre à été ouvert par un joueur
  */
-typedef enum {OUVERT, FERME}etat_coffre_t;
+typedef enum {
+    OUVERT, /**<Coffre déjà ouvert*/
+    FERME   /**<Coffre jamais ouvert*/
+}etat_coffre_t;
 
 /**
  * \struct coffre_s
