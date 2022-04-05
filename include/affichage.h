@@ -95,7 +95,7 @@ typedef struct s_l_aff{
     unsigned int nb_valeurs;
 }t_l_aff;
 
-/* Variables globales */
+    /* Variables globales */
 extern list *listeDeTextures; /**< La liste de toutes les textures qui ont été crées. Sert à leur destruction */
 extern long int compteur; /**< Un compteur d'ips qui va de 0 à \ref NB_FPS */
 extern SDL_Rect tx; /**<Rectangle servant au déplacement du personnage principal en x*/
