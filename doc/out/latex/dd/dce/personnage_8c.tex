@@ -24,7 +24,7 @@ void \mbox{\hyperlink{personnage_8c_a9ce711c80691bb2b4f29e7c58790851a}{creer\+\_
 \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{personnage_8c_a71919ee7582fae9cc0e2d1fd5bbce94e}{sauv\+\_\+existe}} (char $\ast$nom\+\_\+sauv)
 \item 
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639}{charger\+\_\+sauvegarde\+\_\+joueur}} (char $\ast$nom\+\_\+sauv, char $\ast$f\+\_\+src\+\_\+obj, joueur\+\_\+t $\ast$joueurs\mbox{[}$\,$\mbox{]}, unsigned short int nb\+\_\+joueurs)
-\begin{DoxyCompactList}\small\item\em Fonction qui charge une sauvegarde du jeu. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui charge une sauvegarde au format J\+S\+ON. \end{DoxyCompactList}\item 
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8c_a7737c7514f9c4f5c01ff698b97544c2c}{new\+\_\+joueur}} (const char $\ast$nom, int num\+\_\+j, char $\ast$f\+\_\+src\+\_\+obj)
 \begin{DoxyCompactList}\small\item\em Fonction de création d\textquotesingle{}un joueur correspondant au modèle standard du jeu. \end{DoxyCompactList}\item 
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8c_a0995a1c7be1391b4a127382999a450dd}{creer\+\_\+joueur}} (const char $\ast$nom, const int niveau, const int xp, const int max\+Pdv, const int pdv, const int attaque, const int defense, const int vitesse, const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} trig\mbox{[}\mbox{\hyperlink{personnage_8h_a98a97fd1e52188dde7bcc423c5d17546}{T\+A\+I\+L\+L\+E\+\_\+\+T\+R\+I\+G\+G\+ER}}\mbox{]}, const \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} orient, const \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} bouclier\+\_\+equipe, const int num\+\_\+j, char $\ast$f\+\_\+src\+\_\+obj)
@@ -109,17 +109,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{charger\_sauvegarde\_joueur()}{charger\_sauvegarde\_joueur()}}
 {\footnotesize\ttfamily joueur\+\_\+t$\ast$ charger\+\_\+sauvegarde\+\_\+joueur (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom\+\_\+sauv,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj,  }\item[{joueur\+\_\+t $\ast$}]{joueurs\mbox{[}$\,$\mbox{]},  }\item[{unsigned short int}]{nb\+\_\+joueurs }\end{DoxyParamCaption})}
 
-
-\begin{DoxyParams}{Paramètres}
-{\em nom\+\_\+sauv} & Le fichier de sauvegarde \\
-\hline
-{\em f\+\_\+src\+\_\+obj} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Renvoie}
-Instance nouvellement allouée du type joueur\+\_\+t contenant les informations du joueur
-\end{DoxyReturn}
-Fonction qui charge une sauvegarde au format J\+S\+ON. \begin{DoxyAuthor}{Auteur}
+\begin{DoxyAuthor}{Auteur}
 Ange Despert
 \end{DoxyAuthor}
 Cette fonction va récupérer les informations dans la sauvegarde au format J\+S\+ON. ~\newline
@@ -384,7 +374,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \hline
 {\em liste\+\_\+coffres} & La liste des coffres du jeu \\
 \hline
-{\em joueur} & Le joueur interagissant avec l\textquotesingle{}environnement du jeu \\
+{\em joueurs} & Les joueurs qui interagissent avec l\textquotesingle{}environnement du jeu \\
+\hline
+{\em nb\+\_\+joueur} & Le nombre de joueurs en jeu \\
 \hline
 \end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak

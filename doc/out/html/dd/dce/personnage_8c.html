@@ -114,7 +114,7 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a71919ee7582fae9cc0e2d1fd5bbce94e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/daa/definition__commun_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a71919ee7582fae9cc0e2d1fd5bbce94e">sauv_existe</a> (char *nom_sauv)</td></tr>
 <tr class="separator:a71919ee7582fae9cc0e2d1fd5bbce94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8c439be63cc83e7b5c4a0d33f62f639"><td class="memItemLeft" align="right" valign="top">joueur_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#ad8c439be63cc83e7b5c4a0d33f62f639">charger_sauvegarde_joueur</a> (char *nom_sauv, char *f_src_obj, joueur_t *joueurs[], unsigned short int nb_joueurs)</td></tr>
-<tr class="memdesc:ad8c439be63cc83e7b5c4a0d33f62f639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui charge une sauvegarde du jeu.  <a href="../../dd/dce/personnage_8c.html#ad8c439be63cc83e7b5c4a0d33f62f639">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:ad8c439be63cc83e7b5c4a0d33f62f639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui charge une sauvegarde au format JSON.  <a href="../../dd/dce/personnage_8c.html#ad8c439be63cc83e7b5c4a0d33f62f639">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad8c439be63cc83e7b5c4a0d33f62f639"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7737c7514f9c4f5c01ff698b97544c2c"><td class="memItemLeft" align="right" valign="top">joueur_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a7737c7514f9c4f5c01ff698b97544c2c">new_joueur</a> (const char *nom, int num_j, char *f_src_obj)</td></tr>
 <tr class="memdesc:a7737c7514f9c4f5c01ff698b97544c2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction de création d'un joueur correspondant au modèle standard du jeu.  <a href="../../dd/dce/personnage_8c.html#a7737c7514f9c4f5c01ff698b97544c2c">Plus de détails...</a><br /></td></tr>
@@ -245,15 +245,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nom_sauv</td><td>Le fichier de sauvegarde </td></tr>
-    <tr><td class="paramname">f_src_obj</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Instance nouvellement allouée du type joueur_t contenant les informations du joueur</dd></dl>
-<p>Fonction qui charge une sauvegarde au format JSON. </p><dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <p>Cette fonction va récupérer les informations dans la sauvegarde au format JSON. <br  />
  Il va ensuite detruire les joueurs et la carte, pour ensuite les recrées avec les infomations qui correspondent à la sauvegarde puis téléporter le joueur aux coordonnées voulues. </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -270,7 +262,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_cgraph" alt=""/></div>
 <map name="dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_cgraph" id="dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_cgraph">
-<area shape="rect" title="Fonction qui charge une sauvegarde du jeu." alt="" coords="5,175,160,217"/>
+<area shape="rect" title="Fonction qui charge une sauvegarde au format JSON." alt="" coords="5,175,160,217"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a47b9be5462def4189b86dcf60f3a29a5" title="Affiche la texture donnée en paramètre à l&#39;écran." alt="" coords="214,5,339,32"/>
 <area shape="rect" href="../../d3/d7a/map_8c.html#af6448083132a6591f73061457f30ebb3" title="Fonction qui récupère les informations stockées dans le fichier don le nom est donne en entrée." alt="" coords="223,56,330,83"/>
 <area shape="rect" href="../../dd/dce/personnage_8c.html#a0995a1c7be1391b4a127382999a450dd" title=" " alt="" coords="225,107,328,133"/>
@@ -286,7 +278,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_icgraph" alt=""/></div>
 <map name="dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_icgraph" id="dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_icgraph">
-<area shape="rect" title="Fonction qui charge une sauvegarde du jeu." alt="" coords="215,5,369,47"/>
+<area shape="rect" title="Fonction qui charge une sauvegarde au format JSON." alt="" coords="215,5,369,47"/>
 <area shape="rect" href="../../d6/d46/menus_8h.html#a1ff516df4d202f56e051c3c040ee87b5" title="Affiche le menu pause et gère les interactions avec le joueur." alt="" coords="5,13,167,39"/>
 </map>
 </div>
@@ -481,7 +473,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="center"><img src="../../dd/dce/personnage_8c_a0995a1c7be1391b4a127382999a450dd_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a0995a1c7be1391b4a127382999a450dd_icgraph" alt=""/></div>
 <map name="dd/dce/personnage_8c_a0995a1c7be1391b4a127382999a450dd_icgraph" id="dd/dce/personnage_8c_a0995a1c7be1391b4a127382999a450dd_icgraph">
 <area shape="rect" title=" " alt="" coords="208,42,311,69"/>
-<area shape="rect" href="../../d2/d2f/personnage_8h.html#ad8c439be63cc83e7b5c4a0d33f62f639" title="Fonction qui charge une sauvegarde du jeu." alt="" coords="5,5,160,47"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#ad8c439be63cc83e7b5c4a0d33f62f639" title="Fonction qui charge une sauvegarde au format JSON." alt="" coords="5,5,160,47"/>
 <area shape="rect" href="../../d2/d2f/personnage_8h.html#a7737c7514f9c4f5c01ff698b97544c2c" title="Fonction de création d&#39;un joueur correspondant au modèle standard du jeu." alt="" coords="34,71,131,98"/>
 </map>
 </div>
@@ -864,7 +856,8 @@ Voici le graphe des appelants de cette fonction :</div>
     <tr><td class="paramname">liste_monstres</td><td>La liste des monstres du jeu </td></tr>
     <tr><td class="paramname">liste_sorts</td><td>La liste des sorts du jeu </td></tr>
     <tr><td class="paramname">liste_coffres</td><td>La liste des coffres du jeu </td></tr>
-    <tr><td class="paramname">joueur</td><td>Le joueur interagissant avec l'environnement du jeu </td></tr>
+    <tr><td class="paramname">joueurs</td><td>Les joueurs qui interagissent avec l'environnement du jeu </td></tr>
+    <tr><td class="paramname">nb_joueur</td><td>Le nombre de joueurs en jeu </td></tr>
   </table>
   </dd>
 </dl>

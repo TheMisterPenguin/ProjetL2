@@ -143,13 +143,6 @@ extern joueur_t *new_joueur(const char* nom, int num_j, char * f_src_obj);
 extern void detruire_joueur(joueur_t *j);
 
 /**
- * \brief Fonction qui charge une sauvegarde du jeu
- * \param nom_sauv Le fichier de sauvegarde
- * \param f_src_obj 
- * \return Instance nouvellement allouée du type joueur_t contenant les informations du joueur
- */
-
-/**
  * \brief Fonction qui charge une sauvegarde au format JSON.
  * \author Ange Despert
  * 
@@ -162,7 +155,7 @@ extern void detruire_joueur(joueur_t *j);
  * \param nb_joueurs Le nombre de joueurs existants
  * \return joueur_t*
  */
-extern joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char *f_src_obj, joueur_t *joueurs[], unsigned short int nb_joueurs);
+extern joueur_t *charger_sauvegarde_joueur(char * nom_sauv, char *f_src_obj, joueur_t *joueurs[], unsigned short int nb_joueurs);
 
 /**
  * \brief Fonction qui met à jour les statistiques d'un joueur lors d'un passage de niveau
@@ -215,7 +208,8 @@ void check_repertoire_jeux();
  * \param liste_monstres La liste des monstres du jeu
  * \param liste_sorts La liste des sorts du jeu
  * \param liste_coffres La liste des coffres du jeu
- * \param joueur Le joueur interagissant avec l'environnement du jeu
+ * \param joueurs Les joueurs qui interagissent avec l'environnement du jeu
+ * \param nb_joueur Le nombre de joueurs en jeu
  */
 void environnement_joueurs(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t ** joueurs, int nb_joueur);
 
