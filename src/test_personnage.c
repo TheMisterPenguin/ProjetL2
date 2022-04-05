@@ -40,15 +40,13 @@ void creation_personnage(void) {
 
     //statut
     CU_ASSERT_NOT_EQUAL(perso_principal->statut, NULL);
-    CU_ASSERT_EQUAL(perso_principal->statut->orientation, NORD);
+    CU_ASSERT_EQUAL(perso_principal->statut->orient_dep, NORD_1);
     CU_ASSERT_EQUAL(perso_principal->statut->bouclier_equipe, faux);
     CU_ASSERT_EQUAL(perso_principal->statut->duree, 0);
     CU_ASSERT_EQUAL(perso_principal->statut->duree_anim, 0);
     CU_ASSERT_EQUAL(perso_principal->statut->en_mouvement, faux);
     CU_ASSERT_EQUAL(perso_principal->statut->action, 0);
     CU_ASSERT_EQUAL(perso_principal->statut->animation, 0);
-    CU_ASSERT_EQUAL(perso_principal->statut->x, 0);
-    CU_ASSERT_EQUAL(perso_principal->statut->y, 0);
     CU_ASSERT_EQUAL(perso_principal->statut->zone_colision.x, 0);
     CU_ASSERT_EQUAL(perso_principal->statut->zone_colision.y, 0);
     CU_ASSERT_EQUAL(perso_principal->statut->vrai_zone_collision.x, 0);
@@ -68,7 +66,7 @@ int main(){
     init();
 
     charger_base_monstre("monstres.json", &liste_base_monstres);
-    map = charger_s_map(charger_f_map("map.json"), liste_base_monstres);
+    map = charger_map("../bin/map/1.json");
     
     CU_pSuite pSuite = NULL;
     

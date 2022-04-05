@@ -27,31 +27,39 @@ extern unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
 typedef unsigned char byte;
 typedef struct point {int x,y;}point;
 
+/**
+ * \struct struct t_direction_1
+ * \brief Structure de quatre points cardinaux
+ */
 typedef enum
 {
-    NORD_1,
-    EST_1,
-    SUD_1,
-    OUEST_1,
+    NORD_1, /**<Point cardinal nord*/
+    EST_1, /**<Point cardinal est*/
+    SUD_1, /**<Point cardinal sud*/
+    OUEST_1, /**<Point cardinal ouest*/
 } t_direction_1;
 
+/**
+ * \struct struct t_direction_2
+ * \brief Structure de huit points cardinaux
+ */
 typedef enum
 {
-    NORD_2,
-    NORD_EST_2,
-    EST_2,
-    SUD_EST_2,
-    SUD_2,
-    SUD_OUEST_2,
-    OUEST_2,
-    NORD_OUEST_2
+    NORD_2, /**<Point cardinal nord*/
+    NORD_EST_2, /**<Point cardinal nord-est*/
+    EST_2, /**<Point cardinal est*/
+    SUD_EST_2, /**<Point cardinal sud-est*/
+    SUD_2, /**<Point cardinal sud*/
+    SUD_OUEST_2, /**<Point cardinal sud-ouest*/
+    OUEST_2, /**<Point cardinal ouest*/
+    NORD_OUEST_2 /**<Point cardinal nord-ouest*/
 } t_direction_2;
 
 #define bool _Bool
 #define vrai 1
 #define faux 0
 
-extern SDL_Window *fenetre_Principale; /**Pointeur vers fenêtre globale pointant sur la fenêtre principale du programme*/
+extern SDL_Window *fenetre_Principale; /**Pointeur sur la fenêtre principale du programme*/
 extern SDL_Renderer *rendu_principal;
 extern SDL_Window *fenetre_sous_rendu;
 extern SDL_Renderer *sous_rendu;

@@ -23,6 +23,7 @@
 list *listeDeTextures; 
 list *buffer_affichage;
 
+list * liste_animations = NULL;
 t_aff * heal = NULL; //init_animations()
 t_aff * bloquer = NULL; //init_animations()
 t_aff *fenetre_finale = NULL; /* La fenêtre de jeu finale sans l'interface */
@@ -496,9 +497,7 @@ bool point_in_rect(SDL_Rect r, point p){
 }
 
 void rect_centre_x(SDL_Rect *rectangle){
-    unsigned int centre_x = get_screen_center().x;
-
-    rectangle->x = centre_x;
+    rectangle->x = get_screen_center().x;
 
     if (rectangle->w % 2)
     {
@@ -511,9 +510,7 @@ void rect_centre_x(SDL_Rect *rectangle){
 }
 
 void rect_centre_y(SDL_Rect *rectangle){
-    unsigned int centre_y = get_screen_center().y;
-
-    rectangle->y = centre_y;
+    rectangle->y = get_screen_center().y;
 
     if (rectangle->h % 2)
     {
@@ -533,9 +530,7 @@ void rect_centre(SDL_Rect *rectangle){
 }
 
 void rect_centre_rect_x(SDL_Rect *rectangle, SDL_Rect *rectangle_centre){
-    unsigned int centre_x = rectangle_centre->w / 2;
-
-    rectangle->x = centre_x;
+    rectangle->x = rectangle_centre->w / 2;
 
     if (rectangle->w % 2)
     {
@@ -924,23 +919,16 @@ bool deplacement_y_joueur_secondaire(t_map *m, joueur_t * joueur, int y, SDL_Rec
 }
 
 void text_copier_position(t_aff * a_modifier, const t_aff * const original){
-    a_modifier->aff_fenetre->x = original->aff_fenetre->x;
-    a_modifier->aff_fenetre->y = original->aff_fenetre->y;
+    a_modifier->aff_fenetre = original->aff_fenetre;
 }
 
 
 bool rects_egal_x(const SDL_Rect * const r1, SDL_Rect const * const r2){
-
     return (r1->x == r2->x);
-
-    return faux;
 }
 
 bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2){
-
     return (r1->y == r2->y);
-
-    return faux;
 }
 
 SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
@@ -960,8 +948,8 @@ void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y){
     const double multipli_x = (double) map->text_map->frame_anim->w / FENETRE_LONGUEUR;
     const double multipli_y = (double)map->text_map->frame_anim->h / FENETRE_LARGEUR;
 
-    r_map->h = floor(ecran->h * multipli_y);
     r_map->w = floor(ecran->w * multipli_x);
+    r_map->h = floor(ecran->h * multipli_y);
 
     r_map->x = floor((ecran->x + x) * multipli_x);
     r_map->y = floor((ecran->y + y) * multipli_y);
@@ -1086,11 +1074,17 @@ bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
 }
 
 void init_animations(){
+    liste_animations = init_liste(NULL, NULL, NULL);
+
     heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
-    bloquer = (creer_texture("ressources/sprite/bloquer.bmp", 16, 16, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
+    ajout_droit(liste_animations, heal);
+
+    bloquer = (creer_texture("ressources/sprite/bloquer.bmp", TAILLE_CASE, TAILLE_CASE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
+    ajout_droit(liste_animations, bloquer);
+
 }
 
-t_aff * next_frame_animation(joueur_t * joueur){
+t_aff * next_frame_animation(joueur_t * joueur){ //actualiser position anim!
     statut_t * statut = joueur->statut;
 
      statut->duree_anim--;
@@ -1149,6 +1143,7 @@ void lister_animations(joueur_t ** joueurs, list * animations){
 void afficher_animations(list * animations){
     en_tete(animations);
 
+    //La liste d'animation permet de gérer les animations sur plusieurs entités en même temps
     while(!hors_liste(animations) && animations->ec->valeur != NULL){ //évite de boucler à l'infini en cas d'erreur
         afficher_texture(animations->ec->valeur, rendu_principal);
 

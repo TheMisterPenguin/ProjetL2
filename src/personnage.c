@@ -258,7 +258,7 @@ joueur_t *new_joueur(const char* nom, int num_j, char * f_src_obj){
 	byte *trig = calloc(TAILLE_TRIGGER, sizeof(byte));
   
 	joueur_t *j = creer_joueur(nom, 0, 0, 100, 50, 10, 10, 1, trig, NORD_1, faux, num_j, f_src_obj);
-	free(trig); //pour l'instant inutile (refait dans creer joueur)
+	free(trig); //pour l'instant non_utilisé (refait dans creer_joueur)
 
 	j->statut->zone_colision.x = 0;
 	j->statut->zone_colision.y = 0;
@@ -266,7 +266,7 @@ joueur_t *new_joueur(const char* nom, int num_j, char * f_src_obj){
 	return j;
 }
 
-joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orient, const bool bouclier_equipe, const int num_j, char * fichier_src)
+joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orient, const bool bouclier_equipe, const int num_j, char * f_src_obj)
 {
 	joueur_t * perso = malloc(sizeof(joueur_t));
 
@@ -318,7 +318,7 @@ joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const in
 	perso->statut->zone_colision.x = 0;
 	perso->statut->zone_colision.y = 0;
 	perso->textures_joueur = init_textures_joueur(perso, num_j);
-	perso->inventaire = creer_inventaire(fichier_src);
+	perso->inventaire = creer_inventaire(f_src_obj);
 	perso->statut->texture_prec = perso->textures_joueur->liste[TEXT_MARCHER];
 
 	return perso;
@@ -334,7 +334,7 @@ void detruire_joueur(joueur_t *j){
     detruire_inventaire(&(j->inventaire));
 }
 
-void caracteristiques(joueur_t* perso){
+void maj_statistiques(joueur_t* perso){
 	perso->attaque = 10+1*(perso->niveau);
 	perso->defense = 10+1*(perso->niveau);
 	perso->maxPdv = 10+5*(perso->niveau);
@@ -352,7 +352,7 @@ void afficher_statistiques(joueur_t* perso){
 
 void levelup(joueur_t* perso){
 	perso->niveau += 1;
-	caracteristiques(perso);
+	maj_statistiques(perso);
 }
 
 void gain_xp(joueur_t* perso){

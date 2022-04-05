@@ -10,6 +10,8 @@
  * \copyright Copyright (c) 2022
  */
 
+//TEST_OBSOLETE VOIR AUTRE TEST AVEC CUNIT
+
 long int compteur;
 t_map *test_map;
 unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
@@ -19,29 +21,29 @@ void afficher_int(int * nb){
 }
 
 int main(){
-    list * liste_int = NULL;
+    // list * liste_int = NULL;
 
-    printf("----- Création de liste de textures -----\n\n");
-    init();
+    // printf("----- Création de liste de textures -----\n\n");
+    // init();
 
-    printf("----- Ajouts droits à la liste -----\n\n");
-    creer_texture(N_T_MARCHER, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
-    creer_texture(N_T_ATTAQUE, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
-    creer_texture(N_T_ATTAQUE_CHARGEE, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    // printf("----- Ajouts droits à la liste -----\n\n");
+    // creer_texture(N_T_MARCHER, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    // creer_texture(N_T_ATTAQUE, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
+    // creer_texture(N_T_ATTAQUE_CHARGEE, LARGEUR_ENTITE, LONGUEUR_ENTITE, 150, 150, (FENETRE_LONGUEUR * 0.022f) / 16 * 3);
 
-    printf("----- Affichage de la liste -----\n\n");
-    afficher_liste(listeDeTextures);
+    // printf("----- Affichage de la liste -----\n\n");
+    // afficher_liste(listeDeTextures);
 
-    printf("----- Création de simple liste d'entiers -----\n\n");
-    liste_int = init_liste(NULL, NULL, (void(*)(void *))afficher_int);
+    // printf("----- Création de simple liste d'entiers -----\n\n");
+    // liste_int = init_liste(NULL, NULL, (void(*)(void *))afficher_int);
     
-    printf("----- Affichage d'une liste vide -----\n\n");
-    afficher_liste(liste_int);
+    // printf("----- Affichage d'une liste vide -----\n\n");
+    // afficher_liste(liste_int);
 
-    printf("----- destruction d'une liste vide -----\n\n");
-    detruire_liste(&liste_int);
+    // printf("----- destruction d'une liste vide -----\n\n");
+    // detruire_liste(&liste_int);
 
-    fermer_programme(EXIT_SUCCESS);
+    // fermer_programme(EXIT_SUCCESS);
 
     return 0;
 }

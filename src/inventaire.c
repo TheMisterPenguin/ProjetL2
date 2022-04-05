@@ -35,11 +35,22 @@ void changement_statistiques(joueur_t * joueur){
         joueur->vitesse_actif = vit;
 }
 
+/*
+on clique sur un item de l'inventaire (sac) qui s'équipe automatiquement
+on clique sur un item de l'inventaire (équipé) qui s'enlève automatiquement
+*/
+
+/* 
+on n'utilise pas de liste pour les objets de l'inventaire (sac) car on équipe beaucoup plus souvent qu'on deséquipe donc on préfère profiter
+de la rapidité de l'indexage plutôt que de parcourir la liste à chaque équipement pour trouver l'objet équipé. 
+*/
+
 void equiper_objet(joueur_t * joueur,objet_t ** objet){
     lobjet_t * equipe = joueur->inventaire->equipe;
     lobjet_t * sac = joueur->inventaire->sac;
-    objet_t *temp = NULL;
+    objet_t *temp = NULL; //intermédiaire à l'échange de deux valeurs
 
+    //vérifie que le joueur ait un niveau suffisant
     if(joueur->niveau < (*objet)->niveau){
         printf("Niveau insuffisant pour équiper\n");
         return;
@@ -55,6 +66,7 @@ void equiper_objet(joueur_t * joueur,objet_t ** objet){
         (equipe->nb)++;
     }
 
+    //application des bonus de statistiques
     if(temp->type != consommable && temp->type != quete){
         changement_statistiques(joueur);
         afficher_statistiques(joueur);
@@ -63,10 +75,6 @@ void equiper_objet(joueur_t * joueur,objet_t ** objet){
             joueur->statut->bouclier_equipe = 1;
         }
     }
-/*
-on clique sur un item de l'inventaire (sac) qui s'équipe automatiquement
-on clique sur un item de l'inventaire (équipé) qui s'enlève automatiquement
-*/
 }
 
 void desequiper(joueur_t * joueur, objet_t ** objet){
@@ -79,6 +87,7 @@ void desequiper(joueur_t * joueur, objet_t ** objet){
             joueur->statut->bouclier_equipe = 0;
         }
 
+        //chercher une adresse libre pour placer l'objet dans le sac
         for(i=0; i<CAPACITE_SAC; i++){
             if(sac->liste[i] == NULL){
                 sac->liste[i] = *objet;
@@ -94,13 +103,9 @@ void desequiper(joueur_t * joueur, objet_t ** objet){
         afficher_statistiques(joueur);
 
     }
-    /* 
-    on n'utilise pas de liste pour les objets de l'inventaire (sac) car on équipe beaucoup plus souvent qu'on deséquipe donc on préfère profiter
-    de la rapidité de l'indexage plutôt que de parcourir la liste à chaque équipement pour trouver l'objet équipé. 
-    */
 }
 
-inventaire_t * creer_inventaire(char * fichier_src){ //refaire fonction##################
+inventaire_t * creer_inventaire(char * fichier_src){
     inventaire_t * inventaire = NULL;
 
     if(( inventaire = malloc(sizeof(inventaire_t))) == NULL ){
@@ -108,6 +113,7 @@ inventaire_t * creer_inventaire(char * fichier_src){ //refaire fonction#########
         return((inventaire_t *)NULL);
     }
 
+    //creation des modules de l'inventaire
     inventaire->equipe = creer_liste_objet_equipe();
     inventaire->sac = creer_liste_objet_vide(fichier_src);
 
@@ -139,15 +145,14 @@ void ramasser_objet(objet_t * objet, inventaire_t * inventaire){
 void tout_ramasser(lobjet_t * objets, inventaire_t * inventaire){
     int i;
     
-    for(i=0; i<objets->nb; i++){
+    for(i=0; i<objets->nb; i++)
         ramasser_objet(objets->liste[i], inventaire);
-    }
 }
 
 void equiper_sac_slot(joueur_t * joueur, int slot){
     lobjet_t * sac = joueur->inventaire->sac;
     int i, j ;
-    int tt_obj ;
+    int tt_obj ; //nombre d'objets dans le sac
 
     tt_obj = sac->nb ;
 
@@ -156,6 +161,7 @@ void equiper_sac_slot(joueur_t * joueur, int slot){
         return ;
     }
 
+    //cherche l'objet à équiper
     for( i=0, j=0 ; i<CAPACITE_SAC ; i++, j++)
     {
         //faire correspondre la liste graphique à la liste du programme

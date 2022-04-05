@@ -28,6 +28,11 @@
 
 #define TAILLE_TRIGGER 200
 
+/**
+ * \brief Définition de la structure l_aff
+ * 
+ * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref personnage.h et \ref affichage.h .
+ */
 typedef struct s_l_aff t_l_aff;
 
 typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER, J_BLESSE, SOIN}action_t; /**<l'action qu'est en train de faire le personnage*/
@@ -87,18 +92,104 @@ extern char save_path[500];
  */
 void stoper_mouvement_joueurs(joueur_t ** joueurs);
 
-extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orient, const bool bouclier_equipe, const int num_j, char * fichier_src);
+/**
+ * \fn joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orient, const bool bouclier_equipe, const int num_j, char * fichier_src)
+ * \brief Creer un joueur
+ * \param nom Le nom du joueur
+ * \param niveau Le niveau du joueur
+ * \param xp L'expérience du joueur
+ * \param maxPdv Le nombre maximu de points de vie du joueur
+ * \param pdv Le nombre de points de vie du joueur
+ * \param attaque L'attaque du joueur
+ * \param defense La défense du joueur
+ * \param vitesse La vitesse du joueur
+ * \param trig Le trigger d'information sur le joueur
+ * \param orient L'orientation spatiale du joueur
+ * \param bouclier_equipe La possession d'un bouclier équipé par le joueur
+ * \param num_j La place du joueur dans le tableau des joueurs
+ * \param f_src_obj Le fichier source des objets du jeu
+ * \return Instance nouvellement allouée du type joueur_t contenant les informations du joueur
+ */
+extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orient, const bool bouclier_equipe, const int num_j, char * f_src_obj);
+
+/**
+ * \fn joueur_t *new_joueur(const char* nom, int num_j, char * f_src_obj)
+ * \brief Fonction de création d'un joueur correspondant au modèle standard du jeu
+ * \param nom Le nom du joueur
+ * \param num_j La place du joueur dans le tableau des joueurs
+ * \param f_src_obj Le fichier source des objets du jeu
+ * \return Instance nouvellement allouée du type joueur_t contenant les informations du joueur
+ */
 extern joueur_t *new_joueur(const char* nom, int num_j, char * f_src_obj);
+
+/**
+ * \fn void detruire_joueur(joueur_t *j)
+ * \brief Fonction qui détruit un joueur
+ * \param j Le joueur à détruire
+ */
 extern void detruire_joueur(joueur_t *j);
+
+/**
+ * \fn joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj)
+ * \brief Fonction qui charge une sauvegarde du jeu
+ * \param nom_sauv Le fichier de sauvegarde
+ * \param f_src_obj Le fichier source contenant les objets du jeu
+ * \return Instance nouvellement allouée du type joueur_t contenant les informations du joueur
+ */
 extern joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj);
-extern void caracteristiques(joueur_t* perso);
+
+/**
+ * \fn void maj_statistiques(joueur_t* perso)
+ * \brief Fonction qui met à jour les statistiques d'un joueur lors d'un passage de niveau
+ * \param perso Le joueur qui passe un niveau
+ */
+extern void maj_statistiques(joueur_t* perso);
+
+/**
+ * \fn void afficher_statistiques(joueur_t* perso)
+ * \brief Fonction qui affiche les statistiques d'un joueur dans la console
+ * \author Max Descomps
+ * \param perso Le joueur sur lequel on se renseigne
+ */
 extern void afficher_statistiques(joueur_t* perso);
+
+/**
+ * \fn void levelup(joueur_t* perso)
+ * \brief Fonction qui gère le passage de niveau d'un joueur
+ * \param perso Le joueur qui passe un niveau
+ */
 extern void levelup(joueur_t* perso);
+
+/**
+ * \fn void gain_xp(joueur_t* perso)
+ * \brief Fonction qui gère les effets d'un gain d'expérience
+ * \param perso Le joueur qui gagne de l'expérience
+ */
 extern void gain_xp(joueur_t* perso);
+
+/**
+ * \fn void creer_sauvegarde_json(joueur_t *j)
+ * \brief Fonction qui créer les sauvegardes du jeu
+ * \param j Le joueur qui sauvegarde
+ */
 extern void creer_sauvegarde_json(joueur_t *j);
+
+/**
+ * \fn void check_repertoire_jeux()
+ * \brief Fonction qui assure l'existence d'un répertoire de sauvegarde
+ */
 void check_repertoire_jeux();
 
+/**
+ * \fn void environnement_joueur(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t * joueur)
+ * \brief Fonction qui gère les effets de l'environnement sur le joueur
+ * \param liste_monstres La liste des monstres du jeu
+ * \param liste_sorts La liste des sorts du jeu
+ * \param liste_coffres La liste des coffres du jeu
+ * \param joueur Le joueur interagissant avec l'environnement du jeu
+ */
 void environnement_joueur(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t * joueur);
+
 SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_direction_2 orientation);
 
 
