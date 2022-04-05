@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Bloody Sanada:  Fichier source de definition_commun.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Bloody Sanada
+   </div>
+   <div id="projectbrief">Projet de L2 Informatique</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">definition_commun.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d1/daa/definition__commun_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef __H_DEF_COMMUN__</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define __H_DEF_COMMUN__</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;SDL2/SDL.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/de9/code__erreur_8h.html">code_erreur.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/de9/code__erreur_8h.html">code_erreur.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #define DEBUG_TP</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    #define _DEBUG_COLLISION</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    #define _DEBUG_MOUVEMENT</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../d1/daa/definition__commun_8h.html#a28b763408ce1b0c5b625e4c409a5022a">FENETRE_LONGUEUR</a>; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../d1/daa/definition__commun_8h.html#a675ea76148cd2210ee956b7358f18194">FENETRE_LARGEUR</a>; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">   28</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="../../d1/daa/definition__commun_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a>; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d8/dae/structpoint.html#a9a82ca9504acabb1e30569f89c805471">   29</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="../../d8/dae/structpoint.html">point</a> {<span class="keywordtype">int</span> <a class="code" href="../../d8/dae/structpoint.html#ad679b07fb69d55f5ad454d0f1f2891d5">x</a>,<a class="code" href="../../d8/dae/structpoint.html#a9a82ca9504acabb1e30569f89c805471">y</a>;}<a class="code" href="../../d8/dae/structpoint.html">point</a>; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831f">   34</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831facc4ba0e66edb6df8f19ed8062f2cb7b3">   36</a></span>&#160;    <a class="code" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831facc4ba0e66edb6df8f19ed8062f2cb7b3">NORD_1</a>, </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831fa3ee015073070ed1827854720723bac3b">   37</a></span>&#160;    <a class="code" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831fa3ee015073070ed1827854720723bac3b">EST_1</a>, </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831fa028f87843d3248db9ff5d43d66e5edfc">   38</a></span>&#160;    <a class="code" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831fa028f87843d3248db9ff5d43d66e5edfc">SUD_1</a>, </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831fa0456768f1740505fd6cc73db87ed7718">   39</a></span>&#160;    <a class="code" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831fa0456768f1740505fd6cc73db87ed7718">OUEST_1</a>, </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;} <a class="code" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831f">t_direction_1</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1">   45</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1aff10397b6d805ace9af2a15528048cab">   47</a></span>&#160;    <a class="code" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1aff10397b6d805ace9af2a15528048cab">NORD_2</a>, </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1ad735d9cd1992922ff7d1c857acbd0900">   48</a></span>&#160;    <a class="code" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1ad735d9cd1992922ff7d1c857acbd0900">NORD_EST_2</a>, </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1a2fd4728aadbb8132642319c00939bffd">   49</a></span>&#160;    <a class="code" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1a2fd4728aadbb8132642319c00939bffd">EST_2</a>, </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1a14d73753f3fb9e1f1d0b65d80bedea58">   50</a></span>&#160;    <a class="code" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1a14d73753f3fb9e1f1d0b65d80bedea58">SUD_EST_2</a>, </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1a57fcf499935b6cf2db51a3cbdd44ec00">   51</a></span>&#160;    <a class="code" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1a57fcf499935b6cf2db51a3cbdd44ec00">SUD_2</a>, </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1a6a8a81edd70d4dea2ddb790b0cde912c">   52</a></span>&#160;    <a class="code" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1a6a8a81edd70d4dea2ddb790b0cde912c">SUD_OUEST_2</a>, </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1a556a2d7445384aec0b7e034fa4438f5b">   53</a></span>&#160;    <a class="code" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1a556a2d7445384aec0b7e034fa4438f5b">OUEST_2</a>, </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1abae1e11c9cc6f25870166980579304d0">   54</a></span>&#160;    <a class="code" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1abae1e11c9cc6f25870166980579304d0">NORD_OUEST_2</a> </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;} <a class="code" href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1">t_direction_2</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#abb452686968e48b67397da5f97445f5b">   57</a></span>&#160;<span class="preprocessor">#define bool _Bool </span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#aa4113a26497a6784f9b855b197609b55">   58</a></span>&#160;<span class="preprocessor">#define vrai 1 </span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a02b37ade0ca9321842b5ed7445f1a9cd">   59</a></span>&#160;<span class="preprocessor">#define faux 0 </span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">extern SDL_Window *fenetre_Principale; </span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">extern SDL_Renderer *rendu_principal; </span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">extern bool running; </span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">extern SDL_Rect * hors_hitbox;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../d1/daa/definition__commun_8h.html#a9ae1cdc758f8a73904949e4195e0796d">   66</a></span>&#160;<span class="preprocessor">#define SAVE_PATH &quot;Bloody_Sanada&quot;</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor"></span><span class="comment">/* Fonctions indispensables */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/daa/definition__commun_8h.html#affaacddc6fe16ed3d818bf7e0c9798eb">fermer_programme</a>(<span class="keywordtype">int</span> code_erreur);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="adefinition__commun_8h_html_a13e1e2bc88dbbeed269e17c3f1ba831fa3ee015073070ed1827854720723bac3b"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831fa3ee015073070ed1827854720723bac3b">EST_1</a></div><div class="ttdeci">@ EST_1</div><div class="ttdef"><b>Definition:</b> definition_commun.h:37</div></div>
+<div class="ttc" id="acode__erreur_8h_html"><div class="ttname"><a href="../../da/de9/code__erreur_8h.html">code_erreur.h</a></div><div class="ttdoc">Fichier contenant les codes d'erreur du programme.</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a13e1e2bc88dbbeed269e17c3f1ba831f"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831f">t_direction_1</a></div><div class="ttdeci">t_direction_1</div><div class="ttdoc">Structure de quatre points cardinaux.</div><div class="ttdef"><b>Definition:</b> definition_commun.h:34</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a7f49efdfdf08d70d9980031175207fc1a6a8a81edd70d4dea2ddb790b0cde912c"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1a6a8a81edd70d4dea2ddb790b0cde912c">SUD_OUEST_2</a></div><div class="ttdeci">@ SUD_OUEST_2</div><div class="ttdef"><b>Definition:</b> definition_commun.h:52</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a7f49efdfdf08d70d9980031175207fc1"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1">t_direction_2</a></div><div class="ttdeci">t_direction_2</div><div class="ttdoc">Structure de huit points cardinaux.</div><div class="ttdef"><b>Definition:</b> definition_commun.h:45</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a13e1e2bc88dbbeed269e17c3f1ba831fa028f87843d3248db9ff5d43d66e5edfc"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831fa028f87843d3248db9ff5d43d66e5edfc">SUD_1</a></div><div class="ttdeci">@ SUD_1</div><div class="ttdef"><b>Definition:</b> definition_commun.h:38</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a675ea76148cd2210ee956b7358f18194"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a675ea76148cd2210ee956b7358f18194">FENETRE_LARGEUR</a></div><div class="ttdeci">unsigned int FENETRE_LARGEUR</div><div class="ttdef"><b>Definition:</b> affichage.c:32</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a7f49efdfdf08d70d9980031175207fc1aff10397b6d805ace9af2a15528048cab"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1aff10397b6d805ace9af2a15528048cab">NORD_2</a></div><div class="ttdeci">@ NORD_2</div><div class="ttdef"><b>Definition:</b> definition_commun.h:47</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a0c8186d9b9b7880309c27230bbb5e69d"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a></div><div class="ttdeci">unsigned char byte</div><div class="ttdef"><b>Definition:</b> definition_commun.h:28</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a13e1e2bc88dbbeed269e17c3f1ba831fa0456768f1740505fd6cc73db87ed7718"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831fa0456768f1740505fd6cc73db87ed7718">OUEST_1</a></div><div class="ttdeci">@ OUEST_1</div><div class="ttdef"><b>Definition:</b> definition_commun.h:39</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a7f49efdfdf08d70d9980031175207fc1a2fd4728aadbb8132642319c00939bffd"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1a2fd4728aadbb8132642319c00939bffd">EST_2</a></div><div class="ttdeci">@ EST_2</div><div class="ttdef"><b>Definition:</b> definition_commun.h:49</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a7f49efdfdf08d70d9980031175207fc1ad735d9cd1992922ff7d1c857acbd0900"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1ad735d9cd1992922ff7d1c857acbd0900">NORD_EST_2</a></div><div class="ttdeci">@ NORD_EST_2</div><div class="ttdef"><b>Definition:</b> definition_commun.h:48</div></div>
+<div class="ttc" id="astructpoint_html"><div class="ttname"><a href="../../d8/dae/structpoint.html">point</a></div><div class="ttdef"><b>Definition:</b> definition_commun.h:29</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a13e1e2bc88dbbeed269e17c3f1ba831facc4ba0e66edb6df8f19ed8062f2cb7b3"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831facc4ba0e66edb6df8f19ed8062f2cb7b3">NORD_1</a></div><div class="ttdeci">@ NORD_1</div><div class="ttdef"><b>Definition:</b> definition_commun.h:36</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a7f49efdfdf08d70d9980031175207fc1a556a2d7445384aec0b7e034fa4438f5b"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1a556a2d7445384aec0b7e034fa4438f5b">OUEST_2</a></div><div class="ttdeci">@ OUEST_2</div><div class="ttdef"><b>Definition:</b> definition_commun.h:53</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a7f49efdfdf08d70d9980031175207fc1a57fcf499935b6cf2db51a3cbdd44ec00"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1a57fcf499935b6cf2db51a3cbdd44ec00">SUD_2</a></div><div class="ttdeci">@ SUD_2</div><div class="ttdef"><b>Definition:</b> definition_commun.h:51</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a7f49efdfdf08d70d9980031175207fc1a14d73753f3fb9e1f1d0b65d80bedea58"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1a14d73753f3fb9e1f1d0b65d80bedea58">SUD_EST_2</a></div><div class="ttdeci">@ SUD_EST_2</div><div class="ttdef"><b>Definition:</b> definition_commun.h:50</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a28b763408ce1b0c5b625e4c409a5022a"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a28b763408ce1b0c5b625e4c409a5022a">FENETRE_LONGUEUR</a></div><div class="ttdeci">unsigned int FENETRE_LONGUEUR</div><div class="ttdef"><b>Definition:</b> affichage.c:31</div></div>
+<div class="ttc" id="astructpoint_html_ad679b07fb69d55f5ad454d0f1f2891d5"><div class="ttname"><a href="../../d8/dae/structpoint.html#ad679b07fb69d55f5ad454d0f1f2891d5">point::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition:</b> definition_commun.h:29</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a7f49efdfdf08d70d9980031175207fc1abae1e11c9cc6f25870166980579304d0"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a7f49efdfdf08d70d9980031175207fc1abae1e11c9cc6f25870166980579304d0">NORD_OUEST_2</a></div><div class="ttdeci">@ NORD_OUEST_2</div><div class="ttdef"><b>Definition:</b> definition_commun.h:54</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_affaacddc6fe16ed3d818bf7e0c9798eb"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#affaacddc6fe16ed3d818bf7e0c9798eb">fermer_programme</a></div><div class="ttdeci">void fermer_programme(int code_erreur)</div><div class="ttdoc">Fonction qui appelle les fonctions pour terminer le programme.</div><div class="ttdef"><b>Definition:</b> init_close.c:30</div></div>
+<div class="ttc" id="astructpoint_html_a9a82ca9504acabb1e30569f89c805471"><div class="ttname"><a href="../../d8/dae/structpoint.html#a9a82ca9504acabb1e30569f89c805471">point::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition:</b> definition_commun.h:29</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Bloody Sanada:  Fichier source de coffres.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Bloody Sanada
+   </div>
+   <div id="projectbrief">Projet de L2 Informatique</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">coffres.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d2/d9c/coffres_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d1/daa/definition__commun_8h.html">definition_commun.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/dae/affichage_8h.html">affichage.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/db7/map_8h.html">map.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifndef __COFFRES_H__</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define __COFFRES_H__</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d2/d9c/coffres_8h.html#a85784c5cfbde434991ff8f2432642afc">   17</a></span>&#160;<span class="preprocessor">#define COFFRE_FACE_OUVERT &quot;ressources/sprite/coffrefaceouvert.bmp&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d2/d9c/coffres_8h.html#ad61871f7a4232bfdec35d2f5c605985a">   18</a></span>&#160;<span class="preprocessor">#define COFFRE_PROFIL_OUVERT &quot;ressources/sprite/coffreprofilouvert.bmp&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="../../df/d5b/structs__aff.html">s_aff</a> t_aff;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86ec">   30</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca2f569acd59579be94f88e08ca8f47600">   31</a></span>&#160;    <a class="code" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca2f569acd59579be94f88e08ca8f47600">PROFIL_FERME</a>, </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca0a7b37f54c72f28cb34ab9860c0f17a0">   32</a></span>&#160;    <a class="code" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca0a7b37f54c72f28cb34ab9860c0f17a0">PROFIL_OUVERT</a>, </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86ecac377d18a82325eb432058f9fc22122ea">   33</a></span>&#160;    <a class="code" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86ecac377d18a82325eb432058f9fc22122ea">FACE_FERME</a>, </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca4341eb19b5df3b37fb4717f90d1c9c14">   34</a></span>&#160;    <a class="code" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca4341eb19b5df3b37fb4717f90d1c9c14">FACE_OUVERT</a>, </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca170e0a479579eb78c1834b6ade68fd09">   35</a></span>&#160;     <a class="code" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca170e0a479579eb78c1834b6ade68fd09">COFFRE_INCONNU</a> </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}<a class="code" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86ec">type_coffre_t</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../d2/d9c/coffres_8h.html#a1ed9bf2ef0cb98998ba84a8903ab0796">   41</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d2/d9c/coffres_8h.html#a1ed9bf2ef0cb98998ba84a8903ab0796a9947185083273520715b7dc48cecb50c">   42</a></span>&#160;    <a class="code" href="../../d2/d9c/coffres_8h.html#a1ed9bf2ef0cb98998ba84a8903ab0796a9947185083273520715b7dc48cecb50c">OUVERT</a>, </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../d2/d9c/coffres_8h.html#a1ed9bf2ef0cb98998ba84a8903ab0796af33dd4dbb60f26ab46629aa042a06cf0">   43</a></span>&#160;    <a class="code" href="../../d2/d9c/coffres_8h.html#a1ed9bf2ef0cb98998ba84a8903ab0796af33dd4dbb60f26ab46629aa042a06cf0">FERME</a>   </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}<a class="code" href="../../d2/d9c/coffres_8h.html#a1ed9bf2ef0cb98998ba84a8903ab0796">etat_coffre_t</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../d5/d2b/structcoffre__s.html">   51</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="../../d5/d2b/structcoffre__s.html">coffre_s</a></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d5/d2b/structcoffre__s.html#a42be78b657fbbce283a90409c75c5d5e">   53</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d5/d2b/structcoffre__s.html#a42be78b657fbbce283a90409c75c5d5e">id_cle</a>; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../d5/d2b/structcoffre__s.html#ac0e2c77504a27f3228c3fd5f02b6509e">   54</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d5/d2b/structcoffre__s.html#ac0e2c77504a27f3228c3fd5f02b6509e">id_loot</a>; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../d5/d2b/structcoffre__s.html#aa4098f752fe2561856de63bfcd892439">   55</a></span>&#160;    <a class="code" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86ec">type_coffre_t</a> <a class="code" href="../../d5/d2b/structcoffre__s.html#aa4098f752fe2561856de63bfcd892439">type</a>; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../d5/d2b/structcoffre__s.html#a5d63249892a40ee1abd21f3bcec03bb2">   56</a></span>&#160;    <a class="code" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831f">t_direction_1</a> <a class="code" href="../../d5/d2b/structcoffre__s.html#a5d63249892a40ee1abd21f3bcec03bb2">orientation</a>; <span class="comment">/*Orientation du coffre*/</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../d5/d2b/structcoffre__s.html#ad1dd228d464e7f7ebd2dee6b093d8f42">   57</a></span>&#160;    <a class="code" href="../../d2/d9c/coffres_8h.html#a1ed9bf2ef0cb98998ba84a8903ab0796">etat_coffre_t</a> <a class="code" href="../../d5/d2b/structcoffre__s.html#ad1dd228d464e7f7ebd2dee6b093d8f42">etat</a>; <span class="comment">/*Etat en cours par le coffre*/</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../d5/d2b/structcoffre__s.html#ab76ec0502fb97b5e049453dd37f89a31">   58</a></span>&#160;    SDL_Rect <a class="code" href="../../d5/d2b/structcoffre__s.html#ab76ec0502fb97b5e049453dd37f89a31">collision</a>; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d5/d2b/structcoffre__s.html#a066c5bbab2baa9385c02d8ba762ade68">   59</a></span>&#160;    t_aff* <a class="code" href="../../d5/d2b/structcoffre__s.html#a066c5bbab2baa9385c02d8ba762ade68">texture</a>; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <a class="code" href="../../d5/d2e/structcoffre__t.html">coffre_t</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../d9/d1b/structbase__coffre__s.html">   67</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="../../d9/d1b/structbase__coffre__s.html">base_coffre_s</a></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../d9/d1b/structbase__coffre__s.html#aa2916349da4bea81828e2dfa48ebdd70">   69</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="../../d9/d1b/structbase__coffre__s.html#aa2916349da4bea81828e2dfa48ebdd70">fichier_image</a>[50]; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../d9/d1b/structbase__coffre__s.html#aecdcd74436b6bef0fe54d74a03bc1ebd">   70</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="../../d9/d1b/structbase__coffre__s.html#aecdcd74436b6bef0fe54d74a03bc1ebd">nom_coffre</a>[20]; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d9/d1b/structbase__coffre__s.html#a97d3b3888cf33a9b9ac09043569c85b6">   71</a></span>&#160;    SDL_Rect <a class="code" href="../../d9/d1b/structbase__coffre__s.html#a97d3b3888cf33a9b9ac09043569c85b6">hitbox</a>; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}base_coffre_t;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../de/dc8/structliste__base__coffres__s.html">   79</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="../../de/dc8/structliste__base__coffres__s.html">liste_base_coffres_s</a></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../de/dc8/structliste__base__coffres__s.html#a8d5235c1193a1c423370046a780888f1">   81</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../de/dc8/structliste__base__coffres__s.html#a8d5235c1193a1c423370046a780888f1">nb_coffre</a>; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="../../de/dc8/structliste__base__coffres__s.html#a56a09643c3be44b7c4aeae229a7f80e1">   82</a></span>&#160;    base_coffre_t* <a class="code" href="../../de/dc8/structliste__base__coffres__s.html#a56a09643c3be44b7c4aeae229a7f80e1">tab</a>; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}liste_base_coffres_t;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">/* Variables globales */</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">extern</span> liste_base_coffres_t * <a class="code" href="../../d2/d9c/coffres_8h.html#ad9ec43edbee4491e915e009207e2bd07">liste_base_coffres</a>; <span class="comment">/*Liste des coffres générés par le programme*/</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">/* Définition des fonctions */</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d9c/coffres_8h.html#a2c9c6ec91da6b419ceaac9ed69a66316">charger_base_coffre</a>(<span class="keywordtype">char</span> * chemin_fichier, liste_base_coffres_t ** <a class="code" href="../../d2/d9c/coffres_8h.html#ad9ec43edbee4491e915e009207e2bd07">liste_base_coffres</a>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<a class="code" href="../../d5/d2e/structcoffre__t.html">coffre_t</a>* <a class="code" href="../../d2/d9c/coffres_8h.html#a4d05e5a75f401b57f5e6958a50a6a780">creer_coffre</a>(<span class="keywordtype">int</span> id_cle, <span class="keywordtype">int</span> id_loot, liste_base_coffres_t* <a class="code" href="../../d2/d9c/coffres_8h.html#ad9ec43edbee4491e915e009207e2bd07">liste_base_coffres</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> * <span class="keyword">const</span> nom_coffre, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, t_map *<a class="code" href="../../d3/d7a/map_8c.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<a class="code" href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86ec">type_coffre_t</a> <a class="code" href="../../d2/d9c/coffres_8h.html#a429c13dfc5bc32612208892805c750ad">nom_coffre_to_type_coffre</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * nom_coffre);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d9c/coffres_8h.html#ad339236e720fb2e7e16c44ebbd7c414b">info_coffre</a>(<a class="code" href="../../d5/d2e/structcoffre__t.html">coffre_t</a> * coffre);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d9c/coffres_8h.html#afaede33891b4fa55d0b68267a6207487">interaction_coffre</a>(SDL_Rect * coffre_rect, joueur_t * joueur, lobjet_t * <a class="code" href="../../d5/d17/liste__objet_8c.html#ad412be52cbf2eb978fac0c2c2e8e3c82">objets</a>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<a class="code" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831f">t_direction_1</a> <a class="code" href="../../d2/d9c/coffres_8h.html#add26f80bfe853e6f02c6d0e6e633d8a5">inverser_direction</a>(<a class="code" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831f">t_direction_1</a> direction);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="adefinition__commun_8h_html_a13e1e2bc88dbbeed269e17c3f1ba831fa3ee015073070ed1827854720723bac3b"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831fa3ee015073070ed1827854720723bac3b">EST_1</a></div><div class="ttdeci">@ EST_1</div><div class="ttdef"><b>Definition:</b> definition_commun.h:37</div></div>
+<div class="ttc" id="acoffres_8h_html_a00a8529a492da49a620058ce9c9e86eca0a7b37f54c72f28cb34ab9860c0f17a0"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca0a7b37f54c72f28cb34ab9860c0f17a0">PROFIL_OUVERT</a></div><div class="ttdeci">@ PROFIL_OUVERT</div><div class="ttdef"><b>Definition:</b> coffres.h:32</div></div>
+<div class="ttc" id="acoffres_8h_html_a1ed9bf2ef0cb98998ba84a8903ab0796"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#a1ed9bf2ef0cb98998ba84a8903ab0796">etat_coffre_t</a></div><div class="ttdeci">etat_coffre_t</div><div class="ttdef"><b>Definition:</b> coffres.h:41</div></div>
+<div class="ttc" id="acoffres_8h_html_afaede33891b4fa55d0b68267a6207487"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#afaede33891b4fa55d0b68267a6207487">interaction_coffre</a></div><div class="ttdeci">void interaction_coffre(SDL_Rect *coffre_rect, joueur_t *joueur, lobjet_t *objets)</div><div class="ttdoc">Gère les interactions du joueur avec un coffre lors d'une collision.</div><div class="ttdef"><b>Definition:</b> coffres.c:159</div></div>
+<div class="ttc" id="acode__erreur_8h_html"><div class="ttname"><a href="../../da/de9/code__erreur_8h.html">code_erreur.h</a></div><div class="ttdoc">Fichier contenant les codes d'erreur du programme.</div></div>
+<div class="ttc" id="amap_8h_html_ae5b774340dfc7392d6911f7a2186988c"><div class="ttname"><a href="../../dc/db7/map_8h.html#ae5b774340dfc7392d6911f7a2186988c">TAILLE_CASE</a></div><div class="ttdeci">#define TAILLE_CASE</div><div class="ttdef"><b>Definition:</b> map.h:18</div></div>
+<div class="ttc" id="astructbase__coffre__s_html_aa2916349da4bea81828e2dfa48ebdd70"><div class="ttname"><a href="../../d9/d1b/structbase__coffre__s.html#aa2916349da4bea81828e2dfa48ebdd70">base_coffre_s::fichier_image</a></div><div class="ttdeci">char fichier_image[50]</div><div class="ttdef"><b>Definition:</b> coffres.h:69</div></div>
+<div class="ttc" id="astructbase__coffre__s_html_aecdcd74436b6bef0fe54d74a03bc1ebd"><div class="ttname"><a href="../../d9/d1b/structbase__coffre__s.html#aecdcd74436b6bef0fe54d74a03bc1ebd">base_coffre_s::nom_coffre</a></div><div class="ttdeci">char nom_coffre[20]</div><div class="ttdef"><b>Definition:</b> coffres.h:70</div></div>
+<div class="ttc" id="alistes_8c_html_a9c780173ba80450b8a01ba4c14963437"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437">en_tete</a></div><div class="ttdeci">void en_tete(list *mylist)</div><div class="ttdoc">Fonction qui permet de se placer en tête de la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:41</div></div>
+<div class="ttc" id="acoffres_8h_html_a00a8529a492da49a620058ce9c9e86ec"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86ec">type_coffre_t</a></div><div class="ttdeci">type_coffre_t</div><div class="ttdef"><b>Definition:</b> coffres.h:30</div></div>
+<div class="ttc" id="acoffres_8h_html_a1ed9bf2ef0cb98998ba84a8903ab0796af33dd4dbb60f26ab46629aa042a06cf0"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#a1ed9bf2ef0cb98998ba84a8903ab0796af33dd4dbb60f26ab46629aa042a06cf0">FERME</a></div><div class="ttdeci">@ FERME</div><div class="ttdef"><b>Definition:</b> coffres.h:43</div></div>
+<div class="ttc" id="adefinition__commun_8h_html"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html">definition_commun.h</a></div><div class="ttdoc">Contient toutes les définitions communes à tout les fichiers.</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a13e1e2bc88dbbeed269e17c3f1ba831f"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831f">t_direction_1</a></div><div class="ttdeci">t_direction_1</div><div class="ttdoc">Structure de quatre points cardinaux.</div><div class="ttdef"><b>Definition:</b> definition_commun.h:34</div></div>
+<div class="ttc" id="astructcoffre__s_html_ab76ec0502fb97b5e049453dd37f89a31"><div class="ttname"><a href="../../d5/d2b/structcoffre__s.html#ab76ec0502fb97b5e049453dd37f89a31">coffre_s::collision</a></div><div class="ttdeci">SDL_Rect collision</div><div class="ttdef"><b>Definition:</b> coffres.h:58</div></div>
+<div class="ttc" id="acoffres_8h_html_a00a8529a492da49a620058ce9c9e86eca170e0a479579eb78c1834b6ade68fd09"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca170e0a479579eb78c1834b6ade68fd09">COFFRE_INCONNU</a></div><div class="ttdeci">@ COFFRE_INCONNU</div><div class="ttdef"><b>Definition:</b> coffres.h:35</div></div>
+<div class="ttc" id="astructbase__coffre__s_html"><div class="ttname"><a href="../../d9/d1b/structbase__coffre__s.html">base_coffre_s</a></div><div class="ttdoc">Structure contenant les propiétées du coffre importé</div><div class="ttdef"><b>Definition:</b> coffres.h:67</div></div>
+<div class="ttc" id="adefinition__commun_8h_html_a13e1e2bc88dbbeed269e17c3f1ba831fa028f87843d3248db9ff5d43d66e5edfc"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831fa028f87843d3248db9ff5d43d66e5edfc">SUD_1</a></div><div class="ttdeci">@ SUD_1</div><div class="ttdef"><b>Definition:</b> definition_commun.h:38</div></div>
+<div class="ttc" id="acoffres_8h_html_a2c9c6ec91da6b419ceaac9ed69a66316"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#a2c9c6ec91da6b419ceaac9ed69a66316">charger_base_coffre</a></div><div class="ttdeci">void charger_base_coffre(char *chemin_fichier, liste_base_coffres_t **liste_base_coffres)</div><div class="ttdoc">Fonction qui recopie les informations d'un fichier json pour les insérer dans la structure liste_base...</div><div class="ttdef"><b>Definition:</b> coffres.c:18</div></div>
+<div class="ttc" id="aaffichage_8h_html"><div class="ttname"><a href="../../d5/dae/affichage_8h.html">affichage.h</a></div><div class="ttdoc">Fichier contenant les définitions et les fonctions liées au module affichage.</div></div>
+<div class="ttc" id="aaffichage_8c_html_a59fc51b629cfed9815495f235dae78e0"><div class="ttname"><a href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0">creer_texture</a></div><div class="ttdeci">t_aff * creer_texture(const char *nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multiplicateur_taille)</div><div class="ttdoc">Fonction qui renvoie, charge une texture et la prépare à se faire afficher.</div><div class="ttdef"><b>Definition:</b> affichage.c:163</div></div>
+<div class="ttc" id="acoffres_8c_html_ad339236e720fb2e7e16c44ebbd7c414b"><div class="ttname"><a href="../../d4/db3/coffres_8c.html#ad339236e720fb2e7e16c44ebbd7c414b">info_coffre</a></div><div class="ttdeci">void info_coffre(coffre_t *coffre)</div><div class="ttdoc">Affcihe les informations sur un coffre dans la console.</div><div class="ttdef"><b>Definition:</b> coffres.c:149</div></div>
+<div class="ttc" id="ainventaire_8c_html_a1144d923a9a0174ae254109cd825c758"><div class="ttname"><a href="../../d4/d04/inventaire_8c.html#a1144d923a9a0174ae254109cd825c758">ramasser_objet</a></div><div class="ttdeci">void ramasser_objet(objet_t *objet, inventaire_t *inventaire)</div><div class="ttdoc">Fonction qui permet de mettre un objet trouvé dans le sac(inventaire)</div><div class="ttdef"><b>Definition:</b> inventaire.c:123</div></div>
+<div class="ttc" id="acoffres_8c_html_ad9ec43edbee4491e915e009207e2bd07"><div class="ttname"><a href="../../d4/db3/coffres_8c.html#ad9ec43edbee4491e915e009207e2bd07">liste_base_coffres</a></div><div class="ttdeci">liste_base_coffres_t * liste_base_coffres</div><div class="ttdef"><b>Definition:</b> coffres.c:16</div></div>
+<div class="ttc" id="aliste__objet_8c_html_ad412be52cbf2eb978fac0c2c2e8e3c82"><div class="ttname"><a href="../../d5/d17/liste__objet_8c.html#ad412be52cbf2eb978fac0c2c2e8e3c82">objets</a></div><div class="ttdeci">lobjet_t * objets</div><div class="ttdef"><b>Definition:</b> liste_objet.c:17</div></div>
+<div class="ttc" id="acoffres_8c_html_abbf6358c7af5799e0fbbba8b7ecaa469"><div class="ttname"><a href="../../d4/db3/coffres_8c.html#abbf6358c7af5799e0fbbba8b7ecaa469">creer_coffre</a></div><div class="ttdeci">coffre_t * creer_coffre(int id_cle, int id_loot, liste_base_coffres_t *liste_base_coffres, const char *const nom_coffre, int x, int y, t_map *map)</div><div class="ttdoc">Fonction qui creer et initialise un coffre sur une carte.</div><div class="ttdef"><b>Definition:</b> coffres.c:111</div></div>
+<div class="ttc" id="acoffres_8h_html_a00a8529a492da49a620058ce9c9e86eca4341eb19b5df3b37fb4717f90d1c9c14"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca4341eb19b5df3b37fb4717f90d1c9c14">FACE_OUVERT</a></div><div class="ttdeci">@ FACE_OUVERT</div><div class="ttdef"><b>Definition:</b> coffres.h:34</div></div>
+<div class="ttc" id="acoffres_8c_html_a2c9c6ec91da6b419ceaac9ed69a66316"><div class="ttname"><a href="../../d4/db3/coffres_8c.html#a2c9c6ec91da6b419ceaac9ed69a66316">charger_base_coffre</a></div><div class="ttdeci">void charger_base_coffre(char *chemin_fichier, liste_base_coffres_t **liste_base_coffres)</div><div class="ttdoc">Fonction qui recopie les informations d'un fichier json pour les insérer dans la structure liste_base...</div><div class="ttdef"><b>Definition:</b> coffres.c:18</div></div>
+<div class="ttc" id="astructbase__coffre__s_html_a97d3b3888cf33a9b9ac09043569c85b6"><div class="ttname"><a href="../../d9/d1b/structbase__coffre__s.html#a97d3b3888cf33a9b9ac09043569c85b6">base_coffre_s::hitbox</a></div><div class="ttdeci">SDL_Rect hitbox</div><div class="ttdef"><b>Definition:</b> coffres.h:71</div></div>
+<div class="ttc" id="amap_8c_html_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae"><div class="ttname"><a href="../../d3/d7a/map_8c.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a></div><div class="ttdeci">t_map * map</div><div class="ttdef"><b>Definition:</b> map.c:23</div></div>
+<div class="ttc" id="astructcoffre__s_html_a5d63249892a40ee1abd21f3bcec03bb2"><div class="ttname"><a href="../../d5/d2b/structcoffre__s.html#a5d63249892a40ee1abd21f3bcec03bb2">coffre_s::orientation</a></div><div class="ttdeci">t_direction_1 orientation</div><div class="ttdef"><b>Definition:</b> coffres.h:56</div></div>
+<div class="ttc" id="amap_8h_html"><div class="ttname"><a href="../../dc/db7/map_8h.html">map.h</a></div><div class="ttdoc">Définitions des fonctions de gestion de la map.</div></div>
+<div class="ttc" id="astructcoffre__s_html_ad1dd228d464e7f7ebd2dee6b093d8f42"><div class="ttname"><a href="../../d5/d2b/structcoffre__s.html#ad1dd228d464e7f7ebd2dee6b093d8f42">coffre_s::etat</a></div><div class="ttdeci">etat_coffre_t etat</div><div class="ttdef"><b>Definition:</b> coffres.h:57</div></div>
+<div class="ttc" id="acode__erreur_8h_html_a1194d81ecc1ecab50ca1d136e78bee9da747abe8981d73cf4758cb86ace158c86"><div class="ttname"><a href="../../da/de9/code__erreur_8h.html#a1194d81ecc1ecab50ca1d136e78bee9da747abe8981d73cf4758cb86ace158c86">ERREUR_FICHIER</a></div><div class="ttdeci">@ ERREUR_FICHIER</div><div class="ttdef"><b>Definition:</b> code_erreur.h:32</div></div>
+<div class="ttc" id="astructcoffre__s_html_a42be78b657fbbce283a90409c75c5d5e"><div class="ttname"><a href="../../d5/d2b/structcoffre__s.html#a42be78b657fbbce283a90409c75c5d5e">coffre_s::id_cle</a></div><div class="ttdeci">int id_cle</div><div class="ttdef"><b>Definition:</b> coffres.h:53</div></div>
+<div class="ttc" id="astructcoffre__s_html"><div class="ttname"><a href="../../d5/d2b/structcoffre__s.html">coffre_s</a></div><div class="ttdef"><b>Definition:</b> coffres.h:51</div></div>
+<div class="ttc" id="acoffres_8c_html_a429c13dfc5bc32612208892805c750ad"><div class="ttname"><a href="../../d4/db3/coffres_8c.html#a429c13dfc5bc32612208892805c750ad">nom_coffre_to_type_coffre</a></div><div class="ttdeci">type_coffre_t nom_coffre_to_type_coffre(const char *nom_coffre)</div><div class="ttdef"><b>Definition:</b> coffres.c:96</div></div>
+<div class="ttc" id="alistes_8c_html_ad6061cfcccc3fe717413526943f7bddc"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc">suivant</a></div><div class="ttdeci">void suivant(list *mylist)</div><div class="ttdoc">Fonction qui permet de passer à l'élément suivant dans la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:51</div></div>
+<div class="ttc" id="acoffres_8h_html_add26f80bfe853e6f02c6d0e6e633d8a5"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#add26f80bfe853e6f02c6d0e6e633d8a5">inverser_direction</a></div><div class="ttdeci">t_direction_1 inverser_direction(t_direction_1 direction)</div><div class="ttdoc">Inverse une direction.</div><div class="ttdef"><b>Definition:</b> coffres.c:155</div></div>
+<div class="ttc" id="aobjet_8h_html_a5164672bbab2547df809744bf0af3dc9ac3e37358f11c190b42f6cf5ce67e3055"><div class="ttname"><a href="../../d4/d0b/objet_8h.html#a5164672bbab2547df809744bf0af3dc9ac3e37358f11c190b42f6cf5ce67e3055">quete</a></div><div class="ttdeci">@ quete</div><div class="ttdef"><b>Definition:</b> objet.h:28</div></div>
+<div class="ttc" id="aaffichage_8c_html_a833a9e3f93662a67ba30a73d64435286"><div class="ttname"><a href="../../da/d68/affichage_8c.html#a833a9e3f93662a67ba30a73d64435286">info_texture</a></div><div class="ttdeci">void info_texture(t_aff *texture)</div><div class="ttdoc">Affiche des informations en console sur une texture.</div><div class="ttdef"><b>Definition:</b> affichage.c:153</div></div>
+<div class="ttc" id="astructcoffre__s_html_ac0e2c77504a27f3228c3fd5f02b6509e"><div class="ttname"><a href="../../d5/d2b/structcoffre__s.html#ac0e2c77504a27f3228c3fd5f02b6509e">coffre_s::id_loot</a></div><div class="ttdeci">int id_loot</div><div class="ttdef"><b>Definition:</b> coffres.h:54</div></div>
+<div class="ttc" id="alistes_8c_html_a0636ccaaa4306ef8525a26cadc4a4805"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805">hors_liste</a></div><div class="ttdeci">_Bool hors_liste(const list *const to_verify)</div><div class="ttdoc">Fonction booléenne qui permet de savoir si ll'on est actuellement hors de la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:39</div></div>
+<div class="ttc" id="acode__erreur_8h_html_a3d8d9c26c72488a18f77f3cdfa0a30a1"><div class="ttname"><a href="../../da/de9/code__erreur_8h.html#a3d8d9c26c72488a18f77f3cdfa0a30a1">erreur</a></div><div class="ttdeci">#define erreur(msg, code_erreur,...)</div><div class="ttdoc">Macro qui permet de facilement afficher une erreur.</div><div class="ttdef"><b>Definition:</b> code_erreur.h:69</div></div>
+<div class="ttc" id="astructliste__base__coffres__s_html_a56a09643c3be44b7c4aeae229a7f80e1"><div class="ttname"><a href="../../de/dc8/structliste__base__coffres__s.html#a56a09643c3be44b7c4aeae229a7f80e1">liste_base_coffres_s::tab</a></div><div class="ttdeci">base_coffre_t * tab</div><div class="ttdef"><b>Definition:</b> coffres.h:82</div></div>
+<div class="ttc" id="acoffres_8h_html_a429c13dfc5bc32612208892805c750ad"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#a429c13dfc5bc32612208892805c750ad">nom_coffre_to_type_coffre</a></div><div class="ttdeci">type_coffre_t nom_coffre_to_type_coffre(const char *nom_coffre)</div><div class="ttdef"><b>Definition:</b> coffres.c:96</div></div>
+<div class="ttc" id="acoffres_8h_html"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html">coffres.h</a></div><div class="ttdoc">Fonctions concernant les coffres.</div></div>
+<div class="ttc" id="acoffres_8h_html_ad61871f7a4232bfdec35d2f5c605985a"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#ad61871f7a4232bfdec35d2f5c605985a">COFFRE_PROFIL_OUVERT</a></div><div class="ttdeci">#define COFFRE_PROFIL_OUVERT</div><div class="ttdef"><b>Definition:</b> coffres.h:18</div></div>
+<div class="ttc" id="astructcoffre__t_html"><div class="ttname"><a href="../../d5/d2e/structcoffre__t.html">coffre_t</a></div><div class="ttdoc">Structure contenant les propriétées du coffre.</div></div>
+<div class="ttc" id="acoffres_8c_html_afaede33891b4fa55d0b68267a6207487"><div class="ttname"><a href="../../d4/db3/coffres_8c.html#afaede33891b4fa55d0b68267a6207487">interaction_coffre</a></div><div class="ttdeci">void interaction_coffre(SDL_Rect *coffre_rect, joueur_t *joueur, lobjet_t *objets)</div><div class="ttdoc">Gère les interactions du joueur avec un coffre lors d'une collision.</div><div class="ttdef"><b>Definition:</b> coffres.c:159</div></div>
+<div class="ttc" id="acoffres_8h_html_a85784c5cfbde434991ff8f2432642afc"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#a85784c5cfbde434991ff8f2432642afc">COFFRE_FACE_OUVERT</a></div><div class="ttdeci">#define COFFRE_FACE_OUVERT</div><div class="ttdef"><b>Definition:</b> coffres.h:17</div></div>
+<div class="ttc" id="acoffres_8c_html_a8c96f10738b816af414262aad4445c70"><div class="ttname"><a href="../../d4/db3/coffres_8c.html#a8c96f10738b816af414262aad4445c70">inverser_direction</a></div><div class="ttdeci">t_direction_1 inverser_direction(t_direction_1 direction)</div><div class="ttdoc">Inverse une direction.</div><div class="ttdef"><b>Definition:</b> coffres.c:155</div></div>
+<div class="ttc" id="acoffres_8h_html_a4d05e5a75f401b57f5e6958a50a6a780"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#a4d05e5a75f401b57f5e6958a50a6a780">creer_coffre</a></div><div class="ttdeci">coffre_t * creer_coffre(int id_cle, int id_loot, liste_base_coffres_t *liste_base_coffres, const char *const nom_coffre, int x, int y, t_map *map)</div><div class="ttdoc">Fonction qui creer et initialise un coffre sur une carte.</div><div class="ttdef"><b>Definition:</b> coffres.c:111</div></div>
+<div class="ttc" id="acoffres_8h_html_a1ed9bf2ef0cb98998ba84a8903ab0796a9947185083273520715b7dc48cecb50c"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#a1ed9bf2ef0cb98998ba84a8903ab0796a9947185083273520715b7dc48cecb50c">OUVERT</a></div><div class="ttdeci">@ OUVERT</div><div class="ttdef"><b>Definition:</b> coffres.h:42</div></div>
+<div class="ttc" id="astructliste__base__coffres__s_html_a8d5235c1193a1c423370046a780888f1"><div class="ttname"><a href="../../de/dc8/structliste__base__coffres__s.html#a8d5235c1193a1c423370046a780888f1">liste_base_coffres_s::nb_coffre</a></div><div class="ttdeci">int nb_coffre</div><div class="ttdef"><b>Definition:</b> coffres.h:81</div></div>
+<div class="ttc" id="acoffres_8h_html_a00a8529a492da49a620058ce9c9e86ecac377d18a82325eb432058f9fc22122ea"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86ecac377d18a82325eb432058f9fc22122ea">FACE_FERME</a></div><div class="ttdeci">@ FACE_FERME</div><div class="ttdef"><b>Definition:</b> coffres.h:33</div></div>
+<div class="ttc" id="alistes_8c_html_a37afb4f802843bd21792cd494296d9dc"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc">valeur_elt</a></div><div class="ttdeci">void * valeur_elt(const list *const mylist)</div><div class="ttdoc">Fonction qui renvoie l'élément courant.</div><div class="ttdef"><b>Definition:</b> listes.c:61</div></div>
+<div class="ttc" id="acoffres_8h_html_ad339236e720fb2e7e16c44ebbd7c414b"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#ad339236e720fb2e7e16c44ebbd7c414b">info_coffre</a></div><div class="ttdeci">void info_coffre(coffre_t *coffre)</div><div class="ttdoc">Affcihe les informations sur un coffre dans la console.</div><div class="ttdef"><b>Definition:</b> coffres.c:149</div></div>
+<div class="ttc" id="aaffichage_8h_html_afb773ba23c068f4f166d05461ea1d8e0"><div class="ttname"><a href="../../d5/dae/affichage_8h.html#afb773ba23c068f4f166d05461ea1d8e0">NB_FPS</a></div><div class="ttdeci">#define NB_FPS</div><div class="ttdef"><b>Definition:</b> affichage.h:24</div></div>
+<div class="ttc" id="astructcoffre__s_html_a066c5bbab2baa9385c02d8ba762ade68"><div class="ttname"><a href="../../d5/d2b/structcoffre__s.html#a066c5bbab2baa9385c02d8ba762ade68">coffre_s::texture</a></div><div class="ttdeci">t_aff * texture</div><div class="ttdef"><b>Definition:</b> coffres.h:59</div></div>
+<div class="ttc" id="astructs__aff_html"><div class="ttname"><a href="../../df/d5b/structs__aff.html">s_aff</a></div><div class="ttdoc">Structure qui permet l'affichage d'une texture à l'écran de manière précise.</div><div class="ttdef"><b>Definition:</b> affichage.h:77</div></div>
+<div class="ttc" id="acoffres_8h_html_a00a8529a492da49a620058ce9c9e86eca2f569acd59579be94f88e08ca8f47600"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#a00a8529a492da49a620058ce9c9e86eca2f569acd59579be94f88e08ca8f47600">PROFIL_FERME</a></div><div class="ttdeci">@ PROFIL_FERME</div><div class="ttdef"><b>Definition:</b> coffres.h:31</div></div>
+<div class="ttc" id="acoffres_8h_html_ad9ec43edbee4491e915e009207e2bd07"><div class="ttname"><a href="../../d2/d9c/coffres_8h.html#ad9ec43edbee4491e915e009207e2bd07">liste_base_coffres</a></div><div class="ttdeci">liste_base_coffres_t * liste_base_coffres</div><div class="ttdef"><b>Definition:</b> coffres.c:16</div></div>
+<div class="ttc" id="astructcoffre__s_html_aa4098f752fe2561856de63bfcd892439"><div class="ttname"><a href="../../d5/d2b/structcoffre__s.html#aa4098f752fe2561856de63bfcd892439">coffre_s::type</a></div><div class="ttdeci">type_coffre_t type</div><div class="ttdef"><b>Definition:</b> coffres.h:55</div></div>
+<div class="ttc" id="astructliste__base__coffres__s_html"><div class="ttname"><a href="../../de/dc8/structliste__base__coffres__s.html">liste_base_coffres_s</a></div><div class="ttdoc">Structure contenant un tableau avec tous les coffres possibles du jeu.</div><div class="ttdef"><b>Definition:</b> coffres.h:79</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

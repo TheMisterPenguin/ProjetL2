@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Bloody Sanada:  Fichier source de listes.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Bloody Sanada
+   </div>
+   <div id="projectbrief">Projet de L2 Informatique</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">listes.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/dd0/listes_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef __LISTE_H__</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define __LISTE_H__</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d9/db2/structelement.html">   18</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="../../d9/db2/structelement.html">element</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d9/db2/structelement.html#a7fa0808c65a6f7930ae489a9360534ff">   20</a></span>&#160;    <span class="keywordtype">void</span> *<a class="code" href="../../d9/db2/structelement.html#a7fa0808c65a6f7930ae489a9360534ff">valeur</a>; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d9/db2/structelement.html#a9f9ebee1fa1dce6d05bc325a66478635">   21</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d9/db2/structelement.html">element</a> *<a class="code" href="../../d9/db2/structelement.html#a9f9ebee1fa1dce6d05bc325a66478635">pred</a>; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d9/db2/structelement.html#abe10f441a14a96bd130a004585b475ad">   22</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d9/db2/structelement.html">element</a> *<a class="code" href="../../d9/db2/structelement.html#abe10f441a14a96bd130a004585b475ad">succ</a>; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;} t_element;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d8/d10/structlist.html">   30</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="../../d8/d10/structlist.html">list</a>{</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d8/d10/structlist.html#a13dea740e2f32cab3204ea2e9ef43963">   31</a></span>&#160;    t_element *<a class="code" href="../../d8/d10/structlist.html#a13dea740e2f32cab3204ea2e9ef43963">flag</a>; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d8/d10/structlist.html#a663ebcc14473e2e44a61a44d8f8fa5ae">   32</a></span>&#160;    t_element *<a class="code" href="../../d8/d10/structlist.html#a663ebcc14473e2e44a61a44d8f8fa5ae">ec</a>; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d8/d10/structlist.html#ae12009c86c39b12d9b19a90de50be516">   33</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../d8/d10/structlist.html#ae12009c86c39b12d9b19a90de50be516">nb_elem</a>; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d8/d10/structlist.html#ac2518dad73845d4cb819f058a7f92dc4">   34</a></span>&#160;    <span class="keywordtype">void</span> * (*ajout)(<span class="keywordtype">void</span> *); </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d8/d10/structlist.html#a58dba80f29f219863df2a4bd4ce63796">   35</a></span>&#160;    void (*<a class="code" href="../../d8/d10/structlist.html#a58dba80f29f219863df2a4bd4ce63796">del</a>)(<span class="keywordtype">void</span> *); </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d8/d10/structlist.html#ac3e73c90899192480bee8502b9bfe117">   36</a></span>&#160;    void (*<a class="code" href="../../d8/d10/structlist.html#ac3e73c90899192480bee8502b9bfe117">aff</a>)(<span class="keywordtype">void</span> *); </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}<a class="code" href="../../d8/d10/structlist.html">list</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">extern</span> <a class="code" href="../../d8/d10/structlist.html">list</a> *<a class="code" href="../../d8/dd0/listes_8h.html#addcfa9533b97c83cd4901a146cefba9c">init_liste</a>(<span class="keywordtype">void</span> *(*fonction_ajout)(<span class="keywordtype">void</span> *), <span class="keywordtype">void</span> (*f_suppresion)(<span class="keywordtype">void</span> *), <span class="keywordtype">void</span> (*fonction_affichage)(<span class="keywordtype">void</span> *));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">extern</span> _Bool <a class="code" href="../../d8/dd0/listes_8h.html#abe07097bbae832dce242428fdb1d95b4">liste_vide</a>(<span class="keyword">const</span> <a class="code" href="../../d8/d10/structlist.html">list</a> * <span class="keyword">const</span> to_verify);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">extern</span> _Bool <a class="code" href="../../d8/dd0/listes_8h.html#a0636ccaaa4306ef8525a26cadc4a4805">hors_liste</a>(<span class="keyword">const</span> <a class="code" href="../../d8/d10/structlist.html">list</a> * <span class="keyword">const</span> to_verify);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h.html#a9c780173ba80450b8a01ba4c14963437">en_tete</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h.html#adce0cb151a53ff2182012642c95262be">en_queue</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h.html#ad6061cfcccc3fe717413526943f7bddc">suivant</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h.html#a2afbd9c9fde39b0f0c20e628718b7576">precedent</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> * <a class="code" href="../../d8/dd0/listes_8h.html#a37afb4f802843bd21792cd494296d9dc">valeur_elt</a>(<span class="keyword">const</span> <a class="code" href="../../d8/d10/structlist.html">list</a> *<span class="keyword">const</span> mylist);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h.html#ac553c0418726475fa46b69b1aaaec8f9">modif_elt</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist, <span class="keywordtype">void</span> *v);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h.html#a59c2257ab1cda9f78444e6b71a8a0c8d">oter_elt</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h.html#a5460022305fdfacd6e0864968fea1841">ajout_droit</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist, <span class="keywordtype">void</span> *v);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h.html#afec29ddee61034f0def935f3a556a53e">ajout_gauche</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist, <span class="keywordtype">void</span> *v);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../d8/dd0/listes_8h.html#ad4603e6751766ee0c8ef54c5240e4c5c">taille_liste</a>(<span class="keyword">const</span> <a class="code" href="../../d8/d10/structlist.html">list</a> *<span class="keyword">const</span> mylist);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h.html#af234a65d00ef1f963f212d6761636941">vider_liste</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *mylist);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h.html#a4597d1c1550e48dc54b54b240ab3c0e9">detruire_liste</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> ** liste);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/dd0/listes_8h.html#a68be9a4fdaac39551f98573ba4041fec">afficher_liste</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> * liste);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;_Bool <a class="code" href="../../d8/dd0/listes_8h.html#ac84d5f990f188eed04f7670abf38b020">selectionner_element</a>(<a class="code" href="../../d8/d10/structlist.html">list</a> *liste, <span class="keywordtype">void</span> *<a class="code" href="../../d9/db2/structelement.html">element</a>, _Bool (*f_egalite)(<span class="keywordtype">void</span> *, <span class="keywordtype">void</span> *));</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="alistes_8c_html_a4597d1c1550e48dc54b54b240ab3c0e9"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#a4597d1c1550e48dc54b54b240ab3c0e9">detruire_liste</a></div><div class="ttdeci">void detruire_liste(list **liste)</div><div class="ttdoc">Détruit une liste en détruisant tout ses éléménts.</div><div class="ttdef"><b>Definition:</b> listes.c:146</div></div>
+<div class="ttc" id="astructlist_html_ac2518dad73845d4cb819f058a7f92dc4"><div class="ttname"><a href="../../d8/d10/structlist.html#ac2518dad73845d4cb819f058a7f92dc4">list::ajout</a></div><div class="ttdeci">void *(* ajout)(void *)</div><div class="ttdef"><b>Definition:</b> listes.h:34</div></div>
+<div class="ttc" id="astructlist_html_ae12009c86c39b12d9b19a90de50be516"><div class="ttname"><a href="../../d8/d10/structlist.html#ae12009c86c39b12d9b19a90de50be516">list::nb_elem</a></div><div class="ttdeci">unsigned int nb_elem</div><div class="ttdef"><b>Definition:</b> listes.h:33</div></div>
+<div class="ttc" id="alistes_8c_html_a68be9a4fdaac39551f98573ba4041fec"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#a68be9a4fdaac39551f98573ba4041fec">afficher_liste</a></div><div class="ttdeci">void afficher_liste(list *liste)</div><div class="ttdoc">Affiche une liste d'objets génériques.</div><div class="ttdef"><b>Definition:</b> listes.c:155</div></div>
+<div class="ttc" id="alistes_8h_html_ad4603e6751766ee0c8ef54c5240e4c5c"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#ad4603e6751766ee0c8ef54c5240e4c5c">taille_liste</a></div><div class="ttdeci">unsigned int taille_liste(const list *const mylist)</div><div class="ttdoc">Fonction qui renvoie le nombre d'éléments dans la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:136</div></div>
+<div class="ttc" id="alistes_8h_html_a68be9a4fdaac39551f98573ba4041fec"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#a68be9a4fdaac39551f98573ba4041fec">afficher_liste</a></div><div class="ttdeci">void afficher_liste(list *liste)</div><div class="ttdoc">Affiche une liste d'objets génériques.</div><div class="ttdef"><b>Definition:</b> listes.c:155</div></div>
+<div class="ttc" id="alistes_8h_html_a9c780173ba80450b8a01ba4c14963437"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#a9c780173ba80450b8a01ba4c14963437">en_tete</a></div><div class="ttdeci">void en_tete(list *mylist)</div><div class="ttdoc">Fonction qui permet de se placer en tête de la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:41</div></div>
+<div class="ttc" id="alistes_8c_html_ac553c0418726475fa46b69b1aaaec8f9"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#ac553c0418726475fa46b69b1aaaec8f9">modif_elt</a></div><div class="ttdeci">void modif_elt(list *mylist, void *v)</div><div class="ttdoc">Fonction qui permet de modifier l'élément courant.</div><div class="ttdef"><b>Definition:</b> listes.c:68</div></div>
+<div class="ttc" id="alistes_8h_html_ac84d5f990f188eed04f7670abf38b020"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#ac84d5f990f188eed04f7670abf38b020">selectionner_element</a></div><div class="ttdeci">_Bool selectionner_element(list *liste, void *element, _Bool(*f_egalite)(void *, void *))</div><div class="ttdoc">Fonction qui permet de selectionner l'élément courant à partir d'un élément précis.</div><div class="ttdef"><b>Definition:</b> listes.c:169</div></div>
+<div class="ttc" id="alistes_8h_html_afec29ddee61034f0def935f3a556a53e"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#afec29ddee61034f0def935f3a556a53e">ajout_gauche</a></div><div class="ttdeci">void ajout_gauche(list *mylist, void *v)</div><div class="ttdoc">Fonction qui permet d'ajouter un élément à gauche de l'élément courant.</div><div class="ttdef"><b>Definition:</b> listes.c:120</div></div>
+<div class="ttc" id="alistes_8h_html_af234a65d00ef1f963f212d6761636941"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#af234a65d00ef1f963f212d6761636941">vider_liste</a></div><div class="ttdeci">void vider_liste(list *mylist)</div><div class="ttdoc">Fonction qui supprimme tout les éléments de la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:138</div></div>
+<div class="ttc" id="alistes_8h_html_adce0cb151a53ff2182012642c95262be"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#adce0cb151a53ff2182012642c95262be">en_queue</a></div><div class="ttdeci">void en_queue(list *mylist)</div><div class="ttdoc">Fonction qui permet de se placer en queue de la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:46</div></div>
+<div class="ttc" id="astructlist_html_a13dea740e2f32cab3204ea2e9ef43963"><div class="ttname"><a href="../../d8/d10/structlist.html#a13dea740e2f32cab3204ea2e9ef43963">list::flag</a></div><div class="ttdeci">t_element * flag</div><div class="ttdef"><b>Definition:</b> listes.h:31</div></div>
+<div class="ttc" id="alistes_8c_html_a9c780173ba80450b8a01ba4c14963437"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437">en_tete</a></div><div class="ttdeci">void en_tete(list *mylist)</div><div class="ttdoc">Fonction qui permet de se placer en tête de la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:41</div></div>
+<div class="ttc" id="astructlist_html_a58dba80f29f219863df2a4bd4ce63796"><div class="ttname"><a href="../../d8/d10/structlist.html#a58dba80f29f219863df2a4bd4ce63796">list::del</a></div><div class="ttdeci">void(* del)(void *)</div><div class="ttdef"><b>Definition:</b> listes.h:35</div></div>
+<div class="ttc" id="alistes_8c_html_adce0cb151a53ff2182012642c95262be"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#adce0cb151a53ff2182012642c95262be">en_queue</a></div><div class="ttdeci">void en_queue(list *mylist)</div><div class="ttdoc">Fonction qui permet de se placer en queue de la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:46</div></div>
+<div class="ttc" id="alistes_8h_html_a0636ccaaa4306ef8525a26cadc4a4805"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#a0636ccaaa4306ef8525a26cadc4a4805">hors_liste</a></div><div class="ttdeci">_Bool hors_liste(const list *const to_verify)</div><div class="ttdoc">Fonction booléenne qui permet de savoir si ll'on est actuellement hors de la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:39</div></div>
+<div class="ttc" id="alistes_8h_html_a2afbd9c9fde39b0f0c20e628718b7576"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#a2afbd9c9fde39b0f0c20e628718b7576">precedent</a></div><div class="ttdeci">void precedent(list *mylist)</div><div class="ttdoc">Fonction qui permet de passer à l'élément suivant dans la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:56</div></div>
+<div class="ttc" id="alistes_8c_html_a5460022305fdfacd6e0864968fea1841"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841">ajout_droit</a></div><div class="ttdeci">void ajout_droit(list *mylist, void *v)</div><div class="ttdoc">Fonction qui permet d'ajouter un élément à droite de l'élément courant.</div><div class="ttdef"><b>Definition:</b> listes.c:102</div></div>
+<div class="ttc" id="alistes_8h_html_a5460022305fdfacd6e0864968fea1841"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#a5460022305fdfacd6e0864968fea1841">ajout_droit</a></div><div class="ttdeci">void ajout_droit(list *mylist, void *v)</div><div class="ttdoc">Fonction qui permet d'ajouter un élément à droite de l'élément courant.</div><div class="ttdef"><b>Definition:</b> listes.c:102</div></div>
+<div class="ttc" id="astructelement_html_a9f9ebee1fa1dce6d05bc325a66478635"><div class="ttname"><a href="../../d9/db2/structelement.html#a9f9ebee1fa1dce6d05bc325a66478635">element::pred</a></div><div class="ttdeci">struct element * pred</div><div class="ttdef"><b>Definition:</b> listes.h:21</div></div>
+<div class="ttc" id="alistes_8h_html"><div class="ttname"><a href="../../d8/dd0/listes_8h.html">listes.h</a></div><div class="ttdoc">Fonction relatives au type de structure liste générique.</div></div>
+<div class="ttc" id="alistes_8c_html_ad4603e6751766ee0c8ef54c5240e4c5c"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#ad4603e6751766ee0c8ef54c5240e4c5c">taille_liste</a></div><div class="ttdeci">unsigned int taille_liste(const list *const mylist)</div><div class="ttdoc">Fonction qui renvoie le nombre d'éléments dans la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:136</div></div>
+<div class="ttc" id="alistes_8c_html_abe07097bbae832dce242428fdb1d95b4"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4">liste_vide</a></div><div class="ttdeci">_Bool liste_vide(const list *const to_verify)</div><div class="ttdoc">Fonction booléenne qui permet de savoir si la liste est vide.</div><div class="ttdef"><b>Definition:</b> listes.c:37</div></div>
+<div class="ttc" id="alistes_8c_html_af234a65d00ef1f963f212d6761636941"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#af234a65d00ef1f963f212d6761636941">vider_liste</a></div><div class="ttdeci">void vider_liste(list *mylist)</div><div class="ttdoc">Fonction qui supprimme tout les éléments de la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:138</div></div>
+<div class="ttc" id="alistes_8h_html_ad6061cfcccc3fe717413526943f7bddc"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#ad6061cfcccc3fe717413526943f7bddc">suivant</a></div><div class="ttdeci">void suivant(list *mylist)</div><div class="ttdoc">Fonction qui permet de passer à l'élément suivant dans la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:51</div></div>
+<div class="ttc" id="astructelement_html_abe10f441a14a96bd130a004585b475ad"><div class="ttname"><a href="../../d9/db2/structelement.html#abe10f441a14a96bd130a004585b475ad">element::succ</a></div><div class="ttdeci">struct element * succ</div><div class="ttdef"><b>Definition:</b> listes.h:22</div></div>
+<div class="ttc" id="alistes_8c_html_a44494ff9efed6cd1416119b4a4f3dca2"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#a44494ff9efed6cd1416119b4a4f3dca2">init_liste</a></div><div class="ttdeci">list * init_liste(void *(*fonction_ajout)(void *), void(*fonction_suppresion)(void *), void(*fonction_affichage)(void *))</div><div class="ttdoc">Fonction qui permet de créer une liste.</div><div class="ttdef"><b>Definition:</b> listes.c:15</div></div>
+<div class="ttc" id="alistes_8h_html_abe07097bbae832dce242428fdb1d95b4"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#abe07097bbae832dce242428fdb1d95b4">liste_vide</a></div><div class="ttdeci">_Bool liste_vide(const list *const to_verify)</div><div class="ttdoc">Fonction booléenne qui permet de savoir si la liste est vide.</div><div class="ttdef"><b>Definition:</b> listes.c:37</div></div>
+<div class="ttc" id="alistes_8c_html_ad6061cfcccc3fe717413526943f7bddc"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc">suivant</a></div><div class="ttdeci">void suivant(list *mylist)</div><div class="ttdoc">Fonction qui permet de passer à l'élément suivant dans la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:51</div></div>
+<div class="ttc" id="astructelement_html_a7fa0808c65a6f7930ae489a9360534ff"><div class="ttname"><a href="../../d9/db2/structelement.html#a7fa0808c65a6f7930ae489a9360534ff">element::valeur</a></div><div class="ttdeci">void * valeur</div><div class="ttdef"><b>Definition:</b> listes.h:20</div></div>
+<div class="ttc" id="alistes_8h_html_a59c2257ab1cda9f78444e6b71a8a0c8d"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#a59c2257ab1cda9f78444e6b71a8a0c8d">oter_elt</a></div><div class="ttdeci">void oter_elt(list *mylist)</div><div class="ttdoc">Fonction qui permet de supprimer un élément de la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:84</div></div>
+<div class="ttc" id="alistes_8c_html_a0636ccaaa4306ef8525a26cadc4a4805"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805">hors_liste</a></div><div class="ttdeci">_Bool hors_liste(const list *const to_verify)</div><div class="ttdoc">Fonction booléenne qui permet de savoir si ll'on est actuellement hors de la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:39</div></div>
+<div class="ttc" id="alistes_8c_html_afec29ddee61034f0def935f3a556a53e"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#afec29ddee61034f0def935f3a556a53e">ajout_gauche</a></div><div class="ttdeci">void ajout_gauche(list *mylist, void *v)</div><div class="ttdoc">Fonction qui permet d'ajouter un élément à gauche de l'élément courant.</div><div class="ttdef"><b>Definition:</b> listes.c:120</div></div>
+<div class="ttc" id="alistes_8c_html_a2afbd9c9fde39b0f0c20e628718b7576"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#a2afbd9c9fde39b0f0c20e628718b7576">precedent</a></div><div class="ttdeci">void precedent(list *mylist)</div><div class="ttdoc">Fonction qui permet de passer à l'élément suivant dans la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:56</div></div>
+<div class="ttc" id="alistes_8h_html_addcfa9533b97c83cd4901a146cefba9c"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#addcfa9533b97c83cd4901a146cefba9c">init_liste</a></div><div class="ttdeci">list * init_liste(void *(*fonction_ajout)(void *), void(*f_suppresion)(void *), void(*fonction_affichage)(void *))</div><div class="ttdoc">Fonction qui permet de créer une liste.</div><div class="ttdef"><b>Definition:</b> listes.c:15</div></div>
+<div class="ttc" id="astructelement_html"><div class="ttname"><a href="../../d9/db2/structelement.html">element</a></div><div class="ttdoc">Définition dy type element : un élément d'une liste.</div><div class="ttdef"><b>Definition:</b> listes.h:18</div></div>
+<div class="ttc" id="alistes_8h_html_a37afb4f802843bd21792cd494296d9dc"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#a37afb4f802843bd21792cd494296d9dc">valeur_elt</a></div><div class="ttdeci">void * valeur_elt(const list *const mylist)</div><div class="ttdoc">Fonction qui renvoie l'élément courant.</div><div class="ttdef"><b>Definition:</b> listes.c:61</div></div>
+<div class="ttc" id="alistes_8c_html_a59c2257ab1cda9f78444e6b71a8a0c8d"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#a59c2257ab1cda9f78444e6b71a8a0c8d">oter_elt</a></div><div class="ttdeci">void oter_elt(list *mylist)</div><div class="ttdoc">Fonction qui permet de supprimer un élément de la liste.</div><div class="ttdef"><b>Definition:</b> listes.c:84</div></div>
+<div class="ttc" id="alistes_8c_html_a37afb4f802843bd21792cd494296d9dc"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc">valeur_elt</a></div><div class="ttdeci">void * valeur_elt(const list *const mylist)</div><div class="ttdoc">Fonction qui renvoie l'élément courant.</div><div class="ttdef"><b>Definition:</b> listes.c:61</div></div>
+<div class="ttc" id="astructlist_html_a663ebcc14473e2e44a61a44d8f8fa5ae"><div class="ttname"><a href="../../d8/d10/structlist.html#a663ebcc14473e2e44a61a44d8f8fa5ae">list::ec</a></div><div class="ttdeci">t_element * ec</div><div class="ttdef"><b>Definition:</b> listes.h:32</div></div>
+<div class="ttc" id="astructlist_html"><div class="ttname"><a href="../../d8/d10/structlist.html">list</a></div><div class="ttdoc">Définition du type list : une liste générique.</div><div class="ttdef"><b>Definition:</b> listes.h:30</div></div>
+<div class="ttc" id="alistes_8h_html_a4597d1c1550e48dc54b54b240ab3c0e9"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#a4597d1c1550e48dc54b54b240ab3c0e9">detruire_liste</a></div><div class="ttdeci">void detruire_liste(list **liste)</div><div class="ttdoc">Détruit une liste en détruisant tout ses éléménts.</div><div class="ttdef"><b>Definition:</b> listes.c:146</div></div>
+<div class="ttc" id="astructlist_html_ac3e73c90899192480bee8502b9bfe117"><div class="ttname"><a href="../../d8/d10/structlist.html#ac3e73c90899192480bee8502b9bfe117">list::aff</a></div><div class="ttdeci">void(* aff)(void *)</div><div class="ttdef"><b>Definition:</b> listes.h:36</div></div>
+<div class="ttc" id="alistes_8h_html_ac553c0418726475fa46b69b1aaaec8f9"><div class="ttname"><a href="../../d8/dd0/listes_8h.html#ac553c0418726475fa46b69b1aaaec8f9">modif_elt</a></div><div class="ttdeci">void modif_elt(list *mylist, void *v)</div><div class="ttdoc">Fonction qui permet de modifier l'élément courant.</div><div class="ttdef"><b>Definition:</b> listes.c:68</div></div>
+<div class="ttc" id="alistes_8c_html_ac84d5f990f188eed04f7670abf38b020"><div class="ttname"><a href="../../d0/ddc/listes_8c.html#ac84d5f990f188eed04f7670abf38b020">selectionner_element</a></div><div class="ttdeci">_Bool selectionner_element(list *liste, void *element, _Bool(*f_egalite)(void *, void *))</div><div class="ttdoc">Fonction qui permet de selectionner l'élément courant à partir d'un élément précis.</div><div class="ttdef"><b>Definition:</b> listes.c:169</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

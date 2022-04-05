@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Bloody Sanada:  Fichier source de menus.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Bloody Sanada
+   </div>
+   <div id="projectbrief">Projet de L2 Informatique</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">menus.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d6/d46/menus_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef __MENUS_H__</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define __MENUS_H__</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d1/daa/definition__commun_8h.html">definition_commun.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">extern</span> t_aff * <a class="code" href="../../d6/d46/menus_8h.html#a474b2217a25d81cac4b50e464f19c488">text_pause</a>; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">extern</span> t_aff * <a class="code" href="../../d6/d46/menus_8h.html#aad27bec0063f6ca13490559e5a8cc41f">text_inventaire1</a>; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">extern</span> t_aff * <a class="code" href="../../d6/d46/menus_8h.html#aa64a9b1fdd7eb363a0fc5d0c41993162">text_inventaire2</a>; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">extern</span> t_aff * <a class="code" href="../../d6/d46/menus_8h.html#a46857835f05e29154215fa6d272dd48d">text_accueil</a>; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d46/menus_8h.html#a1ff516df4d202f56e051c3c040ee87b5">afficher_menu_pause</a>(joueur_t *joueur[], <span class="keywordtype">char</span> *f_src_objet, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <span class="keywordtype">int</span> nb_joueurs);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d46/menus_8h.html#a4da3c6c1c4423889f8735c91a92e20d9">afficher_menu_pause_manette</a>(joueur_t *joueur);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d46/menus_8h.html#a1c8778affd5380fae88f7ce24787c8ea">afficher_menu_accueil</a>(<span class="keywordtype">int</span> * nb_joueur);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d46/menus_8h.html#aa1042f350a66ae56b754f3bf22556405">afficher_menu_accueil_manette</a>(<span class="keywordtype">int</span> *nb_joueur);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d46/menus_8h.html#a98b87de7b6779d1ea4db3543621cc3cb">afficher_inventaire</a>(joueur_t *joueur, SDL_KeyCode touche_inventaire);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d46/menus_8h.html#afcde784ea1d5fb8c9fd6436fa063c5f2">afficher_inventaire_manette</a>(joueur_t *joueur);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d46/menus_8h.html#a8541cd40c3fdc063e208e617c15c48ac">init_text_menus</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d46/menus_8h.html#acd5468808be152074a36a5baca990cfe">creer_inventaire_j2</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="amenus_8c_html_ac0996c08efc96171d294620a36785e70"><div class="ttname"><a href="../../de/dea/menus_8c.html#ac0996c08efc96171d294620a36785e70">creer_inventaire_j2</a></div><div class="ttdeci">void creer_inventaire_j2()</div><div class="ttdoc">Créer l'inventaire du joueur 2.</div><div class="ttdef"><b>Definition:</b> menus.c:410</div></div>
+<div class="ttc" id="amenus_8c_html_a1c8778affd5380fae88f7ce24787c8ea"><div class="ttname"><a href="../../de/dea/menus_8c.html#a1c8778affd5380fae88f7ce24787c8ea">afficher_menu_accueil</a></div><div class="ttdeci">void afficher_menu_accueil(int *nb_joueur)</div><div class="ttdoc">Affiche le menu d'acceuil et gère les interactions avec le joueur.</div><div class="ttdef"><b>Definition:</b> menus.c:303</div></div>
+<div class="ttc" id="aaffichage_8c_html_ad73b9ba1a88012fd3ae8637a61b57709"><div class="ttname"><a href="../../da/d68/affichage_8c.html#ad73b9ba1a88012fd3ae8637a61b57709">multiplicateur_x</a></div><div class="ttdeci">float multiplicateur_x</div><div class="ttdef"><b>Definition:</b> affichage.c:35</div></div>
+<div class="ttc" id="amenus_8h_html_a1ff516df4d202f56e051c3c040ee87b5"><div class="ttname"><a href="../../d6/d46/menus_8h.html#a1ff516df4d202f56e051c3c040ee87b5">afficher_menu_pause</a></div><div class="ttdeci">void afficher_menu_pause(joueur_t *joueur[], char *f_src_objet, unsigned short int nb_joueurs)</div><div class="ttdoc">Affiche le menu pause et gère les interactions avec le joueur.</div><div class="ttdef"><b>Definition:</b> menus.c:34</div></div>
+<div class="ttc" id="aaffichage_8c_html_a762704f794c8d74099d3053757266dcb"><div class="ttname"><a href="../../da/d68/affichage_8c.html#a762704f794c8d74099d3053757266dcb">compteur</a></div><div class="ttdeci">long int compteur</div><div class="ttdef"><b>Definition:</b> affichage.c:30</div></div>
+<div class="ttc" id="amenus_8c_html_a98b87de7b6779d1ea4db3543621cc3cb"><div class="ttname"><a href="../../de/dea/menus_8c.html#a98b87de7b6779d1ea4db3543621cc3cb">afficher_inventaire</a></div><div class="ttdeci">void afficher_inventaire(joueur_t *joueur, SDL_KeyCode touche_inventaire)</div><div class="ttdef"><b>Definition:</b> menus.c:143</div></div>
+<div class="ttc" id="aliste__objet_8c_html_a4fe93e1fc39988acec686660009ed240"><div class="ttname"><a href="../../d5/d17/liste__objet_8c.html#a4fe93e1fc39988acec686660009ed240">afficher_textures_sac</a></div><div class="ttdeci">void afficher_textures_sac(inventaire_t *const inventaire)</div><div class="ttdoc">Affiche les textures des objets du sac dans le menu inventaire.</div><div class="ttdef"><b>Definition:</b> liste_objet.c:239</div></div>
+<div class="ttc" id="amenus_8c_html_ad2b07826ade07b3fcb204ef0b20b56e6"><div class="ttname"><a href="../../de/dea/menus_8c.html#ad2b07826ade07b3fcb204ef0b20b56e6">draw_rect_epaisseur</a></div><div class="ttdeci">static int draw_rect_epaisseur(const SDL_Rect *a_dessiner, SDL_Renderer *rendu, unsigned int epaisseur)</div><div class="ttdoc">Fonction qui permet d'afficher un rectangle à l'écran avec un épaisseur choisie.</div><div class="ttdef"><b>Definition:</b> menus.c:425</div></div>
+<div class="ttc" id="ainventaire_8h_html"><div class="ttname"><a href="../../d2/d9f/inventaire_8h.html">inventaire.h</a></div><div class="ttdoc">Définition des fonctions relatives au module inventaire.</div></div>
+<div class="ttc" id="amenus_8h_html_a8541cd40c3fdc063e208e617c15c48ac"><div class="ttname"><a href="../../d6/d46/menus_8h.html#a8541cd40c3fdc063e208e617c15c48ac">init_text_menus</a></div><div class="ttdeci">void init_text_menus(void)</div><div class="ttdoc">Créer les textures des menus.</div></div>
+<div class="ttc" id="amenus_8c_html_a4da3c6c1c4423889f8735c91a92e20d9"><div class="ttname"><a href="../../de/dea/menus_8c.html#a4da3c6c1c4423889f8735c91a92e20d9">afficher_menu_pause_manette</a></div><div class="ttdeci">void afficher_menu_pause_manette(joueur_t *joueur)</div><div class="ttdoc">Affiche le menu pause et gère les interactions avec le joueur.</div><div class="ttdef"><b>Definition:</b> menus.c:452</div></div>
+<div class="ttc" id="aliste__objet_8h_html"><div class="ttname"><a href="../../d7/d64/liste__objet_8h.html">liste_objet.h</a></div><div class="ttdoc">Définition relatives aux structures contenant les objets.</div></div>
+<div class="ttc" id="amenus_8h_html_aad27bec0063f6ca13490559e5a8cc41f"><div class="ttname"><a href="../../d6/d46/menus_8h.html#aad27bec0063f6ca13490559e5a8cc41f">text_inventaire1</a></div><div class="ttdeci">t_aff * text_inventaire1</div><div class="ttdef"><b>Definition:</b> menus.c:19</div></div>
+<div class="ttc" id="adefinition__commun_8h_html"><div class="ttname"><a href="../../d1/daa/definition__commun_8h.html">definition_commun.h</a></div><div class="ttdoc">Contient toutes les définitions communes à tout les fichiers.</div></div>
+<div class="ttc" id="amenus_8h_html_a4da3c6c1c4423889f8735c91a92e20d9"><div class="ttname"><a href="../../d6/d46/menus_8h.html#a4da3c6c1c4423889f8735c91a92e20d9">afficher_menu_pause_manette</a></div><div class="ttdeci">void afficher_menu_pause_manette(joueur_t *joueur)</div><div class="ttdoc">Affiche le menu pause et gère les interactions avec le joueur.</div><div class="ttdef"><b>Definition:</b> menus.c:452</div></div>
+<div class="ttc" id="amenus_8c_html_aad27bec0063f6ca13490559e5a8cc41f"><div class="ttname"><a href="../../de/dea/menus_8c.html#aad27bec0063f6ca13490559e5a8cc41f">text_inventaire1</a></div><div class="ttdeci">t_aff * text_inventaire1</div><div class="ttdef"><b>Definition:</b> menus.c:19</div></div>
+<div class="ttc" id="amenus_8c_html_af125d86ac7e33319e054400fbaae33a7"><div class="ttname"><a href="../../de/dea/menus_8c.html#af125d86ac7e33319e054400fbaae33a7">init_text_menus</a></div><div class="ttdeci">void init_text_menus(int nb_joueur)</div><div class="ttdef"><b>Definition:</b> menus.c:404</div></div>
+<div class="ttc" id="apersonnage_8c_html_ad8c439be63cc83e7b5c4a0d33f62f639"><div class="ttname"><a href="../../dd/dce/personnage_8c.html#ad8c439be63cc83e7b5c4a0d33f62f639">charger_sauvegarde_joueur</a></div><div class="ttdeci">joueur_t * charger_sauvegarde_joueur(char *nom_sauv, char *f_src_obj, joueur_t *joueurs[], unsigned short int nb_joueurs)</div><div class="ttdoc">Fonction qui charge une sauvegarde au format JSON.</div><div class="ttdef"><b>Definition:</b> personnage.c:154</div></div>
+<div class="ttc" id="ainventaire_8c_html_af4759298331c6887427f1a2137910ad2"><div class="ttname"><a href="../../d4/d04/inventaire_8c.html#af4759298331c6887427f1a2137910ad2">equiper_sac_slot</a></div><div class="ttdeci">void equiper_sac_slot(joueur_t *joueur, int slot)</div><div class="ttdoc">Équipe le joueur de l'objet contenu dans un slot de l'inventaire (sac)</div><div class="ttdef"><b>Definition:</b> inventaire.c:140</div></div>
+<div class="ttc" id="amenus_8h_html_aa64a9b1fdd7eb363a0fc5d0c41993162"><div class="ttname"><a href="../../d6/d46/menus_8h.html#aa64a9b1fdd7eb363a0fc5d0c41993162">text_inventaire2</a></div><div class="ttdeci">t_aff * text_inventaire2</div><div class="ttdef"><b>Definition:</b> menus.c:20</div></div>
+<div class="ttc" id="aaffichage_8h_html"><div class="ttname"><a href="../../d5/dae/affichage_8h.html">affichage.h</a></div><div class="ttdoc">Fichier contenant les définitions et les fonctions liées au module affichage.</div></div>
+<div class="ttc" id="amenus_8h_html_a98b87de7b6779d1ea4db3543621cc3cb"><div class="ttname"><a href="../../d6/d46/menus_8h.html#a98b87de7b6779d1ea4db3543621cc3cb">afficher_inventaire</a></div><div class="ttdeci">void afficher_inventaire(joueur_t *joueur, SDL_KeyCode touche_inventaire)</div><div class="ttdef"><b>Definition:</b> menus.c:143</div></div>
+<div class="ttc" id="aaffichage_8c_html_a59fc51b629cfed9815495f235dae78e0"><div class="ttname"><a href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0">creer_texture</a></div><div class="ttdeci">t_aff * creer_texture(const char *nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multiplicateur_taille)</div><div class="ttdoc">Fonction qui renvoie, charge une texture et la prépare à se faire afficher.</div><div class="ttdef"><b>Definition:</b> affichage.c:163</div></div>
+<div class="ttc" id="amenus_8c_html_aa64a9b1fdd7eb363a0fc5d0c41993162"><div class="ttname"><a href="../../de/dea/menus_8c.html#aa64a9b1fdd7eb363a0fc5d0c41993162">text_inventaire2</a></div><div class="ttdeci">t_aff * text_inventaire2</div><div class="ttdef"><b>Definition:</b> menus.c:20</div></div>
+<div class="ttc" id="amenus_8h_html_a46857835f05e29154215fa6d272dd48d"><div class="ttname"><a href="../../d6/d46/menus_8h.html#a46857835f05e29154215fa6d272dd48d">text_accueil</a></div><div class="ttdeci">t_aff * text_accueil</div><div class="ttdef"><b>Definition:</b> menus.c:21</div></div>
+<div class="ttc" id="aaffichage_8c_html_a6a61a69139c9efe60f3b382747493870"><div class="ttname"><a href="../../da/d68/affichage_8c.html#a6a61a69139c9efe60f3b382747493870">deplacer_rect_haut_droit</a></div><div class="ttdeci">void deplacer_rect_haut_droit(SDL_Rect *r, int x, int y)</div><div class="ttdoc">Place un rectangle en haut à droite de l'écran puis le replace à partir de cette origine.</div><div class="ttdef"><b>Definition:</b> affichage.c:607</div></div>
+<div class="ttc" id="amenus_8h_html_aa1042f350a66ae56b754f3bf22556405"><div class="ttname"><a href="../../d6/d46/menus_8h.html#aa1042f350a66ae56b754f3bf22556405">afficher_menu_accueil_manette</a></div><div class="ttdeci">void afficher_menu_accueil_manette(int *nb_joueur)</div><div class="ttdoc">Affiche le menu d'acceuil et gère les interactions avec le joueur.</div><div class="ttdef"><b>Definition:</b> menus.c:548</div></div>
+<div class="ttc" id="amenus_8c_html_a1ff516df4d202f56e051c3c040ee87b5"><div class="ttname"><a href="../../de/dea/menus_8c.html#a1ff516df4d202f56e051c3c040ee87b5">afficher_menu_pause</a></div><div class="ttdeci">void afficher_menu_pause(joueur_t *joueur[], char *f_src_objet, unsigned short int nb_joueurs)</div><div class="ttdoc">Affiche le menu pause et gère les interactions avec le joueur.</div><div class="ttdef"><b>Definition:</b> menus.c:34</div></div>
+<div class="ttc" id="amenus_8c_html_a474b2217a25d81cac4b50e464f19c488"><div class="ttname"><a href="../../de/dea/menus_8c.html#a474b2217a25d81cac4b50e464f19c488">text_pause</a></div><div class="ttdeci">t_aff * text_pause</div><div class="ttdef"><b>Definition:</b> menus.c:18</div></div>
+<div class="ttc" id="amenus_8h_html_a474b2217a25d81cac4b50e464f19c488"><div class="ttname"><a href="../../d6/d46/menus_8h.html#a474b2217a25d81cac4b50e464f19c488">text_pause</a></div><div class="ttdeci">t_aff * text_pause</div><div class="ttdef"><b>Definition:</b> menus.c:18</div></div>
+<div class="ttc" id="ainit__close_8c_html_affaacddc6fe16ed3d818bf7e0c9798eb"><div class="ttname"><a href="../../d1/d41/init__close_8c.html#affaacddc6fe16ed3d818bf7e0c9798eb">fermer_programme</a></div><div class="ttdeci">void fermer_programme(int code_erreur)</div><div class="ttdoc">Fonction qui appelle les fonctions pour terminer le programme.</div><div class="ttdef"><b>Definition:</b> init_close.c:30</div></div>
+<div class="ttc" id="apersonnage_8c_html_a8512a450e703a0f7eb1bd9540a592187"><div class="ttname"><a href="../../dd/dce/personnage_8c.html#a8512a450e703a0f7eb1bd9540a592187">save_path</a></div><div class="ttdeci">char save_path[500]</div><div class="ttdef"><b>Definition:</b> personnage.c:41</div></div>
+<div class="ttc" id="amenus_8c_html_a46857835f05e29154215fa6d272dd48d"><div class="ttname"><a href="../../de/dea/menus_8c.html#a46857835f05e29154215fa6d272dd48d">text_accueil</a></div><div class="ttdeci">t_aff * text_accueil</div><div class="ttdef"><b>Definition:</b> menus.c:21</div></div>
+<div class="ttc" id="amenus_8h_html_a1c8778affd5380fae88f7ce24787c8ea"><div class="ttname"><a href="../../d6/d46/menus_8h.html#a1c8778affd5380fae88f7ce24787c8ea">afficher_menu_accueil</a></div><div class="ttdeci">void afficher_menu_accueil(int *nb_joueur)</div><div class="ttdoc">Affiche le menu d'acceuil et gère les interactions avec le joueur.</div><div class="ttdef"><b>Definition:</b> menus.c:303</div></div>
+<div class="ttc" id="ainventaire_8c_html_a8aa9d5f1d7be0ac4221f7343d329c4c4"><div class="ttname"><a href="../../d4/d04/inventaire_8c.html#a8aa9d5f1d7be0ac4221f7343d329c4c4">desequiper_slot</a></div><div class="ttdeci">void desequiper_slot(joueur_t *joueur, int slot)</div><div class="ttdoc">Déséquipe le joueur de l'objet contenu dans un slot de l'inventaire (equipe)</div><div class="ttdef"><b>Definition:</b> inventaire.c:167</div></div>
+<div class="ttc" id="amap_8c_html_a87fdc73350f70425b5529472974ecbbb"><div class="ttname"><a href="../../d3/d7a/map_8c.html#a87fdc73350f70425b5529472974ecbbb">transition</a></div><div class="ttdeci">void transition(t_map **actuelle, unsigned int num_map, joueur_t **joueurs, unsigned short int nb_joueurs, unsigned int new_x, unsigned int new_y)</div><div class="ttdef"><b>Definition:</b> map.c:487</div></div>
+<div class="ttc" id="amenus_8h_html_afcde784ea1d5fb8c9fd6436fa063c5f2"><div class="ttname"><a href="../../d6/d46/menus_8h.html#afcde784ea1d5fb8c9fd6436fa063c5f2">afficher_inventaire_manette</a></div><div class="ttdeci">void afficher_inventaire_manette(joueur_t *joueur)</div><div class="ttdoc">Affiche l'inventaire et gère les interactions avec l'utilisateur.</div><div class="ttdef"><b>Definition:</b> menus.c:657</div></div>
+<div class="ttc" id="amenus_8c_html_aa1042f350a66ae56b754f3bf22556405"><div class="ttname"><a href="../../de/dea/menus_8c.html#aa1042f350a66ae56b754f3bf22556405">afficher_menu_accueil_manette</a></div><div class="ttdeci">void afficher_menu_accueil_manette(int *nb_joueur)</div><div class="ttdoc">Affiche le menu d'acceuil et gère les interactions avec le joueur.</div><div class="ttdef"><b>Definition:</b> menus.c:548</div></div>
+<div class="ttc" id="apersonnage_8h_html"><div class="ttname"><a href="../../d2/d2f/personnage_8h.html">personnage.h</a></div><div class="ttdoc">Fichier contenant toutes les définitions concernant le personnage.</div></div>
+<div class="ttc" id="aaffichage_8c_html_ae766b650805d4bdfc2faa57ba24f6cae"><div class="ttname"><a href="../../da/d68/affichage_8c.html#ae766b650805d4bdfc2faa57ba24f6cae">deplacer_rect_origine</a></div><div class="ttdeci">void deplacer_rect_origine(SDL_Rect *r, int x, int y)</div><div class="ttdoc">Déplace un rectangle depuis l'origine de l'écran.</div><div class="ttdef"><b>Definition:</b> affichage.c:592</div></div>
+<div class="ttc" id="aliste__objet_8c_html_a2955c31ed7471524e38adb3ed821402e"><div class="ttname"><a href="../../d5/d17/liste__objet_8c.html#a2955c31ed7471524e38adb3ed821402e">afficher_textures_equipe</a></div><div class="ttdeci">void afficher_textures_equipe(inventaire_t *const inventaire)</div><div class="ttdoc">Affiche les textures des objets équipés dans le menu inventaire.</div><div class="ttdef"><b>Definition:</b> liste_objet.c:266</div></div>
+<div class="ttc" id="ainit__close_8c_html_a7ad8058d8319a935f7a37f72d4e3e81a"><div class="ttname"><a href="../../d1/d41/init__close_8c.html#a7ad8058d8319a935f7a37f72d4e3e81a">rendu_principal</a></div><div class="ttdeci">SDL_Renderer * rendu_principal</div><div class="ttdef"><b>Definition:</b> init_close.c:20</div></div>
+<div class="ttc" id="aaffichage_8c_html_a2c28b6f5a4c139bcb8ed3fed95ff8099"><div class="ttname"><a href="../../da/d68/affichage_8c.html#a2c28b6f5a4c139bcb8ed3fed95ff8099">multiplicateur_y</a></div><div class="ttdeci">float multiplicateur_y</div><div class="ttdef"><b>Definition:</b> affichage.c:36</div></div>
+<div class="ttc" id="amenus_8c_html_afcde784ea1d5fb8c9fd6436fa063c5f2"><div class="ttname"><a href="../../de/dea/menus_8c.html#afcde784ea1d5fb8c9fd6436fa063c5f2">afficher_inventaire_manette</a></div><div class="ttdeci">void afficher_inventaire_manette(joueur_t *joueur)</div><div class="ttdoc">Affiche l'inventaire et gère les interactions avec l'utilisateur.</div><div class="ttdef"><b>Definition:</b> menus.c:657</div></div>
+<div class="ttc" id="acode__erreur_8h_html_a3d8d9c26c72488a18f77f3cdfa0a30a1"><div class="ttname"><a href="../../da/de9/code__erreur_8h.html#a3d8d9c26c72488a18f77f3cdfa0a30a1">erreur</a></div><div class="ttdeci">#define erreur(msg, code_erreur,...)</div><div class="ttdoc">Macro qui permet de facilement afficher une erreur.</div><div class="ttdef"><b>Definition:</b> code_erreur.h:69</div></div>
+<div class="ttc" id="aaffichage_8c_html_aef49d39125567f1a9d5ed0561ea60edc"><div class="ttname"><a href="../../da/d68/affichage_8c.html#aef49d39125567f1a9d5ed0561ea60edc">fenetre_finale</a></div><div class="ttdeci">t_aff * fenetre_finale</div><div class="ttdef"><b>Definition:</b> affichage.c:28</div></div>
+<div class="ttc" id="amenus_8h_html_acd5468808be152074a36a5baca990cfe"><div class="ttname"><a href="../../d6/d46/menus_8h.html#acd5468808be152074a36a5baca990cfe">creer_inventaire_j2</a></div><div class="ttdeci">void creer_inventaire_j2(void)</div><div class="ttdoc">Créer l'inventaire du joueur 2.</div><div class="ttdef"><b>Definition:</b> menus.c:410</div></div>
+<div class="ttc" id="apersonnage_8c_html_a33613b3a2b55cb1d1855a39a288fb230"><div class="ttname"><a href="../../dd/dce/personnage_8c.html#a33613b3a2b55cb1d1855a39a288fb230">detruire_joueur</a></div><div class="ttdeci">void detruire_joueur(joueur_t *j)</div><div class="ttdoc">Fonction qui détruit un joueur.</div><div class="ttdef"><b>Definition:</b> personnage.c:369</div></div>
+<div class="ttc" id="aaffichage_8c_html_a47b9be5462def4189b86dcf60f3a29a5"><div class="ttname"><a href="../../da/d68/affichage_8c.html#a47b9be5462def4189b86dcf60f3a29a5">afficher_texture</a></div><div class="ttdeci">err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu)</div><div class="ttdoc">Affiche la texture donnée en paramètre à l'écran.</div><div class="ttdef"><b>Definition:</b> affichage.c:253</div></div>
+<div class="ttc" id="aaffichage_8h_html_afb773ba23c068f4f166d05461ea1d8e0"><div class="ttname"><a href="../../d5/dae/affichage_8h.html#afb773ba23c068f4f166d05461ea1d8e0">NB_FPS</a></div><div class="ttdeci">#define NB_FPS</div><div class="ttdef"><b>Definition:</b> affichage.h:24</div></div>
+<div class="ttc" id="apersonnage_8c_html_a9ce711c80691bb2b4f29e7c58790851a"><div class="ttname"><a href="../../dd/dce/personnage_8c.html#a9ce711c80691bb2b4f29e7c58790851a">creer_sauvegarde_json</a></div><div class="ttdeci">void creer_sauvegarde_json(joueur_t *j)</div><div class="ttdoc">Fonction qui créer les sauvegardes du jeu.</div><div class="ttdef"><b>Definition:</b> personnage.c:76</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
