@@ -19,9 +19,9 @@ void \mbox{\hyperlink{coffres_8c_a2c9c6ec91da6b419ceaac9ed69a66316}{charger\+\_\
 \begin{DoxyCompactList}\small\item\em Fonction qui recopie les informations d\textquotesingle{}un fichier json pour les insérer dans la structure liste\+\_\+base\+\_\+coffres. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{coffres_8h_a00a8529a492da49a620058ce9c9e86ec}{type\+\_\+coffre\+\_\+t}} \mbox{\hyperlink{coffres_8c_a429c13dfc5bc32612208892805c750ad}{nom\+\_\+coffre\+\_\+to\+\_\+type\+\_\+coffre}} (const char $\ast$nom\+\_\+coffre)
 \item 
-coffre\+\_\+t $\ast$ \mbox{\hyperlink{coffres_8c_abbf6358c7af5799e0fbbba8b7ecaa469}{creer\+\_\+coffre}} (int id\+\_\+cle, int id\+\_\+loot, liste\+\_\+base\+\_\+coffres\+\_\+t $\ast$\mbox{\hyperlink{coffres_8h_ad9ec43edbee4491e915e009207e2bd07}{liste\+\_\+base\+\_\+coffres}}, const char $\ast$const nom\+\_\+coffre, int x, int y, t\+\_\+map $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
+\mbox{\hyperlink{structcoffre__t}{coffre\+\_\+t}} $\ast$ \mbox{\hyperlink{coffres_8c_abbf6358c7af5799e0fbbba8b7ecaa469}{creer\+\_\+coffre}} (int id\+\_\+cle, int id\+\_\+loot, liste\+\_\+base\+\_\+coffres\+\_\+t $\ast$\mbox{\hyperlink{coffres_8h_ad9ec43edbee4491e915e009207e2bd07}{liste\+\_\+base\+\_\+coffres}}, const char $\ast$const nom\+\_\+coffre, int x, int y, t\+\_\+map $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
 \begin{DoxyCompactList}\small\item\em Fonction qui creer et initialise un coffre sur une carte. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{coffres_8c_ad339236e720fb2e7e16c44ebbd7c414b}{info\+\_\+coffre}} (coffre\+\_\+t $\ast$coffre)
+void \mbox{\hyperlink{coffres_8c_ad339236e720fb2e7e16c44ebbd7c414b}{info\+\_\+coffre}} (\mbox{\hyperlink{structcoffre__t}{coffre\+\_\+t}} $\ast$coffre)
 \begin{DoxyCompactList}\small\item\em Affcihe les informations sur un coffre dans la console. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} \mbox{\hyperlink{coffres_8c_a8c96f10738b816af414262aad4445c70}{inverser\+\_\+direction}} (\mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} direction)
 \begin{DoxyCompactList}\small\item\em Inverse une direction. \end{DoxyCompactList}\item 
@@ -77,7 +77,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{coffres.c@{coffres.c}!creer\_coffre@{creer\_coffre}}
 \index{creer\_coffre@{creer\_coffre}!coffres.c@{coffres.c}}
 \doxysubsubsection{\texorpdfstring{creer\_coffre()}{creer\_coffre()}}
-{\footnotesize\ttfamily coffre\+\_\+t $\ast$ creer\+\_\+coffre (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+cle,  }\item[{int}]{id\+\_\+loot,  }\item[{liste\+\_\+base\+\_\+coffres\+\_\+t $\ast$}]{liste\+\_\+base\+\_\+coffres,  }\item[{const char $\ast$const}]{nom\+\_\+coffre,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{t\+\_\+map $\ast$}]{map }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcoffre__t}{coffre\+\_\+t}} $\ast$ creer\+\_\+coffre (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+cle,  }\item[{int}]{id\+\_\+loot,  }\item[{liste\+\_\+base\+\_\+coffres\+\_\+t $\ast$}]{liste\+\_\+base\+\_\+coffres,  }\item[{const char $\ast$const}]{nom\+\_\+coffre,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{t\+\_\+map $\ast$}]{map }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -100,7 +100,7 @@ Max Descomps
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-Instance nouvellement allouée du type coffre\+\_\+t contenant les informations du coffre ou N\+U\+LL 
+Instance nouvellement allouée du type \mbox{\hyperlink{structcoffre__t}{coffre\+\_\+t}} contenant les informations du coffre ou N\+U\+LL 
 \end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
@@ -120,7 +120,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{coffres.c@{coffres.c}!info\_coffre@{info\_coffre}}
 \index{info\_coffre@{info\_coffre}!coffres.c@{coffres.c}}
 \doxysubsubsection{\texorpdfstring{info\_coffre()}{info\_coffre()}}
-{\footnotesize\ttfamily void info\+\_\+coffre (\begin{DoxyParamCaption}\item[{coffre\+\_\+t $\ast$}]{coffre }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void info\+\_\+coffre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcoffre__t}{coffre\+\_\+t}} $\ast$}]{coffre }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
