@@ -362,11 +362,7 @@ t_aff *next_frame_joueur(joueur_t *j)
     }
     else
     {
-        if (statut->action == BLOQUER)
-        {
-            // bloquer les coups
-        }
-        else if (statut->action == CHARGER)
+        if (statut->action == CHARGER)
         {
             if ((compteur % 4) == 0) /*compteur%5 pour la vitesse d'affichage*/
             { 
@@ -1091,42 +1087,63 @@ bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
 
 void init_animations(){
     heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
-    bloquer = (creer_texture("ressources/sprite/bloquer.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
+    bloquer = (creer_texture("ressources/sprite/bloquer.bmp", 16, 16, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
 }
 
 t_aff * next_frame_animation(joueur_t * joueur){
     statut_t * statut = joueur->statut;
 
+     statut->duree_anim--;
     if (statut->animation == SOIN)
     {
         if ((compteur % 2) == 0 || statut->duree_anim == DUREE_SOIN) //cadence d'affichage et avec premier affichage immédiat dans tous les cas
         {
             /*si on a fait le tour du spritesheet soin, l'animation est terminée*/
-            if (statut->duree_anim == 0)
+            if (statut->duree_anim <= 0)
                 statut->action = RIEN;
             next_frame_x_indice(heal, (DUREE_SOIN - statut->duree_anim)%5);
             next_frame_y_indice(heal, (DUREE_SOIN - statut->duree_anim)/5);
 
-            statut->duree_anim--;
         }
             return heal;
     }
-    if (statut->animation == BLOQUER )
-        return bloquer;
-    else{
-        return NULL;
+    if (statut->animation == BLOQUER)
+    {
+        if (statut->duree_anim <= 0){
+                statut->animation = RIEN;
+                statut->duree_anim = DUREE_BLOQUER*1.5;
+        }
+        else
+        {
+            if ((compteur % 2) == 0)
+            {
+                place_rect_center_from_point(bloquer->aff_fenetre, get_rect_center_coord(joueur->textures_joueur->liste[0]->aff_fenetre) );
+                return bloquer;
+            }
+            else
+                return NULL;
+        }
     }
+
+    return NULL;
+
 }
 
 void lister_animations(joueur_t ** joueurs, list * animations){
+    t_aff * temp;
 
-    if(joueurs[0]->statut->duree_anim != 0)
-        ajout_droit(animations, next_frame_animation(joueurs[0]));
-    
-    if(joueurs[1] != NULL){
-        if(joueurs[1]->statut->duree_anim != 0)
-            ajout_droit(animations, next_frame_animation(joueurs[1]));
+    if(joueurs[0]->statut->duree_anim > 0){
+        temp = next_frame_animation(joueurs[0]);
+        if(temp != NULL)
+            ajout_droit(animations, temp);
     }
+    
+    if(joueurs[1] != NULL)
+        if(joueurs[1]->statut->duree_anim > 0){
+            temp = next_frame_animation(joueurs[1]);
+            if(temp != NULL)
+                ajout_droit(animations, temp);
+        }
 }
 
 void afficher_animations(list * animations){

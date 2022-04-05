@@ -476,7 +476,7 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, list * list
 		
 		if(entite_en_collision(&(monstre->collision), &(joueur->statut->vrai_zone_collision), &cote_monstre, &cote_joueur)){
 			/* si le coup est bloqué */
-			if(joueur->statut->action == BLOQUER){
+			if(joueur->statut->animation == BLOQUER){
 				monstre->orientation = cote_joueur;
 				monstre->action = MONSTRE_BLESSE;
 				monstre->duree = DUREE_MONSTRE_BLESSE;
@@ -523,7 +523,7 @@ void environnement_joueur(list * liste_monstres, list * liste_sorts, list * list
 		sort = valeur_elt(liste_sorts);
 		
 		if(entite_en_collision(&(sort->collision), &(joueur->statut->vrai_zone_collision), &cote_sort, &cote_joueur)){
-			if(joueur->statut->action != BLOQUER && joueur->statut->action != J_BLESSE){
+			if(joueur->statut->animation != BLOQUER && joueur->statut->action != J_BLESSE){
 				(joueur->pdv) -= (sort->degat);
 				if(joueur->pdv <= 0)
 					running = faux;

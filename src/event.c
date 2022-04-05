@@ -332,10 +332,6 @@ static void mouseButtonDown(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
             statut->action = ATTAQUE_OU_CHARGER;
             statut->duree = DUREE_ATTAQUE_OU_CHARGEE;
         }
-        else if(ev->button == SDL_BUTTON_RIGHT && statut->bouclier_equipe){
-            statut->action = BLOQUER;
-            statut->duree = DUREE_BLOQUER;
-        }
     }
 }
 
@@ -368,8 +364,14 @@ static void mouseButtonUp(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
             statut->duree_anim = 0;
         }
     }
-    else if( ev->button == SDL_BUTTON_RIGHT && (statut->action == BLOQUER || statut->action == CHARGER) )
-        joueur->statut->action = RIEN;    
+    else if( ev->button == SDL_BUTTON_RIGHT){
+        if(statut->action == CHARGER)
+            statut->animation = RIEN;
+        else if(statut->bouclier_equipe == vrai && statut->duree_anim <= 0){
+            statut->animation = BLOQUER;
+            statut->duree_anim = DUREE_BLOQUER;
+        }
+    }
 }
 
 void jeu_event_manette(joueur_t **joueurs){

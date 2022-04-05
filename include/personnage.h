@@ -19,7 +19,7 @@
 #define DUREE_ATTAQUE_OU_CHARGEE 12
 #define DUREE_ATTAQUE 6
 #define DUREE_ATTAQUE_CHARGEE 10
-#define DUREE_BLOQUER 3
+#define DUREE_BLOQUER 14
 #define DUREE_JOUEUR_BLESSE 12
 
 #define DUREE_SOIN 25 //(nb sprites du spritesheet)
