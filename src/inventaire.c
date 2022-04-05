@@ -58,7 +58,6 @@ void equiper_objet(joueur_t * joueur,objet_t ** objet){
     //application des bonus de statistiques
     if(temp->type != consommable && temp->type != quete){
         changement_statistiques(joueur);
-        afficher_statistiques(joueur);
 
         if(temp->type == bouclier){
             joueur->statut->bouclier_equipe = 1;
