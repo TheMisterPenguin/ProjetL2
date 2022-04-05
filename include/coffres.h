@@ -90,7 +90,7 @@ extern liste_base_coffres_t * liste_base_coffres; /*Liste des coffres générés
 /**
  * \brief Fonction qui recopie les informations d'un fichier json pour les insérer dans la structure liste_base_coffres
  * \author Max Descomps
- * \param nom_fichier Le nom du fichier à lire
+ * \param chemin_fichier Le nom du fichier à lire
  * \param liste_base_coffres La base dans laquelle enregistrer les coffres
  */
 void charger_base_coffre(char * chemin_fichier, liste_base_coffres_t ** liste_base_coffres);
@@ -100,7 +100,7 @@ void charger_base_coffre(char * chemin_fichier, liste_base_coffres_t ** liste_ba
  * \author Max Descomps
  * \param id_cle L'identificateur de l'objet de quête nécessaire pour ouvrir le coffre, sinon 0
  * \param id_loot L'identificateur de l'objet obtenu en ouvrant le coffre, sinon 0
- * \param liste_base_coffre Les coffres de base
+ * \param liste_base_coffres Les coffres de base
  * \param nom_coffre Le nom du coffre à creer
  * \param x La position en abscisse du coffre sur la map
  * \param y La position en ordonnée du coffre sur la map

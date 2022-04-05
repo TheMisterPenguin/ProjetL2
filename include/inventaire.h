@@ -81,6 +81,7 @@ void desequiper(joueur_t * joueur, objet_t ** objet);
  * \brief Fonction qui permet de mettre un objet trouvé dans le sac(inventaire)
  * \author Max Descomps
  * \param objet Objet trouvé
+ * \param inventaire L'inventaire dans lequel mettre l'objet
  */
 void ramasser_objet(objet_t * objet, inventaire_t * inventaire);
 

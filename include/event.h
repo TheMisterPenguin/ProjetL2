@@ -34,10 +34,9 @@ extern SDL_GameController *manette; /**<La manette du J1*/
 extern _Bool logo_passer(void); 
 
 /**
- * \fn void jeu_event(joueur_t ** joueurs, char * f_src_obj)
  * \brief Fonction qui gère les événements
  * \author Despert Ange
- * \param joueur Joueurs pouvant provoquer l'événement
+ * \param joueurs Joueurs pouvant provoquer l'événement
  * \param f_src_obj Fichier source des objets du jeu utile à certains événements
  */
 extern void jeu_event(joueur_t ** joueurs, char * f_src_obj);

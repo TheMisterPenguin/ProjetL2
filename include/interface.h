@@ -19,6 +19,7 @@
  * \param y position verticale de la barre
  * \param w largeur de la barre
  * \param h hauteur de la barre
+ * \param pourcent taux de points de vie
  * \param vie couleur de la barre de vie
  * \param jauge couleur de la barre vide
  */

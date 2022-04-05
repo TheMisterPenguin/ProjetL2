@@ -244,8 +244,8 @@ extern err_t next_frame_x_indice(t_aff *texture, const unsigned int indice);
  * \fn void next_frame_y_indice(t_aff *texture, const unsigned int indice)
  * \brief Fonction qui positionne la texture au n-ème sprite sur l'axe des y
  *
- * \param t_aff* une texture joueur
- * \param const unsigned int qui correspond au n-ème sprite sur l'axe des y ou l'on souhaite positionner la texture
+ * \param texture Une texture joueur
+ * \param  indice Correspond au n-ème sprite sur l'axe des y ou l'on souhaite positionner la texture
  * \return err_t un entier pour savoir si il y a eu une erreur
  */
 extern err_t next_frame_y_indice(t_aff *texture, const unsigned int indice);
