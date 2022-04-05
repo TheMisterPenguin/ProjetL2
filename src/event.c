@@ -251,15 +251,21 @@ void joystick_button_up(SDL_JoyButtonEvent *ev, joueur_t **j)
         if (statut->action == CHARGER)
         {
             statut->action = ATTAQUE_CHARGEE;
-            statut->orient_att = statut->orient_dep * 2;
-            next_frame_x_indice(joueur->textures_joueur->liste[TEXT_ATTAQUE_CHARGEE], (statut->orient_dep) * 2 - 1);
+            statut->orient_att = (statut->orient_dep * 2) % 8;
+            next_frame_x_indice(joueur->textures_joueur->liste[TEXT_ATTAQUE_CHARGEE], statut->orient_att);
             statut->en_mouvement = faux;
             statut->duree = DUREE_ATTAQUE_CHARGEE;
         }
         else if (statut->action == ATTAQUE_OU_CHARGER)
         {
             statut->action = ATTAQUE;
+            next_frame_y_indice(joueur->textures_joueur->liste[TEXT_ATTAQUE], statut->orient_dep);
+            if(statut->orient_dep != EST_1)
+                statut->orient_att = (statut->orient_dep * 2 + 2) % 8;
+            else
+                statut->orient_att = 0;
             statut->duree = DUREE_ATTAQUE;
+            statut->duree_anim = 0;
         }
         break;
     case SDL_CONTROLLER_BUTTON_LEFTSHOULDER :

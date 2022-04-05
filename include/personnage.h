@@ -188,7 +188,7 @@ void check_repertoire_jeux();
  * \param liste_coffres La liste des coffres du jeu
  * \param joueur Le joueur interagissant avec l'environnement du jeu
  */
-void environnement_joueur(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t * joueur);
+void environnement_joueurs(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t ** joueurs, int nb_joueur);
 
 SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_direction_2 orientation);
 
