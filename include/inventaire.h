@@ -13,7 +13,7 @@
 #include "personnage.h"
 #include "liste_objet.h"
 
-#define CAPACITE_SAC 10
+#define CAPACITE_SAC 10 /**<La capacité maximum du sac dans l'inventaire en nombre d'objets */
 
 /**
  * \brief Définition de la structure lobjet
@@ -37,7 +37,7 @@ typedef struct objet_s objet_t;
 typedef struct joueur_s joueur_t;
 
 /**
- * \struct inventaire_t
+ * \struct inventaire_s
  * \brief Structure inventaire diviser en deux parties: le sac et les objets équipés
  * \author Max Descomps
  * \author Rafael Doneau
