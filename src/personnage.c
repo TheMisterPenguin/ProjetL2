@@ -410,6 +410,7 @@ SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_directio
 
 	result->w =  hitbox->w;
 	result->h =  hitbox->h;
+	/* chaque orientation corespond à une zone d'attaque spécifique par rapport au joueur */
 	switch(orient){
 		case NORD_2:
 			result->x = hitbox->x;
@@ -449,13 +450,15 @@ SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_directio
 }
 
 SDL_bool entite_subit_attaque(SDL_Rect * monstre_hitbox, joueur_t * joueur){
+	/* stocke la zone d'attaque actuelle du joueur */
 	SDL_Rect * zone_attaque = zone_en_dehors_hitbox(&(joueur->statut->vrai_zone_collision), joueur->textures_joueur->liste[0]->aff_fenetre, joueur->statut->orient_att);
 	SDL_Rect * hitbox = malloc(sizeof(SDL_Rect));
 	hitbox->w = monstre_hitbox->w;
 	hitbox->h = monstre_hitbox->h;
 	hitbox->x = monstre_hitbox->x;
 	hitbox->y = monstre_hitbox->y;
-
+	
+	/* regarde si la zone d'attaque du joueur est en contact avec la hitbox du monstre */
 	SDL_bool statut = SDL_HasIntersection(zone_attaque, hitbox);
 	free(zone_attaque);
 	free(hitbox);
@@ -471,6 +474,7 @@ SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_directi
 	/* test collision cote OUEST de l'entite_1 */
 	temp.x = entite_1->x - 1;
 	if(SDL_HasIntersection(&temp,  entite_2)){
+		/* cotés en collision */
 		*cote_entite_1 = OUEST_1;
 		*cote_entite_2 = EST_1;
 		return vrai;
@@ -478,6 +482,7 @@ SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_directi
 	/* test collision cote EST de l'entite_1 */
 	temp.x = entite_1->x + 1;
 	if(SDL_HasIntersection(&temp,  entite_2)){
+		/* cotés en collision */
 		*cote_entite_1 = EST_1;
 		*cote_entite_2 = OUEST_1;
 		return vrai;
@@ -488,6 +493,7 @@ SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_directi
 	/* test collision cote NORD de l'entite_1 */
 	temp.y = entite_1->y - 1;
 	if(SDL_HasIntersection(&temp,  entite_2)){
+		/* cotés en collision */
 		*cote_entite_1 = NORD_1;
 		*cote_entite_2 = SUD_1;
 		return vrai;
@@ -495,6 +501,7 @@ SDL_bool entite_en_collision(SDL_Rect * entite_1, SDL_Rect * entite_2, t_directi
 	/* test collision cote SUD de l'entite_1 */
 	temp.y = entite_1->y + 1;
 	if(SDL_HasIntersection(&temp,  entite_2)){
+		/* cotés en collision */
 		*cote_entite_1 = SUD_1;
 		*cote_entite_2 = NORD_1;
 		return vrai;
@@ -518,26 +525,29 @@ void environnement_joueurs(list * liste_monstres, list * liste_sorts, list * lis
 		while(!hors_liste(liste_monstres)){
 			monstre = valeur_elt(liste_monstres);
 			
+			/* si le monstre touche un joueur */
 			if(entite_en_collision(&(monstre->collision), &(statut->vrai_zone_collision), &cote_monstre, &cote_joueur)){
-				/* si le coup est bloqué */
+				/* le coup est bloqué */
 				if(statut->animation == BLOQUER){
 					monstre->orientation = cote_joueur;
 					monstre->action = MONSTRE_BLESSE;
 					monstre->duree = DUREE_MONSTRE_BLESSE;
 				}
+				/* coup non bloqué */
 				else if(statut->action != J_BLESSE){
 					(joueurs[i]->pdv) -= (monstre->attaque);
 					if(joueurs[i]->pdv <= 0)
+						/* pour l'instant on ferme le programme quand le joueur à perdu */
 						running = faux;
 					else{
+						/* changement d'orientation pour que le joueur soit poussé en arrière */
 						statut->orient_dep = cote_monstre;
+						statut->en_mouvement = vrai;
 						statut->action = J_BLESSE;
 						statut->duree = DUREE_JOUEUR_BLESSE;
-						statut->en_mouvement = vrai;
 						/* laisser au joueur le temps de se replier */
 						monstre->action = MONSTRE_PAUSE;
 						monstre->duree = DUREE_MONSTRE_PAUSE;
-						
 					}
 				}
 			}
@@ -555,6 +565,7 @@ void environnement_joueurs(list * liste_monstres, list * liste_sorts, list * lis
 						gain_xp(joueurs[i]);
 					}
 					else{
+						/* changement d'orientation pour que le monstre soit poussé en arrière */
 						monstre->orientation = statut->orient_dep;
 						monstre->action = MONSTRE_BLESSE;
 						monstre->duree = DUREE_MONSTRE_BLESSE;
@@ -568,16 +579,20 @@ void environnement_joueurs(list * liste_monstres, list * liste_sorts, list * lis
 		while(!hors_liste(liste_sorts)){
 			sort = valeur_elt(liste_sorts);
 			
+			/* si le sort touche un joueur */
 			if(entite_en_collision(&(sort->collision), &(statut->vrai_zone_collision), &cote_sort, &cote_joueur)){
+				/* le sort n'est pas bloqué */
 				if(statut->animation != BLOQUER && statut->action != J_BLESSE){
 					(joueurs[i]->pdv) -= (sort->degat);
 					if(joueurs[i]->pdv <= 0)
+						/* pour l'instant on ferme le programme quand le joueur à perdu */
 						running = faux;
 					else{
+						/* changement d'orientation pour que le joueur soit poussé en arrière */
 						statut->orient_dep = cote_sort;
+						statut->en_mouvement = vrai;
 						statut->action = J_BLESSE;
 						statut->duree = DUREE_JOUEUR_BLESSE;
-						statut->en_mouvement = vrai;
 					}
 				}
 				detruire_collision_dans_liste(map->liste_collisions, &(sort->collision));
@@ -587,7 +602,9 @@ void environnement_joueurs(list * liste_monstres, list * liste_sorts, list * lis
 			/* si un sort est attaqué */
 			else if(statut->action == ATTAQUE || statut->action == ATTAQUE_CHARGEE){
 				if(entite_subit_attaque(&(sort->collision), joueurs[i])){
+					/* detruire la collision du sort */
 					detruire_collision_dans_liste(map->liste_collisions, &(sort->collision));
+					/* detruire le sort */
 					oter_elt(liste_sorts);
 				}
 			}
