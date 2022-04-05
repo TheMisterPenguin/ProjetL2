@@ -256,6 +256,8 @@ err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
         else
             return SDL_RenderCopy(rendu, texture->texture, NULL, texture->aff_fenetre);
     }
+
+    return AUCUNE_ERREUR;
 }
 
 t_l_aff* init_textures_joueur(joueur_t *j, int num_j){
