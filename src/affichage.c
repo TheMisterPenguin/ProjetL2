@@ -256,6 +256,8 @@ err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
         else
             return SDL_RenderCopy(rendu, texture->texture, NULL, texture->aff_fenetre);
     }
+
+    return AUCUNE_ERREUR;
 }
 
 t_l_aff* init_textures_joueur(joueur_t *j, int num_j){
@@ -664,7 +666,9 @@ bool deplacement_x_pers(t_map *m, joueur_t ** joueurs, unsigned short int nb_jou
     int *x_map = &(map->text_map->frame_anim->x); /* La coordonnée x actuelle de la map */
     int *x_pers = &(j->statut->zone_colision.x); /* La coordonnée x actuelle du joueur */
     const long int taille_unite = floor(j->textures_joueur->liste[0]->multipli_taille); /* Calcul en nombre de pixels d'une unité de déplacement */
-    SDL_Rect temp = {.x = j->statut->vrai_zone_collision.x + x * taille_unite, .y = j->statut->vrai_zone_collision.y, .w = j->statut->vrai_zone_collision.w, .h = j->statut->vrai_zone_collision.h};
+    SDL_Rect temp = {.x = j->statut->vrai_zone_collision.x + x * taille_unite, .w = j->statut->vrai_zone_collision.w, .h = floor(j->textures_joueur->liste[0]->multipli_taille) * 3};
+
+    temp.y = j->statut->vrai_zone_collision.y + (j->statut->vrai_zone_collision.h - floor(j->textures_joueur->liste[0]->multipli_taille) * 3);
 
     /* On vérifie si le joueur se trouve sur une zone de tp */
 
@@ -1021,16 +1025,13 @@ bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
 {
     const int taille_unite = floor(map->taille_case / TAILLE_PERSONNAGE);
     SDL_Rect temp = {.x = r->x, .y = r->y + y * taille_unite, .w = r->w, .h = r->h};
-    SDL_Rect actuel = {.x = r->x, .w = r->w, .h = floor(texture->multipli_taille) * 3};
 
     if(y < 0){
         temp.y = r->y + y * taille_unite + (r->h - 3);
-        actuel.y = r->y + (r->h - 3);
     }
     else {
         temp.y = r->y + y * taille_unite;
         temp.h = r->h;
-        actuel.y = r->y - 3;
     }
 
     en_tete(m->liste_collisions);
@@ -1043,7 +1044,7 @@ bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
             continue;
         }
 
-        if (SDL_HasIntersection(&actuel, element))
+        if (SDL_HasIntersection(r, element))
         {
             suivant(m->liste_collisions);
             continue;

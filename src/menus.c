@@ -31,7 +31,7 @@ t_aff * text_accueil = NULL;
     }
 }*/
 
-void afficher_menu_pause(joueur_t * joueur, char * f_src_objet){
+void afficher_menu_pause(joueur_t *joueur[], char * f_src_objet){
 
     int debut, fin; /* le temps pour calculer les performances */
 
@@ -77,31 +77,54 @@ void afficher_menu_pause(joueur_t * joueur, char * f_src_objet){
                 SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Détection de la fermeture de la fenêtre\n");
                 fermer_programme(EXIT_SUCCESS);
             case SDL_KEYDOWN:
-                if (lastEvent.key.keysym.sym == SDLK_ESCAPE)
+                if (lastEvent.key.keysym.sym == SDLK_ESCAPE){
+                    while(SDL_PollEvent(&lastEvent)); /* Nettoye les événements avant de revenir au jeu */
                     return;
+                }
                 break;
             case SDL_MOUSEBUTTONUP:
                 coord_souris.x = lastEvent.button.x;
                 coord_souris.y = lastEvent.button.y;
 
-                if(SDL_PointInRect(&coord_souris, &boutton_sortie))
+                if(SDL_PointInRect(&coord_souris, &boutton_sortie)){
+                    while(SDL_PollEvent(&lastEvent)); /* Nettoye les événements avant de revenir au jeu */
                     return;
-                if(SDL_PointInRect(&coord_souris, &boutton_reprendre))
+                }
+                if(SDL_PointInRect(&coord_souris, &boutton_reprendre)){
+                    while(SDL_PollEvent(&lastEvent)); /* Nettoye les événements avant de revenir au jeu */
                     return;
+                }
                 if(SDL_PointInRect(&coord_souris, &boutton_quitter)){
                     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Fermeture du programme ...\n");
                     fermer_programme(EXIT_SUCCESS);
                 }
                 if (SDL_PointInRect(&coord_souris, &boutton_sauvegarder)){
-                    creer_sauvegarde_json(joueur);
+                    creer_sauvegarde_json(*joueur);
                     SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "Sauvegarde", "La sauvegarde a été effectuée avec succès\n", NULL);
                     break;
                 }
                 if (SDL_PointInRect(&coord_souris, &boutton_charger)){
                     char temp[510];
                     sprintf(temp,"%s/perso.sav", save_path);
-                    detruire_joueur(joueur);
-                    joueur = charger_sauvegarde_joueur(temp, f_src_objet);
+                    detruire_joueur(*joueur);
+                    joueur[0] = charger_sauvegarde_joueur(temp, f_src_objet);
+
+                    joueur[1] = NULL;
+
+                    SDL_SetTextureBlendMode(fenetre_finale->texture, SDL_BLENDMODE_BLEND);
+
+                    for(unsigned int i = 0; i < 256; i += 5 ){ /* Fondu (disparition de la map) */
+                        if (SDL_SetTextureAlphaMod(fenetre_finale->texture, i) < 0)
+                            fprintf(stderr, "Erreur lors de la modification de l'alpha : %s\n", SDL_GetError());
+                        if(SDL_RenderClear(rendu_principal) < 0)
+                            fprintf(stderr, "Erreur : le buffer d'affichage n'a pas pu être vidé : %s\n", SDL_GetError());
+                        if (afficher_texture(fenetre_finale, rendu_principal) != 0)
+                            fprintf(stderr,"Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
+                        SDL_RenderPresent(rendu_principal);
+                        SDL_Delay(10);
+                    }
+
+                    return;
                 }
                 break;
             }

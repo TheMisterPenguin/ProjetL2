@@ -6,41 +6,53 @@
     "taille case" : 32,
     "starting-point" : [5, 5],
     "monsters" : [
-        {"type" : "knight",
+        /*{"type" : "knight",
         "position" : [500,200]},
         {"type" : "witcher",
-        "position" : [300,100]}
+        "position" : [300,100]}*/
     ],
     "wall" : [
         {
-            "x" : 6,
-            "y" : 0,
-            "h" : 8,
+            "x" : 5,
+            "y" : 3,
+            "h" : 3,
             "w" : 1
         },
         {
-            "x": 5,
-            "y": 8,
-            "h": 2,
-            "w": 3
+            "x": 0,
+            "y": 0,
+            "h": 4,
+            "w": 7
         },
         {
             "x": 0,
-            "y": 8,
-            "h": 2,
-            "w": 3
+            "y": 5,
+            "h": 5,
+            "w": 5
         },
-        /*{
-            "w" : 6,
-            "h" : 3,
-            "x" : 0,
-            "y" : 0
-        }*/
         {
-            "w": 6,
-            "h": 3,
-            "x": 0,
+            "w" : 2,
+            "h" : 1,
+            "x" : 6,
+            "y" : 6
+        },
+        {
+            "w": 3,
+            "h": 4,
+            "x": 9,
             "y": 0
+        },
+        {
+            "x" : 10,
+            "y" : 4,
+            "h" : 1,
+            "w" : 2
+        },
+        {
+            "h" : 6,
+            "w" : 9,
+            "x" : 12,
+            "y" : 4
         }
     ],
     "zones tp" : [
@@ -50,17 +62,17 @@
             "w" : 2,
             "h" : 2,
             "destination" : 1,
-            "coords" : [224,300]
+            "coords" : [224,382]
         }
     ],
     "chest" : [
-        {"type" : "profilferme",
+        /*{"type" : "profilferme",
         "position" : [15,12],
         "id_cle": 9,
         "id_loot": 3},
         {"type" : "faceferme",
         "position" : [10,10],
         "id_cle": 0,
-        "id_loot": 5}
+        "id_loot": 5}*/
     ]
 }

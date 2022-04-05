@@ -53,6 +53,11 @@ typedef struct {
 
 /**
  * \brief Structure représentant une map
+ * 
+ * Cette structure doit permettre de stocker toutes les informations liées à la map. \n
+ * Pour cela, On va stocké sous forme de listes toutes les \ref s_map.liste_collisions "zones de collisions", \ref s_map.liste_sorts "les sorts", \ref s_map.liste_monstres "les monstres", \ref s_map.liste_coffres "les coffres" et enfin \ref s_map.liste_zone_tp "les zones de tp". \n
+ * 
+ * On retient également des informations importantes comme des textures : \ref s_map.text_sol "la texture de fond", \ref s_map.texture_superposition "une texture à supperposer" et enfin \ref s_map.text_map "la map avec toutes les entitées".
  * \authors Ange Despert Antoine Bruneau Descomps Max
 */
 typedef struct s_map{
@@ -103,8 +108,10 @@ void transition(t_map **actuelle, unsigned int num_map, joueur_t **joueurs, unsi
 
 void tp_joueurs(t_map *map, unsigned int x, unsigned int y, joueur_t **joueurs, unsigned short int nb_joueurs);
 
+void detruire_map(t_map **map);
+
 #ifdef DEBUG_TP
-void afficher_zone_tp(zone_tp *z);
+    void afficher_zone_tp(zone_tp *z);
 
 #endif
 

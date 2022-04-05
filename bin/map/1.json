@@ -1,8 +1,8 @@
 {
     "type" : "map",
     "id" : 1,
-    "file-path" : "ressources/background/map/interieur3.bmp",
-    "superposition" : "ressources/background/map/house_walls.bmp",
+    "file-path" : "ressources/background/map/interieur_porte.bmp",
+    "superposition" : "ressources/background/map/interieur_premier_plan.bmp",
     "width" : 15, //30 cases de 16px mais une cases de la map fait 32px en réalité
     "height" : 13,
     "taille case" : 32,
@@ -28,23 +28,101 @@
             "h": 2,
             "w": 3
         },
-        /*{
-            "w" : 6,
-            "h" : 3,
-            "x" : 0,
-            "y" : 0
-        }*/
         {
             "w": 6,
             "h": 3,
             "x": 0,
             "y": 0
+        },
+        {
+            "x" : 0,
+            "y" : 10,
+            "h" : 1,
+            "w" : 1
+        },
+        {
+            "x" : 5,
+            "y" : 10,
+            "h" : 1,
+            "w" : 2 
+        },
+        {
+            "x" : 1,
+            "y" : 5,
+            "h" : 1,
+            "w" : 1
+        },
+        {
+            "x": 5,
+            "y": 6,
+            "h": 1,
+            "w": 1
+        },
+        {
+            "x": 7,
+            "y": 6,
+            "h": 1,
+            "w": 1
+        },
+        {
+            "x": 14,
+            "y": 6,
+            "h": 1,
+            "w": 1
+        },
+        {
+            "x" : 0,
+            "y" : 12,
+            "h" : 1,
+            "w" : 1
+        },
+        {
+            "x" : 7,
+            "y" : 0,
+            "h" : 3,
+            "w" : 8
+        },
+        {
+            "x": 10,
+            "y": 8,
+            "h": 2,
+            "w": 5
+        },
+        {
+            "x": 11,
+            "y": 10,
+            "h": 2,
+            "w": 2
+        },
+        {
+            "x": 13,
+            "y": 10,
+            "h": 1,
+            "w": 2
+        },
+        {
+            "x" : 14,
+            "y" : 12,
+            "h" : 1,
+            "w" : 1
+        },
+        {
+            "x" : 0,
+            "y" : 13,
+            "w" : 6,
+            "h" : 1
+        },
+        {
+            "x": 8,
+            "y": 13,
+            "w": 6,
+            "h": 1
         }
     ],
     "zones tp" : [
         {
             "x" : 6,
-            "y" : 12,
+            "y" : 13,
             "w" : 3,
             "h" : 1,
             "destination" : 2,
@@ -53,7 +131,7 @@
     ],
     "chest" : [
         {"type" : "profilferme",
-        "position" : [15,12],
+        "position" : [-15,-15],
         "id_cle" : 0,
         "id_loot" : 4}
     ]

@@ -36,8 +36,9 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs, char * f_src_ob
         stoper_mouvement_joueurs(joueurs);
 
         SDL_ShowCursor(SDL_ENABLE);
-        afficher_menu_pause(joueur1, f_src_objet);
+        afficher_menu_pause(joueurs, f_src_objet);
         SDL_ShowCursor(SDL_DISABLE);
+        return;
     }
     if((joueur1->statut->action == RIEN || joueur1->statut->action == CHARGER) && (joueur2 == NULL || (joueur2->statut->action == RIEN || joueur2->statut->action == CHARGER)))
         switch(ev->keysym.sym){
