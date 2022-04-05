@@ -41,24 +41,20 @@
 #define LONGUEUR_ENTITE 48 /**<La longueur d'une frame d'un sprite d'une entitée */
 #define LARGEUR_ENTITE 48 /**<La largeur d'une frame d'un sprite d'une entitée */
 
-/**
- * \brief Définition de la structure map
- * 
- * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref affichage.h et \ref map.h .
- */
-typedef struct s_map t_map;
+typedef struct s_map t_map; /*Cette définition est la pour éviter une inclusion mutuelle des fichiers affichage.h et map.h*/
+
+typedef struct joueur_s joueur_t; /* Cette définition est la pour éviter une inclusion mutuelle des fichiers affichage.h et personnage.h */
 
 /**
- * \brief Définition de la structure joueur
- *
- * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref affichage.h et \ref personnage.h .
- */
-typedef struct joueur_s joueur_t;
-
-/**
- * Type enum renseignant sur la texture personnage à utiliser
- */
-typedef enum {TEXT_MARCHER, TEXT_ATTAQUE, TEXT_ATTAQUE_CHARGEE, TEXT_CHARGER, TEXT_MARCHER_BOUCLIER}t_texture_perso;
+ * \brief Type énuméré renseignant sur la texture personnage à utiliser
+ * \author Antoine Bruneau
+*/
+typedef enum { TEXT_MARCHER, /**<La texture du personnage qui marche */
+                TEXT_ATTAQUE, /**<La texture du personnage qui attaque */
+                TEXT_ATTAQUE_CHARGEE, /**<La texture du personnage qui fait une attaque chargée */
+                TEXT_CHARGER, /**< La texture du personnage qui charge son attaque */
+                TEXT_MARCHER_BOUCLIER /**<La texture du personnage qui marche avec son bouclier équipé */
+             } t_texture_perso;
 
 /**
  * \struct s_aff
@@ -116,12 +112,15 @@ extern list * liste_animations;
  * \fn void detruire_texture(t_aff **texture)
  * \brief Fonction qui détruit une structure d'affichage de texture passée en paramètre
  * \author Despert Ange
+ * 
+ * Libère la mémoire allouée à la texture et la mets à NULL.
  * \param texture L'adresse du pointeur sur la structure à détruire
  */
 extern void detruire_texture(t_aff **texture); /**<La liste des textures créées */
 
 /**
  * \brief Fonction qui détruit une liste de textures
+ * \author Ange Despert
  *
  * \param l_texture L'adresse de la liste de texture à détruire
  */
@@ -129,6 +128,9 @@ extern void detruire_liste_textures(t_l_aff **l_texture);
 
 /**
  * \brief Fonction qui détermine si la structure SDL_Rect ne dépasse pas la taille de la texture.
+ * \author Ange Despert
+ * 
+ * Cette fonction est appellée par les fonction de déplacement de frame tel que \ref next_frame_x pour s'assurer qu'il n'y a aucune erreur.   
  *
  * \param to_verify La structure SDL_Rect à vérifier
  * \param width La longueur de la texture
@@ -138,8 +140,25 @@ extern void detruire_liste_textures(t_l_aff **l_texture);
 extern _Bool rect_correct_texture(const SDL_Rect *const to_verify, const int width, const int height);
 
 /**
- * \fn t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const int multiplicateur_taille)
  * \brief Fonction qui renvoie, charge une texture et la prépare à se faire afficher
+ * \author Ange Despert 
+ * 
+ * Fonction qui permet de créer un texture sous forme d'un type personnalisé \ref s_aff "t_aff" qui contient pleins d'informations sur la texture. \n
+ * 
+ * ## Déroulement
+ * Le fichier de la texture est chargé dans une surface. \n
+ * 
+ * On va converir cette surface en texture. \n
+ * On va remplir les informations de la structure \ref s_aff "t_aff" avec les information en entrée et des informations obtenues via requêtes SDL. \n
+ * Bien entendu, on testera pour être sur qu'il n'y a aucune erreur.
+ * 
+ * ## Lors d'une erreur
+ * Contrairement à la plupart des fonctions qui gèrent les textures, celle-ci affichera surement un warning à l'écran si l'on ne peut pas créer la texture. Il est donc important de ce rendre compte que cette fonction ne ferme pas le programme lors d'une erreur. C'est donc au développeur de décider si une impossibilité de créer une texture est une raison de fermer le programme.
+ * 
+ * ## A noter
+ * Si l'on donne -1 et -1 pour les paramètres taille_t_x et taille_t_y le rectangle \ref s_aff.frame_anim "frame_anim" de la structure \ref s_aff "t_aff" sera NULL. \n Il est donc important de prendre cela en compte pour ne pas causer des erreurs de segmentation.
+ * \n Donner NULL en nom de texture ne la créra pas mais créra tout les autres attributs de la structure \ref s_aff "t_aff". \n \n
+ * Donner 0 en multiplicateur de taille agrandira la texture pour qu'elle face la taille de l'écran.
  *
  * \param nom_fichier Le nom du fichier contenant la texture
  * \param taille_t_x La longueur de la texture à montrer
@@ -153,7 +172,12 @@ extern t_aff *creer_texture(const char *nom_fichier, const int taille_t_x, const
 
 /**
  * \brief Affiche la texture donnée en paramètre à l'écran
+ * \author Ange Despert
  *
+ * Cette fonction permet d'afficher à l'écran une texture utilisant le type personalisé \ref s_aff "t_aff" à l'écran avec le rendu donné en paramètre. \n
+ * 
+ * Rien ne sera afficher si la texture donnée en entrée est égalle à NULL.
+ * 
  * \param texture La texture à afficher
  * \param rendu Le rendu sur lequel afficher la texture à l'écran
  * \return 0 s'il n'y a pas eu d'erreur sinon un entier négatif
@@ -163,7 +187,10 @@ extern err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu);
 /**
  * \fn void next_frame_y(t_aff *texture);
  * \brief Fonction qui positionne la texture au sprite d'après sur l'axe des y
+ * \author Ange Despert
  *
+ * Fonction qui passe au sprite suivant dans l'axe y. Cette fonction fera une boucle complête de l'image, il n'y a donc pas à s'inquiéter d'arriver à la fin de l'image. \n
+ * Comme les fonction à indice, cette fonction fait appel au rectangle \ref s_aff.frame_anim "frame_anim" de la structure \ref s_aff "d'affichage".
  * \param t_aff* une texture joueur
  */
 extern void next_frame_y(t_aff* texture);
@@ -171,7 +198,11 @@ extern void next_frame_y(t_aff* texture);
 /**
  * \fn void next_frame_x(t_aff *texture);
  * \brief Fonction qui positionne la texture au sprite d'après sur l'axe des x
- *
+ * \author Ange Despert
+ * 
+ * Fonction qui passe au sprite suivant dans l'axe x. Cette fonction fera une boucle complête de l'image, il n'y a donc pas à s'inquiéter d'arriver à la fin de l'image. \n
+ * Comme les fonction à indice, cette fonction fait appel au rectangle \ref s_aff.frame_anim "frame_anim" de la structure \ref s_aff "d'affichage".  
+ * 
  * \param t_aff* une texture joueur
  */
 extern void next_frame_x(t_aff *texture);
@@ -179,7 +210,13 @@ extern void next_frame_x(t_aff *texture);
 /**
  * \fn void next_frame_indice(t_aff *texture, const unsigned int x, const unsigned int y);
  * \brief Fonction qui positionne la texture au n-ème sprite sur l'axe des x
+ * \author Despert Ange
  *
+ * Fonction qui permet de choisir le sprite a un cetain indice de l'image. \n Cette fonction est concue pour être utiliser avec une texture qui contient plusieurs sprites de même taille. \n
+ * La fonction utilisera la taille du \ref s_aff.frame_anim "rectangle" charger d'afficher qu'une partie d'une image. \n
+ *
+ * Cette fonction est la pour éviter deux appels de fonctions, en l'ocurence \ref next_frame_x_indice et \ref next_frame_y_indice 
+ * 
  * \param texture une texture joueur
  * \param x qui correspond au n-ème sprite sur l'axe des x ou l'on souhaite positionner la texture
  * \param y qui correspond au n-ème sprite sur l'axe des y ou l'on souhaite positionner la texture
@@ -222,7 +259,7 @@ extern err_t next_frame_y_indice(t_aff *texture, const unsigned int indice);
  * \param t une texture
  * \return void * l'element à ajouter à la liste
  */
-void *ajout_text_liste(void *t);
+extern void *ajout_text_liste(void *t);
 
 /**
  * Fonction qui affiche les textures contenues dans la liste en paramètre. 
@@ -245,7 +282,7 @@ extern err_t afficher_buffer(list *buffer, SDL_Renderer *rendu);
  * @param x La coordonnée x du centre de la texture.
  * @param y La coordonnée y du centre de la texture.
  */
-void deplacer_texture_centre(t_aff *texture, int x, int y);
+extern void deplacer_texture_centre(t_aff *texture, int x, int y);
 
 /**
  * \brief Déplace un rectangle depuis l'origine de l'écran
@@ -266,7 +303,7 @@ extern void deplacer_rect_origine(SDL_Rect *r, int x, int y);
  * \param x La coordonnée x de l'origine de la texture.
  * \param y La coordonnée y de l'origine de la texture.
  */
-void deplacer_texture_origine(t_aff *texture, int x, int y);
+extern void deplacer_texture_origine(t_aff *texture, int x, int y);
 
 /**
  * Place un rectangle en haut à droite de l'écran puis le replace à partir de cette origine
@@ -275,7 +312,7 @@ void deplacer_texture_origine(t_aff *texture, int x, int y);
  * @param x La coordonnée x du rectangle depuis la nouvelle origine.
  * @param x La coordonnée y du rectangle depuis la nouvelle origine.
  */
-void deplacer_rect_haut_droit(SDL_Rect *r, int x, int y);
+extern void deplacer_rect_haut_droit(SDL_Rect *r, int x, int y);
 
 /**
  * La texture est déplacée vers la droite et vers le haut
@@ -284,7 +321,7 @@ void deplacer_rect_haut_droit(SDL_Rect *r, int x, int y);
  * @param x La coordonnée x du coin supérieur gauche de la texture.
  * @param y Coordonnée y du coin supérieur gauche du rectangle.
  */
-void deplacer_texture_haut_droit(t_aff *texture, int x, int y);
+extern void deplacer_texture_haut_droit(t_aff *texture, int x, int y);
 
 /**
  * La texture est déplacée vers le coin inférieur gauche de l'écran
@@ -293,7 +330,7 @@ void deplacer_texture_haut_droit(t_aff *texture, int x, int y);
  * @param x La coordonnée x du coin supérieur gauche de la texture.
  * @param y Coordonnée y du coin supérieur gauche de la texture.
  */
-void deplacer_texture_bas_gauche(t_aff *texture, int x, int y);
+extern void deplacer_texture_bas_gauche(t_aff *texture, int x, int y);
 
 /**
  * La texture est déplacée vers le coin inférieur droit de la fenêtre
@@ -302,7 +339,7 @@ void deplacer_texture_bas_gauche(t_aff *texture, int x, int y);
  * @param x Coordonnée x du coin supérieur gauche de la texture.
  * @param y Coordonnée y du coin supérieur gauche de la texture.
  */
-void deplacer_texture_bas_droit(t_aff *texture, int x, int y);
+extern void deplacer_texture_bas_droit(t_aff *texture, int x, int y);
 
 /**
  * Modifie le rectangle qui définit la zone de l'écran qui sera utilisée pour le rendu de la texture
@@ -310,7 +347,7 @@ void deplacer_texture_bas_droit(t_aff *texture, int x, int y);
  * @param texture La texture à modifier.
  * @param r Le rectangle à appliquer.
  */
-void modif_affichage_rect(t_aff *texture, SDL_Rect r);
+extern void modif_affichage_rect(t_aff *texture, SDL_Rect r);
 
 /**
  * \fn t_l_aff* init_textures_joueur(joueur_t *j, int num_j)
@@ -352,7 +389,7 @@ extern t_aff *next_frame_joueur(joueur_t *j);
  * \return vrai : Si le joueur a réussi à se déplacer
  * \return faux : Si le joueur n'a pas pu se déplacer
  */
-bool deplacement_x_pers(t_map *map, joueur_t ** joueurs, unsigned short int nb_joueurs, int x, lobjet_t * objets);
+extern bool deplacement_x_pers(t_map *map, joueur_t ** joueurs, unsigned short int nb_joueurs, int x, lobjet_t * objets);
 
 /**
  * Permet de déplacer le personnage principal de y unités verticales sur la map
@@ -365,7 +402,7 @@ bool deplacement_x_pers(t_map *map, joueur_t ** joueurs, unsigned short int nb_j
  * \return vrai : Si le joueur a réussi à se déplacer
  * \return faux : Si le joueur n'a pas pu se déplacer
  */
-bool deplacement_y_pers(t_map *map, joueur_t ** joueurs, unsigned short int nb_joueurs, int y, lobjet_t * objets);
+extern bool deplacement_y_pers(t_map *map, joueur_t ** joueurs, unsigned short int nb_joueurs, int y, lobjet_t * objets);
 
 /**
  * Permet de déplacer un joueur secondaire de y unités verticales sur la map
@@ -378,7 +415,7 @@ bool deplacement_y_pers(t_map *map, joueur_t ** joueurs, unsigned short int nb_j
  * \return vrai : Si le joueur a réussi à se déplacer
  * \return faux : Si le joueur n'a pas pu se déplacer
  */
-bool deplacement_y_joueur_secondaire(t_map *map, joueur_t * joueur, int y, SDL_Rect *r, lobjet_t * objets);
+extern bool deplacement_y_joueur_secondaire(t_map *map, joueur_t * joueur, int y, SDL_Rect *r, lobjet_t * objets);
 
 /**
  * Permet de déplacer un joueur secondaire de x unités horizontales sur la map
@@ -391,7 +428,7 @@ bool deplacement_y_joueur_secondaire(t_map *map, joueur_t * joueur, int y, SDL_R
  * \return vrai : Si le joueur a réussi à se déplacer
  * \return faux : Si le joueur n'a pas pu se déplacer
  */
-bool deplacement_x_joueur_secondaire(t_map *map, joueur_t * joueur, int x, SDL_Rect *r, lobjet_t * objets);
+extern bool deplacement_x_joueur_secondaire(t_map *map, joueur_t * joueur, int x, SDL_Rect *r, lobjet_t * objets);
 
 /**
  * Fonction qui permet de définir exactement la taille de la texture à affichar sur l'écran
@@ -400,7 +437,7 @@ bool deplacement_x_joueur_secondaire(t_map *map, joueur_t * joueur, int x, SDL_R
  * \param longueur La nouvelle longueure en pixel à appliquer
  * \param largeur La nouvelle largeur en pixel à appliquer
  */
-void def_texture_taille(t_aff *a_modifier, const int longueur, const int largeur);
+extern void def_texture_taille(t_aff *a_modifier, const int longueur, const int largeur);
 
 /**
  * Fonction qui permet de placer 2 textures aux mêmes endroit à l'écran
@@ -409,7 +446,7 @@ void def_texture_taille(t_aff *a_modifier, const int longueur, const int largeur
  * \param a_modifier La texture dont on veut modifier la position
  * \param original La texture dont on veut copier la position
  */
-void text_copier_position(t_aff *a_modifier, const t_aff *const original);
+extern void text_copier_position(t_aff *a_modifier, const t_aff *const original);
 
 /**
  * \brief Fonction qui permet de placer un rectangle au centre de l'écran sur l'axe des x
@@ -419,7 +456,7 @@ void text_copier_position(t_aff *a_modifier, const t_aff *const original);
  *
  * \param rectangle Le rectangle à placer
  */
-void rect_centre_x(SDL_Rect *rectangle);
+extern void rect_centre_x(SDL_Rect *rectangle);
 
 /**
  * \brief Fonction qui permet de placer un rectangle au centre de l'écran sur l'axe des y
@@ -429,7 +466,7 @@ void rect_centre_x(SDL_Rect *rectangle);
  *
  * \param rectangle Le rectangle à placer
  */
-void rect_centre_y(SDL_Rect *rectangle);
+extern void rect_centre_y(SDL_Rect *rectangle);
 
 /**
  * \brief Fonction qui permet de placer un rectangle au centre de l'écran
@@ -440,7 +477,7 @@ void rect_centre_y(SDL_Rect *rectangle);
  * \param rectangle Le rectangle à placer
  * \return Un booléen
  */
-void rect_centre(SDL_Rect *rectangle);
+extern void rect_centre(SDL_Rect *rectangle);
 
 /**
  * Fonction qui permet de savoir si deux rectangles sont égaux sur l'axe x
@@ -452,7 +489,7 @@ void rect_centre(SDL_Rect *rectangle);
  * \param r2 Le deuxième rectangle à comparer
  * \return Un booléen
  */
-bool rects_egal_x(const SDL_Rect *const r1, SDL_Rect const *const r2);
+extern bool rects_egal_x(const SDL_Rect *const r1, SDL_Rect const *const r2);
 
 /**
  * \brief Fonction qui permet de savoir si deux rectangles sont égaux sur l'axe y
@@ -465,7 +502,7 @@ bool rects_egal_x(const SDL_Rect *const r1, SDL_Rect const *const r2);
  * \param r2 Le deuxième rectangle à comparer
  * \return Un booléen
  */
-bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2);
+extern bool rects_egal_y(const SDL_Rect *const r1, SDL_Rect const *const r2);
 
 /**
  * \fn SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
@@ -529,14 +566,14 @@ extern void afficher_sorts(list * liste_sorts, joueur_t * joueur);
  * \param x Position horizontale
  * \param y Position verticale
  */
-void placer_texture(t_aff *texture, int x, int y);
+extern void placer_texture(t_aff *texture, int x, int y);
 
 /**
  * \fn void init_animations(void)
  * \brief Initialise les textures des animations
  * \author Max Descomps
  */
-void init_animations(void);
+extern void init_animations(void);
 
 /**
  * \fn t_aff * next_frame_animation(joueur_t * joueur)
@@ -545,7 +582,7 @@ void init_animations(void);
  * \param joueur Le joueur sur lequel placer l'animation
  * \return La texture de l'animation
  */
-t_aff * next_frame_animation(joueur_t * joueur);
+extern t_aff * next_frame_animation(joueur_t * joueur);
 
 /**
  * \fn void lister_animations(joueur_t ** joueurs, list * animations)
@@ -554,7 +591,7 @@ t_aff * next_frame_animation(joueur_t * joueur);
  * \param joueurs Les joueurs sur lesquels placer les animation
  * \param animations Liste regroupant les animations trouvées
  */
-void lister_animations(joueur_t ** joueurs, list * animations);
+extern void lister_animations(joueur_t ** joueurs, list * animations);
 
 /**
 * \fn void afficher_coffres(list * liste_coffre)
@@ -562,7 +599,7 @@ void lister_animations(joueur_t ** joueurs, list * animations);
  * \author Max Descomps
  * \param liste_coffre Une liste de coffres
  */
-void afficher_coffres(list * liste_coffre);
+extern void afficher_coffres(list * liste_coffre);
 
 /**
  * \brief Fonction qui permet de placer un rectangle au centre d'un autre sur l'axe des x
@@ -572,7 +609,7 @@ void afficher_coffres(list * liste_coffre);
  * \param rectangle Le rectangle à centrer
  * \param rectangle_centre Le rectangle dans lequel en centre un autre
  */
-void rect_centre_rect_x(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
+extern void rect_centre_rect_x(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
 
 /**
  * \brief Fonction qui permet de placer un rectangle au centre d'un autre sur l'axe des y
@@ -583,7 +620,7 @@ void rect_centre_rect_x(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
  * \param rectangle Le rectangle à centrer
  * \param rectangle_centre Le rectangle dans lequel en centre un autre
  */
-void rect_centre_rect_y(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
+extern void rect_centre_rect_y(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
 
 /**
  * Fonction qui permet de placer un rectangle au centre d'un autre
@@ -594,7 +631,7 @@ void rect_centre_rect_y(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
  * \param rectangle Le rectangle à centrer
  * \param rectangle_centre Le rectangle dans lequel en centre un autre
  */
-void rect_centre_rect(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
+extern void rect_centre_rect(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
 
 /**
 * \fn void afficher_animations(list * animations)
@@ -602,7 +639,7 @@ void rect_centre_rect(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
  * \author Max Descomps
  * \param animations Une liste d'animations
  */
-void afficher_animations(list * animations);
+extern void afficher_animations(list * animations);
 
 /**
  * \brief Fonction qui permet le déplacement d'une entité
@@ -622,7 +659,7 @@ void afficher_animations(list * animations);
  * \return vrai : Si l'entité a réussi à se déplacer
  * \return faux : Si l'entité n'a pas pu se déplacer
  */
-bool deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r);
+extern bool deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r);
 
 /**
  * \brief Fonction qui permet le déplacement d'une entité
@@ -641,7 +678,7 @@ bool deplacement_x_entite(t_map *m, t_aff *texture, int x, SDL_Rect *r);
  * \return vrai : Si l'entité a réussi à se déplacer
  * \return faux : Si l'entité n'a pas pu se déplacer
  */
-bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r);
+extern bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r);
 
 /**
 * \fn void detruire_collision_dans_liste(list * liste_collisions, SDL_Rect * collision)
@@ -649,7 +686,7 @@ bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r);
  * \param liste_collisions Une liste de collisions
  * \param collision La collision à détruire dans la liste
  */
-void detruire_collision_dans_liste(list * liste_collisions, SDL_Rect * collision);
+extern void detruire_collision_dans_liste(list * liste_collisions, SDL_Rect * collision);
 
 /**
  * \brief Renvoie les coordonnées du centre du rectangle
