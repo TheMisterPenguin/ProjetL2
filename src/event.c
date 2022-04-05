@@ -325,7 +325,7 @@ static void mouseButtonDown(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
     joueur_t * joueur = joueurs[0];
     statut_t* statut = joueur->statut;
 
-    if(statut->action == RIEN && statut->duree == 0){
+    if(statut->action == RIEN && statut->duree <= 0){
         if(ev->button == SDL_BUTTON_LEFT){
             statut->action = ATTAQUE_OU_CHARGER;
             statut->duree = DUREE_ATTAQUE_OU_CHARGEE;
@@ -347,7 +347,8 @@ static void mouseButtonUp(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
     if(ev->button == SDL_BUTTON_LEFT){
         if(statut->action == CHARGER){
             statut->action = ATTAQUE_CHARGEE;
-            statut->orient_att = (statut->orient_dep * 2 + 7) % 8;
+            statut->orient_att = (statut->orient_dep * 2) % 8;
+            next_frame_x_indice(joueur->textures_joueur->liste[TEXT_ATTAQUE_CHARGEE], statut->orient_att);
             statut->en_mouvement = faux;
             statut->duree = DUREE_ATTAQUE_CHARGEE;
         }

@@ -379,7 +379,7 @@ t_aff *next_frame_joueur(joueur_t *j)
         }
         else if (statut->action == ATTAQUE)
         {
-            if ((compteur % 4) == 0) /*compteur%4 pour la vitesse d'affichage*/
+            if ((compteur % 3) == 0) /*compteur%4 pour la vitesse d'affichage*/
             { 
                 next_frame_x(textures[TEXT_ATTAQUE]);
                 if(statut->orient_dep != EST_1)
@@ -387,8 +387,10 @@ t_aff *next_frame_joueur(joueur_t *j)
                 else
                     statut->orient_att = (statut->orient_att + 1) % 8;
                 /*si il a fait le tour du fichier sprite attaque, l'action est terminée*/
-                if( (textures[TEXT_ATTAQUE]->frame_anim->x) == (LONGUEUR_ENTITE*2) )
+                if( (textures[TEXT_ATTAQUE]->frame_anim->x) == (LONGUEUR_ENTITE*2) ){
                     statut->action = RIEN;
+                    statut->duree = DUREE_ATTAQUE*1.5;
+                }
                 return textures[TEXT_ATTAQUE];
             }
             else
@@ -401,13 +403,20 @@ t_aff *next_frame_joueur(joueur_t *j)
                 next_frame_x(textures[TEXT_ATTAQUE_CHARGEE]);
                 statut->orient_att = (statut->orient_att + 1) % 8;
                 /*si il a fait le tour du fichier sprite attaque, l'action est terminée*/
-                if( (statut->orient_att) == (statut->orient_dep*2) && (statut->duree < (DUREE_ATTAQUE_CHARGEE-3) ) )
+                if( (statut->orient_att) == (statut->orient_dep*2) && (statut->duree < (DUREE_ATTAQUE_CHARGEE-4) ) ){
                     statut->action = RIEN;
+                    statut->duree = DUREE_ATTAQUE_CHARGEE;
+                }
                 return textures[TEXT_ATTAQUE_CHARGEE];
             }
             else
                 return statut->texture_prec;
         }
+        else if (statut->action == RIEN)
+            if(statut->bouclier_equipe == vrai)
+                return textures[TEXT_MARCHER_BOUCLIER];
+            else
+                return textures[TEXT_MARCHER];
     }
     return statut->texture_prec;
 }

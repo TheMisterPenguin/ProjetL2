@@ -17,7 +17,7 @@
 #include "inventaire.h"
 
 #define DUREE_ATTAQUE_OU_CHARGEE 12
-#define DUREE_ATTAQUE 6
+#define DUREE_ATTAQUE 4
 #define DUREE_ATTAQUE_CHARGEE 10
 #define DUREE_BLOQUER 14
 #define DUREE_JOUEUR_BLESSE 12
