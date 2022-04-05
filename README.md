@@ -11,6 +11,7 @@ Doneau Rafaël <br />
 ## La documentation
 
 [Par ici](https://themisterpenguin.github.io/Documentation_BLSD)
+
 [Version PDFLateX](https://github.com/TheMisterPenguin/ProjetL2/raw/main/doc/out/latex/refman.pdf)
 
 ## Tramme GDB
@@ -24,4 +25,5 @@ Doneau Rafaël <br />
 ## GANTT
 
 [Le GANTT previsionel](https://docs.google.com/spreadsheets/d/137kKD9gfpiEC_zliMpySPo1xjQ20Uw0JYJUedu1JbkY/edit?usp=sharing)
+
 [Le GANTT réel](https://docs.google.com/spreadsheets/d/1o70FjVPzeUldbCMU4YSInlD_35gTBtZ88_-tOpvP7w8/edit?usp=sharing)
