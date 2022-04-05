@@ -3,14 +3,12 @@
 #include <code_erreur.h>
 #include <personnage.h>
 #include <affichage.h>
-
-
 /**
  * \file event.c
  * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
  * \brief Fonctions de gestion des événements du jeu
  * \version 0.1
- * \date 02/02/2022
+ * \date 05/04/2022
  * \copyright Copyright (c) 2022
  */
 
@@ -204,7 +202,14 @@ static void keyUp(SDL_KeyboardEvent * ev, joueur_t ** joueurs){
     }
 }
 
-void joystick_button_down(SDL_JoyButtonEvent *ev, joueur_t **j){
+/**
+ * \brief Fonction qui gère les événements lorsque l'on appuye sur un bouton de la manette.
+ * \author Ange Despert
+ * 
+ * \param ev L'événement détecté
+ * \param j Les joueurs qui existent
+ */
+static void joystick_button_down(SDL_JoyButtonEvent *ev, joueur_t **j){
     joueur_t *joueur = j[0];
     statut_t *statut = joueur->statut;
 
@@ -224,8 +229,14 @@ void joystick_button_down(SDL_JoyButtonEvent *ev, joueur_t **j){
             break;
     }
 }
-
-void joystick_button_up(SDL_JoyButtonEvent *ev, joueur_t **j)
+/**
+ * \brief Fonction qui gère les événements lorsque l'on relache un bouton de la manette.
+ * \author Ange Despert
+ *
+ * \param ev L'événement détecté
+ * \param j Les joueurs qui existent
+ */
+static void joystick_button_up(SDL_JoyButtonEvent *ev, joueur_t **j)
 {
     joueur_t *joueur = j[0];
     statut_t *statut = joueur->statut;
@@ -266,8 +277,19 @@ void joystick_button_up(SDL_JoyButtonEvent *ev, joueur_t **j)
     }
 }
 
-
-void joystick_stick(joueur_t **j){
+/**
+ * \brief Fonction qui gère les déplacements au joystick
+ * \author Ange Despert
+ * 
+ * Cette fonction récupère les coordonnées du joystick de la manette. \n
+ * Elle créer ensuite une zone morte pour eviter les problèmes de "drift". \n
+ * Elle divise ensuit le cercle du joystick en 4 parties pour les 4 directions possibles. \n
+ * Et enfin, permet le déplacement du joueur.
+ * 
+ * 
+ * \param j Les joueurs qui existent
+ */
+static void joystick_stick(joueur_t **j){
     joueur_t *joueur = j[0];
     statut_t *statut = joueur->statut;
     Sint16 axe_x = SDL_GameControllerGetAxis(manette, 0); /* On récupère la valeur du stick  */

@@ -45,7 +45,7 @@ t\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_a59fc51b629cfed9815495f235dae78e
 \begin{DoxyCompactList}\small\item\em Affiche la texture donnée en paramètre à l\textquotesingle{}écran. \end{DoxyCompactList}\item 
 t\+\_\+l\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_aea6ef750998e466ed9d8beef7daefc09}{init\+\_\+textures\+\_\+joueur}} (joueur\+\_\+t $\ast$j, int num\+\_\+j)
 \begin{DoxyCompactList}\small\item\em Fonction qui creer et renvoie une liste de textures pour le personnage (joueur) \end{DoxyCompactList}\item 
-t\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_aed283afbfc26ca77a0e28e04aee3cc0e}{init\+\_\+texture\+\_\+joueur}} (t\+\_\+l\+\_\+aff $\ast$textures\+\_\+joueur, joueur\+\_\+t $\ast$joueur)
+t\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_a2344f5dd9cd4bc71c30a0706dace16fa}{init\+\_\+texture\+\_\+joueur}} (t\+\_\+l\+\_\+aff $\ast$textures\+\_\+joueur, joueur\+\_\+t $\ast$joueur)
 \begin{DoxyCompactList}\small\item\em Fonction qui renvoie la texture de départ du personnage (joueur) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_adf38042b72a9ceff2aebef3efe2af6bd}{appliquer\+\_\+coord\+\_\+rect}} (const S\+D\+L\+\_\+\+Rect $\ast$const a\+\_\+copier, t\+\_\+l\+\_\+aff $\ast$textures)
 \item 
@@ -342,8 +342,7 @@ Cette fonction permet d\textquotesingle{}afficher à l\textquotesingle{}écran u
 \begin{DoxyReturn}{Renvoie}
 0 s\textquotesingle{}il n\textquotesingle{}y a pas eu d\textquotesingle{}erreur sinon un entier négatif 
 \end{DoxyReturn}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -528,7 +527,7 @@ Ange Despert
 \item[\mbox{\hyperlink{deprecated__deprecated000002}{Obsolète}}]L\textquotesingle{}utilisation de cette fonction n\textquotesingle{}a plus trop de sens étant donné que le moteur gère automatiquement la taille des textures.\end{DoxyRefDesc}
 
 
-Fonction qui permet de modifier le rectangle de la structure \mbox{\hyperlink{structs__aff}{t\+\_\+aff}} \+: aff\+\_\+ecran avec de nouvelles valeurs.
+Fonction qui permet de modifier le rectangle de la structure \mbox{\hyperlink{structs__aff}{t\+\_\+aff}} \+: \mbox{\hyperlink{structs__aff_a7f7e29a1c85002df85bc122f6836b20c}{aff\+\_\+fenetre}} avec de nouvelles valeurs.
 
 
 \begin{DoxyParams}{Paramètres}
@@ -539,8 +538,7 @@ Fonction qui permet de modifier le rectangle de la structure \mbox{\hyperlink{st
 {\em largeur} & La nouvelle largeur en pixel à appliquer \\
 \hline
 \end{DoxyParams}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -568,7 +566,7 @@ Cette dernière prend également les collisions définies dans la liste des coll
 \hline
 {\em texture} & La texture de l\textquotesingle{}entité que l\textquotesingle{}on veut bouger \\
 \hline
-{\em y} & La nouvelle coordonnée du rectangle de l\textquotesingle{}entité \\
+{\em x} & La nouvelle coordonnée du rectangle de l\textquotesingle{}entité \\
 \hline
 {\em r} & Le rectangle représentant la zone de collision de l\textquotesingle{}entité \\
 \hline
@@ -816,7 +814,7 @@ Ange Despert
 \hline
 {\em x} & La coordonnée x du rectangle depuis la nouvelle origine. \\
 \hline
-{\em x} & La coordonnée y du rectangle depuis la nouvelle origine. \\
+{\em y} & La coordonnée y du rectangle depuis la nouvelle origine. \\
 \hline
 \end{DoxyParams}
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
@@ -1032,8 +1030,7 @@ Libère la mémoire allouée à la texture et la mets à N\+U\+LL.
 {\em texture} & L\textquotesingle{}adresse du pointeur sur la structure à détruire \\
 \hline
 \end{DoxyParams}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1059,8 +1056,7 @@ Ange Despert
 \begin{DoxyReturn}{Renvoie}
 Les coordonnées du milieu du rectangle 
 \end{DoxyReturn}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1086,8 +1082,7 @@ Ange Despert
 \begin{DoxyReturn}{Renvoie}
 Les coordonnées du milieu du rectangle. 
 \end{DoxyReturn}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1151,18 +1146,18 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \includegraphics[width=249pt]{da/d68/affichage_8c_a00db128b4c54ca69b10871d8eed417f9_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{affichage_8c_aed283afbfc26ca77a0e28e04aee3cc0e}\label{affichage_8c_aed283afbfc26ca77a0e28e04aee3cc0e}} 
+\mbox{\Hypertarget{affichage_8c_a2344f5dd9cd4bc71c30a0706dace16fa}\label{affichage_8c_a2344f5dd9cd4bc71c30a0706dace16fa}} 
 \index{affichage.c@{affichage.c}!init\_texture\_joueur@{init\_texture\_joueur}}
 \index{init\_texture\_joueur@{init\_texture\_joueur}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{init\_texture\_joueur()}{init\_texture\_joueur()}}
-{\footnotesize\ttfamily t\+\_\+aff $\ast$ init\+\_\+texture\+\_\+joueur (\begin{DoxyParamCaption}\item[{t\+\_\+l\+\_\+aff $\ast$}]{textures\+\_\+joueur,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily t\+\_\+aff$\ast$ init\+\_\+texture\+\_\+joueur (\begin{DoxyParamCaption}\item[{t\+\_\+l\+\_\+aff $\ast$}]{textures\+\_\+joueur,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Antoine Bruneau 
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
-{\em t\+\_\+l\+\_\+aff} & Liste de textures personnage \\
+{\em textures\+\_\+joueur} & Liste de textures personnage \\
 \hline
 {\em joueur} & Joueur dont on veut la texture de départ \\
 \hline
@@ -1196,7 +1191,8 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \includegraphics[width=350pt]{da/d68/affichage_8c_aea6ef750998e466ed9d8beef7daefc09_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1355,7 +1351,7 @@ Comme les fonction à indice, cette fonction fait appel au rectangle \mbox{\hype
 
 
 \begin{DoxyParams}{Paramètres}
-{\em t\+\_\+aff$\ast$} & une texture joueur \\
+{\em texture$\ast$} & une texture joueur \\
 \hline
 \end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
@@ -1387,9 +1383,9 @@ La fonction utilisera la taille du \mbox{\hyperlink{structs__aff_aefd6b2f2f56383
 
 
 \begin{DoxyParams}{Paramètres}
-{\em t\+\_\+aff$\ast$} & une texture joueur \\
+{\em texture$\ast$} & une texture joueur \\
 \hline
-{\em const} & unsigned int qui correspond au n-\/ème sprite sur l\textquotesingle{}axe des x ou l\textquotesingle{}on souhaite positionner la texture \\
+{\em indice} & unsigned int qui correspond au n-\/ème sprite sur l\textquotesingle{}axe des x ou l\textquotesingle{}on souhaite positionner la texture \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
@@ -1421,7 +1417,7 @@ Ange Despert
 Fonction qui passe au sprite suivant dans l\textquotesingle{}axe y. Cette fonction fera une boucle complête de l\textquotesingle{}image, il n\textquotesingle{}y a donc pas à s\textquotesingle{}inquiéter d\textquotesingle{}arriver à la fin de l\textquotesingle{}image. ~\newline
 Comme les fonction à indice, cette fonction fait appel au rectangle \mbox{\hyperlink{structs__aff_aefd6b2f2f56383a8cba0193ff88593dc}{frame\+\_\+anim}} de la structure \mbox{\hyperlink{structs__aff}{d\textquotesingle{}affichage}}. 
 \begin{DoxyParams}{Paramètres}
-{\em t\+\_\+aff$\ast$} & une texture joueur \\
+{\em texture$\ast$} & une texture joueur \\
 \hline
 \end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
@@ -1486,8 +1482,7 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \includegraphics[width=350pt]{da/d68/affichage_8c_a26cf1d2055162e3bf7166de2f55902f9_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1570,7 +1565,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{DoxyAuthor}{Auteur}
 Ange Despert
 \end{DoxyAuthor}
-Fonctionnement simillaire à l\textquotesingle{}utilisation conjointe des fonctions placer\+\_\+rect\+\_\+center\+\_\+from\+\_\+point et \mbox{\hyperlink{affichage_8h_aad94b2ce0d93f581c0f82b0467a8d2ed}{get\+\_\+rect\+\_\+center\+\_\+coord}} .
+Fonctionnement simillaire à l\textquotesingle{}utilisation conjointe des fonctions \mbox{\hyperlink{affichage_8h_a26cf1d2055162e3bf7166de2f55902f9}{place\+\_\+rect\+\_\+center\+\_\+from\+\_\+point}} et \mbox{\hyperlink{affichage_8h_aad94b2ce0d93f581c0f82b0467a8d2ed}{get\+\_\+rect\+\_\+center\+\_\+coord}} .
 
 
 \begin{DoxyParams}{Paramètres}

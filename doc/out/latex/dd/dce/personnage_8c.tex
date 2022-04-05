@@ -18,17 +18,17 @@ Graphe des dépendances par inclusion de personnage.\+c\+:\nopagebreak
 static void \mbox{\hyperlink{personnage_8c_a11f105c360020140d57fb4d6ddbae8e8}{copy}} (const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} $\ast$origin, \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} $\ast$out, size\+\_\+t size)
 \item 
 void \mbox{\hyperlink{personnage_8c_a1674d581294113dd43ec58636bd57802}{check\+\_\+repertoire\+\_\+jeux}} ()
-\begin{DoxyCompactList}\small\item\em Fonction qui assure l\textquotesingle{}existence d\textquotesingle{}un répertoire de sauvegarde. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fonction gère le répertoire de jeux. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8c_a9ce711c80691bb2b4f29e7c58790851a}{creer\+\_\+sauvegarde\+\_\+json}} (joueur\+\_\+t $\ast$j)
 \begin{DoxyCompactList}\small\item\em Fonction qui créer les sauvegardes du jeu. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{personnage_8c_a71919ee7582fae9cc0e2d1fd5bbce94e}{sauv\+\_\+existe}} (char $\ast$nom\+\_\+sauv)
 \item 
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639}{charger\+\_\+sauvegarde\+\_\+joueur}} (char $\ast$nom\+\_\+sauv, char $\ast$f\+\_\+src\+\_\+obj, joueur\+\_\+t $\ast$joueurs\mbox{[}$\,$\mbox{]}, unsigned short int nb\+\_\+joueurs)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui charge une sauvegarde au format J\+S\+ON. \end{DoxyCompactList}\item 
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8c_a7737c7514f9c4f5c01ff698b97544c2c}{new\+\_\+joueur}} (const char $\ast$nom, int num\+\_\+j, char $\ast$f\+\_\+src\+\_\+obj)
 \item 
-joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8c_a61504a02253e4b07f41eec61bddd30c5}{creer\+\_\+joueur}} (const char $\ast$nom, const int niveau, const int xp, const int max\+Pdv, const int pdv, const int attaque, const int defense, const int vitesse, const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} trig\mbox{[}\mbox{\hyperlink{personnage_8h_a98a97fd1e52188dde7bcc423c5d17546}{T\+A\+I\+L\+L\+E\+\_\+\+T\+R\+I\+G\+G\+ER}}\mbox{]}, const \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} orient, const \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} bouclier\+\_\+equipe, const int num\+\_\+j, char $\ast$f\+\_\+src\+\_\+obj)
-\begin{DoxyCompactList}\small\item\em Creer un joueur. \end{DoxyCompactList}\item 
+joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8c_a0995a1c7be1391b4a127382999a450dd}{creer\+\_\+joueur}} (const char $\ast$nom, const int niveau, const int xp, const int max\+Pdv, const int pdv, const int attaque, const int defense, const int vitesse, const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} trig\mbox{[}\mbox{\hyperlink{personnage_8h_a98a97fd1e52188dde7bcc423c5d17546}{T\+A\+I\+L\+L\+E\+\_\+\+T\+R\+I\+G\+G\+ER}}\mbox{]}, const \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} orient, const \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} bouclier\+\_\+equipe, const int num\+\_\+j, char $\ast$f\+\_\+src\+\_\+obj)
+\item 
 void \mbox{\hyperlink{personnage_8c_a33613b3a2b55cb1d1855a39a288fb230}{detruire\+\_\+joueur}} (joueur\+\_\+t $\ast$j)
 \begin{DoxyCompactList}\small\item\em Fonction qui détruit un joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8c_aefc1334467e64a267f85c13fb2146714}{maj\+\_\+statistiques}} (joueur\+\_\+t $\ast$perso)
@@ -107,6 +107,24 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{charger\_sauvegarde\_joueur()}{charger\_sauvegarde\_joueur()}}
 {\footnotesize\ttfamily joueur\+\_\+t$\ast$ charger\+\_\+sauvegarde\+\_\+joueur (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom\+\_\+sauv,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj,  }\item[{joueur\+\_\+t $\ast$}]{joueurs\mbox{[}$\,$\mbox{]},  }\item[{unsigned short int}]{nb\+\_\+joueurs }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction va récupérer les informations dans la sauvegarde au format J\+S\+ON. ~\newline
+ Il va ensuite detruire les joueurs et la carte, pour ensuite les recrées avec les infomations qui correspondent à la sauvegarde puis téléporter le joueur aux coordonnées voulues. 
+\begin{DoxyParams}{Paramètres}
+{\em nom\+\_\+sauv} & Chemin complet du fichier de sauvegarde \\
+\hline
+{\em f\+\_\+src\+\_\+obj} & Le fichier source contenant les objets du jeu \\
+\hline
+{\em joueurs} & Les joueurs existants \\
+\hline
+{\em nb\+\_\+joueurs} & Le nombre de joueurs existants \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+joueur\+\_\+t$\ast$ 
+\end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
 \nopagebreak
 \begin{figure}[H]
@@ -128,7 +146,11 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{check\_repertoire\_jeux()}{check\_repertoire\_jeux()}}
 {\footnotesize\ttfamily void check\+\_\+repertoire\+\_\+jeux (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction vérifie si le répertoire de jeux existe (emplacement différent selon les OS). ~\newline
+Puis le créer s\textquotesingle{}il n\textquotesingle{}existe pas. Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -141,63 +163,34 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{copy()}{copy()}}
 {\footnotesize\ttfamily static void copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} $\ast$}]{origin,  }\item[{\mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} $\ast$}]{out,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=233pt]{dd/dce/personnage_8c_a11f105c360020140d57fb4d6ddbae8e8_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{personnage_8c_a61504a02253e4b07f41eec61bddd30c5}\label{personnage_8c_a61504a02253e4b07f41eec61bddd30c5}} 
+\mbox{\Hypertarget{personnage_8c_a0995a1c7be1391b4a127382999a450dd}\label{personnage_8c_a0995a1c7be1391b4a127382999a450dd}} 
 \index{personnage.c@{personnage.c}!creer\_joueur@{creer\_joueur}}
 \index{creer\_joueur@{creer\_joueur}!personnage.c@{personnage.c}}
 \doxysubsubsection{\texorpdfstring{creer\_joueur()}{creer\_joueur()}}
-{\footnotesize\ttfamily joueur\+\_\+t $\ast$ creer\+\_\+joueur (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom,  }\item[{const int}]{niveau,  }\item[{const int}]{xp,  }\item[{const int}]{max\+Pdv,  }\item[{const int}]{pdv,  }\item[{const int}]{attaque,  }\item[{const int}]{defense,  }\item[{const int}]{vitesse,  }\item[{const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}}}]{trig\mbox{[}\+T\+A\+I\+L\+L\+E\+\_\+\+T\+R\+I\+G\+G\+E\+R\mbox{]},  }\item[{const \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}}}]{orient,  }\item[{const \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}}}]{bouclier\+\_\+equipe,  }\item[{const int}]{num\+\_\+j,  }\item[{char $\ast$}]{fichier\+\_\+src }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily joueur\+\_\+t$\ast$ creer\+\_\+joueur (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom,  }\item[{const int}]{niveau,  }\item[{const int}]{xp,  }\item[{const int}]{max\+Pdv,  }\item[{const int}]{pdv,  }\item[{const int}]{attaque,  }\item[{const int}]{defense,  }\item[{const int}]{vitesse,  }\item[{const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}}}]{trig\mbox{[}\+T\+A\+I\+L\+L\+E\+\_\+\+T\+R\+I\+G\+G\+E\+R\mbox{]},  }\item[{const \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}}}]{orient,  }\item[{const \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}}}]{bouclier\+\_\+equipe,  }\item[{const int}]{num\+\_\+j,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj }\end{DoxyParamCaption})}
 
-
-\begin{DoxyParams}{Paramètres}
-{\em nom} & Le nom du joueur \\
-\hline
-{\em niveau} & Le niveau du joueur \\
-\hline
-{\em xp} & L\textquotesingle{}expérience du joueur \\
-\hline
-{\em max\+Pdv} & Le nombre maximu de points de vie du joueur \\
-\hline
-{\em pdv} & Le nombre de points de vie du joueur \\
-\hline
-{\em attaque} & L\textquotesingle{}attaque du joueur \\
-\hline
-{\em defense} & La défense du joueur \\
-\hline
-{\em vitesse} & La vitesse du joueur \\
-\hline
-{\em trig} & Le trigger d\textquotesingle{}information sur le joueur \\
-\hline
-{\em orient} & L\textquotesingle{}orientation spatiale du joueur \\
-\hline
-{\em bouclier\+\_\+equipe} & La possession d\textquotesingle{}un bouclier équipé par le joueur \\
-\hline
-{\em num\+\_\+j} & La place du joueur dans le tableau des joueurs \\
-\hline
-{\em f\+\_\+src\+\_\+obj} & Le fichier source des objets du jeu \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Renvoie}
-Instance nouvellement allouée du type joueur\+\_\+t contenant les informations du joueur 
-\end{DoxyReturn}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=307pt]{dd/dce/personnage_8c_a61504a02253e4b07f41eec61bddd30c5_cgraph}
+\includegraphics[width=307pt]{dd/dce/personnage_8c_a0995a1c7be1391b4a127382999a450dd_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=309pt]{dd/dce/personnage_8c_a61504a02253e4b07f41eec61bddd30c5_icgraph}
+\includegraphics[width=309pt]{dd/dce/personnage_8c_a0995a1c7be1391b4a127382999a450dd_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{personnage_8c_a9ce711c80691bb2b4f29e7c58790851a}\label{personnage_8c_a9ce711c80691bb2b4f29e7c58790851a}} 
@@ -205,6 +198,11 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{creer\_sauvegarde\_json@{creer\_sauvegarde\_json}!personnage.c@{personnage.c}}
 \doxysubsubsection{\texorpdfstring{creer\_sauvegarde\_json()}{creer\_sauvegarde\_json()}}
 {\footnotesize\ttfamily void creer\+\_\+sauvegarde\+\_\+json (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{j }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction va créer une sauvegarde dans le répertoire de sauvegarde au format J\+S\+ON contenant toutes les informations a conserver sur le joueur.
 
 
 \begin{DoxyParams}{Paramètres}
@@ -224,6 +222,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{detruire\_joueur()}{detruire\_joueur()}}
 {\footnotesize\ttfamily void detruire\+\_\+joueur (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{j }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em j} & Le joueur à détruire \\
@@ -455,7 +456,8 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{new\_joueur()}{new\_joueur()}}
 {\footnotesize\ttfamily joueur\+\_\+t$\ast$ new\+\_\+joueur (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom,  }\item[{int}]{num\+\_\+j,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -515,3 +517,4 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{save\_path}{save\_path}}
 {\footnotesize\ttfamily char save\+\_\+path\mbox{[}500\mbox{]}}
 
+Le répertoire complet de sauvegarde du jeu 

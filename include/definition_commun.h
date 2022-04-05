@@ -29,7 +29,6 @@ typedef unsigned char byte; /**<Type servant pour des triggers faisant la taille
 typedef struct point {int x,y;}point; /**<Un point*/
 
 /**
- * \struct struct t_direction_1
  * \brief Structure de quatre points cardinaux
  */
 typedef enum
@@ -41,7 +40,6 @@ typedef enum
 } t_direction_1;
 
 /**
- * \struct struct t_direction_2
  * \brief Structure de huit points cardinaux
  */
 typedef enum

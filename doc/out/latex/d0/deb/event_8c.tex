@@ -19,22 +19,22 @@ static void \mbox{\hyperlink{event_8c_ab35bbcfaf1fe479bd4f5d158db01d9e4}{key\+Do
 \item 
 static void \mbox{\hyperlink{event_8c_ad024139f09670512c89309b5261a96b1}{key\+Up}} (S\+D\+L\+\_\+\+Keyboard\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$joueurs)
 \begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand une touche du clavier est relachée par un joueur. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{event_8c_ac367042c66a1868384bac213a1ecbb99}{joystick\+\_\+button\+\_\+down}} (S\+D\+L\+\_\+\+Joy\+Button\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$j)
-\item 
-void \mbox{\hyperlink{event_8c_a3d363d383d39de072c4b66e4bc202809}{joystick\+\_\+button\+\_\+up}} (S\+D\+L\+\_\+\+Joy\+Button\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$j)
-\item 
-void \mbox{\hyperlink{event_8c_a5399cdc6a8a5f4af8c2488ac077899ce}{joystick\+\_\+stick}} (joueur\+\_\+t $\ast$$\ast$j)
-\item 
+static void \mbox{\hyperlink{event_8c_af96942d682e7c15b6ff75b89f49808e0}{joystick\+\_\+button\+\_\+down}} (S\+D\+L\+\_\+\+Joy\+Button\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$j)
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements lorsque l\textquotesingle{}on appuye sur un bouton de la manette. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{event_8c_a534aa8818b70710ba24c15d6c87b1b5e}{joystick\+\_\+button\+\_\+up}} (S\+D\+L\+\_\+\+Joy\+Button\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$j)
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements lorsque l\textquotesingle{}on relache un bouton de la manette. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{event_8c_a84269911e87d9c9c93e6fada8aab4214}{joystick\+\_\+stick}} (joueur\+\_\+t $\ast$$\ast$j)
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les déplacements au joystick. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{event_8c_a3ee3a73779375a42cd72dde0da991e41}{mouse\+Button\+Down}} (S\+D\+L\+\_\+\+Mouse\+Button\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$joueurs)
 \begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand un bouton de la souris est pressée par un joueur. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{event_8c_ad82a0fa86ea18b0674c6807f8951e1a3}{mouse\+Button\+Up}} (S\+D\+L\+\_\+\+Mouse\+Button\+Event $\ast$ev, joueur\+\_\+t $\ast$$\ast$joueurs)
 \begin{DoxyCompactList}\small\item\em Fonction qui gère les événements quand un bouton de la souris est relachée par un joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{event_8c_ac27091daa86f31b79780d6a91801fd11}{jeu\+\_\+event\+\_\+manette}} (joueur\+\_\+t $\ast$$\ast$joueurs)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements de la manette. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{event_8c_a5f8eef7cc98d022db9987ee0634804e6}{jeu\+\_\+event}} (joueur\+\_\+t $\ast$$\ast$joueurs, char $\ast$f\+\_\+src\+\_\+obj)
 \begin{DoxyCompactList}\small\item\em Fonction qui gère les événements. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{event_8c_ac8d571cc4da84ae88b13211ec29eb2e3}{logo\+\_\+passer}} (void)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements pendant l\textquotesingle{}affichage de l\textquotesingle{}introduction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -50,7 +50,7 @@ Ange Despert (\href{mailto:Ange.Despert.Etu@univ-lemans.fr}{\texttt{ Ange.\+Desp
 0.\+1 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-02/02/2022 
+05/04/2022 
 \end{DoxyDate}
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2022 
@@ -94,6 +94,14 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{jeu\_event\_manette()}{jeu\_event\_manette()}}
 {\footnotesize\ttfamily void jeu\+\_\+event\+\_\+manette (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em joueurs} & Les joueurs existants \\
+\hline
+\end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -108,57 +116,90 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \includegraphics[width=268pt]{d0/deb/event_8c_ac27091daa86f31b79780d6a91801fd11_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{event_8c_ac367042c66a1868384bac213a1ecbb99}\label{event_8c_ac367042c66a1868384bac213a1ecbb99}} 
+\mbox{\Hypertarget{event_8c_af96942d682e7c15b6ff75b89f49808e0}\label{event_8c_af96942d682e7c15b6ff75b89f49808e0}} 
 \index{event.c@{event.c}!joystick\_button\_down@{joystick\_button\_down}}
 \index{joystick\_button\_down@{joystick\_button\_down}!event.c@{event.c}}
 \doxysubsubsection{\texorpdfstring{joystick\_button\_down()}{joystick\_button\_down()}}
-{\footnotesize\ttfamily void joystick\+\_\+button\+\_\+down (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Joy\+Button\+Event $\ast$}]{ev,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{j }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily static void joystick\+\_\+button\+\_\+down (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Joy\+Button\+Event $\ast$}]{ev,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em ev} & L\textquotesingle{}événement détecté \\
+\hline
+{\em j} & Les joueurs qui existent \\
+\hline
+\end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/deb/event_8c_ac367042c66a1868384bac213a1ecbb99_cgraph}
+\includegraphics[width=350pt]{d0/deb/event_8c_af96942d682e7c15b6ff75b89f49808e0_cgraph}
 \end{center}
 \end{figure}
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/deb/event_8c_ac367042c66a1868384bac213a1ecbb99_icgraph}
+\includegraphics[width=350pt]{d0/deb/event_8c_af96942d682e7c15b6ff75b89f49808e0_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{event_8c_a3d363d383d39de072c4b66e4bc202809}\label{event_8c_a3d363d383d39de072c4b66e4bc202809}} 
+\mbox{\Hypertarget{event_8c_a534aa8818b70710ba24c15d6c87b1b5e}\label{event_8c_a534aa8818b70710ba24c15d6c87b1b5e}} 
 \index{event.c@{event.c}!joystick\_button\_up@{joystick\_button\_up}}
 \index{joystick\_button\_up@{joystick\_button\_up}!event.c@{event.c}}
 \doxysubsubsection{\texorpdfstring{joystick\_button\_up()}{joystick\_button\_up()}}
-{\footnotesize\ttfamily void joystick\+\_\+button\+\_\+up (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Joy\+Button\+Event $\ast$}]{ev,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{j }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily static void joystick\+\_\+button\+\_\+up (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Joy\+Button\+Event $\ast$}]{ev,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em ev} & L\textquotesingle{}événement détecté \\
+\hline
+{\em j} & Les joueurs qui existent \\
+\hline
+\end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=344pt]{d0/deb/event_8c_a3d363d383d39de072c4b66e4bc202809_cgraph}
+\includegraphics[width=344pt]{d0/deb/event_8c_a534aa8818b70710ba24c15d6c87b1b5e_cgraph}
 \end{center}
 \end{figure}
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{d0/deb/event_8c_a3d363d383d39de072c4b66e4bc202809_icgraph}
+\includegraphics[width=336pt]{d0/deb/event_8c_a534aa8818b70710ba24c15d6c87b1b5e_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{event_8c_a5399cdc6a8a5f4af8c2488ac077899ce}\label{event_8c_a5399cdc6a8a5f4af8c2488ac077899ce}} 
+\mbox{\Hypertarget{event_8c_a84269911e87d9c9c93e6fada8aab4214}\label{event_8c_a84269911e87d9c9c93e6fada8aab4214}} 
 \index{event.c@{event.c}!joystick\_stick@{joystick\_stick}}
 \index{joystick\_stick@{joystick\_stick}!event.c@{event.c}}
 \doxysubsubsection{\texorpdfstring{joystick\_stick()}{joystick\_stick()}}
-{\footnotesize\ttfamily void joystick\+\_\+stick (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$$\ast$}]{j }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily static void joystick\+\_\+stick (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$$\ast$}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction récupère les coordonnées du joystick de la manette. ~\newline
+Elle créer ensuite une zone morte pour eviter les problèmes de \char`\"{}drift\char`\"{}. ~\newline
+Elle divise ensuit le cercle du joystick en 4 parties pour les 4 directions possibles. ~\newline
+Et enfin, permet le déplacement du joueur.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em j} & Les joueurs qui existent \\
+\hline
+\end{DoxyParams}
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=310pt]{d0/deb/event_8c_a5399cdc6a8a5f4af8c2488ac077899ce_icgraph}
+\includegraphics[width=310pt]{d0/deb/event_8c_a84269911e87d9c9c93e6fada8aab4214_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{event_8c_ab35bbcfaf1fe479bd4f5d158db01d9e4}\label{event_8c_ab35bbcfaf1fe479bd4f5d158db01d9e4}} 
@@ -210,6 +251,14 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{logo\_passer()}{logo\_passer()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} logo\+\_\+passer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction permet de passer l\textquotesingle{}introduction avec une touche mais gère encore les évenement tels que {\ttfamily S\+D\+L\+\_\+\+Q\+U\+IT}.
+
+\begin{DoxyReturn}{Renvoie}
+Si l\textquotesingle{}on doit passer le logo 
+\end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -286,3 +335,4 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{manette}{manette}}
 {\footnotesize\ttfamily S\+D\+L\+\_\+\+Game\+Controller$\ast$ manette}
 
+La manette du J1 

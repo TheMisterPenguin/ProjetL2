@@ -28,26 +28,17 @@
 
 #define TAILLE_TRIGGER 200
 
-/**
- * \brief Définition de la structure l_aff
- * 
- * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref personnage.h et \ref affichage.h .
- */
-typedef struct s_l_aff t_l_aff;
+typedef struct s_l_aff t_l_aff; /* Cette définition est la pour éviter une inclusion mutuelle des fichiers personnage.h et affichage.h */
 
-/**
- * \brief Définition de la structure l_aff
- * 
- * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref personnage.h et \ref inventaire.h .
- */
-typedef struct inventaire_s inventaire_t;
+typedef struct inventaire_s inventaire_t; /* Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref personnage.h et \ref inventaire.h */
+
 
 typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER, J_BLESSE, SOIN}action_t; /**<l'action qu'est en train de faire le personnage*/
 /**
- * \struct struct statut_s
  * \brief Structure contenant les éléments nécéssaires au choix de l'affichage des sprites du personnage
  * 
- * \author Bruneau Antoine
+ * \authors Bruneau Antoine
+ * \authors Ange Despert
  */
 typedef struct statut_s {
 	bool en_mouvement; /**<personnage en mouvement*/
@@ -63,15 +54,14 @@ typedef struct statut_s {
 	t_aff * texture_prec; /**<la texture precedente du personnage*/
 }statut_t;
 
-/**
- * \struct struct joueur_s
- * \brief Structure non manipulable hors des fonctions du personnage contenant les informations sur le joueur
- * 
- * \author Despert Ange
- */
-
 typedef unsigned char byte;
 
+/**
+ * \brief Structure non manipulable hors des fonctions du personnage contenant les informations sur le joueur
+ * 
+ * \authors Despert Ange
+ * \authors Descomps Max
+ */
 typedef struct joueur_s {
 	char * nom_pers; /**<Le nom du personnage*/
 	short int niveau; /**<Le niveau du joueur*/
@@ -90,7 +80,7 @@ typedef struct joueur_s {
     inventaire_t * inventaire; /**<Inventaire du joueur*/
 }joueur_t;
 
-extern char save_path[500];
+extern char save_path[500]; /**<Le répertoire complet de sauvegarde du jeu*/
 
 /**
  * \fn void stoper_mouvement_joueurs(joueur_t ** joueurs)
@@ -100,8 +90,10 @@ extern char save_path[500];
 void stoper_mouvement_joueurs(joueur_t ** joueurs);
 
 /**
- * \fn joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orient, const bool bouclier_equipe, const int num_j, char * fichier_src)
  * \brief Creer un joueur
+ * \authors Max Descomps
+ * \authors Ange Despert
+ * 
  * \param nom Le nom du joueur
  * \param niveau Le niveau du joueur
  * \param xp L'expérience du joueur
@@ -122,6 +114,8 @@ extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, c
 /**
  * \fn joueur_t *new_joueur(const char* nom, int num_j, char * f_src_obj)
  * \brief Fonction de création d'un joueur correspondant au modèle standard du jeu
+ * \author Ange Despert
+ * 
  * \param nom Le nom du joueur
  * \param num_j La place du joueur dans le tableau des joueurs
  * \param f_src_obj Le fichier source des objets du jeu
@@ -132,6 +126,8 @@ extern joueur_t *new_joueur(const char* nom, int num_j, char * f_src_obj);
 /**
  * \fn void detruire_joueur(joueur_t *j)
  * \brief Fonction qui détruit un joueur
+ * \author Max Descomps
+ * 
  * \param j Le joueur à détruire
  */
 extern void detruire_joueur(joueur_t *j);
@@ -140,10 +136,24 @@ extern void detruire_joueur(joueur_t *j);
  * \fn joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj)
  * \brief Fonction qui charge une sauvegarde du jeu
  * \param nom_sauv Le fichier de sauvegarde
- * \param f_src_obj Le fichier source contenant les objets du jeu
+ * \param f_src_obj 
  * \return Instance nouvellement allouée du type joueur_t contenant les informations du joueur
  */
-joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char *f_src_obj, joueur_t *joueurs[], unsigned short int nb_joueurs);
+
+/**
+ * \brief Fonction qui charge une sauvegarde au format JSON.
+ * \author Ange Despert
+ * 
+ * Cette fonction va récupérer les informations dans la sauvegarde au format JSON. \n
+ * 
+ * Il va ensuite detruire les joueurs et la carte, pour ensuite les recrées avec les infomations qui correspondent à la sauvegarde puis téléporter le joueur aux coordonnées voulues. 
+ * \param nom_sauv Chemin complet du fichier de sauvegarde
+ * \param f_src_obj Le fichier source contenant les objets du jeu
+ * \param joueurs Les joueurs existants
+ * \param nb_joueurs Le nombre de joueurs existants
+ * \return joueur_t*
+ */
+extern joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char *f_src_obj, joueur_t *joueurs[], unsigned short int nb_joueurs);
 
 /**
  * \fn void maj_statistiques(joueur_t* perso)
@@ -175,15 +185,22 @@ extern void levelup(joueur_t* perso);
 extern void gain_xp(joueur_t* perso);
 
 /**
- * \fn void creer_sauvegarde_json(joueur_t *j)
- * \brief Fonction qui créer les sauvegardes du jeu
+ * \brief Fonction qui créer les sauvegardes du jeu.
+ * \author Ange Despert
+ * 
+ * Cette fonction va créer une sauvegarde dans le répertoire de sauvegarde au format JSON contenant toutes les informations a conserver sur le joueur.
+ * 
  * \param j Le joueur qui sauvegarde
  */
 extern void creer_sauvegarde_json(joueur_t *j);
 
 /**
- * \fn void check_repertoire_jeux()
- * \brief Fonction qui assure l'existence d'un répertoire de sauvegarde
+ * \brief Fonction gère le répertoire de jeux
+ * \author Ange Despert
+ * 
+ * Cette fonction vérifie si le répertoire de jeux existe (emplacement différent selon les OS). \n
+ * Puis le créer s'il n'existe pas.
+ * 
  */
 void check_repertoire_jeux();
 

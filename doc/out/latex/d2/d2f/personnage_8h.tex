@@ -23,9 +23,9 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structstatut__s}{statut\+\_\+s}}
-\item 
+\begin{DoxyCompactList}\small\item\em Structure contenant les éléments nécéssaires au choix de l\textquotesingle{}affichage des sprites du personnage. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structjoueur__s}{joueur\+\_\+t}}
-\begin{DoxyCompactList}\small\item\em Définition de la structure joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Structure non manipulable hors des fonctions du personnage contenant les informations sur le joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -71,13 +71,13 @@ enum \mbox{\hyperlink{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec}{action\+\
 void \mbox{\hyperlink{personnage_8h_a1a3324d2dc734d1d45b92a562e61ae18}{stoper\+\_\+mouvement\+\_\+joueurs}} (joueur\+\_\+t $\ast$$\ast$joueurs)
 \begin{DoxyCompactList}\small\item\em Stop le mouvement des joueurs en jeu. \end{DoxyCompactList}\item 
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8h_a7a8ebac300fecd46fbce04ea84cfbd4d}{creer\+\_\+joueur}} (const char $\ast$nom, const int niveau, const int xp, const int max\+Pdv, const int pdv, const int attaque, const int defense, const int vitesse, const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} trig\mbox{[}200\mbox{]}, const \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} orient, const \+\_\+\+Bool bouclier\+\_\+equipe, const int num\+\_\+j, char $\ast$f\+\_\+src\+\_\+obj)
-\item 
+\begin{DoxyCompactList}\small\item\em Creer un joueur. \end{DoxyCompactList}\item 
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8h_a7737c7514f9c4f5c01ff698b97544c2c}{new\+\_\+joueur}} (const char $\ast$nom, int num\+\_\+j, char $\ast$f\+\_\+src\+\_\+obj)
 \item 
 void \mbox{\hyperlink{personnage_8h_a33613b3a2b55cb1d1855a39a288fb230}{detruire\+\_\+joueur}} (joueur\+\_\+t $\ast$j)
 \begin{DoxyCompactList}\small\item\em Fonction qui détruit un joueur. \end{DoxyCompactList}\item 
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8h_ad8c439be63cc83e7b5c4a0d33f62f639}{charger\+\_\+sauvegarde\+\_\+joueur}} (char $\ast$nom\+\_\+sauv, char $\ast$f\+\_\+src\+\_\+obj, joueur\+\_\+t $\ast$joueurs\mbox{[}$\,$\mbox{]}, unsigned short int nb\+\_\+joueurs)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui charge une sauvegarde au format J\+S\+ON. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8h_aefc1334467e64a267f85c13fb2146714}{maj\+\_\+statistiques}} (joueur\+\_\+t $\ast$perso)
 \begin{DoxyCompactList}\small\item\em Fonction qui met à jour les statistiques d\textquotesingle{}un joueur lors d\textquotesingle{}un passage de niveau. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8h_a5036a38157418caf698d5662fddeb947}{afficher\+\_\+statistiques}} (joueur\+\_\+t $\ast$perso)
@@ -89,7 +89,7 @@ void \mbox{\hyperlink{personnage_8h_ac98e80b68d01d16bf1d9d6159e5aeabc}{gain\+\_\
 void \mbox{\hyperlink{personnage_8h_a9ce711c80691bb2b4f29e7c58790851a}{creer\+\_\+sauvegarde\+\_\+json}} (joueur\+\_\+t $\ast$j)
 \begin{DoxyCompactList}\small\item\em Fonction qui créer les sauvegardes du jeu. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8h_a1674d581294113dd43ec58636bd57802}{check\+\_\+repertoire\+\_\+jeux}} ()
-\begin{DoxyCompactList}\small\item\em Fonction qui assure l\textquotesingle{}existence d\textquotesingle{}un répertoire de sauvegarde. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fonction gère le répertoire de jeux. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8h_aadc96b5c1e76a0574f5759d63bc46e39}{environnement\+\_\+joueurs}} (\mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+monstres, \mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+sorts, \mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+coffres, joueur\+\_\+t $\ast$$\ast$joueurs, int nb\+\_\+joueur)
 \item 
 int \mbox{\hyperlink{personnage_8h_a14f8330d9598f09daba245654f27af2a}{distance\+\_\+x\+\_\+joueur}} (S\+D\+L\+\_\+\+Rect collision, joueur\+\_\+t $\ast$joueur)
@@ -257,6 +257,24 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{charger\_sauvegarde\_joueur()}{charger\_sauvegarde\_joueur()}}
 {\footnotesize\ttfamily joueur\+\_\+t$\ast$ charger\+\_\+sauvegarde\+\_\+joueur (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom\+\_\+sauv,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj,  }\item[{joueur\+\_\+t $\ast$}]{joueurs\mbox{[}$\,$\mbox{]},  }\item[{unsigned short int}]{nb\+\_\+joueurs }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction va récupérer les informations dans la sauvegarde au format J\+S\+ON. ~\newline
+ Il va ensuite detruire les joueurs et la carte, pour ensuite les recrées avec les infomations qui correspondent à la sauvegarde puis téléporter le joueur aux coordonnées voulues. 
+\begin{DoxyParams}{Paramètres}
+{\em nom\+\_\+sauv} & Chemin complet du fichier de sauvegarde \\
+\hline
+{\em f\+\_\+src\+\_\+obj} & Le fichier source contenant les objets du jeu \\
+\hline
+{\em joueurs} & Les joueurs existants \\
+\hline
+{\em nb\+\_\+joueurs} & Le nombre de joueurs existants \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+joueur\+\_\+t$\ast$ 
+\end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
 \nopagebreak
 \begin{figure}[H]
@@ -278,7 +296,11 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{check\_repertoire\_jeux()}{check\_repertoire\_jeux()}}
 {\footnotesize\ttfamily void check\+\_\+repertoire\+\_\+jeux (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction vérifie si le répertoire de jeux existe (emplacement différent selon les OS). ~\newline
+Puis le créer s\textquotesingle{}il n\textquotesingle{}existe pas. Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -291,6 +313,43 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{creer\_joueur()}{creer\_joueur()}}
 {\footnotesize\ttfamily joueur\+\_\+t$\ast$ creer\+\_\+joueur (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom,  }\item[{const int}]{niveau,  }\item[{const int}]{xp,  }\item[{const int}]{max\+Pdv,  }\item[{const int}]{pdv,  }\item[{const int}]{attaque,  }\item[{const int}]{defense,  }\item[{const int}]{vitesse,  }\item[{const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}}}]{trig\mbox{[}200\mbox{]},  }\item[{const \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}}}]{orient,  }\item[{const \+\_\+\+Bool}]{bouclier\+\_\+equipe,  }\item[{const int}]{num\+\_\+j,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteurs}
+Max Descomps 
+
+Ange Despert
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em nom} & Le nom du joueur \\
+\hline
+{\em niveau} & Le niveau du joueur \\
+\hline
+{\em xp} & L\textquotesingle{}expérience du joueur \\
+\hline
+{\em max\+Pdv} & Le nombre maximu de points de vie du joueur \\
+\hline
+{\em pdv} & Le nombre de points de vie du joueur \\
+\hline
+{\em attaque} & L\textquotesingle{}attaque du joueur \\
+\hline
+{\em defense} & La défense du joueur \\
+\hline
+{\em vitesse} & La vitesse du joueur \\
+\hline
+{\em trig} & Le trigger d\textquotesingle{}information sur le joueur \\
+\hline
+{\em orient} & L\textquotesingle{}orientation spatiale du joueur \\
+\hline
+{\em bouclier\+\_\+equipe} & La possession d\textquotesingle{}un bouclier équipé par le joueur \\
+\hline
+{\em num\+\_\+j} & La place du joueur dans le tableau des joueurs \\
+\hline
+{\em f\+\_\+src\+\_\+obj} & Le fichier source des objets du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Instance nouvellement allouée du type joueur\+\_\+t contenant les informations du joueur 
+\end{DoxyReturn}
 
 \begin{DoxyParams}{Paramètres}
 {\em bouclier\+\_\+equipe} & Définition du type booléen \\
@@ -301,6 +360,11 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{creer\_sauvegarde\_json@{creer\_sauvegarde\_json}!personnage.h@{personnage.h}}
 \doxysubsubsection{\texorpdfstring{creer\_sauvegarde\_json()}{creer\_sauvegarde\_json()}}
 {\footnotesize\ttfamily void creer\+\_\+sauvegarde\+\_\+json (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{j }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction va créer une sauvegarde dans le répertoire de sauvegarde au format J\+S\+ON contenant toutes les informations a conserver sur le joueur.
 
 
 \begin{DoxyParams}{Paramètres}
@@ -320,6 +384,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{detruire\_joueur()}{detruire\_joueur()}}
 {\footnotesize\ttfamily void detruire\+\_\+joueur (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{j }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em j} & Le joueur à détruire \\
@@ -518,7 +585,8 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{new\_joueur()}{new\_joueur()}}
 {\footnotesize\ttfamily joueur\+\_\+t$\ast$ new\+\_\+joueur (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom,  }\item[{int}]{num\+\_\+j,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -572,3 +640,4 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{save\_path}{save\_path}}
 {\footnotesize\ttfamily char save\+\_\+path\mbox{[}500\mbox{]}}
 
+Le répertoire complet de sauvegarde du jeu 

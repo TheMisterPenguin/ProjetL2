@@ -192,7 +192,7 @@ extern err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu);
  *
  * Fonction qui passe au sprite suivant dans l'axe y. Cette fonction fera une boucle complête de l'image, il n'y a donc pas à s'inquiéter d'arriver à la fin de l'image. \n
  * Comme les fonction à indice, cette fonction fait appel au rectangle \ref s_aff.frame_anim "frame_anim" de la structure \ref s_aff "d'affichage".
- * \param t_aff* une texture joueur
+ * \param texture* une texture joueur
  */
 extern void next_frame_y(t_aff* texture);
 
@@ -204,7 +204,7 @@ extern void next_frame_y(t_aff* texture);
  * Fonction qui passe au sprite suivant dans l'axe x. Cette fonction fera une boucle complête de l'image, il n'y a donc pas à s'inquiéter d'arriver à la fin de l'image. \n
  * Comme les fonction à indice, cette fonction fait appel au rectangle \ref s_aff.frame_anim "frame_anim" de la structure \ref s_aff "d'affichage".  
  * 
- * \param t_aff* une texture joueur
+ * \param texture* une texture joueur
  */
 extern void next_frame_x(t_aff *texture);
 
@@ -234,8 +234,8 @@ extern err_t next_frame_indice(t_aff *texture, const unsigned int x, const unsig
  * La fonction utilisera la taille du \ref s_aff.frame_anim "rectangle" charger d'afficher qu'une partie d'une image.
  * 
  * 
- * \param t_aff* une texture joueur
- * \param const unsigned int qui correspond au n-ème sprite sur l'axe des x ou l'on souhaite positionner la texture
+ * \param texture* une texture joueur
+ * \param indice unsigned int qui correspond au n-ème sprite sur l'axe des x ou l'on souhaite positionner la texture
  * \return err_t un entier pour savoir si il y a eu une erreur
  */
 extern err_t next_frame_x_indice(t_aff *texture, const unsigned int indice);
@@ -313,7 +313,7 @@ extern void deplacer_texture_origine(t_aff *texture, int x, int y);
  * 
  * @param r Le rectangle à placer
  * @param x La coordonnée x du rectangle depuis la nouvelle origine.
- * @param x La coordonnée y du rectangle depuis la nouvelle origine.
+ * @param y La coordonnée y du rectangle depuis la nouvelle origine.
  */
 extern void deplacer_rect_haut_droit(SDL_Rect *r, int x, int y);
 
@@ -367,10 +367,9 @@ extern void modif_affichage_rect(t_aff *texture, SDL_Rect r);
 extern t_l_aff* init_textures_joueur(joueur_t *j, int num_j);
 
 /**
- * \fn t_aff* init_texture_joueur(t_l_aff* textures_joueur, joueur_t * joueur)
  * \brief Fonction qui renvoie la texture de départ du personnage (joueur)
  * \author Antoine Bruneau
- * \param t_l_aff Liste de textures personnage
+ * \param textures_joueur Liste de textures personnage
  * \param joueur Joueur dont on veut la texture de départ
  * \return t_aff* Une textures personnage
  */
@@ -453,7 +452,7 @@ extern bool deplacement_x_joueur_secondaire(t_map *map, joueur_t * joueur, int x
  * 
  * \deprecated L'utilisation de cette fonction n'a plus trop de sens étant donné que le moteur gère automatiquement la taille des textures.
  * 
- * Fonction qui permet de modifier le rectangle de la structure \ref s_aff "t_aff" : \ref s_aff.aff_ecran "aff_ecran" avec de nouvelles valeurs. 
+ * Fonction qui permet de modifier le rectangle de la structure \ref s_aff "t_aff" : \ref s_aff.aff_fenetre "aff_fenetre" avec de nouvelles valeurs. 
  * 
  * \param a_modifier La texture à modifier
  * \param longueur La nouvelle longueure en pixel à appliquer
@@ -648,7 +647,7 @@ extern void rect_centre_rect_y(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
  * \brief Fonction qui permet de placer un rectangle au centre d'un autre
  * \author Ange Despert 
  * 
- * Fonctionnement simillaire à l'utilisation conjointe des fonctions \ref placer_rect_center_from_point et \ref get_rect_center_coord .
+ * Fonctionnement simillaire à l'utilisation conjointe des fonctions \ref place_rect_center_from_point et \ref get_rect_center_coord .
  * 
  * \param rectangle Le rectangle à centrer
  * \param rectangle_centre Le rectangle dans lequel en centre un autre
@@ -677,7 +676,7 @@ extern void afficher_animations(list * animations);
  * 
  * \param m La map actuelle
  * \param texture La texture de l'entité que l'on veut bouger
- * \param y La nouvelle coordonnée du rectangle de l'entité
+ * \param x La nouvelle coordonnée du rectangle de l'entité
  * \param r Le rectangle représentant la zone de collision de l'entité
  * \return vrai : Si l'entité a réussi à se déplacer
  * \return faux : Si l'entité n'a pas pu se déplacer
