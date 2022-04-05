@@ -190,7 +190,12 @@ extern err_t next_frame_indice(t_aff *texture, const unsigned int x, const unsig
 /**
  * \fn void next_frame_x_indice(t_aff *texture, const unsigned int indice);
  * \brief Fonction qui positionne la texture au n-ème sprite sur l'axe des x
- *
+ * \author Ange Despert
+ * 
+ * Fonction qui permet de choisir le sprite a un cetain indice de l'image. \n Cette fonction est concue pour être utiliser avec une texture qui contient plusieurs sprites de même taille. \n
+ * La fonction utilisera la taille du \ref s_aff.frame_anim "rectangle" charger d'afficher qu'une partie d'une image.
+ * 
+ * 
  * \param t_aff* une texture joueur
  * \param const unsigned int qui correspond au n-ème sprite sur l'axe des x ou l'on souhaite positionner la texture
  * \return err_t un entier pour savoir si il y a eu une erreur
@@ -205,11 +210,14 @@ extern err_t next_frame_x_indice(t_aff *texture, const unsigned int indice);
  * \param const unsigned int qui correspond au n-ème sprite sur l'axe des y ou l'on souhaite positionner la texture
  * \return err_t un entier pour savoir si il y a eu une erreur
  */
-extern err_t next_frame_y_indice(t_aff *texture, const unsigned int indice); 
+extern err_t next_frame_y_indice(t_aff *texture, const unsigned int indice);
 
 /**
  * \fn void *ajout_text_liste(void *t)
  * \brief Fonction qui ajoute une texture dans une liste générique
+ * \author Ange Despert
+ *
+ * Cette fonction sert juste à rérérencer les textures dans la \ref listeDeTextures "liste de textures".
  *
  * \param t une texture
  * \return void * l'element à ajouter à la liste
@@ -228,8 +236,11 @@ void *ajout_text_liste(void *t);
 extern err_t afficher_buffer(list *buffer, SDL_Renderer *rendu);
 
 /**
- * Déplacez la texture pour que son centre soit au centre de l'écran
+ * \brief Déplace la texture pour que son centre soit au centre de l'écran
+ * \author Ange Despert
  *
+ * \deprecated Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. \n Utilisez \ref place_rect_center_from_point à l'aide du rectangle \ref s_aff.frame_anim "frame_anim" de la varaible \ref fenetre_finale .
+ * 
  * @param texture la texture à déplacer
  * @param x La coordonnée x du centre de la texture.
  * @param y La coordonnée y du centre de la texture.
@@ -237,9 +248,9 @@ extern err_t afficher_buffer(list *buffer, SDL_Renderer *rendu);
 void deplacer_texture_centre(t_aff *texture, int x, int y);
 
 /**
- * Déplace un rectangle depuis l'origine de l'écran
+ * \brief Déplace un rectangle depuis l'origine de l'écran
  * 
- * \author Max Descomps
+ * \author Ange Despert
  * \param r Le rectangle à déplacer
  * \param x La position horizontale du rectangle
  * \param y La position verticale du rectangle
@@ -401,30 +412,42 @@ void def_texture_taille(t_aff *a_modifier, const int longueur, const int largeur
 void text_copier_position(t_aff *a_modifier, const t_aff *const original);
 
 /**
- * Fonction qui permet de placer un rectangle au centre de l'écran sur l'axe des x
- * 
+ * \brief Fonction qui permet de placer un rectangle au centre de l'écran sur l'axe des x
+ * \author Ange Despert
+ *
+ * \deprecated Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. \n Utilisez \ref place_rect_center_from_point à l'aide du rectangle \ref s_aff.frame_anim "frame_anim" de la varaible \ref fenetre_finale .
+ *
  * \param rectangle Le rectangle à placer
  */
 void rect_centre_x(SDL_Rect *rectangle);
 
 /**
- * Fonction qui permet de placer un rectangle au centre de l'écran sur l'axe des y
- * 
+ * \brief Fonction qui permet de placer un rectangle au centre de l'écran sur l'axe des y
+ * \author Ange Despert
+ *
+ * \deprecated Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. \n Utilisez \ref place_rect_center_from_point à l'aide du rectangle \ref s_aff.frame_anim "frame_anim" de la varaible \ref fenetre_finale .
+ *
  * \param rectangle Le rectangle à placer
  */
 void rect_centre_y(SDL_Rect *rectangle);
 
 /**
- * Fonction qui permet de placer un rectangle au centre de l'écran
- * 
+ * \brief Fonction qui permet de placer un rectangle au centre de l'écran
+ * \author Ange Despert
+ *
+ * \deprecated Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. \n Utilisez \ref place_rect_center_from_point à l'aide du rectangle \ref s_aff.frame_anim "frame_anim" de la varaible \ref fenetre_finale .
+ *
  * \param rectangle Le rectangle à placer
  * \return Un booléen
  */
 void rect_centre(SDL_Rect *rectangle);
 
 /**
- * Fonction qui permet de savoir si deux rectangles sont sur le même axe des x
- * 
+ * Fonction qui permet de savoir si deux rectangles sont égaux sur l'axe x
+ * \author Ange Despert
+ *
+ * Cette fonction permet de savoir si deux rectangles sont égaux mais en prenant seulement en compte l'axe x. \n
+ * Cette fonction est utilisée par la fonction \ref deplacement_x_pers "la fonction de déplacement de personnage".
  * \param r1 Le premier rectangle à comparer
  * \param r2 Le deuxième rectangle à comparer
  * \return Un booléen
@@ -432,7 +455,11 @@ void rect_centre(SDL_Rect *rectangle);
 bool rects_egal_x(const SDL_Rect *const r1, SDL_Rect const *const r2);
 
 /**
- * Fonction qui permet de savoir si deux rectangles sont sur le même axe des y
+ * \brief Fonction qui permet de savoir si deux rectangles sont égaux sur l'axe y
+ * \author Ange Despert
+ * 
+ * Cette fonction permet de savoir si deux rectangles sont égaux mais en prenant seulement en compte l'axe y. \n
+ * Cette fonction est utilisée par la fonction \ref deplacement_y_pers "la fonction de déplacement de personnage".
  * 
  * \param r1 Le premier rectangle à comparer
  * \param r2 Le deuxième rectangle à comparer
@@ -537,18 +564,21 @@ void lister_animations(joueur_t ** joueurs, list * animations);
  */
 void afficher_coffres(list * liste_coffre);
 
-void rect_ecran_to_rect_map(SDL_Rect *ecran, SDL_Rect *r_map, int x, int y);
-
 /**
- * Fonction qui permet de placer un rectangle au centre d'un autre sur l'axe des x
- * 
+ * \brief Fonction qui permet de placer un rectangle au centre d'un autre sur l'axe des x
+ * \author Ange Despert
+ *
+ * Fonction qui fonctionne de la même manière que la fonction \ref rect_centre_rect mais permet de seulement centrer l'axe x.
  * \param rectangle Le rectangle à centrer
  * \param rectangle_centre Le rectangle dans lequel en centre un autre
  */
 void rect_centre_rect_x(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
 
 /**
- * Fonction qui permet de placer un rectangle au centre d'un autre sur l'axe des y
+ * \brief Fonction qui permet de placer un rectangle au centre d'un autre sur l'axe des y
+ * \author Ange Despert
+ * 
+ * Fonction qui fonctionne de la même manière que la fonction \ref rect_centre_rect mais permet de seulement centrer l'axe y.
  * 
  * \param rectangle Le rectangle à centrer
  * \param rectangle_centre Le rectangle dans lequel en centre un autre
@@ -557,6 +587,9 @@ void rect_centre_rect_y(SDL_Rect *rectangle, SDL_Rect *rectangle_centre);
 
 /**
  * Fonction qui permet de placer un rectangle au centre d'un autre
+ * \author Ange Despert 
+ * 
+ * Fonctionnement simillaire à l'utilisation conjointe des fonctions \ref placer_rect_center_from_point et \ref get_rect_center_coord .
  * 
  * \param rectangle Le rectangle à centrer
  * \param rectangle_centre Le rectangle dans lequel en centre un autre
