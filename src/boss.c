@@ -3,10 +3,23 @@
 #include <sorts.h>
 #include <monstres.h>
 
+
+/**
+ * \fn void deplacement_boss_aleatoir(boss_t * boss);
+ * \brief ...
+ * \author Bruneau Antoine
+ * \todo
+ */
 void deplacement_boss_aleatoir(boss_t * boss){
-    
+
 }
 
+/**
+ * \fn boss_t * creer_boss_clone(boss_t * boss, t_aff * texture);
+ * \brief ...
+ * \author Bruneau Antoine
+ * \todo
+ */
 boss_t * creer_boss_clone(boss_t * boss, t_aff * texture){
     boss_t * clone = malloc(sizeof(boss_t));
     clone->type = CLONE;
@@ -28,6 +41,7 @@ boss_t * creer_boss_clone(boss_t * boss, t_aff * texture){
  * \brief   animation lancement d'un sort
  * \author Bruneau Antoine
  * \param sort le sort à détruire
+ * \todo
  */
 void affichage_chargement_attaque_boss(t_aff * boule_1, t_aff * boule_2, int phase){
     switch(phase){
@@ -48,6 +62,12 @@ void affichage_chargement_attaque_boss(t_aff * boule_1, t_aff * boule_2, int pha
     }
 }
 
+/**
+ * \fn void affichage_clonage_boss(t_aff * boss, t_aff * clone_1, t_aff * clone_2, int phase);
+ * \brief ...
+ * \author Bruneau Antoine
+ * \todo
+ */
 void affichage_clonage_boss(t_aff * boss, t_aff * clone_1, t_aff * clone_2, int phase){
     int choix = phase%4;
 
@@ -64,6 +84,12 @@ void affichage_clonage_boss(t_aff * boss, t_aff * clone_1, t_aff * clone_2, int 
     afficher_texture(clone_2, rendu_principal);
 }
 
+/**
+ * \fn void intro_boss(boss_t * boss, boss_t * clone_1, boss_t * clone_2);
+ * \brief ...
+ * \author Bruneau Antoine
+ * \todo
+ */
 void intro_boss(boss_t * boss, boss_t * clone_1, boss_t * clone_2){
     switch(boss->action){
         case SOMMEIL:
@@ -87,6 +113,12 @@ void intro_boss(boss_t * boss, boss_t * clone_1, boss_t * clone_2){
     afficher_texture(boss->texture,rendu_principal);
 }
 
+/**
+ * \fn void afficher_boss(boss_t * boss);
+ * \brief ...
+ * \author Bruneau Antoine
+ * \todo
+ */
 void afficher_boss(boss_t * boss){
     switch(boss->action){
         case AVANT_DISPARITION:
@@ -103,6 +135,12 @@ void afficher_boss(boss_t * boss){
     afficher_texture(boss->texture,rendu_principal);
 }
 
+/**
+ * \fn void afficher_bosses(boss_t * boss[3]);
+ * \brief ...
+ * \author Bruneau Antoine
+ * \todo
+ */
 void afficher_bosses(boss_t * boss[3]){
 
     if(boss[0] == NULL){
@@ -118,7 +156,7 @@ void afficher_bosses(boss_t * boss[3]){
         }
     }
 
-    if(boss[0].action == ATTAQUE){
+    if(boss[0]->action == ATTAQUE){
         t_aff * boule_1 = creer_texture(PATH_SPELL_BOSS,);
         t_aff * boule_2 = creer_texture(PATH_SPELL_BOSS,);
         affichage_chargement_attaque_boss(boule_1, boule_2, &(boss[0].duree));
