@@ -5,7 +5,8 @@
 Fonctions de gestion de la map.  
 
 
-Graphe des dépendances par inclusion de map.\+c\+:\nopagebreak
+Graphe des dépendances par inclusion de map.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,7 +31,9 @@ void \mbox{\hyperlink{map_8c_a87fdc73350f70425b5529472974ecbbb}{transition}} (t\
 void \mbox{\hyperlink{map_8c_a7e9c15657f08efce7a84ec6822c064e2}{tp\+\_\+joueurs}} (t\+\_\+map $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}}, unsigned int x, unsigned int y, joueur\+\_\+t $\ast$$\ast$joueurs, unsigned short int nb\+\_\+joueurs)
 \item 
 void \mbox{\hyperlink{map_8c_afdbe963c5a898a0a22d8cee340aebfa2}{afficher\+\_\+zone\+\_\+tp}} (\mbox{\hyperlink{structzone__tp}{zone\+\_\+tp}} $\ast$z)
-\end{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{map_8c_ae85d987f7ccc73e2535c44e5d58cb634}{hors\+\_\+map\+\_\+monstre}} (S\+D\+L\+\_\+\+Rect $\ast$collision, t\+\_\+map $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
+\begin{DoxyCompactList}\small\item\em Fonction qui regarde si l\textquotesingle{}entité est hors\+\_\+map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -84,7 +87,8 @@ Fonction qui fait appel à la librairie J\+S\+O\+N-\/C pour charger les informat
 \begin{DoxyReturn}{Renvoie}
 Une map initialisée avec toutes les informations dedans 
 \end{DoxyReturn}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -133,6 +137,25 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \includegraphics[width=314pt]{d3/d7a/map_8c_af837acc6ac888e66589d3ff48f4eec12_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{map_8c_ae85d987f7ccc73e2535c44e5d58cb634}\label{map_8c_ae85d987f7ccc73e2535c44e5d58cb634}} 
+\index{map.c@{map.c}!hors\_map\_monstre@{hors\_map\_monstre}}
+\index{hors\_map\_monstre@{hors\_map\_monstre}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{hors\_map\_monstre()}{hors\_map\_monstre()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} hors\+\_\+map\+\_\+monstre (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{collision,  }\item[{t\+\_\+map $\ast$}]{map }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em collision} & la collision de l\textquotesingle{}entité \\
+\hline
+{\em map} & la map \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool 1 si l\textquotesingle{}entité est en dehors de la map, 0 sinon 
+\end{DoxyReturn}
 \mbox{\Hypertarget{map_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821}\label{map_8c_aad95fee9e6bf2bd4c8ae74d98e1a6821}} 
 \index{map.c@{map.c}!init\_sousbuffer@{init\_sousbuffer}}
 \index{init\_sousbuffer@{init\_sousbuffer}!map.c@{map.c}}

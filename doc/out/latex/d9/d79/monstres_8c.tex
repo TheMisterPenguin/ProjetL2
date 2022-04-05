@@ -5,7 +5,8 @@
 Fichier contenant toutes les fonctions concernant les monstres.  
 
 
-Graphe des dépendances par inclusion de monstres.\+c\+:\nopagebreak
+Graphe des dépendances par inclusion de monstres.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,33 +31,27 @@ void \mbox{\hyperlink{monstres_8c_a240fa28630c14d22ce9e82e28247b349}{detruire\+\
 \mbox{\hyperlink{monstres_8h_a99490a386439839dbe510f00783d1904}{type\+\_\+monstre\+\_\+t}} \mbox{\hyperlink{monstres_8c_a46bbe288759d918b5391361c7abf41d5}{nom\+\_\+monstre\+\_\+to\+\_\+type\+\_\+monstre}} (const char $\ast$const nom\+\_\+monstre)
 \begin{DoxyCompactList}\small\item\em Convertit une chaîne de caractères en type de monstre. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{monstres_8c_a9f2a99c654f98bb133e186b83a0c7473}{marcher\+\_\+monstre}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui met à jour la texture du monstre pour ses déplacements. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{monstres_8c_a918d89d6e2bd0808d3ef9c18343b377a}{orienter\+\_\+monstre}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui met à jour la texture du monstre par rapport à son orientation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{monstres_8c_abe4995c32e5ac7e7a45096df239baa52}{orienter\+\_\+monstre\+\_\+vers\+\_\+joueur}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre, joueur\+\_\+t $\ast$joueur)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui met à jour la texture du monstre pour qu\textquotesingle{}il soit orienté vers le joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{monstres_8c_a5e89d121093e9ba71800b572fd2a7a0f}{monstre\+\_\+en\+\_\+garde}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui met à jour la texture du monstre sur la position de garde (immobile) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{monstres_8c_a3e5db9547762355c6e3c68b6cd43f17a}{monstre\+\_\+attaque}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui met à jour la texture du monstre sur la position d\textquotesingle{}attaque. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{monstres_8c_ade193545f6db261984a8721ee32529c1}{fuir\+\_\+joueur}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre, joueur\+\_\+t $\ast$joueur)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui met à jour la texture du monstre de sorte à ce qu\textquotesingle{}il fuit le joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{monstres_8c_a4fc9ed0e280b942464e678001c278b5d}{rush\+\_\+joueur}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre, joueur\+\_\+t $\ast$joueur)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui met à jour la texture du monstre de sorte à ce qu\textquotesingle{}il se deplace vers le joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{monstres_8c_adaacc2ea168601cb189fcdfada2be990}{agro\+\_\+witcher}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre, joueur\+\_\+t $\ast$joueur)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui met à jour la texture du monstre \char`\"{}witcher\char`\"{} lorsqu\textquotesingle{}il est dans sa phase d\textquotesingle{}attaque. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{monstres_8c_a5a99ac9f9eeb2c828ec061d1677f6344}{agro\+\_\+knight}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre, joueur\+\_\+t $\ast$joueur)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui met à jour la texture du monstre \char`\"{}knight\char`\"{} lorsqu\textquotesingle{}il est dans sa phase d\textquotesingle{}attaque (reboucle la même action) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{monstres_8c_a71d6820891d2dae4b3d1877faace31a5}{agro\+\_\+monstre}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre, joueur\+\_\+t $\ast$joueur)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui met à jour la texture d\textquotesingle{}un monstre lorsqu\textquotesingle{}il est dans sa phase d\textquotesingle{}attaque. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{monstres_8c_a06c50f23e69a9356eacb75924735d434}{ronde\+\_\+monstre}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre)
-\item 
-\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{monstres_8c_afe3d7271b93634c4733acfc85720c43c}{hors\+\_\+map\+\_\+monstre}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre)
-\item 
-void \mbox{\hyperlink{monstres_8c_adb677d5ecc887fb7750524121838ccce}{deplacer\+\_\+entite}} (S\+D\+L\+\_\+\+Rect collision, \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} orientation, int nb\+\_\+pixel)
-\item 
-void \mbox{\hyperlink{monstres_8c_aaebd6e69d3ea590ec33ee71f24f48f57}{monstre\+\_\+blesse}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui met à jour la texture d\textquotesingle{}un monstre lorsqu\textquotesingle{}il est dans sa phase passive. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{monstres_8c_a52b27e40a8e179d58dbf20268f75e988}{action\+\_\+monstre}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre, joueur\+\_\+t $\ast$joueur)
 \begin{DoxyCompactList}\small\item\em Fonction qui met à jour le sprite d\textquotesingle{}un monstre en fonction d\textquotesingle{}un joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{monstres_8c_ae475ce68edaa0a8f29e6df495043bebf}{charger\+\_\+base\+\_\+monstre}} (char $\ast$chemin\+\_\+fichier, \mbox{\hyperlink{structliste__base__monstres__t}{liste\+\_\+base\+\_\+monstres\+\_\+t}} $\ast$$\ast$\mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}})
@@ -100,7 +95,8 @@ Bruneau Antoine
 {\em joueur} & le joueur qui provoque l\textquotesingle{}action du monstre \\
 \hline
 \end{DoxyParams}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -120,14 +116,26 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{agro\_knight()}{agro\_knight()}}
 {\footnotesize\ttfamily void agro\+\_\+knight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em monstre} & le monstre à mettre à jour \\
+\hline
+{\em joueur} & le joueur à attaquer \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=264pt]{d9/d79/monstres_8c_a5a99ac9f9eeb2c828ec061d1677f6344_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -140,14 +148,26 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{agro\_monstre()}{agro\_monstre()}}
 {\footnotesize\ttfamily void agro\+\_\+monstre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em monstre} & le monstre à mettre à jour \\
+\hline
+{\em joueur} & le joueur à attaquer \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=280pt]{d9/d79/monstres_8c_a71d6820891d2dae4b3d1877faace31a5_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -160,14 +180,26 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{agro\_witcher()}{agro\_witcher()}}
 {\footnotesize\ttfamily void agro\+\_\+witcher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em monstre} & le monstre à mettre à jour \\
+\hline
+{\em joueur} & le joueur à attaquer \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d9/d79/monstres_8c_adaacc2ea168601cb189fcdfada2be990_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -261,12 +293,6 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \includegraphics[width=283pt]{d9/d79/monstres_8c_a59111ee22050f72202e7a958275b05f4_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{monstres_8c_adb677d5ecc887fb7750524121838ccce}\label{monstres_8c_adb677d5ecc887fb7750524121838ccce}} 
-\index{monstres.c@{monstres.c}!deplacer\_entite@{deplacer\_entite}}
-\index{deplacer\_entite@{deplacer\_entite}!monstres.c@{monstres.c}}
-\doxysubsubsection{\texorpdfstring{deplacer\_entite()}{deplacer\_entite()}}
-{\footnotesize\ttfamily void deplacer\+\_\+entite (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{collision,  }\item[{\mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}}}]{orientation,  }\item[{int}]{nb\+\_\+pixel }\end{DoxyParamCaption})}
-
 \mbox{\Hypertarget{monstres_8c_a240fa28630c14d22ce9e82e28247b349}\label{monstres_8c_a240fa28630c14d22ce9e82e28247b349}} 
 \index{monstres.c@{monstres.c}!detruire\_liste\_base\_monstres@{detruire\_liste\_base\_monstres}}
 \index{detruire\_liste\_base\_monstres@{detruire\_liste\_base\_monstres}!monstres.c@{monstres.c}}
@@ -320,40 +346,56 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{fuir\_joueur()}{fuir\_joueur()}}
 {\footnotesize\ttfamily void fuir\+\_\+joueur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em monstre} & le monstre à mettre à jour \\
+\hline
+{\em joueur} & le joueur à fuire \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=290pt]{d9/d79/monstres_8c_ade193545f6db261984a8721ee32529c1_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=265pt]{d9/d79/monstres_8c_ade193545f6db261984a8721ee32529c1_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{monstres_8c_afe3d7271b93634c4733acfc85720c43c}\label{monstres_8c_afe3d7271b93634c4733acfc85720c43c}} 
-\index{monstres.c@{monstres.c}!hors\_map\_monstre@{hors\_map\_monstre}}
-\index{hors\_map\_monstre@{hors\_map\_monstre}!monstres.c@{monstres.c}}
-\doxysubsubsection{\texorpdfstring{hors\_map\_monstre()}{hors\_map\_monstre()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} hors\+\_\+map\+\_\+monstre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre }\end{DoxyParamCaption})}
-
 \mbox{\Hypertarget{monstres_8c_a9f2a99c654f98bb133e186b83a0c7473}\label{monstres_8c_a9f2a99c654f98bb133e186b83a0c7473}} 
 \index{monstres.c@{monstres.c}!marcher\_monstre@{marcher\_monstre}}
 \index{marcher\_monstre@{marcher\_monstre}!monstres.c@{monstres.c}}
 \doxysubsubsection{\texorpdfstring{marcher\_monstre()}{marcher\_monstre()}}
 {\footnotesize\ttfamily void marcher\+\_\+monstre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em monstre} & le monstre à mettre à jour \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=338pt]{d9/d79/monstres_8c_a9f2a99c654f98bb133e186b83a0c7473_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -366,31 +408,28 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{monstre\_attaque()}{monstre\_attaque()}}
 {\footnotesize\ttfamily void monstre\+\_\+attaque (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em monstre} & le monstre à mettre à jour \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=335pt]{d9/d79/monstres_8c_a3e5db9547762355c6e3c68b6cd43f17a_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=296pt]{d9/d79/monstres_8c_a3e5db9547762355c6e3c68b6cd43f17a_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{monstres_8c_aaebd6e69d3ea590ec33ee71f24f48f57}\label{monstres_8c_aaebd6e69d3ea590ec33ee71f24f48f57}} 
-\index{monstres.c@{monstres.c}!monstre\_blesse@{monstre\_blesse}}
-\index{monstre\_blesse@{monstre\_blesse}!monstres.c@{monstres.c}}
-\doxysubsubsection{\texorpdfstring{monstre\_blesse()}{monstre\_blesse()}}
-{\footnotesize\ttfamily void monstre\+\_\+blesse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre }\end{DoxyParamCaption})}
-
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=302pt]{d9/d79/monstres_8c_aaebd6e69d3ea590ec33ee71f24f48f57_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{monstres_8c_a5e89d121093e9ba71800b572fd2a7a0f}\label{monstres_8c_a5e89d121093e9ba71800b572fd2a7a0f}} 
@@ -399,14 +438,24 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{monstre\_en\_garde()}{monstre\_en\_garde()}}
 {\footnotesize\ttfamily void monstre\+\_\+en\+\_\+garde (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em monstre} & le monstre à mettre à jour \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=342pt]{d9/d79/monstres_8c_a5e89d121093e9ba71800b572fd2a7a0f_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -443,14 +492,24 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{orienter\_monstre()}{orienter\_monstre()}}
 {\footnotesize\ttfamily void orienter\+\_\+monstre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em monstre} & le monstre à mettre à jour \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=336pt]{d9/d79/monstres_8c_a918d89d6e2bd0808d3ef9c18343b377a_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -463,14 +522,26 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{orienter\_monstre\_vers\_joueur()}{orienter\_monstre\_vers\_joueur()}}
 {\footnotesize\ttfamily void orienter\+\_\+monstre\+\_\+vers\+\_\+joueur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em monstre} & le monstre à mettre à jour \\
+\hline
+{\em joueur} & le joueur ciblé \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=348pt]{d9/d79/monstres_8c_abe4995c32e5ac7e7a45096df239baa52_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -483,14 +554,24 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{ronde\_monstre()}{ronde\_monstre()}}
 {\footnotesize\ttfamily void ronde\+\_\+monstre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em monstre} & le monstre à mettre à jour \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=313pt]{d9/d79/monstres_8c_a06c50f23e69a9356eacb75924735d434_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -503,14 +584,26 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{rush\_joueur()}{rush\_joueur()}}
 {\footnotesize\ttfamily void rush\+\_\+joueur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em monstre} & le monstre à mettre à jour \\
+\hline
+{\em joueur} & le joueur à atteindre \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=317pt]{d9/d79/monstres_8c_a4fc9ed0e280b942464e678001c278b5d_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

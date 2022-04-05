@@ -74,8 +74,7 @@ typedef enum { TEXT_MARCHER, /**<La texture du personnage qui marche */
  * - multipli_taille : Un multiplicateur qui permet de modifier la taille de la texture. Il s'agit de celui que l'on renseigne dans la fonction creer_texture.
  * - duree_frame_anim : entier qui permet de savoir combien de temps une frame dure. C'est à dire, combien de temps une frame dure sur l'écran.
  */
-typedef struct s_aff
-{
+typedef struct s_aff {
     SDL_Texture *texture;  /**<Texture utilisée*/
     SDL_Rect *frame_anim;  /**<Désigne la zone de la texture à afficher*/
     SDL_Rect *aff_fenetre; /**<Désigne l'emplacement et la taille de l'objet à l'écran */

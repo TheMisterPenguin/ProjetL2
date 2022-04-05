@@ -1,0 +1,917 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {french}{}
+\contentsline {chapter}{\numberline {1}Liste des choses à faire}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Liste des éléments obsolètes}{3}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Index des classes}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Liste des classes}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Index des fichiers}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Liste des fichiers}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Documentation des classes}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Référence de la structure base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}coffre\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}s}{9}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Description détaillée}{9}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Documentation des données membres}{9}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}fichier\_image}{9}{subsubsection.5.1.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.2.2}hitbox}{9}{subsubsection.5.1.2.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.3}nom\_coffre}{10}{subsubsection.5.1.2.3}%
+\contentsline {section}{\numberline {5.2}Référence de la structure base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}monstre\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}s}{10}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Documentation des données membres}{10}{subsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.1.1}attaque}{10}{subsubsection.5.2.1.1}%
+\contentsline {subsubsection}{\numberline {5.2.1.2}fichier\_image}{10}{subsubsection.5.2.1.2}%
+\contentsline {subsubsection}{\numberline {5.2.1.3}gainXp}{10}{subsubsection.5.2.1.3}%
+\contentsline {subsubsection}{\numberline {5.2.1.4}hitbox}{10}{subsubsection.5.2.1.4}%
+\contentsline {subsubsection}{\numberline {5.2.1.5}nom\_monstre}{11}{subsubsection.5.2.1.5}%
+\contentsline {subsubsection}{\numberline {5.2.1.6}pdv}{11}{subsubsection.5.2.1.6}%
+\contentsline {subsubsection}{\numberline {5.2.1.7}vitesse}{11}{subsubsection.5.2.1.7}%
+\contentsline {section}{\numberline {5.3}Référence de la structure base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}monstre\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{11}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Description détaillée}{11}{subsection.5.3.1}%
+\contentsline {section}{\numberline {5.4}Référence de la structure base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sort\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}s}{11}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Documentation des données membres}{11}{subsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.1}collision}{12}{subsubsection.5.4.1.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.2}degat}{12}{subsubsection.5.4.1.2}%
+\contentsline {subsubsection}{\numberline {5.4.1.3}type}{12}{subsubsection.5.4.1.3}%
+\contentsline {section}{\numberline {5.5}Référence de la structure boss\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}s}{12}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Documentation des données membres}{13}{subsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.1.1}action}{13}{subsubsection.5.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.5.1.2}attaque}{13}{subsubsection.5.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.5.1.3}cible}{13}{subsubsection.5.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.5.1.4}collision}{13}{subsubsection.5.5.1.4}%
+\contentsline {subsubsection}{\numberline {5.5.1.5}duree}{13}{subsubsection.5.5.1.5}%
+\contentsline {subsubsection}{\numberline {5.5.1.6}pdv}{13}{subsubsection.5.5.1.6}%
+\contentsline {subsubsection}{\numberline {5.5.1.7}texture}{13}{subsubsection.5.5.1.7}%
+\contentsline {subsubsection}{\numberline {5.5.1.8}texture\_temp}{14}{subsubsection.5.5.1.8}%
+\contentsline {subsubsection}{\numberline {5.5.1.9}type}{14}{subsubsection.5.5.1.9}%
+\contentsline {subsubsection}{\numberline {5.5.1.10}xp}{14}{subsubsection.5.5.1.10}%
+\contentsline {section}{\numberline {5.6}Référence de la structure coffre\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}s}{14}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Documentation des données membres}{14}{subsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.1.1}collision}{14}{subsubsection.5.6.1.1}%
+\contentsline {subsubsection}{\numberline {5.6.1.2}etat}{14}{subsubsection.5.6.1.2}%
+\contentsline {subsubsection}{\numberline {5.6.1.3}id\_cle}{15}{subsubsection.5.6.1.3}%
+\contentsline {subsubsection}{\numberline {5.6.1.4}id\_loot}{15}{subsubsection.5.6.1.4}%
+\contentsline {subsubsection}{\numberline {5.6.1.5}orientation}{15}{subsubsection.5.6.1.5}%
+\contentsline {subsubsection}{\numberline {5.6.1.6}texture}{15}{subsubsection.5.6.1.6}%
+\contentsline {subsubsection}{\numberline {5.6.1.7}type}{15}{subsubsection.5.6.1.7}%
+\contentsline {section}{\numberline {5.7}Référence de la structure coffre\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{15}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Description détaillée}{15}{subsection.5.7.1}%
+\contentsline {section}{\numberline {5.8}Référence de la structure element}{16}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Description détaillée}{16}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Documentation des données membres}{16}{subsection.5.8.2}%
+\contentsline {subsubsection}{\numberline {5.8.2.1}pred}{16}{subsubsection.5.8.2.1}%
+\contentsline {subsubsection}{\numberline {5.8.2.2}succ}{16}{subsubsection.5.8.2.2}%
+\contentsline {subsubsection}{\numberline {5.8.2.3}valeur}{17}{subsubsection.5.8.2.3}%
+\contentsline {section}{\numberline {5.9}Référence de la structure inventaire\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{17}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Documentation des données membres}{17}{subsection.5.9.1}%
+\contentsline {subsubsection}{\numberline {5.9.1.1}equipe}{17}{subsubsection.5.9.1.1}%
+\contentsline {subsubsection}{\numberline {5.9.1.2}sac}{17}{subsubsection.5.9.1.2}%
+\contentsline {section}{\numberline {5.10}Référence de la structure inventaire\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{18}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Description détaillée}{18}{subsection.5.10.1}%
+\contentsline {section}{\numberline {5.11}Référence de la structure joueur\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{18}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Description détaillée}{19}{subsection.5.11.1}%
+\contentsline {subsection}{\numberline {5.11.2}Documentation des données membres}{19}{subsection.5.11.2}%
+\contentsline {subsubsection}{\numberline {5.11.2.1}attaque}{19}{subsubsection.5.11.2.1}%
+\contentsline {subsubsection}{\numberline {5.11.2.2}attaque\_actif}{19}{subsubsection.5.11.2.2}%
+\contentsline {subsubsection}{\numberline {5.11.2.3}defense}{19}{subsubsection.5.11.2.3}%
+\contentsline {subsubsection}{\numberline {5.11.2.4}defense\_actif}{19}{subsubsection.5.11.2.4}%
+\contentsline {subsubsection}{\numberline {5.11.2.5}inventaire}{19}{subsubsection.5.11.2.5}%
+\contentsline {subsubsection}{\numberline {5.11.2.6}maxPdv}{20}{subsubsection.5.11.2.6}%
+\contentsline {subsubsection}{\numberline {5.11.2.7}niveau}{20}{subsubsection.5.11.2.7}%
+\contentsline {subsubsection}{\numberline {5.11.2.8}nom\_pers}{20}{subsubsection.5.11.2.8}%
+\contentsline {subsubsection}{\numberline {5.11.2.9}pdv}{20}{subsubsection.5.11.2.9}%
+\contentsline {subsubsection}{\numberline {5.11.2.10}statut}{20}{subsubsection.5.11.2.10}%
+\contentsline {subsubsection}{\numberline {5.11.2.11}textures\_joueur}{20}{subsubsection.5.11.2.11}%
+\contentsline {subsubsection}{\numberline {5.11.2.12}trigger}{20}{subsubsection.5.11.2.12}%
+\contentsline {subsubsection}{\numberline {5.11.2.13}vitesse}{20}{subsubsection.5.11.2.13}%
+\contentsline {subsubsection}{\numberline {5.11.2.14}vitesse\_actif}{21}{subsubsection.5.11.2.14}%
+\contentsline {subsubsection}{\numberline {5.11.2.15}xp}{21}{subsubsection.5.11.2.15}%
+\contentsline {section}{\numberline {5.12}Référence de la structure list}{21}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Description détaillée}{21}{subsection.5.12.1}%
+\contentsline {subsection}{\numberline {5.12.2}Documentation des données membres}{21}{subsection.5.12.2}%
+\contentsline {subsubsection}{\numberline {5.12.2.1}aff}{21}{subsubsection.5.12.2.1}%
+\contentsline {subsubsection}{\numberline {5.12.2.2}ajout}{22}{subsubsection.5.12.2.2}%
+\contentsline {subsubsection}{\numberline {5.12.2.3}del}{22}{subsubsection.5.12.2.3}%
+\contentsline {subsubsection}{\numberline {5.12.2.4}ec}{22}{subsubsection.5.12.2.4}%
+\contentsline {subsubsection}{\numberline {5.12.2.5}flag}{22}{subsubsection.5.12.2.5}%
+\contentsline {subsubsection}{\numberline {5.12.2.6}nb\_elem}{22}{subsubsection.5.12.2.6}%
+\contentsline {section}{\numberline {5.13}Référence de la structure liste\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}coffres\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}s}{22}{section.5.13}%
+\contentsline {subsection}{\numberline {5.13.1}Description détaillée}{22}{subsection.5.13.1}%
+\contentsline {subsection}{\numberline {5.13.2}Documentation des données membres}{23}{subsection.5.13.2}%
+\contentsline {subsubsection}{\numberline {5.13.2.1}nb\_coffre}{23}{subsubsection.5.13.2.1}%
+\contentsline {subsubsection}{\numberline {5.13.2.2}tab}{23}{subsubsection.5.13.2.2}%
+\contentsline {section}{\numberline {5.14}Référence de la structure liste\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}monstres\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{23}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Documentation des données membres}{23}{subsection.5.14.1}%
+\contentsline {subsubsection}{\numberline {5.14.1.1}nb\_monstre}{24}{subsubsection.5.14.1.1}%
+\contentsline {subsubsection}{\numberline {5.14.1.2}tab}{24}{subsubsection.5.14.1.2}%
+\contentsline {section}{\numberline {5.15}Référence de la structure liste\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}monstres\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{24}{section.5.15}%
+\contentsline {subsection}{\numberline {5.15.1}Description détaillée}{24}{subsection.5.15.1}%
+\contentsline {section}{\numberline {5.16}Référence de la structure lobjet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{24}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Description détaillée}{25}{subsection.5.16.1}%
+\contentsline {subsection}{\numberline {5.16.2}Documentation des données membres}{25}{subsection.5.16.2}%
+\contentsline {subsubsection}{\numberline {5.16.2.1}liste}{25}{subsubsection.5.16.2.1}%
+\contentsline {subsubsection}{\numberline {5.16.2.2}nb}{25}{subsubsection.5.16.2.2}%
+\contentsline {section}{\numberline {5.17}Référence de la structure lobjet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{25}{section.5.17}%
+\contentsline {subsection}{\numberline {5.17.1}Description détaillée}{25}{subsection.5.17.1}%
+\contentsline {section}{\numberline {5.18}Référence de la structure monstre\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}s}{26}{section.5.18}%
+\contentsline {subsection}{\numberline {5.18.1}Documentation des données membres}{26}{subsection.5.18.1}%
+\contentsline {subsubsection}{\numberline {5.18.1.1}action}{26}{subsubsection.5.18.1.1}%
+\contentsline {subsubsection}{\numberline {5.18.1.2}attaque}{26}{subsubsection.5.18.1.2}%
+\contentsline {subsubsection}{\numberline {5.18.1.3}collision}{26}{subsubsection.5.18.1.3}%
+\contentsline {subsubsection}{\numberline {5.18.1.4}duree}{26}{subsubsection.5.18.1.4}%
+\contentsline {subsubsection}{\numberline {5.18.1.5}gainXp}{26}{subsubsection.5.18.1.5}%
+\contentsline {subsubsection}{\numberline {5.18.1.6}orientation}{27}{subsubsection.5.18.1.6}%
+\contentsline {subsubsection}{\numberline {5.18.1.7}pdv}{27}{subsubsection.5.18.1.7}%
+\contentsline {subsubsection}{\numberline {5.18.1.8}texture}{27}{subsubsection.5.18.1.8}%
+\contentsline {subsubsection}{\numberline {5.18.1.9}type}{27}{subsubsection.5.18.1.9}%
+\contentsline {subsubsection}{\numberline {5.18.1.10}vitesse}{27}{subsubsection.5.18.1.10}%
+\contentsline {section}{\numberline {5.19}Référence de la structure monstre\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{27}{section.5.19}%
+\contentsline {subsection}{\numberline {5.19.1}Description détaillée}{27}{subsection.5.19.1}%
+\contentsline {section}{\numberline {5.20}Référence de la structure objet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{28}{section.5.20}%
+\contentsline {subsection}{\numberline {5.20.1}Description détaillée}{28}{subsection.5.20.1}%
+\contentsline {subsection}{\numberline {5.20.2}Documentation des données membres}{28}{subsection.5.20.2}%
+\contentsline {subsubsection}{\numberline {5.20.2.1}attaque}{28}{subsubsection.5.20.2.1}%
+\contentsline {subsubsection}{\numberline {5.20.2.2}defense}{28}{subsubsection.5.20.2.2}%
+\contentsline {subsubsection}{\numberline {5.20.2.3}id}{28}{subsubsection.5.20.2.3}%
+\contentsline {subsubsection}{\numberline {5.20.2.4}niveau}{28}{subsubsection.5.20.2.4}%
+\contentsline {subsubsection}{\numberline {5.20.2.5}nom}{29}{subsubsection.5.20.2.5}%
+\contentsline {subsubsection}{\numberline {5.20.2.6}texture}{29}{subsubsection.5.20.2.6}%
+\contentsline {subsubsection}{\numberline {5.20.2.7}texture\_src}{29}{subsubsection.5.20.2.7}%
+\contentsline {subsubsection}{\numberline {5.20.2.8}type}{29}{subsubsection.5.20.2.8}%
+\contentsline {subsubsection}{\numberline {5.20.2.9}vitesse}{29}{subsubsection.5.20.2.9}%
+\contentsline {section}{\numberline {5.21}Référence de la structure objet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{29}{section.5.21}%
+\contentsline {subsection}{\numberline {5.21.1}Description détaillée}{29}{subsection.5.21.1}%
+\contentsline {section}{\numberline {5.22}Référence de la structure point}{30}{section.5.22}%
+\contentsline {subsection}{\numberline {5.22.1}Documentation des données membres}{30}{subsection.5.22.1}%
+\contentsline {subsubsection}{\numberline {5.22.1.1}x}{30}{subsubsection.5.22.1.1}%
+\contentsline {subsubsection}{\numberline {5.22.1.2}y}{30}{subsubsection.5.22.1.2}%
+\contentsline {section}{\numberline {5.23}Référence de la structure sort\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}s}{30}{section.5.23}%
+\contentsline {subsection}{\numberline {5.23.1}Documentation des données membres}{30}{subsection.5.23.1}%
+\contentsline {subsubsection}{\numberline {5.23.1.1}collision}{30}{subsubsection.5.23.1.1}%
+\contentsline {subsubsection}{\numberline {5.23.1.2}degat}{31}{subsubsection.5.23.1.2}%
+\contentsline {subsubsection}{\numberline {5.23.1.3}texture}{31}{subsubsection.5.23.1.3}%
+\contentsline {subsubsection}{\numberline {5.23.1.4}type}{31}{subsubsection.5.23.1.4}%
+\contentsline {section}{\numberline {5.24}Référence de la structure sort\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t}{31}{section.5.24}%
+\contentsline {subsection}{\numberline {5.24.1}Description détaillée}{31}{subsection.5.24.1}%
+\contentsline {section}{\numberline {5.25}Référence de la structure statut\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}s}{31}{section.5.25}%
+\contentsline {subsection}{\numberline {5.25.1}Description détaillée}{32}{subsection.5.25.1}%
+\contentsline {subsection}{\numberline {5.25.2}Documentation des données membres}{32}{subsection.5.25.2}%
+\contentsline {subsubsection}{\numberline {5.25.2.1}action}{32}{subsubsection.5.25.2.1}%
+\contentsline {subsubsection}{\numberline {5.25.2.2}animation}{32}{subsubsection.5.25.2.2}%
+\contentsline {subsubsection}{\numberline {5.25.2.3}bouclier\_equipe}{32}{subsubsection.5.25.2.3}%
+\contentsline {subsubsection}{\numberline {5.25.2.4}duree}{32}{subsubsection.5.25.2.4}%
+\contentsline {subsubsection}{\numberline {5.25.2.5}duree\_anim}{32}{subsubsection.5.25.2.5}%
+\contentsline {subsubsection}{\numberline {5.25.2.6}en\_mouvement}{32}{subsubsection.5.25.2.6}%
+\contentsline {subsubsection}{\numberline {5.25.2.7}orient\_att}{33}{subsubsection.5.25.2.7}%
+\contentsline {subsubsection}{\numberline {5.25.2.8}orient\_dep}{33}{subsubsection.5.25.2.8}%
+\contentsline {subsubsection}{\numberline {5.25.2.9}texture\_prec}{33}{subsubsection.5.25.2.9}%
+\contentsline {subsubsection}{\numberline {5.25.2.10}vrai\_zone\_collision}{33}{subsubsection.5.25.2.10}%
+\contentsline {subsubsection}{\numberline {5.25.2.11}zone\_colision}{33}{subsubsection.5.25.2.11}%
+\contentsline {section}{\numberline {5.26}Référence de la structure struct}{33}{section.5.26}%
+\contentsline {subsection}{\numberline {5.26.1}Description détaillée}{33}{subsection.5.26.1}%
+\contentsline {section}{\numberline {5.27}Référence de la structure t\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}aff}{34}{section.5.27}%
+\contentsline {subsection}{\numberline {5.27.1}Description détaillée}{34}{subsection.5.27.1}%
+\contentsline {subsection}{\numberline {5.27.2}Le but de la structure}{34}{subsection.5.27.2}%
+\contentsline {subsection}{\numberline {5.27.3}Éléments de la structure}{34}{subsection.5.27.3}%
+\contentsline {subsection}{\numberline {5.27.4}Documentation des données membres}{34}{subsection.5.27.4}%
+\contentsline {subsubsection}{\numberline {5.27.4.1}aff\_fenetre}{35}{subsubsection.5.27.4.1}%
+\contentsline {subsubsection}{\numberline {5.27.4.2}compteur\_frame\_anim}{35}{subsubsection.5.27.4.2}%
+\contentsline {subsubsection}{\numberline {5.27.4.3}duree\_frame\_anim}{35}{subsubsection.5.27.4.3}%
+\contentsline {subsubsection}{\numberline {5.27.4.4}frame\_anim}{35}{subsubsection.5.27.4.4}%
+\contentsline {subsubsection}{\numberline {5.27.4.5}height}{35}{subsubsection.5.27.4.5}%
+\contentsline {subsubsection}{\numberline {5.27.4.6}multipli\_taille}{35}{subsubsection.5.27.4.6}%
+\contentsline {subsubsection}{\numberline {5.27.4.7}texture}{35}{subsubsection.5.27.4.7}%
+\contentsline {subsubsection}{\numberline {5.27.4.8}width}{36}{subsubsection.5.27.4.8}%
+\contentsline {section}{\numberline {5.28}Référence de la structure t\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}l\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}aff}{36}{section.5.28}%
+\contentsline {subsection}{\numberline {5.28.1}Description détaillée}{36}{subsection.5.28.1}%
+\contentsline {subsection}{\numberline {5.28.2}Documentation des données membres}{36}{subsection.5.28.2}%
+\contentsline {subsubsection}{\numberline {5.28.2.1}liste}{36}{subsubsection.5.28.2.1}%
+\contentsline {subsubsection}{\numberline {5.28.2.2}nb\_valeurs}{36}{subsubsection.5.28.2.2}%
+\contentsline {section}{\numberline {5.29}Référence de la structure t\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}map}{37}{section.5.29}%
+\contentsline {subsection}{\numberline {5.29.1}Description détaillée}{37}{subsection.5.29.1}%
+\contentsline {subsection}{\numberline {5.29.2}Documentation des données membres}{38}{subsection.5.29.2}%
+\contentsline {subsubsection}{\numberline {5.29.2.1}cases\_x}{38}{subsubsection.5.29.2.1}%
+\contentsline {subsubsection}{\numberline {5.29.2.2}cases\_y}{38}{subsubsection.5.29.2.2}%
+\contentsline {subsubsection}{\numberline {5.29.2.3}height}{38}{subsubsection.5.29.2.3}%
+\contentsline {subsubsection}{\numberline {5.29.2.4}id\_map}{38}{subsubsection.5.29.2.4}%
+\contentsline {subsubsection}{\numberline {5.29.2.5}liste\_coffres}{38}{subsubsection.5.29.2.5}%
+\contentsline {subsubsection}{\numberline {5.29.2.6}liste\_collisions}{38}{subsubsection.5.29.2.6}%
+\contentsline {subsubsection}{\numberline {5.29.2.7}liste\_monstres}{38}{subsubsection.5.29.2.7}%
+\contentsline {subsubsection}{\numberline {5.29.2.8}liste\_sorts}{39}{subsubsection.5.29.2.8}%
+\contentsline {subsubsection}{\numberline {5.29.2.9}liste\_zone\_tp}{39}{subsubsection.5.29.2.9}%
+\contentsline {subsubsection}{\numberline {5.29.2.10}taille\_case}{39}{subsubsection.5.29.2.10}%
+\contentsline {subsubsection}{\numberline {5.29.2.11}text\_map}{39}{subsubsection.5.29.2.11}%
+\contentsline {subsubsection}{\numberline {5.29.2.12}text\_sol}{39}{subsubsection.5.29.2.12}%
+\contentsline {subsubsection}{\numberline {5.29.2.13}texture\_superposition}{39}{subsubsection.5.29.2.13}%
+\contentsline {subsubsection}{\numberline {5.29.2.14}width}{39}{subsubsection.5.29.2.14}%
+\contentsline {section}{\numberline {5.30}Référence de la structure zone\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tp}{40}{section.5.30}%
+\contentsline {subsection}{\numberline {5.30.1}Description détaillée}{40}{subsection.5.30.1}%
+\contentsline {subsection}{\numberline {5.30.2}Documentation des données membres}{40}{subsection.5.30.2}%
+\contentsline {subsubsection}{\numberline {5.30.2.1}dest}{40}{subsubsection.5.30.2.1}%
+\contentsline {subsubsection}{\numberline {5.30.2.2}id\_map}{40}{subsubsection.5.30.2.2}%
+\contentsline {subsubsection}{\numberline {5.30.2.3}zone}{40}{subsubsection.5.30.2.3}%
+\contentsline {chapter}{\numberline {6}Documentation des fichiers}{41}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Référence du fichier affichage.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{41}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Description détaillée}{43}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Documentation des fonctions}{44}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}afficher\_animations()}{44}{subsubsection.6.1.2.1}%
+\contentsline {subsubsection}{\numberline {6.1.2.2}afficher\_buffer()}{45}{subsubsection.6.1.2.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.3}afficher\_coffres()}{46}{subsubsection.6.1.2.3}%
+\contentsline {subsubsection}{\numberline {6.1.2.4}afficher\_monstres()}{47}{subsubsection.6.1.2.4}%
+\contentsline {subsubsection}{\numberline {6.1.2.5}afficher\_sorts()}{48}{subsubsection.6.1.2.5}%
+\contentsline {subsubsection}{\numberline {6.1.2.6}afficher\_texture()}{49}{subsubsection.6.1.2.6}%
+\contentsline {subsubsection}{\numberline {6.1.2.7}ajout\_text\_liste()}{50}{subsubsection.6.1.2.7}%
+\contentsline {subsubsection}{\numberline {6.1.2.8}appliquer\_coord\_rect()}{51}{subsubsection.6.1.2.8}%
+\contentsline {subsubsection}{\numberline {6.1.2.9}color()}{52}{subsubsection.6.1.2.9}%
+\contentsline {subsubsection}{\numberline {6.1.2.10}creer\_texture()}{52}{subsubsection.6.1.2.10}%
+\contentsline {subsubsection}{\numberline {6.1.2.11}Déroulement}{53}{subsubsection.6.1.2.11}%
+\contentsline {subsubsection}{\numberline {6.1.2.12}Lors d\textquotesingle {}une erreur}{53}{subsubsection.6.1.2.12}%
+\contentsline {subsubsection}{\numberline {6.1.2.13}A noter}{53}{subsubsection.6.1.2.13}%
+\contentsline {subsubsection}{\numberline {6.1.2.14}current\_frame\_x()}{54}{subsubsection.6.1.2.14}%
+\contentsline {subsubsection}{\numberline {6.1.2.15}current\_frame\_y()}{55}{subsubsection.6.1.2.15}%
+\contentsline {subsubsection}{\numberline {6.1.2.16}def\_texture\_taille()}{55}{subsubsection.6.1.2.16}%
+\contentsline {subsubsection}{\numberline {6.1.2.17}deplacement\_x\_entite()}{56}{subsubsection.6.1.2.17}%
+\contentsline {subsubsection}{\numberline {6.1.2.18}deplacement\_x\_joueur\_secondaire()}{57}{subsubsection.6.1.2.18}%
+\contentsline {subsubsection}{\numberline {6.1.2.19}deplacement\_x\_pers()}{58}{subsubsection.6.1.2.19}%
+\contentsline {subsubsection}{\numberline {6.1.2.20}deplacement\_y\_entite()}{60}{subsubsection.6.1.2.20}%
+\contentsline {subsubsection}{\numberline {6.1.2.21}deplacement\_y\_joueur\_secondaire()}{61}{subsubsection.6.1.2.21}%
+\contentsline {subsubsection}{\numberline {6.1.2.22}deplacement\_y\_pers()}{62}{subsubsection.6.1.2.22}%
+\contentsline {subsubsection}{\numberline {6.1.2.23}deplacer\_rect\_haut\_droit()}{63}{subsubsection.6.1.2.23}%
+\contentsline {subsubsection}{\numberline {6.1.2.24}deplacer\_rect\_origine()}{64}{subsubsection.6.1.2.24}%
+\contentsline {subsubsection}{\numberline {6.1.2.25}deplacer\_texture\_bas\_droit()}{65}{subsubsection.6.1.2.25}%
+\contentsline {subsubsection}{\numberline {6.1.2.26}deplacer\_texture\_bas\_gauche()}{65}{subsubsection.6.1.2.26}%
+\contentsline {subsubsection}{\numberline {6.1.2.27}deplacer\_texture\_centre()}{66}{subsubsection.6.1.2.27}%
+\contentsline {subsubsection}{\numberline {6.1.2.28}deplacer\_texture\_haut\_droit()}{67}{subsubsection.6.1.2.28}%
+\contentsline {subsubsection}{\numberline {6.1.2.29}deplacer\_texture\_origine()}{67}{subsubsection.6.1.2.29}%
+\contentsline {subsubsection}{\numberline {6.1.2.30}detruire\_collision\_dans\_liste()}{68}{subsubsection.6.1.2.30}%
+\contentsline {subsubsection}{\numberline {6.1.2.31}detruire\_liste\_textures()}{69}{subsubsection.6.1.2.31}%
+\contentsline {subsubsection}{\numberline {6.1.2.32}detruire\_texture()}{70}{subsubsection.6.1.2.32}%
+\contentsline {subsubsection}{\numberline {6.1.2.33}get\_rect\_center()}{70}{subsubsection.6.1.2.33}%
+\contentsline {subsubsection}{\numberline {6.1.2.34}get\_rect\_center\_coord()}{71}{subsubsection.6.1.2.34}%
+\contentsline {subsubsection}{\numberline {6.1.2.35}get\_screen\_center()}{72}{subsubsection.6.1.2.35}%
+\contentsline {subsubsection}{\numberline {6.1.2.36}info\_texture()}{72}{subsubsection.6.1.2.36}%
+\contentsline {subsubsection}{\numberline {6.1.2.37}init\_animations()}{73}{subsubsection.6.1.2.37}%
+\contentsline {subsubsection}{\numberline {6.1.2.38}init\_texture\_joueur()}{73}{subsubsection.6.1.2.38}%
+\contentsline {subsubsection}{\numberline {6.1.2.39}init\_textures\_joueur()}{74}{subsubsection.6.1.2.39}%
+\contentsline {subsubsection}{\numberline {6.1.2.40}lister\_animations()}{75}{subsubsection.6.1.2.40}%
+\contentsline {subsubsection}{\numberline {6.1.2.41}modif\_affichage\_rect()}{76}{subsubsection.6.1.2.41}%
+\contentsline {subsubsection}{\numberline {6.1.2.42}next\_frame\_animation()}{76}{subsubsection.6.1.2.42}%
+\contentsline {subsubsection}{\numberline {6.1.2.43}next\_frame\_indice()}{77}{subsubsection.6.1.2.43}%
+\contentsline {subsubsection}{\numberline {6.1.2.44}next\_frame\_joueur()}{78}{subsubsection.6.1.2.44}%
+\contentsline {subsubsection}{\numberline {6.1.2.45}next\_frame\_x()}{79}{subsubsection.6.1.2.45}%
+\contentsline {subsubsection}{\numberline {6.1.2.46}next\_frame\_x\_indice()}{80}{subsubsection.6.1.2.46}%
+\contentsline {subsubsection}{\numberline {6.1.2.47}next\_frame\_y()}{81}{subsubsection.6.1.2.47}%
+\contentsline {subsubsection}{\numberline {6.1.2.48}next\_frame\_y\_indice()}{82}{subsubsection.6.1.2.48}%
+\contentsline {subsubsection}{\numberline {6.1.2.49}place\_rect\_center\_from\_point()}{83}{subsubsection.6.1.2.49}%
+\contentsline {subsubsection}{\numberline {6.1.2.50}placer\_texture()}{84}{subsubsection.6.1.2.50}%
+\contentsline {subsubsection}{\numberline {6.1.2.51}point\_in\_rect()}{85}{subsubsection.6.1.2.51}%
+\contentsline {subsubsection}{\numberline {6.1.2.52}rect\_centre()}{85}{subsubsection.6.1.2.52}%
+\contentsline {subsubsection}{\numberline {6.1.2.53}rect\_centre\_rect()}{86}{subsubsection.6.1.2.53}%
+\contentsline {subsubsection}{\numberline {6.1.2.54}rect\_centre\_rect\_x()}{87}{subsubsection.6.1.2.54}%
+\contentsline {subsubsection}{\numberline {6.1.2.55}rect\_centre\_rect\_y()}{88}{subsubsection.6.1.2.55}%
+\contentsline {subsubsection}{\numberline {6.1.2.56}rect\_centre\_x()}{89}{subsubsection.6.1.2.56}%
+\contentsline {subsubsection}{\numberline {6.1.2.57}rect\_centre\_y()}{89}{subsubsection.6.1.2.57}%
+\contentsline {subsubsection}{\numberline {6.1.2.58}rect\_correct\_texture()}{90}{subsubsection.6.1.2.58}%
+\contentsline {subsubsection}{\numberline {6.1.2.59}rect\_ecran\_to\_rect\_map()}{91}{subsubsection.6.1.2.59}%
+\contentsline {subsubsection}{\numberline {6.1.2.60}rects\_egal\_x()}{91}{subsubsection.6.1.2.60}%
+\contentsline {subsubsection}{\numberline {6.1.2.61}rects\_egal\_y()}{92}{subsubsection.6.1.2.61}%
+\contentsline {subsubsection}{\numberline {6.1.2.62}text\_copier\_position()}{93}{subsubsection.6.1.2.62}%
+\contentsline {subsubsection}{\numberline {6.1.2.63}update\_frame\_texture()}{94}{subsubsection.6.1.2.63}%
+\contentsline {subsection}{\numberline {6.1.3}Documentation des variables}{94}{subsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.1}bloquer}{94}{subsubsection.6.1.3.1}%
+\contentsline {subsubsection}{\numberline {6.1.3.2}compteur}{94}{subsubsection.6.1.3.2}%
+\contentsline {subsubsection}{\numberline {6.1.3.3}fenetre\_finale}{94}{subsubsection.6.1.3.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.4}FENETRE\_LARGEUR}{94}{subsubsection.6.1.3.4}%
+\contentsline {subsubsection}{\numberline {6.1.3.5}FENETRE\_LONGUEUR}{95}{subsubsection.6.1.3.5}%
+\contentsline {subsubsection}{\numberline {6.1.3.6}heal}{95}{subsubsection.6.1.3.6}%
+\contentsline {subsubsection}{\numberline {6.1.3.7}liste\_animations}{95}{subsubsection.6.1.3.7}%
+\contentsline {subsubsection}{\numberline {6.1.3.8}listeDeTextures}{95}{subsubsection.6.1.3.8}%
+\contentsline {subsubsection}{\numberline {6.1.3.9}multiplicateur\_x}{95}{subsubsection.6.1.3.9}%
+\contentsline {subsubsection}{\numberline {6.1.3.10}multiplicateur\_y}{95}{subsubsection.6.1.3.10}%
+\contentsline {subsubsection}{\numberline {6.1.3.11}tx}{95}{subsubsection.6.1.3.11}%
+\contentsline {subsubsection}{\numberline {6.1.3.12}ty}{95}{subsubsection.6.1.3.12}%
+\contentsline {section}{\numberline {6.2}Référence du fichier affichage.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{96}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Description détaillée}{99}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Documentation des macros}{99}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}LARGEUR\_ENTITE}{99}{subsubsection.6.2.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2.2}LONGUEUR\_ENTITE}{99}{subsubsection.6.2.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.3}N\_T\_ATTAQUE}{100}{subsubsection.6.2.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.2.4}N\_T\_ATTAQUE2}{100}{subsubsection.6.2.2.4}%
+\contentsline {subsubsection}{\numberline {6.2.2.5}N\_T\_ATTAQUE\_CHARGEE}{100}{subsubsection.6.2.2.5}%
+\contentsline {subsubsection}{\numberline {6.2.2.6}N\_T\_ATTAQUE\_CHARGEE2}{100}{subsubsection.6.2.2.6}%
+\contentsline {subsubsection}{\numberline {6.2.2.7}N\_T\_CHARGER}{100}{subsubsection.6.2.2.7}%
+\contentsline {subsubsection}{\numberline {6.2.2.8}N\_T\_CHARGER2}{100}{subsubsection.6.2.2.8}%
+\contentsline {subsubsection}{\numberline {6.2.2.9}N\_T\_MARCHER}{100}{subsubsection.6.2.2.9}%
+\contentsline {subsubsection}{\numberline {6.2.2.10}N\_T\_MARCHER2}{100}{subsubsection.6.2.2.10}%
+\contentsline {subsubsection}{\numberline {6.2.2.11}N\_T\_MARCHER\_BOUCLIER}{101}{subsubsection.6.2.2.11}%
+\contentsline {subsubsection}{\numberline {6.2.2.12}N\_T\_MARCHER\_BOUCLIER2}{101}{subsubsection.6.2.2.12}%
+\contentsline {subsubsection}{\numberline {6.2.2.13}NB\_FPS}{101}{subsubsection.6.2.2.13}%
+\contentsline {subsubsection}{\numberline {6.2.2.14}NB\_SPRITE\_JOUEUR}{101}{subsubsection.6.2.2.14}%
+\contentsline {subsection}{\numberline {6.2.3}Documentation du type de l\textquotesingle {}énumération}{101}{subsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.1}t\_texture\_perso}{101}{subsubsection.6.2.3.1}%
+\contentsline {subsection}{\numberline {6.2.4}Documentation des fonctions}{102}{subsection.6.2.4}%
+\contentsline {subsubsection}{\numberline {6.2.4.1}afficher\_animations()}{102}{subsubsection.6.2.4.1}%
+\contentsline {subsubsection}{\numberline {6.2.4.2}afficher\_buffer()}{103}{subsubsection.6.2.4.2}%
+\contentsline {subsubsection}{\numberline {6.2.4.3}afficher\_coffres()}{103}{subsubsection.6.2.4.3}%
+\contentsline {subsubsection}{\numberline {6.2.4.4}afficher\_monstres()}{104}{subsubsection.6.2.4.4}%
+\contentsline {subsubsection}{\numberline {6.2.4.5}afficher\_sorts()}{105}{subsubsection.6.2.4.5}%
+\contentsline {subsubsection}{\numberline {6.2.4.6}afficher\_texture()}{106}{subsubsection.6.2.4.6}%
+\contentsline {subsubsection}{\numberline {6.2.4.7}ajout\_text\_liste()}{107}{subsubsection.6.2.4.7}%
+\contentsline {subsubsection}{\numberline {6.2.4.8}color()}{108}{subsubsection.6.2.4.8}%
+\contentsline {subsubsection}{\numberline {6.2.4.9}creer\_texture()}{109}{subsubsection.6.2.4.9}%
+\contentsline {subsubsection}{\numberline {6.2.4.10}Déroulement}{109}{subsubsection.6.2.4.10}%
+\contentsline {subsubsection}{\numberline {6.2.4.11}Lors d\textquotesingle {}une erreur}{109}{subsubsection.6.2.4.11}%
+\contentsline {subsubsection}{\numberline {6.2.4.12}A noter}{110}{subsubsection.6.2.4.12}%
+\contentsline {subsubsection}{\numberline {6.2.4.13}current\_frame\_x()}{112}{subsubsection.6.2.4.13}%
+\contentsline {subsubsection}{\numberline {6.2.4.14}current\_frame\_y()}{113}{subsubsection.6.2.4.14}%
+\contentsline {subsubsection}{\numberline {6.2.4.15}def\_texture\_taille()}{113}{subsubsection.6.2.4.15}%
+\contentsline {subsubsection}{\numberline {6.2.4.16}deplacement\_x\_entite()}{114}{subsubsection.6.2.4.16}%
+\contentsline {subsubsection}{\numberline {6.2.4.17}deplacement\_x\_joueur\_secondaire()}{115}{subsubsection.6.2.4.17}%
+\contentsline {subsubsection}{\numberline {6.2.4.18}deplacement\_x\_pers()}{116}{subsubsection.6.2.4.18}%
+\contentsline {subsubsection}{\numberline {6.2.4.19}deplacement\_y\_entite()}{118}{subsubsection.6.2.4.19}%
+\contentsline {subsubsection}{\numberline {6.2.4.20}deplacement\_y\_joueur\_secondaire()}{119}{subsubsection.6.2.4.20}%
+\contentsline {subsubsection}{\numberline {6.2.4.21}deplacement\_y\_pers()}{120}{subsubsection.6.2.4.21}%
+\contentsline {subsubsection}{\numberline {6.2.4.22}deplacer\_rect\_haut\_droit()}{121}{subsubsection.6.2.4.22}%
+\contentsline {subsubsection}{\numberline {6.2.4.23}deplacer\_rect\_origine()}{122}{subsubsection.6.2.4.23}%
+\contentsline {subsubsection}{\numberline {6.2.4.24}deplacer\_texture\_bas\_droit()}{123}{subsubsection.6.2.4.24}%
+\contentsline {subsubsection}{\numberline {6.2.4.25}deplacer\_texture\_bas\_gauche()}{123}{subsubsection.6.2.4.25}%
+\contentsline {subsubsection}{\numberline {6.2.4.26}deplacer\_texture\_centre()}{124}{subsubsection.6.2.4.26}%
+\contentsline {subsubsection}{\numberline {6.2.4.27}deplacer\_texture\_haut\_droit()}{125}{subsubsection.6.2.4.27}%
+\contentsline {subsubsection}{\numberline {6.2.4.28}deplacer\_texture\_origine()}{125}{subsubsection.6.2.4.28}%
+\contentsline {subsubsection}{\numberline {6.2.4.29}detruire\_collision\_dans\_liste()}{126}{subsubsection.6.2.4.29}%
+\contentsline {subsubsection}{\numberline {6.2.4.30}detruire\_liste\_textures()}{127}{subsubsection.6.2.4.30}%
+\contentsline {subsubsection}{\numberline {6.2.4.31}detruire\_texture()}{128}{subsubsection.6.2.4.31}%
+\contentsline {subsubsection}{\numberline {6.2.4.32}get\_rect\_center()}{128}{subsubsection.6.2.4.32}%
+\contentsline {subsubsection}{\numberline {6.2.4.33}get\_rect\_center\_coord()}{129}{subsubsection.6.2.4.33}%
+\contentsline {subsubsection}{\numberline {6.2.4.34}info\_texture()}{130}{subsubsection.6.2.4.34}%
+\contentsline {subsubsection}{\numberline {6.2.4.35}init\_animations()}{130}{subsubsection.6.2.4.35}%
+\contentsline {subsubsection}{\numberline {6.2.4.36}init\_texture\_joueur()}{131}{subsubsection.6.2.4.36}%
+\contentsline {subsubsection}{\numberline {6.2.4.37}init\_textures\_joueur()}{131}{subsubsection.6.2.4.37}%
+\contentsline {subsubsection}{\numberline {6.2.4.38}lister\_animations()}{132}{subsubsection.6.2.4.38}%
+\contentsline {subsubsection}{\numberline {6.2.4.39}modif\_affichage\_rect()}{133}{subsubsection.6.2.4.39}%
+\contentsline {subsubsection}{\numberline {6.2.4.40}next\_frame\_animation()}{133}{subsubsection.6.2.4.40}%
+\contentsline {subsubsection}{\numberline {6.2.4.41}next\_frame\_indice()}{134}{subsubsection.6.2.4.41}%
+\contentsline {subsubsection}{\numberline {6.2.4.42}next\_frame\_joueur()}{135}{subsubsection.6.2.4.42}%
+\contentsline {subsubsection}{\numberline {6.2.4.43}next\_frame\_x()}{136}{subsubsection.6.2.4.43}%
+\contentsline {subsubsection}{\numberline {6.2.4.44}next\_frame\_x\_indice()}{137}{subsubsection.6.2.4.44}%
+\contentsline {subsubsection}{\numberline {6.2.4.45}next\_frame\_y()}{138}{subsubsection.6.2.4.45}%
+\contentsline {subsubsection}{\numberline {6.2.4.46}next\_frame\_y\_indice()}{139}{subsubsection.6.2.4.46}%
+\contentsline {subsubsection}{\numberline {6.2.4.47}place\_rect\_center\_from\_point()}{140}{subsubsection.6.2.4.47}%
+\contentsline {subsubsection}{\numberline {6.2.4.48}placer\_texture()}{141}{subsubsection.6.2.4.48}%
+\contentsline {subsubsection}{\numberline {6.2.4.49}rect\_centre()}{142}{subsubsection.6.2.4.49}%
+\contentsline {subsubsection}{\numberline {6.2.4.50}rect\_centre\_rect()}{143}{subsubsection.6.2.4.50}%
+\contentsline {subsubsection}{\numberline {6.2.4.51}rect\_centre\_rect\_x()}{144}{subsubsection.6.2.4.51}%
+\contentsline {subsubsection}{\numberline {6.2.4.52}rect\_centre\_rect\_y()}{144}{subsubsection.6.2.4.52}%
+\contentsline {subsubsection}{\numberline {6.2.4.53}rect\_centre\_x()}{145}{subsubsection.6.2.4.53}%
+\contentsline {subsubsection}{\numberline {6.2.4.54}rect\_centre\_y()}{146}{subsubsection.6.2.4.54}%
+\contentsline {subsubsection}{\numberline {6.2.4.55}rect\_correct\_texture()}{147}{subsubsection.6.2.4.55}%
+\contentsline {subsubsection}{\numberline {6.2.4.56}rects\_egal\_x()}{148}{subsubsection.6.2.4.56}%
+\contentsline {subsubsection}{\numberline {6.2.4.57}rects\_egal\_y()}{149}{subsubsection.6.2.4.57}%
+\contentsline {subsubsection}{\numberline {6.2.4.58}text\_copier\_position()}{150}{subsubsection.6.2.4.58}%
+\contentsline {subsection}{\numberline {6.2.5}Documentation des variables}{150}{subsection.6.2.5}%
+\contentsline {subsubsection}{\numberline {6.2.5.1}bloquer}{150}{subsubsection.6.2.5.1}%
+\contentsline {subsubsection}{\numberline {6.2.5.2}compteur}{150}{subsubsection.6.2.5.2}%
+\contentsline {subsubsection}{\numberline {6.2.5.3}fenetre\_finale}{151}{subsubsection.6.2.5.3}%
+\contentsline {subsubsection}{\numberline {6.2.5.4}heal}{151}{subsubsection.6.2.5.4}%
+\contentsline {subsubsection}{\numberline {6.2.5.5}liste\_animations}{151}{subsubsection.6.2.5.5}%
+\contentsline {subsubsection}{\numberline {6.2.5.6}listeDeTextures}{151}{subsubsection.6.2.5.6}%
+\contentsline {subsubsection}{\numberline {6.2.5.7}multiplicateur\_x}{151}{subsubsection.6.2.5.7}%
+\contentsline {subsubsection}{\numberline {6.2.5.8}multiplicateur\_y}{151}{subsubsection.6.2.5.8}%
+\contentsline {subsubsection}{\numberline {6.2.5.9}tx}{151}{subsubsection.6.2.5.9}%
+\contentsline {subsubsection}{\numberline {6.2.5.10}ty}{151}{subsubsection.6.2.5.10}%
+\contentsline {section}{\numberline {6.3}Référence du fichier boss.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{152}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Documentation des fonctions}{152}{subsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.1.1}affichage\_chargement\_attaque\_boss()}{152}{subsubsection.6.3.1.1}%
+\contentsline {subsubsection}{\numberline {6.3.1.2}affichage\_clonage\_boss()}{153}{subsubsection.6.3.1.2}%
+\contentsline {subsubsection}{\numberline {6.3.1.3}afficher\_boss()}{154}{subsubsection.6.3.1.3}%
+\contentsline {subsubsection}{\numberline {6.3.1.4}afficher\_bosses()}{154}{subsubsection.6.3.1.4}%
+\contentsline {subsubsection}{\numberline {6.3.1.5}creer\_boss\_clone()}{155}{subsubsection.6.3.1.5}%
+\contentsline {subsubsection}{\numberline {6.3.1.6}deplacement\_boss\_aleatoir()}{155}{subsubsection.6.3.1.6}%
+\contentsline {subsubsection}{\numberline {6.3.1.7}intro\_boss()}{155}{subsubsection.6.3.1.7}%
+\contentsline {section}{\numberline {6.4}Référence du fichier boss.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{156}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Description détaillée}{157}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Documentation des macros}{157}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}CHEMIN\_BOSS}{157}{subsubsection.6.4.2.1}%
+\contentsline {subsubsection}{\numberline {6.4.2.2}DUREE\_CLONAGE}{157}{subsubsection.6.4.2.2}%
+\contentsline {subsection}{\numberline {6.4.3}Documentation du type de l\textquotesingle {}énumération}{157}{subsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.1}action\_boss\_1\_t}{157}{subsubsection.6.4.3.1}%
+\contentsline {subsubsection}{\numberline {6.4.3.2}type\_boss\_1\_t}{158}{subsubsection.6.4.3.2}%
+\contentsline {section}{\numberline {6.5}Référence du fichier code\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}erreur.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{158}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Description détaillée}{159}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Documentation des macros}{159}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}erreur}{159}{subsubsection.6.5.2.1}%
+\contentsline {subsubsection}{\numberline {6.5.2.2}warning}{160}{subsubsection.6.5.2.2}%
+\contentsline {subsection}{\numberline {6.5.3}Documentation des définitions de type}{160}{subsection.6.5.3}%
+\contentsline {subsubsection}{\numberline {6.5.3.1}err\_t}{160}{subsubsection.6.5.3.1}%
+\contentsline {subsection}{\numberline {6.5.4}Documentation du type de l\textquotesingle {}énumération}{160}{subsection.6.5.4}%
+\contentsline {subsubsection}{\numberline {6.5.4.1}types\_erreur}{160}{subsubsection.6.5.4.1}%
+\contentsline {section}{\numberline {6.6}Référence du fichier coffres.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{161}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Description détaillée}{162}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Documentation des fonctions}{163}{subsection.6.6.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.1}charger\_base\_coffre()}{163}{subsubsection.6.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.6.2.2}creer\_coffre()}{163}{subsubsection.6.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.3}info\_coffre()}{165}{subsubsection.6.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.6.2.4}interaction\_coffre()}{165}{subsubsection.6.6.2.4}%
+\contentsline {subsubsection}{\numberline {6.6.2.5}inverser\_direction()}{166}{subsubsection.6.6.2.5}%
+\contentsline {subsubsection}{\numberline {6.6.2.6}nom\_coffre\_to\_type\_coffre()}{167}{subsubsection.6.6.2.6}%
+\contentsline {subsection}{\numberline {6.6.3}Documentation des variables}{168}{subsection.6.6.3}%
+\contentsline {subsubsection}{\numberline {6.6.3.1}liste\_base\_coffres}{168}{subsubsection.6.6.3.1}%
+\contentsline {section}{\numberline {6.7}Référence du fichier coffres.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{168}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Description détaillée}{170}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Documentation des macros}{170}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}COFFRE\_FACE\_OUVERT}{170}{subsubsection.6.7.2.1}%
+\contentsline {subsubsection}{\numberline {6.7.2.2}COFFRE\_PROFIL\_OUVERT}{170}{subsubsection.6.7.2.2}%
+\contentsline {subsection}{\numberline {6.7.3}Documentation du type de l\textquotesingle {}énumération}{170}{subsection.6.7.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.1}etat\_coffre\_t}{170}{subsubsection.6.7.3.1}%
+\contentsline {subsubsection}{\numberline {6.7.3.2}type\_coffre\_t}{171}{subsubsection.6.7.3.2}%
+\contentsline {subsection}{\numberline {6.7.4}Documentation des fonctions}{171}{subsection.6.7.4}%
+\contentsline {subsubsection}{\numberline {6.7.4.1}charger\_base\_coffre()}{171}{subsubsection.6.7.4.1}%
+\contentsline {subsubsection}{\numberline {6.7.4.2}creer\_coffre()}{172}{subsubsection.6.7.4.2}%
+\contentsline {subsubsection}{\numberline {6.7.4.3}info\_coffre()}{173}{subsubsection.6.7.4.3}%
+\contentsline {subsubsection}{\numberline {6.7.4.4}interaction\_coffre()}{173}{subsubsection.6.7.4.4}%
+\contentsline {subsubsection}{\numberline {6.7.4.5}inverser\_direction()}{174}{subsubsection.6.7.4.5}%
+\contentsline {subsubsection}{\numberline {6.7.4.6}nom\_coffre\_to\_type\_coffre()}{175}{subsubsection.6.7.4.6}%
+\contentsline {subsection}{\numberline {6.7.5}Documentation des variables}{176}{subsection.6.7.5}%
+\contentsline {subsubsection}{\numberline {6.7.5.1}liste\_base\_coffres}{176}{subsubsection.6.7.5.1}%
+\contentsline {section}{\numberline {6.8}Référence du fichier commun.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{176}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Description détaillée}{177}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Documentation des fonctions}{177}{subsection.6.8.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.1}init()}{177}{subsubsection.6.8.2.1}%
+\contentsline {section}{\numberline {6.9}Référence du fichier definition\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}commun.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{178}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Description détaillée}{180}{subsection.6.9.1}%
+\contentsline {subsection}{\numberline {6.9.2}Documentation des macros}{180}{subsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.1}bool}{180}{subsubsection.6.9.2.1}%
+\contentsline {subsubsection}{\numberline {6.9.2.2}faux}{180}{subsubsection.6.9.2.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.3}SAVE\_PATH}{181}{subsubsection.6.9.2.3}%
+\contentsline {subsubsection}{\numberline {6.9.2.4}vrai}{181}{subsubsection.6.9.2.4}%
+\contentsline {subsection}{\numberline {6.9.3}Documentation des définitions de type}{181}{subsection.6.9.3}%
+\contentsline {subsubsection}{\numberline {6.9.3.1}byte}{181}{subsubsection.6.9.3.1}%
+\contentsline {subsection}{\numberline {6.9.4}Documentation du type de l\textquotesingle {}énumération}{181}{subsection.6.9.4}%
+\contentsline {subsubsection}{\numberline {6.9.4.1}t\_direction\_1}{181}{subsubsection.6.9.4.1}%
+\contentsline {subsubsection}{\numberline {6.9.4.2}t\_direction\_2}{181}{subsubsection.6.9.4.2}%
+\contentsline {subsection}{\numberline {6.9.5}Documentation des fonctions}{182}{subsection.6.9.5}%
+\contentsline {subsubsection}{\numberline {6.9.5.1}fermer\_programme()}{182}{subsubsection.6.9.5.1}%
+\contentsline {subsection}{\numberline {6.9.6}Documentation des variables}{183}{subsection.6.9.6}%
+\contentsline {subsubsection}{\numberline {6.9.6.1}FENETRE\_LARGEUR}{183}{subsubsection.6.9.6.1}%
+\contentsline {subsubsection}{\numberline {6.9.6.2}FENETRE\_LONGUEUR}{183}{subsubsection.6.9.6.2}%
+\contentsline {subsubsection}{\numberline {6.9.6.3}fenetre\_Principale}{184}{subsubsection.6.9.6.3}%
+\contentsline {subsubsection}{\numberline {6.9.6.4}rendu\_principal}{184}{subsubsection.6.9.6.4}%
+\contentsline {subsubsection}{\numberline {6.9.6.5}running}{184}{subsubsection.6.9.6.5}%
+\contentsline {section}{\numberline {6.10}Référence du fichier event.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{184}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Description détaillée}{185}{subsection.6.10.1}%
+\contentsline {subsection}{\numberline {6.10.2}Documentation des fonctions}{185}{subsection.6.10.2}%
+\contentsline {subsubsection}{\numberline {6.10.2.1}jeu\_event()}{185}{subsubsection.6.10.2.1}%
+\contentsline {subsubsection}{\numberline {6.10.2.2}jeu\_event\_manette()}{186}{subsubsection.6.10.2.2}%
+\contentsline {subsubsection}{\numberline {6.10.2.3}joystick\_button\_down()}{187}{subsubsection.6.10.2.3}%
+\contentsline {subsubsection}{\numberline {6.10.2.4}joystick\_button\_up()}{188}{subsubsection.6.10.2.4}%
+\contentsline {subsubsection}{\numberline {6.10.2.5}joystick\_stick()}{189}{subsubsection.6.10.2.5}%
+\contentsline {subsubsection}{\numberline {6.10.2.6}keyDown()}{190}{subsubsection.6.10.2.6}%
+\contentsline {subsubsection}{\numberline {6.10.2.7}keyUp()}{191}{subsubsection.6.10.2.7}%
+\contentsline {subsubsection}{\numberline {6.10.2.8}logo\_passer()}{191}{subsubsection.6.10.2.8}%
+\contentsline {subsubsection}{\numberline {6.10.2.9}mouseButtonDown()}{192}{subsubsection.6.10.2.9}%
+\contentsline {subsubsection}{\numberline {6.10.2.10}mouseButtonUp()}{193}{subsubsection.6.10.2.10}%
+\contentsline {subsection}{\numberline {6.10.3}Documentation des variables}{194}{subsection.6.10.3}%
+\contentsline {subsubsection}{\numberline {6.10.3.1}manette}{194}{subsubsection.6.10.3.1}%
+\contentsline {section}{\numberline {6.11}Référence du fichier event.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{194}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Description détaillée}{195}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Documentation des macros}{196}{subsection.6.11.2}%
+\contentsline {subsubsection}{\numberline {6.11.2.1}TOUCHE\_BAS}{196}{subsubsection.6.11.2.1}%
+\contentsline {subsubsection}{\numberline {6.11.2.2}TOUCHE\_CONSOMMABLE}{196}{subsubsection.6.11.2.2}%
+\contentsline {subsubsection}{\numberline {6.11.2.3}TOUCHE\_DROITE}{196}{subsubsection.6.11.2.3}%
+\contentsline {subsubsection}{\numberline {6.11.2.4}TOUCHE\_ECHAP}{196}{subsubsection.6.11.2.4}%
+\contentsline {subsubsection}{\numberline {6.11.2.5}TOUCHE\_GAUCHE}{196}{subsubsection.6.11.2.5}%
+\contentsline {subsubsection}{\numberline {6.11.2.6}TOUCHE\_HAUT}{196}{subsubsection.6.11.2.6}%
+\contentsline {subsubsection}{\numberline {6.11.2.7}TOUCHE\_TAB}{196}{subsubsection.6.11.2.7}%
+\contentsline {subsection}{\numberline {6.11.3}Documentation des fonctions}{196}{subsection.6.11.3}%
+\contentsline {subsubsection}{\numberline {6.11.3.1}jeu\_event()}{196}{subsubsection.6.11.3.1}%
+\contentsline {subsubsection}{\numberline {6.11.3.2}jeu\_event\_manette()}{197}{subsubsection.6.11.3.2}%
+\contentsline {subsubsection}{\numberline {6.11.3.3}logo\_passer()}{198}{subsubsection.6.11.3.3}%
+\contentsline {subsection}{\numberline {6.11.4}Documentation des variables}{199}{subsection.6.11.4}%
+\contentsline {subsubsection}{\numberline {6.11.4.1}manette}{199}{subsubsection.6.11.4.1}%
+\contentsline {section}{\numberline {6.12}Référence du fichier init\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}close.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{199}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Description détaillée}{200}{subsection.6.12.1}%
+\contentsline {subsection}{\numberline {6.12.2}Documentation des fonctions}{201}{subsection.6.12.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.1}aff\_cleanup()}{201}{subsubsection.6.12.2.1}%
+\contentsline {subsubsection}{\numberline {6.12.2.2}detruire\_renderer()}{201}{subsubsection.6.12.2.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.3}fermer\_programme()}{202}{subsubsection.6.12.2.3}%
+\contentsline {subsubsection}{\numberline {6.12.2.4}fermer\_SDL()}{203}{subsubsection.6.12.2.4}%
+\contentsline {subsubsection}{\numberline {6.12.2.5}init()}{204}{subsubsection.6.12.2.5}%
+\contentsline {subsubsection}{\numberline {6.12.2.6}init\_affichage()}{205}{subsubsection.6.12.2.6}%
+\contentsline {subsubsection}{\numberline {6.12.2.7}init\_rc\_commun()}{205}{subsubsection.6.12.2.7}%
+\contentsline {subsubsection}{\numberline {6.12.2.8}init\_SDL()}{206}{subsubsection.6.12.2.8}%
+\contentsline {subsection}{\numberline {6.12.3}Documentation des variables}{206}{subsection.6.12.3}%
+\contentsline {subsubsection}{\numberline {6.12.3.1}f\_close}{206}{subsubsection.6.12.3.1}%
+\contentsline {subsubsection}{\numberline {6.12.3.2}fenetre\_Principale}{206}{subsubsection.6.12.3.2}%
+\contentsline {subsubsection}{\numberline {6.12.3.3}fenetre\_sous\_rendu}{206}{subsubsection.6.12.3.3}%
+\contentsline {subsubsection}{\numberline {6.12.3.4}hors\_hitbox}{206}{subsubsection.6.12.3.4}%
+\contentsline {subsubsection}{\numberline {6.12.3.5}rendu\_principal}{207}{subsubsection.6.12.3.5}%
+\contentsline {subsubsection}{\numberline {6.12.3.6}running}{207}{subsubsection.6.12.3.6}%
+\contentsline {subsubsection}{\numberline {6.12.3.7}sous\_rendu}{207}{subsubsection.6.12.3.7}%
+\contentsline {section}{\numberline {6.13}Référence du fichier interface.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{207}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Description détaillée}{208}{subsection.6.13.1}%
+\contentsline {subsection}{\numberline {6.13.2}Documentation des fonctions}{208}{subsection.6.13.2}%
+\contentsline {subsubsection}{\numberline {6.13.2.1}RenderHPBar()}{208}{subsubsection.6.13.2.1}%
+\contentsline {section}{\numberline {6.14}Référence du fichier interface.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{209}{section.6.14}%
+\contentsline {subsection}{\numberline {6.14.1}Description détaillée}{210}{subsection.6.14.1}%
+\contentsline {subsection}{\numberline {6.14.2}Documentation des fonctions}{210}{subsection.6.14.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.1}RenderHPBar()}{210}{subsubsection.6.14.2.1}%
+\contentsline {section}{\numberline {6.15}Référence du fichier inventaire.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{211}{section.6.15}%
+\contentsline {subsection}{\numberline {6.15.1}Description détaillée}{212}{subsection.6.15.1}%
+\contentsline {subsection}{\numberline {6.15.2}Documentation des fonctions}{212}{subsection.6.15.2}%
+\contentsline {subsubsection}{\numberline {6.15.2.1}changement\_statistiques()}{212}{subsubsection.6.15.2.1}%
+\contentsline {subsubsection}{\numberline {6.15.2.2}consommer\_objet()}{213}{subsubsection.6.15.2.2}%
+\contentsline {subsubsection}{\numberline {6.15.2.3}creer\_inventaire()}{213}{subsubsection.6.15.2.3}%
+\contentsline {subsubsection}{\numberline {6.15.2.4}desequiper()}{214}{subsubsection.6.15.2.4}%
+\contentsline {subsubsection}{\numberline {6.15.2.5}desequiper\_slot()}{215}{subsubsection.6.15.2.5}%
+\contentsline {subsubsection}{\numberline {6.15.2.6}detruire\_inventaire()}{216}{subsubsection.6.15.2.6}%
+\contentsline {subsubsection}{\numberline {6.15.2.7}equiper\_objet()}{217}{subsubsection.6.15.2.7}%
+\contentsline {subsubsection}{\numberline {6.15.2.8}equiper\_sac\_slot()}{218}{subsubsection.6.15.2.8}%
+\contentsline {subsubsection}{\numberline {6.15.2.9}ramasser\_objet()}{219}{subsubsection.6.15.2.9}%
+\contentsline {subsubsection}{\numberline {6.15.2.10}tout\_ramasser()}{220}{subsubsection.6.15.2.10}%
+\contentsline {section}{\numberline {6.16}Référence du fichier inventaire.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{220}{section.6.16}%
+\contentsline {subsection}{\numberline {6.16.1}Description détaillée}{222}{subsection.6.16.1}%
+\contentsline {subsection}{\numberline {6.16.2}Documentation des macros}{222}{subsection.6.16.2}%
+\contentsline {subsubsection}{\numberline {6.16.2.1}CAPACITE\_SAC}{222}{subsubsection.6.16.2.1}%
+\contentsline {subsection}{\numberline {6.16.3}Documentation des fonctions}{222}{subsection.6.16.3}%
+\contentsline {subsubsection}{\numberline {6.16.3.1}changement\_statistiques()}{222}{subsubsection.6.16.3.1}%
+\contentsline {subsubsection}{\numberline {6.16.3.2}consommer\_objet()}{223}{subsubsection.6.16.3.2}%
+\contentsline {subsubsection}{\numberline {6.16.3.3}creer\_inventaire()}{223}{subsubsection.6.16.3.3}%
+\contentsline {subsubsection}{\numberline {6.16.3.4}desequiper()}{224}{subsubsection.6.16.3.4}%
+\contentsline {subsubsection}{\numberline {6.16.3.5}desequiper\_slot()}{225}{subsubsection.6.16.3.5}%
+\contentsline {subsubsection}{\numberline {6.16.3.6}detruire\_inventaire()}{225}{subsubsection.6.16.3.6}%
+\contentsline {subsubsection}{\numberline {6.16.3.7}equiper\_objet()}{226}{subsubsection.6.16.3.7}%
+\contentsline {subsubsection}{\numberline {6.16.3.8}equiper\_sac\_slot()}{227}{subsubsection.6.16.3.8}%
+\contentsline {subsubsection}{\numberline {6.16.3.9}ramasser\_objet()}{228}{subsubsection.6.16.3.9}%
+\contentsline {subsubsection}{\numberline {6.16.3.10}tout\_ramasser()}{229}{subsubsection.6.16.3.10}%
+\contentsline {section}{\numberline {6.17}Référence du fichier liste\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}objet.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{230}{section.6.17}%
+\contentsline {subsection}{\numberline {6.17.1}Description détaillée}{230}{subsection.6.17.1}%
+\contentsline {subsection}{\numberline {6.17.2}Documentation des fonctions}{231}{subsection.6.17.2}%
+\contentsline {subsubsection}{\numberline {6.17.2.1}afficher\_liste\_objet()}{231}{subsubsection.6.17.2.1}%
+\contentsline {subsubsection}{\numberline {6.17.2.2}afficher\_textures\_equipe()}{231}{subsubsection.6.17.2.2}%
+\contentsline {subsubsection}{\numberline {6.17.2.3}afficher\_textures\_sac()}{232}{subsubsection.6.17.2.3}%
+\contentsline {subsubsection}{\numberline {6.17.2.4}creer\_liste\_objet()}{233}{subsubsection.6.17.2.4}%
+\contentsline {subsubsection}{\numberline {6.17.2.5}creer\_liste\_objet\_equipe()}{234}{subsubsection.6.17.2.5}%
+\contentsline {subsubsection}{\numberline {6.17.2.6}creer\_liste\_objet\_vide()}{235}{subsubsection.6.17.2.6}%
+\contentsline {subsubsection}{\numberline {6.17.2.7}creer\_textures\_objets()}{235}{subsubsection.6.17.2.7}%
+\contentsline {subsubsection}{\numberline {6.17.2.8}detruire\_liste\_objet()}{236}{subsubsection.6.17.2.8}%
+\contentsline {subsubsection}{\numberline {6.17.2.9}effacer\_liste\_objet()}{237}{subsubsection.6.17.2.9}%
+\contentsline {subsubsection}{\numberline {6.17.2.10}placer\_objet\_sac()}{237}{subsubsection.6.17.2.10}%
+\contentsline {subsection}{\numberline {6.17.3}Documentation des variables}{238}{subsection.6.17.3}%
+\contentsline {subsubsection}{\numberline {6.17.3.1}objets}{238}{subsubsection.6.17.3.1}%
+\contentsline {section}{\numberline {6.18}Référence du fichier liste\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}objet.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{238}{section.6.18}%
+\contentsline {subsection}{\numberline {6.18.1}Description détaillée}{240}{subsection.6.18.1}%
+\contentsline {subsection}{\numberline {6.18.2}Documentation des fonctions}{240}{subsection.6.18.2}%
+\contentsline {subsubsection}{\numberline {6.18.2.1}afficher\_liste\_objet()}{240}{subsubsection.6.18.2.1}%
+\contentsline {subsubsection}{\numberline {6.18.2.2}afficher\_textures\_equipe()}{241}{subsubsection.6.18.2.2}%
+\contentsline {subsubsection}{\numberline {6.18.2.3}afficher\_textures\_sac()}{241}{subsubsection.6.18.2.3}%
+\contentsline {subsubsection}{\numberline {6.18.2.4}creer\_liste\_objet()}{242}{subsubsection.6.18.2.4}%
+\contentsline {subsubsection}{\numberline {6.18.2.5}creer\_liste\_objet\_equipe()}{243}{subsubsection.6.18.2.5}%
+\contentsline {subsubsection}{\numberline {6.18.2.6}creer\_liste\_objet\_vide()}{244}{subsubsection.6.18.2.6}%
+\contentsline {subsubsection}{\numberline {6.18.2.7}creer\_textures\_objets()}{244}{subsubsection.6.18.2.7}%
+\contentsline {subsubsection}{\numberline {6.18.2.8}detruire\_liste\_objet()}{245}{subsubsection.6.18.2.8}%
+\contentsline {subsubsection}{\numberline {6.18.2.9}effacer\_liste\_objet()}{246}{subsubsection.6.18.2.9}%
+\contentsline {subsubsection}{\numberline {6.18.2.10}placer\_objet\_sac()}{246}{subsubsection.6.18.2.10}%
+\contentsline {subsection}{\numberline {6.18.3}Documentation des variables}{247}{subsection.6.18.3}%
+\contentsline {subsubsection}{\numberline {6.18.3.1}objets}{247}{subsubsection.6.18.3.1}%
+\contentsline {section}{\numberline {6.19}Référence du fichier listes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{247}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Description détaillée}{248}{subsection.6.19.1}%
+\contentsline {subsection}{\numberline {6.19.2}Documentation des fonctions}{248}{subsection.6.19.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.1}afficher\_liste()}{249}{subsubsection.6.19.2.1}%
+\contentsline {subsubsection}{\numberline {6.19.2.2}ajout\_droit()}{249}{subsubsection.6.19.2.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.3}ajout\_gauche()}{250}{subsubsection.6.19.2.3}%
+\contentsline {subsubsection}{\numberline {6.19.2.4}detruire\_liste()}{250}{subsubsection.6.19.2.4}%
+\contentsline {subsubsection}{\numberline {6.19.2.5}en\_queue()}{251}{subsubsection.6.19.2.5}%
+\contentsline {subsubsection}{\numberline {6.19.2.6}en\_tete()}{252}{subsubsection.6.19.2.6}%
+\contentsline {subsubsection}{\numberline {6.19.2.7}hors\_liste()}{254}{subsubsection.6.19.2.7}%
+\contentsline {subsubsection}{\numberline {6.19.2.8}init\_liste()}{256}{subsubsection.6.19.2.8}%
+\contentsline {subsubsection}{\numberline {6.19.2.9}liste\_vide()}{257}{subsubsection.6.19.2.9}%
+\contentsline {subsubsection}{\numberline {6.19.2.10}modif\_elt()}{258}{subsubsection.6.19.2.10}%
+\contentsline {subsubsection}{\numberline {6.19.2.11}oter\_elt()}{259}{subsubsection.6.19.2.11}%
+\contentsline {subsubsection}{\numberline {6.19.2.12}precedent()}{260}{subsubsection.6.19.2.12}%
+\contentsline {subsubsection}{\numberline {6.19.2.13}selectionner\_element()}{261}{subsubsection.6.19.2.13}%
+\contentsline {subsubsection}{\numberline {6.19.2.14}suivant()}{262}{subsubsection.6.19.2.14}%
+\contentsline {subsubsection}{\numberline {6.19.2.15}taille\_liste()}{263}{subsubsection.6.19.2.15}%
+\contentsline {subsubsection}{\numberline {6.19.2.16}valeur\_elt()}{264}{subsubsection.6.19.2.16}%
+\contentsline {subsubsection}{\numberline {6.19.2.17}vider\_liste()}{265}{subsubsection.6.19.2.17}%
+\contentsline {section}{\numberline {6.20}Référence du fichier listes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{266}{section.6.20}%
+\contentsline {subsection}{\numberline {6.20.1}Description détaillée}{268}{subsection.6.20.1}%
+\contentsline {subsection}{\numberline {6.20.2}Documentation des fonctions}{268}{subsection.6.20.2}%
+\contentsline {subsubsection}{\numberline {6.20.2.1}afficher\_liste()}{268}{subsubsection.6.20.2.1}%
+\contentsline {subsubsection}{\numberline {6.20.2.2}ajout\_droit()}{269}{subsubsection.6.20.2.2}%
+\contentsline {subsubsection}{\numberline {6.20.2.3}ajout\_gauche()}{270}{subsubsection.6.20.2.3}%
+\contentsline {subsubsection}{\numberline {6.20.2.4}detruire\_liste()}{270}{subsubsection.6.20.2.4}%
+\contentsline {subsubsection}{\numberline {6.20.2.5}en\_queue()}{271}{subsubsection.6.20.2.5}%
+\contentsline {subsubsection}{\numberline {6.20.2.6}en\_tete()}{272}{subsubsection.6.20.2.6}%
+\contentsline {subsubsection}{\numberline {6.20.2.7}hors\_liste()}{274}{subsubsection.6.20.2.7}%
+\contentsline {subsubsection}{\numberline {6.20.2.8}init\_liste()}{276}{subsubsection.6.20.2.8}%
+\contentsline {subsubsection}{\numberline {6.20.2.9}liste\_vide()}{277}{subsubsection.6.20.2.9}%
+\contentsline {subsubsection}{\numberline {6.20.2.10}modif\_elt()}{278}{subsubsection.6.20.2.10}%
+\contentsline {subsubsection}{\numberline {6.20.2.11}oter\_elt()}{279}{subsubsection.6.20.2.11}%
+\contentsline {subsubsection}{\numberline {6.20.2.12}precedent()}{280}{subsubsection.6.20.2.12}%
+\contentsline {subsubsection}{\numberline {6.20.2.13}selectionner\_element()}{281}{subsubsection.6.20.2.13}%
+\contentsline {subsubsection}{\numberline {6.20.2.14}suivant()}{282}{subsubsection.6.20.2.14}%
+\contentsline {subsubsection}{\numberline {6.20.2.15}taille\_liste()}{283}{subsubsection.6.20.2.15}%
+\contentsline {subsubsection}{\numberline {6.20.2.16}valeur\_elt()}{284}{subsubsection.6.20.2.16}%
+\contentsline {subsubsection}{\numberline {6.20.2.17}vider\_liste()}{285}{subsubsection.6.20.2.17}%
+\contentsline {section}{\numberline {6.21}Référence du fichier main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{286}{section.6.21}%
+\contentsline {subsection}{\numberline {6.21.1}Description détaillée}{287}{subsection.6.21.1}%
+\contentsline {subsection}{\numberline {6.21.2}Documentation des macros}{287}{subsection.6.21.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.1}SDL\_MAIN\_HANDLED}{288}{subsubsection.6.21.2.1}%
+\contentsline {subsection}{\numberline {6.21.3}Documentation des fonctions}{288}{subsection.6.21.3}%
+\contentsline {subsubsection}{\numberline {6.21.3.1}afficher\_intro()}{288}{subsubsection.6.21.3.1}%
+\contentsline {subsubsection}{\numberline {6.21.3.2}main()}{289}{subsubsection.6.21.3.2}%
+\contentsline {section}{\numberline {6.22}Référence du fichier map.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{290}{section.6.22}%
+\contentsline {subsection}{\numberline {6.22.1}Description détaillée}{290}{subsection.6.22.1}%
+\contentsline {subsection}{\numberline {6.22.2}Documentation des fonctions}{291}{subsection.6.22.2}%
+\contentsline {subsubsection}{\numberline {6.22.2.1}afficher\_zone\_tp()}{291}{subsubsection.6.22.2.1}%
+\contentsline {subsubsection}{\numberline {6.22.2.2}charger\_map()}{291}{subsubsection.6.22.2.2}%
+\contentsline {subsubsection}{\numberline {6.22.2.3}detruire\_map()}{293}{subsubsection.6.22.2.3}%
+\contentsline {subsubsection}{\numberline {6.22.2.4}hors\_map\_monstre()}{294}{subsubsection.6.22.2.4}%
+\contentsline {subsubsection}{\numberline {6.22.2.5}init\_sousbuffer()}{294}{subsubsection.6.22.2.5}%
+\contentsline {subsubsection}{\numberline {6.22.2.6}taille\_ecran\_cases()}{295}{subsubsection.6.22.2.6}%
+\contentsline {subsubsection}{\numberline {6.22.2.7}texture\_map()}{295}{subsubsection.6.22.2.7}%
+\contentsline {subsubsection}{\numberline {6.22.2.8}tp\_joueurs()}{296}{subsubsection.6.22.2.8}%
+\contentsline {subsubsection}{\numberline {6.22.2.9}transition()}{297}{subsubsection.6.22.2.9}%
+\contentsline {subsection}{\numberline {6.22.3}Documentation des variables}{298}{subsection.6.22.3}%
+\contentsline {subsubsection}{\numberline {6.22.3.1}map}{298}{subsubsection.6.22.3.1}%
+\contentsline {section}{\numberline {6.23}Référence du fichier map.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{298}{section.6.23}%
+\contentsline {subsection}{\numberline {6.23.1}Description détaillée}{299}{subsection.6.23.1}%
+\contentsline {subsection}{\numberline {6.23.2}Documentation des macros}{299}{subsection.6.23.2}%
+\contentsline {subsubsection}{\numberline {6.23.2.1}TAILLE\_CASE}{300}{subsubsection.6.23.2.1}%
+\contentsline {subsection}{\numberline {6.23.3}Documentation des fonctions}{300}{subsection.6.23.3}%
+\contentsline {subsubsection}{\numberline {6.23.3.1}charger\_map()}{300}{subsubsection.6.23.3.1}%
+\contentsline {subsubsection}{\numberline {6.23.3.2}detruire\_map()}{301}{subsubsection.6.23.3.2}%
+\contentsline {subsubsection}{\numberline {6.23.3.3}init\_sousbuffer()}{302}{subsubsection.6.23.3.3}%
+\contentsline {subsubsection}{\numberline {6.23.3.4}texture\_map()}{303}{subsubsection.6.23.3.4}%
+\contentsline {subsubsection}{\numberline {6.23.3.5}tp\_joueurs()}{304}{subsubsection.6.23.3.5}%
+\contentsline {subsubsection}{\numberline {6.23.3.6}transition()}{304}{subsubsection.6.23.3.6}%
+\contentsline {subsection}{\numberline {6.23.4}Documentation des variables}{305}{subsection.6.23.4}%
+\contentsline {subsubsection}{\numberline {6.23.4.1}map}{305}{subsubsection.6.23.4.1}%
+\contentsline {section}{\numberline {6.24}Référence du fichier menus.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{305}{section.6.24}%
+\contentsline {subsection}{\numberline {6.24.1}Description détaillée}{306}{subsection.6.24.1}%
+\contentsline {subsection}{\numberline {6.24.2}Documentation des fonctions}{306}{subsection.6.24.2}%
+\contentsline {subsubsection}{\numberline {6.24.2.1}afficher\_inventaire()}{307}{subsubsection.6.24.2.1}%
+\contentsline {subsubsection}{\numberline {6.24.2.2}afficher\_inventaire\_manette()}{307}{subsubsection.6.24.2.2}%
+\contentsline {subsubsection}{\numberline {6.24.2.3}afficher\_menu\_accueil()}{308}{subsubsection.6.24.2.3}%
+\contentsline {subsubsection}{\numberline {6.24.2.4}afficher\_menu\_accueil\_manette()}{309}{subsubsection.6.24.2.4}%
+\contentsline {subsubsection}{\numberline {6.24.2.5}afficher\_menu\_pause()}{310}{subsubsection.6.24.2.5}%
+\contentsline {subsubsection}{\numberline {6.24.2.6}afficher\_menu\_pause\_manette()}{311}{subsubsection.6.24.2.6}%
+\contentsline {subsubsection}{\numberline {6.24.2.7}creer\_inventaire\_j2()}{312}{subsubsection.6.24.2.7}%
+\contentsline {subsubsection}{\numberline {6.24.2.8}draw\_rect\_epaisseur()}{313}{subsubsection.6.24.2.8}%
+\contentsline {subsubsection}{\numberline {6.24.2.9}init\_text\_menus()}{314}{subsubsection.6.24.2.9}%
+\contentsline {subsection}{\numberline {6.24.3}Documentation des variables}{315}{subsection.6.24.3}%
+\contentsline {subsubsection}{\numberline {6.24.3.1}text\_accueil}{315}{subsubsection.6.24.3.1}%
+\contentsline {subsubsection}{\numberline {6.24.3.2}text\_inventaire1}{315}{subsubsection.6.24.3.2}%
+\contentsline {subsubsection}{\numberline {6.24.3.3}text\_inventaire2}{315}{subsubsection.6.24.3.3}%
+\contentsline {subsubsection}{\numberline {6.24.3.4}text\_pause}{315}{subsubsection.6.24.3.4}%
+\contentsline {section}{\numberline {6.25}Référence du fichier menus.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{315}{section.6.25}%
+\contentsline {subsection}{\numberline {6.25.1}Description détaillée}{316}{subsection.6.25.1}%
+\contentsline {subsection}{\numberline {6.25.2}Documentation des fonctions}{317}{subsection.6.25.2}%
+\contentsline {subsubsection}{\numberline {6.25.2.1}afficher\_inventaire()}{317}{subsubsection.6.25.2.1}%
+\contentsline {subsubsection}{\numberline {6.25.2.2}afficher\_inventaire\_manette()}{317}{subsubsection.6.25.2.2}%
+\contentsline {subsubsection}{\numberline {6.25.2.3}afficher\_menu\_accueil()}{318}{subsubsection.6.25.2.3}%
+\contentsline {subsubsection}{\numberline {6.25.2.4}afficher\_menu\_accueil\_manette()}{319}{subsubsection.6.25.2.4}%
+\contentsline {subsubsection}{\numberline {6.25.2.5}afficher\_menu\_pause()}{320}{subsubsection.6.25.2.5}%
+\contentsline {subsubsection}{\numberline {6.25.2.6}afficher\_menu\_pause\_manette()}{321}{subsubsection.6.25.2.6}%
+\contentsline {subsubsection}{\numberline {6.25.2.7}creer\_inventaire\_j2()}{322}{subsubsection.6.25.2.7}%
+\contentsline {subsubsection}{\numberline {6.25.2.8}init\_text\_menus()}{323}{subsubsection.6.25.2.8}%
+\contentsline {subsection}{\numberline {6.25.3}Documentation des variables}{323}{subsection.6.25.3}%
+\contentsline {subsubsection}{\numberline {6.25.3.1}text\_accueil}{323}{subsubsection.6.25.3.1}%
+\contentsline {subsubsection}{\numberline {6.25.3.2}text\_inventaire1}{324}{subsubsection.6.25.3.2}%
+\contentsline {subsubsection}{\numberline {6.25.3.3}text\_inventaire2}{324}{subsubsection.6.25.3.3}%
+\contentsline {subsubsection}{\numberline {6.25.3.4}text\_pause}{324}{subsubsection.6.25.3.4}%
+\contentsline {section}{\numberline {6.26}Référence du fichier monstres.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{324}{section.6.26}%
+\contentsline {subsection}{\numberline {6.26.1}Description détaillée}{325}{subsection.6.26.1}%
+\contentsline {subsection}{\numberline {6.26.2}Documentation des fonctions}{326}{subsection.6.26.2}%
+\contentsline {subsubsection}{\numberline {6.26.2.1}action\_monstre()}{326}{subsubsection.6.26.2.1}%
+\contentsline {subsubsection}{\numberline {6.26.2.2}agro\_knight()}{327}{subsubsection.6.26.2.2}%
+\contentsline {subsubsection}{\numberline {6.26.2.3}agro\_monstre()}{328}{subsubsection.6.26.2.3}%
+\contentsline {subsubsection}{\numberline {6.26.2.4}agro\_witcher()}{328}{subsubsection.6.26.2.4}%
+\contentsline {subsubsection}{\numberline {6.26.2.5}ajouter\_monstre()}{329}{subsubsection.6.26.2.5}%
+\contentsline {subsubsection}{\numberline {6.26.2.6}ajouter\_monstre\_cb()}{330}{subsubsection.6.26.2.6}%
+\contentsline {subsubsection}{\numberline {6.26.2.7}charger\_base\_monstre()}{331}{subsubsection.6.26.2.7}%
+\contentsline {subsubsection}{\numberline {6.26.2.8}creer\_monstre()}{331}{subsubsection.6.26.2.8}%
+\contentsline {subsubsection}{\numberline {6.26.2.9}detruire\_liste\_base\_monstres()}{332}{subsubsection.6.26.2.9}%
+\contentsline {subsubsection}{\numberline {6.26.2.10}detruire\_monstre()}{332}{subsubsection.6.26.2.10}%
+\contentsline {subsubsection}{\numberline {6.26.2.11}detruire\_monstre\_cb()}{332}{subsubsection.6.26.2.11}%
+\contentsline {subsubsection}{\numberline {6.26.2.12}fuir\_joueur()}{333}{subsubsection.6.26.2.12}%
+\contentsline {subsubsection}{\numberline {6.26.2.13}marcher\_monstre()}{334}{subsubsection.6.26.2.13}%
+\contentsline {subsubsection}{\numberline {6.26.2.14}monstre\_attaque()}{335}{subsubsection.6.26.2.14}%
+\contentsline {subsubsection}{\numberline {6.26.2.15}monstre\_en\_garde()}{336}{subsubsection.6.26.2.15}%
+\contentsline {subsubsection}{\numberline {6.26.2.16}nom\_monstre\_to\_type\_monstre()}{337}{subsubsection.6.26.2.16}%
+\contentsline {subsubsection}{\numberline {6.26.2.17}orienter\_monstre()}{337}{subsubsection.6.26.2.17}%
+\contentsline {subsubsection}{\numberline {6.26.2.18}orienter\_monstre\_vers\_joueur()}{338}{subsubsection.6.26.2.18}%
+\contentsline {subsubsection}{\numberline {6.26.2.19}ronde\_monstre()}{339}{subsubsection.6.26.2.19}%
+\contentsline {subsubsection}{\numberline {6.26.2.20}rush\_joueur()}{340}{subsubsection.6.26.2.20}%
+\contentsline {subsection}{\numberline {6.26.3}Documentation des variables}{341}{subsection.6.26.3}%
+\contentsline {subsubsection}{\numberline {6.26.3.1}liste\_base\_monstres}{341}{subsubsection.6.26.3.1}%
+\contentsline {section}{\numberline {6.27}Référence du fichier monstres.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{341}{section.6.27}%
+\contentsline {subsection}{\numberline {6.27.1}Description détaillée}{343}{subsection.6.27.1}%
+\contentsline {subsection}{\numberline {6.27.2}Documentation des macros}{343}{subsection.6.27.2}%
+\contentsline {subsubsection}{\numberline {6.27.2.1}DISTANCE\_AGRO}{344}{subsubsection.6.27.2.1}%
+\contentsline {subsubsection}{\numberline {6.27.2.2}DUREE\_MONSTRE\_ATTAQUE}{344}{subsubsection.6.27.2.2}%
+\contentsline {subsubsection}{\numberline {6.27.2.3}DUREE\_MONSTRE\_BLESSE}{344}{subsubsection.6.27.2.3}%
+\contentsline {subsubsection}{\numberline {6.27.2.4}DUREE\_MONSTRE\_EN\_GARDE}{344}{subsubsection.6.27.2.4}%
+\contentsline {subsubsection}{\numberline {6.27.2.5}DUREE\_MONSTRE\_MARCHER}{344}{subsubsection.6.27.2.5}%
+\contentsline {subsubsection}{\numberline {6.27.2.6}DUREE\_MONSTRE\_PAUSE}{344}{subsubsection.6.27.2.6}%
+\contentsline {subsubsection}{\numberline {6.27.2.7}DUREE\_RUSH\_OU\_FUITE}{344}{subsubsection.6.27.2.7}%
+\contentsline {subsection}{\numberline {6.27.3}Documentation du type de l\textquotesingle {}énumération}{344}{subsection.6.27.3}%
+\contentsline {subsubsection}{\numberline {6.27.3.1}action\_monstre\_t}{344}{subsubsection.6.27.3.1}%
+\contentsline {subsubsection}{\numberline {6.27.3.2}type\_monstre\_t}{345}{subsubsection.6.27.3.2}%
+\contentsline {subsection}{\numberline {6.27.4}Documentation des fonctions}{345}{subsection.6.27.4}%
+\contentsline {subsubsection}{\numberline {6.27.4.1}action\_monstre()}{345}{subsubsection.6.27.4.1}%
+\contentsline {subsubsection}{\numberline {6.27.4.2}ajouter\_monstre\_cb()}{346}{subsubsection.6.27.4.2}%
+\contentsline {subsubsection}{\numberline {6.27.4.3}charger\_base\_monstre()}{347}{subsubsection.6.27.4.3}%
+\contentsline {subsubsection}{\numberline {6.27.4.4}creer\_monstre()}{348}{subsubsection.6.27.4.4}%
+\contentsline {subsubsection}{\numberline {6.27.4.5}detruire\_liste\_base\_monstres()}{349}{subsubsection.6.27.4.5}%
+\contentsline {subsubsection}{\numberline {6.27.4.6}detruire\_monstre\_cb()}{349}{subsubsection.6.27.4.6}%
+\contentsline {subsubsection}{\numberline {6.27.4.7}nom\_monstre\_to\_type\_monstre()}{349}{subsubsection.6.27.4.7}%
+\contentsline {subsection}{\numberline {6.27.5}Documentation des variables}{350}{subsection.6.27.5}%
+\contentsline {subsubsection}{\numberline {6.27.5.1}liste\_base\_monstres}{350}{subsubsection.6.27.5.1}%
+\contentsline {section}{\numberline {6.28}Référence du fichier objet.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{350}{section.6.28}%
+\contentsline {subsection}{\numberline {6.28.1}Description détaillée}{351}{subsection.6.28.1}%
+\contentsline {subsection}{\numberline {6.28.2}Documentation des fonctions}{351}{subsection.6.28.2}%
+\contentsline {subsubsection}{\numberline {6.28.2.1}afficher\_objet()}{351}{subsubsection.6.28.2.1}%
+\contentsline {subsubsection}{\numberline {6.28.2.2}creer\_objet()}{352}{subsubsection.6.28.2.2}%
+\contentsline {subsubsection}{\numberline {6.28.2.3}detruire\_objet()}{353}{subsubsection.6.28.2.3}%
+\contentsline {section}{\numberline {6.29}Référence du fichier objet.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{354}{section.6.29}%
+\contentsline {subsection}{\numberline {6.29.1}Description détaillée}{355}{subsection.6.29.1}%
+\contentsline {subsection}{\numberline {6.29.2}Documentation des macros}{355}{subsection.6.29.2}%
+\contentsline {subsubsection}{\numberline {6.29.2.1}NB\_TYPE\_OBJ}{355}{subsubsection.6.29.2.1}%
+\contentsline {subsection}{\numberline {6.29.3}Documentation du type de l\textquotesingle {}énumération}{355}{subsection.6.29.3}%
+\contentsline {subsubsection}{\numberline {6.29.3.1}t\_item}{355}{subsubsection.6.29.3.1}%
+\contentsline {subsection}{\numberline {6.29.4}Documentation des fonctions}{356}{subsection.6.29.4}%
+\contentsline {subsubsection}{\numberline {6.29.4.1}afficher\_objet()}{356}{subsubsection.6.29.4.1}%
+\contentsline {subsubsection}{\numberline {6.29.4.2}creer\_objet()}{356}{subsubsection.6.29.4.2}%
+\contentsline {subsubsection}{\numberline {6.29.4.3}detruire\_objet()}{357}{subsubsection.6.29.4.3}%
+\contentsline {section}{\numberline {6.30}Référence du fichier personnage.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{358}{section.6.30}%
+\contentsline {subsection}{\numberline {6.30.1}Description détaillée}{359}{subsection.6.30.1}%
+\contentsline {subsection}{\numberline {6.30.2}Documentation des fonctions}{359}{subsection.6.30.2}%
+\contentsline {subsubsection}{\numberline {6.30.2.1}afficher\_statistiques()}{360}{subsubsection.6.30.2.1}%
+\contentsline {subsubsection}{\numberline {6.30.2.2}charger\_sauvegarde\_joueur()}{360}{subsubsection.6.30.2.2}%
+\contentsline {subsubsection}{\numberline {6.30.2.3}check\_repertoire\_jeux()}{361}{subsubsection.6.30.2.3}%
+\contentsline {subsubsection}{\numberline {6.30.2.4}copy()}{362}{subsubsection.6.30.2.4}%
+\contentsline {subsubsection}{\numberline {6.30.2.5}creer\_joueur()}{362}{subsubsection.6.30.2.5}%
+\contentsline {subsubsection}{\numberline {6.30.2.6}creer\_sauvegarde\_json()}{363}{subsubsection.6.30.2.6}%
+\contentsline {subsubsection}{\numberline {6.30.2.7}detruire\_joueur()}{364}{subsubsection.6.30.2.7}%
+\contentsline {subsubsection}{\numberline {6.30.2.8}distance\_joueur()}{365}{subsubsection.6.30.2.8}%
+\contentsline {subsubsection}{\numberline {6.30.2.9}distance\_x\_joueur()}{366}{subsubsection.6.30.2.9}%
+\contentsline {subsubsection}{\numberline {6.30.2.10}distance\_y\_joueur()}{367}{subsubsection.6.30.2.10}%
+\contentsline {subsubsection}{\numberline {6.30.2.11}entite\_en\_collision()}{368}{subsubsection.6.30.2.11}%
+\contentsline {subsubsection}{\numberline {6.30.2.12}entite\_subit\_attaque()}{369}{subsubsection.6.30.2.12}%
+\contentsline {subsubsection}{\numberline {6.30.2.13}environnement\_joueurs()}{369}{subsubsection.6.30.2.13}%
+\contentsline {subsubsection}{\numberline {6.30.2.14}gain\_xp()}{370}{subsubsection.6.30.2.14}%
+\contentsline {subsubsection}{\numberline {6.30.2.15}levelup()}{371}{subsubsection.6.30.2.15}%
+\contentsline {subsubsection}{\numberline {6.30.2.16}maj\_statistiques()}{372}{subsubsection.6.30.2.16}%
+\contentsline {subsubsection}{\numberline {6.30.2.17}new\_joueur()}{372}{subsubsection.6.30.2.17}%
+\contentsline {subsubsection}{\numberline {6.30.2.18}sauv\_existe()}{373}{subsubsection.6.30.2.18}%
+\contentsline {subsubsection}{\numberline {6.30.2.19}stoper\_mouvement\_joueurs()}{373}{subsubsection.6.30.2.19}%
+\contentsline {subsubsection}{\numberline {6.30.2.20}zone\_en\_dehors\_hitbox()}{374}{subsubsection.6.30.2.20}%
+\contentsline {subsection}{\numberline {6.30.3}Documentation des variables}{374}{subsection.6.30.3}%
+\contentsline {subsubsection}{\numberline {6.30.3.1}save\_path}{374}{subsubsection.6.30.3.1}%
+\contentsline {section}{\numberline {6.31}Référence du fichier personnage.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{375}{section.6.31}%
+\contentsline {subsection}{\numberline {6.31.1}Description détaillée}{376}{subsection.6.31.1}%
+\contentsline {subsection}{\numberline {6.31.2}Documentation des macros}{377}{subsection.6.31.2}%
+\contentsline {subsubsection}{\numberline {6.31.2.1}DUREE\_ATTAQUE}{377}{subsubsection.6.31.2.1}%
+\contentsline {subsubsection}{\numberline {6.31.2.2}DUREE\_ATTAQUE\_CHARGEE}{377}{subsubsection.6.31.2.2}%
+\contentsline {subsubsection}{\numberline {6.31.2.3}DUREE\_ATTAQUE\_OU\_CHARGEE}{377}{subsubsection.6.31.2.3}%
+\contentsline {subsubsection}{\numberline {6.31.2.4}DUREE\_BLOQUER}{377}{subsubsection.6.31.2.4}%
+\contentsline {subsubsection}{\numberline {6.31.2.5}DUREE\_JOUEUR\_BLESSE}{377}{subsubsection.6.31.2.5}%
+\contentsline {subsubsection}{\numberline {6.31.2.6}DUREE\_SOIN}{377}{subsubsection.6.31.2.6}%
+\contentsline {subsubsection}{\numberline {6.31.2.7}TAILLE\_PERSONNAGE}{378}{subsubsection.6.31.2.7}%
+\contentsline {subsubsection}{\numberline {6.31.2.8}TAILLE\_TRIGGER}{378}{subsubsection.6.31.2.8}%
+\contentsline {subsection}{\numberline {6.31.3}Documentation des définitions de type}{378}{subsection.6.31.3}%
+\contentsline {subsubsection}{\numberline {6.31.3.1}byte}{378}{subsubsection.6.31.3.1}%
+\contentsline {subsection}{\numberline {6.31.4}Documentation du type de l\textquotesingle {}énumération}{378}{subsection.6.31.4}%
+\contentsline {subsubsection}{\numberline {6.31.4.1}action\_t}{378}{subsubsection.6.31.4.1}%
+\contentsline {subsection}{\numberline {6.31.5}Documentation des fonctions}{378}{subsection.6.31.5}%
+\contentsline {subsubsection}{\numberline {6.31.5.1}afficher\_statistiques()}{379}{subsubsection.6.31.5.1}%
+\contentsline {subsubsection}{\numberline {6.31.5.2}charger\_sauvegarde\_joueur()}{379}{subsubsection.6.31.5.2}%
+\contentsline {subsubsection}{\numberline {6.31.5.3}check\_repertoire\_jeux()}{380}{subsubsection.6.31.5.3}%
+\contentsline {subsubsection}{\numberline {6.31.5.4}creer\_joueur()}{381}{subsubsection.6.31.5.4}%
+\contentsline {subsubsection}{\numberline {6.31.5.5}creer\_sauvegarde\_json()}{382}{subsubsection.6.31.5.5}%
+\contentsline {subsubsection}{\numberline {6.31.5.6}detruire\_joueur()}{382}{subsubsection.6.31.5.6}%
+\contentsline {subsubsection}{\numberline {6.31.5.7}distance\_joueur()}{383}{subsubsection.6.31.5.7}%
+\contentsline {subsubsection}{\numberline {6.31.5.8}distance\_x\_joueur()}{384}{subsubsection.6.31.5.8}%
+\contentsline {subsubsection}{\numberline {6.31.5.9}distance\_y\_joueur()}{385}{subsubsection.6.31.5.9}%
+\contentsline {subsubsection}{\numberline {6.31.5.10}environnement\_joueurs()}{386}{subsubsection.6.31.5.10}%
+\contentsline {subsubsection}{\numberline {6.31.5.11}gain\_xp()}{387}{subsubsection.6.31.5.11}%
+\contentsline {subsubsection}{\numberline {6.31.5.12}levelup()}{388}{subsubsection.6.31.5.12}%
+\contentsline {subsubsection}{\numberline {6.31.5.13}maj\_statistiques()}{389}{subsubsection.6.31.5.13}%
+\contentsline {subsubsection}{\numberline {6.31.5.14}new\_joueur()}{389}{subsubsection.6.31.5.14}%
+\contentsline {subsubsection}{\numberline {6.31.5.15}stoper\_mouvement\_joueurs()}{390}{subsubsection.6.31.5.15}%
+\contentsline {subsubsection}{\numberline {6.31.5.16}zone\_en\_dehors\_hitbox()}{391}{subsubsection.6.31.5.16}%
+\contentsline {subsection}{\numberline {6.31.6}Documentation des variables}{391}{subsection.6.31.6}%
+\contentsline {subsubsection}{\numberline {6.31.6.1}save\_path}{391}{subsubsection.6.31.6.1}%
+\contentsline {section}{\numberline {6.32}Référence du fichier sorts.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{392}{section.6.32}%
+\contentsline {subsection}{\numberline {6.32.1}Description détaillée}{392}{subsection.6.32.1}%
+\contentsline {subsection}{\numberline {6.32.2}Documentation des fonctions}{393}{subsection.6.32.2}%
+\contentsline {subsubsection}{\numberline {6.32.2.1}action\_sort()}{393}{subsubsection.6.32.2.1}%
+\contentsline {subsubsection}{\numberline {6.32.2.2}ajouter\_sort()}{394}{subsubsection.6.32.2.2}%
+\contentsline {subsubsection}{\numberline {6.32.2.3}ajouter\_sort\_cb()}{394}{subsubsection.6.32.2.3}%
+\contentsline {subsubsection}{\numberline {6.32.2.4}creer\_sort\_monstre()}{395}{subsubsection.6.32.2.4}%
+\contentsline {subsubsection}{\numberline {6.32.2.5}detruire\_sort()}{396}{subsubsection.6.32.2.5}%
+\contentsline {subsubsection}{\numberline {6.32.2.6}detruire\_sort\_cb()}{396}{subsubsection.6.32.2.6}%
+\contentsline {subsubsection}{\numberline {6.32.2.7}init\_liste\_base\_sort()}{397}{subsubsection.6.32.2.7}%
+\contentsline {subsubsection}{\numberline {6.32.2.8}orienter\_sort\_vers\_joueur()}{398}{subsubsection.6.32.2.8}%
+\contentsline {subsection}{\numberline {6.32.3}Documentation des variables}{398}{subsection.6.32.3}%
+\contentsline {subsubsection}{\numberline {6.32.3.1}liste\_base\_sort}{399}{subsubsection.6.32.3.1}%
+\contentsline {section}{\numberline {6.33}Référence du fichier sorts.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{399}{section.6.33}%
+\contentsline {subsection}{\numberline {6.33.1}Description détaillée}{400}{subsection.6.33.1}%
+\contentsline {subsection}{\numberline {6.33.2}Documentation des macros}{400}{subsection.6.33.2}%
+\contentsline {subsubsection}{\numberline {6.33.2.1}CONVERTIR\_RADIANT\_DEGREE}{400}{subsubsection.6.33.2.1}%
+\contentsline {subsubsection}{\numberline {6.33.2.2}PATH\_SPELL\_BOSS}{401}{subsubsection.6.33.2.2}%
+\contentsline {subsubsection}{\numberline {6.33.2.3}PATH\_SPELL\_WITCHER}{401}{subsubsection.6.33.2.3}%
+\contentsline {subsection}{\numberline {6.33.3}Documentation du type de l\textquotesingle {}énumération}{401}{subsection.6.33.3}%
+\contentsline {subsubsection}{\numberline {6.33.3.1}type\_sort\_t}{401}{subsubsection.6.33.3.1}%
+\contentsline {subsection}{\numberline {6.33.4}Documentation des fonctions}{401}{subsection.6.33.4}%
+\contentsline {subsubsection}{\numberline {6.33.4.1}action\_sort()}{401}{subsubsection.6.33.4.1}%
+\contentsline {subsubsection}{\numberline {6.33.4.2}ajouter\_sort\_cb()}{402}{subsubsection.6.33.4.2}%
+\contentsline {subsubsection}{\numberline {6.33.4.3}creer\_sort\_monstre()}{402}{subsubsection.6.33.4.3}%
+\contentsline {subsubsection}{\numberline {6.33.4.4}detruire\_sort\_cb()}{403}{subsubsection.6.33.4.4}%
+\contentsline {subsubsection}{\numberline {6.33.4.5}init\_liste\_base\_sort()}{404}{subsubsection.6.33.4.5}%
+\contentsline {subsubsection}{\numberline {6.33.4.6}orienter\_sort\_vers\_joueur()}{405}{subsubsection.6.33.4.6}%
+\contentsline {subsection}{\numberline {6.33.5}Documentation des variables}{405}{subsection.6.33.5}%
+\contentsline {subsubsection}{\numberline {6.33.5.1}liste\_base\_sort}{406}{subsubsection.6.33.5.1}%
+\contentsline {section}{\numberline {6.34}Référence du fichier test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}affichage.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{406}{section.6.34}%
+\contentsline {subsection}{\numberline {6.34.1}Description détaillée}{406}{subsection.6.34.1}%
+\contentsline {subsection}{\numberline {6.34.2}Documentation des fonctions}{407}{subsection.6.34.2}%
+\contentsline {subsubsection}{\numberline {6.34.2.1}main()}{407}{subsubsection.6.34.2.1}%
+\contentsline {subsection}{\numberline {6.34.3}Documentation des variables}{407}{subsection.6.34.3}%
+\contentsline {subsubsection}{\numberline {6.34.3.1}compteur}{407}{subsubsection.6.34.3.1}%
+\contentsline {subsubsection}{\numberline {6.34.3.2}FENETRE\_LARGEUR}{407}{subsubsection.6.34.3.2}%
+\contentsline {subsubsection}{\numberline {6.34.3.3}FENETRE\_LONGUEUR}{407}{subsubsection.6.34.3.3}%
+\contentsline {subsubsection}{\numberline {6.34.3.4}test\_map}{407}{subsubsection.6.34.3.4}%
+\contentsline {section}{\numberline {6.35}Référence du fichier test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}inventaire.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{407}{section.6.35}%
+\contentsline {subsection}{\numberline {6.35.1}Description détaillée}{408}{subsection.6.35.1}%
+\contentsline {subsection}{\numberline {6.35.2}Documentation des fonctions}{408}{subsection.6.35.2}%
+\contentsline {subsubsection}{\numberline {6.35.2.1}clean\_suite()}{408}{subsubsection.6.35.2.1}%
+\contentsline {subsubsection}{\numberline {6.35.2.2}generation\_inventaire()}{409}{subsubsection.6.35.2.2}%
+\contentsline {subsubsection}{\numberline {6.35.2.3}init\_suite()}{409}{subsubsection.6.35.2.3}%
+\contentsline {subsubsection}{\numberline {6.35.2.4}main()}{410}{subsubsection.6.35.2.4}%
+\contentsline {subsubsection}{\numberline {6.35.2.5}modification\_inventaire()}{410}{subsubsection.6.35.2.5}%
+\contentsline {subsection}{\numberline {6.35.3}Documentation des variables}{411}{subsection.6.35.3}%
+\contentsline {subsubsection}{\numberline {6.35.3.1}compteur}{411}{subsubsection.6.35.3.1}%
+\contentsline {subsubsection}{\numberline {6.35.3.2}equipe}{411}{subsubsection.6.35.3.2}%
+\contentsline {subsubsection}{\numberline {6.35.3.3}FENETRE\_LARGEUR}{411}{subsubsection.6.35.3.3}%
+\contentsline {subsubsection}{\numberline {6.35.3.4}FENETRE\_LONGUEUR}{412}{subsubsection.6.35.3.4}%
+\contentsline {subsubsection}{\numberline {6.35.3.5}objet\_test}{412}{subsubsection.6.35.3.5}%
+\contentsline {subsubsection}{\numberline {6.35.3.6}perso\_principal}{412}{subsubsection.6.35.3.6}%
+\contentsline {subsubsection}{\numberline {6.35.3.7}sac}{412}{subsubsection.6.35.3.7}%
+\contentsline {subsubsection}{\numberline {6.35.3.8}test\_map}{412}{subsubsection.6.35.3.8}%
+\contentsline {section}{\numberline {6.36}Référence du fichier test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}liste\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}objet.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{412}{section.6.36}%
+\contentsline {subsection}{\numberline {6.36.1}Description détaillée}{413}{subsection.6.36.1}%
+\contentsline {subsection}{\numberline {6.36.2}Documentation des fonctions}{413}{subsection.6.36.2}%
+\contentsline {subsubsection}{\numberline {6.36.2.1}main()}{413}{subsubsection.6.36.2.1}%
+\contentsline {subsection}{\numberline {6.36.3}Documentation des variables}{413}{subsection.6.36.3}%
+\contentsline {subsubsection}{\numberline {6.36.3.1}compteur}{413}{subsubsection.6.36.3.1}%
+\contentsline {subsubsection}{\numberline {6.36.3.2}FENETRE\_LARGEUR}{414}{subsubsection.6.36.3.2}%
+\contentsline {subsubsection}{\numberline {6.36.3.3}FENETRE\_LONGUEUR}{414}{subsubsection.6.36.3.3}%
+\contentsline {subsubsection}{\numberline {6.36.3.4}test\_map}{414}{subsubsection.6.36.3.4}%
+\contentsline {section}{\numberline {6.37}Référence du fichier test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}listes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{414}{section.6.37}%
+\contentsline {subsection}{\numberline {6.37.1}Description détaillée}{415}{subsection.6.37.1}%
+\contentsline {subsection}{\numberline {6.37.2}Documentation des fonctions}{415}{subsection.6.37.2}%
+\contentsline {subsubsection}{\numberline {6.37.2.1}afficher\_int()}{415}{subsubsection.6.37.2.1}%
+\contentsline {subsubsection}{\numberline {6.37.2.2}main()}{415}{subsubsection.6.37.2.2}%
+\contentsline {subsection}{\numberline {6.37.3}Documentation des variables}{415}{subsection.6.37.3}%
+\contentsline {subsubsection}{\numberline {6.37.3.1}compteur}{415}{subsubsection.6.37.3.1}%
+\contentsline {subsubsection}{\numberline {6.37.3.2}FENETRE\_LARGEUR}{415}{subsubsection.6.37.3.2}%
+\contentsline {subsubsection}{\numberline {6.37.3.3}FENETRE\_LONGUEUR}{416}{subsubsection.6.37.3.3}%
+\contentsline {subsubsection}{\numberline {6.37.3.4}test\_map}{416}{subsubsection.6.37.3.4}%
+\contentsline {section}{\numberline {6.38}Référence du fichier test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}map.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{416}{section.6.38}%
+\contentsline {subsection}{\numberline {6.38.1}Description détaillée}{417}{subsection.6.38.1}%
+\contentsline {subsection}{\numberline {6.38.2}Documentation des fonctions}{417}{subsection.6.38.2}%
+\contentsline {subsubsection}{\numberline {6.38.2.1}main()}{417}{subsubsection.6.38.2.1}%
+\contentsline {subsection}{\numberline {6.38.3}Documentation des variables}{417}{subsection.6.38.3}%
+\contentsline {subsubsection}{\numberline {6.38.3.1}compteur}{417}{subsubsection.6.38.3.1}%
+\contentsline {subsubsection}{\numberline {6.38.3.2}FENETRE\_LARGEUR}{417}{subsubsection.6.38.3.2}%
+\contentsline {subsubsection}{\numberline {6.38.3.3}FENETRE\_LONGUEUR}{418}{subsubsection.6.38.3.3}%
+\contentsline {subsubsection}{\numberline {6.38.3.4}test\_map}{418}{subsubsection.6.38.3.4}%
+\contentsline {section}{\numberline {6.39}Référence du fichier test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}monstres.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{418}{section.6.39}%
+\contentsline {subsection}{\numberline {6.39.1}Description détaillée}{418}{subsection.6.39.1}%
+\contentsline {subsection}{\numberline {6.39.2}Documentation des fonctions}{419}{subsection.6.39.2}%
+\contentsline {subsubsection}{\numberline {6.39.2.1}main()}{419}{subsubsection.6.39.2.1}%
+\contentsline {section}{\numberline {6.40}Référence du fichier test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}personnage.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{419}{section.6.40}%
+\contentsline {subsection}{\numberline {6.40.1}Description détaillée}{420}{subsection.6.40.1}%
+\contentsline {subsection}{\numberline {6.40.2}Documentation des fonctions}{420}{subsection.6.40.2}%
+\contentsline {subsubsection}{\numberline {6.40.2.1}clean\_suite()}{420}{subsubsection.6.40.2.1}%
+\contentsline {subsubsection}{\numberline {6.40.2.2}creation\_personnage()}{421}{subsubsection.6.40.2.2}%
+\contentsline {subsubsection}{\numberline {6.40.2.3}init\_suite()}{421}{subsubsection.6.40.2.3}%
+\contentsline {subsubsection}{\numberline {6.40.2.4}main()}{422}{subsubsection.6.40.2.4}%
+\contentsline {subsubsection}{\numberline {6.40.2.5}modification\_personnage()}{422}{subsubsection.6.40.2.5}%
+\contentsline {subsection}{\numberline {6.40.3}Documentation des variables}{423}{subsection.6.40.3}%
+\contentsline {subsubsection}{\numberline {6.40.3.1}compteur}{423}{subsubsection.6.40.3.1}%
+\contentsline {subsubsection}{\numberline {6.40.3.2}FENETRE\_LARGEUR}{423}{subsubsection.6.40.3.2}%
+\contentsline {subsubsection}{\numberline {6.40.3.3}FENETRE\_LONGUEUR}{423}{subsubsection.6.40.3.3}%
+\contentsline {subsubsection}{\numberline {6.40.3.4}perso\_principal}{423}{subsubsection.6.40.3.4}%
+\contentsline {subsubsection}{\numberline {6.40.3.5}test\_map}{423}{subsubsection.6.40.3.5}%
+\contentsline {section}{\numberline {6.41}Référence du fichier test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}L.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{424}{section.6.41}%
+\contentsline {subsection}{\numberline {6.41.1}Description détaillée}{424}{subsection.6.41.1}%
+\contentsline {subsection}{\numberline {6.41.2}Documentation des fonctions}{425}{subsection.6.41.2}%
+\contentsline {subsubsection}{\numberline {6.41.2.1}clean\_suite()}{425}{subsubsection.6.41.2.1}%
+\contentsline {subsubsection}{\numberline {6.41.2.2}init\_suite()}{425}{subsubsection.6.41.2.2}%
+\contentsline {subsubsection}{\numberline {6.41.2.3}main()}{426}{subsubsection.6.41.2.3}%
+\contentsline {subsubsection}{\numberline {6.41.2.4}test\_SDL\_close()}{426}{subsubsection.6.41.2.4}%
+\contentsline {subsubsection}{\numberline {6.41.2.5}test\_SDL\_init()}{427}{subsubsection.6.41.2.5}%
+\contentsline {subsection}{\numberline {6.41.3}Documentation des variables}{427}{subsection.6.41.3}%
+\contentsline {subsubsection}{\numberline {6.41.3.1}FENETRE\_LARGEUR}{427}{subsubsection.6.41.3.1}%
+\contentsline {subsubsection}{\numberline {6.41.3.2}FENETRE\_LONGUEUR}{427}{subsubsection.6.41.3.2}%
+\contentsline {subsubsection}{\numberline {6.41.3.3}fenetre\_Principale}{427}{subsubsection.6.41.3.3}%
+\contentsline {subsubsection}{\numberline {6.41.3.4}rendu\_principal}{427}{subsubsection.6.41.3.4}%
+\contentsline {chapter}{Index}{429}{section*.711}%
