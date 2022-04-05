@@ -414,11 +414,12 @@ t_aff *next_frame_joueur(joueur_t *j)
             else
                 return statut->texture_prec;
         }
-        else if (statut->action == RIEN)
+        else if (statut->action == RIEN){
             if(statut->bouclier_equipe == vrai)
                 return textures[TEXT_MARCHER_BOUCLIER];
             else
                 return textures[TEXT_MARCHER];
+        }
     }
     return statut->texture_prec;
 }
