@@ -6,10 +6,10 @@
     "taille case" : 32,
     "starting-point" : [5, 5],
     "monsters" : [
-        /*{"type" : "knight",
-        "position" : [500,200]},*/
+        {"type" : "knight",
+        "position" : [350,300]},
         {"type" : "witcher",
-        "position" : [600,300]}
+        "position" : [600,290]}
     ],
     "wall" : [
         {
