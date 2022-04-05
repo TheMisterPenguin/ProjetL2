@@ -167,6 +167,7 @@ Macros</h2></td></tr>
 &#160;&#160;<a class="el" href="../../d5/dae/affichage_8h.html#a576017bbeb57e133826897c6a333ad54a4462663151f522b9b8bace7b3a22704c">TEXT_MARCHER_BOUCLIER</a>
 <br />
  }</td></tr>
+<tr class="memdesc:a576017bbeb57e133826897c6a333ad54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type énuméré renseignant sur la texture personnage à utiliser.  <a href="../../d5/dae/affichage_8h.html#a576017bbeb57e133826897c6a333ad54">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a576017bbeb57e133826897c6a333ad54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -181,6 +182,7 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a38a3d1ba0f0b0c48e28f7c23908b962b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui détermine si la structure SDL_Rect ne dépasse pas la taille de la texture.  <a href="../../d5/dae/affichage_8h.html#a38a3d1ba0f0b0c48e28f7c23908b962b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a38a3d1ba0f0b0c48e28f7c23908b962b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59fc51b629cfed9815495f235dae78e0"><td class="memItemLeft" align="right" valign="top">t_aff *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a59fc51b629cfed9815495f235dae78e0">creer_texture</a> (const char *nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multiplicateur_taille)</td></tr>
+<tr class="memdesc:a59fc51b629cfed9815495f235dae78e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui renvoie, charge une texture et la prépare à se faire afficher.  <a href="../../d5/dae/affichage_8h.html#a59fc51b629cfed9815495f235dae78e0">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a59fc51b629cfed9815495f235dae78e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47b9be5462def4189b86dcf60f3a29a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/de9/code__erreur_8h.html#a2156a134798b01e3fd1fe853a1943418">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a47b9be5462def4189b86dcf60f3a29a5">afficher_texture</a> (t_aff *texture, SDL_Renderer *rendu)</td></tr>
 <tr class="memdesc:a47b9be5462def4189b86dcf60f3a29a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la texture donnée en paramètre à l'écran.  <a href="../../d5/dae/affichage_8h.html#a47b9be5462def4189b86dcf60f3a29a5">Plus de détails...</a><br /></td></tr>
@@ -204,6 +206,7 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:ad6025b84e0d3f62a1ca7b1835d9263df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui ajoute une texture dans une liste générique.  <a href="../../d5/dae/affichage_8h.html#ad6025b84e0d3f62a1ca7b1835d9263df">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad6025b84e0d3f62a1ca7b1835d9263df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3637688138fc059d87799ea8ec77514"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/de9/code__erreur_8h.html#a2156a134798b01e3fd1fe853a1943418">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#ab3637688138fc059d87799ea8ec77514">afficher_buffer</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *buffer, SDL_Renderer *rendu)</td></tr>
+<tr class="memdesc:ab3637688138fc059d87799ea8ec77514"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui affiche les textures contenues dans la liste en paramètre.  <a href="../../d5/dae/affichage_8h.html#ab3637688138fc059d87799ea8ec77514">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab3637688138fc059d87799ea8ec77514"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5911c692b804289a22f5a161b4fe2286"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a5911c692b804289a22f5a161b4fe2286">deplacer_texture_centre</a> (t_aff *texture, int x, int y)</td></tr>
 <tr class="memdesc:a5911c692b804289a22f5a161b4fe2286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déplace la texture pour que son centre soit au centre de l'écran.  <a href="../../d5/dae/affichage_8h.html#a5911c692b804289a22f5a161b4fe2286">Plus de détails...</a><br /></td></tr>
@@ -212,16 +215,22 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:ae766b650805d4bdfc2faa57ba24f6cae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déplace un rectangle depuis l'origine de l'écran.  <a href="../../d5/dae/affichage_8h.html#ae766b650805d4bdfc2faa57ba24f6cae">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae766b650805d4bdfc2faa57ba24f6cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48d7af885eb3fdd6655cf83b85f454c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a48d7af885eb3fdd6655cf83b85f454c9">deplacer_texture_origine</a> (t_aff *texture, int x, int y)</td></tr>
+<tr class="memdesc:a48d7af885eb3fdd6655cf83b85f454c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déplace l'origine de la texture aux coordonnées données.  <a href="../../d5/dae/affichage_8h.html#a48d7af885eb3fdd6655cf83b85f454c9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a48d7af885eb3fdd6655cf83b85f454c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a61a69139c9efe60f3b382747493870"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a6a61a69139c9efe60f3b382747493870">deplacer_rect_haut_droit</a> (SDL_Rect *r, int x, int y)</td></tr>
+<tr class="memdesc:a6a61a69139c9efe60f3b382747493870"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place un rectangle en haut à droite de l'écran puis le replace à partir de cette origine.  <a href="../../d5/dae/affichage_8h.html#a6a61a69139c9efe60f3b382747493870">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a6a61a69139c9efe60f3b382747493870"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2ee44d9a091423e00920e05b6e81750"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#ae2ee44d9a091423e00920e05b6e81750">deplacer_texture_haut_droit</a> (t_aff *texture, int x, int y)</td></tr>
+<tr class="memdesc:ae2ee44d9a091423e00920e05b6e81750"><td class="mdescLeft">&#160;</td><td class="mdescRight">La texture est déplacée vers la droite et vers le haut.  <a href="../../d5/dae/affichage_8h.html#ae2ee44d9a091423e00920e05b6e81750">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae2ee44d9a091423e00920e05b6e81750"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6459fb3c595a3121db1ff654bd78e93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#ae6459fb3c595a3121db1ff654bd78e93">deplacer_texture_bas_gauche</a> (t_aff *texture, int x, int y)</td></tr>
+<tr class="memdesc:ae6459fb3c595a3121db1ff654bd78e93"><td class="mdescLeft">&#160;</td><td class="mdescRight">La texture est déplacée vers le coin inférieur gauche de l'écran.  <a href="../../d5/dae/affichage_8h.html#ae6459fb3c595a3121db1ff654bd78e93">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae6459fb3c595a3121db1ff654bd78e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a05cde4c824ad13d8f2dbf73b0b741f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a8a05cde4c824ad13d8f2dbf73b0b741f">deplacer_texture_bas_droit</a> (t_aff *texture, int x, int y)</td></tr>
+<tr class="memdesc:a8a05cde4c824ad13d8f2dbf73b0b741f"><td class="mdescLeft">&#160;</td><td class="mdescRight">La texture est déplacée vers le coin inférieur droit de la fenêtre.  <a href="../../d5/dae/affichage_8h.html#a8a05cde4c824ad13d8f2dbf73b0b741f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8a05cde4c824ad13d8f2dbf73b0b741f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d3a1090bb34f34aa532f12d75bfb75c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a9d3a1090bb34f34aa532f12d75bfb75c">modif_affichage_rect</a> (t_aff *texture, SDL_Rect r)</td></tr>
+<tr class="memdesc:a9d3a1090bb34f34aa532f12d75bfb75c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le rectangle qui définit la zone de l'écran qui sera utilisée pour le rendu de la texture.  <a href="../../d5/dae/affichage_8h.html#a9d3a1090bb34f34aa532f12d75bfb75c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a9d3a1090bb34f34aa532f12d75bfb75c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e46996e1fc6e19298fb2db0c82a3dfc"><td class="memItemLeft" align="right" valign="top">t_l_aff *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a1e46996e1fc6e19298fb2db0c82a3dfc">init_textures_joueur</a> (joueur_t *j, int num_j)</td></tr>
 <tr class="memdesc:a1e46996e1fc6e19298fb2db0c82a3dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui creer et renvoie une liste de textures pour le personnage (joueur)  <a href="../../d5/dae/affichage_8h.html#a1e46996e1fc6e19298fb2db0c82a3dfc">Plus de détails...</a><br /></td></tr>
@@ -232,16 +241,22 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a668ba4cf805157557b09a5a71fd67c4b"><td class="memItemLeft" align="right" valign="top">t_aff *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a668ba4cf805157557b09a5a71fd67c4b">next_frame_joueur</a> (joueur_t *j)</td></tr>
 <tr class="separator:a668ba4cf805157557b09a5a71fd67c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa536721b7c2a9adac6ef4f2ffb83074e"><td class="memItemLeft" align="right" valign="top">_Bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#aa536721b7c2a9adac6ef4f2ffb83074e">deplacement_x_pers</a> (t_map *<a class="el" href="../../dc/db7/map_8h.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>, joueur_t **joueurs, unsigned short int nb_joueurs, int x, lobjet_t *<a class="el" href="../../d7/d64/liste__objet_8h.html#ad412be52cbf2eb978fac0c2c2e8e3c82">objets</a>)</td></tr>
+<tr class="memdesc:aa536721b7c2a9adac6ef4f2ffb83074e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de déplacer le personnage de x unités horizontales sur la map.  <a href="../../d5/dae/affichage_8h.html#aa536721b7c2a9adac6ef4f2ffb83074e">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa536721b7c2a9adac6ef4f2ffb83074e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1479d2bcf35df66e73306d28d9ea0e13"><td class="memItemLeft" align="right" valign="top">_Bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a1479d2bcf35df66e73306d28d9ea0e13">deplacement_y_pers</a> (t_map *<a class="el" href="../../dc/db7/map_8h.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>, joueur_t **joueurs, unsigned short int nb_joueurs, int y, lobjet_t *<a class="el" href="../../d7/d64/liste__objet_8h.html#ad412be52cbf2eb978fac0c2c2e8e3c82">objets</a>)</td></tr>
+<tr class="memdesc:a1479d2bcf35df66e73306d28d9ea0e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de déplacer le personnage principal de y unités verticales sur la map.  <a href="../../d5/dae/affichage_8h.html#a1479d2bcf35df66e73306d28d9ea0e13">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a1479d2bcf35df66e73306d28d9ea0e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06c50666787c24c1a3ca91501e9f772d"><td class="memItemLeft" align="right" valign="top">_Bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a06c50666787c24c1a3ca91501e9f772d">deplacement_y_joueur_secondaire</a> (t_map *<a class="el" href="../../dc/db7/map_8h.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>, joueur_t *joueur, int y, SDL_Rect *r, lobjet_t *<a class="el" href="../../d7/d64/liste__objet_8h.html#ad412be52cbf2eb978fac0c2c2e8e3c82">objets</a>)</td></tr>
+<tr class="memdesc:a06c50666787c24c1a3ca91501e9f772d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de déplacer un joueur secondaire de y unités verticales sur la map.  <a href="../../d5/dae/affichage_8h.html#a06c50666787c24c1a3ca91501e9f772d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a06c50666787c24c1a3ca91501e9f772d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a84ccb2d94dcced9d8a95eed9bc413b"><td class="memItemLeft" align="right" valign="top">_Bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a2a84ccb2d94dcced9d8a95eed9bc413b">deplacement_x_joueur_secondaire</a> (t_map *<a class="el" href="../../dc/db7/map_8h.html#a4bacbbb5c2d9a6cbd19ca4cba0dac1ae">map</a>, joueur_t *joueur, int x, SDL_Rect *r, lobjet_t *<a class="el" href="../../d7/d64/liste__objet_8h.html#ad412be52cbf2eb978fac0c2c2e8e3c82">objets</a>)</td></tr>
+<tr class="memdesc:a2a84ccb2d94dcced9d8a95eed9bc413b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de déplacer un joueur secondaire de x unités horizontales sur la map.  <a href="../../d5/dae/affichage_8h.html#a2a84ccb2d94dcced9d8a95eed9bc413b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2a84ccb2d94dcced9d8a95eed9bc413b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e6b4564952e31a2d9e9d0c98dd6ee78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a3e6b4564952e31a2d9e9d0c98dd6ee78">def_texture_taille</a> (t_aff *a_modifier, const int longueur, const int largeur)</td></tr>
+<tr class="memdesc:a3e6b4564952e31a2d9e9d0c98dd6ee78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de définir exactement la taille de la texture.  <a href="../../d5/dae/affichage_8h.html#a3e6b4564952e31a2d9e9d0c98dd6ee78">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a3e6b4564952e31a2d9e9d0c98dd6ee78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83f1b5ddb558420c53c41071e559a8ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a83f1b5ddb558420c53c41071e559a8ff">text_copier_position</a> (t_aff *a_modifier, const t_aff *const original)</td></tr>
+<tr class="memdesc:a83f1b5ddb558420c53c41071e559a8ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de placer 2 textures aux mêmes endroit à l'écran.  <a href="../../d5/dae/affichage_8h.html#a83f1b5ddb558420c53c41071e559a8ff">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a83f1b5ddb558420c53c41071e559a8ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bd4bd87195563a7315afb0fda7fe6d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a6bd4bd87195563a7315afb0fda7fe6d7">rect_centre_x</a> (SDL_Rect *rectangle)</td></tr>
 <tr class="memdesc:a6bd4bd87195563a7315afb0fda7fe6d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de placer un rectangle au centre de l'écran sur l'axe des x.  <a href="../../d5/dae/affichage_8h.html#a6bd4bd87195563a7315afb0fda7fe6d7">Plus de détails...</a><br /></td></tr>
@@ -253,6 +268,7 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a508ce5ebec0cacf99a3bbddd33d6880f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de placer un rectangle au centre de l'écran.  <a href="../../d5/dae/affichage_8h.html#a508ce5ebec0cacf99a3bbddd33d6880f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a508ce5ebec0cacf99a3bbddd33d6880f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aa6a76b95dfc74a3ffa525600dd4cd9"><td class="memItemLeft" align="right" valign="top">_Bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a4aa6a76b95dfc74a3ffa525600dd4cd9">rects_egal_x</a> (const SDL_Rect *const r1, SDL_Rect const *const r2)</td></tr>
+<tr class="memdesc:a4aa6a76b95dfc74a3ffa525600dd4cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de savoir si deux rectangles sont égaux sur l'axe x.  <a href="../../d5/dae/affichage_8h.html#a4aa6a76b95dfc74a3ffa525600dd4cd9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a4aa6a76b95dfc74a3ffa525600dd4cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb4e9d272f099665f78b2cf4b97af22e"><td class="memItemLeft" align="right" valign="top">_Bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#afb4e9d272f099665f78b2cf4b97af22e">rects_egal_y</a> (const SDL_Rect *const r1, SDL_Rect const *const r2)</td></tr>
 <tr class="memdesc:afb4e9d272f099665f78b2cf4b97af22e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de savoir si deux rectangles sont égaux sur l'axe y.  <a href="../../d5/dae/affichage_8h.html#afb4e9d272f099665f78b2cf4b97af22e">Plus de détails...</a><br /></td></tr>
@@ -297,6 +313,7 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:ada2e4bcab49cd7c1563aef3afa20f75d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de placer un rectangle au centre d'un autre sur l'axe des y.  <a href="../../d5/dae/affichage_8h.html#ada2e4bcab49cd7c1563aef3afa20f75d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ada2e4bcab49cd7c1563aef3afa20f75d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af70d121ff2c41380da955ae836b109eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#af70d121ff2c41380da955ae836b109eb">rect_centre_rect</a> (SDL_Rect *rectangle, SDL_Rect *rectangle_centre)</td></tr>
+<tr class="memdesc:af70d121ff2c41380da955ae836b109eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de placer un rectangle au centre d'un autre.  <a href="../../d5/dae/affichage_8h.html#af70d121ff2c41380da955ae836b109eb">Plus de détails...</a><br /></td></tr>
 <tr class="separator:af70d121ff2c41380da955ae836b109eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a414764c90c1cc2a104f536ef34a8dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/affichage_8h.html#a8a414764c90c1cc2a104f536ef34a8dd">afficher_animations</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *animations)</td></tr>
 <tr class="memdesc:a8a414764c90c1cc2a104f536ef34a8dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui affiche la texture des animations.  <a href="../../d5/dae/affichage_8h.html#a8a414764c90c1cc2a104f536ef34a8dd">Plus de détails...</a><br /></td></tr>
@@ -575,13 +592,18 @@ Max Descomps (<a href="#" onclick="location.href='mai'+'lto:'+'Max'+'.D'+'esc'+'
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Type enum renseignant sur la texture personnage à utiliser </p>
+<dl class="section author"><dt>Auteur</dt><dd>Antoine Bruneau </dd></dl>
 <table class="fieldtable">
-<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="a576017bbeb57e133826897c6a333ad54a5db3a9985e619a6b3c220c8a5ef68b56"></a>TEXT_MARCHER&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a576017bbeb57e133826897c6a333ad54a0d549c7d72208617fd4e927004c09ae8"></a>TEXT_ATTAQUE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a576017bbeb57e133826897c6a333ad54a60fe954c06d71a290be6b0ad6ccd135d"></a>TEXT_ATTAQUE_CHARGEE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a576017bbeb57e133826897c6a333ad54a6a2e34c40961e8e7e2c1f6c926d9e73c"></a>TEXT_CHARGER&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a576017bbeb57e133826897c6a333ad54a4462663151f522b9b8bace7b3a22704c"></a>TEXT_MARCHER_BOUCLIER&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="a576017bbeb57e133826897c6a333ad54a5db3a9985e619a6b3c220c8a5ef68b56"></a>TEXT_MARCHER&#160;</td><td class="fielddoc"><p>La texture du personnage qui marche </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a576017bbeb57e133826897c6a333ad54a0d549c7d72208617fd4e927004c09ae8"></a>TEXT_ATTAQUE&#160;</td><td class="fielddoc"><p>La texture du personnage qui attaque </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a576017bbeb57e133826897c6a333ad54a60fe954c06d71a290be6b0ad6ccd135d"></a>TEXT_ATTAQUE_CHARGEE&#160;</td><td class="fielddoc"><p>La texture du personnage qui fait une attaque chargée </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a576017bbeb57e133826897c6a333ad54a6a2e34c40961e8e7e2c1f6c926d9e73c"></a>TEXT_CHARGER&#160;</td><td class="fielddoc"><p>La texture du personnage qui charge son attaque </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a576017bbeb57e133826897c6a333ad54a4462663151f522b9b8bace7b3a22704c"></a>TEXT_MARCHER_BOUCLIER&#160;</td><td class="fielddoc"><p>La texture du personnage qui marche avec son bouclier équipé </p>
+</td></tr>
 </table>
 
 </div>
@@ -658,7 +680,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui affiche les textures contenues dans la liste en paramètre.</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <p>Les premiers éléments seront en arrière plan et les derniers seront en 1er plan.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -673,7 +695,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_ab3637688138fc059d87799ea8ec77514_cgraph.png" border="0" usemap="#d5/dae/affichage_8h_ab3637688138fc059d87799ea8ec77514_cgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_ab3637688138fc059d87799ea8ec77514_cgraph" id="d5/dae/affichage_8h_ab3637688138fc059d87799ea8ec77514_cgraph">
-<area shape="rect" title=" " alt="" coords="5,132,121,159"/>
+<area shape="rect" title="Fonction qui affiche les textures contenues dans la liste en paramètre." alt="" coords="5,132,121,159"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a47b9be5462def4189b86dcf60f3a29a5" title="Affiche la texture donnée en paramètre à l&#39;écran." alt="" coords="169,5,295,32"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="197,56,267,83"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title=" " alt="" coords="343,81,428,108"/>
@@ -876,6 +898,9 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<p>Cette fonction permet d'afficher à l'écran une texture utilisant le type personalisé <a class="el" href="../../df/d5b/structs__aff.html">t_aff</a> à l'écran avec le rendu donné en paramètre. <br  />
+ Rien ne sera afficher si la texture donnée en entrée est égalle à NULL.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">texture</td><td>La texture à afficher </td></tr>
@@ -895,7 +920,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a8a414764c90c1cc2a104f536ef34a8dd" title="Fonction qui affiche la texture des animations." alt="" coords="117,411,267,437"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,335,60,361"/>
 <area shape="rect" href="../../de/dde/boss_8c.html#a1ec17316fe3d67eed776ea8f507c4edf" title=" " alt="" coords="361,563,469,589"/>
-<area shape="rect" href="../../d5/dae/affichage_8h.html#ab3637688138fc059d87799ea8ec77514" title=" " alt="" coords="357,613,473,640"/>
+<area shape="rect" href="../../d5/dae/affichage_8h.html#ab3637688138fc059d87799ea8ec77514" title="Fonction qui affiche les textures contenues dans la liste en paramètre." alt="" coords="357,613,473,640"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a373b7b6959133fba94c4030ebfa75155" title="Fonction qui affiche la texture des coffres." alt="" coords="131,461,253,488"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#afba04a756d78b062c9638acb7436beed" title=" " alt="" coords="138,512,246,539"/>
 <area shape="rect" href="../../d6/d46/menus_8h.html#a98b87de7b6779d1ea4db3543621cc3cb" title=" " alt="" coords="120,711,264,737"/>
@@ -1060,12 +1085,43 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<p>Fonction qui permet de créer un texture sous forme d'un type personnalisé <a class="el" href="../../df/d5b/structs__aff.html">t_aff</a> qui contient pleins d'informations sur la texture. <br  />
+ </p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Déroulement</h2>
+<p>Le fichier de la texture est chargé dans une surface. <br  />
+ On va converir cette surface en texture. <br  />
+On va remplir les informations de la structure <a class="el" href="../../df/d5b/structs__aff.html">t_aff</a> avec les information en entrée et des informations obtenues via requêtes SDL. <br  />
+Bien entendu, on testera pour être sur qu'il n'y a aucune erreur.</p>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Lors d'une erreur</h2>
+<p>Contrairement à la plupart des fonctions qui gèrent les textures, celle-ci affichera surement un warning à l'écran si l'on ne peut pas créer la texture. Il est donc important de ce rendre compte que cette fonction ne ferme pas le programme lors d'une erreur. C'est donc au développeur de décider si une impossibilité de créer une texture est une raison de fermer le programme.</p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+A noter</h2>
+<p>Si l'on donne -1 et -1 pour les paramètres taille_t_x et taille_t_y le rectangle <a class="el" href="../../df/d5b/structs__aff.html#aefd6b2f2f56383a8cba0193ff88593dc">frame_anim</a> de la structure <a class="el" href="../../df/d5b/structs__aff.html">t_aff</a> sera NULL. <br  />
+ Il est donc important de prendre cela en compte pour ne pas causer des erreurs de segmentation. <br  />
+ Donner NULL en nom de texture ne la créra pas mais créra tout les autres attributs de la structure <a class="el" href="../../df/d5b/structs__aff.html">t_aff</a>. <br  />
+ <br  />
+Donner 0 en multiplicateur de taille agrandira la texture pour qu'elle face la taille de l'écran.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nom_fichier</td><td>Le nom du fichier contenant la texture </td></tr>
+    <tr><td class="paramname">taille_t_x</td><td>La longueur de la texture à montrer </td></tr>
+    <tr><td class="paramname">taille_t_y</td><td>La largeur de la texture à montrer </td></tr>
+    <tr><td class="paramname">x</td><td>La coordonnée x où afficher la texture à l'écran </td></tr>
+    <tr><td class="paramname">y</td><td>La coordonnée y où afficher la texture à l'écran </td></tr>
+    <tr><td class="paramname">multiplicateur_taille</td><td>Une valeur par laquelle multiplier la taille de la texture </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>t_aff* Une structure qui permet l'affichage de la texture à l'écran ou NULL s'il y a eu une érreur </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_a59fc51b629cfed9815495f235dae78e0_cgraph.png" border="0" usemap="#d5/dae/affichage_8h_a59fc51b629cfed9815495f235dae78e0_cgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_a59fc51b629cfed9815495f235dae78e0_cgraph" id="d5/dae/affichage_8h_a59fc51b629cfed9815495f235dae78e0_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,115,32"/>
+<area shape="rect" title="Fonction qui renvoie, charge une texture et la prépare à se faire afficher." alt="" coords="5,5,115,32"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title=" " alt="" coords="163,5,255,32"/>
 </map>
 </div>
@@ -1074,7 +1130,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_a59fc51b629cfed9815495f235dae78e0_icgraph.png" border="0" usemap="#d5/dae/affichage_8h_a59fc51b629cfed9815495f235dae78e0_icgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_a59fc51b629cfed9815495f235dae78e0_icgraph" id="d5/dae/affichage_8h_a59fc51b629cfed9815495f235dae78e0_icgraph">
-<area shape="rect" title=" " alt="" coords="519,335,628,361"/>
+<area shape="rect" title="Fonction qui renvoie, charge une texture et la prépare à se faire afficher." alt="" coords="519,335,628,361"/>
 <area shape="rect" href="../../de/dde/boss_8c.html#a1ce280469cd40ab2361f088050c1bbe3" title=" " alt="" coords="333,5,456,32"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#afba04a756d78b062c9638acb7436beed" title=" " alt="" coords="135,56,243,83"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,309,60,336"/>
@@ -1151,6 +1207,15 @@ Voici le graphe des appelants de cette fonction :</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>un entier correspondant à l'indice </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/dae/affichage_8h_ac5cde30d91e5bbd8e8b7db9c04229752_icgraph.png" border="0" usemap="#d5/dae/affichage_8h_ac5cde30d91e5bbd8e8b7db9c04229752_icgraph" alt=""/></div>
+<map name="d5/dae/affichage_8h_ac5cde30d91e5bbd8e8b7db9c04229752_icgraph" id="d5/dae/affichage_8h_ac5cde30d91e5bbd8e8b7db9c04229752_icgraph">
+<area shape="rect" title="Fonction qui donne l&#39;indice sur l&#39;axe des ordonnées actuelle de la texture." alt="" coords="199,5,328,32"/>
+<area shape="rect" href="../../d5/dae/affichage_8h.html#a668ba4cf805157557b09a5a71fd67c4b" title=" " alt="" coords="5,5,151,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1185,7 +1250,9 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui permet de définir exactement la taille de la texture à affichar sur l'écran</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000002">Obsolète:</a></b></dt><dd>L'utilisation de cette fonction n'a plus trop de sens étant donné que le moteur gère automatiquement la taille des textures.</dd></dl>
+<p>Fonction qui permet de modifier le rectangle de la structure <a class="el" href="../../df/d5b/structs__aff.html">t_aff</a> : aff_ecran avec de nouvelles valeurs.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">a_modifier</td><td>La texture à modifier </td></tr>
@@ -1199,7 +1266,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_a3e6b4564952e31a2d9e9d0c98dd6ee78_icgraph.png" border="0" usemap="#d5/dae/affichage_8h_a3e6b4564952e31a2d9e9d0c98dd6ee78_icgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_a3e6b4564952e31a2d9e9d0c98dd6ee78_icgraph" id="d5/dae/affichage_8h_a3e6b4564952e31a2d9e9d0c98dd6ee78_icgraph">
-<area shape="rect" title=" " alt="" coords="208,64,345,91"/>
+<area shape="rect" title="Fonction qui permet de définir exactement la taille de la texture." alt="" coords="208,64,345,91"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#afba04a756d78b062c9638acb7436beed" title=" " alt="" coords="29,5,137,32"/>
 <area shape="rect" href="../../d2/d2f/personnage_8h.html#ad8c439be63cc83e7b5c4a0d33f62f639" title=" " alt="" coords="5,57,160,98"/>
 <area shape="rect" href="../../dc/db7/map_8h.html#a87fdc73350f70425b5529472974ecbbb" title=" " alt="" coords="41,123,125,149"/>
@@ -1249,7 +1316,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>Cette fonction permet à une entité de se déplacer sur l'axe x. <br  />
 Cette fonction gère les collisions et empêchera l'entité de sortir des limites de la map. <br  />
 Cette dernière prend également les collisions définies dans la liste des collisions de la map : <a class="el" href="../../d1/d49/structs__map.html#abc1532265c403adfbc475bafca6ad747">liste_collisions</a>. <br  />
- Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l'entier <a class="el" href="../../df/d5b/structs__aff.html#a3602f5ebcf2cd61acc2dc65a70919b81">duree_frame_anim</a> qui permet d'êmpécher le déplacement tout les x frames.</p>
+ Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l'entier <a class="el" href="../../df/d5b/structs__aff.html#a3602f5ebcf2cd61acc2dc65a70919b81">duree_frame_anim</a> qui permet d'êmpécher le déplacement tout les x frames. <br  />
+ On peut récupérer l'élément que l'entité a touché en regardant l'élément courant de la <a class="el" href="../../d1/d49/structs__map.html#abc1532265c403adfbc475bafca6ad747">liste de collisions</a> de la map.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">m</td><td>La map actuelle </td></tr>
@@ -1330,7 +1398,6 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Permet de déplacer un joueur secondaire de x unités horizontales sur la map</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">map</td><td>La map sur laquelle le personnage se déplace </td></tr>
@@ -1349,7 +1416,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_a2a84ccb2d94dcced9d8a95eed9bc413b_cgraph.png" border="0" usemap="#d5/dae/affichage_8h_a2a84ccb2d94dcced9d8a95eed9bc413b_cgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_a2a84ccb2d94dcced9d8a95eed9bc413b_cgraph" id="d5/dae/affichage_8h_a2a84ccb2d94dcced9d8a95eed9bc413b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,99,176,141"/>
+<area shape="rect" title="Permet de déplacer un joueur secondaire de x unités horizontales sur la map." alt="" coords="5,99,176,141"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="416,56,487,83"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="543,132,628,159"/>
 <area shape="rect" href="../../d4/db3/coffres_8c.html#afaede33891b4fa55d0b68267a6207487" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="224,107,360,133"/>
@@ -1362,7 +1429,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_a2a84ccb2d94dcced9d8a95eed9bc413b_icgraph.png" border="0" usemap="#d5/dae/affichage_8h_a2a84ccb2d94dcced9d8a95eed9bc413b_icgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_a2a84ccb2d94dcced9d8a95eed9bc413b_icgraph" id="d5/dae/affichage_8h_a2a84ccb2d94dcced9d8a95eed9bc413b_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,279,47"/>
+<area shape="rect" title="Permet de déplacer un joueur secondaire de x unités horizontales sur la map." alt="" coords="108,5,279,47"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
 </map>
 </div>
@@ -1412,8 +1479,11 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Permet de déplacer le personnage de x unités horizontales sur la map</p>
-<dl class="params"><dt>Paramètres</dt><dd>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<p>Cette fonction utilise un rectangle <a class="el" href="../../d5/dae/affichage_8h.html#adede5261ac6b86bf02adc9516dd999bf">tx</a> pour savoir quand elle doit bouger le personnage ou bien déplacer la camera. <br  />
+Elle prendra en compte les collisions de la <a class="el" href="../../d1/d49/structs__map.html#abc1532265c403adfbc475bafca6ad747">liste de collisions de la map</a>. <br  />
+Elle empêche le personnage de sortir des bordures de la map. <br  />
+ </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">map</td><td>La map sur laquelle le personnage se déplace </td></tr>
     <tr><td class="paramname">joueurs</td><td>Les joueurs en jeu </td></tr>
@@ -1423,21 +1493,21 @@ Voici le graphe des appelants de cette fonction :</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>vrai : Si le joueur a réussi à se déplacer </dd>
+<dl class="section return"><dt>Renvoie</dt><dd>vrai : Si le joueur s'est téléporté </dd>
 <dd>
-faux : Si le joueur n'a pas pu se déplacer </dd></dl>
+faux : Si le joueur ne s'est pas téléporté </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_aa536721b7c2a9adac6ef4f2ffb83074e_cgraph.png" border="0" usemap="#d5/dae/affichage_8h_aa536721b7c2a9adac6ef4f2ffb83074e_cgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_aa536721b7c2a9adac6ef4f2ffb83074e_cgraph" id="d5/dae/affichage_8h_aa536721b7c2a9adac6ef4f2ffb83074e_cgraph">
-<area shape="rect" title=" " alt="" coords="5,157,163,184"/>
+<area shape="rect" title="Permet de déplacer le personnage de x unités horizontales sur la map." alt="" coords="5,157,163,184"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="403,56,473,83"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="529,132,615,159"/>
 <area shape="rect" href="../../d4/db3/coffres_8c.html#afaede33891b4fa55d0b68267a6207487" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="211,107,347,133"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="403,5,473,32"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="395,157,481,184"/>
-<area shape="rect" href="../../da/d68/affichage_8c.html#aada9bf5a3890b9d12a93e50b7c19b523" title=" " alt="" coords="227,259,331,285"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#aada9bf5a3890b9d12a93e50b7c19b523" title="Fonction qui permet de savoir si deux rectangles sont égaux sur l&#39;axe x." alt="" coords="227,259,331,285"/>
 <area shape="rect" href="../../d3/d7a/map_8c.html#a87fdc73350f70425b5529472974ecbbb" title=" " alt="" coords="237,309,321,336"/>
 </map>
 </div>
@@ -1446,7 +1516,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_aa536721b7c2a9adac6ef4f2ffb83074e_icgraph.png" border="0" usemap="#d5/dae/affichage_8h_aa536721b7c2a9adac6ef4f2ffb83074e_icgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_aa536721b7c2a9adac6ef4f2ffb83074e_icgraph" id="d5/dae/affichage_8h_aa536721b7c2a9adac6ef4f2ffb83074e_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,265,32"/>
+<area shape="rect" title="Permet de déplacer le personnage de x unités horizontales sur la map." alt="" coords="108,5,265,32"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
 </map>
 </div>
@@ -1494,7 +1564,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>Cette fonction permet à une entité de se déplacer sur l'axe y. <br  />
 Cette fonction gère les collisions et empêchera l'entité de sortir des limites de la map. <br  />
 Cette dernière prend également les collisions définies dans la liste des collisions de la map : <a class="el" href="../../d1/d49/structs__map.html#abc1532265c403adfbc475bafca6ad747">liste_collisions</a>. <br  />
- Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l'entier <a class="el" href="../../df/d5b/structs__aff.html#a3602f5ebcf2cd61acc2dc65a70919b81">duree_frame_anim</a> qui permet d'êmpécher le déplacement tout les x frames.</p>
+ Il est a noté que pour éviter les déplacement trop rapides la fonction utilise l'entier <a class="el" href="../../df/d5b/structs__aff.html#a3602f5ebcf2cd61acc2dc65a70919b81">duree_frame_anim</a> qui permet d'êmpécher le déplacement tout les x frames. <br  />
+ On peut récupérer l'élément que l'entité a touché en regardant l'élément courant de la <a class="el" href="../../d1/d49/structs__map.html#abc1532265c403adfbc475bafca6ad747">liste de collisions</a> de la map.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">m</td><td>La map actuelle </td></tr>
@@ -1575,7 +1646,6 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Permet de déplacer un joueur secondaire de y unités verticales sur la map</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">map</td><td>La map sur laquelle le personnage se déplace </td></tr>
@@ -1594,7 +1664,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_a06c50666787c24c1a3ca91501e9f772d_cgraph.png" border="0" usemap="#d5/dae/affichage_8h_a06c50666787c24c1a3ca91501e9f772d_cgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_a06c50666787c24c1a3ca91501e9f772d_cgraph" id="d5/dae/affichage_8h_a06c50666787c24c1a3ca91501e9f772d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,99,176,141"/>
+<area shape="rect" title="Permet de déplacer un joueur secondaire de y unités verticales sur la map." alt="" coords="5,99,176,141"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="416,56,487,83"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="543,132,628,159"/>
 <area shape="rect" href="../../d4/db3/coffres_8c.html#afaede33891b4fa55d0b68267a6207487" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="224,107,360,133"/>
@@ -1607,7 +1677,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_a06c50666787c24c1a3ca91501e9f772d_icgraph.png" border="0" usemap="#d5/dae/affichage_8h_a06c50666787c24c1a3ca91501e9f772d_icgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_a06c50666787c24c1a3ca91501e9f772d_icgraph" id="d5/dae/affichage_8h_a06c50666787c24c1a3ca91501e9f772d_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,279,47"/>
+<area shape="rect" title="Permet de déplacer un joueur secondaire de y unités verticales sur la map." alt="" coords="108,5,279,47"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
 </map>
 </div>
@@ -1657,8 +1727,11 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Permet de déplacer le personnage principal de y unités verticales sur la map</p>
-<dl class="params"><dt>Paramètres</dt><dd>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<p>Cette fonction utilise un rectangle <a class="el" href="../../d5/dae/affichage_8h.html#af91959b4ed80cc07433e8e07ddeb28bb">ty</a> pour savoir quand elle doit bouger le personnage ou bien déplacer la camera. <br  />
+Elle prendra en compte les collisions de la <a class="el" href="../../d1/d49/structs__map.html#abc1532265c403adfbc475bafca6ad747">liste de collisions de la map</a>. <br  />
+Elle empêche le personnage de sortir des bordures de la map. <br  />
+ </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">map</td><td>La map sur laquelle le personnage se déplace </td></tr>
     <tr><td class="paramname">joueurs</td><td>Les joueurs en jeu </td></tr>
@@ -1668,15 +1741,15 @@ Voici le graphe des appelants de cette fonction :</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>vrai : Si le joueur a réussi à se déplacer </dd>
+<dl class="section return"><dt>Renvoie</dt><dd>vrai : Si le joueur s'est téléporté </dd>
 <dd>
-faux : Si le joueur n'a pas pu se déplacer </dd></dl>
+faux : Si le joueur ne s'est pas téléporté </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_a1479d2bcf35df66e73306d28d9ea0e13_cgraph.png" border="0" usemap="#d5/dae/affichage_8h_a1479d2bcf35df66e73306d28d9ea0e13_cgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_a1479d2bcf35df66e73306d28d9ea0e13_cgraph" id="d5/dae/affichage_8h_a1479d2bcf35df66e73306d28d9ea0e13_cgraph">
-<area shape="rect" title=" " alt="" coords="5,157,163,184"/>
+<area shape="rect" title="Permet de déplacer le personnage principal de y unités verticales sur la map." alt="" coords="5,157,163,184"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="403,56,473,83"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="529,132,615,159"/>
 <area shape="rect" href="../../d4/db3/coffres_8c.html#afaede33891b4fa55d0b68267a6207487" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="211,107,347,133"/>
@@ -1691,7 +1764,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_a1479d2bcf35df66e73306d28d9ea0e13_icgraph.png" border="0" usemap="#d5/dae/affichage_8h_a1479d2bcf35df66e73306d28d9ea0e13_icgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_a1479d2bcf35df66e73306d28d9ea0e13_icgraph" id="d5/dae/affichage_8h_a1479d2bcf35df66e73306d28d9ea0e13_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,265,32"/>
+<area shape="rect" title="Permet de déplacer le personnage principal de y unités verticales sur la map." alt="" coords="108,5,265,32"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
 </map>
 </div>
@@ -1729,7 +1802,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Place un rectangle en haut à droite de l'écran puis le replace à partir de cette origine</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">r</td><td>Le rectangle à placer </td></tr>
@@ -1743,10 +1816,10 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_a6a61a69139c9efe60f3b382747493870_icgraph.png" border="0" usemap="#d5/dae/affichage_8h_a6a61a69139c9efe60f3b382747493870_icgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_a6a61a69139c9efe60f3b382747493870_icgraph" id="d5/dae/affichage_8h_a6a61a69139c9efe60f3b382747493870_icgraph">
-<area shape="rect" title=" " alt="" coords="221,49,368,90"/>
+<area shape="rect" title="Place un rectangle en haut à droite de l&#39;écran puis le replace à partir de cette origine." alt="" coords="221,49,368,90"/>
 <area shape="rect" href="../../d6/d46/menus_8h.html#a1c8778affd5380fae88f7ce24787c8ea" title="Affiche le menu d&#39;acceuil et gère les interactions avec le joueur." alt="" coords="5,5,173,32"/>
 <area shape="rect" href="../../d6/d46/menus_8h.html#a1ff516df4d202f56e051c3c040ee87b5" title=" " alt="" coords="9,56,170,83"/>
-<area shape="rect" href="../../d5/dae/affichage_8h.html#ae6459fb3c595a3121db1ff654bd78e93" title=" " alt="" coords="8,107,171,149"/>
+<area shape="rect" href="../../d5/dae/affichage_8h.html#ae6459fb3c595a3121db1ff654bd78e93" title="La texture est déplacée vers le coin inférieur gauche de l&#39;écran." alt="" coords="8,107,171,149"/>
 </map>
 </div>
 
@@ -1806,7 +1879,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" href="../../d6/d46/menus_8h.html#a1ff516df4d202f56e051c3c040ee87b5" title=" " alt="" coords="209,212,370,238"/>
 <area shape="rect" href="../../d6/d46/menus_8h.html#a4da3c6c1c4423889f8735c91a92e20d9" title=" " alt="" coords="209,263,370,304"/>
 <area shape="rect" href="../../d7/d64/liste__objet_8h.html#a2955c31ed7471524e38adb3ed821402e" title="Affiche les textures des objets équipés dans le menu inventaire." alt="" coords="198,44,381,70"/>
-<area shape="rect" href="../../d5/dae/affichage_8h.html#a48d7af885eb3fdd6655cf83b85f454c9" title=" " alt="" coords="197,380,381,406"/>
+<area shape="rect" href="../../d5/dae/affichage_8h.html#a48d7af885eb3fdd6655cf83b85f454c9" title="Déplace l&#39;origine de la texture aux coordonnées données." alt="" coords="197,380,381,406"/>
 </map>
 </div>
 
@@ -1843,7 +1916,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>La texture est déplacée vers le coin inférieur droit de la fenêtre</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">texture</td><td>la texture à déplacer </td></tr>
@@ -1886,7 +1959,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>La texture est déplacée vers le coin inférieur gauche de l'écran</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">texture</td><td>la texture à déplacer </td></tr>
@@ -1900,8 +1973,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_ae6459fb3c595a3121db1ff654bd78e93_cgraph.png" border="0" usemap="#d5/dae/affichage_8h_ae6459fb3c595a3121db1ff654bd78e93_cgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_ae6459fb3c595a3121db1ff654bd78e93_cgraph" id="d5/dae/affichage_8h_ae6459fb3c595a3121db1ff654bd78e93_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,168,47"/>
-<area shape="rect" href="../../da/d68/affichage_8c.html#a6a61a69139c9efe60f3b382747493870" title=" " alt="" coords="216,5,363,47"/>
+<area shape="rect" title="La texture est déplacée vers le coin inférieur gauche de l&#39;écran." alt="" coords="5,5,168,47"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a6a61a69139c9efe60f3b382747493870" title="Place un rectangle en haut à droite de l&#39;écran puis le replace à partir de cette origine." alt="" coords="216,5,363,47"/>
 </map>
 </div>
 
@@ -1992,7 +2065,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>La texture est déplacée vers la droite et vers le haut</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">texture</td><td>la texture à déplacer </td></tr>
@@ -2035,8 +2108,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Déplace l'origine de la texture aux coordonnées données.</p>
-<dl class="section author"><dt>Auteur</dt><dd>Max Descomps </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">texture</td><td>La texture à déplacer </td></tr>
@@ -2050,7 +2122,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_a48d7af885eb3fdd6655cf83b85f454c9_cgraph.png" border="0" usemap="#d5/dae/affichage_8h_a48d7af885eb3fdd6655cf83b85f454c9_cgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_a48d7af885eb3fdd6655cf83b85f454c9_cgraph" id="d5/dae/affichage_8h_a48d7af885eb3fdd6655cf83b85f454c9_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,189,32"/>
+<area shape="rect" title="Déplace l&#39;origine de la texture aux coordonnées données." alt="" coords="5,5,189,32"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#ae766b650805d4bdfc2faa57ba24f6cae" title="Déplace un rectangle depuis l&#39;origine de l&#39;écran." alt="" coords="237,5,400,32"/>
 </map>
 </div>
@@ -2059,7 +2131,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_a48d7af885eb3fdd6655cf83b85f454c9_icgraph.png" border="0" usemap="#d5/dae/affichage_8h_a48d7af885eb3fdd6655cf83b85f454c9_icgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_a48d7af885eb3fdd6655cf83b85f454c9_icgraph" id="d5/dae/affichage_8h_a48d7af885eb3fdd6655cf83b85f454c9_icgraph">
-<area shape="rect" title=" " alt="" coords="231,5,415,32"/>
+<area shape="rect" title="Déplace l&#39;origine de la texture aux coordonnées données." alt="" coords="231,5,415,32"/>
 <area shape="rect" href="../../de/dde/boss_8c.html#a4458a2c395fa467f57e350a2f13096f2" title=" " alt="" coords="5,5,183,32"/>
 </map>
 </div>
@@ -2139,6 +2211,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">l_texture</td><td>L'adresse de la liste de texture à détruire </td></tr>
@@ -2164,8 +2237,8 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 <p>La liste des textures créées</p>
-<dl class="section author"><dt>Auteur</dt><dd>Despert Ange </dd></dl>
-<dl class="params"><dt>Paramètres</dt><dd>
+<dl class="section author"><dt>Auteur</dt><dd>Despert Ange</dd></dl>
+<p>Libère la mémoire allouée à la texture et la mets à NULL. </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">texture</td><td>L'adresse du pointeur sur la structure à détruire </td></tr>
   </table>
@@ -2320,7 +2393,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <map name="d5/dae/affichage_8h_abfdbd054ab99c511dad45879cbad639f_cgraph" id="d5/dae/affichage_8h_abfdbd054ab99c511dad45879cbad639f_cgraph">
 <area shape="rect" title="Initialise les textures des animations." alt="" coords="5,31,128,57"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title=" " alt="" coords="333,5,425,32"/>
-<area shape="rect" href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0" title=" " alt="" coords="176,31,285,57"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0" title="Fonction qui renvoie, charge une texture et la prépare à se faire afficher." alt="" coords="176,31,285,57"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a44494ff9efed6cd1416119b4a4f3dca2" title=" " alt="" coords="191,81,270,108"/>
 </map>
 </div>
@@ -2414,7 +2487,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <map name="d5/dae/affichage_8h_a1e46996e1fc6e19298fb2db0c82a3dfc_cgraph" id="d5/dae/affichage_8h_a1e46996e1fc6e19298fb2db0c82a3dfc_cgraph">
 <area shape="rect" title="Fonction qui creer et renvoie une liste de textures pour le personnage (joueur)" alt="" coords="5,31,157,57"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html#a5460022305fdfacd6e0864968fea1841" title=" " alt="" coords="412,5,504,32"/>
-<area shape="rect" href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0" title=" " alt="" coords="230,31,339,57"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a59fc51b629cfed9815495f235dae78e0" title="Fonction qui renvoie, charge une texture et la prépare à se faire afficher." alt="" coords="230,31,339,57"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a0843b69b213a0b2f2645ad6158e00bff" title="Fonction qui positionne la texture au n&#45;ème sprite sur l&#39;axe des x." alt="" coords="205,81,364,108"/>
 </map>
 </div>
@@ -2510,7 +2583,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Modifie le rectangle qui définit la zone de l'écran qui sera utilisée pour le rendu de la texture</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">texture</td><td>La texture à modifier. </td></tr>
@@ -2599,6 +2672,11 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Despert Ange</dd></dl>
+<p>Fonction qui permet de choisir le sprite a un cetain indice de l'image. <br  />
+ Cette fonction est concue pour être utiliser avec une texture qui contient plusieurs sprites de même taille. <br  />
+La fonction utilisera la taille du <a class="el" href="../../df/d5b/structs__aff.html#aefd6b2f2f56383a8cba0193ff88593dc">rectangle</a> charger d'afficher qu'une partie d'une image. <br  />
+ Cette fonction est la pour éviter deux appels de fonctions, en l'ocurence <a class="el" href="../../d5/dae/affichage_8h.html#a2184b77dfc56657f52d72e3c2f766db8">next_frame_x_indice</a> et <a class="el" href="../../d5/dae/affichage_8h.html#a81e972fd3cad23381f37fc901733d7e2">next_frame_y_indice</a></p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">texture</td><td>une texture joueur </td></tr>
@@ -2649,10 +2727,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_a668ba4cf805157557b09a5a71fd67c4b_cgraph.png" border="0" usemap="#d5/dae/affichage_8h_a668ba4cf805157557b09a5a71fd67c4b_cgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_a668ba4cf805157557b09a5a71fd67c4b_cgraph" id="d5/dae/affichage_8h_a668ba4cf805157557b09a5a71fd67c4b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,56,151,83"/>
+<area shape="rect" title=" " alt="" coords="5,81,151,108"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#adf38042b72a9ceff2aebef3efe2af6bd" title=" " alt="" coords="199,5,357,32"/>
-<area shape="rect" href="../../da/d68/affichage_8c.html#a7adca84e118cd2c0a47dc5f754a4a5b2" title="Fonction qui positionne la texture au sprite d&#39;après sur l&#39;axe des x." alt="" coords="222,56,334,83"/>
-<area shape="rect" href="../../da/d68/affichage_8c.html#ae4bffa3eb5b67a9316544428c25bdc44" title="Fonction qui positionne la texture au n&#45;ème sprite sur l&#39;axe des y." alt="" coords="199,107,357,133"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#ac5cde30d91e5bbd8e8b7db9c04229752" title="Fonction qui donne l&#39;indice sur l&#39;axe des ordonnées actuelle de la texture." alt="" coords="213,56,343,83"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#a7adca84e118cd2c0a47dc5f754a4a5b2" title="Fonction qui positionne la texture au sprite d&#39;après sur l&#39;axe des x." alt="" coords="222,107,334,133"/>
+<area shape="rect" href="../../da/d68/affichage_8c.html#ae4bffa3eb5b67a9316544428c25bdc44" title="Fonction qui positionne la texture au n&#45;ème sprite sur l&#39;axe des y." alt="" coords="199,157,357,184"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2682,6 +2761,10 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<p>Fonction qui passe au sprite suivant dans l'axe x. Cette fonction fera une boucle complête de l'image, il n'y a donc pas à s'inquiéter d'arriver à la fin de l'image. <br  />
+Comme les fonction à indice, cette fonction fait appel au rectangle <a class="el" href="../../df/d5b/structs__aff.html#aefd6b2f2f56383a8cba0193ff88593dc">frame_anim</a> de la structure <a class="el" href="../../df/d5b/structs__aff.html">d'affichage</a>. <br  />
+</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">t_aff*</td><td>une texture joueur </td></tr>
@@ -2789,7 +2872,9 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Paramètres</dt><dd>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<p>Fonction qui passe au sprite suivant dans l'axe y. Cette fonction fera une boucle complête de l'image, il n'y a donc pas à s'inquiéter d'arriver à la fin de l'image. <br  />
+Comme les fonction à indice, cette fonction fait appel au rectangle <a class="el" href="../../df/d5b/structs__aff.html#aefd6b2f2f56383a8cba0193ff88593dc">frame_anim</a> de la structure <a class="el" href="../../df/d5b/structs__aff.html">d'affichage</a>. </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">t_aff*</td><td>une texture joueur </td></tr>
   </table>
@@ -2992,7 +3077,7 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 <dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000004">Obsolète:</a></b></dt><dd>Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. <br  />
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000005">Obsolète:</a></b></dt><dd>Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. <br  />
  Utilisez <a class="el" href="../../d5/dae/affichage_8h.html#a26cf1d2055162e3bf7166de2f55902f9">place_rect_center_from_point</a> à l'aide du rectangle <a class="el" href="../../df/d5b/structs__aff.html#aefd6b2f2f56383a8cba0193ff88593dc">frame_anim</a> de la varaible <a class="el" href="../../d5/dae/affichage_8h.html#aef49d39125567f1a9d5ed0561ea60edc">fenetre_finale</a> .</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -3048,7 +3133,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui permet de placer un rectangle au centre d'un autre </p><dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <p>Fonctionnement simillaire à l'utilisation conjointe des fonctions placer_rect_center_from_point et <a class="el" href="../../d5/dae/affichage_8h.html#aad94b2ce0d93f581c0f82b0467a8d2ed">get_rect_center_coord</a> .</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -3062,7 +3147,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_af70d121ff2c41380da955ae836b109eb_cgraph.png" border="0" usemap="#d5/dae/affichage_8h_af70d121ff2c41380da955ae836b109eb_cgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_af70d121ff2c41380da955ae836b109eb_cgraph" id="d5/dae/affichage_8h_af70d121ff2c41380da955ae836b109eb_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,132,57"/>
+<area shape="rect" title="Fonction qui permet de placer un rectangle au centre d&#39;un autre." alt="" coords="5,31,132,57"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#ab74333683d8d4816aa1331794b3b9e94" title="Fonction qui permet de placer un rectangle au centre d&#39;un autre sur l&#39;axe des x." alt="" coords="180,5,323,32"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#ada2e4bcab49cd7c1563aef3afa20f75d" title="Fonction qui permet de placer un rectangle au centre d&#39;un autre sur l&#39;axe des y." alt="" coords="180,56,323,83"/>
 </map>
@@ -3072,7 +3157,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_af70d121ff2c41380da955ae836b109eb_icgraph.png" border="0" usemap="#d5/dae/affichage_8h_af70d121ff2c41380da955ae836b109eb_icgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_af70d121ff2c41380da955ae836b109eb_icgraph" id="d5/dae/affichage_8h_af70d121ff2c41380da955ae836b109eb_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,235,32"/>
+<area shape="rect" title="Fonction qui permet de placer un rectangle au centre d&#39;un autre." alt="" coords="108,5,235,32"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
 </map>
 </div>
@@ -3119,7 +3204,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <map name="d5/dae/affichage_8h_ab74333683d8d4816aa1331794b3b9e94_icgraph" id="d5/dae/affichage_8h_ab74333683d8d4816aa1331794b3b9e94_icgraph">
 <area shape="rect" title="Fonction qui permet de placer un rectangle au centre d&#39;un autre sur l&#39;axe des x." alt="" coords="180,31,323,57"/>
 <area shape="rect" href="../../dc/db7/map_8h.html#aad95fee9e6bf2bd4c8ae74d98e1a6821" title=" " alt="" coords="9,5,128,32"/>
-<area shape="rect" href="../../d5/dae/affichage_8h.html#af70d121ff2c41380da955ae836b109eb" title=" " alt="" coords="5,56,132,83"/>
+<area shape="rect" href="../../d5/dae/affichage_8h.html#af70d121ff2c41380da955ae836b109eb" title="Fonction qui permet de placer un rectangle au centre d&#39;un autre." alt="" coords="5,56,132,83"/>
 </map>
 </div>
 
@@ -3166,7 +3251,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <map name="d5/dae/affichage_8h_ada2e4bcab49cd7c1563aef3afa20f75d_icgraph" id="d5/dae/affichage_8h_ada2e4bcab49cd7c1563aef3afa20f75d_icgraph">
 <area shape="rect" title="Fonction qui permet de placer un rectangle au centre d&#39;un autre sur l&#39;axe des y." alt="" coords="180,31,323,57"/>
 <area shape="rect" href="../../dc/db7/map_8h.html#aad95fee9e6bf2bd4c8ae74d98e1a6821" title=" " alt="" coords="9,5,128,32"/>
-<area shape="rect" href="../../d5/dae/affichage_8h.html#af70d121ff2c41380da955ae836b109eb" title=" " alt="" coords="5,56,132,83"/>
+<area shape="rect" href="../../d5/dae/affichage_8h.html#af70d121ff2c41380da955ae836b109eb" title="Fonction qui permet de placer un rectangle au centre d&#39;un autre." alt="" coords="5,56,132,83"/>
 </map>
 </div>
 
@@ -3188,7 +3273,7 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 <dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000002">Obsolète:</a></b></dt><dd>Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. <br  />
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000003">Obsolète:</a></b></dt><dd>Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. <br  />
  Utilisez <a class="el" href="../../d5/dae/affichage_8h.html#a26cf1d2055162e3bf7166de2f55902f9">place_rect_center_from_point</a> à l'aide du rectangle <a class="el" href="../../df/d5b/structs__aff.html#aefd6b2f2f56383a8cba0193ff88593dc">frame_anim</a> de la varaible <a class="el" href="../../d5/dae/affichage_8h.html#aef49d39125567f1a9d5ed0561ea60edc">fenetre_finale</a> .</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -3233,7 +3318,7 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 <dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000003">Obsolète:</a></b></dt><dd>Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. <br  />
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000004">Obsolète:</a></b></dt><dd>Cette fonction ne devrait plus être appelée car elle aurait un comportement imprévisible. <br  />
  Utilisez <a class="el" href="../../d5/dae/affichage_8h.html#a26cf1d2055162e3bf7166de2f55902f9">place_rect_center_from_point</a> à l'aide du rectangle <a class="el" href="../../df/d5b/structs__aff.html#aefd6b2f2f56383a8cba0193ff88593dc">frame_anim</a> de la varaible <a class="el" href="../../d5/dae/affichage_8h.html#aef49d39125567f1a9d5ed0561ea60edc">fenetre_finale</a> .</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -3293,6 +3378,9 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<p>Cette fonction est appellée par les fonction de déplacement de frame tel que <a class="el" href="../../d5/dae/affichage_8h.html#a7adca84e118cd2c0a47dc5f754a4a5b2">next_frame_x</a> pour s'assurer qu'il n'y a aucune erreur. <br  />
+</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">to_verify</td><td>La structure SDL_Rect à vérifier </td></tr>
@@ -3344,7 +3432,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui permet de savoir si deux rectangles sont égaux sur l'axe x </p><dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <p>Cette fonction permet de savoir si deux rectangles sont égaux mais en prenant seulement en compte l'axe x. <br  />
 Cette fonction est utilisée par la fonction <a class="el" href="../../d5/dae/affichage_8h.html#aa536721b7c2a9adac6ef4f2ffb83074e">la fonction de déplacement de personnage</a>. </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -3359,8 +3447,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_a4aa6a76b95dfc74a3ffa525600dd4cd9_icgraph.png" border="0" usemap="#d5/dae/affichage_8h_a4aa6a76b95dfc74a3ffa525600dd4cd9_icgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_a4aa6a76b95dfc74a3ffa525600dd4cd9_icgraph" id="d5/dae/affichage_8h_a4aa6a76b95dfc74a3ffa525600dd4cd9_icgraph">
-<area shape="rect" title=" " alt="" coords="211,5,315,32"/>
-<area shape="rect" href="../../d5/dae/affichage_8h.html#aa536721b7c2a9adac6ef4f2ffb83074e" title=" " alt="" coords="5,5,163,32"/>
+<area shape="rect" title="Fonction qui permet de savoir si deux rectangles sont égaux sur l&#39;axe x." alt="" coords="211,5,315,32"/>
+<area shape="rect" href="../../d5/dae/affichage_8h.html#aa536721b7c2a9adac6ef4f2ffb83074e" title="Permet de déplacer le personnage de x unités horizontales sur la map." alt="" coords="5,5,163,32"/>
 </map>
 </div>
 
@@ -3408,7 +3496,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="center"><img src="../../d5/dae/affichage_8h_afb4e9d272f099665f78b2cf4b97af22e_icgraph.png" border="0" usemap="#d5/dae/affichage_8h_afb4e9d272f099665f78b2cf4b97af22e_icgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_afb4e9d272f099665f78b2cf4b97af22e_icgraph" id="d5/dae/affichage_8h_afb4e9d272f099665f78b2cf4b97af22e_icgraph">
 <area shape="rect" title="Fonction qui permet de savoir si deux rectangles sont égaux sur l&#39;axe y." alt="" coords="211,5,315,32"/>
-<area shape="rect" href="../../d5/dae/affichage_8h.html#a1479d2bcf35df66e73306d28d9ea0e13" title=" " alt="" coords="5,5,163,32"/>
+<area shape="rect" href="../../d5/dae/affichage_8h.html#a1479d2bcf35df66e73306d28d9ea0e13" title="Permet de déplacer le personnage principal de y unités verticales sur la map." alt="" coords="5,5,163,32"/>
 </map>
 </div>
 
@@ -3439,7 +3527,6 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui permet de placer 2 textures aux mêmes endroit à l'écran</p>
 <dl class="section author"><dt>Auteur</dt><dd>Max Descomps </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -3453,7 +3540,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/dae/affichage_8h_a83f1b5ddb558420c53c41071e559a8ff_icgraph.png" border="0" usemap="#d5/dae/affichage_8h_a83f1b5ddb558420c53c41071e559a8ff_icgraph" alt=""/></div>
 <map name="d5/dae/affichage_8h_a83f1b5ddb558420c53c41071e559a8ff_icgraph" id="d5/dae/affichage_8h_a83f1b5ddb558420c53c41071e559a8ff_icgraph">
-<area shape="rect" title=" " alt="" coords="231,56,385,83"/>
+<area shape="rect" title="Fonction qui permet de placer 2 textures aux mêmes endroit à l&#39;écran." alt="" coords="231,56,385,83"/>
 <area shape="rect" href="../../de/dde/boss_8c.html#a4458a2c395fa467f57e350a2f13096f2" title=" " alt="" coords="5,5,183,32"/>
 <area shape="rect" href="../../d0/deb/event_8c.html#a3d363d383d39de072c4b66e4bc202809" title=" " alt="" coords="21,56,167,83"/>
 <area shape="rect" href="../../d0/deb/event_8c.html#ab35bbcfaf1fe479bd4f5d158db01d9e4" title=" " alt="" coords="53,107,135,133"/>
