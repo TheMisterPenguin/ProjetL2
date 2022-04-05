@@ -952,7 +952,8 @@ bool deplacement_y_joueur_secondaire(t_map *m, joueur_t * joueur, int y, SDL_Rec
 }
 
 void text_copier_position(t_aff * a_modifier, const t_aff * const original){
-    a_modifier->aff_fenetre = original->aff_fenetre;
+    a_modifier->aff_fenetre->x = original->aff_fenetre->x;
+    a_modifier->aff_fenetre->y = original->aff_fenetre->y;
 }
 
 
