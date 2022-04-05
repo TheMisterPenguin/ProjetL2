@@ -217,7 +217,7 @@ int main(int argc, char** argv)
         SDL_SetRenderTarget(rendu_principal, map->text_map->texture);
         SDL_RenderClear(rendu_principal);
         
-        /* On cous les objets à la map */
+        /* On coud les objets à la map */
 
         if (SDL_RenderCopy(rendu_principal, map->text_sol->texture, NULL, NULL))
             fprintf(stderr, "Erreur : la texture ne peut être affichée à l'écran : %s\n", SDL_GetError());
@@ -253,7 +253,7 @@ int main(int argc, char** argv)
 
         afficher_coffres(map->liste_coffres);
 
-        /* On cous le joueur2 s'il existe*/
+        /* On coud le joueur2 s'il existe*/
         if(nb_joueurs == 2)
             afficher_texture(next_texture_joueur2, rendu_principal);
 
@@ -261,7 +261,7 @@ int main(int argc, char** argv)
         SDL_SetRenderTarget(rendu_principal, fenetre_finale->texture);
         SDL_RenderClear(rendu_principal);
 
-        /* On cous la map */
+        /* On coud la map */
         afficher_texture(map->text_map, rendu_principal);
                 
         #ifdef _DEBUG_MOUVEMENT /* On affiche les informations liées au mouvement du personnage */
@@ -272,7 +272,7 @@ int main(int argc, char** argv)
                 SDL_SetRenderDrawColor(rendu_principal, 0, 0, 0, SDL_ALPHA_OPAQUE);
         #endif
   
-        /* On cous le joueur1 */
+        /* On coud le joueur1 */
         if(texture_temp1)
             afficher_texture(texture_temp1, rendu_principal);
 
