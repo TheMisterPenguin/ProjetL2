@@ -2,8 +2,8 @@
  * \file definition_commun.h
  * \brief Contient toutes les définitions communes à tout les fichiers
  * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
- * \version 0.1
- * \date 20/01/22
+ * \version 1.0
+ * \date 05/04/22
  * \copyright Copyright (c) 2022
  */
 
@@ -23,12 +23,12 @@
     #define _DEBUG_MOUVEMENT
 #endif
 
-extern unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
-typedef unsigned char byte;
-typedef struct point {int x,y;}point;
+extern unsigned int FENETRE_LONGUEUR; /**<La longueur de la fenêtre obtenue par requête SDL*/
+extern unsigned int FENETRE_LARGEUR; /**<La largeur de la fenêtre obtenue par requête SDL*/
+typedef unsigned char byte; /**<Type servant pour des triggers faisant la taille d'un octet*/
+typedef struct point {int x,y;}point; /**<Un point*/
 
 /**
- * \struct struct t_direction_1
  * \brief Structure de quatre points cardinaux
  */
 typedef enum
@@ -40,7 +40,6 @@ typedef enum
 } t_direction_1;
 
 /**
- * \struct struct t_direction_2
  * \brief Structure de huit points cardinaux
  */
 typedef enum
@@ -55,21 +54,16 @@ typedef enum
     NORD_OUEST_2 /**<Point cardinal nord-ouest*/
 } t_direction_2;
 
-#define bool _Bool
-#define vrai 1
-#define faux 0
+#define bool _Bool /**<Définition du type booléen */
+#define vrai 1 /**<Valeur vrai*/
+#define faux 0 /**<Valeur faux*/
 
-extern SDL_Window *fenetre_Principale; /**Pointeur sur la fenêtre principale du programme*/
-extern SDL_Renderer *rendu_principal;
-extern SDL_Window *fenetre_sous_rendu;
-extern SDL_Renderer *sous_rendu;
-extern bool running;
+extern SDL_Window *fenetre_Principale; /**<Pointeur sur la fenêtre principale du programme*/
+extern SDL_Renderer *rendu_principal; /**<Le rendu principal du programme*/
+extern bool running; /**<Booléen qui permet de savoir si le programme doit s'arrêter*/
 
-#ifndef _WIN32
-#define SAVE_PATH "Bloody_Sanada"
-#else
-#define SAVE_PATH "Bloody_Sanada"
-#endif
+
+#define SAVE_PATH "Bloody_Sanada"/**<L'emplacement de la sauvegarde */
 
 /* Fonctions indispensables */
 

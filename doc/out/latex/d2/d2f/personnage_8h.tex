@@ -23,9 +23,9 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structstatut__s}{statut\+\_\+s}}
-\item 
+\begin{DoxyCompactList}\small\item\em Structure contenant les éléments nécéssaires au choix de l\textquotesingle{}affichage des sprites du personnage. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structjoueur__s}{joueur\+\_\+t}}
-\begin{DoxyCompactList}\small\item\em Définition de la structure joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Structure non manipulable hors des fonctions du personnage contenant les informations sur le joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -70,14 +70,14 @@ enum \mbox{\hyperlink{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ec}{action\+\
 \item 
 void \mbox{\hyperlink{personnage_8h_a1a3324d2dc734d1d45b92a562e61ae18}{stoper\+\_\+mouvement\+\_\+joueurs}} (joueur\+\_\+t $\ast$$\ast$joueurs)
 \begin{DoxyCompactList}\small\item\em Stop le mouvement des joueurs en jeu. \end{DoxyCompactList}\item 
-joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8h_a7a8ebac300fecd46fbce04ea84cfbd4d}{creer\+\_\+joueur}} (const char $\ast$nom, const int niveau, const int xp, const int max\+Pdv, const int pdv, const int attaque, const int defense, const int vitesse, const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} trig\mbox{[}200\mbox{]}, const \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} orient, const \+\_\+\+Bool bouclier\+\_\+equipe, const int num\+\_\+j, char $\ast$f\+\_\+src\+\_\+obj)
-\item 
+joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8h_a84d0db97154f1dab5bf2a1e613eeddc5}{creer\+\_\+joueur}} (const char $\ast$nom, const int niveau, const int xp, const int max\+Pdv, const int pdv, const int attaque, const int defense, const int vitesse, const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} trig, const \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} orient, const \+\_\+\+Bool bouclier\+\_\+equipe, const int num\+\_\+j, char $\ast$f\+\_\+src\+\_\+obj)
+\begin{DoxyCompactList}\small\item\em Creer un joueur. \end{DoxyCompactList}\item 
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8h_a7737c7514f9c4f5c01ff698b97544c2c}{new\+\_\+joueur}} (const char $\ast$nom, int num\+\_\+j, char $\ast$f\+\_\+src\+\_\+obj)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction de création d\textquotesingle{}un joueur correspondant au modèle standard du jeu. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8h_a33613b3a2b55cb1d1855a39a288fb230}{detruire\+\_\+joueur}} (joueur\+\_\+t $\ast$j)
 \begin{DoxyCompactList}\small\item\em Fonction qui détruit un joueur. \end{DoxyCompactList}\item 
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8h_ad8c439be63cc83e7b5c4a0d33f62f639}{charger\+\_\+sauvegarde\+\_\+joueur}} (char $\ast$nom\+\_\+sauv, char $\ast$f\+\_\+src\+\_\+obj, joueur\+\_\+t $\ast$joueurs\mbox{[}$\,$\mbox{]}, unsigned short int nb\+\_\+joueurs)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui charge une sauvegarde au format J\+S\+ON. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8h_aefc1334467e64a267f85c13fb2146714}{maj\+\_\+statistiques}} (joueur\+\_\+t $\ast$perso)
 \begin{DoxyCompactList}\small\item\em Fonction qui met à jour les statistiques d\textquotesingle{}un joueur lors d\textquotesingle{}un passage de niveau. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8h_a5036a38157418caf698d5662fddeb947}{afficher\+\_\+statistiques}} (joueur\+\_\+t $\ast$perso)
@@ -89,9 +89,15 @@ void \mbox{\hyperlink{personnage_8h_ac98e80b68d01d16bf1d9d6159e5aeabc}{gain\+\_\
 void \mbox{\hyperlink{personnage_8h_a9ce711c80691bb2b4f29e7c58790851a}{creer\+\_\+sauvegarde\+\_\+json}} (joueur\+\_\+t $\ast$j)
 \begin{DoxyCompactList}\small\item\em Fonction qui créer les sauvegardes du jeu. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8h_a1674d581294113dd43ec58636bd57802}{check\+\_\+repertoire\+\_\+jeux}} ()
-\begin{DoxyCompactList}\small\item\em Fonction qui assure l\textquotesingle{}existence d\textquotesingle{}un répertoire de sauvegarde. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fonction gère le répertoire de jeux. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8h_aadc96b5c1e76a0574f5759d63bc46e39}{environnement\+\_\+joueurs}} (\mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+monstres, \mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+sorts, \mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+coffres, joueur\+\_\+t $\ast$$\ast$joueurs, int nb\+\_\+joueur)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les effets de l\textquotesingle{}environnement sur le joueur. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{personnage_8h_a14f8330d9598f09daba245654f27af2a}{distance\+\_\+x\+\_\+joueur}} (S\+D\+L\+\_\+\+Rect collision, joueur\+\_\+t $\ast$joueur)
+\begin{DoxyCompactList}\small\item\em Renvoie la distance séparant le joueur d\textquotesingle{}une entité définit par sa collision sur l\textquotesingle{}axe des abscisses. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{personnage_8h_a0ae422db30a3dda1ba20e3e77a9a4db3}{distance\+\_\+y\+\_\+joueur}} (S\+D\+L\+\_\+\+Rect collision, joueur\+\_\+t $\ast$joueur)
+\begin{DoxyCompactList}\small\item\em Renvoie la distance séparant le joueur d\textquotesingle{}une entité définit par sa collision sur l\textquotesingle{}axe des ordonnées. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{personnage_8h_a6ba18ba0f6072ebcfceca1d6b8ade72f}{distance\+\_\+joueur}} (S\+D\+L\+\_\+\+Rect collision, joueur\+\_\+t $\ast$joueur)
+\begin{DoxyCompactList}\small\item\em Renvoie la distance séparant le joueur d\textquotesingle{}une entité définit par sa collision. \end{DoxyCompactList}\item 
 S\+D\+L\+\_\+\+Rect $\ast$ \mbox{\hyperlink{personnage_8h_ae1fe246c62ab7b3137615051c3d74509}{zone\+\_\+en\+\_\+dehors\+\_\+hitbox}} (S\+D\+L\+\_\+\+Rect $\ast$hitbox, S\+D\+L\+\_\+\+Rect $\ast$sprite, \mbox{\hyperlink{definition__commun_8h_a7f49efdfdf08d70d9980031175207fc1}{t\+\_\+direction\+\_\+2}} orientation)
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
@@ -157,7 +163,7 @@ Copyright (c) 2022
 \doxysubsubsection{\texorpdfstring{DUREE\_SOIN}{DUREE\_SOIN}}
 {\footnotesize\ttfamily \#define D\+U\+R\+E\+E\+\_\+\+S\+O\+IN~25}
 
-\mbox{\Hypertarget{personnage_8h_a3fbc4f4577dff27d8abbc4cb24f68d46}\label{personnage_8h_a3fbc4f4577dff27d8abbc4cb24f68d46}} 
+Nombre de sprites dans le spritesheet de soin \mbox{\Hypertarget{personnage_8h_a3fbc4f4577dff27d8abbc4cb24f68d46}\label{personnage_8h_a3fbc4f4577dff27d8abbc4cb24f68d46}} 
 \index{personnage.h@{personnage.h}!TAILLE\_PERSONNAGE@{TAILLE\_PERSONNAGE}}
 \index{TAILLE\_PERSONNAGE@{TAILLE\_PERSONNAGE}!personnage.h@{personnage.h}}
 \doxysubsubsection{\texorpdfstring{TAILLE\_PERSONNAGE}{TAILLE\_PERSONNAGE}}
@@ -189,35 +195,35 @@ Copyright (c) 2022
 
 \begin{DoxyEnumFields}{Valeurs énumérées}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{RIEN@{RIEN}!personnage.h@{personnage.h}}\index{personnage.h@{personnage.h}!RIEN@{RIEN}}}\mbox{\Hypertarget{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35eca70b100093f9f5e4ec3406859cc808132}\label{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35eca70b100093f9f5e4ec3406859cc808132}} 
-R\+I\+EN&\\
+R\+I\+EN&Aucune action \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{ATTAQUE@{ATTAQUE}!personnage.h@{personnage.h}}\index{personnage.h@{personnage.h}!ATTAQUE@{ATTAQUE}}}\mbox{\Hypertarget{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35eca70c3712cf958573a15ce5f5cd738eb55}\label{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35eca70c3712cf958573a15ce5f5cd738eb55}} 
-A\+T\+T\+A\+Q\+UE&\\
+A\+T\+T\+A\+Q\+UE&Action d\textquotesingle{}attaque \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{ATTAQUE\_CHARGEE@{ATTAQUE\_CHARGEE}!personnage.h@{personnage.h}}\index{personnage.h@{personnage.h}!ATTAQUE\_CHARGEE@{ATTAQUE\_CHARGEE}}}\mbox{\Hypertarget{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35eca643516a5c96c628c87840980af2cb13a}\label{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35eca643516a5c96c628c87840980af2cb13a}} 
-A\+T\+T\+A\+Q\+U\+E\+\_\+\+C\+H\+A\+R\+G\+EE&\\
+A\+T\+T\+A\+Q\+U\+E\+\_\+\+C\+H\+A\+R\+G\+EE&Action d\textquotesingle{}attaque chargée \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CHARGER@{CHARGER}!personnage.h@{personnage.h}}\index{personnage.h@{personnage.h}!CHARGER@{CHARGER}}}\mbox{\Hypertarget{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ecae9e01c96a85be094722f5659627cac91}\label{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35ecae9e01c96a85be094722f5659627cac91}} 
-C\+H\+A\+R\+G\+ER&\\
+C\+H\+A\+R\+G\+ER&Action de charge \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{BLOQUER@{BLOQUER}!personnage.h@{personnage.h}}\index{personnage.h@{personnage.h}!BLOQUER@{BLOQUER}}}\mbox{\Hypertarget{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35eca6a1fa42a656febe62060455625d9a189}\label{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35eca6a1fa42a656febe62060455625d9a189}} 
-B\+L\+O\+Q\+U\+ER&\\
+B\+L\+O\+Q\+U\+ER&Action de bloquage \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{ATTAQUE\_OU\_CHARGER@{ATTAQUE\_OU\_CHARGER}!personnage.h@{personnage.h}}\index{personnage.h@{personnage.h}!ATTAQUE\_OU\_CHARGER@{ATTAQUE\_OU\_CHARGER}}}\mbox{\Hypertarget{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35eca173dcec74695d3627c1e00883bae108f}\label{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35eca173dcec74695d3627c1e00883bae108f}} 
-A\+T\+T\+A\+Q\+U\+E\+\_\+\+O\+U\+\_\+\+C\+H\+A\+R\+G\+ER&\\
+A\+T\+T\+A\+Q\+U\+E\+\_\+\+O\+U\+\_\+\+C\+H\+A\+R\+G\+ER&Action d\textquotesingle{}attaque ou de charge \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{J\_BLESSE@{J\_BLESSE}!personnage.h@{personnage.h}}\index{personnage.h@{personnage.h}!J\_BLESSE@{J\_BLESSE}}}\mbox{\Hypertarget{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35eca7129c9db3e42673d2d5a6ec7c40a83a6}\label{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35eca7129c9db3e42673d2d5a6ec7c40a83a6}} 
-J\+\_\+\+B\+L\+E\+S\+SE&\\
+J\+\_\+\+B\+L\+E\+S\+SE&Action de blessure \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{SOIN@{SOIN}!personnage.h@{personnage.h}}\index{personnage.h@{personnage.h}!SOIN@{SOIN}}}\mbox{\Hypertarget{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35eca008eef4b38b1b1d09ad11572df7307dc}\label{personnage_8h_aec2532b33d2d66f09e5b30ed3ded35eca008eef4b38b1b1d09ad11572df7307dc}} 
-S\+O\+IN&\\
+S\+O\+IN&Action de soin \\
 \hline
 
 \end{DoxyEnumFields}
@@ -231,6 +237,8 @@ S\+O\+IN&\\
 {\footnotesize\ttfamily void afficher\+\_\+statistiques (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{perso }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
+Rafael Doneau 
+
 Max Descomps 
 \end{DoxyAuthor}
 
@@ -242,7 +250,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=315pt]{d2/d2f/personnage_8h_a5036a38157418caf698d5662fddeb947_icgraph}
+\includegraphics[width=303pt]{d2/d2f/personnage_8h_a5036a38157418caf698d5662fddeb947_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{personnage_8h_ad8c439be63cc83e7b5c4a0d33f62f639}\label{personnage_8h_ad8c439be63cc83e7b5c4a0d33f62f639}} 
@@ -251,6 +259,24 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{charger\_sauvegarde\_joueur()}{charger\_sauvegarde\_joueur()}}
 {\footnotesize\ttfamily joueur\+\_\+t$\ast$ charger\+\_\+sauvegarde\+\_\+joueur (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom\+\_\+sauv,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj,  }\item[{joueur\+\_\+t $\ast$}]{joueurs\mbox{[}$\,$\mbox{]},  }\item[{unsigned short int}]{nb\+\_\+joueurs }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction va récupérer les informations dans la sauvegarde au format J\+S\+ON. ~\newline
+ Il va ensuite detruire les joueurs et la carte, pour ensuite les recrées avec les infomations qui correspondent à la sauvegarde puis téléporter le joueur aux coordonnées voulues. 
+\begin{DoxyParams}{Paramètres}
+{\em nom\+\_\+sauv} & Chemin complet du fichier de sauvegarde \\
+\hline
+{\em f\+\_\+src\+\_\+obj} & Le fichier source contenant les objets du jeu \\
+\hline
+{\em joueurs} & Les joueurs existants \\
+\hline
+{\em nb\+\_\+joueurs} & Le nombre de joueurs existants \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+joueur\+\_\+t$\ast$ 
+\end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -271,24 +297,75 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{check\_repertoire\_jeux()}{check\_repertoire\_jeux()}}
 {\footnotesize\ttfamily void check\+\_\+repertoire\+\_\+jeux (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction vérifie si le répertoire de jeux existe (emplacement différent selon les OS). ~\newline
+Puis le créer s\textquotesingle{}il n\textquotesingle{}existe pas. Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=282pt]{d2/d2f/personnage_8h_a1674d581294113dd43ec58636bd57802_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{personnage_8h_a7a8ebac300fecd46fbce04ea84cfbd4d}\label{personnage_8h_a7a8ebac300fecd46fbce04ea84cfbd4d}} 
+\mbox{\Hypertarget{personnage_8h_a84d0db97154f1dab5bf2a1e613eeddc5}\label{personnage_8h_a84d0db97154f1dab5bf2a1e613eeddc5}} 
 \index{personnage.h@{personnage.h}!creer\_joueur@{creer\_joueur}}
 \index{creer\_joueur@{creer\_joueur}!personnage.h@{personnage.h}}
 \doxysubsubsection{\texorpdfstring{creer\_joueur()}{creer\_joueur()}}
-{\footnotesize\ttfamily joueur\+\_\+t$\ast$ creer\+\_\+joueur (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom,  }\item[{const int}]{niveau,  }\item[{const int}]{xp,  }\item[{const int}]{max\+Pdv,  }\item[{const int}]{pdv,  }\item[{const int}]{attaque,  }\item[{const int}]{defense,  }\item[{const int}]{vitesse,  }\item[{const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}}}]{trig\mbox{[}200\mbox{]},  }\item[{const \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}}}]{orient,  }\item[{const \+\_\+\+Bool}]{bouclier\+\_\+equipe,  }\item[{const int}]{num\+\_\+j,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily joueur\+\_\+t$\ast$ creer\+\_\+joueur (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom,  }\item[{const int}]{niveau,  }\item[{const int}]{xp,  }\item[{const int}]{max\+Pdv,  }\item[{const int}]{pdv,  }\item[{const int}]{attaque,  }\item[{const int}]{defense,  }\item[{const int}]{vitesse,  }\item[{const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}}}]{trig,  }\item[{const \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}}}]{orient,  }\item[{const \+\_\+\+Bool}]{bouclier\+\_\+equipe,  }\item[{const int}]{num\+\_\+j,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteurs}
+Max Descomps 
+
+Ange Despert
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em nom} & Le nom du joueur \\
+\hline
+{\em niveau} & Le niveau du joueur \\
+\hline
+{\em xp} & L\textquotesingle{}expérience du joueur \\
+\hline
+{\em max\+Pdv} & Le nombre maximu de points de vie du joueur \\
+\hline
+{\em pdv} & Le nombre de points de vie du joueur \\
+\hline
+{\em attaque} & L\textquotesingle{}attaque du joueur \\
+\hline
+{\em defense} & La défense du joueur \\
+\hline
+{\em vitesse} & La vitesse du joueur \\
+\hline
+{\em trig} & Le trigger d\textquotesingle{}information sur le joueur \\
+\hline
+{\em orient} & L\textquotesingle{}orientation spatiale du joueur \\
+\hline
+{\em bouclier\+\_\+equipe} & La possession d\textquotesingle{}un bouclier équipé par le joueur \\
+\hline
+{\em num\+\_\+j} & La place du joueur dans le tableau des joueurs \\
+\hline
+{\em f\+\_\+src\+\_\+obj} & Le fichier source des objets du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Instance nouvellement allouée du type joueur\+\_\+t contenant les informations du joueur 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Paramètres}
+{\em bouclier\+\_\+equipe} & Définition du type booléen \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{personnage_8h_a9ce711c80691bb2b4f29e7c58790851a}\label{personnage_8h_a9ce711c80691bb2b4f29e7c58790851a}} 
 \index{personnage.h@{personnage.h}!creer\_sauvegarde\_json@{creer\_sauvegarde\_json}}
 \index{creer\_sauvegarde\_json@{creer\_sauvegarde\_json}!personnage.h@{personnage.h}}
 \doxysubsubsection{\texorpdfstring{creer\_sauvegarde\_json()}{creer\_sauvegarde\_json()}}
 {\footnotesize\ttfamily void creer\+\_\+sauvegarde\+\_\+json (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{j }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction va créer une sauvegarde dans le répertoire de sauvegarde au format J\+S\+ON contenant toutes les informations a conserver sur le joueur.
 
 
 \begin{DoxyParams}{Paramètres}
@@ -308,6 +385,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{detruire\_joueur()}{detruire\_joueur()}}
 {\footnotesize\ttfamily void detruire\+\_\+joueur (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{j }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em j} & Le joueur à détruire \\
@@ -327,12 +407,110 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \includegraphics[width=328pt]{d2/d2f/personnage_8h_a33613b3a2b55cb1d1855a39a288fb230_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{personnage_8h_a6ba18ba0f6072ebcfceca1d6b8ade72f}\label{personnage_8h_a6ba18ba0f6072ebcfceca1d6b8ade72f}} 
+\index{personnage.h@{personnage.h}!distance\_joueur@{distance\_joueur}}
+\index{distance\_joueur@{distance\_joueur}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{distance\_joueur()}{distance\_joueur()}}
+{\footnotesize\ttfamily int distance\+\_\+joueur (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{collision,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em collision} & la zone de collision de l\textquotesingle{}entité \\
+\hline
+{\em joueur} & le joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int la distance entre l\textquotesingle{}entité et le joueur 
+\end{DoxyReturn}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{d2/d2f/personnage_8h_a6ba18ba0f6072ebcfceca1d6b8ade72f_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{d2/d2f/personnage_8h_a6ba18ba0f6072ebcfceca1d6b8ade72f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{personnage_8h_a14f8330d9598f09daba245654f27af2a}\label{personnage_8h_a14f8330d9598f09daba245654f27af2a}} 
+\index{personnage.h@{personnage.h}!distance\_x\_joueur@{distance\_x\_joueur}}
+\index{distance\_x\_joueur@{distance\_x\_joueur}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{distance\_x\_joueur()}{distance\_x\_joueur()}}
+{\footnotesize\ttfamily int distance\+\_\+x\+\_\+joueur (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{collision,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em collision} & la zone de collision de l\textquotesingle{}entité \\
+\hline
+{\em joueur} & le joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int la distance entre l\textquotesingle{}entité et le joueur sur l\textquotesingle{}axe des abscisses 
+\end{DoxyReturn}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{d2/d2f/personnage_8h_a14f8330d9598f09daba245654f27af2a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{personnage_8h_a0ae422db30a3dda1ba20e3e77a9a4db3}\label{personnage_8h_a0ae422db30a3dda1ba20e3e77a9a4db3}} 
+\index{personnage.h@{personnage.h}!distance\_y\_joueur@{distance\_y\_joueur}}
+\index{distance\_y\_joueur@{distance\_y\_joueur}!personnage.h@{personnage.h}}
+\doxysubsubsection{\texorpdfstring{distance\_y\_joueur()}{distance\_y\_joueur()}}
+{\footnotesize\ttfamily int distance\+\_\+y\+\_\+joueur (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{collision,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Auteur}
+Bruneau Antoine 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em collision} & la zone de collision de l\textquotesingle{}entité \\
+\hline
+{\em joueur} & le joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int la distance entre l\textquotesingle{}entité et le joueur sur l\textquotesingle{}axe des ordonnées 
+\end{DoxyReturn}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{d2/d2f/personnage_8h_a0ae422db30a3dda1ba20e3e77a9a4db3_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{personnage_8h_aadc96b5c1e76a0574f5759d63bc46e39}\label{personnage_8h_aadc96b5c1e76a0574f5759d63bc46e39}} 
 \index{personnage.h@{personnage.h}!environnement\_joueurs@{environnement\_joueurs}}
 \index{environnement\_joueurs@{environnement\_joueurs}!personnage.h@{personnage.h}}
 \doxysubsubsection{\texorpdfstring{environnement\_joueurs()}{environnement\_joueurs()}}
 {\footnotesize\ttfamily void environnement\+\_\+joueurs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste\+\_\+monstres,  }\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste\+\_\+sorts,  }\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste\+\_\+coffres,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{int}]{nb\+\_\+joueur }\end{DoxyParamCaption})}
 
+
+\begin{DoxyParams}{Paramètres}
+{\em liste\+\_\+monstres} & La liste des monstres du jeu \\
+\hline
+{\em liste\+\_\+sorts} & La liste des sorts du jeu \\
+\hline
+{\em liste\+\_\+coffres} & La liste des coffres du jeu \\
+\hline
+{\em joueurs} & Les joueurs qui interagissent avec l\textquotesingle{}environnement du jeu \\
+\hline
+{\em nb\+\_\+joueur} & Le nombre de joueurs en jeu \\
+\hline
+\end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -421,6 +599,21 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{new\_joueur()}{new\_joueur()}}
 {\footnotesize\ttfamily joueur\+\_\+t$\ast$ new\+\_\+joueur (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom,  }\item[{int}]{num\+\_\+j,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em nom} & Le nom du joueur \\
+\hline
+{\em num\+\_\+j} & La place du joueur dans le tableau des joueurs \\
+\hline
+{\em f\+\_\+src\+\_\+obj} & Le fichier source des objets du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Instance nouvellement allouée du type joueur\+\_\+t contenant les informations du joueur 
+\end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -475,3 +668,4 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{save\_path}{save\_path}}
 {\footnotesize\ttfamily char save\+\_\+path\mbox{[}500\mbox{]}}
 
+Le répertoire complet de sauvegarde du jeu 

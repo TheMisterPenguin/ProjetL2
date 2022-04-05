@@ -21,18 +21,19 @@
 
 
 list *listeDeTextures; 
-list *buffer_affichage;
 
-list * liste_animations = NULL;
-t_aff * heal = NULL; //init_animations()
-t_aff * bloquer = NULL; //init_animations()
-t_aff *fenetre_finale = NULL; /* La fenêtre de jeu finale sans l'interface */
+list * liste_animations = NULL; 
+t_aff * heal = NULL; 
+t_aff * bloquer = NULL; 
+t_aff *fenetre_finale = NULL; 
 
-long int compteur;
-unsigned int FENETRE_LONGUEUR, FENETRE_LARGEUR;
+long int compteur; 
+unsigned int FENETRE_LONGUEUR;
+unsigned int FENETRE_LARGEUR;
 SDL_Rect tx,ty;
 
-float multiplicateur_x, multiplicateur_y; /* Multiplicateurs qui dépendent de la résolution */
+float multiplicateur_x;
+float multiplicateur_y;
 
 void * ajout_text_liste(void * t){return t;}
 

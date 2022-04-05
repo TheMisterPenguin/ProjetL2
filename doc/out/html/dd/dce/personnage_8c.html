@@ -85,7 +85,7 @@ Graphe des dépendances par inclusion de personnage.c:</div>
 <area shape="rect" title=" " alt="" coords="5,80,76,107"/>
 <area shape="rect" title=" " alt="" coords="100,80,171,107"/>
 <area shape="rect" href="../../d2/d2f/personnage_8h.html" title="Fichier contenant toutes les définitions concernant le personnage." alt="" coords="499,379,609,405"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html" title=" " alt="" coords="386,453,455,480"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html" title="Fonction relatives au type de structure liste générique." alt="" coords="386,453,455,480"/>
 <area shape="rect" href="../../d2/d9f/inventaire_8h.html" title="Définition des fonctions relatives au module inventaire." alt="" coords="504,453,604,480"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html" title="Fichier contenant les définitions et les fonctions liées au module affichage." alt="" coords="375,229,469,256"/>
 <area shape="rect" href="../../dc/db7/map_8h.html" title="Définitions des fonctions de gestion de la map." alt="" coords="356,304,419,331"/>
@@ -106,7 +106,7 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a11f105c360020140d57fb4d6ddbae8e8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a11f105c360020140d57fb4d6ddbae8e8">copy</a> (const <a class="el" href="../../d1/daa/definition__commun_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *origin, <a class="el" href="../../d1/daa/definition__commun_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *out, size_t size)</td></tr>
 <tr class="separator:a11f105c360020140d57fb4d6ddbae8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1674d581294113dd43ec58636bd57802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a1674d581294113dd43ec58636bd57802">check_repertoire_jeux</a> ()</td></tr>
-<tr class="memdesc:a1674d581294113dd43ec58636bd57802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui assure l'existence d'un répertoire de sauvegarde.  <a href="../../dd/dce/personnage_8c.html#a1674d581294113dd43ec58636bd57802">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a1674d581294113dd43ec58636bd57802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction gère le répertoire de jeux.  <a href="../../dd/dce/personnage_8c.html#a1674d581294113dd43ec58636bd57802">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a1674d581294113dd43ec58636bd57802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ce711c80691bb2b4f29e7c58790851a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a9ce711c80691bb2b4f29e7c58790851a">creer_sauvegarde_json</a> (joueur_t *j)</td></tr>
 <tr class="memdesc:a9ce711c80691bb2b4f29e7c58790851a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui créer les sauvegardes du jeu.  <a href="../../dd/dce/personnage_8c.html#a9ce711c80691bb2b4f29e7c58790851a">Plus de détails...</a><br /></td></tr>
@@ -114,12 +114,13 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a71919ee7582fae9cc0e2d1fd5bbce94e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/daa/definition__commun_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a71919ee7582fae9cc0e2d1fd5bbce94e">sauv_existe</a> (char *nom_sauv)</td></tr>
 <tr class="separator:a71919ee7582fae9cc0e2d1fd5bbce94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8c439be63cc83e7b5c4a0d33f62f639"><td class="memItemLeft" align="right" valign="top">joueur_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#ad8c439be63cc83e7b5c4a0d33f62f639">charger_sauvegarde_joueur</a> (char *nom_sauv, char *f_src_obj, joueur_t *joueurs[], unsigned short int nb_joueurs)</td></tr>
+<tr class="memdesc:ad8c439be63cc83e7b5c4a0d33f62f639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui charge une sauvegarde au format JSON.  <a href="../../dd/dce/personnage_8c.html#ad8c439be63cc83e7b5c4a0d33f62f639">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad8c439be63cc83e7b5c4a0d33f62f639"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7737c7514f9c4f5c01ff698b97544c2c"><td class="memItemLeft" align="right" valign="top">joueur_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a7737c7514f9c4f5c01ff698b97544c2c">new_joueur</a> (const char *nom, int num_j, char *f_src_obj)</td></tr>
+<tr class="memdesc:a7737c7514f9c4f5c01ff698b97544c2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction de création d'un joueur correspondant au modèle standard du jeu.  <a href="../../dd/dce/personnage_8c.html#a7737c7514f9c4f5c01ff698b97544c2c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a7737c7514f9c4f5c01ff698b97544c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61504a02253e4b07f41eec61bddd30c5"><td class="memItemLeft" align="right" valign="top">joueur_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a61504a02253e4b07f41eec61bddd30c5">creer_joueur</a> (const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const <a class="el" href="../../d1/daa/definition__commun_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> trig[<a class="el" href="../../d2/d2f/personnage_8h.html#a98a97fd1e52188dde7bcc423c5d17546">TAILLE_TRIGGER</a>], const <a class="el" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831f">t_direction_1</a> orient, const <a class="el" href="../../d1/daa/definition__commun_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> bouclier_equipe, const int num_j, char *f_src_obj)</td></tr>
-<tr class="memdesc:a61504a02253e4b07f41eec61bddd30c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creer un joueur.  <a href="../../dd/dce/personnage_8c.html#a61504a02253e4b07f41eec61bddd30c5">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a61504a02253e4b07f41eec61bddd30c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0995a1c7be1391b4a127382999a450dd"><td class="memItemLeft" align="right" valign="top">joueur_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a0995a1c7be1391b4a127382999a450dd">creer_joueur</a> (const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const <a class="el" href="../../d1/daa/definition__commun_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> trig[<a class="el" href="../../d2/d2f/personnage_8h.html#a98a97fd1e52188dde7bcc423c5d17546">TAILLE_TRIGGER</a>], const <a class="el" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831f">t_direction_1</a> orient, const <a class="el" href="../../d1/daa/definition__commun_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> bouclier_equipe, const int num_j, char *f_src_obj)</td></tr>
+<tr class="separator:a0995a1c7be1391b4a127382999a450dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33613b3a2b55cb1d1855a39a288fb230"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a33613b3a2b55cb1d1855a39a288fb230">detruire_joueur</a> (joueur_t *j)</td></tr>
 <tr class="memdesc:a33613b3a2b55cb1d1855a39a288fb230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui détruit un joueur.  <a href="../../dd/dce/personnage_8c.html#a33613b3a2b55cb1d1855a39a288fb230">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a33613b3a2b55cb1d1855a39a288fb230"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,10 +143,20 @@ Fonctions</h2></td></tr>
 <tr class="memitem:af2dceb23f5144e7a12b009f113a8e203"><td class="memItemLeft" align="right" valign="top">SDL_bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#af2dceb23f5144e7a12b009f113a8e203">entite_en_collision</a> (SDL_Rect *entite_1, SDL_Rect *entite_2, <a class="el" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831f">t_direction_1</a> *cote_entite_1, <a class="el" href="../../d1/daa/definition__commun_8h.html#a13e1e2bc88dbbeed269e17c3f1ba831f">t_direction_1</a> *cote_entite_2)</td></tr>
 <tr class="separator:af2dceb23f5144e7a12b009f113a8e203"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadc96b5c1e76a0574f5759d63bc46e39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#aadc96b5c1e76a0574f5759d63bc46e39">environnement_joueurs</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *liste_monstres, <a class="el" href="../../d8/d10/structlist.html">list</a> *liste_sorts, <a class="el" href="../../d8/d10/structlist.html">list</a> *liste_coffres, joueur_t **joueurs, int nb_joueur)</td></tr>
+<tr class="memdesc:aadc96b5c1e76a0574f5759d63bc46e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui gère les effets de l'environnement sur le joueur.  <a href="../../dd/dce/personnage_8c.html#aadc96b5c1e76a0574f5759d63bc46e39">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aadc96b5c1e76a0574f5759d63bc46e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a3324d2dc734d1d45b92a562e61ae18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a1a3324d2dc734d1d45b92a562e61ae18">stoper_mouvement_joueurs</a> (joueur_t **joueurs)</td></tr>
 <tr class="memdesc:a1a3324d2dc734d1d45b92a562e61ae18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop le mouvement des joueurs en jeu.  <a href="../../dd/dce/personnage_8c.html#a1a3324d2dc734d1d45b92a562e61ae18">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a1a3324d2dc734d1d45b92a562e61ae18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14f8330d9598f09daba245654f27af2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a14f8330d9598f09daba245654f27af2a">distance_x_joueur</a> (SDL_Rect collision, joueur_t *joueur)</td></tr>
+<tr class="memdesc:a14f8330d9598f09daba245654f27af2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la distance séparant le joueur d'une entité définit par sa collision sur l'axe des abscisses.  <a href="../../dd/dce/personnage_8c.html#a14f8330d9598f09daba245654f27af2a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a14f8330d9598f09daba245654f27af2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ae422db30a3dda1ba20e3e77a9a4db3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a0ae422db30a3dda1ba20e3e77a9a4db3">distance_y_joueur</a> (SDL_Rect collision, joueur_t *joueur)</td></tr>
+<tr class="memdesc:a0ae422db30a3dda1ba20e3e77a9a4db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la distance séparant le joueur d'une entité définit par sa collision sur l'axe des ordonnées.  <a href="../../dd/dce/personnage_8c.html#a0ae422db30a3dda1ba20e3e77a9a4db3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0ae422db30a3dda1ba20e3e77a9a4db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ba18ba0f6072ebcfceca1d6b8ade72f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dce/personnage_8c.html#a6ba18ba0f6072ebcfceca1d6b8ade72f">distance_joueur</a> (SDL_Rect collision, joueur_t *joueur)</td></tr>
+<tr class="memdesc:a6ba18ba0f6072ebcfceca1d6b8ade72f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la distance séparant le joueur d'une entité définit par sa collision.  <a href="../../dd/dce/personnage_8c.html#a6ba18ba0f6072ebcfceca1d6b8ade72f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6ba18ba0f6072ebcfceca1d6b8ade72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -175,7 +186,9 @@ Max Descomps (<a href="#" onclick="location.href='mai'+'lto:'+'Max'+'.D'+'esc'+'
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section author"><dt>Auteur</dt><dd>Max Descomps </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Rafael Doneau </dd>
+<dd>
+Max Descomps </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">perso</td><td>Le joueur sur lequel on se renseigne </td></tr>
@@ -187,10 +200,9 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/dce/personnage_8c_a5036a38157418caf698d5662fddeb947_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a5036a38157418caf698d5662fddeb947_icgraph" alt=""/></div>
 <map name="dd/dce/personnage_8c_a5036a38157418caf698d5662fddeb947_icgraph" id="dd/dce/personnage_8c_a5036a38157418caf698d5662fddeb947_icgraph">
-<area shape="rect" title="Fonction qui affiche les statistiques d&#39;un joueur dans la console." alt="" coords="164,56,319,83"/>
-<area shape="rect" href="../../d2/d9f/inventaire_8h.html#afbcc0f721ebc471ac4fb9cafd97fb77a" title="Fonction qui permet de passer un objet d&#39;un emplacement d&#39;équipement(équipé) au sac(non&#45;équipé) dans ..." alt="" coords="13,5,108,32"/>
-<area shape="rect" href="../../d2/d9f/inventaire_8h.html#a699ab6b7030b61f08e85b59355360a04" title="Fonction qui permet de passer un objet du sac(non&#45;équipé) à un emplacement d&#39;équipement(équipé) dans ..." alt="" coords="5,56,116,83"/>
-<area shape="rect" href="../../d9/d66/test__inventaire_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="33,107,88,133"/>
+<area shape="rect" title="Fonction qui affiche les statistiques d&#39;un joueur dans la console." alt="" coords="148,31,303,57"/>
+<area shape="rect" href="../../d2/d9f/inventaire_8h.html#afbcc0f721ebc471ac4fb9cafd97fb77a" title="Fonction qui permet de passer un objet d&#39;un emplacement d&#39;équipement(équipé) au sac(non&#45;équipé) dans ..." alt="" coords="5,5,100,32"/>
+<area shape="rect" href="../../d9/d66/test__inventaire_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="25,56,80,83"/>
 </map>
 </div>
 
@@ -233,19 +245,31 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<p>Cette fonction va récupérer les informations dans la sauvegarde au format JSON. <br  />
+ Il va ensuite detruire les joueurs et la carte, pour ensuite les recrées avec les infomations qui correspondent à la sauvegarde puis téléporter le joueur aux coordonnées voulues. </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nom_sauv</td><td>Chemin complet du fichier de sauvegarde </td></tr>
+    <tr><td class="paramname">f_src_obj</td><td>Le fichier source contenant les objets du jeu </td></tr>
+    <tr><td class="paramname">joueurs</td><td>Les joueurs existants </td></tr>
+    <tr><td class="paramname">nb_joueurs</td><td>Le nombre de joueurs existants </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>joueur_t* </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_cgraph" alt=""/></div>
 <map name="dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_cgraph" id="dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_cgraph">
-<area shape="rect" title=" " alt="" coords="5,175,160,217"/>
+<area shape="rect" title="Fonction qui charge une sauvegarde au format JSON." alt="" coords="5,175,160,217"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a47b9be5462def4189b86dcf60f3a29a5" title="Affiche la texture donnée en paramètre à l&#39;écran." alt="" coords="214,5,339,32"/>
-<area shape="rect" href="../../d3/d7a/map_8c.html#af6448083132a6591f73061457f30ebb3" title="Fonction qui récupère les informations stockées dans le buffer en entrée." alt="" coords="223,56,330,83"/>
-<area shape="rect" href="../../dd/dce/personnage_8c.html#a61504a02253e4b07f41eec61bddd30c5" title="Creer un joueur." alt="" coords="225,107,328,133"/>
+<area shape="rect" href="../../d3/d7a/map_8c.html#af6448083132a6591f73061457f30ebb3" title="Fonction qui récupère les informations stockées dans le fichier don le nom est donne en entrée." alt="" coords="223,56,330,83"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a0995a1c7be1391b4a127382999a450dd" title=" " alt="" coords="225,107,328,133"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a3e6b4564952e31a2d9e9d0c98dd6ee78" title="Fonction qui permet de définir exactement la taille de la texture." alt="" coords="208,157,345,184"/>
-<area shape="rect" href="../../d3/d7a/map_8c.html#af837acc6ac888e66589d3ff48f4eec12" title=" " alt="" coords="222,208,331,235"/>
+<area shape="rect" href="../../d3/d7a/map_8c.html#af837acc6ac888e66589d3ff48f4eec12" title="Fonction qui permet de détruire une map." alt="" coords="222,208,331,235"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#a6e1d5af117ac87c2c309507f4750dcb9" title="Fonction qui détruit une structure d&#39;affichage de texture passée en paramètre." alt="" coords="393,233,520,260"/>
-<area shape="rect" href="../../d3/d7a/map_8c.html#aad95fee9e6bf2bd4c8ae74d98e1a6821" title=" " alt="" coords="217,309,336,336"/>
+<area shape="rect" href="../../d3/d7a/map_8c.html#aad95fee9e6bf2bd4c8ae74d98e1a6821" title="Fonction qui initialise les textures qui serviront de buffer d&#39;affichage au moteur du jeu." alt="" coords="217,309,336,336"/>
 <area shape="rect" href="../../d3/d7a/map_8c.html#a7e9c15657f08efce7a84ec6822c064e2" title=" " alt="" coords="231,360,322,387"/>
 </map>
 </div>
@@ -254,8 +278,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_icgraph" alt=""/></div>
 <map name="dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_icgraph" id="dd/dce/personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639_icgraph">
-<area shape="rect" title=" " alt="" coords="215,5,369,47"/>
-<area shape="rect" href="../../d6/d46/menus_8h.html#a1ff516df4d202f56e051c3c040ee87b5" title=" " alt="" coords="5,13,167,39"/>
+<area shape="rect" title="Fonction qui charge une sauvegarde au format JSON." alt="" coords="215,5,369,47"/>
+<area shape="rect" href="../../d6/d46/menus_8h.html#a1ff516df4d202f56e051c3c040ee87b5" title="Affiche le menu pause et gère les interactions avec le joueur." alt="" coords="5,13,167,39"/>
 </map>
 </div>
 
@@ -275,6 +299,9 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<p>Cette fonction vérifie si le répertoire de jeux existe (emplacement différent selon les OS). <br  />
+Puis le créer s'il n'existe pas. </p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -338,14 +365,14 @@ Voici le graphe des appelants de cette fonction :</div>
 
 </div>
 </div>
-<a id="a61504a02253e4b07f41eec61bddd30c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61504a02253e4b07f41eec61bddd30c5">&#9670;&nbsp;</a></span>creer_joueur()</h2>
+<a id="a0995a1c7be1391b4a127382999a450dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0995a1c7be1391b4a127382999a450dd">&#9670;&nbsp;</a></span>creer_joueur()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">joueur_t * creer_joueur </td>
+          <td class="memname">joueur_t* creer_joueur </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>nom</em>, </td>
@@ -420,7 +447,7 @@ Voici le graphe des appelants de cette fonction :</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>fichier_src</em>&#160;</td>
+          <td class="paramname"><em>f_src_obj</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -429,31 +456,12 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nom</td><td>Le nom du joueur </td></tr>
-    <tr><td class="paramname">niveau</td><td>Le niveau du joueur </td></tr>
-    <tr><td class="paramname">xp</td><td>L'expérience du joueur </td></tr>
-    <tr><td class="paramname">maxPdv</td><td>Le nombre maximu de points de vie du joueur </td></tr>
-    <tr><td class="paramname">pdv</td><td>Le nombre de points de vie du joueur </td></tr>
-    <tr><td class="paramname">attaque</td><td>L'attaque du joueur </td></tr>
-    <tr><td class="paramname">defense</td><td>La défense du joueur </td></tr>
-    <tr><td class="paramname">vitesse</td><td>La vitesse du joueur </td></tr>
-    <tr><td class="paramname">trig</td><td>Le trigger d'information sur le joueur </td></tr>
-    <tr><td class="paramname">orient</td><td>L'orientation spatiale du joueur </td></tr>
-    <tr><td class="paramname">bouclier_equipe</td><td>La possession d'un bouclier équipé par le joueur </td></tr>
-    <tr><td class="paramname">num_j</td><td>La place du joueur dans le tableau des joueurs </td></tr>
-    <tr><td class="paramname">f_src_obj</td><td>Le fichier source des objets du jeu </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Instance nouvellement allouée du type joueur_t contenant les informations du joueur </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="../../dd/dce/personnage_8c_a61504a02253e4b07f41eec61bddd30c5_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_a61504a02253e4b07f41eec61bddd30c5_cgraph" alt=""/></div>
-<map name="dd/dce/personnage_8c_a61504a02253e4b07f41eec61bddd30c5_cgraph" id="dd/dce/personnage_8c_a61504a02253e4b07f41eec61bddd30c5_cgraph">
-<area shape="rect" title="Creer un joueur." alt="" coords="5,56,108,83"/>
+<div class="center"><img src="../../dd/dce/personnage_8c_a0995a1c7be1391b4a127382999a450dd_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_a0995a1c7be1391b4a127382999a450dd_cgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a0995a1c7be1391b4a127382999a450dd_cgraph" id="dd/dce/personnage_8c_a0995a1c7be1391b4a127382999a450dd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,108,83"/>
 <area shape="rect" href="../../dd/dce/personnage_8c.html#a11f105c360020140d57fb4d6ddbae8e8" title=" " alt="" coords="205,5,259,32"/>
 <area shape="rect" href="../../d4/d04/inventaire_8c.html#a1e5fdcf008cdbc2f1f2629e19bf69856" title=" " alt="" coords="168,56,296,83"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#aea6ef750998e466ed9d8beef7daefc09" title="Fonction qui creer et renvoie une liste de textures pour le personnage (joueur)" alt="" coords="156,107,308,133"/>
@@ -462,11 +470,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="../../dd/dce/personnage_8c_a61504a02253e4b07f41eec61bddd30c5_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a61504a02253e4b07f41eec61bddd30c5_icgraph" alt=""/></div>
-<map name="dd/dce/personnage_8c_a61504a02253e4b07f41eec61bddd30c5_icgraph" id="dd/dce/personnage_8c_a61504a02253e4b07f41eec61bddd30c5_icgraph">
-<area shape="rect" title="Creer un joueur." alt="" coords="208,42,311,69"/>
-<area shape="rect" href="../../d2/d2f/personnage_8h.html#ad8c439be63cc83e7b5c4a0d33f62f639" title=" " alt="" coords="5,5,160,47"/>
-<area shape="rect" href="../../d2/d2f/personnage_8h.html#a7737c7514f9c4f5c01ff698b97544c2c" title=" " alt="" coords="34,71,131,98"/>
+<div class="center"><img src="../../dd/dce/personnage_8c_a0995a1c7be1391b4a127382999a450dd_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a0995a1c7be1391b4a127382999a450dd_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a0995a1c7be1391b4a127382999a450dd_icgraph" id="dd/dce/personnage_8c_a0995a1c7be1391b4a127382999a450dd_icgraph">
+<area shape="rect" title=" " alt="" coords="208,42,311,69"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#ad8c439be63cc83e7b5c4a0d33f62f639" title="Fonction qui charge une sauvegarde au format JSON." alt="" coords="5,5,160,47"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#a7737c7514f9c4f5c01ff698b97544c2c" title="Fonction de création d&#39;un joueur correspondant au modèle standard du jeu." alt="" coords="34,71,131,98"/>
 </map>
 </div>
 
@@ -487,6 +495,8 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<p>Cette fonction va créer une sauvegarde dans le répertoire de sauvegarde au format JSON contenant toutes les informations a conserver sur le joueur.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">j</td><td>Le joueur qui sauvegarde </td></tr>
@@ -520,6 +530,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Max Descomps</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">j</td><td>Le joueur à détruire </td></tr>
@@ -532,7 +543,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="center"><img src="../../dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_cgraph" alt=""/></div>
 <map name="dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_cgraph" id="dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_cgraph">
 <area shape="rect" title="Fonction qui détruit un joueur." alt="" coords="5,5,127,32"/>
-<area shape="rect" href="../../d4/d04/inventaire_8c.html#ad5b47c7ac8715bcc4b4c2b331370fcd2" title="Détruit un inventaire." alt="" coords="175,5,321,32"/>
+<area shape="rect" href="../../d4/d04/inventaire_8c.html#a5475fde997270b9d30ea85049950f141" title="Détruit un inventaire." alt="" coords="175,5,321,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -542,6 +553,161 @@ Voici le graphe des appelants de cette fonction :</div>
 <map name="dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_icgraph" id="dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_icgraph">
 <area shape="rect" title="Fonction qui détruit un joueur." alt="" coords="215,5,336,32"/>
 <area shape="rect" href="../../d6/d46/menus_8h.html#a1ff516df4d202f56e051c3c040ee87b5" title=" " alt="" coords="5,5,167,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6ba18ba0f6072ebcfceca1d6b8ade72f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ba18ba0f6072ebcfceca1d6b8ade72f">&#9670;&nbsp;</a></span>distance_joueur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int distance_joueur </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Rect&#160;</td>
+          <td class="paramname"><em>collision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>joueur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Bruneau Antoine </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collision</td><td>la zone de collision de l'entité </td></tr>
+    <tr><td class="paramname">joueur</td><td>le joueur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int la distance entre l'entité et le joueur </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a6ba18ba0f6072ebcfceca1d6b8ade72f_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_a6ba18ba0f6072ebcfceca1d6b8ade72f_cgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a6ba18ba0f6072ebcfceca1d6b8ade72f_cgraph" id="dd/dce/personnage_8c_a6ba18ba0f6072ebcfceca1d6b8ade72f_cgraph">
+<area shape="rect" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision." alt="" coords="5,31,131,57"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a14f8330d9598f09daba245654f27af2a" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision sur l&#39;axe des abscisses." alt="" coords="179,5,319,32"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a0ae422db30a3dda1ba20e3e77a9a4db3" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision sur l&#39;axe des ordonnées." alt="" coords="179,56,319,83"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a6ba18ba0f6072ebcfceca1d6b8ade72f_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a6ba18ba0f6072ebcfceca1d6b8ade72f_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a6ba18ba0f6072ebcfceca1d6b8ade72f_icgraph" id="dd/dce/personnage_8c_a6ba18ba0f6072ebcfceca1d6b8ade72f_icgraph">
+<area shape="rect" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision." alt="" coords="176,31,301,57"/>
+<area shape="rect" href="../../d0/d1f/monstres_8h.html#a52b27e40a8e179d58dbf20268f75e988" title="Fonction qui met à jour le sprite d&#39;un monstre en fonction d&#39;un joueur." alt="" coords="5,5,128,32"/>
+<area shape="rect" href="../../de/dde/boss_8c.html#a9de096805953d1628c74d869cf75e741" title=" " alt="" coords="22,56,111,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a14f8330d9598f09daba245654f27af2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14f8330d9598f09daba245654f27af2a">&#9670;&nbsp;</a></span>distance_x_joueur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int distance_x_joueur </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Rect&#160;</td>
+          <td class="paramname"><em>collision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>joueur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Bruneau Antoine </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collision</td><td>la zone de collision de l'entité </td></tr>
+    <tr><td class="paramname">joueur</td><td>le joueur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int la distance entre l'entité et le joueur sur l'axe des abscisses </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a14f8330d9598f09daba245654f27af2a_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a14f8330d9598f09daba245654f27af2a_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a14f8330d9598f09daba245654f27af2a_icgraph" id="dd/dce/personnage_8c_a14f8330d9598f09daba245654f27af2a_icgraph">
+<area shape="rect" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision sur l&#39;axe des abscisses." alt="" coords="223,85,363,112"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#a6ba18ba0f6072ebcfceca1d6b8ade72f" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision." alt="" coords="27,5,153,32"/>
+<area shape="rect" href="../../d9/d79/monstres_8c.html#ade193545f6db261984a8721ee32529c1" title=" " alt="" coords="44,56,136,83"/>
+<area shape="rect" href="../../d9/d79/monstres_8c.html#abe4995c32e5ac7e7a45096df239baa52" title=" " alt="" coords="5,107,175,149"/>
+<area shape="rect" href="../../da/df7/sorts_8h.html#a780d77b20da701ce7042b3aaed80fdc2" title=" " alt="" coords="20,173,160,214"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0ae422db30a3dda1ba20e3e77a9a4db3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ae422db30a3dda1ba20e3e77a9a4db3">&#9670;&nbsp;</a></span>distance_y_joueur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int distance_y_joueur </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Rect&#160;</td>
+          <td class="paramname"><em>collision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">joueur_t *&#160;</td>
+          <td class="paramname"><em>joueur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Bruneau Antoine </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collision</td><td>la zone de collision de l'entité </td></tr>
+    <tr><td class="paramname">joueur</td><td>le joueur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int la distance entre l'entité et le joueur sur l'axe des ordonnées </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dce/personnage_8c_a0ae422db30a3dda1ba20e3e77a9a4db3_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a0ae422db30a3dda1ba20e3e77a9a4db3_icgraph" alt=""/></div>
+<map name="dd/dce/personnage_8c_a0ae422db30a3dda1ba20e3e77a9a4db3_icgraph" id="dd/dce/personnage_8c_a0ae422db30a3dda1ba20e3e77a9a4db3_icgraph">
+<area shape="rect" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision sur l&#39;axe des ordonnées." alt="" coords="223,85,363,112"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#a6ba18ba0f6072ebcfceca1d6b8ade72f" title="Renvoie la distance séparant le joueur d&#39;une entité définit par sa collision." alt="" coords="27,5,153,32"/>
+<area shape="rect" href="../../d9/d79/monstres_8c.html#ade193545f6db261984a8721ee32529c1" title=" " alt="" coords="44,56,136,83"/>
+<area shape="rect" href="../../d9/d79/monstres_8c.html#abe4995c32e5ac7e7a45096df239baa52" title=" " alt="" coords="5,107,175,149"/>
+<area shape="rect" href="../../da/df7/sorts_8h.html#a780d77b20da701ce7042b3aaed80fdc2" title=" " alt="" coords="20,173,160,214"/>
 </map>
 </div>
 
@@ -590,7 +756,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="center"><img src="../../dd/dce/personnage_8c_af2dceb23f5144e7a12b009f113a8e203_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_af2dceb23f5144e7a12b009f113a8e203_icgraph" alt=""/></div>
 <map name="dd/dce/personnage_8c_af2dceb23f5144e7a12b009f113a8e203_icgraph" id="dd/dce/personnage_8c_af2dceb23f5144e7a12b009f113a8e203_icgraph">
 <area shape="rect" title=" " alt="" coords="229,5,373,32"/>
-<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title=" " alt="" coords="5,5,181,32"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title="Fonction qui gère les effets de l&#39;environnement sur le joueur." alt="" coords="5,5,181,32"/>
 </map>
 </div>
 
@@ -636,7 +802,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="center"><img src="../../dd/dce/personnage_8c_a434acdc261f9c84b7dca8d540daca729_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a434acdc261f9c84b7dca8d540daca729_icgraph" alt=""/></div>
 <map name="dd/dce/personnage_8c_a434acdc261f9c84b7dca8d540daca729_icgraph" id="dd/dce/personnage_8c_a434acdc261f9c84b7dca8d540daca729_icgraph">
 <area shape="rect" title=" " alt="" coords="229,5,385,32"/>
-<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title=" " alt="" coords="5,5,181,32"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title="Fonction qui gère les effets de l&#39;environnement sur le joueur." alt="" coords="5,5,181,32"/>
 </map>
 </div>
 
@@ -685,18 +851,28 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">liste_monstres</td><td>La liste des monstres du jeu </td></tr>
+    <tr><td class="paramname">liste_sorts</td><td>La liste des sorts du jeu </td></tr>
+    <tr><td class="paramname">liste_coffres</td><td>La liste des coffres du jeu </td></tr>
+    <tr><td class="paramname">joueurs</td><td>Les joueurs qui interagissent avec l'environnement du jeu </td></tr>
+    <tr><td class="paramname">nb_joueur</td><td>Le nombre de joueurs en jeu </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/dce/personnage_8c_aadc96b5c1e76a0574f5759d63bc46e39_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_aadc96b5c1e76a0574f5759d63bc46e39_cgraph" alt=""/></div>
 <map name="dd/dce/personnage_8c_aadc96b5c1e76a0574f5759d63bc46e39_cgraph" id="dd/dce/personnage_8c_aadc96b5c1e76a0574f5759d63bc46e39_cgraph">
-<area shape="rect" title=" " alt="" coords="5,190,181,217"/>
+<area shape="rect" title="Fonction qui gère les effets de l&#39;environnement sur le joueur." alt="" coords="5,190,181,217"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html#aa18ada4ee80cd3ec4a96012f5bfdf469" title="Fonction qui détruit une collision donnée dans une liste de collisions." alt="" coords="240,124,375,165"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="441,46,512,73"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="687,147,772,174"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title=" " alt="" coords="441,198,513,225"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="568,147,639,174"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="433,249,520,275"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="441,46,512,73"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="687,147,772,174"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title="Fonction qui permet de supprimer un élément de la liste." alt="" coords="441,198,513,225"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="568,147,639,174"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="433,249,520,275"/>
 <area shape="rect" href="../../dd/dce/personnage_8c.html#af2dceb23f5144e7a12b009f113a8e203" title=" " alt="" coords="235,291,379,318"/>
 <area shape="rect" href="../../dd/dce/personnage_8c.html#a434acdc261f9c84b7dca8d540daca729" title=" " alt="" coords="229,342,385,369"/>
 <area shape="rect" href="../../dd/dce/personnage_8c.html#ac98e80b68d01d16bf1d9d6159e5aeabc" title="Fonction qui gère les effets d&#39;un gain d&#39;expérience." alt="" coords="271,393,344,419"/>
@@ -707,7 +883,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/dce/personnage_8c_aadc96b5c1e76a0574f5759d63bc46e39_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_aadc96b5c1e76a0574f5759d63bc46e39_icgraph" alt=""/></div>
 <map name="dd/dce/personnage_8c_aadc96b5c1e76a0574f5759d63bc46e39_icgraph" id="dd/dce/personnage_8c_aadc96b5c1e76a0574f5759d63bc46e39_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,284,32"/>
+<area shape="rect" title="Fonction qui gère les effets de l&#39;environnement sur le joueur." alt="" coords="108,5,284,32"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
 </map>
 </div>
@@ -750,7 +926,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="center"><img src="../../dd/dce/personnage_8c_ac98e80b68d01d16bf1d9d6159e5aeabc_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_ac98e80b68d01d16bf1d9d6159e5aeabc_icgraph" alt=""/></div>
 <map name="dd/dce/personnage_8c_ac98e80b68d01d16bf1d9d6159e5aeabc_icgraph" id="dd/dce/personnage_8c_ac98e80b68d01d16bf1d9d6159e5aeabc_icgraph">
 <area shape="rect" title="Fonction qui gère les effets d&#39;un gain d&#39;expérience." alt="" coords="229,5,303,32"/>
-<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title=" " alt="" coords="5,5,181,32"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title="Fonction qui gère les effets de l&#39;environnement sur le joueur." alt="" coords="5,5,181,32"/>
 </map>
 </div>
 
@@ -862,13 +1038,23 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nom</td><td>Le nom du joueur </td></tr>
+    <tr><td class="paramname">num_j</td><td>La place du joueur dans le tableau des joueurs </td></tr>
+    <tr><td class="paramname">f_src_obj</td><td>Le fichier source des objets du jeu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Instance nouvellement allouée du type joueur_t contenant les informations du joueur </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/dce/personnage_8c_a7737c7514f9c4f5c01ff698b97544c2c_cgraph.png" border="0" usemap="#dd/dce/personnage_8c_a7737c7514f9c4f5c01ff698b97544c2c_cgraph" alt=""/></div>
 <map name="dd/dce/personnage_8c_a7737c7514f9c4f5c01ff698b97544c2c_cgraph" id="dd/dce/personnage_8c_a7737c7514f9c4f5c01ff698b97544c2c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,103,32"/>
-<area shape="rect" href="../../dd/dce/personnage_8c.html#a61504a02253e4b07f41eec61bddd30c5" title="Creer un joueur." alt="" coords="151,5,253,32"/>
+<area shape="rect" title="Fonction de création d&#39;un joueur correspondant au modèle standard du jeu." alt="" coords="5,5,103,32"/>
+<area shape="rect" href="../../dd/dce/personnage_8c.html#a0995a1c7be1391b4a127382999a450dd" title=" " alt="" coords="151,5,253,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -876,7 +1062,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/dce/personnage_8c_a7737c7514f9c4f5c01ff698b97544c2c_icgraph.png" border="0" usemap="#dd/dce/personnage_8c_a7737c7514f9c4f5c01ff698b97544c2c_icgraph" alt=""/></div>
 <map name="dd/dce/personnage_8c_a7737c7514f9c4f5c01ff698b97544c2c_icgraph" id="dd/dce/personnage_8c_a7737c7514f9c4f5c01ff698b97544c2c_icgraph">
-<area shape="rect" title=" " alt="" coords="212,31,309,57"/>
+<area shape="rect" title="Fonction de création d&#39;un joueur correspondant au modèle standard du jeu." alt="" coords="212,31,309,57"/>
 <area shape="rect" href="../../d3/d9d/test__personnage_8c.html#a3cccdeb8dd61fb359c030d6c8d2c031f" title=" " alt="" coords="5,5,164,32"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="57,56,112,83"/>
 </map>
@@ -992,6 +1178,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Le répertoire complet de sauvegarde du jeu </p>
 
 </div>
 </div>

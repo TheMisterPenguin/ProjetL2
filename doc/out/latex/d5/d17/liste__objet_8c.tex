@@ -15,30 +15,30 @@ Graphe des dépendances par inclusion de liste\+\_\+objet.\+c\+:\nopagebreak
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-lobjet\+\_\+t $\ast$ \mbox{\hyperlink{liste__objet_8c_af2f7b32a8689d07adfac15f8f1c23dec}{creer\+\_\+liste\+\_\+objet}} (char $\ast$fichier\+\_\+src)
+\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$ \mbox{\hyperlink{liste__objet_8c_aaff80db1b5b4d0f49ddb960a94d4be95}{creer\+\_\+liste\+\_\+objet}} (char $\ast$fichier\+\_\+src)
 \begin{DoxyCompactList}\small\item\em Créé une liste d\textquotesingle{}objets et la remplit à l\textquotesingle{}aide du fichier des objets du jeu. \end{DoxyCompactList}\item 
-lobjet\+\_\+t $\ast$ \mbox{\hyperlink{liste__objet_8c_a4716917b2fe34c67458421e97668ab57}{creer\+\_\+liste\+\_\+objet\+\_\+vide}} (char $\ast$fichier\+\_\+src)
+\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$ \mbox{\hyperlink{liste__objet_8c_a5eda769ac28cc8485f4b48ab1367c06f}{creer\+\_\+liste\+\_\+objet\+\_\+vide}} (char $\ast$fichier\+\_\+src)
 \begin{DoxyCompactList}\small\item\em Créé une liste d\textquotesingle{}objets vide. \end{DoxyCompactList}\item 
-lobjet\+\_\+t $\ast$ \mbox{\hyperlink{liste__objet_8c_a642642e44de7f33ce3115b733b836a0a}{creer\+\_\+liste\+\_\+objet\+\_\+equipe}} ()
+\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$ \mbox{\hyperlink{liste__objet_8c_aa7ad5b43fb3d37375c824f970d63abef}{creer\+\_\+liste\+\_\+objet\+\_\+equipe}} ()
 \begin{DoxyCompactList}\small\item\em Créé une liste d\textquotesingle{}objets vide contenant les objets équipés. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{liste__objet_8c_aaef8a99a89251bfd6b6eb0e919070f0e}{detruire\+\_\+liste\+\_\+objet}} (lobjet\+\_\+t $\ast$$\ast$liste\+\_\+obj)
+void \mbox{\hyperlink{liste__objet_8c_aaef8a99a89251bfd6b6eb0e919070f0e}{detruire\+\_\+liste\+\_\+objet}} (\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$$\ast$liste\+\_\+obj)
 \begin{DoxyCompactList}\small\item\em Détruit une liste d\textquotesingle{}objets. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{liste__objet_8c_a1ba32d0d4c27d32b82085294555b1415}{effacer\+\_\+liste\+\_\+objet}} (lobjet\+\_\+t $\ast$$\ast$liste\+\_\+obj)
+void \mbox{\hyperlink{liste__objet_8c_a1ba32d0d4c27d32b82085294555b1415}{effacer\+\_\+liste\+\_\+objet}} (\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$$\ast$liste\+\_\+obj)
 \begin{DoxyCompactList}\small\item\em Efface une liste d\textquotesingle{}objets sans libérer la mémoire allouée aux objets qu\textquotesingle{}elle contient. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{liste__objet_8c_af785d71f7a4b48b956bb4c6b024d2b6e}{afficher\+\_\+liste\+\_\+objet}} (lobjet\+\_\+t $\ast$const liste\+\_\+obj)
+void \mbox{\hyperlink{liste__objet_8c_af785d71f7a4b48b956bb4c6b024d2b6e}{afficher\+\_\+liste\+\_\+objet}} (\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$const liste\+\_\+obj)
 \begin{DoxyCompactList}\small\item\em Affiche une liste d\textquotesingle{}objets dans la console. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{liste__objet_8c_a77d9896eda8e07e16cb235a43780d405}{placer\+\_\+objet\+\_\+sac}} (objet\+\_\+t $\ast$objet, int slot)
+void \mbox{\hyperlink{liste__objet_8c_a77d9896eda8e07e16cb235a43780d405}{placer\+\_\+objet\+\_\+sac}} (\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$objet, int slot)
 \begin{DoxyCompactList}\small\item\em Place la texture d\textquotesingle{}un objet contenu dans une liste d\textquotesingle{}objet dans le sac depuis le menu inventaire selon son numéro de slot. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{liste__objet_8c_a4fe93e1fc39988acec686660009ed240}{afficher\+\_\+textures\+\_\+sac}} (\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$const inventaire)
 \begin{DoxyCompactList}\small\item\em Affiche les textures des objets du sac dans le menu inventaire. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{liste__objet_8c_a2955c31ed7471524e38adb3ed821402e}{afficher\+\_\+textures\+\_\+equipe}} (\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$const inventaire)
 \begin{DoxyCompactList}\small\item\em Affiche les textures des objets équipés dans le menu inventaire. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{liste__objet_8c_a320f115c92d3d6ed1eada45db42abce0}{creer\+\_\+textures\+\_\+objets}} (lobjet\+\_\+t $\ast$liste\+\_\+obj)
-\begin{DoxyCompactList}\small\item\em Creer toutes les textures d\textquotesingle{}une structure lobjet\+\_\+t. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{liste__objet_8c_a320f115c92d3d6ed1eada45db42abce0}{creer\+\_\+textures\+\_\+objets}} (\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$liste\+\_\+obj)
+\begin{DoxyCompactList}\small\item\em Creer toutes les textures d\textquotesingle{}une structure \mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-lobjet\+\_\+t $\ast$ \mbox{\hyperlink{liste__objet_8c_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}} = N\+U\+LL
+\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$ \mbox{\hyperlink{liste__objet_8c_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}} = N\+U\+LL
 \end{DoxyCompactItemize}
 
 
@@ -62,7 +62,7 @@ Copyright (c) 2022
 \index{liste\_objet.c@{liste\_objet.c}!afficher\_liste\_objet@{afficher\_liste\_objet}}
 \index{afficher\_liste\_objet@{afficher\_liste\_objet}!liste\_objet.c@{liste\_objet.c}}
 \doxysubsubsection{\texorpdfstring{afficher\_liste\_objet()}{afficher\_liste\_objet()}}
-{\footnotesize\ttfamily void afficher\+\_\+liste\+\_\+objet (\begin{DoxyParamCaption}\item[{lobjet\+\_\+t $\ast$const}]{liste\+\_\+obj }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void afficher\+\_\+liste\+\_\+objet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$const}]{liste\+\_\+obj }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -135,11 +135,11 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \includegraphics[width=345pt]{d5/d17/liste__objet_8c_a4fe93e1fc39988acec686660009ed240_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{liste__objet_8c_af2f7b32a8689d07adfac15f8f1c23dec}\label{liste__objet_8c_af2f7b32a8689d07adfac15f8f1c23dec}} 
+\mbox{\Hypertarget{liste__objet_8c_aaff80db1b5b4d0f49ddb960a94d4be95}\label{liste__objet_8c_aaff80db1b5b4d0f49ddb960a94d4be95}} 
 \index{liste\_objet.c@{liste\_objet.c}!creer\_liste\_objet@{creer\_liste\_objet}}
 \index{creer\_liste\_objet@{creer\_liste\_objet}!liste\_objet.c@{liste\_objet.c}}
 \doxysubsubsection{\texorpdfstring{creer\_liste\_objet()}{creer\_liste\_objet()}}
-{\footnotesize\ttfamily lobjet\+\_\+t $\ast$ creer\+\_\+liste\+\_\+objet (\begin{DoxyParamCaption}\item[{char $\ast$}]{fichier\+\_\+src }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}}$\ast$ creer\+\_\+liste\+\_\+objet (\begin{DoxyParamCaption}\item[{char $\ast$}]{fichier\+\_\+src }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -150,46 +150,46 @@ Max Descomps
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-Instance nouvellement allouée du type lobjet\+\_\+t ou N\+U\+LL 
+Instance nouvellement allouée du type \mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} ou N\+U\+LL 
 \end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=285pt]{d5/d17/liste__objet_8c_af2f7b32a8689d07adfac15f8f1c23dec_cgraph}
+\includegraphics[width=285pt]{d5/d17/liste__objet_8c_aaff80db1b5b4d0f49ddb960a94d4be95_cgraph}
 \end{center}
 \end{figure}
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=346pt]{d5/d17/liste__objet_8c_af2f7b32a8689d07adfac15f8f1c23dec_icgraph}
+\includegraphics[width=346pt]{d5/d17/liste__objet_8c_aaff80db1b5b4d0f49ddb960a94d4be95_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{liste__objet_8c_a642642e44de7f33ce3115b733b836a0a}\label{liste__objet_8c_a642642e44de7f33ce3115b733b836a0a}} 
+\mbox{\Hypertarget{liste__objet_8c_aa7ad5b43fb3d37375c824f970d63abef}\label{liste__objet_8c_aa7ad5b43fb3d37375c824f970d63abef}} 
 \index{liste\_objet.c@{liste\_objet.c}!creer\_liste\_objet\_equipe@{creer\_liste\_objet\_equipe}}
 \index{creer\_liste\_objet\_equipe@{creer\_liste\_objet\_equipe}!liste\_objet.c@{liste\_objet.c}}
 \doxysubsubsection{\texorpdfstring{creer\_liste\_objet\_equipe()}{creer\_liste\_objet\_equipe()}}
-{\footnotesize\ttfamily lobjet\+\_\+t $\ast$ creer\+\_\+liste\+\_\+objet\+\_\+equipe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}}$\ast$ creer\+\_\+liste\+\_\+objet\+\_\+equipe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
 \end{DoxyAuthor}
 \begin{DoxyReturn}{Renvoie}
-Instance nouvellement allouée du type lobjet\+\_\+t ou N\+U\+LL 
+Instance nouvellement allouée du type \mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} ou N\+U\+LL 
 \end{DoxyReturn}
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=348pt]{d5/d17/liste__objet_8c_a642642e44de7f33ce3115b733b836a0a_icgraph}
+\includegraphics[width=348pt]{d5/d17/liste__objet_8c_aa7ad5b43fb3d37375c824f970d63abef_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{liste__objet_8c_a4716917b2fe34c67458421e97668ab57}\label{liste__objet_8c_a4716917b2fe34c67458421e97668ab57}} 
+\mbox{\Hypertarget{liste__objet_8c_a5eda769ac28cc8485f4b48ab1367c06f}\label{liste__objet_8c_a5eda769ac28cc8485f4b48ab1367c06f}} 
 \index{liste\_objet.c@{liste\_objet.c}!creer\_liste\_objet\_vide@{creer\_liste\_objet\_vide}}
 \index{creer\_liste\_objet\_vide@{creer\_liste\_objet\_vide}!liste\_objet.c@{liste\_objet.c}}
 \doxysubsubsection{\texorpdfstring{creer\_liste\_objet\_vide()}{creer\_liste\_objet\_vide()}}
-{\footnotesize\ttfamily lobjet\+\_\+t $\ast$ creer\+\_\+liste\+\_\+objet\+\_\+vide (\begin{DoxyParamCaption}\item[{char $\ast$}]{fichier\+\_\+src }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}}$\ast$ creer\+\_\+liste\+\_\+objet\+\_\+vide (\begin{DoxyParamCaption}\item[{char $\ast$}]{fichier\+\_\+src }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -200,27 +200,27 @@ Max Descomps
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-Instance nouvellement allouée du type lobjet\+\_\+t ou N\+U\+LL 
+Instance nouvellement allouée du type \mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} ou N\+U\+LL 
 \end{DoxyReturn}
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{d5/d17/liste__objet_8c_a4716917b2fe34c67458421e97668ab57_icgraph}
+\includegraphics[width=336pt]{d5/d17/liste__objet_8c_a5eda769ac28cc8485f4b48ab1367c06f_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{liste__objet_8c_a320f115c92d3d6ed1eada45db42abce0}\label{liste__objet_8c_a320f115c92d3d6ed1eada45db42abce0}} 
 \index{liste\_objet.c@{liste\_objet.c}!creer\_textures\_objets@{creer\_textures\_objets}}
 \index{creer\_textures\_objets@{creer\_textures\_objets}!liste\_objet.c@{liste\_objet.c}}
 \doxysubsubsection{\texorpdfstring{creer\_textures\_objets()}{creer\_textures\_objets()}}
-{\footnotesize\ttfamily void creer\+\_\+textures\+\_\+objets (\begin{DoxyParamCaption}\item[{lobjet\+\_\+t $\ast$}]{objets }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void creer\+\_\+textures\+\_\+objets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$}]{liste\+\_\+obj }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
-{\em liste\+\_\+obj} & Pointeur sur la structure lobjet\+\_\+t \\
+{\em liste\+\_\+obj} & Pointeur sur la structure \mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} \\
 \hline
 \end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
@@ -241,7 +241,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{liste\_objet.c@{liste\_objet.c}!detruire\_liste\_objet@{detruire\_liste\_objet}}
 \index{detruire\_liste\_objet@{detruire\_liste\_objet}!liste\_objet.c@{liste\_objet.c}}
 \doxysubsubsection{\texorpdfstring{detruire\_liste\_objet()}{detruire\_liste\_objet()}}
-{\footnotesize\ttfamily void detruire\+\_\+liste\+\_\+objet (\begin{DoxyParamCaption}\item[{lobjet\+\_\+t $\ast$$\ast$}]{liste\+\_\+obj }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void detruire\+\_\+liste\+\_\+objet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$$\ast$}]{liste\+\_\+obj }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -262,7 +262,7 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \index{liste\_objet.c@{liste\_objet.c}!effacer\_liste\_objet@{effacer\_liste\_objet}}
 \index{effacer\_liste\_objet@{effacer\_liste\_objet}!liste\_objet.c@{liste\_objet.c}}
 \doxysubsubsection{\texorpdfstring{effacer\_liste\_objet()}{effacer\_liste\_objet()}}
-{\footnotesize\ttfamily void effacer\+\_\+liste\+\_\+objet (\begin{DoxyParamCaption}\item[{lobjet\+\_\+t $\ast$$\ast$}]{liste\+\_\+obj }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void effacer\+\_\+liste\+\_\+objet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$$\ast$}]{liste\+\_\+obj }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -283,7 +283,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{liste\_objet.c@{liste\_objet.c}!placer\_objet\_sac@{placer\_objet\_sac}}
 \index{placer\_objet\_sac@{placer\_objet\_sac}!liste\_objet.c@{liste\_objet.c}}
 \doxysubsubsection{\texorpdfstring{placer\_objet\_sac()}{placer\_objet\_sac()}}
-{\footnotesize\ttfamily void placer\+\_\+objet\+\_\+sac (\begin{DoxyParamCaption}\item[{objet\+\_\+t $\ast$}]{objet,  }\item[{int}]{slot }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void placer\+\_\+objet\+\_\+sac (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$}]{objet,  }\item[{int}]{slot }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -316,5 +316,6 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{liste\_objet.c@{liste\_objet.c}!objets@{objets}}
 \index{objets@{objets}!liste\_objet.c@{liste\_objet.c}}
 \doxysubsubsection{\texorpdfstring{objets}{objets}}
-{\footnotesize\ttfamily lobjet\+\_\+t$\ast$ objets = N\+U\+LL}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}}$\ast$ objets = N\+U\+LL}
 
+La liste des objets du jeu 

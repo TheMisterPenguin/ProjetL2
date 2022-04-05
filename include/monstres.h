@@ -50,7 +50,7 @@ typedef enum
 }action_monstre_t;
 
 /**
- * \struct struct monstre
+ * \struct monstre_t
  * \brief Structure contenant les propriétées du monstre en jeu
  * \author Bruneau Antoine
  */
@@ -69,7 +69,7 @@ typedef struct monstre_s
 } monstre_t;
 
 /**
- * \struct struct base_monstre
+ * \struct base_monstre_t
  * \brief Structure contenant les propiétées du modèle d'un monstre
  * \author Bruneau Antoine
  */
@@ -85,7 +85,7 @@ typedef struct base_monstre_s
 }base_monstre_t;
 
 /**
- * \struct struct liste_base_monstres
+ * \struct liste_base_monstres_t
  * \brief Structure contenant un tableau avec tous les monstres différent(modèle de monstre) que l'on peut utiliser dans le jeu 
  * \author Bruneau Antoine
  */
@@ -139,7 +139,7 @@ extern void detruire_liste_base_monstres(liste_base_monstres_t ** liste_base_mon
  * \fn void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t ** liste_base_monstres)
  * \brief Fonction qui recopie les informations d'un fichier json pour les insérer dans la structure liste_base_monstres
  * \author Bruneau Antoine
- * \param nom_fichier nom du fichier à lire
+ * \param chemin_fichier nom du fichier à lire
  * \param liste_base_monstres tableau dans lequel enregistrer les monstres
  */
 extern void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t ** liste_base_monstres);

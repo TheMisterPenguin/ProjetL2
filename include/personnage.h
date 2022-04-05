@@ -22,25 +22,35 @@
 #define DUREE_BLOQUER 14
 #define DUREE_JOUEUR_BLESSE 12
 
-#define DUREE_SOIN 25 //(nb sprites du spritesheet)
+#define DUREE_SOIN 25 /**< Nombre de sprites dans le spritesheet de soin */
 
 #define TAILLE_PERSONNAGE 16 /*La taille du personnage en pixels*/
 
 #define TAILLE_TRIGGER 200
 
-/**
- * \brief Définition de la structure l_aff
- * 
- * Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref personnage.h et \ref affichage.h .
- */
-typedef struct s_l_aff t_l_aff;
+typedef struct s_l_aff t_l_aff; /* Cette définition est la pour éviter une inclusion mutuelle des fichiers personnage.h et affichage.h */
 
-typedef enum {RIEN,ATTAQUE,ATTAQUE_CHARGEE,CHARGER,BLOQUER,ATTAQUE_OU_CHARGER, J_BLESSE, SOIN}action_t; /**<l'action qu'est en train de faire le personnage*/
+typedef struct inventaire_s inventaire_t; /* Cette définition est la pour éviter une inclusion mutuelle des fichiers \ref personnage.h et \ref inventaire.h */
+
+typedef unsigned char byte;
+
+
+typedef enum {
+    RIEN, /**< Aucune action */
+    ATTAQUE, /**< Action d'attaque */
+    ATTAQUE_CHARGEE, /**< Action d'attaque chargée */
+    CHARGER, /**< Action de charge */
+    BLOQUER, /**< Action de bloquage */
+    ATTAQUE_OU_CHARGER, /**< Action d'attaque ou de charge */
+    J_BLESSE, /**< Action de blessure */
+    SOIN /**< Action de soin */
+}action_t; /**<l'action qu'est en train de faire le personnage*/
+
 /**
- * \struct struct statut_s
  * \brief Structure contenant les éléments nécéssaires au choix de l'affichage des sprites du personnage
  * 
- * \author Bruneau Antoine
+ * \authors Bruneau Antoine
+ * \authors Ange Despert
  */
 typedef struct statut_s {
 	bool en_mouvement; /**<personnage en mouvement*/
@@ -56,15 +66,14 @@ typedef struct statut_s {
 	t_aff * texture_prec; /**<la texture precedente du personnage*/
 }statut_t;
 
-/**
- * \struct struct joueur_s
- * \brief Structure non manipulable hors des fonctions du personnage contenant les informations sur le joueur
- * 
- * \author Despert Ange
- */
-
 typedef unsigned char byte;
 
+/**
+ * \brief Structure non manipulable hors des fonctions du personnage contenant les informations sur le joueur
+ * 
+ * \authors Despert Ange
+ * \authors Descomps Max
+ */
 typedef struct joueur_s {
 	char * nom_pers; /**<Le nom du personnage*/
 	short int niveau; /**<Le niveau du joueur*/
@@ -83,7 +92,7 @@ typedef struct joueur_s {
     inventaire_t * inventaire; /**<Inventaire du joueur*/
 }joueur_t;
 
-extern char save_path[500];
+extern char save_path[500]; /**<Le répertoire complet de sauvegarde du jeu*/
 
 /**
  * \fn void stoper_mouvement_joueurs(joueur_t ** joueurs)
@@ -93,8 +102,10 @@ extern char save_path[500];
 void stoper_mouvement_joueurs(joueur_t ** joueurs);
 
 /**
- * \fn joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orient, const bool bouclier_equipe, const int num_j, char * fichier_src)
  * \brief Creer un joueur
+ * \authors Max Descomps
+ * \authors Ange Despert
+ * 
  * \param nom Le nom du joueur
  * \param niveau Le niveau du joueur
  * \param xp L'expérience du joueur
@@ -113,8 +124,9 @@ void stoper_mouvement_joueurs(joueur_t ** joueurs);
 extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orient, const bool bouclier_equipe, const int num_j, char * f_src_obj);
 
 /**
- * \fn joueur_t *new_joueur(const char* nom, int num_j, char * f_src_obj)
  * \brief Fonction de création d'un joueur correspondant au modèle standard du jeu
+ * \author Ange Despert
+ * 
  * \param nom Le nom du joueur
  * \param num_j La place du joueur dans le tableau des joueurs
  * \param f_src_obj Le fichier source des objets du jeu
@@ -123,75 +135,85 @@ extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, c
 extern joueur_t *new_joueur(const char* nom, int num_j, char * f_src_obj);
 
 /**
- * \fn void detruire_joueur(joueur_t *j)
  * \brief Fonction qui détruit un joueur
+ * \author Max Descomps
+ * 
  * \param j Le joueur à détruire
  */
 extern void detruire_joueur(joueur_t *j);
 
 /**
- * \fn joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj)
- * \brief Fonction qui charge une sauvegarde du jeu
- * \param nom_sauv Le fichier de sauvegarde
+ * \brief Fonction qui charge une sauvegarde au format JSON.
+ * \author Ange Despert
+ * 
+ * Cette fonction va récupérer les informations dans la sauvegarde au format JSON. \n
+ * 
+ * Il va ensuite detruire les joueurs et la carte, pour ensuite les recrées avec les infomations qui correspondent à la sauvegarde puis téléporter le joueur aux coordonnées voulues. 
+ * \param nom_sauv Chemin complet du fichier de sauvegarde
  * \param f_src_obj Le fichier source contenant les objets du jeu
- * \return Instance nouvellement allouée du type joueur_t contenant les informations du joueur
+ * \param joueurs Les joueurs existants
+ * \param nb_joueurs Le nombre de joueurs existants
+ * \return joueur_t*
  */
-joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char *f_src_obj, joueur_t *joueurs[], unsigned short int nb_joueurs);
+extern joueur_t *charger_sauvegarde_joueur(char * nom_sauv, char *f_src_obj, joueur_t *joueurs[], unsigned short int nb_joueurs);
 
 /**
- * \fn void maj_statistiques(joueur_t* perso)
  * \brief Fonction qui met à jour les statistiques d'un joueur lors d'un passage de niveau
  * \param perso Le joueur qui passe un niveau
  */
 extern void maj_statistiques(joueur_t* perso);
 
 /**
- * \fn void afficher_statistiques(joueur_t* perso)
  * \brief Fonction qui affiche les statistiques d'un joueur dans la console
+ * \author Rafael Doneau
  * \author Max Descomps
  * \param perso Le joueur sur lequel on se renseigne
  */
 extern void afficher_statistiques(joueur_t* perso);
 
 /**
- * \fn void levelup(joueur_t* perso)
  * \brief Fonction qui gère le passage de niveau d'un joueur
  * \param perso Le joueur qui passe un niveau
  */
 extern void levelup(joueur_t* perso);
 
 /**
- * \fn void gain_xp(joueur_t* perso)
  * \brief Fonction qui gère les effets d'un gain d'expérience
  * \param perso Le joueur qui gagne de l'expérience
  */
 extern void gain_xp(joueur_t* perso);
 
 /**
- * \fn void creer_sauvegarde_json(joueur_t *j)
- * \brief Fonction qui créer les sauvegardes du jeu
+ * \brief Fonction qui créer les sauvegardes du jeu.
+ * \author Ange Despert
+ * 
+ * Cette fonction va créer une sauvegarde dans le répertoire de sauvegarde au format JSON contenant toutes les informations a conserver sur le joueur.
+ * 
  * \param j Le joueur qui sauvegarde
  */
 extern void creer_sauvegarde_json(joueur_t *j);
 
 /**
- * \fn void check_repertoire_jeux()
- * \brief Fonction qui assure l'existence d'un répertoire de sauvegarde
+ * \brief Fonction gère le répertoire de jeux
+ * \author Ange Despert
+ * 
+ * Cette fonction vérifie si le répertoire de jeux existe (emplacement différent selon les OS). \n
+ * Puis le créer s'il n'existe pas.
+ * 
  */
 void check_repertoire_jeux();
 
 /**
- * \fn void environnement_joueur(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t * joueur)
  * \brief Fonction qui gère les effets de l'environnement sur le joueur
  * \param liste_monstres La liste des monstres du jeu
  * \param liste_sorts La liste des sorts du jeu
  * \param liste_coffres La liste des coffres du jeu
- * \param joueur Le joueur interagissant avec l'environnement du jeu
+ * \param joueurs Les joueurs qui interagissent avec l'environnement du jeu
+ * \param nb_joueur Le nombre de joueurs en jeu
  */
 void environnement_joueurs(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t ** joueurs, int nb_joueur);
 
 /**
- * \fn distance_x_joueur(SDL_Rect collision, joueur_t * joueur);
  * \brief Renvoie la distance séparant le joueur d'une entité définit par sa collision sur l'axe des abscisses
  * \author Bruneau Antoine
  * \param collision la zone de collision de l'entité
@@ -201,7 +223,6 @@ void environnement_joueurs(list * liste_monstres, list * liste_sorts, list * lis
 extern int distance_x_joueur(SDL_Rect collision, joueur_t * joueur);
 
 /**
- * \fn distance_y_joueur(SDL_Rect collision, joueur_t * joueur);
  * \brief Renvoie la distance séparant le joueur d'une entité définit par sa collision sur l'axe des ordonnées
  * \author Bruneau Antoine
  * \param collision la zone de collision de l'entité
@@ -211,7 +232,6 @@ extern int distance_x_joueur(SDL_Rect collision, joueur_t * joueur);
 extern int distance_y_joueur(SDL_Rect collision, joueur_t * joueur);
 
 /**
- * \fn distance_joueur(SDL_Rect collision, joueur_t * joueur);
  * \brief Renvoie la distance séparant le joueur d'une entité définit par sa collision
  * \author Bruneau Antoine
  * \param collision la zone de collision de l'entité

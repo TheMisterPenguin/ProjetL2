@@ -2,7 +2,7 @@
 \label{structelement}\index{element@{element}}
 
 
-Définition du type liste.  
+Définition dy type element \+: un élément d\textquotesingle{}une liste.  
 
 
 
@@ -11,7 +11,7 @@ Graphe de collaboration de element\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=137pt]{da/d80/structelement__coll__graph}
+\includegraphics[width=180pt]{da/d80/structelement__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Attributs publics}
@@ -19,10 +19,16 @@ Graphe de collaboration de element\+:\nopagebreak
 \item 
 void $\ast$ \mbox{\hyperlink{structelement_a7fa0808c65a6f7930ae489a9360534ff}{valeur}}
 \item 
-\mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{structelement}{element}} $\ast$ \mbox{\hyperlink{structelement_a9f9ebee1fa1dce6d05bc325a66478635}{pred}}
+struct \mbox{\hyperlink{structelement}{element}} $\ast$ \mbox{\hyperlink{structelement_a9f9ebee1fa1dce6d05bc325a66478635}{pred}}
 \item 
-\mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{structelement}{element}} $\ast$ \mbox{\hyperlink{structelement_abe10f441a14a96bd130a004585b475ad}{succ}}
+struct \mbox{\hyperlink{structelement}{element}} $\ast$ \mbox{\hyperlink{structelement_abe10f441a14a96bd130a004585b475ad}{succ}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+\begin{DoxyAuthor}{Auteur}
+Ange Despert 
+\end{DoxyAuthor}
 
 
 \doxysubsection{Documentation des données membres}
@@ -30,21 +36,21 @@ void $\ast$ \mbox{\hyperlink{structelement_a7fa0808c65a6f7930ae489a9360534ff}{va
 \index{element@{element}!pred@{pred}}
 \index{pred@{pred}!element@{element}}
 \doxysubsubsection{\texorpdfstring{pred}{pred}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{structelement}{element}}$\ast$ element\+::pred}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structelement}{element}}$\ast$ element\+::pred}
 
-\mbox{\Hypertarget{structelement_abe10f441a14a96bd130a004585b475ad}\label{structelement_abe10f441a14a96bd130a004585b475ad}} 
+L\textquotesingle{}élément précédant \mbox{\Hypertarget{structelement_abe10f441a14a96bd130a004585b475ad}\label{structelement_abe10f441a14a96bd130a004585b475ad}} 
 \index{element@{element}!succ@{succ}}
 \index{succ@{succ}!element@{element}}
 \doxysubsubsection{\texorpdfstring{succ}{succ}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structstruct}{struct}} \mbox{\hyperlink{structelement}{element}}$\ast$ element\+::succ}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structelement}{element}}$\ast$ element\+::succ}
 
-\mbox{\Hypertarget{structelement_a7fa0808c65a6f7930ae489a9360534ff}\label{structelement_a7fa0808c65a6f7930ae489a9360534ff}} 
+L\textquotesingle{}élément suivant \mbox{\Hypertarget{structelement_a7fa0808c65a6f7930ae489a9360534ff}\label{structelement_a7fa0808c65a6f7930ae489a9360534ff}} 
 \index{element@{element}!valeur@{valeur}}
 \index{valeur@{valeur}!element@{element}}
 \doxysubsubsection{\texorpdfstring{valeur}{valeur}}
 {\footnotesize\ttfamily void$\ast$ element\+::valeur}
 
-
+La valeur de l\textquotesingle{}élément, un pointeur générique 
 
 La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 

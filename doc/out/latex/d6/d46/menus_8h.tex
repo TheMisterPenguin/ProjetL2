@@ -23,17 +23,17 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{menus_8h_a1ff516df4d202f56e051c3c040ee87b5}{afficher\+\_\+menu\+\_\+pause}} (joueur\+\_\+t $\ast$joueur\mbox{[}$\,$\mbox{]}, char $\ast$f\+\_\+src\+\_\+objet, unsigned short int nb\+\_\+joueurs)
-\item 
+\begin{DoxyCompactList}\small\item\em Affiche le menu pause et gère les interactions avec le joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{menus_8h_a4da3c6c1c4423889f8735c91a92e20d9}{afficher\+\_\+menu\+\_\+pause\+\_\+manette}} (joueur\+\_\+t $\ast$joueur)
-\item 
+\begin{DoxyCompactList}\small\item\em Affiche le menu pause et gère les interactions avec le joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{menus_8h_a1c8778affd5380fae88f7ce24787c8ea}{afficher\+\_\+menu\+\_\+accueil}} (int $\ast$nb\+\_\+joueur)
 \begin{DoxyCompactList}\small\item\em Affiche le menu d\textquotesingle{}acceuil et gère les interactions avec le joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{menus_8h_aa1042f350a66ae56b754f3bf22556405}{afficher\+\_\+menu\+\_\+accueil\+\_\+manette}} (int $\ast$nb\+\_\+joueur)
-\item 
+\begin{DoxyCompactList}\small\item\em Affiche le menu d\textquotesingle{}acceuil et gère les interactions avec le joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{menus_8h_a98b87de7b6779d1ea4db3543621cc3cb}{afficher\+\_\+inventaire}} (joueur\+\_\+t $\ast$joueur, S\+D\+L\+\_\+\+Key\+Code touche\+\_\+inventaire)
 \item 
 void \mbox{\hyperlink{menus_8h_afcde784ea1d5fb8c9fd6436fa063c5f2}{afficher\+\_\+inventaire\+\_\+manette}} (joueur\+\_\+t $\ast$joueur)
-\item 
+\begin{DoxyCompactList}\small\item\em Affiche l\textquotesingle{}inventaire et gère les interactions avec l\textquotesingle{}utilisateur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{menus_8h_a8541cd40c3fdc063e208e617c15c48ac}{init\+\_\+text\+\_\+menus}} (void)
 \begin{DoxyCompactList}\small\item\em Créer les textures des menus. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{menus_8h_acd5468808be152074a36a5baca990cfe}{creer\+\_\+inventaire\+\_\+j2}} (void)
@@ -52,14 +52,16 @@ t\+\_\+aff $\ast$ \mbox{\hyperlink{menus_8h_a46857835f05e29154215fa6d272dd48d}{t
 
 
 \doxysubsection{Description détaillée}
-\begin{DoxyAuthor}{Auteur}
+\begin{DoxyAuthor}{Auteurs}
 Ange Despert (\href{mailto:Ange.Despert.Etu@univ-lemans.fr}{\texttt{ Ange.\+Despert.\+Etu@univ-\/lemans.\+fr}}) 
+
+Max Descomps 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 1.\+0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-27/03/2022 
+05/04/2022 
 \end{DoxyDate}
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2022 
@@ -93,6 +95,16 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{afficher\_inventaire\_manette()}{afficher\_inventaire\_manette()}}
 {\footnotesize\ttfamily void afficher\+\_\+inventaire\+\_\+manette (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Fonctionnement similaire à la fonction \mbox{\hyperlink{menus_8h_a98b87de7b6779d1ea4db3543621cc3cb}{afficher\+\_\+inventaire}} mais fonctionne à l\textquotesingle{}aide d\textquotesingle{}une manette.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em joueur} & Joueur auquel appartient l\textquotesingle{}inventaire \\
+\hline
+\end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -121,8 +133,7 @@ Max Descomps
 {\em nb\+\_\+joueur} & Le nombre de joueurs souhaitant commencer une partie \\
 \hline
 \end{DoxyParams}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -142,6 +153,20 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{afficher\_menu\_accueil\_manette()}{afficher\_menu\_accueil\_manette()}}
 {\footnotesize\ttfamily void afficher\+\_\+menu\+\_\+accueil\+\_\+manette (\begin{DoxyParamCaption}\item[{int $\ast$}]{nb\+\_\+joueur }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Fonction qui est similaire à la fonction \mbox{\hyperlink{menus_8h_a1c8778affd5380fae88f7ce24787c8ea}{afficher\+\_\+menu\+\_\+accueil}} mais permet l\textquotesingle{}utilisation de la manette.
+
+\begin{DoxyRefDesc}{A faire}
+\item[\mbox{\hyperlink{todo__todo000002}{A faire}}]Ajout du multijoueur.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nb\+\_\+joueur} & Le nombre de joueurs souhaitant commencer une partie (renvoie toujours 1) \\
+\hline
+\end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -162,8 +187,21 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{afficher\_menu\_pause()}{afficher\_menu\_pause()}}
 {\footnotesize\ttfamily void afficher\+\_\+menu\+\_\+pause (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur\mbox{[}$\,$\mbox{]},  }\item[{char $\ast$}]{f\+\_\+src\+\_\+objet,  }\item[{unsigned short int}]{nb\+\_\+joueurs }\end{DoxyParamCaption})}
 
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction affiche le menu pause et gère le clic des boutons à la souris.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em joueur} & Les joueurs qui existent \\
+\hline
+{\em f\+\_\+src\+\_\+objet} & Liste des objets du jeux utilisée dans certaines fonctionnalités du menu pause \\
+\hline
+{\em nb\+\_\+joueurs} & Le nombre de joueurs qui exsitents \\
+\hline
+\end{DoxyParams}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -183,6 +221,20 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{afficher\_menu\_pause\_manette()}{afficher\_menu\_pause\_manette()}}
 {\footnotesize\ttfamily void afficher\+\_\+menu\+\_\+pause\+\_\+manette (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction affiche le menu pause et fonctionne de façon similaire à la fonction \mbox{\hyperlink{menus_8h_a1ff516df4d202f56e051c3c040ee87b5}{afficher\+\_\+menu\+\_\+pause}} mais les seléctions sont faites à la manette.
+
+\begin{DoxyRefDesc}{A faire}
+\item[\mbox{\hyperlink{todo__todo000001}{A faire}}]Permmetre la sauvegarde et le chargement de celle-\/ci avec la manette.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Paramètres}
+{\em joueur} & Le joueur principal \\
+\hline
+\end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -238,21 +290,22 @@ Max Descomps
 \doxysubsubsection{\texorpdfstring{text\_accueil}{text\_accueil}}
 {\footnotesize\ttfamily t\+\_\+aff$\ast$ text\+\_\+accueil}
 
-\mbox{\Hypertarget{menus_8h_aad27bec0063f6ca13490559e5a8cc41f}\label{menus_8h_aad27bec0063f6ca13490559e5a8cc41f}} 
+La texture du menu d\textquotesingle{}accueil \mbox{\Hypertarget{menus_8h_aad27bec0063f6ca13490559e5a8cc41f}\label{menus_8h_aad27bec0063f6ca13490559e5a8cc41f}} 
 \index{menus.h@{menus.h}!text\_inventaire1@{text\_inventaire1}}
 \index{text\_inventaire1@{text\_inventaire1}!menus.h@{menus.h}}
 \doxysubsubsection{\texorpdfstring{text\_inventaire1}{text\_inventaire1}}
 {\footnotesize\ttfamily t\+\_\+aff$\ast$ text\+\_\+inventaire1}
 
-\mbox{\Hypertarget{menus_8h_aa64a9b1fdd7eb363a0fc5d0c41993162}\label{menus_8h_aa64a9b1fdd7eb363a0fc5d0c41993162}} 
+La texture de l\textquotesingle{}inventaire du J1 \mbox{\Hypertarget{menus_8h_aa64a9b1fdd7eb363a0fc5d0c41993162}\label{menus_8h_aa64a9b1fdd7eb363a0fc5d0c41993162}} 
 \index{menus.h@{menus.h}!text\_inventaire2@{text\_inventaire2}}
 \index{text\_inventaire2@{text\_inventaire2}!menus.h@{menus.h}}
 \doxysubsubsection{\texorpdfstring{text\_inventaire2}{text\_inventaire2}}
 {\footnotesize\ttfamily t\+\_\+aff$\ast$ text\+\_\+inventaire2}
 
-\mbox{\Hypertarget{menus_8h_a474b2217a25d81cac4b50e464f19c488}\label{menus_8h_a474b2217a25d81cac4b50e464f19c488}} 
+La texture de l\textquotesingle{}inventaire du J2 \mbox{\Hypertarget{menus_8h_a474b2217a25d81cac4b50e464f19c488}\label{menus_8h_a474b2217a25d81cac4b50e464f19c488}} 
 \index{menus.h@{menus.h}!text\_pause@{text\_pause}}
 \index{text\_pause@{text\_pause}!menus.h@{menus.h}}
 \doxysubsubsection{\texorpdfstring{text\_pause}{text\_pause}}
 {\footnotesize\ttfamily t\+\_\+aff$\ast$ text\+\_\+pause}
 
+La texture du menu de pause 

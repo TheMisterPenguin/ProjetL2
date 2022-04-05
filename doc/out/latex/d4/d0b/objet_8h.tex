@@ -45,11 +45,11 @@ enum \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}} 
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-objet\+\_\+t $\ast$ \mbox{\hyperlink{objet_8h_a85e95708f68baa868d64811e0259c340}{creer\+\_\+objet}} (const int id, const char $\ast$const texture\+\_\+src, const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}} type, const char $\ast$nom, const short int niveau, const int att, const int def, const int vit)
+\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$ \mbox{\hyperlink{objet_8h_a85e95708f68baa868d64811e0259c340}{creer\+\_\+objet}} (const int id, const char $\ast$const texture\+\_\+src, const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}} type, const char $\ast$nom, const short int niveau, const int att, const int def, const int vit)
 \begin{DoxyCompactList}\small\item\em Créé un objet du jeu. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{objet_8h_a9903bbbae9d8ad00d41b6e903d459877}{detruire\+\_\+objet}} (objet\+\_\+t $\ast$$\ast$obj)
+void \mbox{\hyperlink{objet_8h_a9903bbbae9d8ad00d41b6e903d459877}{detruire\+\_\+objet}} (\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$$\ast$obj)
 \begin{DoxyCompactList}\small\item\em Libère la mémoire allouée à un objet. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{objet_8h_a0cad7222129cd23bfca9ab8d94885f39}{afficher\+\_\+objet}} (objet\+\_\+t $\ast$obj)
+void \mbox{\hyperlink{objet_8h_a0cad7222129cd23bfca9ab8d94885f39}{afficher\+\_\+objet}} (\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$obj)
 \begin{DoxyCompactList}\small\item\em Affiche les caractéristiques d\textquotesingle{}un objet dans la console. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -61,7 +61,7 @@ Max Descomps (\href{mailto:Max.Descomps.Etu@univ-lemans.fr}{\texttt{ Max.\+Desco
 0.\+3 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-24/02/2022 
+05/04/2022 
 \end{DoxyDate}
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2022 
@@ -75,7 +75,7 @@ Copyright (c) 2022
 \doxysubsubsection{\texorpdfstring{NB\_TYPE\_OBJ}{NB\_TYPE\_OBJ}}
 {\footnotesize\ttfamily \#define N\+B\+\_\+\+T\+Y\+P\+E\+\_\+\+O\+BJ~6}
 
-
+Nombre de types d\textquotesingle{}objets dans le jeu 
 
 \doxysubsection{Documentation du type de l\textquotesingle{}énumération}
 \mbox{\Hypertarget{objet_8h_a5164672bbab2547df809744bf0af3dc9}\label{objet_8h_a5164672bbab2547df809744bf0af3dc9}} 
@@ -86,27 +86,27 @@ Copyright (c) 2022
 
 Types d\textquotesingle{}objets du jeu \begin{DoxyEnumFields}{Valeurs énumérées}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{quete@{quete}!objet.h@{objet.h}}\index{objet.h@{objet.h}!quete@{quete}}}\mbox{\Hypertarget{objet_8h_a5164672bbab2547df809744bf0af3dc9ac3e37358f11c190b42f6cf5ce67e3055}\label{objet_8h_a5164672bbab2547df809744bf0af3dc9ac3e37358f11c190b42f6cf5ce67e3055}} 
-quete&\\
+quete&objet de quête \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{arme@{arme}!objet.h@{objet.h}}\index{objet.h@{objet.h}!arme@{arme}}}\mbox{\Hypertarget{objet_8h_a5164672bbab2547df809744bf0af3dc9a882df57686c5802d5cfb3c1ecaa8fb91}\label{objet_8h_a5164672bbab2547df809744bf0af3dc9a882df57686c5802d5cfb3c1ecaa8fb91}} 
-arme&\\
+arme&objet de la catégorie arme \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{bouclier@{bouclier}!objet.h@{objet.h}}\index{objet.h@{objet.h}!bouclier@{bouclier}}}\mbox{\Hypertarget{objet_8h_a5164672bbab2547df809744bf0af3dc9a83c2b989ed29d2c5f79d0c2b7b5fca99}\label{objet_8h_a5164672bbab2547df809744bf0af3dc9a83c2b989ed29d2c5f79d0c2b7b5fca99}} 
-bouclier&\\
+bouclier&objet de la catégorie bouclier \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{protection@{protection}!objet.h@{objet.h}}\index{objet.h@{objet.h}!protection@{protection}}}\mbox{\Hypertarget{objet_8h_a5164672bbab2547df809744bf0af3dc9a5a9e8626f8a9452049003b4ae0d441e1}\label{objet_8h_a5164672bbab2547df809744bf0af3dc9a5a9e8626f8a9452049003b4ae0d441e1}} 
-protection&\\
+protection&objet de la catégorie protection \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{amulette@{amulette}!objet.h@{objet.h}}\index{objet.h@{objet.h}!amulette@{amulette}}}\mbox{\Hypertarget{objet_8h_a5164672bbab2547df809744bf0af3dc9ad44450693a7cbb13c45b08603c0e17d3}\label{objet_8h_a5164672bbab2547df809744bf0af3dc9ad44450693a7cbb13c45b08603c0e17d3}} 
-amulette&\\
+amulette&objet de la catégorie amulette \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{consommable@{consommable}!objet.h@{objet.h}}\index{objet.h@{objet.h}!consommable@{consommable}}}\mbox{\Hypertarget{objet_8h_a5164672bbab2547df809744bf0af3dc9ab9ca03fc8174039007dd62d6bc5f9d89}\label{objet_8h_a5164672bbab2547df809744bf0af3dc9ab9ca03fc8174039007dd62d6bc5f9d89}} 
-consommable&\\
+consommable&objet consommable \\
 \hline
 
 \end{DoxyEnumFields}
@@ -117,7 +117,7 @@ consommable&\\
 \index{objet.h@{objet.h}!afficher\_objet@{afficher\_objet}}
 \index{afficher\_objet@{afficher\_objet}!objet.h@{objet.h}}
 \doxysubsubsection{\texorpdfstring{afficher\_objet()}{afficher\_objet()}}
-{\footnotesize\ttfamily void afficher\+\_\+objet (\begin{DoxyParamCaption}\item[{objet\+\_\+t $\ast$}]{obj }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void afficher\+\_\+objet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -138,7 +138,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{objet.h@{objet.h}!creer\_objet@{creer\_objet}}
 \index{creer\_objet@{creer\_objet}!objet.h@{objet.h}}
 \doxysubsubsection{\texorpdfstring{creer\_objet()}{creer\_objet()}}
-{\footnotesize\ttfamily objet\+\_\+t$\ast$ creer\+\_\+objet (\begin{DoxyParamCaption}\item[{const int}]{id,  }\item[{const char $\ast$const}]{texture\+\_\+src,  }\item[{const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}}}]{type,  }\item[{const char $\ast$}]{nom,  }\item[{const short int}]{niveau,  }\item[{const int}]{att,  }\item[{const int}]{def,  }\item[{const int}]{vit }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structobjet__t}{objet\+\_\+t}}$\ast$ creer\+\_\+objet (\begin{DoxyParamCaption}\item[{const int}]{id,  }\item[{const char $\ast$const}]{texture\+\_\+src,  }\item[{const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}}}]{type,  }\item[{const char $\ast$}]{nom,  }\item[{const short int}]{niveau,  }\item[{const int}]{att,  }\item[{const int}]{def,  }\item[{const int}]{vit }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -163,7 +163,7 @@ Max Descomps
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-Instance nouvellement allouée du type objet\+\_\+t ou N\+U\+LL 
+Instance nouvellement allouée du type \mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} ou N\+U\+LL 
 \end{DoxyReturn}
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
@@ -176,7 +176,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{objet.h@{objet.h}!detruire\_objet@{detruire\_objet}}
 \index{detruire\_objet@{detruire\_objet}!objet.h@{objet.h}}
 \doxysubsubsection{\texorpdfstring{detruire\_objet()}{detruire\_objet()}}
-{\footnotesize\ttfamily void detruire\+\_\+objet (\begin{DoxyParamCaption}\item[{objet\+\_\+t $\ast$$\ast$}]{obj }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void detruire\+\_\+objet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$$\ast$}]{obj }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 

@@ -16,39 +16,39 @@ Graphe des dépendances par inclusion de listes.\+c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{listes_8c_a44494ff9efed6cd1416119b4a4f3dca2}{init\+\_\+liste}} (void $\ast$($\ast$fonction\+\_\+ajout)(void $\ast$), void($\ast$fonction\+\_\+suppresion)(void $\ast$), void($\ast$fonction\+\_\+affichage)(void $\ast$))
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de créer une liste. \end{DoxyCompactList}\item 
 \+\_\+\+Bool \mbox{\hyperlink{listes_8c_abe07097bbae832dce242428fdb1d95b4}{liste\+\_\+vide}} (const \mbox{\hyperlink{structlist}{list}} $\ast$const to\+\_\+verify)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction booléenne qui permet de savoir si la liste est vide. \end{DoxyCompactList}\item 
 \+\_\+\+Bool \mbox{\hyperlink{listes_8c_a0636ccaaa4306ef8525a26cadc4a4805}{hors\+\_\+liste}} (const \mbox{\hyperlink{structlist}{list}} $\ast$const to\+\_\+verify)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction booléenne qui permet de savoir si ll\textquotesingle{}on est actuellement hors de la liste. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{listes_8c_a9c780173ba80450b8a01ba4c14963437}{en\+\_\+tete}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de se placer en tête de la liste. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{listes_8c_adce0cb151a53ff2182012642c95262be}{en\+\_\+queue}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de se placer en queue de la liste. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{listes_8c_ad6061cfcccc3fe717413526943f7bddc}{suivant}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de passer à l\textquotesingle{}élément suivant dans la liste. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{listes_8c_a2afbd9c9fde39b0f0c20e628718b7576}{precedent}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de passer à l\textquotesingle{}élément suivant dans la liste. \end{DoxyCompactList}\item 
 void $\ast$ \mbox{\hyperlink{listes_8c_a37afb4f802843bd21792cd494296d9dc}{valeur\+\_\+elt}} (const \mbox{\hyperlink{structlist}{list}} $\ast$const mylist)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui renvoie l\textquotesingle{}élément courant. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{listes_8c_ac553c0418726475fa46b69b1aaaec8f9}{modif\+\_\+elt}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist, void $\ast$v)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de modifier l\textquotesingle{}élément courant. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{listes_8c_a59c2257ab1cda9f78444e6b71a8a0c8d}{oter\+\_\+elt}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de supprimer un élément de la liste. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{listes_8c_a5460022305fdfacd6e0864968fea1841}{ajout\+\_\+droit}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist, void $\ast$v)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}ajouter un élément à droite de l\textquotesingle{}élément courant. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{listes_8c_afec29ddee61034f0def935f3a556a53e}{ajout\+\_\+gauche}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist, void $\ast$v)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}ajouter un élément à gauche de l\textquotesingle{}élément courant. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{listes_8c_ad4603e6751766ee0c8ef54c5240e4c5c}{taille\+\_\+liste}} (const \mbox{\hyperlink{structlist}{list}} $\ast$const mylist)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui renvoie le nombre d\textquotesingle{}éléments dans la liste. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{listes_8c_af234a65d00ef1f963f212d6761636941}{vider\+\_\+liste}} (\mbox{\hyperlink{structlist}{list}} $\ast$mylist)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui supprimme tout les éléments de la liste. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{listes_8c_a4597d1c1550e48dc54b54b240ab3c0e9}{detruire\+\_\+liste}} (\mbox{\hyperlink{structlist}{list}} $\ast$$\ast$liste)
-\begin{DoxyCompactList}\small\item\em Détruit une structure liste. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Détruit une liste en détruisant tout ses éléménts. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{listes_8c_a68be9a4fdaac39551f98573ba4041fec}{afficher\+\_\+liste}} (\mbox{\hyperlink{structlist}{list}} $\ast$liste)
 \begin{DoxyCompactList}\small\item\em Affiche une liste d\textquotesingle{}objets génériques. \end{DoxyCompactList}\item 
 \+\_\+\+Bool \mbox{\hyperlink{listes_8c_ac84d5f990f188eed04f7670abf38b020}{selectionner\+\_\+element}} (\mbox{\hyperlink{structlist}{list}} $\ast$liste, void $\ast$\mbox{\hyperlink{structelement}{element}}, \+\_\+\+Bool($\ast$f\+\_\+egalite)(void $\ast$, void $\ast$))
-\begin{DoxyCompactList}\small\item\em Fonction qui permet de selectionner l\textquotesingle{}élément courant à partor d\textquotesingle{}un élément précis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de selectionner l\textquotesingle{}élément courant à partir d\textquotesingle{}un élément précis. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -75,6 +75,9 @@ Copyright (c) 2022
 \doxysubsubsection{\texorpdfstring{afficher\_liste()}{afficher\_liste()}}
 {\footnotesize\ttfamily void afficher\+\_\+liste (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Max Descomps 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em liste} & Pointeur sur la liste \\
@@ -93,8 +96,9 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{ajout\_droit()}{ajout\_droit()}}
 {\footnotesize\ttfamily void ajout\+\_\+droit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{mylist,  }\item[{void $\ast$}]{v }\end{DoxyParamCaption})}
 
-Fonction qui permet d\textquotesingle{}ajouter un élément à droite de l\textquotesingle{}élément courant
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em mylist} & La liste où on veut ajouter l\textquotesingle{}élément \\
@@ -115,8 +119,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{ajout\_gauche()}{ajout\_gauche()}}
 {\footnotesize\ttfamily void ajout\+\_\+gauche (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{mylist,  }\item[{void $\ast$}]{v }\end{DoxyParamCaption})}
 
-Fonction qui permet d\textquotesingle{}ajouter un élément à gauche de l\textquotesingle{}élément courant
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em mylist} & La liste où on veut ajouter l\textquotesingle{}élément \\
@@ -130,9 +135,12 @@ Fonction qui permet d\textquotesingle{}ajouter un élément à gauche de l\textq
 \doxysubsubsection{\texorpdfstring{detruire\_liste()}{detruire\_liste()}}
 {\footnotesize\ttfamily void detruire\+\_\+liste (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$$\ast$}]{liste }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
-{\em liste} & Adresse du pointeur sur la liste \\
+{\em liste} & Adresse de la liste \\
 \hline
 \end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
@@ -155,8 +163,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{en\_queue()}{en\_queue()}}
 {\footnotesize\ttfamily void en\+\_\+queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{mylist }\end{DoxyParamCaption})}
 
-Fonction qui permet de se placer en queue de la liste.
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em mylist} & La liste dans laquelle on se déplace \\
@@ -182,8 +191,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{en\_tete()}{en\_tete()}}
 {\footnotesize\ttfamily void en\+\_\+tete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{mylist }\end{DoxyParamCaption})}
 
-Fonction qui permet de se placer en tête de la liste.
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em mylist} & La liste dans laquelle on se déplace \\
@@ -196,8 +206,7 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \includegraphics[width=233pt]{d0/ddc/listes_8c_a9c780173ba80450b8a01ba4c14963437_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -210,8 +219,9 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{hors\_liste()}{hors\_liste()}}
 {\footnotesize\ttfamily \+\_\+\+Bool hors\+\_\+liste (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlist}{list}} $\ast$const}]{to\+\_\+verify }\end{DoxyParamCaption})}
 
-Fonction booléenne qui permet de savoir si ll\textquotesingle{}on est actuellement hors de la liste.
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em to\+\_\+verify} & La liste que l\textquotesingle{}on doit vérifier \\
@@ -220,8 +230,7 @@ Fonction booléenne qui permet de savoir si ll\textquotesingle{}on est actuellem
 \begin{DoxyReturn}{Renvoie}
 Vrai si on se trouve en dehors de la liste, faux sinon 
 \end{DoxyReturn}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -234,8 +243,11 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{init\_liste()}{init\_liste()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structlist}{list}}$\ast$ init\+\_\+liste (\begin{DoxyParamCaption}\item[{void $\ast$($\ast$)(void $\ast$)}]{fonction\+\_\+ajout,  }\item[{void($\ast$)(void $\ast$)}]{f\+\_\+suppresion,  }\item[{void($\ast$)(void $\ast$)}]{fonction\+\_\+affichage }\end{DoxyParamCaption})}
 
-Fonction qui permet de créer une liste
+\begin{DoxyAuthor}{Auteurs}
+Ange Despert 
 
+Max Descomps
+\end{DoxyAuthor}
 On peut préciser des fonction pour l\textquotesingle{}insertion et la supprésion des objets.
 
 Mais on ne peut pas avoir une fonction d\textquotesingle{}insertion et aucune fonction de supprésion et vice-\/versa.
@@ -269,8 +281,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{liste\_vide()}{liste\_vide()}}
 {\footnotesize\ttfamily \+\_\+\+Bool liste\+\_\+vide (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlist}{list}} $\ast$const}]{to\+\_\+verify }\end{DoxyParamCaption})}
 
-Fonction booléenne qui permet de savoir si la liste est vide.
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em to\+\_\+verify} & La liste que l\textquotesingle{}on doit vérifier \\
@@ -279,8 +292,7 @@ Fonction booléenne qui permet de savoir si la liste est vide.
 \begin{DoxyReturn}{Renvoie}
 Vrai si la liste est vide, faux sinon 
 \end{DoxyReturn}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -293,8 +305,9 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{modif\_elt()}{modif\_elt()}}
 {\footnotesize\ttfamily void modif\+\_\+elt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{mylist,  }\item[{void $\ast$}]{v }\end{DoxyParamCaption})}
 
-Fonction qui permet de modifier l\textquotesingle{}élément courant.
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 A\+T\+T\+E\+N\+T\+I\+ON \+: si les élément sont placés dans la liste par référencement cela détruira l\textquotesingle{}élément précédent !
 
 
@@ -317,8 +330,9 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{oter\_elt()}{oter\_elt()}}
 {\footnotesize\ttfamily void oter\+\_\+elt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{mylist }\end{DoxyParamCaption})}
 
-Fonction qui permet de supprimer un élément de la liste.
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 A\+T\+T\+E\+N\+T\+I\+ON \+: si les élements sont placés dans la liste par référencement cela détruira l\textquotesingle{}élément (ne pas y accéder après) !
 
 On attend des éléments dynamiques dans la liste.
@@ -348,8 +362,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{precedent()}{precedent()}}
 {\footnotesize\ttfamily void precedent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{mylist }\end{DoxyParamCaption})}
 
-\textbackslash{}\+Fonction qui permet de passer à l\textquotesingle{}élément suivant dans la liste
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em mylist} & La liste dans laquelle on se déplace \\
@@ -375,6 +390,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{selectionner\_element()}{selectionner\_element()}}
 {\footnotesize\ttfamily \+\_\+\+Bool selectionner\+\_\+element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste,  }\item[{void $\ast$}]{element,  }\item[{\+\_\+\+Bool($\ast$)(void $\ast$, void $\ast$)}]{f\+\_\+egalite }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em liste} & La liste dans laquelle on veut faire la recherche \\
@@ -385,7 +403,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-si l\textquotesingle{}élément à été trouvé 
+Vrai si l\textquotesingle{}élément à été trouvé 
 \end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
@@ -407,8 +425,9 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{suivant()}{suivant()}}
 {\footnotesize\ttfamily void suivant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{mylist }\end{DoxyParamCaption})}
 
-Fonction qui permet de passer à l\textquotesingle{}élément suivant dans la liste
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em mylist} & La liste dans laquelle on se déplace \\
@@ -421,8 +440,7 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \includegraphics[width=233pt]{d0/ddc/listes_8c_ad6061cfcccc3fe717413526943f7bddc_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -435,8 +453,9 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{taille\_liste()}{taille\_liste()}}
 {\footnotesize\ttfamily unsigned int taille\+\_\+liste (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlist}{list}} $\ast$const}]{mylist }\end{DoxyParamCaption})}
 
-Fonction qui renvoie le nombre d\textquotesingle{}éléments dans la liste
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em mylist} & La liste dont on veut conaitre le nombre d\textquotesingle{}éléments \\
@@ -451,8 +470,9 @@ Le nombre d\textquotesingle{}élements dans la liste
 \doxysubsubsection{\texorpdfstring{valeur\_elt()}{valeur\_elt()}}
 {\footnotesize\ttfamily void$\ast$ valeur\+\_\+elt (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlist}{list}} $\ast$const}]{mylist }\end{DoxyParamCaption})}
 
-Fonction qui renvoie l\textquotesingle{}élément courant
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
 {\em mylist} & La liste dont on veut l\textquotesingle{}élément \\
@@ -468,8 +488,7 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \includegraphics[width=245pt]{d0/ddc/listes_8c_a37afb4f802843bd21792cd494296d9dc_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -482,8 +501,9 @@ Voici le graphe des appelants de cette fonction \+:
 \doxysubsubsection{\texorpdfstring{vider\_liste()}{vider\_liste()}}
 {\footnotesize\ttfamily void vider\+\_\+liste (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{mylist }\end{DoxyParamCaption})}
 
-Fonction qui supprimme tout les éléments de la liste.
-
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
 A\+T\+T\+E\+N\+T\+I\+ON \+: si les éléments sont insérés par référencement, ils seront tous détruits !
 
 On attend des éléments dynamiques dans la liste.

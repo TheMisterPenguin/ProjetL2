@@ -8,7 +8,6 @@
 #include <monstres.h>
 #include <math.h>
 #include <coffres.h>
-#include <fonctions.h>
 #include <personnage.h>
 #include <sorts.h>
 
@@ -475,8 +474,8 @@ void detruire_map(t_map **map, joueur_t *joueurs[], unsigned short int nb_joueur
 
     /* Destruction des textures */
 
-    selectionner_element(buffer_affichage, (*map)->text_sol, NULL);
-    oter_elt(buffer_affichage);
+    selectionner_element(listeDeTextures, (*map)->text_sol, NULL);
+    oter_elt(listeDeTextures);
 
     detruire_texture(&(*map)->text_map);
 

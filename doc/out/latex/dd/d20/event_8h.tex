@@ -40,11 +40,11 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \begin{DoxyCompactItemize}
 \item 
 \+\_\+\+Bool \mbox{\hyperlink{event_8h_a950ad08652f1a6177a5b55912280e63c}{logo\+\_\+passer}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements pendant l\textquotesingle{}affichage de l\textquotesingle{}introduction. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{event_8h_a5f8eef7cc98d022db9987ee0634804e6}{jeu\+\_\+event}} (joueur\+\_\+t $\ast$$\ast$joueurs, char $\ast$f\+\_\+src\+\_\+obj)
 \begin{DoxyCompactList}\small\item\em Fonction qui gère les événements. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{event_8h_ac27091daa86f31b79780d6a91801fd11}{jeu\+\_\+event\+\_\+manette}} (joueur\+\_\+t $\ast$$\ast$joueurs)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les événements de la manette. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -124,7 +124,7 @@ Despert Ange
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
-{\em joueur} & Joueurs pouvant provoquer l\textquotesingle{}événement \\
+{\em joueurs} & Joueurs pouvant provoquer l\textquotesingle{}événement \\
 \hline
 {\em f\+\_\+src\+\_\+obj} & Fichier source des objets du jeu utile à certains événements \\
 \hline
@@ -149,6 +149,14 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{jeu\_event\_manette()}{jeu\_event\_manette()}}
 {\footnotesize\ttfamily void jeu\+\_\+event\+\_\+manette (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em joueurs} & Les joueurs existants \\
+\hline
+\end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -169,6 +177,14 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{logo\_passer()}{logo\_passer()}}
 {\footnotesize\ttfamily \+\_\+\+Bool logo\+\_\+passer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+Cette fonction permet de passer l\textquotesingle{}introduction avec une touche mais gère encore les évenement tels que {\ttfamily S\+D\+L\+\_\+\+Q\+U\+IT}.
+
+\begin{DoxyReturn}{Renvoie}
+Si l\textquotesingle{}on doit passer le logo 
+\end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -192,3 +208,4 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{manette}{manette}}
 {\footnotesize\ttfamily S\+D\+L\+\_\+\+Game\+Controller$\ast$ manette}
 
+La manette du J1 

@@ -7,11 +7,11 @@
 
 /**
  * \file menus.c
- * \author Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
- * \author Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
+ * \authors Ange Despert (Ange.Despert.Etu@univ-lemans.fr)
+ * \authors Max Descomps (Max.Descomps.Etu@univ-lemans.fr)
  * \brief Fonctions des menus du jeu
- * \version 0.2
- * \date 29/03/2022
+ * \version 1.0
+ * \date 05/04/2022
  * \copyright Copyright (c) 2022
  */
 
@@ -411,6 +411,17 @@ void creer_inventaire_j2(){
     text_inventaire2 = creer_texture("ressources/background/menu/inventaire_green.bmp", -1, -1, 0, 0, 0);
 }
 
+/**
+ * \brief Fonction qui permet d'afficher un rectangle à l'écran avec un épaisseur choisie
+ * \author Ange Despert
+ * 
+ * Cette fonction permet d'afficher des rectangles plus épais nécéssaires à l'affichage de la sélection avec manette.
+ * 
+ * \param a_dessiner Le rectancle que l'on veut dessiner à l'écran
+ * \param rendu Le rendu sur lequel on veut le dessiner
+ * \param epaisseur L'éppaisuer du trait
+ * \return 0 s'il n'y a pas eu d'erreur, appeler SDL_GetError() pour plus d'informations
+ */
 static int draw_rect_epaisseur(const SDL_Rect * a_dessiner, SDL_Renderer *rendu, unsigned int epaisseur){
 
     if(epaisseur == 0)

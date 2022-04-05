@@ -73,12 +73,15 @@ $(function() {
 <div class="title">Référence du fichier listes.h</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Fonction relatives au type de structure liste générique.  
+<a href="#details">Plus de détails...</a></p>
 <div class="textblock"><div class="dynheader">
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/d06/listes_8h__dep__incl.png" border="0" usemap="#listes_8hdep" alt=""/></div>
 <map name="listes_8hdep" id="listes_8hdep">
-<area shape="rect" title=" " alt="" coords="325,5,395,32"/>
+<area shape="rect" title="Fonction relatives au type de structure liste générique." alt="" coords="325,5,395,32"/>
 <area shape="rect" href="../../da/d68/affichage_8c.html" title="Fonctions liées au module affichage." alt="" coords="5,304,99,331"/>
 <area shape="rect" href="../../d1/d41/init__close_8c.html" title="Contient toutes les fonctions pour initialiser le programme." alt="" coords="362,304,457,331"/>
 <area shape="rect" href="../../d0/ddc/listes_8c.html" title="Fonctions relatives au type de structure liste générique." alt="" coords="526,80,594,107"/>
@@ -95,52 +98,74 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db2/structelement.html">element</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définition du type liste.  <a href="../../d9/db2/structelement.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définition dy type element : un élément d'une liste.  <a href="../../d9/db2/structelement.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d10/structlist.html">list</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définition du type list : une liste générique.  <a href="../../d8/d10/structlist.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:addcfa9533b97c83cd4901a146cefba9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d10/structlist.html">list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#addcfa9533b97c83cd4901a146cefba9c">init_liste</a> (void *(*fonction_ajout)(void *), void(*f_suppresion)(void *), void(*fonction_affichage)(void *))</td></tr>
+<tr class="memdesc:addcfa9533b97c83cd4901a146cefba9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de créer une liste.  <a href="../../d8/dd0/listes_8h.html#addcfa9533b97c83cd4901a146cefba9c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:addcfa9533b97c83cd4901a146cefba9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe07097bbae832dce242428fdb1d95b4"><td class="memItemLeft" align="right" valign="top">_Bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#abe07097bbae832dce242428fdb1d95b4">liste_vide</a> (const <a class="el" href="../../d8/d10/structlist.html">list</a> *const to_verify)</td></tr>
+<tr class="memdesc:abe07097bbae832dce242428fdb1d95b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction booléenne qui permet de savoir si la liste est vide.  <a href="../../d8/dd0/listes_8h.html#abe07097bbae832dce242428fdb1d95b4">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abe07097bbae832dce242428fdb1d95b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0636ccaaa4306ef8525a26cadc4a4805"><td class="memItemLeft" align="right" valign="top">_Bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#a0636ccaaa4306ef8525a26cadc4a4805">hors_liste</a> (const <a class="el" href="../../d8/d10/structlist.html">list</a> *const to_verify)</td></tr>
+<tr class="memdesc:a0636ccaaa4306ef8525a26cadc4a4805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction booléenne qui permet de savoir si ll'on est actuellement hors de la liste.  <a href="../../d8/dd0/listes_8h.html#a0636ccaaa4306ef8525a26cadc4a4805">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a0636ccaaa4306ef8525a26cadc4a4805"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c780173ba80450b8a01ba4c14963437"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#a9c780173ba80450b8a01ba4c14963437">en_tete</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *mylist)</td></tr>
+<tr class="memdesc:a9c780173ba80450b8a01ba4c14963437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de se placer en tête de la liste.  <a href="../../d8/dd0/listes_8h.html#a9c780173ba80450b8a01ba4c14963437">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a9c780173ba80450b8a01ba4c14963437"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adce0cb151a53ff2182012642c95262be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#adce0cb151a53ff2182012642c95262be">en_queue</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *mylist)</td></tr>
+<tr class="memdesc:adce0cb151a53ff2182012642c95262be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de se placer en queue de la liste.  <a href="../../d8/dd0/listes_8h.html#adce0cb151a53ff2182012642c95262be">Plus de détails...</a><br /></td></tr>
 <tr class="separator:adce0cb151a53ff2182012642c95262be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6061cfcccc3fe717413526943f7bddc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#ad6061cfcccc3fe717413526943f7bddc">suivant</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *mylist)</td></tr>
+<tr class="memdesc:ad6061cfcccc3fe717413526943f7bddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de passer à l'élément suivant dans la liste.  <a href="../../d8/dd0/listes_8h.html#ad6061cfcccc3fe717413526943f7bddc">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad6061cfcccc3fe717413526943f7bddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2afbd9c9fde39b0f0c20e628718b7576"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#a2afbd9c9fde39b0f0c20e628718b7576">precedent</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *mylist)</td></tr>
+<tr class="memdesc:a2afbd9c9fde39b0f0c20e628718b7576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de passer à l'élément suivant dans la liste.  <a href="../../d8/dd0/listes_8h.html#a2afbd9c9fde39b0f0c20e628718b7576">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2afbd9c9fde39b0f0c20e628718b7576"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37afb4f802843bd21792cd494296d9dc"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#a37afb4f802843bd21792cd494296d9dc">valeur_elt</a> (const <a class="el" href="../../d8/d10/structlist.html">list</a> *const mylist)</td></tr>
+<tr class="memdesc:a37afb4f802843bd21792cd494296d9dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui renvoie l'élément courant.  <a href="../../d8/dd0/listes_8h.html#a37afb4f802843bd21792cd494296d9dc">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a37afb4f802843bd21792cd494296d9dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac553c0418726475fa46b69b1aaaec8f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#ac553c0418726475fa46b69b1aaaec8f9">modif_elt</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *mylist, void *v)</td></tr>
+<tr class="memdesc:ac553c0418726475fa46b69b1aaaec8f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de modifier l'élément courant.  <a href="../../d8/dd0/listes_8h.html#ac553c0418726475fa46b69b1aaaec8f9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac553c0418726475fa46b69b1aaaec8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59c2257ab1cda9f78444e6b71a8a0c8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#a59c2257ab1cda9f78444e6b71a8a0c8d">oter_elt</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *mylist)</td></tr>
+<tr class="memdesc:a59c2257ab1cda9f78444e6b71a8a0c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de supprimer un élément de la liste.  <a href="../../d8/dd0/listes_8h.html#a59c2257ab1cda9f78444e6b71a8a0c8d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a59c2257ab1cda9f78444e6b71a8a0c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5460022305fdfacd6e0864968fea1841"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#a5460022305fdfacd6e0864968fea1841">ajout_droit</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *mylist, void *v)</td></tr>
+<tr class="memdesc:a5460022305fdfacd6e0864968fea1841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'ajouter un élément à droite de l'élément courant.  <a href="../../d8/dd0/listes_8h.html#a5460022305fdfacd6e0864968fea1841">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5460022305fdfacd6e0864968fea1841"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afec29ddee61034f0def935f3a556a53e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#afec29ddee61034f0def935f3a556a53e">ajout_gauche</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *mylist, void *v)</td></tr>
+<tr class="memdesc:afec29ddee61034f0def935f3a556a53e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'ajouter un élément à gauche de l'élément courant.  <a href="../../d8/dd0/listes_8h.html#afec29ddee61034f0def935f3a556a53e">Plus de détails...</a><br /></td></tr>
 <tr class="separator:afec29ddee61034f0def935f3a556a53e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4603e6751766ee0c8ef54c5240e4c5c"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#ad4603e6751766ee0c8ef54c5240e4c5c">taille_liste</a> (const <a class="el" href="../../d8/d10/structlist.html">list</a> *const mylist)</td></tr>
+<tr class="memdesc:ad4603e6751766ee0c8ef54c5240e4c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui renvoie le nombre d'éléments dans la liste.  <a href="../../d8/dd0/listes_8h.html#ad4603e6751766ee0c8ef54c5240e4c5c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad4603e6751766ee0c8ef54c5240e4c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af234a65d00ef1f963f212d6761636941"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#af234a65d00ef1f963f212d6761636941">vider_liste</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *mylist)</td></tr>
+<tr class="memdesc:af234a65d00ef1f963f212d6761636941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui supprimme tout les éléments de la liste.  <a href="../../d8/dd0/listes_8h.html#af234a65d00ef1f963f212d6761636941">Plus de détails...</a><br /></td></tr>
 <tr class="separator:af234a65d00ef1f963f212d6761636941"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4597d1c1550e48dc54b54b240ab3c0e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#a4597d1c1550e48dc54b54b240ab3c0e9">detruire_liste</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> **liste)</td></tr>
-<tr class="memdesc:a4597d1c1550e48dc54b54b240ab3c0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détruit une structure liste.  <a href="../../d8/dd0/listes_8h.html#a4597d1c1550e48dc54b54b240ab3c0e9">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a4597d1c1550e48dc54b54b240ab3c0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détruit une liste en détruisant tout ses éléménts.  <a href="../../d8/dd0/listes_8h.html#a4597d1c1550e48dc54b54b240ab3c0e9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a4597d1c1550e48dc54b54b240ab3c0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68be9a4fdaac39551f98573ba4041fec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#a68be9a4fdaac39551f98573ba4041fec">afficher_liste</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *liste)</td></tr>
 <tr class="memdesc:a68be9a4fdaac39551f98573ba4041fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche une liste d'objets génériques.  <a href="../../d8/dd0/listes_8h.html#a68be9a4fdaac39551f98573ba4041fec">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a68be9a4fdaac39551f98573ba4041fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac84d5f990f188eed04f7670abf38b020"><td class="memItemLeft" align="right" valign="top">_Bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/listes_8h.html#ac84d5f990f188eed04f7670abf38b020">selectionner_element</a> (<a class="el" href="../../d8/d10/structlist.html">list</a> *liste, void *<a class="el" href="../../d9/db2/structelement.html">element</a>, _Bool(*f_egalite)(void *, void *))</td></tr>
-<tr class="memdesc:ac84d5f990f188eed04f7670abf38b020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de selectionner l'élément courant à partor d'un élément précis.  <a href="../../d8/dd0/listes_8h.html#ac84d5f990f188eed04f7670abf38b020">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:ac84d5f990f188eed04f7670abf38b020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de selectionner l'élément courant à partir d'un élément précis.  <a href="../../d8/dd0/listes_8h.html#ac84d5f990f188eed04f7670abf38b020">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac84d5f990f188eed04f7670abf38b020"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentation des fonctions</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><dl class="section author"><dt>Auteurs</dt><dd>Ange Despert (<a href="#" onclick="location.href='mai'+'lto:'+'Ang'+'e.'+'Des'+'pe'+'rt.'+'Et'+'u@u'+'ni'+'v-l'+'em'+'ans'+'.f'+'r'; return false;">Ange.<span style="display: none;">.nosp@m.</span>Desp<span style="display: none;">.nosp@m.</span>ert.E<span style="display: none;">.nosp@m.</span>tu@u<span style="display: none;">.nosp@m.</span>niv-l<span style="display: none;">.nosp@m.</span>eman<span style="display: none;">.nosp@m.</span>s.fr</a>) </dd>
+<dd>
+Max Descomps (<a href="#" onclick="location.href='mai'+'lto:'+'Max'+'.D'+'esc'+'om'+'ps.'+'Et'+'u@u'+'ni'+'v-l'+'em'+'ans'+'.f'+'r'; return false;">Max.D<span style="display: none;">.nosp@m.</span>esco<span style="display: none;">.nosp@m.</span>mps.E<span style="display: none;">.nosp@m.</span>tu@u<span style="display: none;">.nosp@m.</span>niv-l<span style="display: none;">.nosp@m.</span>eman<span style="display: none;">.nosp@m.</span>s.fr</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>2.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>03/04/2022 </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
 <a id="a68be9a4fdaac39551f98573ba4041fec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a68be9a4fdaac39551f98573ba4041fec">&#9670;&nbsp;</a></span>afficher_liste()</h2>
 
@@ -156,6 +181,7 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Max Descomps </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">liste</td><td>Pointeur sur la liste </td></tr>
@@ -168,9 +194,9 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="center"><img src="../../d8/dd0/listes_8h_a68be9a4fdaac39551f98573ba4041fec_cgraph.png" border="0" usemap="#d8/dd0/listes_8h_a68be9a4fdaac39551f98573ba4041fec_cgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_a68be9a4fdaac39551f98573ba4041fec_cgraph" id="d8/dd0/listes_8h_a68be9a4fdaac39551f98573ba4041fec_cgraph">
 <area shape="rect" title="Affiche une liste d&#39;objets génériques." alt="" coords="5,56,112,83"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="160,5,231,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="279,81,364,108"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="160,107,231,133"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="160,5,231,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="279,81,364,108"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="160,107,231,133"/>
 </map>
 </div>
 
@@ -201,7 +227,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui permet d'ajouter un élément à droite de l'élément courant</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">mylist</td><td>La liste où on veut ajouter l'élément </td></tr>
@@ -214,8 +240,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_a5460022305fdfacd6e0864968fea1841_icgraph.png" border="0" usemap="#d8/dd0/listes_8h_a5460022305fdfacd6e0864968fea1841_icgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_a5460022305fdfacd6e0864968fea1841_icgraph" id="d8/dd0/listes_8h_a5460022305fdfacd6e0864968fea1841_icgraph">
-<area shape="rect" title=" " alt="" coords="388,151,480,177"/>
-<area shape="rect" href="../../dc/db7/map_8h.html#af6448083132a6591f73061457f30ebb3" title="Fonction qui récupère les informations stockées dans le buffer en entrée." alt="" coords="28,5,135,32"/>
+<area shape="rect" title="Fonction qui permet d&#39;ajouter un élément à droite de l&#39;élément courant." alt="" coords="388,151,480,177"/>
+<area shape="rect" href="../../dc/db7/map_8h.html#af6448083132a6591f73061457f30ebb3" title="Fonction qui récupère les informations stockées dans le fichier don le nom est donne en entrée." alt="" coords="28,5,135,32"/>
 <area shape="rect" href="../../da/df7/sorts_8h.html#ae58ae0350fa823a85aaff7b988b4ce9c" title=" " alt="" coords="7,63,155,89"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a59fc51b629cfed9815495f235dae78e0" title="Fonction qui renvoie, charge une texture et la prépare à se faire afficher." alt="" coords="218,100,327,127"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#abfdbd054ab99c511dad45879cbad639f" title="Initialise les textures des animations." alt="" coords="20,125,143,152"/>
@@ -252,7 +278,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui permet d'ajouter un élément à gauche de l'élément courant</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">mylist</td><td>La liste où on veut ajouter l'élément </td></tr>
@@ -278,9 +304,10 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">liste</td><td>Adresse du pointeur sur la liste </td></tr>
+    <tr><td class="paramname">liste</td><td>Adresse de la liste </td></tr>
   </table>
   </dd>
 </dl>
@@ -289,8 +316,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_a4597d1c1550e48dc54b54b240ab3c0e9_cgraph.png" border="0" usemap="#d8/dd0/listes_8h_a4597d1c1550e48dc54b54b240ab3c0e9_cgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_a4597d1c1550e48dc54b54b240ab3c0e9_cgraph" id="d8/dd0/listes_8h_a4597d1c1550e48dc54b54b240ab3c0e9_cgraph">
-<area shape="rect" title="Détruit une structure liste." alt="" coords="5,5,113,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#af234a65d00ef1f963f212d6761636941" title=" " alt="" coords="161,5,252,32"/>
+<area shape="rect" title="Détruit une liste en détruisant tout ses éléménts." alt="" coords="5,5,113,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#af234a65d00ef1f963f212d6761636941" title="Fonction qui supprimme tout les éléments de la liste." alt="" coords="161,5,252,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -298,9 +325,9 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_a4597d1c1550e48dc54b54b240ab3c0e9_icgraph.png" border="0" usemap="#d8/dd0/listes_8h_a4597d1c1550e48dc54b54b240ab3c0e9_icgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_a4597d1c1550e48dc54b54b240ab3c0e9_icgraph" id="d8/dd0/listes_8h_a4597d1c1550e48dc54b54b240ab3c0e9_icgraph">
-<area shape="rect" title="Détruit une structure liste." alt="" coords="203,56,311,83"/>
+<area shape="rect" title="Détruit une liste en détruisant tout ses éléménts." alt="" coords="203,56,311,83"/>
 <area shape="rect" href="../../d1/d41/init__close_8c.html#acc7f4b4da74c22683312acf145e135e1" title="Fonction ajoutée à la liste de atexit() afin de libérer toute la mémoire allouée." alt="" coords="31,5,129,32"/>
-<area shape="rect" href="../../dc/db7/map_8h.html#af837acc6ac888e66589d3ff48f4eec12" title=" " alt="" coords="25,56,135,83"/>
+<area shape="rect" href="../../dc/db7/map_8h.html#af837acc6ac888e66589d3ff48f4eec12" title="Fonction qui permet de détruire une map." alt="" coords="25,56,135,83"/>
 <area shape="rect" href="../../d1/daa/definition__commun_8h.html#affaacddc6fe16ed3d818bf7e0c9798eb" title="Fonction qui appelle les fonctions pour terminer le programme." alt="" coords="5,107,155,133"/>
 </map>
 </div>
@@ -322,7 +349,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui permet de se placer en queue de la liste.</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">mylist</td><td>La liste dans laquelle on se déplace </td></tr>
@@ -334,8 +361,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_adce0cb151a53ff2182012642c95262be_cgraph.png" border="0" usemap="#d8/dd0/listes_8h_adce0cb151a53ff2182012642c95262be_cgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_adce0cb151a53ff2182012642c95262be_cgraph" id="d8/dd0/listes_8h_adce0cb151a53ff2182012642c95262be_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,91,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title=" " alt="" coords="139,5,224,32"/>
+<area shape="rect" title="Fonction qui permet de se placer en queue de la liste." alt="" coords="5,5,91,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title="Fonction booléenne qui permet de savoir si la liste est vide." alt="" coords="139,5,224,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -343,8 +370,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_adce0cb151a53ff2182012642c95262be_icgraph.png" border="0" usemap="#d8/dd0/listes_8h_adce0cb151a53ff2182012642c95262be_icgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_adce0cb151a53ff2182012642c95262be_icgraph" id="d8/dd0/listes_8h_adce0cb151a53ff2182012642c95262be_icgraph">
-<area shape="rect" title=" " alt="" coords="203,31,288,57"/>
-<area shape="rect" href="../../dc/db7/map_8h.html#af6448083132a6591f73061457f30ebb3" title="Fonction qui récupère les informations stockées dans le buffer en entrée." alt="" coords="27,5,133,32"/>
+<area shape="rect" title="Fonction qui permet de se placer en queue de la liste." alt="" coords="203,31,288,57"/>
+<area shape="rect" href="../../dc/db7/map_8h.html#af6448083132a6591f73061457f30ebb3" title="Fonction qui récupère les informations stockées dans le fichier don le nom est donne en entrée." alt="" coords="27,5,133,32"/>
 <area shape="rect" href="../../d1/daa/definition__commun_8h.html#affaacddc6fe16ed3d818bf7e0c9798eb" title="Fonction qui appelle les fonctions pour terminer le programme." alt="" coords="5,56,155,83"/>
 </map>
 </div>
@@ -366,7 +393,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui permet de se placer en tête de la liste.</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">mylist</td><td>La liste dans laquelle on se déplace </td></tr>
@@ -378,8 +405,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_a9c780173ba80450b8a01ba4c14963437_cgraph.png" border="0" usemap="#d8/dd0/listes_8h_a9c780173ba80450b8a01ba4c14963437_cgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_a9c780173ba80450b8a01ba4c14963437_cgraph" id="d8/dd0/listes_8h_a9c780173ba80450b8a01ba4c14963437_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,76,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title=" " alt="" coords="124,5,209,32"/>
+<area shape="rect" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="5,5,76,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title="Fonction booléenne qui permet de savoir si la liste est vide." alt="" coords="124,5,209,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -387,7 +414,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_a9c780173ba80450b8a01ba4c14963437_icgraph.png" border="0" usemap="#d8/dd0/listes_8h_a9c780173ba80450b8a01ba4c14963437_icgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_a9c780173ba80450b8a01ba4c14963437_icgraph" id="d8/dd0/listes_8h_a9c780173ba80450b8a01ba4c14963437_icgraph">
-<area shape="rect" title=" " alt="" coords="547,496,617,523"/>
+<area shape="rect" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="547,496,617,523"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a8a414764c90c1cc2a104f536ef34a8dd" title="Fonction qui affiche la texture des animations." alt="" coords="121,268,271,295"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,344,60,371"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#ab3637688138fc059d87799ea8ec77514" title="Fonction qui affiche les textures contenues dans la liste en paramètre." alt="" coords="357,724,473,751"/>
@@ -402,12 +429,12 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a06c50666787c24c1a3ca91501e9f772d" title="Permet de déplacer un joueur secondaire de y unités verticales sur la map." alt="" coords="111,589,281,630"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a1479d2bcf35df66e73306d28d9ea0e13" title="Permet de déplacer le personnage principal de y unités verticales sur la map." alt="" coords="117,655,275,681"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#aa18ada4ee80cd3ec4a96012f5bfdf469" title="Fonction qui détruit une collision donnée dans une liste de collisions." alt="" coords="348,50,483,91"/>
-<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title=" " alt="" coords="108,57,284,84"/>
-<area shape="rect" href="../../dc/db7/map_8h.html#af837acc6ac888e66589d3ff48f4eec12" title=" " alt="" coords="141,952,251,979"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title="Fonction qui gère les effets de l&#39;environnement sur le joueur." alt="" coords="108,57,284,84"/>
+<area shape="rect" href="../../dc/db7/map_8h.html#af837acc6ac888e66589d3ff48f4eec12" title="Fonction qui permet de détruire une map." alt="" coords="141,952,251,979"/>
 <area shape="rect" href="../../d1/daa/definition__commun_8h.html#affaacddc6fe16ed3d818bf7e0c9798eb" title="Fonction qui appelle les fonctions pour terminer le programme." alt="" coords="341,116,490,143"/>
 <area shape="rect" href="../../d2/d9c/coffres_8h.html#afaede33891b4fa55d0b68267a6207487" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="347,572,483,599"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#ac84d5f990f188eed04f7670abf38b020" title="Fonction qui permet de selectionner l&#39;élément courant à partor d&#39;un élément précis." alt="" coords="334,977,497,1004"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#af234a65d00ef1f963f212d6761636941" title=" " alt="" coords="370,167,461,193"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#ac84d5f990f188eed04f7670abf38b020" title="Fonction qui permet de selectionner l&#39;élément courant à partir d&#39;un élément précis." alt="" coords="334,977,497,1004"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#af234a65d00ef1f963f212d6761636941" title="Fonction qui supprimme tout les éléments de la liste." alt="" coords="370,167,461,193"/>
 </map>
 </div>
 
@@ -428,7 +455,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction booléenne qui permet de savoir si ll'on est actuellement hors de la liste.</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">to_verify</td><td>La liste que l'on doit vérifier </td></tr>
@@ -441,7 +468,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_a0636ccaaa4306ef8525a26cadc4a4805_icgraph.png" border="0" usemap="#d8/dd0/listes_8h_a0636ccaaa4306ef8525a26cadc4a4805_icgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_a0636ccaaa4306ef8525a26cadc4a4805_icgraph" id="d8/dd0/listes_8h_a0636ccaaa4306ef8525a26cadc4a4805_icgraph">
-<area shape="rect" title=" " alt="" coords="900,969,985,995"/>
+<area shape="rect" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="900,969,985,995"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a8a414764c90c1cc2a104f536ef34a8dd" title="Fonction qui affiche la texture des animations." alt="" coords="559,158,709,185"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,538,60,565"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#ab3637688138fc059d87799ea8ec77514" title="Fonction qui affiche les textures contenues dans la liste en paramètre." alt="" coords="576,1019,692,1046"/>
@@ -456,17 +483,17 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a06c50666787c24c1a3ca91501e9f772d" title="Permet de déplacer un joueur secondaire de y unités verticales sur la map." alt="" coords="332,704,503,745"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a1479d2bcf35df66e73306d28d9ea0e13" title="Permet de déplacer le personnage principal de y unités verticales sur la map." alt="" coords="339,770,496,797"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#aa18ada4ee80cd3ec4a96012f5bfdf469" title="Fonction qui détruit une collision donnée dans une liste de collisions." alt="" coords="350,1476,485,1517"/>
-<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title=" " alt="" coords="108,1454,284,1481"/>
-<area shape="rect" href="../../dc/db7/map_8h.html#af837acc6ac888e66589d3ff48f4eec12" title=" " alt="" coords="363,1627,472,1654"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title="Fonction qui gère les effets de l&#39;environnement sur le joueur." alt="" coords="108,1454,284,1481"/>
+<area shape="rect" href="../../dc/db7/map_8h.html#af837acc6ac888e66589d3ff48f4eec12" title="Fonction qui permet de détruire une map." alt="" coords="363,1627,472,1654"/>
 <area shape="rect" href="../../d1/daa/definition__commun_8h.html#affaacddc6fe16ed3d818bf7e0c9798eb" title="Fonction qui appelle les fonctions pour terminer le programme." alt="" coords="559,107,709,134"/>
 <area shape="rect" href="../../d2/d9c/coffres_8h.html#afaede33891b4fa55d0b68267a6207487" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="566,665,702,691"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#ac553c0418726475fa46b69b1aaaec8f9" title=" " alt="" coords="767,1577,851,1603"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title=" " alt="" coords="598,1779,670,1806"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#af234a65d00ef1f963f212d6761636941" title=" " alt="" coords="372,1779,463,1806"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#a2afbd9c9fde39b0f0c20e628718b7576" title=" " alt="" coords="765,57,852,83"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#ac84d5f990f188eed04f7670abf38b020" title="Fonction qui permet de selectionner l&#39;élément courant à partor d&#39;un élément précis." alt="" coords="553,1526,715,1553"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="773,715,844,742"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="765,1146,852,1173"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#ac553c0418726475fa46b69b1aaaec8f9" title="Fonction qui permet de modifier l&#39;élément courant." alt="" coords="767,1577,851,1603"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title="Fonction qui permet de supprimer un élément de la liste." alt="" coords="598,1779,670,1806"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#af234a65d00ef1f963f212d6761636941" title="Fonction qui supprimme tout les éléments de la liste." alt="" coords="372,1779,463,1806"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#a2afbd9c9fde39b0f0c20e628718b7576" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="765,57,852,83"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#ac84d5f990f188eed04f7670abf38b020" title="Fonction qui permet de selectionner l&#39;élément courant à partir d&#39;un élément précis." alt="" coords="553,1526,715,1553"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="773,715,844,742"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#a37afb4f802843bd21792cd494296d9dc" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="765,1146,852,1173"/>
 </map>
 </div>
 
@@ -503,7 +530,9 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui permet de créer une liste</p>
+<dl class="section author"><dt>Auteurs</dt><dd>Ange Despert </dd>
+<dd>
+Max Descomps</dd></dl>
 <p>On peut préciser des fonction pour l'insertion et la supprésion des objets.</p>
 <p>Mais on ne peut pas avoir une fonction d'insertion et aucune fonction de supprésion et vice-versa.</p>
 <p>Par défault la liste fonctionne par référencement, pour cela il suffit de ne pas fournir de fonctions dans l'appel de la fonction.</p>
@@ -522,8 +551,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_addcfa9533b97c83cd4901a146cefba9c_icgraph.png" border="0" usemap="#d8/dd0/listes_8h_addcfa9533b97c83cd4901a146cefba9c_icgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_addcfa9533b97c83cd4901a146cefba9c_icgraph" id="d8/dd0/listes_8h_addcfa9533b97c83cd4901a146cefba9c_icgraph">
-<area shape="rect" title=" " alt="" coords="433,107,512,133"/>
-<area shape="rect" href="../../dc/db7/map_8h.html#af6448083132a6591f73061457f30ebb3" title="Fonction qui récupère les informations stockées dans le buffer en entrée." alt="" coords="108,5,215,32"/>
+<area shape="rect" title="Fonction qui permet de créer une liste." alt="" coords="433,107,512,133"/>
+<area shape="rect" href="../../dc/db7/map_8h.html#af6448083132a6591f73061457f30ebb3" title="Fonction qui récupère les informations stockées dans le fichier don le nom est donne en entrée." alt="" coords="108,5,215,32"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,81,60,108"/>
 <area shape="rect" href="../../d1/d0f/commun_8h.html#a2858154e2009b0e6e616f313177762bc" title="Fonction qui initialise le Programme." alt="" coords="140,107,183,133"/>
 <area shape="rect" href="../../d1/d41/init__close_8c.html#a79d4020cf0b63c5c11c847b98348af97" title=" " alt="" coords="269,157,379,184"/>
@@ -548,7 +577,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction booléenne qui permet de savoir si la liste est vide.</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">to_verify</td><td>La liste que l'on doit vérifier </td></tr>
@@ -561,14 +590,14 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_abe07097bbae832dce242428fdb1d95b4_icgraph.png" border="0" usemap="#d8/dd0/listes_8h_abe07097bbae832dce242428fdb1d95b4_icgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_abe07097bbae832dce242428fdb1d95b4_icgraph" id="d8/dd0/listes_8h_abe07097bbae832dce242428fdb1d95b4_icgraph">
-<area shape="rect" title=" " alt="" coords="349,153,435,180"/>
+<area shape="rect" title="Fonction booléenne qui permet de savoir si la liste est vide." alt="" coords="349,153,435,180"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#ab3637688138fc059d87799ea8ec77514" title="Fonction qui affiche les textures contenues dans la liste en paramètre." alt="" coords="29,5,145,32"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a373b7b6959133fba94c4030ebfa75155" title="Fonction qui affiche la texture des coffres." alt="" coords="25,59,148,85"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a9bfa693255703c0de636ceb7db7d8d2d" title="Fonction qui affiche les monstres." alt="" coords="17,116,156,143"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a6d78ce42135a25accbd3bf152dc94563" title="Fonction qui affiche les sorts." alt="" coords="31,179,142,205"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#adce0cb151a53ff2182012642c95262be" title=" " alt="" coords="216,305,301,332"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="223,153,294,180"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#ac84d5f990f188eed04f7670abf38b020" title="Fonction qui permet de selectionner l&#39;élément courant à partor d&#39;un élément précis." alt="" coords="5,229,168,256"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#adce0cb151a53ff2182012642c95262be" title="Fonction qui permet de se placer en queue de la liste." alt="" coords="216,305,301,332"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="223,153,294,180"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#ac84d5f990f188eed04f7670abf38b020" title="Fonction qui permet de selectionner l&#39;élément courant à partir d&#39;un élément précis." alt="" coords="5,229,168,256"/>
 </map>
 </div>
 
@@ -599,7 +628,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui permet de modifier l'élément courant.</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <p>ATTENTION : si les élément sont placés dans la liste par référencement cela détruira l'élément précédent !</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -613,8 +642,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_ac553c0418726475fa46b69b1aaaec8f9_cgraph.png" border="0" usemap="#d8/dd0/listes_8h_ac553c0418726475fa46b69b1aaaec8f9_cgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_ac553c0418726475fa46b69b1aaaec8f9_cgraph" id="d8/dd0/listes_8h_ac553c0418726475fa46b69b1aaaec8f9_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,89,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="137,5,223,32"/>
+<area shape="rect" title="Fonction qui permet de modifier l&#39;élément courant." alt="" coords="5,5,89,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="137,5,223,32"/>
 </map>
 </div>
 
@@ -635,7 +664,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui permet de supprimer un élément de la liste.</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <p>ATTENTION : si les élements sont placés dans la liste par référencement cela détruira l'élément (ne pas y accéder après) !</p>
 <p>On attend des éléments dynamiques dans la liste.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
@@ -649,9 +678,9 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_a59c2257ab1cda9f78444e6b71a8a0c8d_cgraph.png" border="0" usemap="#d8/dd0/listes_8h_a59c2257ab1cda9f78444e6b71a8a0c8d_cgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_a59c2257ab1cda9f78444e6b71a8a0c8d_cgraph" id="d8/dd0/listes_8h_a59c2257ab1cda9f78444e6b71a8a0c8d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,77,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="244,5,329,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="125,31,196,57"/>
+<area shape="rect" title="Fonction qui permet de supprimer un élément de la liste." alt="" coords="5,5,77,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="244,5,329,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="125,31,196,57"/>
 </map>
 </div>
 <div class="dynheader">
@@ -659,12 +688,12 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_a59c2257ab1cda9f78444e6b71a8a0c8d_icgraph.png" border="0" usemap="#d8/dd0/listes_8h_a59c2257ab1cda9f78444e6b71a8a0c8d_icgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_a59c2257ab1cda9f78444e6b71a8a0c8d_icgraph" id="d8/dd0/listes_8h_a59c2257ab1cda9f78444e6b71a8a0c8d_icgraph">
-<area shape="rect" title=" " alt="" coords="412,104,484,131"/>
+<area shape="rect" title="Fonction qui permet de supprimer un élément de la liste." alt="" coords="412,104,484,131"/>
 <area shape="rect" href="../../d0/d58/sorts_8c.html#a5a9bb7c6be7a6d5073e48d50f014e299" title=" " alt="" coords="46,19,141,46"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#aa18ada4ee80cd3ec4a96012f5bfdf469" title="Fonction qui détruit une collision donnée dans une liste de collisions." alt="" coords="229,38,364,80"/>
-<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title=" " alt="" coords="5,74,181,100"/>
-<area shape="rect" href="../../dc/db7/map_8h.html#af837acc6ac888e66589d3ff48f4eec12" title=" " alt="" coords="242,155,351,182"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#af234a65d00ef1f963f212d6761636941" title=" " alt="" coords="251,206,342,232"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title="Fonction qui gère les effets de l&#39;environnement sur le joueur." alt="" coords="5,74,181,100"/>
+<area shape="rect" href="../../dc/db7/map_8h.html#af837acc6ac888e66589d3ff48f4eec12" title="Fonction qui permet de détruire une map." alt="" coords="242,155,351,182"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#af234a65d00ef1f963f212d6761636941" title="Fonction qui supprimme tout les éléments de la liste." alt="" coords="251,206,342,232"/>
 </map>
 </div>
 
@@ -685,7 +714,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>\Fonction qui permet de passer à l'élément suivant dans la liste</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">mylist</td><td>La liste dans laquelle on se déplace </td></tr>
@@ -697,8 +726,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_a2afbd9c9fde39b0f0c20e628718b7576_cgraph.png" border="0" usemap="#d8/dd0/listes_8h_a2afbd9c9fde39b0f0c20e628718b7576_cgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_a2afbd9c9fde39b0f0c20e628718b7576_cgraph" id="d8/dd0/listes_8h_a2afbd9c9fde39b0f0c20e628718b7576_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,92,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="140,5,225,32"/>
+<area shape="rect" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="5,5,92,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="140,5,225,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -706,7 +735,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_a2afbd9c9fde39b0f0c20e628718b7576_icgraph.png" border="0" usemap="#d8/dd0/listes_8h_a2afbd9c9fde39b0f0c20e628718b7576_icgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_a2afbd9c9fde39b0f0c20e628718b7576_icgraph" id="d8/dd0/listes_8h_a2afbd9c9fde39b0f0c20e628718b7576_icgraph">
-<area shape="rect" title=" " alt="" coords="203,5,289,32"/>
+<area shape="rect" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="203,5,289,32"/>
 <area shape="rect" href="../../d1/daa/definition__commun_8h.html#affaacddc6fe16ed3d818bf7e0c9798eb" title="Fonction qui appelle les fonctions pour terminer le programme." alt="" coords="5,5,155,32"/>
 </map>
 </div>
@@ -744,6 +773,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">liste</td><td>La liste dans laquelle on veut faire la recherche </td></tr>
@@ -752,18 +782,18 @@ Voici le graphe des appelants de cette fonction :</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>si l'élément à été trouvé </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Vrai si l'élément à été trouvé </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_ac84d5f990f188eed04f7670abf38b020_cgraph.png" border="0" usemap="#d8/dd0/listes_8h_ac84d5f990f188eed04f7670abf38b020_cgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_ac84d5f990f188eed04f7670abf38b020_cgraph" id="d8/dd0/listes_8h_ac84d5f990f188eed04f7670abf38b020_cgraph">
-<area shape="rect" title="Fonction qui permet de selectionner l&#39;élément courant à partor d&#39;un élément précis." alt="" coords="5,107,168,133"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="224,5,295,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title=" " alt="" coords="351,31,436,57"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="351,157,436,184"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title=" " alt="" coords="224,157,295,184"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title=" " alt="" coords="216,208,303,235"/>
+<area shape="rect" title="Fonction qui permet de selectionner l&#39;élément courant à partir d&#39;un élément précis." alt="" coords="5,107,168,133"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="224,5,295,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#abe07097bbae832dce242428fdb1d95b4" title="Fonction booléenne qui permet de savoir si la liste est vide." alt="" coords="351,31,436,57"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="351,157,436,184"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#ad6061cfcccc3fe717413526943f7bddc" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="224,157,295,184"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a37afb4f802843bd21792cd494296d9dc" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="216,208,303,235"/>
 </map>
 </div>
 <div class="dynheader">
@@ -771,8 +801,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_ac84d5f990f188eed04f7670abf38b020_icgraph.png" border="0" usemap="#d8/dd0/listes_8h_ac84d5f990f188eed04f7670abf38b020_icgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_ac84d5f990f188eed04f7670abf38b020_icgraph" id="d8/dd0/listes_8h_ac84d5f990f188eed04f7670abf38b020_icgraph">
-<area shape="rect" title="Fonction qui permet de selectionner l&#39;élément courant à partor d&#39;un élément précis." alt="" coords="163,5,325,32"/>
-<area shape="rect" href="../../dc/db7/map_8h.html#af837acc6ac888e66589d3ff48f4eec12" title=" " alt="" coords="5,5,115,32"/>
+<area shape="rect" title="Fonction qui permet de selectionner l&#39;élément courant à partir d&#39;un élément précis." alt="" coords="163,5,325,32"/>
+<area shape="rect" href="../../dc/db7/map_8h.html#af837acc6ac888e66589d3ff48f4eec12" title="Fonction qui permet de détruire une map." alt="" coords="5,5,115,32"/>
 </map>
 </div>
 
@@ -793,7 +823,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui permet de passer à l'élément suivant dans la liste</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">mylist</td><td>La liste dans laquelle on se déplace </td></tr>
@@ -805,8 +835,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_ad6061cfcccc3fe717413526943f7bddc_cgraph.png" border="0" usemap="#d8/dd0/listes_8h_ad6061cfcccc3fe717413526943f7bddc_cgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_ad6061cfcccc3fe717413526943f7bddc_cgraph" id="d8/dd0/listes_8h_ad6061cfcccc3fe717413526943f7bddc_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,76,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="124,5,209,32"/>
+<area shape="rect" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="5,5,76,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="124,5,209,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -814,7 +844,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_ad6061cfcccc3fe717413526943f7bddc_icgraph.png" border="0" usemap="#d8/dd0/listes_8h_ad6061cfcccc3fe717413526943f7bddc_icgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_ad6061cfcccc3fe717413526943f7bddc_icgraph" id="d8/dd0/listes_8h_ad6061cfcccc3fe717413526943f7bddc_icgraph">
-<area shape="rect" title=" " alt="" coords="765,519,836,546"/>
+<area shape="rect" title="Fonction qui permet de passer à l&#39;élément suivant dans la liste." alt="" coords="765,519,836,546"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a8a414764c90c1cc2a104f536ef34a8dd" title="Fonction qui affiche la texture des animations." alt="" coords="121,38,271,65"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,443,60,470"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#ab3637688138fc059d87799ea8ec77514" title="Fonction qui affiche les textures contenues dans la liste en paramètre." alt="" coords="576,139,692,166"/>
@@ -829,12 +859,12 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a06c50666787c24c1a3ca91501e9f772d" title="Permet de déplacer un joueur secondaire de y unités verticales sur la map." alt="" coords="332,571,503,612"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a1479d2bcf35df66e73306d28d9ea0e13" title="Permet de déplacer le personnage principal de y unités verticales sur la map." alt="" coords="339,637,496,663"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#aa18ada4ee80cd3ec4a96012f5bfdf469" title="Fonction qui détruit une collision donnée dans une liste de collisions." alt="" coords="350,849,485,891"/>
-<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title=" " alt="" coords="108,827,284,854"/>
-<area shape="rect" href="../../dc/db7/map_8h.html#af837acc6ac888e66589d3ff48f4eec12" title=" " alt="" coords="363,966,472,993"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title="Fonction qui gère les effets de l&#39;environnement sur le joueur." alt="" coords="108,827,284,854"/>
+<area shape="rect" href="../../dc/db7/map_8h.html#af837acc6ac888e66589d3ff48f4eec12" title="Fonction qui permet de détruire une map." alt="" coords="363,966,472,993"/>
 <area shape="rect" href="../../d1/daa/definition__commun_8h.html#affaacddc6fe16ed3d818bf7e0c9798eb" title="Fonction qui appelle les fonctions pour terminer le programme." alt="" coords="121,709,271,735"/>
 <area shape="rect" href="../../d2/d9c/coffres_8h.html#afaede33891b4fa55d0b68267a6207487" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="566,595,702,622"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title=" " alt="" coords="598,899,670,926"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#ac84d5f990f188eed04f7670abf38b020" title="Fonction qui permet de selectionner l&#39;élément courant à partor d&#39;un élément précis." alt="" coords="553,950,715,977"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title="Fonction qui permet de supprimer un élément de la liste." alt="" coords="598,899,670,926"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#ac84d5f990f188eed04f7670abf38b020" title="Fonction qui permet de selectionner l&#39;élément courant à partir d&#39;un élément précis." alt="" coords="553,950,715,977"/>
 </map>
 </div>
 
@@ -855,7 +885,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui renvoie le nombre d'éléments dans la liste</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">mylist</td><td>La liste dont on veut conaitre le nombre d'éléments </td></tr>
@@ -881,7 +911,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui renvoie l'élément courant</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">mylist</td><td>La liste dont on veut l'élément </td></tr>
@@ -894,8 +924,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_a37afb4f802843bd21792cd494296d9dc_cgraph.png" border="0" usemap="#d8/dd0/listes_8h_a37afb4f802843bd21792cd494296d9dc_cgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_a37afb4f802843bd21792cd494296d9dc_cgraph" id="d8/dd0/listes_8h_a37afb4f802843bd21792cd494296d9dc_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,92,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="140,5,225,32"/>
+<area shape="rect" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="5,5,92,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="140,5,225,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -903,7 +933,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_a37afb4f802843bd21792cd494296d9dc_icgraph.png" border="0" usemap="#d8/dd0/listes_8h_a37afb4f802843bd21792cd494296d9dc_icgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_a37afb4f802843bd21792cd494296d9dc_icgraph" id="d8/dd0/listes_8h_a37afb4f802843bd21792cd494296d9dc_icgraph">
-<area shape="rect" title=" " alt="" coords="744,481,831,507"/>
+<area shape="rect" title="Fonction qui renvoie l&#39;élément courant." alt="" coords="744,481,831,507"/>
 <area shape="rect" href="../../d0/d58/sorts_8c.html#a5a9bb7c6be7a6d5073e48d50f014e299" title=" " alt="" coords="346,211,441,238"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a6d78ce42135a25accbd3bf152dc94563" title="Fonction qui affiche les sorts." alt="" coords="127,211,238,238"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,467,60,494"/>
@@ -917,11 +947,11 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a06c50666787c24c1a3ca91501e9f772d" title="Permet de déplacer un joueur secondaire de y unités verticales sur la map." alt="" coords="308,608,479,649"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#a1479d2bcf35df66e73306d28d9ea0e13" title="Permet de déplacer le personnage principal de y unités verticales sur la map." alt="" coords="315,674,472,701"/>
 <area shape="rect" href="../../d5/dae/affichage_8h.html#aa18ada4ee80cd3ec4a96012f5bfdf469" title="Fonction qui détruit une collision donnée dans une liste de collisions." alt="" coords="545,389,680,431"/>
-<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title=" " alt="" coords="305,439,481,466"/>
-<area shape="rect" href="../../dc/db7/map_8h.html#af837acc6ac888e66589d3ff48f4eec12" title=" " alt="" coords="339,886,448,913"/>
+<area shape="rect" href="../../d2/d2f/personnage_8h.html#aadc96b5c1e76a0574f5759d63bc46e39" title="Fonction qui gère les effets de l&#39;environnement sur le joueur." alt="" coords="305,439,481,466"/>
+<area shape="rect" href="../../dc/db7/map_8h.html#af837acc6ac888e66589d3ff48f4eec12" title="Fonction qui permet de détruire une map." alt="" coords="339,886,448,913"/>
 <area shape="rect" href="../../d1/daa/definition__commun_8h.html#affaacddc6fe16ed3d818bf7e0c9798eb" title="Fonction qui appelle les fonctions pour terminer le programme." alt="" coords="108,749,257,775"/>
 <area shape="rect" href="../../d2/d9c/coffres_8h.html#afaede33891b4fa55d0b68267a6207487" title="Gère les interactions du joueur avec un coffre lors d&#39;une collision." alt="" coords="545,607,681,634"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#ac84d5f990f188eed04f7670abf38b020" title="Fonction qui permet de selectionner l&#39;élément courant à partor d&#39;un élément précis." alt="" coords="531,911,694,938"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#ac84d5f990f188eed04f7670abf38b020" title="Fonction qui permet de selectionner l&#39;élément courant à partir d&#39;un élément précis." alt="" coords="531,911,694,938"/>
 </map>
 </div>
 
@@ -942,7 +972,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction qui supprimme tout les éléments de la liste.</p>
+<dl class="section author"><dt>Auteur</dt><dd>Ange Despert</dd></dl>
 <p>ATTENTION : si les éléments sont insérés par référencement, ils seront tous détruits !</p>
 <p>On attend des éléments dynamiques dans la liste.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
@@ -956,10 +986,10 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_af234a65d00ef1f963f212d6761636941_cgraph.png" border="0" usemap="#d8/dd0/listes_8h_af234a65d00ef1f963f212d6761636941_cgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_af234a65d00ef1f963f212d6761636941_cgraph" id="d8/dd0/listes_8h_af234a65d00ef1f963f212d6761636941_cgraph">
-<area shape="rect" title=" " alt="" coords="5,56,96,83"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title=" " alt="" coords="145,5,215,32"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title=" " alt="" coords="264,81,349,108"/>
-<area shape="rect" href="../../d0/ddc/listes_8c.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title=" " alt="" coords="144,107,216,133"/>
+<area shape="rect" title="Fonction qui supprimme tout les éléments de la liste." alt="" coords="5,56,96,83"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a9c780173ba80450b8a01ba4c14963437" title="Fonction qui permet de se placer en tête de la liste." alt="" coords="145,5,215,32"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a0636ccaaa4306ef8525a26cadc4a4805" title="Fonction booléenne qui permet de savoir si ll&#39;on est actuellement hors de la liste." alt="" coords="264,81,349,108"/>
+<area shape="rect" href="../../d0/ddc/listes_8c.html#a59c2257ab1cda9f78444e6b71a8a0c8d" title="Fonction qui permet de supprimer un élément de la liste." alt="" coords="144,107,216,133"/>
 </map>
 </div>
 <div class="dynheader">
@@ -967,8 +997,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dd0/listes_8h_af234a65d00ef1f963f212d6761636941_icgraph.png" border="0" usemap="#d8/dd0/listes_8h_af234a65d00ef1f963f212d6761636941_icgraph" alt=""/></div>
 <map name="d8/dd0/listes_8h_af234a65d00ef1f963f212d6761636941_icgraph" id="d8/dd0/listes_8h_af234a65d00ef1f963f212d6761636941_icgraph">
-<area shape="rect" title=" " alt="" coords="161,31,252,57"/>
-<area shape="rect" href="../../d8/dd0/listes_8h.html#a4597d1c1550e48dc54b54b240ab3c0e9" title="Détruit une structure liste." alt="" coords="5,5,113,32"/>
+<area shape="rect" title="Fonction qui supprimme tout les éléments de la liste." alt="" coords="161,31,252,57"/>
+<area shape="rect" href="../../d8/dd0/listes_8h.html#a4597d1c1550e48dc54b54b240ab3c0e9" title="Détruit une liste en détruisant tout ses éléménts." alt="" coords="5,5,113,32"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="32,56,87,83"/>
 </map>
 </div>

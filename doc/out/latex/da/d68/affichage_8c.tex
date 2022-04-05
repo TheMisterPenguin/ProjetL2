@@ -45,7 +45,7 @@ t\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_a59fc51b629cfed9815495f235dae78e
 \begin{DoxyCompactList}\small\item\em Affiche la texture donnée en paramètre à l\textquotesingle{}écran. \end{DoxyCompactList}\item 
 t\+\_\+l\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_aea6ef750998e466ed9d8beef7daefc09}{init\+\_\+textures\+\_\+joueur}} (joueur\+\_\+t $\ast$j, int num\+\_\+j)
 \begin{DoxyCompactList}\small\item\em Fonction qui creer et renvoie une liste de textures pour le personnage (joueur) \end{DoxyCompactList}\item 
-t\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_aed283afbfc26ca77a0e28e04aee3cc0e}{init\+\_\+texture\+\_\+joueur}} (t\+\_\+l\+\_\+aff $\ast$textures\+\_\+joueur, joueur\+\_\+t $\ast$joueur)
+t\+\_\+aff $\ast$ \mbox{\hyperlink{affichage_8c_a2344f5dd9cd4bc71c30a0706dace16fa}{init\+\_\+texture\+\_\+joueur}} (t\+\_\+l\+\_\+aff $\ast$textures\+\_\+joueur, joueur\+\_\+t $\ast$joueur)
 \begin{DoxyCompactList}\small\item\em Fonction qui renvoie la texture de départ du personnage (joueur) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_adf38042b72a9ceff2aebef3efe2af6bd}{appliquer\+\_\+coord\+\_\+rect}} (const S\+D\+L\+\_\+\+Rect $\ast$const a\+\_\+copier, t\+\_\+l\+\_\+aff $\ast$textures)
 \item 
@@ -91,13 +91,13 @@ void \mbox{\hyperlink{affichage_8c_a8a05cde4c824ad13d8f2dbf73b0b741f}{deplacer\+
 \begin{DoxyCompactList}\small\item\em La texture est déplacée vers le coin inférieur droit de la fenêtre. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_a9d3a1090bb34f34aa532f12d75bfb75c}{modif\+\_\+affichage\+\_\+rect}} (t\+\_\+aff $\ast$texture, S\+D\+L\+\_\+\+Rect r)
 \begin{DoxyCompactList}\small\item\em Modifie le rectangle qui définit la zone de l\textquotesingle{}écran qui sera utilisée pour le rendu de la texture. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a113b955d03c898c51a06f8f270aa418a}{deplacement\+\_\+x\+\_\+pers}} (t\+\_\+map $\ast$m, joueur\+\_\+t $\ast$$\ast$joueurs, unsigned short int nb\+\_\+joueurs, int x, lobjet\+\_\+t $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}})
+\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a113b955d03c898c51a06f8f270aa418a}{deplacement\+\_\+x\+\_\+pers}} (t\+\_\+map $\ast$m, joueur\+\_\+t $\ast$$\ast$joueurs, unsigned short int nb\+\_\+joueurs, int x, \mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}})
 \begin{DoxyCompactList}\small\item\em Permet de déplacer le personnage de x unités horizontales sur la map. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a5aa7ec7dd10a36d55c4a42976622a7ea}{deplacement\+\_\+y\+\_\+pers}} (t\+\_\+map $\ast$m, joueur\+\_\+t $\ast$$\ast$joueurs, unsigned short int nb\+\_\+joueurs, int y, lobjet\+\_\+t $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}})
+\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a5aa7ec7dd10a36d55c4a42976622a7ea}{deplacement\+\_\+y\+\_\+pers}} (t\+\_\+map $\ast$m, joueur\+\_\+t $\ast$$\ast$joueurs, unsigned short int nb\+\_\+joueurs, int y, \mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}})
 \begin{DoxyCompactList}\small\item\em Permet de déplacer le personnage principal de y unités verticales sur la map. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_afd72b18ff9aedec07f7fafd296322043}{deplacement\+\_\+x\+\_\+joueur\+\_\+secondaire}} (t\+\_\+map $\ast$m, joueur\+\_\+t $\ast$joueur, int x, S\+D\+L\+\_\+\+Rect $\ast$r, lobjet\+\_\+t $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}})
+\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_afd72b18ff9aedec07f7fafd296322043}{deplacement\+\_\+x\+\_\+joueur\+\_\+secondaire}} (t\+\_\+map $\ast$m, joueur\+\_\+t $\ast$joueur, int x, S\+D\+L\+\_\+\+Rect $\ast$r, \mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}})
 \begin{DoxyCompactList}\small\item\em Permet de déplacer un joueur secondaire de x unités horizontales sur la map. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a643df6a35c630438417f9aa6bd6166bf}{deplacement\+\_\+y\+\_\+joueur\+\_\+secondaire}} (t\+\_\+map $\ast$m, joueur\+\_\+t $\ast$joueur, int y, S\+D\+L\+\_\+\+Rect $\ast$r, lobjet\+\_\+t $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}})
+\mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{affichage_8c_a643df6a35c630438417f9aa6bd6166bf}{deplacement\+\_\+y\+\_\+joueur\+\_\+secondaire}} (t\+\_\+map $\ast$m, joueur\+\_\+t $\ast$joueur, int y, S\+D\+L\+\_\+\+Rect $\ast$r, \mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}})
 \begin{DoxyCompactList}\small\item\em Permet de déplacer un joueur secondaire de y unités verticales sur la map. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{affichage_8c_a83f1b5ddb558420c53c41071e559a8ff}{text\+\_\+copier\+\_\+position}} (t\+\_\+aff $\ast$a\+\_\+modifier, const t\+\_\+aff $\ast$const original)
 \begin{DoxyCompactList}\small\item\em Fonction qui permet de placer 2 textures aux mêmes endroit à l\textquotesingle{}écran. \end{DoxyCompactList}\item 
@@ -139,8 +139,6 @@ void \mbox{\hyperlink{affichage_8c_a26cf1d2055162e3bf7166de2f55902f9}{place\+\_\
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{affichage_8c_a8377ca78d82bccc84bac70229aeac875}{liste\+De\+Textures}}
-\item 
-\mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{affichage_8c_adc1d100970d8cf56a0511e7af4c6415a}{buffer\+\_\+affichage}}
 \item 
 \mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{affichage_8c_af67eb43ba900105fcb0daaea9251bc7c}{liste\+\_\+animations}} = N\+U\+LL
 \item 
@@ -233,8 +231,7 @@ Les premiers éléments seront en arrière plan et les derniers seront en 1er pl
 \begin{DoxyReturn}{Renvoie}
 Une valeur différente à 0 lors d\textquotesingle{}une erreur 
 \end{DoxyReturn}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -345,8 +342,7 @@ Cette fonction permet d\textquotesingle{}afficher à l\textquotesingle{}écran u
 \begin{DoxyReturn}{Renvoie}
 0 s\textquotesingle{}il n\textquotesingle{}y a pas eu d\textquotesingle{}erreur sinon un entier négatif 
 \end{DoxyReturn}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -531,7 +527,7 @@ Ange Despert
 \item[\mbox{\hyperlink{deprecated__deprecated000002}{Obsolète}}]L\textquotesingle{}utilisation de cette fonction n\textquotesingle{}a plus trop de sens étant donné que le moteur gère automatiquement la taille des textures.\end{DoxyRefDesc}
 
 
-Fonction qui permet de modifier le rectangle de la structure \mbox{\hyperlink{structs__aff}{t\+\_\+aff}} \+: aff\+\_\+ecran avec de nouvelles valeurs.
+Fonction qui permet de modifier le rectangle de la structure \mbox{\hyperlink{structs__aff}{t\+\_\+aff}} \+: \mbox{\hyperlink{structs__aff_a7f7e29a1c85002df85bc122f6836b20c}{aff\+\_\+fenetre}} avec de nouvelles valeurs.
 
 
 \begin{DoxyParams}{Paramètres}
@@ -570,7 +566,7 @@ Cette dernière prend également les collisions définies dans la liste des coll
 \hline
 {\em texture} & La texture de l\textquotesingle{}entité que l\textquotesingle{}on veut bouger \\
 \hline
-{\em y} & La nouvelle coordonnée du rectangle de l\textquotesingle{}entité \\
+{\em x} & La nouvelle coordonnée du rectangle de l\textquotesingle{}entité \\
 \hline
 {\em r} & Le rectangle représentant la zone de collision de l\textquotesingle{}entité \\
 \hline
@@ -578,7 +574,7 @@ Cette dernière prend également les collisions définies dans la liste des coll
 \begin{DoxyReturn}{Renvoie}
 vrai \+: Si l\textquotesingle{}entité a réussi à se déplacer 
 
-faux \+: Si l\textquotesingle{}entité n\textquotesingle{}a pas pu se déplacer 
+faux \+: Si l\textquotesingle{}entité n\textquotesingle{}a pas pu se déplacer $<$Définition du type booléen 
 \end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
@@ -598,7 +594,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{affichage.c@{affichage.c}!deplacement\_x\_joueur\_secondaire@{deplacement\_x\_joueur\_secondaire}}
 \index{deplacement\_x\_joueur\_secondaire@{deplacement\_x\_joueur\_secondaire}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{deplacement\_x\_joueur\_secondaire()}{deplacement\_x\_joueur\_secondaire()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} deplacement\+\_\+x\+\_\+joueur\+\_\+secondaire (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{int}]{x,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{r,  }\item[{lobjet\+\_\+t $\ast$}]{objets }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} deplacement\+\_\+x\+\_\+joueur\+\_\+secondaire (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{int}]{x,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{r,  }\item[{\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$}]{objets }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
@@ -616,7 +612,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{DoxyReturn}{Renvoie}
 vrai \+: Si le joueur a réussi à se déplacer 
 
-faux \+: Si le joueur n\textquotesingle{}a pas pu se déplacer 
+faux \+: Si le joueur n\textquotesingle{}a pas pu se déplacer $<$Définition du type booléen 
 \end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
@@ -636,7 +632,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{affichage.c@{affichage.c}!deplacement\_x\_pers@{deplacement\_x\_pers}}
 \index{deplacement\_x\_pers@{deplacement\_x\_pers}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{deplacement\_x\_pers()}{deplacement\_x\_pers()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} deplacement\+\_\+x\+\_\+pers (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{unsigned short int}]{nb\+\_\+joueurs,  }\item[{int}]{x,  }\item[{lobjet\+\_\+t $\ast$}]{objets }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} deplacement\+\_\+x\+\_\+pers (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{unsigned short int}]{nb\+\_\+joueurs,  }\item[{int}]{x,  }\item[{\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$}]{objets }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Ange Despert
@@ -660,7 +656,7 @@ Elle empêche le personnage de sortir des bordures de la map. ~\newline
 \begin{DoxyReturn}{Renvoie}
 vrai \+: Si le joueur s\textquotesingle{}est téléporté 
 
-faux \+: Si le joueur ne s\textquotesingle{}est pas téléporté 
+faux \+: Si le joueur ne s\textquotesingle{}est pas téléporté $<$Définition du type booléen 
 \end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
@@ -705,7 +701,7 @@ Cette dernière prend également les collisions définies dans la liste des coll
 \begin{DoxyReturn}{Renvoie}
 vrai \+: Si l\textquotesingle{}entité a réussi à se déplacer 
 
-faux \+: Si l\textquotesingle{}entité n\textquotesingle{}a pas pu se déplacer 
+faux \+: Si l\textquotesingle{}entité n\textquotesingle{}a pas pu se déplacer $<$Définition du type booléen 
 \end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
@@ -725,7 +721,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{affichage.c@{affichage.c}!deplacement\_y\_joueur\_secondaire@{deplacement\_y\_joueur\_secondaire}}
 \index{deplacement\_y\_joueur\_secondaire@{deplacement\_y\_joueur\_secondaire}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{deplacement\_y\_joueur\_secondaire()}{deplacement\_y\_joueur\_secondaire()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} deplacement\+\_\+y\+\_\+joueur\+\_\+secondaire (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{int}]{y,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{r,  }\item[{lobjet\+\_\+t $\ast$}]{objets }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} deplacement\+\_\+y\+\_\+joueur\+\_\+secondaire (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{int}]{y,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{r,  }\item[{\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$}]{objets }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Paramètres}
@@ -743,7 +739,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{DoxyReturn}{Renvoie}
 vrai \+: Si le joueur a réussi à se déplacer 
 
-faux \+: Si le joueur n\textquotesingle{}a pas pu se déplacer 
+faux \+: Si le joueur n\textquotesingle{}a pas pu se déplacer $<$Définition du type booléen 
 \end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
@@ -763,7 +759,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{affichage.c@{affichage.c}!deplacement\_y\_pers@{deplacement\_y\_pers}}
 \index{deplacement\_y\_pers@{deplacement\_y\_pers}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{deplacement\_y\_pers()}{deplacement\_y\_pers()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} deplacement\+\_\+y\+\_\+pers (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{unsigned short int}]{nb\+\_\+joueurs,  }\item[{int}]{y,  }\item[{lobjet\+\_\+t $\ast$}]{objets }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} deplacement\+\_\+y\+\_\+pers (\begin{DoxyParamCaption}\item[{t\+\_\+map $\ast$}]{map,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{unsigned short int}]{nb\+\_\+joueurs,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$}]{objets }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Ange Despert
@@ -787,7 +783,7 @@ Elle empêche le personnage de sortir des bordures de la map. ~\newline
 \begin{DoxyReturn}{Renvoie}
 vrai \+: Si le joueur s\textquotesingle{}est téléporté 
 
-faux \+: Si le joueur ne s\textquotesingle{}est pas téléporté 
+faux \+: Si le joueur ne s\textquotesingle{}est pas téléporté $<$Définition du type booléen 
 \end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
@@ -818,11 +814,10 @@ Ange Despert
 \hline
 {\em x} & La coordonnée x du rectangle depuis la nouvelle origine. \\
 \hline
-{\em x} & La coordonnée y du rectangle depuis la nouvelle origine. \\
+{\em y} & La coordonnée y du rectangle depuis la nouvelle origine. \\
 \hline
 \end{DoxyParams}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -850,8 +845,7 @@ Ange Despert
 \begin{DoxyReturn}{Renvoie}
 Une valeur différente à 0 lors d\textquotesingle{}une erreur 
 \end{DoxyReturn}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -894,8 +888,7 @@ Ange Despert
 {\em y} & Coordonnée y du coin supérieur gauche de la texture. \\
 \hline
 \end{DoxyParams}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -968,16 +961,14 @@ Ange Despert
 {\em y} & La coordonnée y de l\textquotesingle{}origine de la texture. \\
 \hline
 \end{DoxyParams}
-Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{da/d68/affichage_8c_a48d7af885eb3fdd6655cf83b85f454c9_cgraph}
 \end{center}
 \end{figure}
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1155,18 +1146,18 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \includegraphics[width=249pt]{da/d68/affichage_8c_a00db128b4c54ca69b10871d8eed417f9_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{affichage_8c_aed283afbfc26ca77a0e28e04aee3cc0e}\label{affichage_8c_aed283afbfc26ca77a0e28e04aee3cc0e}} 
+\mbox{\Hypertarget{affichage_8c_a2344f5dd9cd4bc71c30a0706dace16fa}\label{affichage_8c_a2344f5dd9cd4bc71c30a0706dace16fa}} 
 \index{affichage.c@{affichage.c}!init\_texture\_joueur@{init\_texture\_joueur}}
 \index{init\_texture\_joueur@{init\_texture\_joueur}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{init\_texture\_joueur()}{init\_texture\_joueur()}}
-{\footnotesize\ttfamily t\+\_\+aff $\ast$ init\+\_\+texture\+\_\+joueur (\begin{DoxyParamCaption}\item[{t\+\_\+l\+\_\+aff $\ast$}]{textures\+\_\+joueur,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily t\+\_\+aff$\ast$ init\+\_\+texture\+\_\+joueur (\begin{DoxyParamCaption}\item[{t\+\_\+l\+\_\+aff $\ast$}]{textures\+\_\+joueur,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Antoine Bruneau 
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Paramètres}
-{\em t\+\_\+l\+\_\+aff} & Liste de textures personnage \\
+{\em textures\+\_\+joueur} & Liste de textures personnage \\
 \hline
 {\em joueur} & Joueur dont on veut la texture de départ \\
 \hline
@@ -1359,7 +1350,7 @@ Comme les fonction à indice, cette fonction fait appel au rectangle \mbox{\hype
 
 
 \begin{DoxyParams}{Paramètres}
-{\em t\+\_\+aff$\ast$} & une texture joueur \\
+{\em texture$\ast$} & une texture joueur \\
 \hline
 \end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
@@ -1391,9 +1382,9 @@ La fonction utilisera la taille du \mbox{\hyperlink{structs__aff_aefd6b2f2f56383
 
 
 \begin{DoxyParams}{Paramètres}
-{\em t\+\_\+aff$\ast$} & une texture joueur \\
+{\em texture$\ast$} & une texture joueur \\
 \hline
-{\em const} & unsigned int qui correspond au n-\/ème sprite sur l\textquotesingle{}axe des x ou l\textquotesingle{}on souhaite positionner la texture \\
+{\em indice} & unsigned int qui correspond au n-\/ème sprite sur l\textquotesingle{}axe des x ou l\textquotesingle{}on souhaite positionner la texture \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
@@ -1425,7 +1416,7 @@ Ange Despert
 Fonction qui passe au sprite suivant dans l\textquotesingle{}axe y. Cette fonction fera une boucle complête de l\textquotesingle{}image, il n\textquotesingle{}y a donc pas à s\textquotesingle{}inquiéter d\textquotesingle{}arriver à la fin de l\textquotesingle{}image. ~\newline
 Comme les fonction à indice, cette fonction fait appel au rectangle \mbox{\hyperlink{structs__aff_aefd6b2f2f56383a8cba0193ff88593dc}{frame\+\_\+anim}} de la structure \mbox{\hyperlink{structs__aff}{d\textquotesingle{}affichage}}. 
 \begin{DoxyParams}{Paramètres}
-{\em t\+\_\+aff$\ast$} & une texture joueur \\
+{\em texture$\ast$} & une texture joueur \\
 \hline
 \end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
@@ -1443,9 +1434,9 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 
 
 \begin{DoxyParams}{Paramètres}
-{\em t\+\_\+aff$\ast$} & une texture joueur \\
+{\em texture} & Une texture joueur \\
 \hline
-{\em const} & unsigned int qui correspond au n-\/ème sprite sur l\textquotesingle{}axe des y ou l\textquotesingle{}on souhaite positionner la texture \\
+{\em indice} & Correspond au n-\/ème sprite sur l\textquotesingle{}axe des y ou l\textquotesingle{}on souhaite positionner la texture \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
@@ -1573,7 +1564,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{DoxyAuthor}{Auteur}
 Ange Despert
 \end{DoxyAuthor}
-Fonctionnement simillaire à l\textquotesingle{}utilisation conjointe des fonctions placer\+\_\+rect\+\_\+center\+\_\+from\+\_\+point et \mbox{\hyperlink{affichage_8h_aad94b2ce0d93f581c0f82b0467a8d2ed}{get\+\_\+rect\+\_\+center\+\_\+coord}} .
+Fonctionnement simillaire à l\textquotesingle{}utilisation conjointe des fonctions \mbox{\hyperlink{affichage_8h_a26cf1d2055162e3bf7166de2f55902f9}{place\+\_\+rect\+\_\+center\+\_\+from\+\_\+point}} et \mbox{\hyperlink{affichage_8h_aad94b2ce0d93f581c0f82b0467a8d2ed}{get\+\_\+rect\+\_\+center\+\_\+coord}} .
 
 
 \begin{DoxyParams}{Paramètres}
@@ -1765,7 +1756,7 @@ Cette fonction est utilisée par la fonction \mbox{\hyperlink{affichage_8h_aa536
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-Un booléen 
+Un booléen $<$Définition du type booléen 
 \end{DoxyReturn}
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
@@ -1794,7 +1785,7 @@ Cette fonction est utilisée par la fonction \mbox{\hyperlink{affichage_8h_a1479
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-Un booléen 
+Un booléen $<$Définition du type booléen 
 \end{DoxyReturn}
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
@@ -1848,75 +1839,70 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{bloquer}{bloquer}}
 {\footnotesize\ttfamily t\+\_\+aff$\ast$ bloquer = N\+U\+LL}
 
-\mbox{\Hypertarget{affichage_8c_adc1d100970d8cf56a0511e7af4c6415a}\label{affichage_8c_adc1d100970d8cf56a0511e7af4c6415a}} 
-\index{affichage.c@{affichage.c}!buffer\_affichage@{buffer\_affichage}}
-\index{buffer\_affichage@{buffer\_affichage}!affichage.c@{affichage.c}}
-\doxysubsubsection{\texorpdfstring{buffer\_affichage}{buffer\_affichage}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structlist}{list}}$\ast$ buffer\+\_\+affichage}
-
-\mbox{\Hypertarget{affichage_8c_a762704f794c8d74099d3053757266dcb}\label{affichage_8c_a762704f794c8d74099d3053757266dcb}} 
+La texture de l\textquotesingle{}animation de blocage \mbox{\Hypertarget{affichage_8c_a762704f794c8d74099d3053757266dcb}\label{affichage_8c_a762704f794c8d74099d3053757266dcb}} 
 \index{affichage.c@{affichage.c}!compteur@{compteur}}
 \index{compteur@{compteur}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{compteur}{compteur}}
 {\footnotesize\ttfamily long int compteur}
 
-\mbox{\Hypertarget{affichage_8c_aef49d39125567f1a9d5ed0561ea60edc}\label{affichage_8c_aef49d39125567f1a9d5ed0561ea60edc}} 
+Un compteur d\textquotesingle{}ips qui va de 0 à \mbox{\hyperlink{affichage_8h_afb773ba23c068f4f166d05461ea1d8e0}{N\+B\+\_\+\+F\+PS}} \mbox{\Hypertarget{affichage_8c_aef49d39125567f1a9d5ed0561ea60edc}\label{affichage_8c_aef49d39125567f1a9d5ed0561ea60edc}} 
 \index{affichage.c@{affichage.c}!fenetre\_finale@{fenetre\_finale}}
 \index{fenetre\_finale@{fenetre\_finale}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{fenetre\_finale}{fenetre\_finale}}
 {\footnotesize\ttfamily t\+\_\+aff$\ast$ fenetre\+\_\+finale = N\+U\+LL}
 
-\mbox{\Hypertarget{affichage_8c_a675ea76148cd2210ee956b7358f18194}\label{affichage_8c_a675ea76148cd2210ee956b7358f18194}} 
+La texture de la fenêtre de jeu finale sans l\textquotesingle{}interface \mbox{\Hypertarget{affichage_8c_a675ea76148cd2210ee956b7358f18194}\label{affichage_8c_a675ea76148cd2210ee956b7358f18194}} 
 \index{affichage.c@{affichage.c}!FENETRE\_LARGEUR@{FENETRE\_LARGEUR}}
 \index{FENETRE\_LARGEUR@{FENETRE\_LARGEUR}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{FENETRE\_LARGEUR}{FENETRE\_LARGEUR}}
 {\footnotesize\ttfamily unsigned int F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+A\+R\+G\+E\+UR}
 
-\mbox{\Hypertarget{affichage_8c_a28b763408ce1b0c5b625e4c409a5022a}\label{affichage_8c_a28b763408ce1b0c5b625e4c409a5022a}} 
+La largeur de la fenêtre obtenue par requête S\+DL \mbox{\Hypertarget{affichage_8c_a28b763408ce1b0c5b625e4c409a5022a}\label{affichage_8c_a28b763408ce1b0c5b625e4c409a5022a}} 
 \index{affichage.c@{affichage.c}!FENETRE\_LONGUEUR@{FENETRE\_LONGUEUR}}
 \index{FENETRE\_LONGUEUR@{FENETRE\_LONGUEUR}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{FENETRE\_LONGUEUR}{FENETRE\_LONGUEUR}}
 {\footnotesize\ttfamily unsigned int F\+E\+N\+E\+T\+R\+E\+\_\+\+L\+O\+N\+G\+U\+E\+UR}
 
-\mbox{\Hypertarget{affichage_8c_a994bc98929137f8db88670c8b6f0851c}\label{affichage_8c_a994bc98929137f8db88670c8b6f0851c}} 
+La longueur de la fenêtre obtenue par requête S\+DL \mbox{\Hypertarget{affichage_8c_a994bc98929137f8db88670c8b6f0851c}\label{affichage_8c_a994bc98929137f8db88670c8b6f0851c}} 
 \index{affichage.c@{affichage.c}!heal@{heal}}
 \index{heal@{heal}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{heal}{heal}}
 {\footnotesize\ttfamily t\+\_\+aff$\ast$ heal = N\+U\+LL}
 
-\mbox{\Hypertarget{affichage_8c_af67eb43ba900105fcb0daaea9251bc7c}\label{affichage_8c_af67eb43ba900105fcb0daaea9251bc7c}} 
+La texture de l\textquotesingle{}animation de heal \mbox{\Hypertarget{affichage_8c_af67eb43ba900105fcb0daaea9251bc7c}\label{affichage_8c_af67eb43ba900105fcb0daaea9251bc7c}} 
 \index{affichage.c@{affichage.c}!liste\_animations@{liste\_animations}}
 \index{liste\_animations@{liste\_animations}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{liste\_animations}{liste\_animations}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structlist}{list}}$\ast$ liste\+\_\+animations = N\+U\+LL}
 
-\mbox{\Hypertarget{affichage_8c_a8377ca78d82bccc84bac70229aeac875}\label{affichage_8c_a8377ca78d82bccc84bac70229aeac875}} 
+La liste des animation à jouer \mbox{\Hypertarget{affichage_8c_a8377ca78d82bccc84bac70229aeac875}\label{affichage_8c_a8377ca78d82bccc84bac70229aeac875}} 
 \index{affichage.c@{affichage.c}!listeDeTextures@{listeDeTextures}}
 \index{listeDeTextures@{listeDeTextures}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{listeDeTextures}{listeDeTextures}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structlist}{list}}$\ast$ liste\+De\+Textures}
 
-\mbox{\Hypertarget{affichage_8c_ad73b9ba1a88012fd3ae8637a61b57709}\label{affichage_8c_ad73b9ba1a88012fd3ae8637a61b57709}} 
+La liste de toutes les textures qui ont été crées. Sert à leur destruction \mbox{\Hypertarget{affichage_8c_ad73b9ba1a88012fd3ae8637a61b57709}\label{affichage_8c_ad73b9ba1a88012fd3ae8637a61b57709}} 
 \index{affichage.c@{affichage.c}!multiplicateur\_x@{multiplicateur\_x}}
 \index{multiplicateur\_x@{multiplicateur\_x}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{multiplicateur\_x}{multiplicateur\_x}}
 {\footnotesize\ttfamily float multiplicateur\+\_\+x}
 
-\mbox{\Hypertarget{affichage_8c_a2c28b6f5a4c139bcb8ed3fed95ff8099}\label{affichage_8c_a2c28b6f5a4c139bcb8ed3fed95ff8099}} 
+Multiplicateur qui dépend de la résolution (longueur), vaut 1 pour 1920 \mbox{\Hypertarget{affichage_8c_a2c28b6f5a4c139bcb8ed3fed95ff8099}\label{affichage_8c_a2c28b6f5a4c139bcb8ed3fed95ff8099}} 
 \index{affichage.c@{affichage.c}!multiplicateur\_y@{multiplicateur\_y}}
 \index{multiplicateur\_y@{multiplicateur\_y}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{multiplicateur\_y}{multiplicateur\_y}}
 {\footnotesize\ttfamily float multiplicateur\+\_\+y}
 
-\mbox{\Hypertarget{affichage_8c_adede5261ac6b86bf02adc9516dd999bf}\label{affichage_8c_adede5261ac6b86bf02adc9516dd999bf}} 
+Multiplicateur qui dépend de la résolution (largeur), vaut 1 pour 1080 \mbox{\Hypertarget{affichage_8c_adede5261ac6b86bf02adc9516dd999bf}\label{affichage_8c_adede5261ac6b86bf02adc9516dd999bf}} 
 \index{affichage.c@{affichage.c}!tx@{tx}}
 \index{tx@{tx}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{tx}{tx}}
 {\footnotesize\ttfamily S\+D\+L\+\_\+\+Rect tx}
 
-\mbox{\Hypertarget{affichage_8c_af91959b4ed80cc07433e8e07ddeb28bb}\label{affichage_8c_af91959b4ed80cc07433e8e07ddeb28bb}} 
+Rectangle servant au déplacement du personnage principal en x \mbox{\Hypertarget{affichage_8c_af91959b4ed80cc07433e8e07ddeb28bb}\label{affichage_8c_af91959b4ed80cc07433e8e07ddeb28bb}} 
 \index{affichage.c@{affichage.c}!ty@{ty}}
 \index{ty@{ty}!affichage.c@{affichage.c}}
 \doxysubsubsection{\texorpdfstring{ty}{ty}}
 {\footnotesize\ttfamily S\+D\+L\+\_\+\+Rect ty}
 
+Rectangle servant au déplacement du personnage principal en y 
