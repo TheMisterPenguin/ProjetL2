@@ -130,7 +130,6 @@ static void init_rc_commun(void){
 void aff_cleanup(void)
 {
     running = faux;
-    detruire_liste(&buffer_affichage);
     detruire_liste(&listeDeTextures);
 }
 
@@ -154,8 +153,6 @@ void init_affichage(){
     multiplicateur_y = (float) FENETRE_LARGEUR / 1080;
 
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Multiplicateur initialisés : %f, %f", multiplicateur_x, multiplicateur_y);
-
-    buffer_affichage = init_liste(NULL,NULL,NULL);
 }
 
 /**
