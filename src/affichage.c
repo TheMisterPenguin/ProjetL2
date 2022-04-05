@@ -1096,7 +1096,6 @@ void init_animations(){
 
     bloquer = (creer_texture("ressources/sprite/bloquer.bmp", TAILLE_CASE, TAILLE_CASE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
     ajout_droit(liste_animations, bloquer);
-
 }
 
 t_aff * next_frame_animation(joueur_t * joueur){ //actualiser position anim!

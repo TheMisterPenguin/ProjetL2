@@ -36,7 +36,6 @@ void fermer_programme(int code_erreur){
         text_anim->aff_fenetre = NULL;
         suivant(liste_animations);
     }
-    
 
     en_queue(f_close);
 

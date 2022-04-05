@@ -108,16 +108,12 @@ int main(int argc, char** argv)
     /* On charge la map */
     map = charger_map("map/2.json");
 
-    //TEMPORAIREMENT ICI -- test animation heal (équiper consommable puis touche e) -- TEMPORAIREMENT ICI
-    heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, (FENETRE_LONGUEUR * 0.022f) / 16 * 3));
-
     /* On créer le joueur */    
     joueurs[0] = new_joueur("joueur1", 0, "ressources/objet/objet.txt");
     joueur1 = joueurs[0];
     joueur1->pdv = 50;
     /* On créer les animations */
     init_animations();
-
 
     objets = creer_liste_objet("ressources/objet/objet.txt");
     creer_textures_objets(objets);
