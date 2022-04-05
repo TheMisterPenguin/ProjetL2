@@ -17,22 +17,23 @@
  */
 typedef struct element
 {
-    void *valeur;
-    struct element *pred;
-    struct element *succ;
+    void *valeur; /**<La valeur de l'élément, un pointeur générique*/
+    struct element *pred; /**<L'élément précédant*/
+    struct element *succ; /**<L'élément suivant*/
 } t_element;
 
 /**
  * \brief Définition du type list : une liste générique.
- * 
+ * \authors Ange Despert
+ * \authors Max Descomps
  */
 typedef struct list{
-    t_element *flag;
-    t_element *ec;
-    unsigned int nb_elem;
-    void * (*ajout)(void *);
-    void (*del)(void *);
-    void (*aff)(void *);
+    t_element *flag; /**<Le drapeau (1er élément)*/
+    t_element *ec; /**<L'élément courant*/
+    unsigned int nb_elem; /**<Le nombre d'élément dans la liste*/
+    void * (*ajout)(void *); /**<Une fonction pour ajouter un élément dans la liste*/
+    void (*del)(void *); /**<Une fonction pour retirer un élément de la liste*/
+    void (*aff)(void *); /**<Une fonction pour afficher un élément de la liste*/
 }list;
 /**
  * \brief Fonction qui permet de créer une liste.
@@ -184,6 +185,7 @@ extern void detruire_liste(list ** liste);
 
 /**
  * \brief Affiche une liste d'objets génériques.
+ * \author Max Descomps 
  * \param liste Pointeur sur la liste
  */
 void afficher_liste(list * liste);
