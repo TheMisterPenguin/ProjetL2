@@ -24,9 +24,9 @@ void \mbox{\hyperlink{personnage_8c_a9ce711c80691bb2b4f29e7c58790851a}{creer\+\_
 \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{personnage_8c_a71919ee7582fae9cc0e2d1fd5bbce94e}{sauv\+\_\+existe}} (char $\ast$nom\+\_\+sauv)
 \item 
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8c_ad8c439be63cc83e7b5c4a0d33f62f639}{charger\+\_\+sauvegarde\+\_\+joueur}} (char $\ast$nom\+\_\+sauv, char $\ast$f\+\_\+src\+\_\+obj, joueur\+\_\+t $\ast$joueurs\mbox{[}$\,$\mbox{]}, unsigned short int nb\+\_\+joueurs)
-\begin{DoxyCompactList}\small\item\em Fonction qui charge une sauvegarde au format J\+S\+ON. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui charge une sauvegarde du jeu. \end{DoxyCompactList}\item 
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8c_a7737c7514f9c4f5c01ff698b97544c2c}{new\+\_\+joueur}} (const char $\ast$nom, int num\+\_\+j, char $\ast$f\+\_\+src\+\_\+obj)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction de création d\textquotesingle{}un joueur correspondant au modèle standard du jeu. \end{DoxyCompactList}\item 
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8c_a0995a1c7be1391b4a127382999a450dd}{creer\+\_\+joueur}} (const char $\ast$nom, const int niveau, const int xp, const int max\+Pdv, const int pdv, const int attaque, const int defense, const int vitesse, const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} trig\mbox{[}\mbox{\hyperlink{personnage_8h_a98a97fd1e52188dde7bcc423c5d17546}{T\+A\+I\+L\+L\+E\+\_\+\+T\+R\+I\+G\+G\+ER}}\mbox{]}, const \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} orient, const \mbox{\hyperlink{definition__commun_8h_abb452686968e48b67397da5f97445f5b}{bool}} bouclier\+\_\+equipe, const int num\+\_\+j, char $\ast$f\+\_\+src\+\_\+obj)
 \item 
 void \mbox{\hyperlink{personnage_8c_a33613b3a2b55cb1d1855a39a288fb230}{detruire\+\_\+joueur}} (joueur\+\_\+t $\ast$j)
@@ -46,14 +46,14 @@ S\+D\+L\+\_\+bool \mbox{\hyperlink{personnage_8c_a434acdc261f9c84b7dca8d540daca7
 S\+D\+L\+\_\+bool \mbox{\hyperlink{personnage_8c_af2dceb23f5144e7a12b009f113a8e203}{entite\+\_\+en\+\_\+collision}} (S\+D\+L\+\_\+\+Rect $\ast$entite\+\_\+1, S\+D\+L\+\_\+\+Rect $\ast$entite\+\_\+2, \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} $\ast$cote\+\_\+entite\+\_\+1, \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} $\ast$cote\+\_\+entite\+\_\+2)
 \item 
 void \mbox{\hyperlink{personnage_8c_aadc96b5c1e76a0574f5759d63bc46e39}{environnement\+\_\+joueurs}} (\mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+monstres, \mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+sorts, \mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+coffres, joueur\+\_\+t $\ast$$\ast$joueurs, int nb\+\_\+joueur)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les effets de l\textquotesingle{}environnement sur le joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8c_a1a3324d2dc734d1d45b92a562e61ae18}{stoper\+\_\+mouvement\+\_\+joueurs}} (joueur\+\_\+t $\ast$$\ast$joueurs)
 \begin{DoxyCompactList}\small\item\em Stop le mouvement des joueurs en jeu. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{personnage_8c_a18d648a90aa6d5e19507093449173ced}{distance\+\_\+x\+\_\+joueur}} (S\+D\+L\+\_\+\+Rect collision, joueur\+\_\+t $\ast$joueur)
+int \mbox{\hyperlink{personnage_8c_a14f8330d9598f09daba245654f27af2a}{distance\+\_\+x\+\_\+joueur}} (S\+D\+L\+\_\+\+Rect collision, joueur\+\_\+t $\ast$joueur)
 \begin{DoxyCompactList}\small\item\em Renvoie la distance séparant le joueur d\textquotesingle{}une entité définit par sa collision sur l\textquotesingle{}axe des abscisses. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{personnage_8c_a4b121b256058246d32d23d14f23924e1}{distance\+\_\+y\+\_\+joueur}} (S\+D\+L\+\_\+\+Rect collision, joueur\+\_\+t $\ast$joueur)
+int \mbox{\hyperlink{personnage_8c_a0ae422db30a3dda1ba20e3e77a9a4db3}{distance\+\_\+y\+\_\+joueur}} (S\+D\+L\+\_\+\+Rect collision, joueur\+\_\+t $\ast$joueur)
 \begin{DoxyCompactList}\small\item\em Renvoie la distance séparant le joueur d\textquotesingle{}une entité définit par sa collision sur l\textquotesingle{}axe des ordonnées. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{personnage_8c_ab68f6351493aa149688eead017c960bb}{distance\+\_\+joueur}} (S\+D\+L\+\_\+\+Rect collision, joueur\+\_\+t $\ast$joueur)
+int \mbox{\hyperlink{personnage_8c_a6ba18ba0f6072ebcfceca1d6b8ade72f}{distance\+\_\+joueur}} (S\+D\+L\+\_\+\+Rect collision, joueur\+\_\+t $\ast$joueur)
 \begin{DoxyCompactList}\small\item\em Renvoie la distance séparant le joueur d\textquotesingle{}une entité définit par sa collision. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -109,7 +109,17 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{charger\_sauvegarde\_joueur()}{charger\_sauvegarde\_joueur()}}
 {\footnotesize\ttfamily joueur\+\_\+t$\ast$ charger\+\_\+sauvegarde\+\_\+joueur (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom\+\_\+sauv,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj,  }\item[{joueur\+\_\+t $\ast$}]{joueurs\mbox{[}$\,$\mbox{]},  }\item[{unsigned short int}]{nb\+\_\+joueurs }\end{DoxyParamCaption})}
 
-\begin{DoxyAuthor}{Auteur}
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\+\_\+sauv} & Le fichier de sauvegarde \\
+\hline
+{\em f\+\_\+src\+\_\+obj} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Instance nouvellement allouée du type joueur\+\_\+t contenant les informations du joueur
+\end{DoxyReturn}
+Fonction qui charge une sauvegarde au format J\+S\+ON. \begin{DoxyAuthor}{Auteur}
 Ange Despert
 \end{DoxyAuthor}
 Cette fonction va récupérer les informations dans la sauvegarde au format J\+S\+ON. ~\newline
@@ -242,11 +252,11 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \includegraphics[width=328pt]{dd/dce/personnage_8c_a33613b3a2b55cb1d1855a39a288fb230_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{personnage_8c_ab68f6351493aa149688eead017c960bb}\label{personnage_8c_ab68f6351493aa149688eead017c960bb}} 
+\mbox{\Hypertarget{personnage_8c_a6ba18ba0f6072ebcfceca1d6b8ade72f}\label{personnage_8c_a6ba18ba0f6072ebcfceca1d6b8ade72f}} 
 \index{personnage.c@{personnage.c}!distance\_joueur@{distance\_joueur}}
 \index{distance\_joueur@{distance\_joueur}!personnage.c@{personnage.c}}
 \doxysubsubsection{\texorpdfstring{distance\_joueur()}{distance\_joueur()}}
-{\footnotesize\ttfamily distance\+\_\+joueur (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{collision,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int distance\+\_\+joueur (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{collision,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Bruneau Antoine 
@@ -265,21 +275,21 @@ Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=315pt]{dd/dce/personnage_8c_ab68f6351493aa149688eead017c960bb_cgraph}
+\includegraphics[width=315pt]{dd/dce/personnage_8c_a6ba18ba0f6072ebcfceca1d6b8ade72f_cgraph}
 \end{center}
 \end{figure}
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=302pt]{dd/dce/personnage_8c_ab68f6351493aa149688eead017c960bb_icgraph}
+\includegraphics[width=302pt]{dd/dce/personnage_8c_a6ba18ba0f6072ebcfceca1d6b8ade72f_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{personnage_8c_a18d648a90aa6d5e19507093449173ced}\label{personnage_8c_a18d648a90aa6d5e19507093449173ced}} 
+\mbox{\Hypertarget{personnage_8c_a14f8330d9598f09daba245654f27af2a}\label{personnage_8c_a14f8330d9598f09daba245654f27af2a}} 
 \index{personnage.c@{personnage.c}!distance\_x\_joueur@{distance\_x\_joueur}}
 \index{distance\_x\_joueur@{distance\_x\_joueur}!personnage.c@{personnage.c}}
 \doxysubsubsection{\texorpdfstring{distance\_x\_joueur()}{distance\_x\_joueur()}}
-{\footnotesize\ttfamily distance\+\_\+x\+\_\+joueur (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{collision,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int distance\+\_\+x\+\_\+joueur (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{collision,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Bruneau Antoine 
@@ -298,14 +308,14 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=348pt]{dd/dce/personnage_8c_a18d648a90aa6d5e19507093449173ced_icgraph}
+\includegraphics[width=348pt]{dd/dce/personnage_8c_a14f8330d9598f09daba245654f27af2a_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{personnage_8c_a4b121b256058246d32d23d14f23924e1}\label{personnage_8c_a4b121b256058246d32d23d14f23924e1}} 
+\mbox{\Hypertarget{personnage_8c_a0ae422db30a3dda1ba20e3e77a9a4db3}\label{personnage_8c_a0ae422db30a3dda1ba20e3e77a9a4db3}} 
 \index{personnage.c@{personnage.c}!distance\_y\_joueur@{distance\_y\_joueur}}
 \index{distance\_y\_joueur@{distance\_y\_joueur}!personnage.c@{personnage.c}}
 \doxysubsubsection{\texorpdfstring{distance\_y\_joueur()}{distance\_y\_joueur()}}
-{\footnotesize\ttfamily distance\+\_\+y\+\_\+joueur (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{collision,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int distance\+\_\+y\+\_\+joueur (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{collision,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Bruneau Antoine 
@@ -324,7 +334,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=348pt]{dd/dce/personnage_8c_a4b121b256058246d32d23d14f23924e1_icgraph}
+\includegraphics[width=348pt]{dd/dce/personnage_8c_a0ae422db30a3dda1ba20e3e77a9a4db3_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{personnage_8c_af2dceb23f5144e7a12b009f113a8e203}\label{personnage_8c_af2dceb23f5144e7a12b009f113a8e203}} 
@@ -366,6 +376,17 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{environnement\_joueurs()}{environnement\_joueurs()}}
 {\footnotesize\ttfamily void environnement\+\_\+joueurs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste\+\_\+monstres,  }\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste\+\_\+sorts,  }\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste\+\_\+coffres,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{int}]{nb\+\_\+joueur }\end{DoxyParamCaption})}
 
+
+\begin{DoxyParams}{Paramètres}
+{\em liste\+\_\+monstres} & La liste des monstres du jeu \\
+\hline
+{\em liste\+\_\+sorts} & La liste des sorts du jeu \\
+\hline
+{\em liste\+\_\+coffres} & La liste des coffres du jeu \\
+\hline
+{\em joueur} & Le joueur interagissant avec l\textquotesingle{}environnement du jeu \\
+\hline
+\end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -454,6 +475,21 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{new\_joueur()}{new\_joueur()}}
 {\footnotesize\ttfamily joueur\+\_\+t$\ast$ new\+\_\+joueur (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom,  }\item[{int}]{num\+\_\+j,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em nom} & Le nom du joueur \\
+\hline
+{\em num\+\_\+j} & La place du joueur dans le tableau des joueurs \\
+\hline
+{\em f\+\_\+src\+\_\+obj} & Le fichier source des objets du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Instance nouvellement allouée du type joueur\+\_\+t contenant les informations du joueur 
+\end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}

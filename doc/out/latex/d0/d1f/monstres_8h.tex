@@ -71,20 +71,20 @@ void $\ast$ \mbox{\hyperlink{monstres_8h_a6aad1d29b1b026e32f5e3704a9afa2a4}{ajou
 \begin{DoxyCompactList}\small\item\em Fonction de \char`\"{}call back\char`\"{} qui retourne une structure monstre. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{monstres_8h_a39bc5f12a20a36602fe4dd9ad428de89}{detruire\+\_\+monstre\+\_\+cb}} (void $\ast$monstre)
 \begin{DoxyCompactList}\small\item\em Fonction de \char`\"{}call back\char`\"{} qui détruit une structure monstre. \end{DoxyCompactList}\item 
-monstre\+\_\+t $\ast$ \mbox{\hyperlink{monstres_8h_a59111ee22050f72202e7a958275b05f4}{creer\+\_\+monstre}} (liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$\mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}}, const char $\ast$const nom\+\_\+monstre, int x, int y, t\+\_\+map $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
+\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$ \mbox{\hyperlink{monstres_8h_a59111ee22050f72202e7a958275b05f4}{creer\+\_\+monstre}} (\mbox{\hyperlink{structliste__base__monstres__t}{liste\+\_\+base\+\_\+monstres\+\_\+t}} $\ast$\mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}}, const char $\ast$const nom\+\_\+monstre, int x, int y, t\+\_\+map $\ast$\mbox{\hyperlink{map_8h_a4bacbbb5c2d9a6cbd19ca4cba0dac1ae}{map}})
 \item 
-void \mbox{\hyperlink{monstres_8h_a240fa28630c14d22ce9e82e28247b349}{detruire\+\_\+liste\+\_\+base\+\_\+monstres}} (liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$$\ast$\mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}})
+void \mbox{\hyperlink{monstres_8h_a240fa28630c14d22ce9e82e28247b349}{detruire\+\_\+liste\+\_\+base\+\_\+monstres}} (\mbox{\hyperlink{structliste__base__monstres__t}{liste\+\_\+base\+\_\+monstres\+\_\+t}} $\ast$$\ast$\mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}})
 \item 
-void \mbox{\hyperlink{monstres_8h_ae475ce68edaa0a8f29e6df495043bebf}{charger\+\_\+base\+\_\+monstre}} (char $\ast$chemin\+\_\+fichier, liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$$\ast$\mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}})
+void \mbox{\hyperlink{monstres_8h_ae475ce68edaa0a8f29e6df495043bebf}{charger\+\_\+base\+\_\+monstre}} (char $\ast$chemin\+\_\+fichier, \mbox{\hyperlink{structliste__base__monstres__t}{liste\+\_\+base\+\_\+monstres\+\_\+t}} $\ast$$\ast$\mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}})
 \begin{DoxyCompactList}\small\item\em Fonction qui recopie les informations d\textquotesingle{}un fichier json pour les insérer dans la structure liste\+\_\+base\+\_\+monstres. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{monstres_8h_a52b27e40a8e179d58dbf20268f75e988}{action\+\_\+monstre}} (monstre\+\_\+t $\ast$monstre, joueur\+\_\+t $\ast$joueur)
+void \mbox{\hyperlink{monstres_8h_a52b27e40a8e179d58dbf20268f75e988}{action\+\_\+monstre}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre, joueur\+\_\+t $\ast$joueur)
 \begin{DoxyCompactList}\small\item\em Fonction qui met à jour le sprite d\textquotesingle{}un monstre en fonction d\textquotesingle{}un joueur. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{monstres_8h_a99490a386439839dbe510f00783d1904}{type\+\_\+monstre\+\_\+t}} \mbox{\hyperlink{monstres_8h_a46bbe288759d918b5391361c7abf41d5}{nom\+\_\+monstre\+\_\+to\+\_\+type\+\_\+monstre}} (const char $\ast$const nom\+\_\+monstre)
 \begin{DoxyCompactList}\small\item\em Convertit une chaîne de caractères en type de monstre. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$ \mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}}
+\mbox{\hyperlink{structliste__base__monstres__t}{liste\+\_\+base\+\_\+monstres\+\_\+t}} $\ast$ \mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}}
 \end{DoxyCompactItemize}
 
 
@@ -212,7 +212,7 @@ T\+Y\+P\+E\+\_\+\+M\+O\+N\+S\+T\+R\+E\+\_\+\+I\+N\+C\+O\+N\+NU&\\
 \index{monstres.h@{monstres.h}!action\_monstre@{action\_monstre}}
 \index{action\_monstre@{action\_monstre}!monstres.h@{monstres.h}}
 \doxysubsubsection{\texorpdfstring{action\_monstre()}{action\_monstre()}}
-{\footnotesize\ttfamily void action\+\_\+monstre (\begin{DoxyParamCaption}\item[{monstre\+\_\+t $\ast$}]{monstre,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void action\+\_\+monstre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Bruneau Antoine 
@@ -273,7 +273,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{monstres.h@{monstres.h}!charger\_base\_monstre@{charger\_base\_monstre}}
 \index{charger\_base\_monstre@{charger\_base\_monstre}!monstres.h@{monstres.h}}
 \doxysubsubsection{\texorpdfstring{charger\_base\_monstre()}{charger\_base\_monstre()}}
-{\footnotesize\ttfamily void charger\+\_\+base\+\_\+monstre (\begin{DoxyParamCaption}\item[{char $\ast$}]{chemin\+\_\+fichier,  }\item[{liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$$\ast$}]{liste\+\_\+base\+\_\+monstres }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void charger\+\_\+base\+\_\+monstre (\begin{DoxyParamCaption}\item[{char $\ast$}]{chemin\+\_\+fichier,  }\item[{\mbox{\hyperlink{structliste__base__monstres__t}{liste\+\_\+base\+\_\+monstres\+\_\+t}} $\ast$$\ast$}]{liste\+\_\+base\+\_\+monstres }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Bruneau Antoine 
@@ -296,7 +296,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{monstres.h@{monstres.h}!creer\_monstre@{creer\_monstre}}
 \index{creer\_monstre@{creer\_monstre}!monstres.h@{monstres.h}}
 \doxysubsubsection{\texorpdfstring{creer\_monstre()}{creer\_monstre()}}
-{\footnotesize\ttfamily monstre\+\_\+t$\ast$ creer\+\_\+monstre (\begin{DoxyParamCaption}\item[{liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$}]{liste\+\_\+base\+\_\+monstres,  }\item[{const char $\ast$const}]{nom\+\_\+monstre,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{t\+\_\+map $\ast$}]{map }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}}$\ast$ creer\+\_\+monstre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structliste__base__monstres__t}{liste\+\_\+base\+\_\+monstres\+\_\+t}} $\ast$}]{liste\+\_\+base\+\_\+monstres,  }\item[{const char $\ast$const}]{nom\+\_\+monstre,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{t\+\_\+map $\ast$}]{map }\end{DoxyParamCaption})}
 
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
@@ -316,7 +316,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{monstres.h@{monstres.h}!detruire\_liste\_base\_monstres@{detruire\_liste\_base\_monstres}}
 \index{detruire\_liste\_base\_monstres@{detruire\_liste\_base\_monstres}!monstres.h@{monstres.h}}
 \doxysubsubsection{\texorpdfstring{detruire\_liste\_base\_monstres()}{detruire\_liste\_base\_monstres()}}
-{\footnotesize\ttfamily void detruire\+\_\+liste\+\_\+base\+\_\+monstres (\begin{DoxyParamCaption}\item[{liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$$\ast$}]{liste\+\_\+base\+\_\+monstres }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void detruire\+\_\+liste\+\_\+base\+\_\+monstres (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structliste__base__monstres__t}{liste\+\_\+base\+\_\+monstres\+\_\+t}} $\ast$$\ast$}]{liste\+\_\+base\+\_\+monstres }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{monstres_8h_a39bc5f12a20a36602fe4dd9ad428de89}\label{monstres_8h_a39bc5f12a20a36602fe4dd9ad428de89}} 
 \index{monstres.h@{monstres.h}!detruire\_monstre\_cb@{detruire\_monstre\_cb}}
@@ -377,5 +377,5 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{monstres.h@{monstres.h}!liste\_base\_monstres@{liste\_base\_monstres}}
 \index{liste\_base\_monstres@{liste\_base\_monstres}!monstres.h@{monstres.h}}
 \doxysubsubsection{\texorpdfstring{liste\_base\_monstres}{liste\_base\_monstres}}
-{\footnotesize\ttfamily liste\+\_\+base\+\_\+monstres\+\_\+t$\ast$ liste\+\_\+base\+\_\+monstres}
+{\footnotesize\ttfamily \mbox{\hyperlink{structliste__base__monstres__t}{liste\+\_\+base\+\_\+monstres\+\_\+t}}$\ast$ liste\+\_\+base\+\_\+monstres}
 

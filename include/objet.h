@@ -34,7 +34,7 @@ typedef enum{
 }t_item;
 
 /**
- * \struct struct objet_t
+ * \struct objet_t
  * \brief Structure objet
  * \author Max Descomps
  */
@@ -51,7 +51,6 @@ typedef struct objet_s {
 }objet_t;
 
 /**
- * \fn objet_t *creer_objet(const int id, const char * const texture_src, const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit)
  * \brief Créé un objet du jeu
  * \author Max Descomps
  * \param id L'identificateur de l'objet
@@ -67,7 +66,6 @@ typedef struct objet_s {
 extern objet_t *creer_objet(const int id, const char * const texture_src, const t_item type, const char * nom, const short int niveau, const int att, const int def, const int vit);
 
 /**
- * \fn void detruire_objet(objet_t **obj)
  * \brief Libère la mémoire allouée à un objet
  * \author Max Descomps
  * \param obj L'objet à libérer
@@ -75,7 +73,6 @@ extern objet_t *creer_objet(const int id, const char * const texture_src, const 
 extern void detruire_objet(objet_t **obj);
 
 /**
- * \fn void afficher_objet(objet_t * obj)
  * \brief Affiche les caractéristiques d'un objet dans la console
  * \author Max Descomps
  * \param obj L'objet à afficher

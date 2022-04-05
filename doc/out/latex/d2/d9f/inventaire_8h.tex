@@ -32,17 +32,17 @@ struct \mbox{\hyperlink{structinventaire__s}{inventaire\+\_\+t}}
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$ \mbox{\hyperlink{inventaire_8h_a1ee5b996c2d2ca56746853c114efc34f}{creer\+\_\+inventaire}} ()
+\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$ \mbox{\hyperlink{inventaire_8h_a04985ed606c1860dcdee97c4ac5d3aaa}{creer\+\_\+inventaire}} ()
 \begin{DoxyCompactList}\small\item\em Créé un inventaire. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{inventaire_8h_a1b70bc002675692d62ba7d5343341fd3}{changement\+\_\+statistiques}} (joueur\+\_\+t $\ast$joueur)
 \begin{DoxyCompactList}\small\item\em Fonction qui permet de modifier les statistiques du joueur selon ses objets équipés. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{inventaire_8h_a699ab6b7030b61f08e85b59355360a04}{equiper\+\_\+objet}} (joueur\+\_\+t $\ast$joueur, objet\+\_\+t $\ast$$\ast$objet)
+void \mbox{\hyperlink{inventaire_8h_a699ab6b7030b61f08e85b59355360a04}{equiper\+\_\+objet}} (joueur\+\_\+t $\ast$joueur, \mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$$\ast$objet)
 \begin{DoxyCompactList}\small\item\em Fonction qui permet de passer un objet du sac(non-\/équipé) à un emplacement d\textquotesingle{}équipement(équipé) dans l\textquotesingle{}inventaire. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{inventaire_8h_afbcc0f721ebc471ac4fb9cafd97fb77a}{desequiper}} (joueur\+\_\+t $\ast$joueur, objet\+\_\+t $\ast$$\ast$objet)
+void \mbox{\hyperlink{inventaire_8h_afbcc0f721ebc471ac4fb9cafd97fb77a}{desequiper}} (joueur\+\_\+t $\ast$joueur, \mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$$\ast$objet)
 \begin{DoxyCompactList}\small\item\em Fonction qui permet de passer un objet d\textquotesingle{}un emplacement d\textquotesingle{}équipement(équipé) au sac(non-\/équipé) dans l\textquotesingle{}inventaire. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{inventaire_8h_a1144d923a9a0174ae254109cd825c758}{ramasser\+\_\+objet}} (objet\+\_\+t $\ast$objet, \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$inventaire)
+void \mbox{\hyperlink{inventaire_8h_a1144d923a9a0174ae254109cd825c758}{ramasser\+\_\+objet}} (\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$objet, \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$inventaire)
 \begin{DoxyCompactList}\small\item\em Fonction qui permet de mettre un objet trouvé dans le sac(inventaire) \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{inventaire_8h_a8e7fe87d00260fd538a5b966b7cfec05}{tout\+\_\+ramasser}} (lobjet\+\_\+t $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}}, \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$inventaire)
+void \mbox{\hyperlink{inventaire_8h_a8e7fe87d00260fd538a5b966b7cfec05}{tout\+\_\+ramasser}} (\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$\mbox{\hyperlink{liste__objet_8h_ad412be52cbf2eb978fac0c2c2e8e3c82}{objets}}, \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$inventaire)
 \begin{DoxyCompactList}\small\item\em Met tous les objets du jeu dans l\textquotesingle{}inventaire (sac) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{inventaire_8h_a5475fde997270b9d30ea85049950f141}{detruire\+\_\+inventaire}} (\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$$\ast$inventaire)
 \begin{DoxyCompactList}\small\item\em Détruit un inventaire. \end{DoxyCompactList}\item 
@@ -121,11 +121,11 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \includegraphics[width=329pt]{d2/d9f/inventaire_8h_a085bd391d754f81253408e0754ded991_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{inventaire_8h_a1ee5b996c2d2ca56746853c114efc34f}\label{inventaire_8h_a1ee5b996c2d2ca56746853c114efc34f}} 
+\mbox{\Hypertarget{inventaire_8h_a04985ed606c1860dcdee97c4ac5d3aaa}\label{inventaire_8h_a04985ed606c1860dcdee97c4ac5d3aaa}} 
 \index{inventaire.h@{inventaire.h}!creer\_inventaire@{creer\_inventaire}}
 \index{creer\_inventaire@{creer\_inventaire}!inventaire.h@{inventaire.h}}
 \doxysubsubsection{\texorpdfstring{creer\_inventaire()}{creer\_inventaire()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$ creer\+\_\+inventaire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}}$\ast$ creer\+\_\+inventaire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -137,7 +137,7 @@ Instance nouvellement allouée du type \mbox{\hyperlink{structinventaire__t}{inv
 \index{inventaire.h@{inventaire.h}!desequiper@{desequiper}}
 \index{desequiper@{desequiper}!inventaire.h@{inventaire.h}}
 \doxysubsubsection{\texorpdfstring{desequiper()}{desequiper()}}
-{\footnotesize\ttfamily void desequiper (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{objet\+\_\+t $\ast$$\ast$}]{objet }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void desequiper (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$$\ast$}]{objet }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -225,7 +225,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{inventaire.h@{inventaire.h}!equiper\_objet@{equiper\_objet}}
 \index{equiper\_objet@{equiper\_objet}!inventaire.h@{inventaire.h}}
 \doxysubsubsection{\texorpdfstring{equiper\_objet()}{equiper\_objet()}}
-{\footnotesize\ttfamily void equiper\+\_\+objet (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{objet\+\_\+t $\ast$$\ast$}]{objet }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void equiper\+\_\+objet (\begin{DoxyParamCaption}\item[{joueur\+\_\+t $\ast$}]{joueur,  }\item[{\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$$\ast$}]{objet }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -285,7 +285,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{inventaire.h@{inventaire.h}!ramasser\_objet@{ramasser\_objet}}
 \index{ramasser\_objet@{ramasser\_objet}!inventaire.h@{inventaire.h}}
 \doxysubsubsection{\texorpdfstring{ramasser\_objet()}{ramasser\_objet()}}
-{\footnotesize\ttfamily void ramasser\+\_\+objet (\begin{DoxyParamCaption}\item[{objet\+\_\+t $\ast$}]{objet,  }\item[{\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$}]{inventaire }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void ramasser\+\_\+objet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$}]{objet,  }\item[{\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$}]{inventaire }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -306,7 +306,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{inventaire.h@{inventaire.h}!tout\_ramasser@{tout\_ramasser}}
 \index{tout\_ramasser@{tout\_ramasser}!inventaire.h@{inventaire.h}}
 \doxysubsubsection{\texorpdfstring{tout\_ramasser()}{tout\_ramasser()}}
-{\footnotesize\ttfamily void tout\+\_\+ramasser (\begin{DoxyParamCaption}\item[{lobjet\+\_\+t $\ast$}]{objets,  }\item[{\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$}]{inventaire }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void tout\+\_\+ramasser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlobjet__t}{lobjet\+\_\+t}} $\ast$}]{objets,  }\item[{\mbox{\hyperlink{structinventaire__t}{inventaire\+\_\+t}} $\ast$}]{inventaire }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 

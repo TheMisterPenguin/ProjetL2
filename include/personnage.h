@@ -124,7 +124,6 @@ void stoper_mouvement_joueurs(joueur_t ** joueurs);
 extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, const int maxPdv, const int pdv, const int attaque, const int defense, const int vitesse, const byte trig[TAILLE_TRIGGER], const t_direction_1 orient, const bool bouclier_equipe, const int num_j, char * f_src_obj);
 
 /**
- * \fn joueur_t *new_joueur(const char* nom, int num_j, char * f_src_obj)
  * \brief Fonction de création d'un joueur correspondant au modèle standard du jeu
  * \author Ange Despert
  * 
@@ -136,7 +135,6 @@ extern joueur_t *creer_joueur(const char *nom, const int niveau, const int xp, c
 extern joueur_t *new_joueur(const char* nom, int num_j, char * f_src_obj);
 
 /**
- * \fn void detruire_joueur(joueur_t *j)
  * \brief Fonction qui détruit un joueur
  * \author Max Descomps
  * 
@@ -145,7 +143,6 @@ extern joueur_t *new_joueur(const char* nom, int num_j, char * f_src_obj);
 extern void detruire_joueur(joueur_t *j);
 
 /**
- * \fn joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj)
  * \brief Fonction qui charge une sauvegarde du jeu
  * \param nom_sauv Le fichier de sauvegarde
  * \param f_src_obj 
@@ -168,14 +165,12 @@ extern void detruire_joueur(joueur_t *j);
 extern joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char *f_src_obj, joueur_t *joueurs[], unsigned short int nb_joueurs);
 
 /**
- * \fn void maj_statistiques(joueur_t* perso)
  * \brief Fonction qui met à jour les statistiques d'un joueur lors d'un passage de niveau
  * \param perso Le joueur qui passe un niveau
  */
 extern void maj_statistiques(joueur_t* perso);
 
 /**
- * \fn void afficher_statistiques(joueur_t* perso)
  * \brief Fonction qui affiche les statistiques d'un joueur dans la console
  * \author Rafael Doneau
  * \author Max Descomps
@@ -184,14 +179,12 @@ extern void maj_statistiques(joueur_t* perso);
 extern void afficher_statistiques(joueur_t* perso);
 
 /**
- * \fn void levelup(joueur_t* perso)
  * \brief Fonction qui gère le passage de niveau d'un joueur
  * \param perso Le joueur qui passe un niveau
  */
 extern void levelup(joueur_t* perso);
 
 /**
- * \fn void gain_xp(joueur_t* perso)
  * \brief Fonction qui gère les effets d'un gain d'expérience
  * \param perso Le joueur qui gagne de l'expérience
  */
@@ -218,7 +211,6 @@ extern void creer_sauvegarde_json(joueur_t *j);
 void check_repertoire_jeux();
 
 /**
- * \fn void environnement_joueur(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t * joueur)
  * \brief Fonction qui gère les effets de l'environnement sur le joueur
  * \param liste_monstres La liste des monstres du jeu
  * \param liste_sorts La liste des sorts du jeu
@@ -228,7 +220,6 @@ void check_repertoire_jeux();
 void environnement_joueurs(list * liste_monstres, list * liste_sorts, list * liste_coffres, joueur_t ** joueurs, int nb_joueur);
 
 /**
- * \fn distance_x_joueur(SDL_Rect collision, joueur_t * joueur);
  * \brief Renvoie la distance séparant le joueur d'une entité définit par sa collision sur l'axe des abscisses
  * \author Bruneau Antoine
  * \param collision la zone de collision de l'entité
@@ -238,7 +229,6 @@ void environnement_joueurs(list * liste_monstres, list * liste_sorts, list * lis
 extern int distance_x_joueur(SDL_Rect collision, joueur_t * joueur);
 
 /**
- * \fn distance_y_joueur(SDL_Rect collision, joueur_t * joueur);
  * \brief Renvoie la distance séparant le joueur d'une entité définit par sa collision sur l'axe des ordonnées
  * \author Bruneau Antoine
  * \param collision la zone de collision de l'entité
@@ -248,7 +238,6 @@ extern int distance_x_joueur(SDL_Rect collision, joueur_t * joueur);
 extern int distance_y_joueur(SDL_Rect collision, joueur_t * joueur);
 
 /**
- * \fn distance_joueur(SDL_Rect collision, joueur_t * joueur);
  * \brief Renvoie la distance séparant le joueur d'une entité définit par sa collision
  * \author Bruneau Antoine
  * \param collision la zone de collision de l'entité

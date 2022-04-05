@@ -13,7 +13,6 @@
 #include "definition_commun.h"
 
 /**
- * \fn void RenderHPBar(int x, int y, int w, int h, float pourcent, SDL_Color vie, SDL_Color jauge)
  * \brief Fonction qui affiche une barre de vie horizontale
  * \author Max Descomps
  * \param x position horizontale de la barre

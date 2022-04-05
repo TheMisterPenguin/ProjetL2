@@ -73,11 +73,11 @@ void \mbox{\hyperlink{personnage_8h_a1a3324d2dc734d1d45b92a562e61ae18}{stoper\+\
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8h_a7a8ebac300fecd46fbce04ea84cfbd4d}{creer\+\_\+joueur}} (const char $\ast$nom, const int niveau, const int xp, const int max\+Pdv, const int pdv, const int attaque, const int defense, const int vitesse, const \mbox{\hyperlink{definition__commun_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} trig\mbox{[}200\mbox{]}, const \mbox{\hyperlink{definition__commun_8h_a13e1e2bc88dbbeed269e17c3f1ba831f}{t\+\_\+direction\+\_\+1}} orient, const \+\_\+\+Bool bouclier\+\_\+equipe, const int num\+\_\+j, char $\ast$f\+\_\+src\+\_\+obj)
 \begin{DoxyCompactList}\small\item\em Creer un joueur. \end{DoxyCompactList}\item 
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8h_a7737c7514f9c4f5c01ff698b97544c2c}{new\+\_\+joueur}} (const char $\ast$nom, int num\+\_\+j, char $\ast$f\+\_\+src\+\_\+obj)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction de création d\textquotesingle{}un joueur correspondant au modèle standard du jeu. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8h_a33613b3a2b55cb1d1855a39a288fb230}{detruire\+\_\+joueur}} (joueur\+\_\+t $\ast$j)
 \begin{DoxyCompactList}\small\item\em Fonction qui détruit un joueur. \end{DoxyCompactList}\item 
 joueur\+\_\+t $\ast$ \mbox{\hyperlink{personnage_8h_ad8c439be63cc83e7b5c4a0d33f62f639}{charger\+\_\+sauvegarde\+\_\+joueur}} (char $\ast$nom\+\_\+sauv, char $\ast$f\+\_\+src\+\_\+obj, joueur\+\_\+t $\ast$joueurs\mbox{[}$\,$\mbox{]}, unsigned short int nb\+\_\+joueurs)
-\begin{DoxyCompactList}\small\item\em Fonction qui charge une sauvegarde au format J\+S\+ON. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui charge une sauvegarde du jeu. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8h_aefc1334467e64a267f85c13fb2146714}{maj\+\_\+statistiques}} (joueur\+\_\+t $\ast$perso)
 \begin{DoxyCompactList}\small\item\em Fonction qui met à jour les statistiques d\textquotesingle{}un joueur lors d\textquotesingle{}un passage de niveau. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8h_a5036a38157418caf698d5662fddeb947}{afficher\+\_\+statistiques}} (joueur\+\_\+t $\ast$perso)
@@ -91,7 +91,7 @@ void \mbox{\hyperlink{personnage_8h_a9ce711c80691bb2b4f29e7c58790851a}{creer\+\_
 void \mbox{\hyperlink{personnage_8h_a1674d581294113dd43ec58636bd57802}{check\+\_\+repertoire\+\_\+jeux}} ()
 \begin{DoxyCompactList}\small\item\em Fonction gère le répertoire de jeux. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{personnage_8h_aadc96b5c1e76a0574f5759d63bc46e39}{environnement\+\_\+joueurs}} (\mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+monstres, \mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+sorts, \mbox{\hyperlink{structlist}{list}} $\ast$liste\+\_\+coffres, joueur\+\_\+t $\ast$$\ast$joueurs, int nb\+\_\+joueur)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les effets de l\textquotesingle{}environnement sur le joueur. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{personnage_8h_a14f8330d9598f09daba245654f27af2a}{distance\+\_\+x\+\_\+joueur}} (S\+D\+L\+\_\+\+Rect collision, joueur\+\_\+t $\ast$joueur)
 \begin{DoxyCompactList}\small\item\em Renvoie la distance séparant le joueur d\textquotesingle{}une entité définit par sa collision sur l\textquotesingle{}axe des abscisses. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{personnage_8h_a0ae422db30a3dda1ba20e3e77a9a4db3}{distance\+\_\+y\+\_\+joueur}} (S\+D\+L\+\_\+\+Rect collision, joueur\+\_\+t $\ast$joueur)
@@ -259,7 +259,17 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{charger\_sauvegarde\_joueur()}{charger\_sauvegarde\_joueur()}}
 {\footnotesize\ttfamily joueur\+\_\+t$\ast$ charger\+\_\+sauvegarde\+\_\+joueur (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom\+\_\+sauv,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj,  }\item[{joueur\+\_\+t $\ast$}]{joueurs\mbox{[}$\,$\mbox{]},  }\item[{unsigned short int}]{nb\+\_\+joueurs }\end{DoxyParamCaption})}
 
-\begin{DoxyAuthor}{Auteur}
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\+\_\+sauv} & Le fichier de sauvegarde \\
+\hline
+{\em f\+\_\+src\+\_\+obj} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Instance nouvellement allouée du type joueur\+\_\+t contenant les informations du joueur
+\end{DoxyReturn}
+Fonction qui charge une sauvegarde au format J\+S\+ON. \begin{DoxyAuthor}{Auteur}
 Ange Despert
 \end{DoxyAuthor}
 Cette fonction va récupérer les informations dans la sauvegarde au format J\+S\+ON. ~\newline
@@ -498,6 +508,17 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{environnement\_joueurs()}{environnement\_joueurs()}}
 {\footnotesize\ttfamily void environnement\+\_\+joueurs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste\+\_\+monstres,  }\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste\+\_\+sorts,  }\item[{\mbox{\hyperlink{structlist}{list}} $\ast$}]{liste\+\_\+coffres,  }\item[{joueur\+\_\+t $\ast$$\ast$}]{joueurs,  }\item[{int}]{nb\+\_\+joueur }\end{DoxyParamCaption})}
 
+
+\begin{DoxyParams}{Paramètres}
+{\em liste\+\_\+monstres} & La liste des monstres du jeu \\
+\hline
+{\em liste\+\_\+sorts} & La liste des sorts du jeu \\
+\hline
+{\em liste\+\_\+coffres} & La liste des coffres du jeu \\
+\hline
+{\em joueur} & Le joueur interagissant avec l\textquotesingle{}environnement du jeu \\
+\hline
+\end{DoxyParams}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -586,6 +607,21 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{new\_joueur()}{new\_joueur()}}
 {\footnotesize\ttfamily joueur\+\_\+t$\ast$ new\+\_\+joueur (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom,  }\item[{int}]{num\+\_\+j,  }\item[{char $\ast$}]{f\+\_\+src\+\_\+obj }\end{DoxyParamCaption})}
 
+\begin{DoxyAuthor}{Auteur}
+Ange Despert
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Paramètres}
+{\em nom} & Le nom du joueur \\
+\hline
+{\em num\+\_\+j} & La place du joueur dans le tableau des joueurs \\
+\hline
+{\em f\+\_\+src\+\_\+obj} & Le fichier source des objets du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Instance nouvellement allouée du type joueur\+\_\+t contenant les informations du joueur 
+\end{DoxyReturn}
 Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
