@@ -22,6 +22,7 @@
 liste_base_monstres_t * liste_base_monstres = NULL;
 
 void detruire_monstre(monstre_t ** monstre){
+    free((*monstre)->texture);
     free(*monstre);
     *monstre = NULL;
 }
@@ -284,7 +285,8 @@ void monstre_blesse(monstre_t * monstre){
 }
 
 void action_monstre(monstre_t * monstre, joueur_t * joueur){
-    bool deplacement = 1;
+    bool deplacement = vrai;
+
     monstre->texture->aff_fenetre->x = monstre->collision.x - floor(13 * monstre->texture->multipli_taille);
     monstre->texture->aff_fenetre->y = monstre->collision.y - floor(13 * monstre->texture->multipli_taille);
     (monstre->duree)--;
@@ -293,9 +295,9 @@ void action_monstre(monstre_t * monstre, joueur_t * joueur){
         monstre_blesse(monstre);
     }
 
-    else if(monstre->action == MONSTRE_MARCHER || monstre->action == MONSTRE_EN_GARDE){
+    else if(monstre->action != MONSTRE_ATTAQUE && monstre->action != RUSH_OU_FUITE){
         //si le monstre détecte le joueur
-        if(distance_joueur(monstre->collision, joueur) < DISTANCE_AGRO){
+        if(distance_joueur(monstre->collision, joueur) < DISTANCE_AGRO && monstre->action != MONSTRE_PAUSE){
             monstre->action = RUSH_OU_FUITE;
             monstre->duree = DUREE_RUSH_OU_FUITE;
         }
@@ -308,14 +310,14 @@ void action_monstre(monstre_t * monstre, joueur_t * joueur){
     if(compteur%2 == 0 && (monstre->action == MONSTRE_MARCHER || monstre->action == RUSH_OU_FUITE || monstre->action == MONSTRE_BLESSE) ){
 
         switch(monstre->orientation){
-            case(NORD_1): deplacement_y_entite(map, monstre->texture, -1, &(monstre->collision) ); break;
-            case(EST_1): deplacement_x_entite(map, monstre->texture, 1, &(monstre->collision) ); break;
-            case(SUD_1): deplacement_y_entite(map, monstre->texture, 1, &(monstre->collision) ); break;
-            case(OUEST_1): deplacement_x_entite(map, monstre->texture, -1, &(monstre->collision) ); break;
+            case(NORD_1): deplacement = deplacement_y_entite(map, monstre->texture, -1, &(monstre->collision) ); break;
+            case(EST_1): deplacement = deplacement_x_entite(map, monstre->texture, 1, &(monstre->collision) ); break;
+            case(SUD_1): deplacement = deplacement_y_entite(map, monstre->texture, 1, &(monstre->collision) ); break;
+            case(OUEST_1): deplacement = deplacement_x_entite(map, monstre->texture, -1, &(monstre->collision) ); break;
             default: break;
         }
-        //si bloquer par une entité
-        if(!deplacement)
+        //si bloquer par une entité, faire une action
+        if(deplacement == faux)
             monstre->duree = 0;
     }
 }
