@@ -424,7 +424,7 @@ void detruire_map(t_map **map, joueur_t *joueurs[], unsigned short int nb_joueur
             }
             else
             {                                                         /* Les autres joueurs */
-                if (temp == &joueurs[0]->statut->vrai_zone_collision) /* On évite la collision du joueur (variable statique) */
+                if (temp == &joueurs[i]->statut->zone_colision) /* On évite la collision du joueur (variable statique) */
                     goto next_collision;                              /* On passe à la collision suivante */
             }
         }
