@@ -1,0 +1,29 @@
+{
+    "id" : 3,
+    "file-path" : "ressources/background/map/dungeon.bmp",
+    "width" : 20, 
+    "height" : 17,
+    "taille case" : 32,
+    "starting-point" : [5, 5],
+    "monsters" : [
+        /*{"type" : "knight",
+        "position" : [350,300]},
+        {"type" : "witcher",
+        "position" : [600,290]}*/
+    ],
+    "zones tp" : [
+        {
+            "x" : 7,
+            "y" : 1,
+            "w" : 2,
+            "h" : 2,
+            "destination" : 2,
+            "coords" : [80,80]
+        }
+    ],
+    "wall" : [
+    
+    ],
+    "chest" : [
+    ]
+}
