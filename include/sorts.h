@@ -46,7 +46,7 @@ typedef struct sort_s {
 }sort_t;
 
 /**
- * \struct struct base_sort
+ * \struct base_sort_t
  * \brief Structure contenant les propiétées d'origine des sorts (modèles de sort)
  * \author Bruneau Antoine
  */
