@@ -66,13 +66,13 @@
         }
     ],
     "chest" : [
-        /*{"type" : "profilferme",
+        {"type" : "profilferme",
         "position" : [15,12],
-        "id_cle": 9,
+        "id_cle": 0,
         "id_loot": 3},
         {"type" : "faceferme",
         "position" : [10,10],
         "id_cle": 0,
-        "id_loot": 5}*/
+        "id_loot": 5}
     ]
 }

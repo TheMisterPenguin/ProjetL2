@@ -34,8 +34,8 @@ void fermer_programme(int code_erreur){
         en_tete(liste_animations);
         while(!hors_liste(liste_animations)){
             text_anim = valeur_elt(liste_animations);
-            free(text_anim->aff_fenetre);
-            text_anim->aff_fenetre = NULL;
+            if(text_anim->aff_fenetre)
+                text_anim->aff_fenetre = NULL;
             suivant(liste_animations);
         }
     }

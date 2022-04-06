@@ -77,7 +77,7 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs, char * f_src_ob
             case TOUCHE_CONSOMMABLE :
                 if(joueur1->inventaire->equipe->liste[consommable] != NULL){
                     consommer_objet(joueur1);
-                    text_copier_position(heal, joueur1->textures_joueur->liste[0]); // amélioration: centrer pour toutes les tailles
+                    text_copier_position(heal, joueur1->textures_joueur->liste[0]);
                     joueur1->statut->duree_anim = DUREE_SOIN;
                     joueur1->statut->animation = SOIN;
                 }
@@ -113,7 +113,7 @@ static void keyDown(SDL_KeyboardEvent * ev, joueur_t ** joueurs, char * f_src_ob
             case SDLK_RETURN :
                 if(joueur2->inventaire->equipe->liste[consommable] != NULL){
                     consommer_objet(joueur2);
-                    text_copier_position(heal, joueur2->textures_joueur->liste[0]); // amélioration: centrer pour toutes les tailles
+                    text_copier_position(heal, joueur2->textures_joueur->liste[0]);
                     joueur2->statut->duree_anim = DUREE_SOIN;
                     joueur2->statut->animation = SOIN;
                 }
@@ -268,7 +268,7 @@ static void joystick_button_up(SDL_JoyButtonEvent *ev, joueur_t **j)
             if(joueur->inventaire->equipe->liste[consommable] != NULL){
                 joueur->statut->en_mouvement = faux;
                 consommer_objet(joueur);
-                text_copier_position(heal, joueur->textures_joueur->liste[0]); // amélioration: centrer pour toutes les tailles
+                text_copier_position(heal, joueur->textures_joueur->liste[0]);
                 joueur->statut->duree_anim = DUREE_SOIN;
                 joueur->statut->animation = SOIN;
             }
@@ -388,6 +388,7 @@ static void mouseButtonUp(SDL_MouseButtonEvent * ev, joueur_t ** joueurs){
             statut->animation = RIEN;
         /* faire l'animation de protection du personnage */
         else if(statut->bouclier_equipe == vrai && statut->duree_anim <= 0){
+            text_copier_position(bloquer, joueur->textures_joueur->liste[0]);
             statut->animation = BLOQUER;
             statut->duree_anim = DUREE_BLOQUER;
         }

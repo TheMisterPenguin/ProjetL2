@@ -952,8 +952,7 @@ bool deplacement_y_joueur_secondaire(t_map *m, joueur_t * joueur, int y, SDL_Rec
 }
 
 void text_copier_position(t_aff * a_modifier, const t_aff * const original){
-    a_modifier->aff_fenetre->x = original->aff_fenetre->x;
-    a_modifier->aff_fenetre->y = original->aff_fenetre->y;
+    a_modifier->aff_fenetre = original->aff_fenetre;
 }
 
 
@@ -1107,6 +1106,8 @@ bool deplacement_y_entite(t_map *m, t_aff *texture, int y, SDL_Rect *r)
 }
 
 void init_animations(){
+    t_aff * text_anim = NULL;
+
     liste_animations = init_liste(NULL, NULL, NULL);
 
     heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
@@ -1114,6 +1115,15 @@ void init_animations(){
 
     bloquer = (creer_texture("ressources/sprite/bloquer.bmp", TAILLE_CASE, TAILLE_CASE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
     ajout_droit(liste_animations, bloquer);
+
+    //les aff_fenetre des animations pointent sur celle du joueur, inutile de leur allouer une aff_fenetre
+    en_tete(liste_animations);
+    while(!hors_liste(liste_animations)){
+        text_anim = valeur_elt(liste_animations);
+        free(text_anim->aff_fenetre);
+        text_anim->aff_fenetre = NULL;
+        suivant(liste_animations);
+    }
 }
 
 t_aff * next_frame_animation(joueur_t * joueur){ //actualiser position anim!
@@ -1148,8 +1158,6 @@ t_aff * next_frame_animation(joueur_t * joueur){ //actualiser position anim!
             /* clignotement de l'animtion bouclier */
             if ((compteur % 2) == 0) 
             {   
-                /* centrer l'animation sur la texture du joueur */
-                place_rect_center_from_point(bloquer->aff_fenetre, get_rect_center_coord(joueur->textures_joueur->liste[0]->aff_fenetre) );
                 return bloquer;
             }
             else
