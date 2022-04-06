@@ -239,6 +239,7 @@ extern int distance_y_joueur(SDL_Rect collision, joueur_t * joueur);
  */
 extern int distance_joueur(SDL_Rect collision, joueur_t * joueur);
 
+SDL_Rect * zone_en_dehors_hitbox(SDL_Rect * hitbox,SDL_Rect * sprite, t_direction_2 orient);
 
 
 #endif
