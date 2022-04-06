@@ -88,8 +88,6 @@ void desequiper(joueur_t * joueur, objet_t ** objet){
         (equipe->nb)--;
 
         changement_statistiques(joueur);
-        afficher_statistiques(joueur);
-
     }
 }
 
