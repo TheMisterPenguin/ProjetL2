@@ -1126,44 +1126,47 @@ void init_animations(){
     }
 }
 
-t_aff * next_frame_animation(joueur_t * joueur){ //actualiser position anim!
+t_aff * next_frame_animation(joueur_t * joueur){
     statut_t * statut = joueur->statut;
 
-     statut->duree_anim--;
-
+    //CAS D'ANIMATION D'UN SPRITESHEET
     if (statut->animation == SOIN)
     {
-        if ((compteur % 2) == 0 || statut->duree_anim == DUREE_SOIN) //cadence d'affichage et avec premier affichage immédiat dans tous les cas
+        if ((compteur % 2) == 0 || statut->duree_anim == DUREE_SOIN) //cadence d'affichage avec premier affichage immédiat dans tous les cas
         {
             /*si on a fait le tour du spritesheet soin, l'animation est terminée*/
             if (statut->duree_anim <= 0)
-                statut->action = RIEN;
+                statut->animation = RIEN;
             next_frame_x_indice(heal, (DUREE_SOIN - statut->duree_anim)%5);
             next_frame_y_indice(heal, (DUREE_SOIN - statut->duree_anim)/5);
 
+            statut->duree_anim--;
         }
-            return heal;
+        return heal; //afficher animation
     }
 
+    //CAS D'ANIMATION D'UNE IMAGE
     if (statut->animation == BLOQUER)
     {
+        statut->duree_anim--; //on decremente en premier pour atteindre le cas d'arret 0 (sinon on n'entre pas dans la fonction)
         /* animation terminé */
         if (statut->duree_anim <= 0){
                 statut->animation = RIEN;
-                statut->duree_anim = DUREE_BLOQUER*1.5;
+                statut->duree_anim = DUREE_BLOQUER*1.5; // empêche de réutiliser le bouclier tout de suite
         }
         /* animation non terminé */
         else
         {   
             /* clignotement de l'animtion bouclier */
-            if ((compteur % 2) == 0) 
-            {   
-                return bloquer;
-            }
-            else
-                return NULL;
+
+            if ((compteur % 4) == 0) //cadence d'affichage
+                return bloquer; //afficher animation
+
+            return NULL; //ne rien afficher
         }
     }
+
+    statut->duree_anim--;
 
     return NULL;
 
