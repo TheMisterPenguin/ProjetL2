@@ -106,7 +106,7 @@ int main(int argc, char** argv)
     init_liste_base_sort(liste_base_monstres);
     
     /* On charge la map */
-    map = charger_map("map/2.json");
+    map = charger_map("map/1.json");
 
     /* On créer le joueur */    
     joueurs[0] = new_joueur("joueur1", 0, "ressources/objet/objet.txt");
