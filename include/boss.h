@@ -46,7 +46,6 @@ typedef enum
 }action_boss_1_t;
 
 /**
- * \struct monstre_t
  * \brief Structure contenant les propriétées du boss
  * \author Bruneau Antoine
  */

@@ -23,9 +23,9 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structsort__s}{sort\+\_\+s}}
-\item 
+\begin{DoxyCompactList}\small\item\em Structure contenant les propriétées d\textquotesingle{}un sort en jeu. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structbase__sort__s}{base\+\_\+sort\+\_\+s}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Structure contenant les propiétées d\textquotesingle{}origine des sorts (modèles de sort) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,18 +51,18 @@ void \mbox{\hyperlink{sorts_8h_a74e6634055a4bff2d4549dcdd61d2fe1}{detruire\+\_\+
 \begin{DoxyCompactList}\small\item\em Fonction de \char`\"{}call back\char`\"{} qui détruit une structure sort. \end{DoxyCompactList}\item 
 void $\ast$ \mbox{\hyperlink{sorts_8h_a5d205646ab54eca44ee60431d4e50d2f}{ajouter\+\_\+sort\+\_\+cb}} (void $\ast$sort)
 \begin{DoxyCompactList}\small\item\em Fonction de \char`\"{}call back\char`\"{} qui retourne une structure sort. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{sorts_8h_ae82fb5b016e1dedf4926b1d5434ce4c3}{init\+\_\+liste\+\_\+base\+\_\+sort}} (\mbox{\hyperlink{structliste__base__monstres__t}{liste\+\_\+base\+\_\+monstres\+\_\+t}} $\ast$\mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}})
+void \mbox{\hyperlink{sorts_8h_ae82fb5b016e1dedf4926b1d5434ce4c3}{init\+\_\+liste\+\_\+base\+\_\+sort}} (liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$\mbox{\hyperlink{monstres_8h_a7ff46bf4d15844c9062cf8d0352d445f}{liste\+\_\+base\+\_\+monstres}})
 \begin{DoxyCompactList}\small\item\em Fonction qui initialise le tableau de modèles de sort. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{sorts_8h_ae58ae0350fa823a85aaff7b988b4ce9c}{creer\+\_\+sort\+\_\+monstre}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre, joueur\+\_\+t $\ast$joueur)
+void \mbox{\hyperlink{sorts_8h_ae58ae0350fa823a85aaff7b988b4ce9c}{creer\+\_\+sort\+\_\+monstre}} (monstre\+\_\+t $\ast$monstre, joueur\+\_\+t $\ast$joueur)
 \begin{DoxyCompactList}\small\item\em Fonction qui creer un sort orienté vers le joueur. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{sorts_8h_a44a3ba7f362e1bc16846beb415ee22f6}{action\+\_\+sort}} (\mbox{\hyperlink{structsort__t}{sort\+\_\+t}} $\ast$sort, joueur\+\_\+t $\ast$joueur)
+void \mbox{\hyperlink{sorts_8h_a44a3ba7f362e1bc16846beb415ee22f6}{action\+\_\+sort}} (sort\+\_\+t $\ast$sort, joueur\+\_\+t $\ast$joueur)
 \begin{DoxyCompactList}\small\item\em Fonction qui gère le déplacement du sort sur la map. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{sorts_8h_a780d77b20da701ce7042b3aaed80fdc2}{orienter\+\_\+sort\+\_\+vers\+\_\+joueur}} (\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$monstre, \mbox{\hyperlink{structsort__t}{sort\+\_\+t}} $\ast$sort, joueur\+\_\+t $\ast$joueur)
+void \mbox{\hyperlink{sorts_8h_a780d77b20da701ce7042b3aaed80fdc2}{orienter\+\_\+sort\+\_\+vers\+\_\+joueur}} (monstre\+\_\+t $\ast$monstre, sort\+\_\+t $\ast$sort, joueur\+\_\+t $\ast$joueur)
 \begin{DoxyCompactList}\small\item\em Fonction qui met à jour la texture sort de façon à ce qu\textquotesingle{}elle soit orienté vers le joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structbase__sort__t}{base\+\_\+sort\+\_\+t}} \mbox{\hyperlink{sorts_8h_a6cca8065cbd6ec101b272dbf1c00e094}{liste\+\_\+base\+\_\+sort}} \mbox{[}3\mbox{]}
+base\+\_\+sort\+\_\+t \mbox{\hyperlink{sorts_8h_a6cca8065cbd6ec101b272dbf1c00e094}{liste\+\_\+base\+\_\+sort}} \mbox{[}3\mbox{]}
 \end{DoxyCompactItemize}
 
 
@@ -134,7 +134,7 @@ S\+P\+\_\+\+B\+O\+S\+S\+\_\+\+S\+P\+L\+IT&le sort \char`\"{}split\char`\"{} qui 
 \index{sorts.h@{sorts.h}!action\_sort@{action\_sort}}
 \index{action\_sort@{action\_sort}!sorts.h@{sorts.h}}
 \doxysubsubsection{\texorpdfstring{action\_sort()}{action\_sort()}}
-{\footnotesize\ttfamily void action\+\_\+sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsort__t}{sort\+\_\+t}} $\ast$}]{sort,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void action\+\_\+sort (\begin{DoxyParamCaption}\item[{sort\+\_\+t $\ast$}]{sort,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Bruneau Antoine 
@@ -181,7 +181,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{sorts.h@{sorts.h}!creer\_sort\_monstre@{creer\_sort\_monstre}}
 \index{creer\_sort\_monstre@{creer\_sort\_monstre}!sorts.h@{sorts.h}}
 \doxysubsubsection{\texorpdfstring{creer\_sort\_monstre()}{creer\_sort\_monstre()}}
-{\footnotesize\ttfamily void creer\+\_\+sort\+\_\+monstre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void creer\+\_\+sort\+\_\+monstre (\begin{DoxyParamCaption}\item[{monstre\+\_\+t $\ast$}]{monstre,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Bruneau Antoine 
@@ -239,7 +239,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{sorts.h@{sorts.h}!init\_liste\_base\_sort@{init\_liste\_base\_sort}}
 \index{init\_liste\_base\_sort@{init\_liste\_base\_sort}!sorts.h@{sorts.h}}
 \doxysubsubsection{\texorpdfstring{init\_liste\_base\_sort()}{init\_liste\_base\_sort()}}
-{\footnotesize\ttfamily void init\+\_\+liste\+\_\+base\+\_\+sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structliste__base__monstres__t}{liste\+\_\+base\+\_\+monstres\+\_\+t}} $\ast$}]{liste\+\_\+base\+\_\+monstres }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void init\+\_\+liste\+\_\+base\+\_\+sort (\begin{DoxyParamCaption}\item[{liste\+\_\+base\+\_\+monstres\+\_\+t $\ast$}]{liste\+\_\+base\+\_\+monstres }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Bruneau Antoine 
@@ -260,7 +260,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{sorts.h@{sorts.h}!orienter\_sort\_vers\_joueur@{orienter\_sort\_vers\_joueur}}
 \index{orienter\_sort\_vers\_joueur@{orienter\_sort\_vers\_joueur}!sorts.h@{sorts.h}}
 \doxysubsubsection{\texorpdfstring{orienter\_sort\_vers\_joueur()}{orienter\_sort\_vers\_joueur()}}
-{\footnotesize\ttfamily void orienter\+\_\+sort\+\_\+vers\+\_\+joueur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmonstre__t}{monstre\+\_\+t}} $\ast$}]{monstre,  }\item[{\mbox{\hyperlink{structsort__t}{sort\+\_\+t}} $\ast$}]{sort,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void orienter\+\_\+sort\+\_\+vers\+\_\+joueur (\begin{DoxyParamCaption}\item[{monstre\+\_\+t $\ast$}]{monstre,  }\item[{sort\+\_\+t $\ast$}]{sort,  }\item[{joueur\+\_\+t $\ast$}]{joueur }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Bruneau Antoine 
@@ -295,5 +295,5 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{sorts.h@{sorts.h}!liste\_base\_sort@{liste\_base\_sort}}
 \index{liste\_base\_sort@{liste\_base\_sort}!sorts.h@{sorts.h}}
 \doxysubsubsection{\texorpdfstring{liste\_base\_sort}{liste\_base\_sort}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structbase__sort__t}{base\+\_\+sort\+\_\+t}} liste\+\_\+base\+\_\+sort\mbox{[}3\mbox{]}}
+{\footnotesize\ttfamily base\+\_\+sort\+\_\+t liste\+\_\+base\+\_\+sort\mbox{[}3\mbox{]}}
 

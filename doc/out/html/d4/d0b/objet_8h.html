@@ -103,7 +103,7 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7d/structobjet__s.html">objet_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définition de la structure objet.  <a href="../../da/d7d/structobjet__s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure objet.  <a href="../../da/d7d/structobjet__s.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -127,13 +127,13 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a85e95708f68baa868d64811e0259c340"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d8d/structobjet__t.html">objet_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0b/objet_8h.html#a85e95708f68baa868d64811e0259c340">creer_objet</a> (const int id, const char *const texture_src, const <a class="el" href="../../d4/d0b/objet_8h.html#a5164672bbab2547df809744bf0af3dc9">t_item</a> type, const char *nom, const short int niveau, const int att, const int def, const int vit)</td></tr>
+<tr class="memitem:a85e95708f68baa868d64811e0259c340"><td class="memItemLeft" align="right" valign="top">objet_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0b/objet_8h.html#a85e95708f68baa868d64811e0259c340">creer_objet</a> (const int id, const char *const texture_src, const <a class="el" href="../../d4/d0b/objet_8h.html#a5164672bbab2547df809744bf0af3dc9">t_item</a> type, const char *nom, const short int niveau, const int att, const int def, const int vit)</td></tr>
 <tr class="memdesc:a85e95708f68baa868d64811e0259c340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créé un objet du jeu.  <a href="../../d4/d0b/objet_8h.html#a85e95708f68baa868d64811e0259c340">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a85e95708f68baa868d64811e0259c340"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9903bbbae9d8ad00d41b6e903d459877"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0b/objet_8h.html#a9903bbbae9d8ad00d41b6e903d459877">detruire_objet</a> (<a class="el" href="../../d6/d8d/structobjet__t.html">objet_t</a> **obj)</td></tr>
+<tr class="memitem:a9903bbbae9d8ad00d41b6e903d459877"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0b/objet_8h.html#a9903bbbae9d8ad00d41b6e903d459877">detruire_objet</a> (objet_t **obj)</td></tr>
 <tr class="memdesc:a9903bbbae9d8ad00d41b6e903d459877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la mémoire allouée à un objet.  <a href="../../d4/d0b/objet_8h.html#a9903bbbae9d8ad00d41b6e903d459877">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a9903bbbae9d8ad00d41b6e903d459877"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cad7222129cd23bfca9ab8d94885f39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0b/objet_8h.html#a0cad7222129cd23bfca9ab8d94885f39">afficher_objet</a> (<a class="el" href="../../d6/d8d/structobjet__t.html">objet_t</a> *obj)</td></tr>
+<tr class="memitem:a0cad7222129cd23bfca9ab8d94885f39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0b/objet_8h.html#a0cad7222129cd23bfca9ab8d94885f39">afficher_objet</a> (objet_t *obj)</td></tr>
 <tr class="memdesc:a0cad7222129cd23bfca9ab8d94885f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche les caractéristiques d'un objet dans la console.  <a href="../../d4/d0b/objet_8h.html#a0cad7222129cd23bfca9ab8d94885f39">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a0cad7222129cd23bfca9ab8d94885f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -198,7 +198,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void afficher_objet </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/d8d/structobjet__t.html">objet_t</a> *&#160;</td>
+          <td class="paramtype">objet_t *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -230,7 +230,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d6/d8d/structobjet__t.html">objet_t</a>* creer_objet </td>
+          <td class="memname">objet_t* creer_objet </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>id</em>, </td>
@@ -298,7 +298,7 @@ Voici le graphe des appelants de cette fonction :</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Instance nouvellement allouée du type <a class="el" href="../../d6/d8d/structobjet__t.html" title="Structure objet.">objet_t</a> ou NULL </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Instance nouvellement allouée du type objet_t ou NULL </dd></dl>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -321,7 +321,7 @@ Voici le graphe des appelants de cette fonction :</div>
         <tr>
           <td class="memname">void detruire_objet </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/d8d/structobjet__t.html">objet_t</a> **&#160;</td>
+          <td class="paramtype">objet_t **&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>

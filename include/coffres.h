@@ -44,7 +44,6 @@ typedef enum {
 }etat_coffre_t;
 
 /**
- * \struct coffre_t
  * \brief Structure contenant les propriétées du coffre
  * \author Max Descomps
  */
@@ -60,7 +59,6 @@ typedef struct coffre_s
 } coffre_t;
 
 /**
- * \struct base_coffre_s
  * \brief Structure contenant les propiétées du coffre importé
  * \author Max Descomps
  */
@@ -72,7 +70,6 @@ typedef struct base_coffre_s
 }base_coffre_t;
 
 /**
- * \struct liste_base_coffres_s
  * \brief Structure contenant un tableau avec tous les coffres possibles du jeu
  * \author Max Descomps
  */

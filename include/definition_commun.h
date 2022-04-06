@@ -26,6 +26,8 @@
 extern unsigned int FENETRE_LONGUEUR; /**<La longueur de la fenêtre obtenue par requête SDL*/
 extern unsigned int FENETRE_LARGEUR; /**<La largeur de la fenêtre obtenue par requête SDL*/
 typedef unsigned char byte; /**<Type servant pour des triggers faisant la taille d'un octet*/
+
+
 typedef struct point {int x,y;}point; /**<Un point*/
 
 /**

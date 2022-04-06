@@ -34,7 +34,6 @@ typedef enum{
 }t_item;
 
 /**
- * \struct objet_t
  * \brief Structure objet
  * \author Max Descomps
  */

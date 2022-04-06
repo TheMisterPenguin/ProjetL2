@@ -50,7 +50,6 @@ typedef enum
 }action_monstre_t;
 
 /**
- * \struct monstre_t
  * \brief Structure contenant les propriétées du monstre en jeu
  * \author Bruneau Antoine
  */
@@ -69,7 +68,6 @@ typedef struct monstre_s
 } monstre_t;
 
 /**
- * \struct base_monstre_t
  * \brief Structure contenant les propiétées du modèle d'un monstre
  * \author Bruneau Antoine
  */
@@ -85,7 +83,6 @@ typedef struct base_monstre_s
 }base_monstre_t;
 
 /**
- * \struct liste_base_monstres_t
  * \brief Structure contenant un tableau avec tous les monstres différent(modèle de monstre) que l'on peut utiliser dans le jeu 
  * \author Bruneau Antoine
  */
