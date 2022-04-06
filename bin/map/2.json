@@ -1,6 +1,7 @@
 {
     "id" : 2,
-    "file-path" : "ressources/background/map/outside_sanada.bmp",
+    "file-path" : "ressources/background/map/outside_sanada_v2.bmp",
+    "superposition": "ressources/background/map/outside_sanada_superpose_v2.bmp",
     "width" : 55, //30 cases de 16px mais une cases de la map fait 32px en réalité
     "height" : 35,
     "taille case" : 32,
