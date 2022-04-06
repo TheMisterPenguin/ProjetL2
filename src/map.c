@@ -331,7 +331,7 @@ t_map * charger_map(const char * const nom_map){
         x2 = json_object_array_get_idx(JSON_position2,0);
         y2 = json_object_array_get_idx(JSON_position2,1);
 
-        nv_coffre = creer_coffre(json_object_get_int(id_cle), json_object_get_int(id_loot), liste_base_coffres, json_object_get_string(nom_coffre), json_object_get_int(x2), json_object_get_int(y2), m);
+        nv_coffre = creer_coffre(json_object_get_int(id_cle), json_object_get_int(id_loot), liste_base_coffres, json_object_get_string(nom_coffre), json_object_get_int(x2) * m->taille_case, json_object_get_int(y2) * m->taille_case, m);
         ajout_droit(m->liste_coffres, nv_coffre);
         en_queue(m->liste_collisions);
 
