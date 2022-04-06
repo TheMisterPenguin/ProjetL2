@@ -118,8 +118,8 @@ coffre_t* creer_coffre(int id_cle, int id_loot, liste_base_coffres_t* liste_base
             coffre->id_cle = id_cle;
             coffre->id_loot = id_loot;
             coffre->type = nom_coffre_to_type_coffre(nom_coffre);
-            coffre->collision.x = x * TAILLE_CASE;
-            coffre->collision.y = y * TAILLE_CASE;
+            coffre->collision.x = x;
+            coffre->collision.y = y;
             coffre->collision.w = liste_base_coffres->tab[i].hitbox.w * TAILLE_CASE;
             coffre->collision.h = liste_base_coffres->tab[i].hitbox.h * TAILLE_CASE;
 
