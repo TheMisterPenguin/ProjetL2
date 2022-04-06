@@ -74,12 +74,15 @@ $(function() {
 <div class="title">Référence du fichier boss.h</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Fichier contenant les définitions et les fonctions liées au module boss.  
+<a href="#details">Plus de détails...</a></p>
 <div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de boss.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../de/d5f/boss_8h__incl.png" border="0" usemap="#boss_8h" alt=""/></div>
 <map name="boss_8h" id="boss_8h">
-<area shape="rect" title=" " alt="" coords="53,5,117,32"/>
+<area shape="rect" title="Fichier contenant les définitions et les fonctions liées au module boss." alt="" coords="53,5,117,32"/>
 <area shape="rect" href="../../d1/daa/definition__commun_8h.html" title="Contient toutes les définitions communes à tout les fichiers." alt="" coords="5,80,164,107"/>
 </map>
 </div>
@@ -88,8 +91,8 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="../../d3/d6d/boss_8h__dep__incl.png" border="0" usemap="#boss_8hdep" alt=""/></div>
 <map name="boss_8hdep" id="boss_8hdep">
-<area shape="rect" title=" " alt="" coords="5,5,69,32"/>
-<area shape="rect" href="../../de/dde/boss_8c.html" title=" " alt="" coords="6,80,69,107"/>
+<area shape="rect" title="Fichier contenant les définitions et les fonctions liées au module boss." alt="" coords="5,5,69,32"/>
+<area shape="rect" href="../../de/dde/boss_8c.html" title="Fichier contenant toutes les fonctions concernant les bosses." alt="" coords="6,80,69,107"/>
 </map>
 </div>
 </div>
@@ -98,6 +101,7 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0a/structboss__s.html">boss_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure contenant les propriétées du boss.  <a href="../../db/d0a/structboss__s.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -112,6 +116,7 @@ Macros</h2></td></tr>
 <tr class="memitem:acafe30937d00eb2874a9caea110fcd18"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d62/boss_8h.html#acafe30937d00eb2874a9caea110fcd18">type_boss_1_t</a> { <a class="el" href="../../d2/d62/boss_8h.html#acafe30937d00eb2874a9caea110fcd18ab393d5de1ff6210cd0b14c1ddc7bfa0b">PRINCIPAL</a>, 
 <a class="el" href="../../d2/d62/boss_8h.html#acafe30937d00eb2874a9caea110fcd18a8ac05165348dbbb5a6012c3ce80ea4d4">CLONE</a>
  }</td></tr>
+<tr class="memdesc:acafe30937d00eb2874a9caea110fcd18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le type du boss.  <a href="../../d2/d62/boss_8h.html#acafe30937d00eb2874a9caea110fcd18">Plus de détails...</a><br /></td></tr>
 <tr class="separator:acafe30937d00eb2874a9caea110fcd18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeda1fe0013f5323e689b47703bc4d27"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d62/boss_8h.html#afeda1fe0013f5323e689b47703bc4d27">action_boss_1_t</a> { <br />
 &#160;&#160;<a class="el" href="../../d2/d62/boss_8h.html#afeda1fe0013f5323e689b47703bc4d27ac26dca8e8783a6af6f2fb51ce4df1a5b">AVANT_ATTAQUE</a>, 
@@ -128,6 +133,7 @@ Macros</h2></td></tr>
 <a class="el" href="../../d2/d62/boss_8h.html#afeda1fe0013f5323e689b47703bc4d27a65108094ab6552376db4a66e5b2d02f9">BLESSE</a>
 <br />
  }</td></tr>
+<tr class="memdesc:afeda1fe0013f5323e689b47703bc4d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'énumération des actions(phases) du boss.  <a href="../../d2/d62/boss_8h.html#afeda1fe0013f5323e689b47703bc4d27">Plus de détails...</a><br /></td></tr>
 <tr class="separator:afeda1fe0013f5323e689b47703bc4d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
@@ -176,17 +182,28 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Cela permet de savoir dans quelle état est le boss </p>
 <table class="fieldtable">
-<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27ac26dca8e8783a6af6f2fb51ce4df1a5b"></a>AVANT_ATTAQUE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a25bcde05c5212e81fe5fc42833d52b05"></a>AVANT_DISPARITION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a0c3df9673d62e08f6a0fc1a01f97456b"></a>DISPARITION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a46f683b0ca58e023bc69166612a18c12"></a>APPARITION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a4124184df7f23763b5f4632e616a263c"></a>DEPLACEMENT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a70c3712cf958573a15ce5f5cd738eb55"></a>ATTAQUE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a031fe5e154a96f85c034f6ba509060b4"></a>MORT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a30afc7f466c796d07ff85c5d2b1c2241"></a>CLONAGE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a41a5a4cb5fbf48bfbd9b04faf6816765"></a>SOMMEIL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a65108094ab6552376db4a66e5b2d02f9"></a>BLESSE&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27ac26dca8e8783a6af6f2fb51ce4df1a5b"></a>AVANT_ATTAQUE&#160;</td><td class="fielddoc"><p>attante avant l'attaque </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a25bcde05c5212e81fe5fc42833d52b05"></a>AVANT_DISPARITION&#160;</td><td class="fielddoc"><p>attente avant disparition </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a0c3df9673d62e08f6a0fc1a01f97456b"></a>DISPARITION&#160;</td><td class="fielddoc"><p>disparition du boss </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a46f683b0ca58e023bc69166612a18c12"></a>APPARITION&#160;</td><td class="fielddoc"><p>apparition du boss </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a4124184df7f23763b5f4632e616a263c"></a>DEPLACEMENT&#160;</td><td class="fielddoc"><p>deplacement du boss </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a70c3712cf958573a15ce5f5cd738eb55"></a>ATTAQUE&#160;</td><td class="fielddoc"><p>attaque du boss </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a031fe5e154a96f85c034f6ba509060b4"></a>MORT&#160;</td><td class="fielddoc"><p>mort du boss </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a30afc7f466c796d07ff85c5d2b1c2241"></a>CLONAGE&#160;</td><td class="fielddoc"><p>clonage du boss </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a41a5a4cb5fbf48bfbd9b04faf6816765"></a>SOMMEIL&#160;</td><td class="fielddoc"><p>attent l'apparition du joueur </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afeda1fe0013f5323e689b47703bc4d27a65108094ab6552376db4a66e5b2d02f9"></a>BLESSE&#160;</td><td class="fielddoc"><p>boss subit une attaque </p>
+</td></tr>
 </table>
 
 </div>

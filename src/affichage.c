@@ -1113,7 +1113,7 @@ void init_animations(){
     heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
     ajout_droit(liste_animations, heal);
 
-    bloquer = (creer_texture("ressources/sprite/bloquer.bmp", TAILLE_CASE, TAILLE_CASE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
+    bloquer = (creer_texture("ressources/sprite/bloquer.bmp", -1, -1, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
     ajout_droit(liste_animations, bloquer);
 
     //les aff_fenetre des animations pointent sur celle du joueur, inutile de leur allouer une aff_fenetre
@@ -1126,44 +1126,48 @@ void init_animations(){
     }
 }
 
-t_aff * next_frame_animation(joueur_t * joueur){ //actualiser position anim!
+t_aff * next_frame_animation(joueur_t * joueur){
     statut_t * statut = joueur->statut;
+    int cpt;
 
-     statut->duree_anim--;
-
+    //CAS D'ANIMATION D'UN SPRITESHEET
     if (statut->animation == SOIN)
     {
-        if ((compteur % 2) == 0 || statut->duree_anim == DUREE_SOIN) //cadence d'affichage et avec premier affichage immédiat dans tous les cas
+        if ((compteur % 2) == 0 || statut->duree_anim == DUREE_SOIN) //cadence d'affichage avec premier affichage immédiat dans tous les cas
         {
             /*si on a fait le tour du spritesheet soin, l'animation est terminée*/
             if (statut->duree_anim <= 0)
-                statut->action = RIEN;
+                statut->animation = RIEN;
             next_frame_x_indice(heal, (DUREE_SOIN - statut->duree_anim)%5);
             next_frame_y_indice(heal, (DUREE_SOIN - statut->duree_anim)/5);
 
+            statut->duree_anim--;
         }
-            return heal;
+        return heal; //afficher animation
     }
 
+    //CAS D'ANIMATION D'UNE IMAGE
     if (statut->animation == BLOQUER)
     {
+        statut->duree_anim--; //on decremente en premier pour atteindre le cas d'arret 0 (sinon on n'entre pas dans la fonction)
         /* animation terminé */
         if (statut->duree_anim <= 0){
                 statut->animation = RIEN;
-                statut->duree_anim = DUREE_BLOQUER*1.5;
+                statut->duree_anim = DUREE_BLOQUER*1.5; // empêche de réutiliser le bouclier tout de suite
         }
         /* animation non terminé */
         else
         {   
             /* clignotement de l'animtion bouclier */
-            if ((compteur % 2) == 0) 
-            {   
-                return bloquer;
-            }
-            else
-                return NULL;
+            cpt = compteur % 7;
+            if (cpt <= 4) //cadence d'affichage (affiche 5 fois sur 7)
+                return bloquer; //afficher animation
+
+            return NULL; //ne rien afficher
         }
     }
+
+    statut->duree_anim--;
 
     return NULL;
 

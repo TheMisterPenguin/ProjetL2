@@ -33,7 +33,6 @@ typedef enum
 }type_sort_t;
 
 /**
- * \struct sort_t
  * \brief Structure contenant les propriétées d'un sort en jeu
  * \author Bruneau Antoine
  */
@@ -46,7 +45,6 @@ typedef struct sort_s {
 }sort_t;
 
 /**
- * \struct struct base_sort
  * \brief Structure contenant les propiétées d'origine des sorts (modèles de sort)
  * \author Bruneau Antoine
  */

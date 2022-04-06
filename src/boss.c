@@ -3,9 +3,16 @@
 #include <sorts.h>
 #include <monstres.h>
 
+/**
+ * \file boss.c
+ * \author Antoine Bruneau
+ * \brief Fichier contenant toutes les fonctions concernant les bosses
+ * \version 0.1
+ * \date 05/04/2022
+ * \copyright Copyright (c) 2022
+ */
 
 /**
- * \fn void deplacement_boss_aleatoir(boss_t * boss);
  * \brief ...
  * \author Bruneau Antoine
  * \todo
@@ -15,7 +22,6 @@ void deplacement_boss_aleatoir(boss_t * boss){
 }
 
 /**
- * \fn boss_t * creer_boss_clone(boss_t * boss, t_aff * texture);
  * \brief ...
  * \author Bruneau Antoine
  * \todo
@@ -37,10 +43,8 @@ boss_t * creer_boss_clone(boss_t * boss, t_aff * texture){
 }
 
 /**
- * \fn void affichage_chargement_attaque_boss(t_aff * boule_1, t_aff * boule_2, int phase);
  * \brief   animation lancement d'un sort
  * \author Bruneau Antoine
- * \param sort le sort à détruire
  * \todo
  */
 void affichage_chargement_attaque_boss(t_aff * boule_1, t_aff * boule_2, int phase){
@@ -63,7 +67,6 @@ void affichage_chargement_attaque_boss(t_aff * boule_1, t_aff * boule_2, int pha
 }
 
 /**
- * \fn void affichage_clonage_boss(t_aff * boss, t_aff * clone_1, t_aff * clone_2, int phase);
  * \brief ...
  * \author Bruneau Antoine
  * \todo
@@ -85,7 +88,6 @@ void affichage_clonage_boss(t_aff * boss, t_aff * clone_1, t_aff * clone_2, int 
 }
 
 /**
- * \fn void intro_boss(boss_t * boss, boss_t * clone_1, boss_t * clone_2);
  * \brief ...
  * \author Bruneau Antoine
  * \todo
@@ -114,7 +116,6 @@ void intro_boss(boss_t * boss, boss_t * clone_1, boss_t * clone_2){
 }
 
 /**
- * \fn void afficher_boss(boss_t * boss);
  * \brief ...
  * \author Bruneau Antoine
  * \todo
@@ -136,7 +137,6 @@ void afficher_boss(boss_t * boss){
 }
 
 /**
- * \fn void afficher_bosses(boss_t * boss[3]);
  * \brief ...
  * \author Bruneau Antoine
  * \todo

@@ -1,7 +1,11 @@
 \hypertarget{boss_8h}{}\doxysection{Référence du fichier boss.\+h}
 \label{boss_8h}\index{boss.h@{boss.h}}
-Graphe des dépendances par inclusion de boss.\+h\+:
-\nopagebreak
+
+
+Fichier contenant les définitions et les fonctions liées au module boss.  
+
+
+Graphe des dépendances par inclusion de boss.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,7 +23,7 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structboss__s}{boss\+\_\+s}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Structure contenant les propriétées du boss. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,7 +37,7 @@ struct \mbox{\hyperlink{structboss__s}{boss\+\_\+s}}
 enum \mbox{\hyperlink{boss_8h_acafe30937d00eb2874a9caea110fcd18}{type\+\_\+boss\+\_\+1\+\_\+t}} \{ \mbox{\hyperlink{boss_8h_acafe30937d00eb2874a9caea110fcd18ab393d5de1ff6210cd0b14c1ddc7bfa0b}{P\+R\+I\+N\+C\+I\+P\+AL}}, 
 \mbox{\hyperlink{boss_8h_acafe30937d00eb2874a9caea110fcd18a8ac05165348dbbb5a6012c3ce80ea4d4}{C\+L\+O\+NE}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Le type du boss. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{boss_8h_afeda1fe0013f5323e689b47703bc4d27}{action\+\_\+boss\+\_\+1\+\_\+t}} \{ \newline
 \mbox{\hyperlink{boss_8h_afeda1fe0013f5323e689b47703bc4d27ac26dca8e8783a6af6f2fb51ce4df1a5b}{A\+V\+A\+N\+T\+\_\+\+A\+T\+T\+A\+Q\+UE}}, 
 \mbox{\hyperlink{boss_8h_afeda1fe0013f5323e689b47703bc4d27a25bcde05c5212e81fe5fc42833d52b05}{A\+V\+A\+N\+T\+\_\+\+D\+I\+S\+P\+A\+R\+I\+T\+I\+ON}}, 
@@ -48,7 +52,7 @@ enum \mbox{\hyperlink{boss_8h_afeda1fe0013f5323e689b47703bc4d27}{action\+\_\+bos
 \mbox{\hyperlink{boss_8h_afeda1fe0013f5323e689b47703bc4d27a41a5a4cb5fbf48bfbd9b04faf6816765}{S\+O\+M\+M\+E\+IL}}, 
 \mbox{\hyperlink{boss_8h_afeda1fe0013f5323e689b47703bc4d27a65108094ab6552376db4a66e5b2d02f9}{B\+L\+E\+S\+SE}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}énumération des actions(phases) du boss. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -88,45 +92,45 @@ Copyright (c) 2022
 \doxysubsubsection{\texorpdfstring{action\_boss\_1\_t}{action\_boss\_1\_t}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{boss_8h_afeda1fe0013f5323e689b47703bc4d27}{action\+\_\+boss\+\_\+1\+\_\+t}}}
 
-\begin{DoxyEnumFields}{Valeurs énumérées}
+Cela permet de savoir dans quelle état est le boss \begin{DoxyEnumFields}{Valeurs énumérées}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{AVANT\_ATTAQUE@{AVANT\_ATTAQUE}!boss.h@{boss.h}}\index{boss.h@{boss.h}!AVANT\_ATTAQUE@{AVANT\_ATTAQUE}}}\mbox{\Hypertarget{boss_8h_afeda1fe0013f5323e689b47703bc4d27ac26dca8e8783a6af6f2fb51ce4df1a5b}\label{boss_8h_afeda1fe0013f5323e689b47703bc4d27ac26dca8e8783a6af6f2fb51ce4df1a5b}} 
-A\+V\+A\+N\+T\+\_\+\+A\+T\+T\+A\+Q\+UE&\\
+A\+V\+A\+N\+T\+\_\+\+A\+T\+T\+A\+Q\+UE&attante avant l\textquotesingle{}attaque \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{AVANT\_DISPARITION@{AVANT\_DISPARITION}!boss.h@{boss.h}}\index{boss.h@{boss.h}!AVANT\_DISPARITION@{AVANT\_DISPARITION}}}\mbox{\Hypertarget{boss_8h_afeda1fe0013f5323e689b47703bc4d27a25bcde05c5212e81fe5fc42833d52b05}\label{boss_8h_afeda1fe0013f5323e689b47703bc4d27a25bcde05c5212e81fe5fc42833d52b05}} 
-A\+V\+A\+N\+T\+\_\+\+D\+I\+S\+P\+A\+R\+I\+T\+I\+ON&\\
+A\+V\+A\+N\+T\+\_\+\+D\+I\+S\+P\+A\+R\+I\+T\+I\+ON&attente avant disparition \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{DISPARITION@{DISPARITION}!boss.h@{boss.h}}\index{boss.h@{boss.h}!DISPARITION@{DISPARITION}}}\mbox{\Hypertarget{boss_8h_afeda1fe0013f5323e689b47703bc4d27a0c3df9673d62e08f6a0fc1a01f97456b}\label{boss_8h_afeda1fe0013f5323e689b47703bc4d27a0c3df9673d62e08f6a0fc1a01f97456b}} 
-D\+I\+S\+P\+A\+R\+I\+T\+I\+ON&\\
+D\+I\+S\+P\+A\+R\+I\+T\+I\+ON&disparition du boss \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{APPARITION@{APPARITION}!boss.h@{boss.h}}\index{boss.h@{boss.h}!APPARITION@{APPARITION}}}\mbox{\Hypertarget{boss_8h_afeda1fe0013f5323e689b47703bc4d27a46f683b0ca58e023bc69166612a18c12}\label{boss_8h_afeda1fe0013f5323e689b47703bc4d27a46f683b0ca58e023bc69166612a18c12}} 
-A\+P\+P\+A\+R\+I\+T\+I\+ON&\\
+A\+P\+P\+A\+R\+I\+T\+I\+ON&apparition du boss \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{DEPLACEMENT@{DEPLACEMENT}!boss.h@{boss.h}}\index{boss.h@{boss.h}!DEPLACEMENT@{DEPLACEMENT}}}\mbox{\Hypertarget{boss_8h_afeda1fe0013f5323e689b47703bc4d27a4124184df7f23763b5f4632e616a263c}\label{boss_8h_afeda1fe0013f5323e689b47703bc4d27a4124184df7f23763b5f4632e616a263c}} 
-D\+E\+P\+L\+A\+C\+E\+M\+E\+NT&\\
+D\+E\+P\+L\+A\+C\+E\+M\+E\+NT&deplacement du boss \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{ATTAQUE@{ATTAQUE}!boss.h@{boss.h}}\index{boss.h@{boss.h}!ATTAQUE@{ATTAQUE}}}\mbox{\Hypertarget{boss_8h_afeda1fe0013f5323e689b47703bc4d27a70c3712cf958573a15ce5f5cd738eb55}\label{boss_8h_afeda1fe0013f5323e689b47703bc4d27a70c3712cf958573a15ce5f5cd738eb55}} 
-A\+T\+T\+A\+Q\+UE&\\
+A\+T\+T\+A\+Q\+UE&attaque du boss \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MORT@{MORT}!boss.h@{boss.h}}\index{boss.h@{boss.h}!MORT@{MORT}}}\mbox{\Hypertarget{boss_8h_afeda1fe0013f5323e689b47703bc4d27a031fe5e154a96f85c034f6ba509060b4}\label{boss_8h_afeda1fe0013f5323e689b47703bc4d27a031fe5e154a96f85c034f6ba509060b4}} 
-M\+O\+RT&\\
+M\+O\+RT&mort du boss \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLONAGE@{CLONAGE}!boss.h@{boss.h}}\index{boss.h@{boss.h}!CLONAGE@{CLONAGE}}}\mbox{\Hypertarget{boss_8h_afeda1fe0013f5323e689b47703bc4d27a30afc7f466c796d07ff85c5d2b1c2241}\label{boss_8h_afeda1fe0013f5323e689b47703bc4d27a30afc7f466c796d07ff85c5d2b1c2241}} 
-C\+L\+O\+N\+A\+GE&\\
+C\+L\+O\+N\+A\+GE&clonage du boss \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{SOMMEIL@{SOMMEIL}!boss.h@{boss.h}}\index{boss.h@{boss.h}!SOMMEIL@{SOMMEIL}}}\mbox{\Hypertarget{boss_8h_afeda1fe0013f5323e689b47703bc4d27a41a5a4cb5fbf48bfbd9b04faf6816765}\label{boss_8h_afeda1fe0013f5323e689b47703bc4d27a41a5a4cb5fbf48bfbd9b04faf6816765}} 
-S\+O\+M\+M\+E\+IL&\\
+S\+O\+M\+M\+E\+IL&attent l\textquotesingle{}apparition du joueur \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{BLESSE@{BLESSE}!boss.h@{boss.h}}\index{boss.h@{boss.h}!BLESSE@{BLESSE}}}\mbox{\Hypertarget{boss_8h_afeda1fe0013f5323e689b47703bc4d27a65108094ab6552376db4a66e5b2d02f9}\label{boss_8h_afeda1fe0013f5323e689b47703bc4d27a65108094ab6552376db4a66e5b2d02f9}} 
-B\+L\+E\+S\+SE&\\
+B\+L\+E\+S\+SE&boss subit une attaque \\
 \hline
 
 \end{DoxyEnumFields}

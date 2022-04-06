@@ -19,7 +19,6 @@ typedef struct objet_s objet_t; /*Cette définition est la pour éviter une incl
 typedef struct inventaire_s inventaire_t; /*Cette définition est la pour éviter une inclusion mutuelle des fichiers liste_objet.h et inventaire.h*/
 
 /**
- * \struct lobjet_t
  * \brief Structure de liste d'objets
  * \author Descomps Max
  */

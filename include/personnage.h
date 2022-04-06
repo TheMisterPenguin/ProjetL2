@@ -105,7 +105,6 @@ void stoper_mouvement_joueurs(joueur_t ** joueurs);
  * \brief Creer un joueur
  * \authors Max Descomps
  * \authors Ange Despert
- * 
  * \param nom Le nom du joueur
  * \param niveau Le niveau du joueur
  * \param xp L'expérience du joueur

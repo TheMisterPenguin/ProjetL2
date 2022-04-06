@@ -15,11 +15,11 @@ Graphe des dépendances par inclusion de objet.\+c\+:\nopagebreak
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$ \mbox{\hyperlink{objet_8c_a85e95708f68baa868d64811e0259c340}{creer\+\_\+objet}} (const int id, const char $\ast$const texture\+\_\+src, const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}} type, const char $\ast$nom, const short int niveau, const int att, const int def, const int vit)
+objet\+\_\+t $\ast$ \mbox{\hyperlink{objet_8c_a85e95708f68baa868d64811e0259c340}{creer\+\_\+objet}} (const int id, const char $\ast$const texture\+\_\+src, const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}} type, const char $\ast$nom, const short int niveau, const int att, const int def, const int vit)
 \begin{DoxyCompactList}\small\item\em Créé un objet du jeu. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{objet_8c_a0cad7222129cd23bfca9ab8d94885f39}{afficher\+\_\+objet}} (\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$obj)
+void \mbox{\hyperlink{objet_8c_a0cad7222129cd23bfca9ab8d94885f39}{afficher\+\_\+objet}} (objet\+\_\+t $\ast$obj)
 \begin{DoxyCompactList}\small\item\em Affiche les caractéristiques d\textquotesingle{}un objet dans la console. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{objet_8c_a9903bbbae9d8ad00d41b6e903d459877}{detruire\+\_\+objet}} (\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$$\ast$obj)
+void \mbox{\hyperlink{objet_8c_a9903bbbae9d8ad00d41b6e903d459877}{detruire\+\_\+objet}} (objet\+\_\+t $\ast$$\ast$obj)
 \begin{DoxyCompactList}\small\item\em Libère la mémoire allouée à un objet. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -43,7 +43,7 @@ Copyright (c) 2022
 \index{objet.c@{objet.c}!afficher\_objet@{afficher\_objet}}
 \index{afficher\_objet@{afficher\_objet}!objet.c@{objet.c}}
 \doxysubsubsection{\texorpdfstring{afficher\_objet()}{afficher\_objet()}}
-{\footnotesize\ttfamily void afficher\+\_\+objet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void afficher\+\_\+objet (\begin{DoxyParamCaption}\item[{objet\+\_\+t $\ast$}]{obj }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -64,7 +64,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{objet.c@{objet.c}!creer\_objet@{creer\_objet}}
 \index{creer\_objet@{creer\_objet}!objet.c@{objet.c}}
 \doxysubsubsection{\texorpdfstring{creer\_objet()}{creer\_objet()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structobjet__t}{objet\+\_\+t}}$\ast$ creer\+\_\+objet (\begin{DoxyParamCaption}\item[{const int}]{id,  }\item[{const char $\ast$const}]{texture\+\_\+src,  }\item[{const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}}}]{type,  }\item[{const char $\ast$}]{nom,  }\item[{const short int}]{niveau,  }\item[{const int}]{att,  }\item[{const int}]{def,  }\item[{const int}]{vit }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily objet\+\_\+t$\ast$ creer\+\_\+objet (\begin{DoxyParamCaption}\item[{const int}]{id,  }\item[{const char $\ast$const}]{texture\+\_\+src,  }\item[{const \mbox{\hyperlink{objet_8h_a5164672bbab2547df809744bf0af3dc9}{t\+\_\+item}}}]{type,  }\item[{const char $\ast$}]{nom,  }\item[{const short int}]{niveau,  }\item[{const int}]{att,  }\item[{const int}]{def,  }\item[{const int}]{vit }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
@@ -89,7 +89,7 @@ Max Descomps
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-Instance nouvellement allouée du type \mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} ou N\+U\+LL 
+Instance nouvellement allouée du type objet\+\_\+t ou N\+U\+LL 
 \end{DoxyReturn}
 Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
@@ -102,7 +102,7 @@ Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \index{objet.c@{objet.c}!detruire\_objet@{detruire\_objet}}
 \index{detruire\_objet@{detruire\_objet}!objet.c@{objet.c}}
 \doxysubsubsection{\texorpdfstring{detruire\_objet()}{detruire\_objet()}}
-{\footnotesize\ttfamily void detruire\+\_\+objet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structobjet__t}{objet\+\_\+t}} $\ast$$\ast$}]{obj }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void detruire\+\_\+objet (\begin{DoxyParamCaption}\item[{objet\+\_\+t $\ast$$\ast$}]{obj }\end{DoxyParamCaption})}
 
 \begin{DoxyAuthor}{Auteur}
 Max Descomps 
