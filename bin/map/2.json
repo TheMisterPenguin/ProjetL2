@@ -68,11 +68,11 @@
     ],
     "chest" : [
         {"type" : "profilferme",
-        "position" : [15,12],
+        "position" : [5,8],
         "id_cle": 0,
         "id_loot": 3},
         {"type" : "faceferme",
-        "position" : [10,10],
+        "position" : [10,5],
         "id_cle": 0,
         "id_loot": 5}
     ]
