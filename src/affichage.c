@@ -1113,7 +1113,7 @@ void init_animations(){
     heal = (creer_texture("ressources/sprite/heal.bmp", LARGEUR_ENTITE, LONGUEUR_ENTITE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
     ajout_droit(liste_animations, heal);
 
-    bloquer = (creer_texture("ressources/sprite/bloquer.bmp", TAILLE_CASE, TAILLE_CASE, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
+    bloquer = (creer_texture("ressources/sprite/bloquer.bmp", -1, -1, 0, 0, floor(map->taille_case / TAILLE_PERSONNAGE)));
     ajout_droit(liste_animations, bloquer);
 
     //les aff_fenetre des animations pointent sur celle du joueur, inutile de leur allouer une aff_fenetre
@@ -1128,6 +1128,7 @@ void init_animations(){
 
 t_aff * next_frame_animation(joueur_t * joueur){
     statut_t * statut = joueur->statut;
+    int cpt;
 
     //CAS D'ANIMATION D'UN SPRITESHEET
     if (statut->animation == SOIN)
@@ -1158,8 +1159,8 @@ t_aff * next_frame_animation(joueur_t * joueur){
         else
         {   
             /* clignotement de l'animtion bouclier */
-
-            if ((compteur % 4) == 0) //cadence d'affichage
+            cpt = compteur % 7;
+            if (cpt <= 4) //cadence d'affichage (affiche 5 fois sur 7)
                 return bloquer; //afficher animation
 
             return NULL; //ne rien afficher
