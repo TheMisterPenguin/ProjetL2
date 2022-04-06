@@ -32,7 +32,7 @@ $(BINDIR)jeux$(EXT) : $(OBJ)
 # Compilation de tout les fichiers source
 
 $(ODIR)%.o : $(SRC)%.c
-	$(CC) $(CFLAGS) -o $@ -c $< -g 
+	$(CC) $(CFLAGS) -o $@ -c $< -O3 
 
 # Génération des tests
 
