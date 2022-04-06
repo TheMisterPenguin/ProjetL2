@@ -3,6 +3,14 @@
 #include <sorts.h>
 #include <monstres.h>
 
+/**
+ * \file boss.c
+ * \author Antoine Bruneau
+ * \brief Fichier contenant toutes les fonctions concernant les bosses
+ * \version 0.1
+ * \date 05/04/2022
+ * \copyright Copyright (c) 2022
+ */
 
 /**
  * \brief ...
