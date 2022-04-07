@@ -1,25 +1,25 @@
 \begin{theindex}
 
   \item {action}
-    \subitem {boss\_s}, \hyperpage{13}
-    \subitem {monstre\_s}, \hyperpage{26}
+    \subitem {boss\_s}, \hyperpage{15}
+    \subitem {monstre\_s}, \hyperpage{27}
     \subitem {statut\_s}, \hyperpage{32}
   \item {action\_boss\_1\_t}
-    \subitem {boss.h}, \hyperpage{157}
+    \subitem {boss.h}, \hyperpage{160}
   \item {action\_monstre}
-    \subitem {monstres.c}, \hyperpage{326}
-    \subitem {monstres.h}, \hyperpage{345}
+    \subitem {monstres.c}, \hyperpage{329}
+    \subitem {monstres.h}, \hyperpage{348}
   \item {action\_monstre\_t}
-    \subitem {monstres.h}, \hyperpage{344}
+    \subitem {monstres.h}, \hyperpage{347}
   \item {action\_sort}
-    \subitem {sorts.c}, \hyperpage{393}
-    \subitem {sorts.h}, \hyperpage{401}
+    \subitem {sorts.c}, \hyperpage{396}
+    \subitem {sorts.h}, \hyperpage{404}
   \item {action\_t}
-    \subitem {personnage.h}, \hyperpage{378}
+    \subitem {personnage.h}, \hyperpage{381}
   \item {aff}
-    \subitem {list}, \hyperpage{21}
+    \subitem {list}, \hyperpage{23}
   \item {aff\_cleanup}
-    \subitem {init\_close.c}, \hyperpage{201}
+    \subitem {init\_close.c}, \hyperpage{204}
   \item {aff\_fenetre}
     \subitem {t\_aff}, \hyperpage{34}
   \item {affichage.c}, \hyperpage{41}
@@ -39,9 +39,9 @@
     \subitem {current\_frame\_y}, \hyperpage{55}
     \subitem {def\_texture\_taille}, \hyperpage{55}
     \subitem {deplacement\_x\_entite}, \hyperpage{56}
-    \subitem {deplacement\_x\_joueur\_secondaire}, \hyperpage{57}
+    \subitem {deplacement\_x\_joueur\_secondaire}, \hyperpage{58}
     \subitem {deplacement\_x\_pers}, \hyperpage{58}
-    \subitem {deplacement\_y\_entite}, \hyperpage{59}
+    \subitem {deplacement\_y\_entite}, \hyperpage{60}
     \subitem {deplacement\_y\_joueur\_secondaire}, \hyperpage{61}
     \subitem {deplacement\_y\_pers}, \hyperpage{62}
     \subitem {deplacer\_rect\_haut\_droit}, \hyperpage{63}
@@ -94,7 +94,7 @@
     \subitem {text\_copier\_position}, \hyperpage{93}
     \subitem {tx}, \hyperpage{95}
     \subitem {ty}, \hyperpage{95}
-    \subitem {update\_frame\_texture}, \hyperpage{93}
+    \subitem {update\_frame\_texture}, \hyperpage{94}
   \item {affichage.h}, \hyperpage{96}
     \subitem {afficher\_animations}, \hyperpage{102}
     \subitem {afficher\_buffer}, \hyperpage{102}
@@ -103,17 +103,17 @@
     \subitem {afficher\_sorts}, \hyperpage{105}
     \subitem {afficher\_texture}, \hyperpage{106}
     \subitem {ajout\_text\_liste}, \hyperpage{107}
-    \subitem {bloquer}, \hyperpage{150}
+    \subitem {bloquer}, \hyperpage{151}
     \subitem {color}, \hyperpage{108}
-    \subitem {compteur}, \hyperpage{150}
+    \subitem {compteur}, \hyperpage{151}
     \subitem {creer\_texture}, \hyperpage{109}
     \subitem {current\_frame\_x}, \hyperpage{112}
     \subitem {current\_frame\_y}, \hyperpage{113}
     \subitem {def\_texture\_taille}, \hyperpage{113}
     \subitem {deplacement\_x\_entite}, \hyperpage{114}
-    \subitem {deplacement\_x\_joueur\_secondaire}, \hyperpage{115}
+    \subitem {deplacement\_x\_joueur\_secondaire}, \hyperpage{116}
     \subitem {deplacement\_x\_pers}, \hyperpage{116}
-    \subitem {deplacement\_y\_entite}, \hyperpage{117}
+    \subitem {deplacement\_y\_entite}, \hyperpage{118}
     \subitem {deplacement\_y\_joueur\_secondaire}, \hyperpage{119}
     \subitem {deplacement\_y\_pers}, \hyperpage{120}
     \subitem {deplacer\_rect\_haut\_droit}, \hyperpage{121}
@@ -126,22 +126,22 @@
     \subitem {detruire\_collision\_dans\_liste}, \hyperpage{126}
     \subitem {detruire\_liste\_textures}, \hyperpage{127}
     \subitem {detruire\_texture}, \hyperpage{127}
-    \subitem {fenetre\_finale}, \hyperpage{150}
+    \subitem {fenetre\_finale}, \hyperpage{151}
     \subitem {get\_rect\_center}, \hyperpage{128}
     \subitem {get\_rect\_center\_coord}, \hyperpage{129}
-    \subitem {heal}, \hyperpage{151}
+    \subitem {heal}, \hyperpage{152}
     \subitem {info\_texture}, \hyperpage{129}
     \subitem {init\_animations}, \hyperpage{130}
     \subitem {init\_texture\_joueur}, \hyperpage{131}
-    \subitem {init\_textures\_joueur}, \hyperpage{131}
+    \subitem {init\_textures\_joueur}, \hyperpage{132}
     \subitem {LARGEUR\_ENTITE}, \hyperpage{99}
-    \subitem {liste\_animations}, \hyperpage{151}
-    \subitem {listeDeTextures}, \hyperpage{151}
-    \subitem {lister\_animations}, \hyperpage{132}
+    \subitem {liste\_animations}, \hyperpage{152}
+    \subitem {listeDeTextures}, \hyperpage{152}
+    \subitem {lister\_animations}, \hyperpage{133}
     \subitem {LONGUEUR\_ENTITE}, \hyperpage{99}
-    \subitem {modif\_affichage\_rect}, \hyperpage{133}
-    \subitem {multiplicateur\_x}, \hyperpage{151}
-    \subitem {multiplicateur\_y}, \hyperpage{151}
+    \subitem {modif\_affichage\_rect}, \hyperpage{134}
+    \subitem {multiplicateur\_x}, \hyperpage{152}
+    \subitem {multiplicateur\_y}, \hyperpage{152}
     \subitem {N\_T\_ATTAQUE}, \hyperpage{99}
     \subitem {N\_T\_ATTAQUE2}, \hyperpage{100}
     \subitem {N\_T\_ATTAQUE\_CHARGEE}, \hyperpage{100}
@@ -154,44 +154,44 @@
     \subitem {N\_T\_MARCHER\_BOUCLIER2}, \hyperpage{101}
     \subitem {NB\_FPS}, \hyperpage{101}
     \subitem {NB\_SPRITE\_JOUEUR}, \hyperpage{101}
-    \subitem {next\_frame\_animation}, \hyperpage{133}
-    \subitem {next\_frame\_indice}, \hyperpage{134}
-    \subitem {next\_frame\_joueur}, \hyperpage{135}
-    \subitem {next\_frame\_x}, \hyperpage{136}
-    \subitem {next\_frame\_x\_indice}, \hyperpage{137}
-    \subitem {next\_frame\_y}, \hyperpage{138}
-    \subitem {next\_frame\_y\_indice}, \hyperpage{139}
-    \subitem {place\_rect\_center\_from\_point}, \hyperpage{140}
-    \subitem {placer\_texture}, \hyperpage{141}
-    \subitem {rect\_centre}, \hyperpage{142}
-    \subitem {rect\_centre\_rect}, \hyperpage{143}
-    \subitem {rect\_centre\_rect\_x}, \hyperpage{144}
-    \subitem {rect\_centre\_rect\_y}, \hyperpage{144}
-    \subitem {rect\_centre\_x}, \hyperpage{145}
-    \subitem {rect\_centre\_y}, \hyperpage{146}
-    \subitem {rect\_correct\_texture}, \hyperpage{147}
-    \subitem {rects\_egal\_x}, \hyperpage{148}
-    \subitem {rects\_egal\_y}, \hyperpage{149}
+    \subitem {next\_frame\_animation}, \hyperpage{134}
+    \subitem {next\_frame\_indice}, \hyperpage{135}
+    \subitem {next\_frame\_joueur}, \hyperpage{136}
+    \subitem {next\_frame\_x}, \hyperpage{137}
+    \subitem {next\_frame\_x\_indice}, \hyperpage{138}
+    \subitem {next\_frame\_y}, \hyperpage{139}
+    \subitem {next\_frame\_y\_indice}, \hyperpage{140}
+    \subitem {place\_rect\_center\_from\_point}, \hyperpage{141}
+    \subitem {placer\_texture}, \hyperpage{142}
+    \subitem {rect\_centre}, \hyperpage{143}
+    \subitem {rect\_centre\_rect}, \hyperpage{144}
+    \subitem {rect\_centre\_rect\_x}, \hyperpage{145}
+    \subitem {rect\_centre\_rect\_y}, \hyperpage{145}
+    \subitem {rect\_centre\_x}, \hyperpage{146}
+    \subitem {rect\_centre\_y}, \hyperpage{147}
+    \subitem {rect\_correct\_texture}, \hyperpage{148}
+    \subitem {rects\_egal\_x}, \hyperpage{149}
+    \subitem {rects\_egal\_y}, \hyperpage{150}
     \subitem {t\_texture\_perso}, \hyperpage{101}
     \subitem {TEXT\_ATTAQUE}, \hyperpage{101}
     \subitem {TEXT\_ATTAQUE\_CHARGEE}, \hyperpage{101}
     \subitem {TEXT\_CHARGER}, \hyperpage{101}
-    \subitem {text\_copier\_position}, \hyperpage{149}
+    \subitem {text\_copier\_position}, \hyperpage{150}
     \subitem {TEXT\_MARCHER}, \hyperpage{101}
     \subitem {TEXT\_MARCHER\_BOUCLIER}, \hyperpage{101}
-    \subitem {tx}, \hyperpage{151}
-    \subitem {ty}, \hyperpage{151}
+    \subitem {tx}, \hyperpage{152}
+    \subitem {ty}, \hyperpage{152}
   \item {affichage\_chargement\_attaque\_boss}
-    \subitem {boss.c}, \hyperpage{152}
+    \subitem {boss.c}, \hyperpage{154}
   \item {affichage\_clonage\_boss}
-    \subitem {boss.c}, \hyperpage{153}
+    \subitem {boss.c}, \hyperpage{154}
   \item {afficher\_animations}
     \subitem {affichage.c}, \hyperpage{44}
     \subitem {affichage.h}, \hyperpage{102}
   \item {afficher\_boss}
-    \subitem {boss.c}, \hyperpage{154}
+    \subitem {boss.c}, \hyperpage{155}
   \item {afficher\_bosses}
-    \subitem {boss.c}, \hyperpage{154}
+    \subitem {boss.c}, \hyperpage{156}
   \item {afficher\_buffer}
     \subitem {affichage.c}, \hyperpage{45}
     \subitem {affichage.h}, \hyperpage{102}
@@ -199,383 +199,379 @@
     \subitem {affichage.c}, \hyperpage{46}
     \subitem {affichage.h}, \hyperpage{103}
   \item {afficher\_int}
-    \subitem {test\_listes.c}, \hyperpage{415}
+    \subitem {test\_listes.c}, \hyperpage{417}
   \item {afficher\_intro}
-    \subitem {main.c}, \hyperpage{288}
+    \subitem {main.c}, \hyperpage{291}
   \item {afficher\_inventaire}
-    \subitem {menus.c}, \hyperpage{306}
-    \subitem {menus.h}, \hyperpage{317}
-  \item {afficher\_inventaire\_manette}
-    \subitem {menus.c}, \hyperpage{307}
-    \subitem {menus.h}, \hyperpage{317}
-  \item {afficher\_liste}
-    \subitem {listes.c}, \hyperpage{248}
-    \subitem {listes.h}, \hyperpage{268}
-  \item {afficher\_liste\_objet}
-    \subitem {liste\_objet.c}, \hyperpage{231}
-    \subitem {liste\_objet.h}, \hyperpage{240}
-  \item {afficher\_menu\_accueil}
-    \subitem {menus.c}, \hyperpage{308}
-    \subitem {menus.h}, \hyperpage{318}
-  \item {afficher\_menu\_accueil\_manette}
     \subitem {menus.c}, \hyperpage{309}
-    \subitem {menus.h}, \hyperpage{319}
-  \item {afficher\_menu\_pause}
+    \subitem {menus.h}, \hyperpage{320}
+  \item {afficher\_inventaire\_manette}
     \subitem {menus.c}, \hyperpage{310}
     \subitem {menus.h}, \hyperpage{320}
-  \item {afficher\_menu\_pause\_manette}
+  \item {afficher\_liste}
+    \subitem {listes.c}, \hyperpage{251}
+    \subitem {listes.h}, \hyperpage{271}
+  \item {afficher\_liste\_objet}
+    \subitem {liste\_objet.c}, \hyperpage{234}
+    \subitem {liste\_objet.h}, \hyperpage{243}
+  \item {afficher\_menu\_accueil}
     \subitem {menus.c}, \hyperpage{311}
     \subitem {menus.h}, \hyperpage{321}
+  \item {afficher\_menu\_accueil\_manette}
+    \subitem {menus.c}, \hyperpage{312}
+    \subitem {menus.h}, \hyperpage{322}
+  \item {afficher\_menu\_pause}
+    \subitem {menus.c}, \hyperpage{313}
+    \subitem {menus.h}, \hyperpage{323}
+  \item {afficher\_menu\_pause\_manette}
+    \subitem {menus.c}, \hyperpage{314}
+    \subitem {menus.h}, \hyperpage{324}
   \item {afficher\_monstres}
     \subitem {affichage.c}, \hyperpage{47}
     \subitem {affichage.h}, \hyperpage{104}
   \item {afficher\_objet}
-    \subitem {objet.c}, \hyperpage{351}
-    \subitem {objet.h}, \hyperpage{356}
+    \subitem {objet.c}, \hyperpage{354}
+    \subitem {objet.h}, \hyperpage{359}
   \item {afficher\_sorts}
     \subitem {affichage.c}, \hyperpage{48}
     \subitem {affichage.h}, \hyperpage{105}
   \item {afficher\_statistiques}
-    \subitem {personnage.c}, \hyperpage{359}
-    \subitem {personnage.h}, \hyperpage{378}
+    \subitem {personnage.c}, \hyperpage{362}
+    \subitem {personnage.h}, \hyperpage{381}
   \item {afficher\_texture}
     \subitem {affichage.c}, \hyperpage{49}
     \subitem {affichage.h}, \hyperpage{106}
   \item {afficher\_textures\_equipe}
-    \subitem {liste\_objet.c}, \hyperpage{231}
-    \subitem {liste\_objet.h}, \hyperpage{240}
+    \subitem {liste\_objet.c}, \hyperpage{234}
+    \subitem {liste\_objet.h}, \hyperpage{243}
   \item {afficher\_textures\_sac}
-    \subitem {liste\_objet.c}, \hyperpage{232}
-    \subitem {liste\_objet.h}, \hyperpage{241}
+    \subitem {liste\_objet.c}, \hyperpage{235}
+    \subitem {liste\_objet.h}, \hyperpage{244}
   \item {afficher\_zone\_tp}
-    \subitem {map.c}, \hyperpage{291}
+    \subitem {map.c}, \hyperpage{294}
   \item {agro\_knight}
-    \subitem {monstres.c}, \hyperpage{327}
+    \subitem {monstres.c}, \hyperpage{330}
   \item {agro\_monstre}
-    \subitem {monstres.c}, \hyperpage{328}
+    \subitem {monstres.c}, \hyperpage{331}
   \item {agro\_witcher}
-    \subitem {monstres.c}, \hyperpage{328}
+    \subitem {monstres.c}, \hyperpage{331}
   \item {ajout}
-    \subitem {list}, \hyperpage{21}
+    \subitem {list}, \hyperpage{23}
   \item {ajout\_droit}
-    \subitem {listes.c}, \hyperpage{249}
-    \subitem {listes.h}, \hyperpage{269}
+    \subitem {listes.c}, \hyperpage{252}
+    \subitem {listes.h}, \hyperpage{272}
   \item {ajout\_gauche}
-    \subitem {listes.c}, \hyperpage{250}
-    \subitem {listes.h}, \hyperpage{270}
+    \subitem {listes.c}, \hyperpage{253}
+    \subitem {listes.h}, \hyperpage{273}
   \item {ajout\_text\_liste}
     \subitem {affichage.c}, \hyperpage{50}
     \subitem {affichage.h}, \hyperpage{107}
   \item {ajouter\_monstre}
-    \subitem {monstres.c}, \hyperpage{329}
+    \subitem {monstres.c}, \hyperpage{332}
   \item {ajouter\_monstre\_cb}
-    \subitem {monstres.c}, \hyperpage{330}
-    \subitem {monstres.h}, \hyperpage{346}
+    \subitem {monstres.c}, \hyperpage{333}
+    \subitem {monstres.h}, \hyperpage{349}
   \item {ajouter\_sort}
-    \subitem {sorts.c}, \hyperpage{393}
+    \subitem {sorts.c}, \hyperpage{396}
   \item {ajouter\_sort\_cb}
-    \subitem {sorts.c}, \hyperpage{394}
-    \subitem {sorts.h}, \hyperpage{402}
+    \subitem {sorts.c}, \hyperpage{397}
+    \subitem {sorts.h}, \hyperpage{405}
   \item {amulette}
-    \subitem {objet.h}, \hyperpage{356}
+    \subitem {objet.h}, \hyperpage{359}
   \item {animation}
     \subitem {statut\_s}, \hyperpage{32}
   \item {APPARITION}
-    \subitem {boss.h}, \hyperpage{157}
+    \subitem {boss.h}, \hyperpage{160}
   \item {appliquer\_coord\_rect}
     \subitem {affichage.c}, \hyperpage{51}
   \item {arme}
-    \subitem {objet.h}, \hyperpage{356}
+    \subitem {objet.h}, \hyperpage{359}
   \item {ATTAQUE}
-    \subitem {boss.h}, \hyperpage{157}
-    \subitem {personnage.h}, \hyperpage{378}
+    \subitem {boss.h}, \hyperpage{160}
+    \subitem {personnage.h}, \hyperpage{381}
   \item {attaque}
-    \subitem {base\_monstre\_s}, \hyperpage{10}
-    \subitem {boss\_s}, \hyperpage{13}
-    \subitem {joueur\_t}, \hyperpage{19}
-    \subitem {monstre\_s}, \hyperpage{26}
-    \subitem {objet\_t}, \hyperpage{28}
+    \subitem {base\_monstre\_s}, \hyperpage{12}
+    \subitem {boss\_s}, \hyperpage{15}
+    \subitem {joueur\_t}, \hyperpage{20}
+    \subitem {monstre\_s}, \hyperpage{27}
+    \subitem {objet\_t}, \hyperpage{29}
   \item {attaque\_actif}
-    \subitem {joueur\_t}, \hyperpage{19}
+    \subitem {joueur\_t}, \hyperpage{20}
   \item {ATTAQUE\_CHARGEE}
-    \subitem {personnage.h}, \hyperpage{378}
+    \subitem {personnage.h}, \hyperpage{381}
   \item {ATTAQUE\_OU\_CHARGER}
-    \subitem {personnage.h}, \hyperpage{378}
+    \subitem {personnage.h}, \hyperpage{381}
   \item {AUCUNE\_ERREUR}
-    \subitem {code\_erreur.h}, \hyperpage{160}
+    \subitem {code\_erreur.h}, \hyperpage{163}
   \item {AVANT\_ATTAQUE}
-    \subitem {boss.h}, \hyperpage{157}
+    \subitem {boss.h}, \hyperpage{160}
   \item {AVANT\_DISPARITION}
-    \subitem {boss.h}, \hyperpage{157}
+    \subitem {boss.h}, \hyperpage{160}
 
   \indexspace
 
-  \item {base\_coffre\_s}, \hyperpage{9}
-    \subitem {fichier\_image}, \hyperpage{9}
-    \subitem {hitbox}, \hyperpage{9}
-    \subitem {nom\_coffre}, \hyperpage{9}
-  \item {base\_monstre\_s}, \hyperpage{10}
-    \subitem {attaque}, \hyperpage{10}
-    \subitem {fichier\_image}, \hyperpage{10}
-    \subitem {gainXp}, \hyperpage{10}
-    \subitem {hitbox}, \hyperpage{10}
-    \subitem {nom\_monstre}, \hyperpage{10}
-    \subitem {pdv}, \hyperpage{11}
-    \subitem {vitesse}, \hyperpage{11}
-  \item {base\_monstre\_t}, \hyperpage{11}
-  \item {base\_sort\_s}, \hyperpage{11}
-    \subitem {collision}, \hyperpage{11}
-    \subitem {degat}, \hyperpage{12}
-    \subitem {type}, \hyperpage{12}
+  \item {base\_coffre\_s}, \hyperpage{11}
+    \subitem {fichier\_image}, \hyperpage{11}
+    \subitem {hitbox}, \hyperpage{11}
+    \subitem {nom\_coffre}, \hyperpage{11}
+  \item {base\_monstre\_s}, \hyperpage{12}
+    \subitem {attaque}, \hyperpage{12}
+    \subitem {fichier\_image}, \hyperpage{12}
+    \subitem {gainXp}, \hyperpage{12}
+    \subitem {hitbox}, \hyperpage{13}
+    \subitem {nom\_monstre}, \hyperpage{13}
+    \subitem {pdv}, \hyperpage{13}
+    \subitem {vitesse}, \hyperpage{13}
+  \item {base\_sort\_s}, \hyperpage{13}
+    \subitem {collision}, \hyperpage{14}
+    \subitem {degat}, \hyperpage{14}
+    \subitem {type}, \hyperpage{14}
   \item {BLESSE}
-    \subitem {boss.h}, \hyperpage{157}
+    \subitem {boss.h}, \hyperpage{160}
   \item {BLOQUER}
-    \subitem {personnage.h}, \hyperpage{378}
+    \subitem {personnage.h}, \hyperpage{381}
   \item {bloquer}
     \subitem {affichage.c}, \hyperpage{94}
-    \subitem {affichage.h}, \hyperpage{150}
+    \subitem {affichage.h}, \hyperpage{151}
   \item {bool}
-    \subitem {definition\_commun.h}, \hyperpage{180}
-  \item {boss.c}, \hyperpage{152}
-    \subitem {affichage\_chargement\_attaque\_boss}, \hyperpage{152}
-    \subitem {affichage\_clonage\_boss}, \hyperpage{153}
-    \subitem {afficher\_boss}, \hyperpage{154}
-    \subitem {afficher\_bosses}, \hyperpage{154}
-    \subitem {creer\_boss\_clone}, \hyperpage{154}
-    \subitem {deplacement\_boss\_aleatoir}, \hyperpage{155}
-    \subitem {intro\_boss}, \hyperpage{155}
-  \item {boss.h}, \hyperpage{156}
-    \subitem {action\_boss\_1\_t}, \hyperpage{157}
-    \subitem {APPARITION}, \hyperpage{157}
-    \subitem {ATTAQUE}, \hyperpage{157}
-    \subitem {AVANT\_ATTAQUE}, \hyperpage{157}
-    \subitem {AVANT\_DISPARITION}, \hyperpage{157}
-    \subitem {BLESSE}, \hyperpage{157}
-    \subitem {CHEMIN\_BOSS}, \hyperpage{157}
-    \subitem {CLONAGE}, \hyperpage{157}
-    \subitem {CLONE}, \hyperpage{158}
-    \subitem {DEPLACEMENT}, \hyperpage{157}
-    \subitem {DISPARITION}, \hyperpage{157}
-    \subitem {DUREE\_CLONAGE}, \hyperpage{157}
-    \subitem {MORT}, \hyperpage{157}
-    \subitem {PRINCIPAL}, \hyperpage{158}
-    \subitem {SOMMEIL}, \hyperpage{157}
-    \subitem {type\_boss\_1\_t}, \hyperpage{158}
-  \item {boss\_s}, \hyperpage{12}
-    \subitem {action}, \hyperpage{13}
-    \subitem {attaque}, \hyperpage{13}
-    \subitem {cible}, \hyperpage{13}
-    \subitem {collision}, \hyperpage{13}
-    \subitem {duree}, \hyperpage{13}
-    \subitem {pdv}, \hyperpage{13}
-    \subitem {texture}, \hyperpage{13}
-    \subitem {texture\_temp}, \hyperpage{13}
-    \subitem {type}, \hyperpage{14}
-    \subitem {xp}, \hyperpage{14}
+    \subitem {definition\_commun.h}, \hyperpage{183}
+  \item {boss.c}, \hyperpage{153}
+    \subitem {affichage\_chargement\_attaque\_boss}, \hyperpage{154}
+    \subitem {affichage\_clonage\_boss}, \hyperpage{154}
+    \subitem {afficher\_boss}, \hyperpage{155}
+    \subitem {afficher\_bosses}, \hyperpage{156}
+    \subitem {creer\_boss\_clone}, \hyperpage{156}
+    \subitem {deplacement\_boss\_aleatoir}, \hyperpage{157}
+    \subitem {intro\_boss}, \hyperpage{157}
+  \item {boss.h}, \hyperpage{158}
+    \subitem {action\_boss\_1\_t}, \hyperpage{160}
+    \subitem {APPARITION}, \hyperpage{160}
+    \subitem {ATTAQUE}, \hyperpage{160}
+    \subitem {AVANT\_ATTAQUE}, \hyperpage{160}
+    \subitem {AVANT\_DISPARITION}, \hyperpage{160}
+    \subitem {BLESSE}, \hyperpage{160}
+    \subitem {CHEMIN\_BOSS}, \hyperpage{160}
+    \subitem {CLONAGE}, \hyperpage{160}
+    \subitem {CLONE}, \hyperpage{161}
+    \subitem {DEPLACEMENT}, \hyperpage{160}
+    \subitem {DISPARITION}, \hyperpage{160}
+    \subitem {DUREE\_CLONAGE}, \hyperpage{160}
+    \subitem {MORT}, \hyperpage{160}
+    \subitem {PRINCIPAL}, \hyperpage{161}
+    \subitem {SOMMEIL}, \hyperpage{160}
+    \subitem {type\_boss\_1\_t}, \hyperpage{160}
+  \item {boss\_s}, \hyperpage{14}
+    \subitem {action}, \hyperpage{15}
+    \subitem {attaque}, \hyperpage{15}
+    \subitem {cible}, \hyperpage{15}
+    \subitem {collision}, \hyperpage{15}
+    \subitem {duree}, \hyperpage{15}
+    \subitem {pdv}, \hyperpage{16}
+    \subitem {texture}, \hyperpage{16}
+    \subitem {texture\_temp}, \hyperpage{16}
+    \subitem {type}, \hyperpage{16}
+    \subitem {xp}, \hyperpage{16}
   \item {bouclier}
-    \subitem {objet.h}, \hyperpage{356}
+    \subitem {objet.h}, \hyperpage{359}
   \item {bouclier\_equipe}
     \subitem {statut\_s}, \hyperpage{32}
   \item {BUFFER\_EMPTY}
-    \subitem {code\_erreur.h}, \hyperpage{160}
+    \subitem {code\_erreur.h}, \hyperpage{163}
   \item {byte}
-    \subitem {definition\_commun.h}, \hyperpage{181}
-    \subitem {personnage.h}, \hyperpage{378}
+    \subitem {definition\_commun.h}, \hyperpage{184}
+    \subitem {personnage.h}, \hyperpage{381}
 
   \indexspace
 
   \item {CAPACITE\_SAC}
-    \subitem {inventaire.h}, \hyperpage{222}
+    \subitem {inventaire.h}, \hyperpage{225}
   \item {cases\_x}
     \subitem {t\_map}, \hyperpage{38}
   \item {cases\_y}
     \subitem {t\_map}, \hyperpage{38}
   \item {changement\_statistiques}
-    \subitem {inventaire.c}, \hyperpage{212}
-    \subitem {inventaire.h}, \hyperpage{222}
+    \subitem {inventaire.c}, \hyperpage{215}
+    \subitem {inventaire.h}, \hyperpage{225}
   \item {CHARGER}
-    \subitem {personnage.h}, \hyperpage{378}
+    \subitem {personnage.h}, \hyperpage{381}
   \item {charger\_base\_coffre}
-    \subitem {coffres.c}, \hyperpage{163}
-    \subitem {coffres.h}, \hyperpage{171}
+    \subitem {coffres.c}, \hyperpage{166}
+    \subitem {coffres.h}, \hyperpage{174}
   \item {charger\_base\_monstre}
-    \subitem {monstres.c}, \hyperpage{331}
-    \subitem {monstres.h}, \hyperpage{347}
+    \subitem {monstres.c}, \hyperpage{334}
+    \subitem {monstres.h}, \hyperpage{350}
   \item {charger\_map}
-    \subitem {map.c}, \hyperpage{291}
-    \subitem {map.h}, \hyperpage{300}
+    \subitem {map.c}, \hyperpage{294}
+    \subitem {map.h}, \hyperpage{303}
   \item {charger\_sauvegarde\_joueur}
-    \subitem {personnage.c}, \hyperpage{360}
-    \subitem {personnage.h}, \hyperpage{379}
+    \subitem {personnage.c}, \hyperpage{363}
+    \subitem {personnage.h}, \hyperpage{382}
   \item {check\_repertoire\_jeux}
-    \subitem {personnage.c}, \hyperpage{361}
-    \subitem {personnage.h}, \hyperpage{380}
+    \subitem {personnage.c}, \hyperpage{364}
+    \subitem {personnage.h}, \hyperpage{383}
   \item {CHEMIN\_BOSS}
-    \subitem {boss.h}, \hyperpage{157}
+    \subitem {boss.h}, \hyperpage{160}
   \item {cible}
-    \subitem {boss\_s}, \hyperpage{13}
+    \subitem {boss\_s}, \hyperpage{15}
   \item {clean\_suite}
-    \subitem {test\_inventaire.c}, \hyperpage{408}
-    \subitem {test\_personnage.c}, \hyperpage{420}
-    \subitem {test\_SDL.c}, \hyperpage{425}
+    \subitem {test\_inventaire.c}, \hyperpage{410}
+    \subitem {test\_personnage.c}, \hyperpage{419}
+    \subitem {test\_SDL.c}, \hyperpage{423}
   \item {CLONAGE}
-    \subitem {boss.h}, \hyperpage{157}
+    \subitem {boss.h}, \hyperpage{160}
   \item {CLONE}
-    \subitem {boss.h}, \hyperpage{158}
-  \item {code\_erreur.h}, \hyperpage{158}
-    \subitem {AUCUNE\_ERREUR}, \hyperpage{160}
-    \subitem {BUFFER\_EMPTY}, \hyperpage{160}
-    \subitem {ERR\_CREATION\_REPERTOIRE\_SAUVEGARDE}, \hyperpage{161}
-    \subitem {ERR\_RECTANGLE\_TOO\_BIG}, \hyperpage{161}
-    \subitem {err\_t}, \hyperpage{160}
-    \subitem {erreur}, \hyperpage{159}
-    \subitem {ERREUR\_FICHIER}, \hyperpage{160}
-    \subitem {ERREUR\_FONCTION}, \hyperpage{160}
-    \subitem {ERREUR\_INIT}, \hyperpage{161}
-    \subitem {ERREUR\_JSON\_CLE\_NON\_TROUVEE}, \hyperpage{161}
-    \subitem {ERREUR\_LISTE}, \hyperpage{161}
-    \subitem {ERREUR\_MAP}, \hyperpage{160}
-    \subitem {ERREUR\_SDL\_AUDIO}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_EVENT}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_IMG}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_JOYSTICK}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_KEYBOARD}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_MIX}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_MOUSE}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_MOUSEBUTTON}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_MOUSEMOTION}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_MUSIC}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_PIXEL}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_QUIT}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_RENDER}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_SCANCODE}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_SURFACE}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_TIMER}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_TIMER\_START}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_TIMER\_STOP}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_TTF}, \hyperpage{161}
-    \subitem {ERREUR\_SDL\_WINDOW}, \hyperpage{161}
-    \subitem {ERREUR\_TEXTURE}, \hyperpage{160}
-    \subitem {OUT\_OF\_MEM}, \hyperpage{160}
-    \subitem {SDL\_ERREUR}, \hyperpage{160}
-    \subitem {types\_erreur}, \hyperpage{160}
-    \subitem {warning}, \hyperpage{159}
+    \subitem {boss.h}, \hyperpage{161}
+  \item {code\_erreur.h}, \hyperpage{161}
+    \subitem {AUCUNE\_ERREUR}, \hyperpage{163}
+    \subitem {BUFFER\_EMPTY}, \hyperpage{163}
+    \subitem {ERR\_CREATION\_REPERTOIRE\_SAUVEGARDE}, \hyperpage{164}
+    \subitem {ERR\_RECTANGLE\_TOO\_BIG}, \hyperpage{164}
+    \subitem {err\_t}, \hyperpage{163}
+    \subitem {erreur}, \hyperpage{162}
+    \subitem {ERREUR\_FICHIER}, \hyperpage{163}
+    \subitem {ERREUR\_FONCTION}, \hyperpage{163}
+    \subitem {ERREUR\_INIT}, \hyperpage{164}
+    \subitem {ERREUR\_JSON\_CLE\_NON\_TROUVEE}, \hyperpage{164}
+    \subitem {ERREUR\_LISTE}, \hyperpage{164}
+    \subitem {ERREUR\_MAP}, \hyperpage{163}
+    \subitem {ERREUR\_SDL\_AUDIO}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_EVENT}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_IMG}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_JOYSTICK}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_KEYBOARD}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_MIX}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_MOUSE}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_MOUSEBUTTON}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_MOUSEMOTION}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_MUSIC}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_PIXEL}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_QUIT}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_RENDER}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_SCANCODE}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_SURFACE}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_TIMER}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_TIMER\_START}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_TIMER\_STOP}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_TTF}, \hyperpage{164}
+    \subitem {ERREUR\_SDL\_WINDOW}, \hyperpage{164}
+    \subitem {ERREUR\_TEXTURE}, \hyperpage{163}
+    \subitem {OUT\_OF\_MEM}, \hyperpage{163}
+    \subitem {SDL\_ERREUR}, \hyperpage{163}
+    \subitem {types\_erreur}, \hyperpage{163}
+    \subitem {warning}, \hyperpage{162}
   \item {COFFRE\_FACE\_OUVERT}
-    \subitem {coffres.h}, \hyperpage{170}
+    \subitem {coffres.h}, \hyperpage{173}
   \item {COFFRE\_INCONNU}
-    \subitem {coffres.h}, \hyperpage{171}
+    \subitem {coffres.h}, \hyperpage{174}
   \item {COFFRE\_PROFIL\_OUVERT}
-    \subitem {coffres.h}, \hyperpage{170}
-  \item {coffre\_s}, \hyperpage{14}
-    \subitem {collision}, \hyperpage{14}
-    \subitem {etat}, \hyperpage{14}
-    \subitem {id\_cle}, \hyperpage{14}
-    \subitem {id\_loot}, \hyperpage{15}
-    \subitem {orientation}, \hyperpage{15}
-    \subitem {texture}, \hyperpage{15}
-    \subitem {type}, \hyperpage{15}
-  \item {coffre\_t}, \hyperpage{15}
-  \item {coffres.c}, \hyperpage{161}
-    \subitem {charger\_base\_coffre}, \hyperpage{163}
-    \subitem {creer\_coffre}, \hyperpage{163}
-    \subitem {info\_coffre}, \hyperpage{164}
-    \subitem {interaction\_coffre}, \hyperpage{165}
-    \subitem {inverser\_direction}, \hyperpage{166}
-    \subitem {liste\_base\_coffres}, \hyperpage{168}
-    \subitem {nom\_coffre\_to\_type\_coffre}, \hyperpage{167}
-  \item {coffres.h}, \hyperpage{168}
-    \subitem {charger\_base\_coffre}, \hyperpage{171}
-    \subitem {COFFRE\_FACE\_OUVERT}, \hyperpage{170}
-    \subitem {COFFRE\_INCONNU}, \hyperpage{171}
-    \subitem {COFFRE\_PROFIL\_OUVERT}, \hyperpage{170}
-    \subitem {creer\_coffre}, \hyperpage{171}
-    \subitem {etat\_coffre\_t}, \hyperpage{170}
-    \subitem {FACE\_FERME}, \hyperpage{171}
-    \subitem {FACE\_OUVERT}, \hyperpage{171}
-    \subitem {FERME}, \hyperpage{170}
-    \subitem {info\_coffre}, \hyperpage{173}
-    \subitem {interaction\_coffre}, \hyperpage{173}
-    \subitem {inverser\_direction}, \hyperpage{174}
-    \subitem {liste\_base\_coffres}, \hyperpage{176}
-    \subitem {nom\_coffre\_to\_type\_coffre}, \hyperpage{175}
-    \subitem {OUVERT}, \hyperpage{170}
-    \subitem {PROFIL\_FERME}, \hyperpage{171}
-    \subitem {PROFIL\_OUVERT}, \hyperpage{171}
-    \subitem {type\_coffre\_t}, \hyperpage{171}
+    \subitem {coffres.h}, \hyperpage{173}
+  \item {coffre\_s}, \hyperpage{16}
+    \subitem {collision}, \hyperpage{17}
+    \subitem {etat}, \hyperpage{17}
+    \subitem {id\_cle}, \hyperpage{17}
+    \subitem {id\_loot}, \hyperpage{17}
+    \subitem {orientation}, \hyperpage{17}
+    \subitem {texture}, \hyperpage{17}
+    \subitem {type}, \hyperpage{18}
+  \item {coffres.c}, \hyperpage{164}
+    \subitem {charger\_base\_coffre}, \hyperpage{166}
+    \subitem {creer\_coffre}, \hyperpage{166}
+    \subitem {info\_coffre}, \hyperpage{167}
+    \subitem {interaction\_coffre}, \hyperpage{168}
+    \subitem {inverser\_direction}, \hyperpage{169}
+    \subitem {liste\_base\_coffres}, \hyperpage{171}
+    \subitem {nom\_coffre\_to\_type\_coffre}, \hyperpage{170}
+  \item {coffres.h}, \hyperpage{171}
+    \subitem {charger\_base\_coffre}, \hyperpage{174}
+    \subitem {COFFRE\_FACE\_OUVERT}, \hyperpage{173}
+    \subitem {COFFRE\_INCONNU}, \hyperpage{174}
+    \subitem {COFFRE\_PROFIL\_OUVERT}, \hyperpage{173}
+    \subitem {creer\_coffre}, \hyperpage{174}
+    \subitem {etat\_coffre\_t}, \hyperpage{173}
+    \subitem {FACE\_FERME}, \hyperpage{174}
+    \subitem {FACE\_OUVERT}, \hyperpage{174}
+    \subitem {FERME}, \hyperpage{173}
+    \subitem {info\_coffre}, \hyperpage{176}
+    \subitem {interaction\_coffre}, \hyperpage{176}
+    \subitem {inverser\_direction}, \hyperpage{177}
+    \subitem {liste\_base\_coffres}, \hyperpage{179}
+    \subitem {nom\_coffre\_to\_type\_coffre}, \hyperpage{178}
+    \subitem {OUVERT}, \hyperpage{173}
+    \subitem {PROFIL\_FERME}, \hyperpage{174}
+    \subitem {PROFIL\_OUVERT}, \hyperpage{174}
+    \subitem {type\_coffre\_t}, \hyperpage{174}
   \item {collision}
-    \subitem {base\_sort\_s}, \hyperpage{11}
-    \subitem {boss\_s}, \hyperpage{13}
-    \subitem {coffre\_s}, \hyperpage{14}
-    \subitem {monstre\_s}, \hyperpage{26}
-    \subitem {sort\_s}, \hyperpage{30}
+    \subitem {base\_sort\_s}, \hyperpage{14}
+    \subitem {boss\_s}, \hyperpage{15}
+    \subitem {coffre\_s}, \hyperpage{17}
+    \subitem {monstre\_s}, \hyperpage{27}
+    \subitem {sort\_s}, \hyperpage{31}
   \item {color}
     \subitem {affichage.c}, \hyperpage{51}
     \subitem {affichage.h}, \hyperpage{108}
-  \item {commun.h}, \hyperpage{176}
-    \subitem {init}, \hyperpage{177}
+  \item {commun.h}, \hyperpage{179}
+    \subitem {init}, \hyperpage{180}
   \item {compteur}
     \subitem {affichage.c}, \hyperpage{94}
-    \subitem {affichage.h}, \hyperpage{150}
-    \subitem {test\_affichage.c}, \hyperpage{407}
-    \subitem {test\_inventaire.c}, \hyperpage{411}
-    \subitem {test\_liste\_objet.c}, \hyperpage{413}
-    \subitem {test\_listes.c}, \hyperpage{415}
-    \subitem {test\_map.c}, \hyperpage{417}
-    \subitem {test\_personnage.c}, \hyperpage{423}
+    \subitem {affichage.h}, \hyperpage{151}
+    \subitem {test\_inventaire.c}, \hyperpage{413}
+    \subitem {test\_liste\_objet.c}, \hyperpage{415}
+    \subitem {test\_listes.c}, \hyperpage{417}
+    \subitem {test\_personnage.c}, \hyperpage{421}
   \item {compteur\_frame\_anim}
     \subitem {t\_aff}, \hyperpage{35}
   \item {consommable}
-    \subitem {objet.h}, \hyperpage{356}
+    \subitem {objet.h}, \hyperpage{359}
   \item {consommer\_objet}
-    \subitem {inventaire.c}, \hyperpage{212}
-    \subitem {inventaire.h}, \hyperpage{223}
+    \subitem {inventaire.c}, \hyperpage{215}
+    \subitem {inventaire.h}, \hyperpage{226}
   \item {CONVERTIR\_RADIANT\_DEGREE}
-    \subitem {sorts.h}, \hyperpage{400}
+    \subitem {sorts.h}, \hyperpage{403}
   \item {copy}
-    \subitem {personnage.c}, \hyperpage{362}
+    \subitem {personnage.c}, \hyperpage{365}
   \item {creation\_personnage}
-    \subitem {test\_personnage.c}, \hyperpage{420}
+    \subitem {test\_personnage.c}, \hyperpage{419}
   \item {creer\_boss\_clone}
-    \subitem {boss.c}, \hyperpage{154}
+    \subitem {boss.c}, \hyperpage{156}
   \item {creer\_coffre}
-    \subitem {coffres.c}, \hyperpage{163}
-    \subitem {coffres.h}, \hyperpage{171}
+    \subitem {coffres.c}, \hyperpage{166}
+    \subitem {coffres.h}, \hyperpage{174}
   \item {creer\_inventaire}
-    \subitem {inventaire.c}, \hyperpage{213}
-    \subitem {inventaire.h}, \hyperpage{223}
+    \subitem {inventaire.c}, \hyperpage{216}
+    \subitem {inventaire.h}, \hyperpage{226}
   \item {creer\_inventaire\_j2}
-    \subitem {menus.c}, \hyperpage{312}
-    \subitem {menus.h}, \hyperpage{322}
+    \subitem {menus.c}, \hyperpage{315}
+    \subitem {menus.h}, \hyperpage{325}
   \item {creer\_joueur}
-    \subitem {personnage.c}, \hyperpage{362}
-    \subitem {personnage.h}, \hyperpage{381}
+    \subitem {personnage.c}, \hyperpage{365}
+    \subitem {personnage.h}, \hyperpage{384}
   \item {creer\_liste\_objet}
-    \subitem {liste\_objet.c}, \hyperpage{233}
-    \subitem {liste\_objet.h}, \hyperpage{242}
+    \subitem {liste\_objet.c}, \hyperpage{236}
+    \subitem {liste\_objet.h}, \hyperpage{245}
   \item {creer\_liste\_objet\_equipe}
-    \subitem {liste\_objet.c}, \hyperpage{234}
-    \subitem {liste\_objet.h}, \hyperpage{243}
+    \subitem {liste\_objet.c}, \hyperpage{237}
+    \subitem {liste\_objet.h}, \hyperpage{246}
   \item {creer\_liste\_objet\_vide}
-    \subitem {liste\_objet.c}, \hyperpage{234}
-    \subitem {liste\_objet.h}, \hyperpage{243}
+    \subitem {liste\_objet.c}, \hyperpage{237}
+    \subitem {liste\_objet.h}, \hyperpage{246}
   \item {creer\_monstre}
-    \subitem {monstres.c}, \hyperpage{331}
-    \subitem {monstres.h}, \hyperpage{348}
+    \subitem {monstres.c}, \hyperpage{334}
+    \subitem {monstres.h}, \hyperpage{351}
   \item {creer\_objet}
-    \subitem {objet.c}, \hyperpage{352}
-    \subitem {objet.h}, \hyperpage{356}
+    \subitem {objet.c}, \hyperpage{355}
+    \subitem {objet.h}, \hyperpage{359}
   \item {creer\_sauvegarde\_json}
-    \subitem {personnage.c}, \hyperpage{363}
-    \subitem {personnage.h}, \hyperpage{382}
+    \subitem {personnage.c}, \hyperpage{366}
+    \subitem {personnage.h}, \hyperpage{385}
   \item {creer\_sort\_monstre}
-    \subitem {sorts.c}, \hyperpage{395}
-    \subitem {sorts.h}, \hyperpage{402}
+    \subitem {sorts.c}, \hyperpage{398}
+    \subitem {sorts.h}, \hyperpage{405}
   \item {creer\_texture}
     \subitem {affichage.c}, \hyperpage{52}
     \subitem {affichage.h}, \hyperpage{109}
   \item {creer\_textures\_objets}
-    \subitem {liste\_objet.c}, \hyperpage{235}
-    \subitem {liste\_objet.h}, \hyperpage{244}
+    \subitem {liste\_objet.c}, \hyperpage{238}
+    \subitem {liste\_objet.h}, \hyperpage{247}
   \item {current\_frame\_x}
     \subitem {affichage.c}, \hyperpage{54}
     \subitem {affichage.h}, \hyperpage{112}
@@ -589,57 +585,57 @@
     \subitem {affichage.c}, \hyperpage{55}
     \subitem {affichage.h}, \hyperpage{113}
   \item {defense}
-    \subitem {joueur\_t}, \hyperpage{19}
-    \subitem {objet\_t}, \hyperpage{28}
+    \subitem {joueur\_t}, \hyperpage{21}
+    \subitem {objet\_t}, \hyperpage{29}
   \item {defense\_actif}
-    \subitem {joueur\_t}, \hyperpage{19}
-  \item {definition\_commun.h}, \hyperpage{178}
-    \subitem {bool}, \hyperpage{180}
-    \subitem {byte}, \hyperpage{181}
-    \subitem {EST\_1}, \hyperpage{181}
-    \subitem {EST\_2}, \hyperpage{182}
-    \subitem {faux}, \hyperpage{180}
-    \subitem {FENETRE\_LARGEUR}, \hyperpage{183}
-    \subitem {FENETRE\_LONGUEUR}, \hyperpage{183}
-    \subitem {fenetre\_Principale}, \hyperpage{183}
-    \subitem {fermer\_programme}, \hyperpage{182}
-    \subitem {NORD\_1}, \hyperpage{181}
-    \subitem {NORD\_2}, \hyperpage{182}
-    \subitem {NORD\_EST\_2}, \hyperpage{182}
-    \subitem {NORD\_OUEST\_2}, \hyperpage{182}
-    \subitem {OUEST\_1}, \hyperpage{181}
-    \subitem {OUEST\_2}, \hyperpage{182}
-    \subitem {rendu\_principal}, \hyperpage{184}
-    \subitem {running}, \hyperpage{184}
-    \subitem {SAVE\_PATH}, \hyperpage{180}
-    \subitem {SUD\_1}, \hyperpage{181}
-    \subitem {SUD\_2}, \hyperpage{182}
-    \subitem {SUD\_EST\_2}, \hyperpage{182}
-    \subitem {SUD\_OUEST\_2}, \hyperpage{182}
-    \subitem {t\_direction\_1}, \hyperpage{181}
-    \subitem {t\_direction\_2}, \hyperpage{181}
-    \subitem {vrai}, \hyperpage{181}
+    \subitem {joueur\_t}, \hyperpage{21}
+  \item {definition\_commun.h}, \hyperpage{181}
+    \subitem {bool}, \hyperpage{183}
+    \subitem {byte}, \hyperpage{184}
+    \subitem {EST\_1}, \hyperpage{184}
+    \subitem {EST\_2}, \hyperpage{185}
+    \subitem {faux}, \hyperpage{183}
+    \subitem {FENETRE\_LARGEUR}, \hyperpage{186}
+    \subitem {FENETRE\_LONGUEUR}, \hyperpage{186}
+    \subitem {fenetre\_Principale}, \hyperpage{186}
+    \subitem {fermer\_programme}, \hyperpage{185}
+    \subitem {NORD\_1}, \hyperpage{184}
+    \subitem {NORD\_2}, \hyperpage{185}
+    \subitem {NORD\_EST\_2}, \hyperpage{185}
+    \subitem {NORD\_OUEST\_2}, \hyperpage{185}
+    \subitem {OUEST\_1}, \hyperpage{184}
+    \subitem {OUEST\_2}, \hyperpage{185}
+    \subitem {rendu\_principal}, \hyperpage{187}
+    \subitem {running}, \hyperpage{187}
+    \subitem {SAVE\_PATH}, \hyperpage{183}
+    \subitem {SUD\_1}, \hyperpage{184}
+    \subitem {SUD\_2}, \hyperpage{185}
+    \subitem {SUD\_EST\_2}, \hyperpage{185}
+    \subitem {SUD\_OUEST\_2}, \hyperpage{185}
+    \subitem {t\_direction\_1}, \hyperpage{184}
+    \subitem {t\_direction\_2}, \hyperpage{184}
+    \subitem {vrai}, \hyperpage{184}
   \item {degat}
-    \subitem {base\_sort\_s}, \hyperpage{12}
-    \subitem {sort\_s}, \hyperpage{30}
+    \subitem {base\_sort\_s}, \hyperpage{14}
+    \subitem {sort\_s}, \hyperpage{31}
   \item {del}
-    \subitem {list}, \hyperpage{22}
+    \subitem {list}, \hyperpage{23}
   \item {DEPLACEMENT}
-    \subitem {boss.h}, \hyperpage{157}
+    \subitem {boss.h}, \hyperpage{160}
   \item {deplacement\_boss\_aleatoir}
-    \subitem {boss.c}, \hyperpage{155}
+    \subitem {boss.c}, \hyperpage{157}
   \item {deplacement\_x\_entite}
     \subitem {affichage.c}, \hyperpage{56}
     \subitem {affichage.h}, \hyperpage{114}
   \item {deplacement\_x\_joueur\_secondaire}
-    \subitem {affichage.c}, \hyperpage{57}
-    \subitem {affichage.h}, \hyperpage{115}
+    \subitem {affichage.c}, \hyperpage{58}
+    \subitem {affichage.h}, \hyperpage{116}
   \item {deplacement\_x\_pers}
     \subitem {affichage.c}, \hyperpage{58}
     \subitem {affichage.h}, \hyperpage{116}
   \item {deplacement\_y\_entite}
-    \subitem {affichage.c}, \hyperpage{59}
-    \subitem {affichage.h}, \hyperpage{117}
+    \subitem {affichage.c}, \hyperpage{60}
+    \subitem {affichage.h}, \hyperpage{118}
   \item {deplacement\_y\_joueur\_secondaire}
     \subitem {affichage.c}, \hyperpage{61}
     \subitem {affichage.h}, \hyperpage{119}
@@ -668,301 +664,297 @@
     \subitem {affichage.c}, \hyperpage{67}
     \subitem {affichage.h}, \hyperpage{125}
   \item {desequiper}
-    \subitem {inventaire.c}, \hyperpage{214}
-    \subitem {inventaire.h}, \hyperpage{224}
+    \subitem {inventaire.c}, \hyperpage{217}
+    \subitem {inventaire.h}, \hyperpage{227}
   \item {desequiper\_slot}
-    \subitem {inventaire.c}, \hyperpage{215}
-    \subitem {inventaire.h}, \hyperpage{224}
+    \subitem {inventaire.c}, \hyperpage{218}
+    \subitem {inventaire.h}, \hyperpage{227}
   \item {dest}
     \subitem {zone\_tp}, \hyperpage{40}
   \item {detruire\_collision\_dans\_liste}
     \subitem {affichage.c}, \hyperpage{68}
     \subitem {affichage.h}, \hyperpage{126}
   \item {detruire\_inventaire}
-    \subitem {inventaire.c}, \hyperpage{216}
-    \subitem {inventaire.h}, \hyperpage{225}
+    \subitem {inventaire.c}, \hyperpage{219}
+    \subitem {inventaire.h}, \hyperpage{228}
   \item {detruire\_joueur}
-    \subitem {personnage.c}, \hyperpage{364}
-    \subitem {personnage.h}, \hyperpage{382}
+    \subitem {personnage.c}, \hyperpage{367}
+    \subitem {personnage.h}, \hyperpage{385}
   \item {detruire\_liste}
-    \subitem {listes.c}, \hyperpage{250}
-    \subitem {listes.h}, \hyperpage{270}
+    \subitem {listes.c}, \hyperpage{253}
+    \subitem {listes.h}, \hyperpage{273}
   \item {detruire\_liste\_base\_monstres}
-    \subitem {monstres.c}, \hyperpage{332}
-    \subitem {monstres.h}, \hyperpage{348}
+    \subitem {monstres.c}, \hyperpage{335}
+    \subitem {monstres.h}, \hyperpage{351}
   \item {detruire\_liste\_objet}
-    \subitem {liste\_objet.c}, \hyperpage{236}
-    \subitem {liste\_objet.h}, \hyperpage{245}
+    \subitem {liste\_objet.c}, \hyperpage{239}
+    \subitem {liste\_objet.h}, \hyperpage{248}
   \item {detruire\_liste\_textures}
     \subitem {affichage.c}, \hyperpage{69}
     \subitem {affichage.h}, \hyperpage{127}
   \item {detruire\_map}
-    \subitem {map.c}, \hyperpage{292}
-    \subitem {map.h}, \hyperpage{301}
+    \subitem {map.c}, \hyperpage{295}
+    \subitem {map.h}, \hyperpage{304}
   \item {detruire\_monstre}
-    \subitem {monstres.c}, \hyperpage{332}
+    \subitem {monstres.c}, \hyperpage{335}
   \item {detruire\_monstre\_cb}
-    \subitem {monstres.c}, \hyperpage{332}
-    \subitem {monstres.h}, \hyperpage{349}
+    \subitem {monstres.c}, \hyperpage{335}
+    \subitem {monstres.h}, \hyperpage{352}
   \item {detruire\_objet}
-    \subitem {objet.c}, \hyperpage{353}
-    \subitem {objet.h}, \hyperpage{357}
+    \subitem {objet.c}, \hyperpage{356}
+    \subitem {objet.h}, \hyperpage{360}
   \item {detruire\_renderer}
-    \subitem {init\_close.c}, \hyperpage{201}
+    \subitem {init\_close.c}, \hyperpage{204}
   \item {detruire\_sort}
-    \subitem {sorts.c}, \hyperpage{396}
+    \subitem {sorts.c}, \hyperpage{399}
   \item {detruire\_sort\_cb}
-    \subitem {sorts.c}, \hyperpage{396}
-    \subitem {sorts.h}, \hyperpage{403}
+    \subitem {sorts.c}, \hyperpage{399}
+    \subitem {sorts.h}, \hyperpage{406}
   \item {detruire\_texture}
     \subitem {affichage.c}, \hyperpage{69}
     \subitem {affichage.h}, \hyperpage{127}
   \item {DISPARITION}
-    \subitem {boss.h}, \hyperpage{157}
+    \subitem {boss.h}, \hyperpage{160}
   \item {DISTANCE\_AGRO}
-    \subitem {monstres.h}, \hyperpage{343}
+    \subitem {monstres.h}, \hyperpage{346}
   \item {distance\_joueur}
-    \subitem {personnage.c}, \hyperpage{365}
-    \subitem {personnage.h}, \hyperpage{383}
+    \subitem {personnage.c}, \hyperpage{368}
+    \subitem {personnage.h}, \hyperpage{386}
   \item {distance\_x\_joueur}
-    \subitem {personnage.c}, \hyperpage{366}
-    \subitem {personnage.h}, \hyperpage{384}
+    \subitem {personnage.c}, \hyperpage{369}
+    \subitem {personnage.h}, \hyperpage{387}
   \item {distance\_y\_joueur}
-    \subitem {personnage.c}, \hyperpage{367}
-    \subitem {personnage.h}, \hyperpage{385}
+    \subitem {personnage.c}, \hyperpage{370}
+    \subitem {personnage.h}, \hyperpage{388}
   \item {draw\_rect\_epaisseur}
-    \subitem {menus.c}, \hyperpage{313}
+    \subitem {menus.c}, \hyperpage{316}
   \item {duree}
-    \subitem {boss\_s}, \hyperpage{13}
-    \subitem {monstre\_s}, \hyperpage{26}
+    \subitem {boss\_s}, \hyperpage{15}
+    \subitem {monstre\_s}, \hyperpage{27}
     \subitem {statut\_s}, \hyperpage{32}
   \item {duree\_anim}
     \subitem {statut\_s}, \hyperpage{32}
   \item {DUREE\_ATTAQUE}
-    \subitem {personnage.h}, \hyperpage{377}
+    \subitem {personnage.h}, \hyperpage{380}
   \item {DUREE\_ATTAQUE\_CHARGEE}
-    \subitem {personnage.h}, \hyperpage{377}
+    \subitem {personnage.h}, \hyperpage{380}
   \item {DUREE\_ATTAQUE\_OU\_CHARGEE}
-    \subitem {personnage.h}, \hyperpage{377}
+    \subitem {personnage.h}, \hyperpage{380}
   \item {DUREE\_BLOQUER}
-    \subitem {personnage.h}, \hyperpage{377}
+    \subitem {personnage.h}, \hyperpage{380}
   \item {DUREE\_CLONAGE}
-    \subitem {boss.h}, \hyperpage{157}
+    \subitem {boss.h}, \hyperpage{160}
   \item {duree\_frame\_anim}
     \subitem {t\_aff}, \hyperpage{35}
   \item {DUREE\_JOUEUR\_BLESSE}
-    \subitem {personnage.h}, \hyperpage{377}
+    \subitem {personnage.h}, \hyperpage{380}
   \item {DUREE\_MONSTRE\_ATTAQUE}
-    \subitem {monstres.h}, \hyperpage{344}
+    \subitem {monstres.h}, \hyperpage{347}
   \item {DUREE\_MONSTRE\_BLESSE}
-    \subitem {monstres.h}, \hyperpage{344}
+    \subitem {monstres.h}, \hyperpage{347}
   \item {DUREE\_MONSTRE\_EN\_GARDE}
-    \subitem {monstres.h}, \hyperpage{344}
+    \subitem {monstres.h}, \hyperpage{347}
   \item {DUREE\_MONSTRE\_MARCHER}
-    \subitem {monstres.h}, \hyperpage{344}
+    \subitem {monstres.h}, \hyperpage{347}
   \item {DUREE\_MONSTRE\_PAUSE}
-    \subitem {monstres.h}, \hyperpage{344}
+    \subitem {monstres.h}, \hyperpage{347}
   \item {DUREE\_RUSH\_OU\_FUITE}
-    \subitem {monstres.h}, \hyperpage{344}
+    \subitem {monstres.h}, \hyperpage{347}
   \item {DUREE\_SOIN}
-    \subitem {personnage.h}, \hyperpage{377}
+    \subitem {personnage.h}, \hyperpage{380}
 
   \indexspace
 
   \item {ec}
-    \subitem {list}, \hyperpage{22}
+    \subitem {list}, \hyperpage{23}
   \item {effacer\_liste\_objet}
-    \subitem {liste\_objet.c}, \hyperpage{236}
-    \subitem {liste\_objet.h}, \hyperpage{245}
-  \item {element}, \hyperpage{16}
-    \subitem {pred}, \hyperpage{16}
-    \subitem {succ}, \hyperpage{16}
-    \subitem {valeur}, \hyperpage{16}
+    \subitem {liste\_objet.c}, \hyperpage{239}
+    \subitem {liste\_objet.h}, \hyperpage{248}
+  \item {element}, \hyperpage{18}
+    \subitem {pred}, \hyperpage{18}
+    \subitem {succ}, \hyperpage{19}
+    \subitem {valeur}, \hyperpage{19}
   \item {en\_mouvement}
-    \subitem {statut\_s}, \hyperpage{32}
+    \subitem {statut\_s}, \hyperpage{33}
   \item {en\_queue}
-    \subitem {listes.c}, \hyperpage{251}
-    \subitem {listes.h}, \hyperpage{271}
+    \subitem {listes.c}, \hyperpage{254}
+    \subitem {listes.h}, \hyperpage{274}
   \item {en\_tete}
-    \subitem {listes.c}, \hyperpage{252}
-    \subitem {listes.h}, \hyperpage{272}
+    \subitem {listes.c}, \hyperpage{255}
+    \subitem {listes.h}, \hyperpage{275}
   \item {entite\_en\_collision}
-    \subitem {personnage.c}, \hyperpage{368}
+    \subitem {personnage.c}, \hyperpage{371}
   \item {entite\_subit\_attaque}
-    \subitem {personnage.c}, \hyperpage{368}
+    \subitem {personnage.c}, \hyperpage{371}
   \item {environnement\_joueurs}
-    \subitem {personnage.c}, \hyperpage{369}
-    \subitem {personnage.h}, \hyperpage{386}
+    \subitem {personnage.c}, \hyperpage{372}
+    \subitem {personnage.h}, \hyperpage{389}
   \item {equipe}
-    \subitem {inventaire\_t}, \hyperpage{17}
-    \subitem {test\_inventaire.c}, \hyperpage{411}
+    \subitem {inventaire\_t}, \hyperpage{19}
+    \subitem {test\_inventaire.c}, \hyperpage{413}
   \item {equiper\_objet}
-    \subitem {inventaire.c}, \hyperpage{217}
-    \subitem {inventaire.h}, \hyperpage{226}
+    \subitem {inventaire.c}, \hyperpage{220}
+    \subitem {inventaire.h}, \hyperpage{229}
   \item {equiper\_sac\_slot}
-    \subitem {inventaire.c}, \hyperpage{218}
-    \subitem {inventaire.h}, \hyperpage{227}
+    \subitem {inventaire.c}, \hyperpage{221}
+    \subitem {inventaire.h}, \hyperpage{230}
   \item {ERR\_CREATION\_REPERTOIRE\_SAUVEGARDE}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERR\_RECTANGLE\_TOO\_BIG}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {err\_t}
-    \subitem {code\_erreur.h}, \hyperpage{160}
+    \subitem {code\_erreur.h}, \hyperpage{163}
   \item {erreur}
-    \subitem {code\_erreur.h}, \hyperpage{159}
+    \subitem {code\_erreur.h}, \hyperpage{162}
   \item {ERREUR\_FICHIER}
-    \subitem {code\_erreur.h}, \hyperpage{160}
+    \subitem {code\_erreur.h}, \hyperpage{163}
   \item {ERREUR\_FONCTION}
-    \subitem {code\_erreur.h}, \hyperpage{160}
+    \subitem {code\_erreur.h}, \hyperpage{163}
   \item {ERREUR\_INIT}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_JSON\_CLE\_NON\_TROUVEE}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_LISTE}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_MAP}
-    \subitem {code\_erreur.h}, \hyperpage{160}
+    \subitem {code\_erreur.h}, \hyperpage{163}
   \item {ERREUR\_SDL\_AUDIO}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_EVENT}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_IMG}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_JOYSTICK}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_KEYBOARD}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_MIX}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_MOUSE}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_MOUSEBUTTON}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_MOUSEMOTION}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_MUSIC}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_PIXEL}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_QUIT}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_RENDER}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_SCANCODE}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_SURFACE}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_TIMER}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_TIMER\_START}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_TIMER\_STOP}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_TTF}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_SDL\_WINDOW}
-    \subitem {code\_erreur.h}, \hyperpage{161}
+    \subitem {code\_erreur.h}, \hyperpage{164}
   \item {ERREUR\_TEXTURE}
-    \subitem {code\_erreur.h}, \hyperpage{160}
+    \subitem {code\_erreur.h}, \hyperpage{163}
   \item {EST\_1}
-    \subitem {definition\_commun.h}, \hyperpage{181}
+    \subitem {definition\_commun.h}, \hyperpage{184}
   \item {EST\_2}
-    \subitem {definition\_commun.h}, \hyperpage{182}
+    \subitem {definition\_commun.h}, \hyperpage{185}
   \item {etat}
-    \subitem {coffre\_s}, \hyperpage{14}
+    \subitem {coffre\_s}, \hyperpage{17}
   \item {etat\_coffre\_t}
-    \subitem {coffres.h}, \hyperpage{170}
-  \item {event.c}, \hyperpage{184}
-    \subitem {jeu\_event}, \hyperpage{185}
-    \subitem {jeu\_event\_manette}, \hyperpage{186}
-    \subitem {joystick\_button\_down}, \hyperpage{187}
-    \subitem {joystick\_button\_up}, \hyperpage{188}
-    \subitem {joystick\_stick}, \hyperpage{189}
-    \subitem {keyDown}, \hyperpage{190}
-    \subitem {keyUp}, \hyperpage{191}
-    \subitem {logo\_passer}, \hyperpage{191}
-    \subitem {manette}, \hyperpage{194}
-    \subitem {mouseButtonDown}, \hyperpage{192}
-    \subitem {mouseButtonUp}, \hyperpage{193}
-  \item {event.h}, \hyperpage{194}
-    \subitem {jeu\_event}, \hyperpage{196}
-    \subitem {jeu\_event\_manette}, \hyperpage{197}
-    \subitem {logo\_passer}, \hyperpage{198}
-    \subitem {manette}, \hyperpage{199}
-    \subitem {TOUCHE\_BAS}, \hyperpage{196}
-    \subitem {TOUCHE\_CONSOMMABLE}, \hyperpage{196}
-    \subitem {TOUCHE\_DROITE}, \hyperpage{196}
-    \subitem {TOUCHE\_ECHAP}, \hyperpage{196}
-    \subitem {TOUCHE\_GAUCHE}, \hyperpage{196}
-    \subitem {TOUCHE\_HAUT}, \hyperpage{196}
-    \subitem {TOUCHE\_TAB}, \hyperpage{196}
+    \subitem {coffres.h}, \hyperpage{173}
+  \item {event.c}, \hyperpage{187}
+    \subitem {jeu\_event}, \hyperpage{188}
+    \subitem {jeu\_event\_manette}, \hyperpage{189}
+    \subitem {joystick\_button\_down}, \hyperpage{190}
+    \subitem {joystick\_button\_up}, \hyperpage{191}
+    \subitem {joystick\_stick}, \hyperpage{192}
+    \subitem {keyDown}, \hyperpage{193}
+    \subitem {keyUp}, \hyperpage{194}
+    \subitem {logo\_passer}, \hyperpage{194}
+    \subitem {manette}, \hyperpage{197}
+    \subitem {mouseButtonDown}, \hyperpage{195}
+    \subitem {mouseButtonUp}, \hyperpage{196}
+  \item {event.h}, \hyperpage{197}
+    \subitem {jeu\_event}, \hyperpage{199}
+    \subitem {jeu\_event\_manette}, \hyperpage{200}
+    \subitem {logo\_passer}, \hyperpage{201}
+    \subitem {manette}, \hyperpage{202}
+    \subitem {TOUCHE\_BAS}, \hyperpage{199}
+    \subitem {TOUCHE\_CONSOMMABLE}, \hyperpage{199}
+    \subitem {TOUCHE\_DROITE}, \hyperpage{199}
+    \subitem {TOUCHE\_ECHAP}, \hyperpage{199}
+    \subitem {TOUCHE\_GAUCHE}, \hyperpage{199}
+    \subitem {TOUCHE\_HAUT}, \hyperpage{199}
+    \subitem {TOUCHE\_TAB}, \hyperpage{199}
 
   \indexspace
 
   \item {f\_close}
-    \subitem {init\_close.c}, \hyperpage{206}
+    \subitem {init\_close.c}, \hyperpage{209}
   \item {FACE\_FERME}
-    \subitem {coffres.h}, \hyperpage{171}
+    \subitem {coffres.h}, \hyperpage{174}
   \item {FACE\_OUVERT}
-    \subitem {coffres.h}, \hyperpage{171}
+    \subitem {coffres.h}, \hyperpage{174}
   \item {faux}
-    \subitem {definition\_commun.h}, \hyperpage{180}
+    \subitem {definition\_commun.h}, \hyperpage{183}
   \item {fenetre\_finale}
     \subitem {affichage.c}, \hyperpage{94}
-    \subitem {affichage.h}, \hyperpage{150}
+    \subitem {affichage.h}, \hyperpage{151}
   \item {FENETRE\_LARGEUR}
     \subitem {affichage.c}, \hyperpage{94}
-    \subitem {definition\_commun.h}, \hyperpage{183}
-    \subitem {test\_affichage.c}, \hyperpage{407}
-    \subitem {test\_inventaire.c}, \hyperpage{411}
-    \subitem {test\_liste\_objet.c}, \hyperpage{413}
-    \subitem {test\_listes.c}, \hyperpage{415}
-    \subitem {test\_map.c}, \hyperpage{417}
-    \subitem {test\_personnage.c}, \hyperpage{423}
-    \subitem {test\_SDL.c}, \hyperpage{427}
+    \subitem {definition\_commun.h}, \hyperpage{186}
+    \subitem {test\_inventaire.c}, \hyperpage{413}
+    \subitem {test\_liste\_objet.c}, \hyperpage{415}
+    \subitem {test\_listes.c}, \hyperpage{417}
+    \subitem {test\_personnage.c}, \hyperpage{421}
+    \subitem {test\_SDL.c}, \hyperpage{425}
   \item {FENETRE\_LONGUEUR}
     \subitem {affichage.c}, \hyperpage{94}
-    \subitem {definition\_commun.h}, \hyperpage{183}
-    \subitem {test\_affichage.c}, \hyperpage{407}
-    \subitem {test\_inventaire.c}, \hyperpage{411}
-    \subitem {test\_liste\_objet.c}, \hyperpage{414}
-    \subitem {test\_listes.c}, \hyperpage{415}
-    \subitem {test\_map.c}, \hyperpage{417}
-    \subitem {test\_personnage.c}, \hyperpage{423}
-    \subitem {test\_SDL.c}, \hyperpage{427}
+    \subitem {definition\_commun.h}, \hyperpage{186}
+    \subitem {test\_inventaire.c}, \hyperpage{413}
+    \subitem {test\_liste\_objet.c}, \hyperpage{416}
+    \subitem {test\_listes.c}, \hyperpage{417}
+    \subitem {test\_personnage.c}, \hyperpage{422}
+    \subitem {test\_SDL.c}, \hyperpage{425}
   \item {fenetre\_Principale}
-    \subitem {definition\_commun.h}, \hyperpage{183}
-    \subitem {init\_close.c}, \hyperpage{206}
-    \subitem {test\_SDL.c}, \hyperpage{427}
+    \subitem {definition\_commun.h}, \hyperpage{186}
+    \subitem {init\_close.c}, \hyperpage{209}
+    \subitem {test\_SDL.c}, \hyperpage{425}
   \item {fenetre\_sous\_rendu}
-    \subitem {init\_close.c}, \hyperpage{206}
+    \subitem {init\_close.c}, \hyperpage{209}
   \item {FERME}
-    \subitem {coffres.h}, \hyperpage{170}
+    \subitem {coffres.h}, \hyperpage{173}
   \item {fermer\_programme}
-    \subitem {definition\_commun.h}, \hyperpage{182}
-    \subitem {init\_close.c}, \hyperpage{201}
+    \subitem {definition\_commun.h}, \hyperpage{185}
+    \subitem {init\_close.c}, \hyperpage{204}
   \item {fermer\_SDL}
-    \subitem {init\_close.c}, \hyperpage{203}
+    \subitem {init\_close.c}, \hyperpage{206}
   \item {fichier\_image}
-    \subitem {base\_coffre\_s}, \hyperpage{9}
-    \subitem {base\_monstre\_s}, \hyperpage{10}
+    \subitem {base\_coffre\_s}, \hyperpage{11}
+    \subitem {base\_monstre\_s}, \hyperpage{12}
   \item {flag}
-    \subitem {list}, \hyperpage{22}
+    \subitem {list}, \hyperpage{23}
   \item {frame\_anim}
     \subitem {t\_aff}, \hyperpage{35}
   \item {fuir\_joueur}
-    \subitem {monstres.c}, \hyperpage{333}
+    \subitem {monstres.c}, \hyperpage{336}
 
   \indexspace
 
   \item {gain\_xp}
-    \subitem {personnage.c}, \hyperpage{370}
-    \subitem {personnage.h}, \hyperpage{387}
+    \subitem {personnage.c}, \hyperpage{373}
+    \subitem {personnage.h}, \hyperpage{390}
   \item {gainXp}
-    \subitem {base\_monstre\_s}, \hyperpage{10}
-    \subitem {monstre\_s}, \hyperpage{26}
+    \subitem {base\_monstre\_s}, \hyperpage{12}
+    \subitem {monstre\_s}, \hyperpage{27}
   \item {generation\_inventaire}
-    \subitem {test\_inventaire.c}, \hyperpage{408}
+    \subitem {test\_inventaire.c}, \hyperpage{410}
   \item {get\_rect\_center}
     \subitem {affichage.c}, \hyperpage{70}
     \subitem {affichage.h}, \hyperpage{128}
@@ -976,469 +968,464 @@
 
   \item {heal}
     \subitem {affichage.c}, \hyperpage{95}
-    \subitem {affichage.h}, \hyperpage{151}
+    \subitem {affichage.h}, \hyperpage{152}
   \item {height}
     \subitem {t\_aff}, \hyperpage{35}
     \subitem {t\_map}, \hyperpage{38}
   \item {hitbox}
-    \subitem {base\_coffre\_s}, \hyperpage{9}
-    \subitem {base\_monstre\_s}, \hyperpage{10}
+    \subitem {base\_coffre\_s}, \hyperpage{11}
+    \subitem {base\_monstre\_s}, \hyperpage{13}
   \item {hors\_hitbox}
-    \subitem {init\_close.c}, \hyperpage{206}
+    \subitem {init\_close.c}, \hyperpage{209}
   \item {hors\_liste}
-    \subitem {listes.c}, \hyperpage{254}
-    \subitem {listes.h}, \hyperpage{274}
+    \subitem {listes.c}, \hyperpage{257}
+    \subitem {listes.h}, \hyperpage{277}
   \item {hors\_map\_monstre}
-    \subitem {map.c}, \hyperpage{294}
+    \subitem {map.c}, \hyperpage{297}
 
   \indexspace
 
   \item {id}
-    \subitem {objet\_t}, \hyperpage{28}
+    \subitem {objet\_t}, \hyperpage{29}
   \item {id\_cle}
-    \subitem {coffre\_s}, \hyperpage{14}
+    \subitem {coffre\_s}, \hyperpage{17}
   \item {id\_loot}
-    \subitem {coffre\_s}, \hyperpage{15}
+    \subitem {coffre\_s}, \hyperpage{17}
   \item {id\_map}
     \subitem {t\_map}, \hyperpage{38}
     \subitem {zone\_tp}, \hyperpage{40}
   \item {info\_coffre}
-    \subitem {coffres.c}, \hyperpage{164}
-    \subitem {coffres.h}, \hyperpage{173}
+    \subitem {coffres.c}, \hyperpage{167}
+    \subitem {coffres.h}, \hyperpage{176}
   \item {info\_texture}
     \subitem {affichage.c}, \hyperpage{72}
     \subitem {affichage.h}, \hyperpage{129}
   \item {init}
-    \subitem {commun.h}, \hyperpage{177}
-    \subitem {init\_close.c}, \hyperpage{204}
+    \subitem {commun.h}, \hyperpage{180}
+    \subitem {init\_close.c}, \hyperpage{207}
   \item {init\_affichage}
-    \subitem {init\_close.c}, \hyperpage{204}
+    \subitem {init\_close.c}, \hyperpage{207}
   \item {init\_animations}
     \subitem {affichage.c}, \hyperpage{73}
     \subitem {affichage.h}, \hyperpage{130}
-  \item {init\_close.c}, \hyperpage{199}
-    \subitem {aff\_cleanup}, \hyperpage{201}
-    \subitem {detruire\_renderer}, \hyperpage{201}
-    \subitem {f\_close}, \hyperpage{206}
-    \subitem {fenetre\_Principale}, \hyperpage{206}
-    \subitem {fenetre\_sous\_rendu}, \hyperpage{206}
-    \subitem {fermer\_programme}, \hyperpage{201}
-    \subitem {fermer\_SDL}, \hyperpage{203}
-    \subitem {hors\_hitbox}, \hyperpage{206}
-    \subitem {init}, \hyperpage{204}
-    \subitem {init\_affichage}, \hyperpage{204}
-    \subitem {init\_rc\_commun}, \hyperpage{205}
-    \subitem {init\_SDL}, \hyperpage{205}
-    \subitem {rendu\_principal}, \hyperpage{206}
-    \subitem {running}, \hyperpage{207}
-    \subitem {sous\_rendu}, \hyperpage{207}
+  \item {init\_close.c}, \hyperpage{202}
+    \subitem {aff\_cleanup}, \hyperpage{204}
+    \subitem {detruire\_renderer}, \hyperpage{204}
+    \subitem {f\_close}, \hyperpage{209}
+    \subitem {fenetre\_Principale}, \hyperpage{209}
+    \subitem {fenetre\_sous\_rendu}, \hyperpage{209}
+    \subitem {fermer\_programme}, \hyperpage{204}
+    \subitem {fermer\_SDL}, \hyperpage{206}
+    \subitem {hors\_hitbox}, \hyperpage{209}
+    \subitem {init}, \hyperpage{207}
+    \subitem {init\_affichage}, \hyperpage{207}
+    \subitem {init\_rc\_commun}, \hyperpage{208}
+    \subitem {init\_SDL}, \hyperpage{208}
+    \subitem {rendu\_principal}, \hyperpage{209}
+    \subitem {running}, \hyperpage{210}
+    \subitem {sous\_rendu}, \hyperpage{210}
   \item {init\_liste}
-    \subitem {listes.c}, \hyperpage{256}
-    \subitem {listes.h}, \hyperpage{276}
+    \subitem {listes.c}, \hyperpage{259}
+    \subitem {listes.h}, \hyperpage{279}
   \item {init\_liste\_base\_sort}
-    \subitem {sorts.c}, \hyperpage{397}
-    \subitem {sorts.h}, \hyperpage{404}
+    \subitem {sorts.c}, \hyperpage{400}
+    \subitem {sorts.h}, \hyperpage{407}
   \item {init\_rc\_commun}
-    \subitem {init\_close.c}, \hyperpage{205}
+    \subitem {init\_close.c}, \hyperpage{208}
   \item {init\_SDL}
-    \subitem {init\_close.c}, \hyperpage{205}
+    \subitem {init\_close.c}, \hyperpage{208}
   \item {init\_sousbuffer}
-    \subitem {map.c}, \hyperpage{294}
-    \subitem {map.h}, \hyperpage{302}
+    \subitem {map.c}, \hyperpage{297}
+    \subitem {map.h}, \hyperpage{305}
   \item {init\_suite}
-    \subitem {test\_inventaire.c}, \hyperpage{409}
-    \subitem {test\_personnage.c}, \hyperpage{421}
-    \subitem {test\_SDL.c}, \hyperpage{425}
+    \subitem {test\_inventaire.c}, \hyperpage{410}
+    \subitem {test\_personnage.c}, \hyperpage{420}
+    \subitem {test\_SDL.c}, \hyperpage{423}
   \item {init\_text\_menus}
-    \subitem {menus.c}, \hyperpage{314}
-    \subitem {menus.h}, \hyperpage{323}
+    \subitem {menus.c}, \hyperpage{317}
+    \subitem {menus.h}, \hyperpage{326}
   \item {init\_texture\_joueur}
     \subitem {affichage.c}, \hyperpage{73}
     \subitem {affichage.h}, \hyperpage{131}
   \item {init\_textures\_joueur}
     \subitem {affichage.c}, \hyperpage{74}
-    \subitem {affichage.h}, \hyperpage{131}
+    \subitem {affichage.h}, \hyperpage{132}
   \item {interaction\_coffre}
-    \subitem {coffres.c}, \hyperpage{165}
-    \subitem {coffres.h}, \hyperpage{173}
-  \item {interface.c}, \hyperpage{207}
-    \subitem {RenderHPBar}, \hyperpage{208}
-  \item {interface.h}, \hyperpage{209}
-    \subitem {RenderHPBar}, \hyperpage{210}
+    \subitem {coffres.c}, \hyperpage{168}
+    \subitem {coffres.h}, \hyperpage{176}
+  \item {interface.c}, \hyperpage{210}
+    \subitem {RenderHPBar}, \hyperpage{211}
+  \item {interface.h}, \hyperpage{212}
+    \subitem {RenderHPBar}, \hyperpage{213}
   \item {intro\_boss}
-    \subitem {boss.c}, \hyperpage{155}
+    \subitem {boss.c}, \hyperpage{157}
   \item {inventaire}
-    \subitem {joueur\_t}, \hyperpage{19}
-  \item {inventaire.c}, \hyperpage{211}
-    \subitem {changement\_statistiques}, \hyperpage{212}
-    \subitem {consommer\_objet}, \hyperpage{212}
-    \subitem {creer\_inventaire}, \hyperpage{213}
-    \subitem {desequiper}, \hyperpage{214}
-    \subitem {desequiper\_slot}, \hyperpage{215}
-    \subitem {detruire\_inventaire}, \hyperpage{216}
-    \subitem {equiper\_objet}, \hyperpage{217}
-    \subitem {equiper\_sac\_slot}, \hyperpage{218}
-    \subitem {ramasser\_objet}, \hyperpage{219}
-    \subitem {tout\_ramasser}, \hyperpage{220}
-  \item {inventaire.h}, \hyperpage{220}
-    \subitem {CAPACITE\_SAC}, \hyperpage{222}
-    \subitem {changement\_statistiques}, \hyperpage{222}
-    \subitem {consommer\_objet}, \hyperpage{223}
-    \subitem {creer\_inventaire}, \hyperpage{223}
-    \subitem {desequiper}, \hyperpage{224}
-    \subitem {desequiper\_slot}, \hyperpage{224}
-    \subitem {detruire\_inventaire}, \hyperpage{225}
-    \subitem {equiper\_objet}, \hyperpage{226}
-    \subitem {equiper\_sac\_slot}, \hyperpage{227}
-    \subitem {ramasser\_objet}, \hyperpage{228}
-    \subitem {tout\_ramasser}, \hyperpage{229}
-  \item {inventaire\_t}, \hyperpage{17, 18}
-    \subitem {equipe}, \hyperpage{17}
-    \subitem {sac}, \hyperpage{17}
+    \subitem {joueur\_t}, \hyperpage{21}
+  \item {inventaire.c}, \hyperpage{214}
+    \subitem {changement\_statistiques}, \hyperpage{215}
+    \subitem {consommer\_objet}, \hyperpage{215}
+    \subitem {creer\_inventaire}, \hyperpage{216}
+    \subitem {desequiper}, \hyperpage{217}
+    \subitem {desequiper\_slot}, \hyperpage{218}
+    \subitem {detruire\_inventaire}, \hyperpage{219}
+    \subitem {equiper\_objet}, \hyperpage{220}
+    \subitem {equiper\_sac\_slot}, \hyperpage{221}
+    \subitem {ramasser\_objet}, \hyperpage{222}
+    \subitem {tout\_ramasser}, \hyperpage{223}
+  \item {inventaire.h}, \hyperpage{223}
+    \subitem {CAPACITE\_SAC}, \hyperpage{225}
+    \subitem {changement\_statistiques}, \hyperpage{225}
+    \subitem {consommer\_objet}, \hyperpage{226}
+    \subitem {creer\_inventaire}, \hyperpage{226}
+    \subitem {desequiper}, \hyperpage{227}
+    \subitem {desequiper\_slot}, \hyperpage{227}
+    \subitem {detruire\_inventaire}, \hyperpage{228}
+    \subitem {equiper\_objet}, \hyperpage{229}
+    \subitem {equiper\_sac\_slot}, \hyperpage{230}
+    \subitem {ramasser\_objet}, \hyperpage{231}
+    \subitem {tout\_ramasser}, \hyperpage{232}
+  \item {inventaire\_t}, \hyperpage{19}
+    \subitem {equipe}, \hyperpage{19}
+    \subitem {sac}, \hyperpage{19}
   \item {inverser\_direction}
-    \subitem {coffres.c}, \hyperpage{166}
-    \subitem {coffres.h}, \hyperpage{174}
+    \subitem {coffres.c}, \hyperpage{169}
+    \subitem {coffres.h}, \hyperpage{177}
 
   \indexspace
 
   \item {J\_BLESSE}
-    \subitem {personnage.h}, \hyperpage{378}
+    \subitem {personnage.h}, \hyperpage{381}
   \item {jeu\_event}
-    \subitem {event.c}, \hyperpage{185}
-    \subitem {event.h}, \hyperpage{196}
-  \item {jeu\_event\_manette}
-    \subitem {event.c}, \hyperpage{186}
-    \subitem {event.h}, \hyperpage{197}
-  \item {joueur\_t}, \hyperpage{18}
-    \subitem {attaque}, \hyperpage{19}
-    \subitem {attaque\_actif}, \hyperpage{19}
-    \subitem {defense}, \hyperpage{19}
-    \subitem {defense\_actif}, \hyperpage{19}
-    \subitem {inventaire}, \hyperpage{19}
-    \subitem {maxPdv}, \hyperpage{19}
-    \subitem {niveau}, \hyperpage{20}
-    \subitem {nom\_pers}, \hyperpage{20}
-    \subitem {pdv}, \hyperpage{20}
-    \subitem {statut}, \hyperpage{20}
-    \subitem {textures\_joueur}, \hyperpage{20}
-    \subitem {trigger}, \hyperpage{20}
-    \subitem {vitesse}, \hyperpage{20}
-    \subitem {vitesse\_actif}, \hyperpage{20}
-    \subitem {xp}, \hyperpage{21}
-  \item {joystick\_button\_down}
-    \subitem {event.c}, \hyperpage{187}
-  \item {joystick\_button\_up}
     \subitem {event.c}, \hyperpage{188}
-  \item {joystick\_stick}
+    \subitem {event.h}, \hyperpage{199}
+  \item {jeu\_event\_manette}
     \subitem {event.c}, \hyperpage{189}
+    \subitem {event.h}, \hyperpage{200}
+  \item {joueur\_t}, \hyperpage{20}
+    \subitem {attaque}, \hyperpage{20}
+    \subitem {attaque\_actif}, \hyperpage{20}
+    \subitem {defense}, \hyperpage{21}
+    \subitem {defense\_actif}, \hyperpage{21}
+    \subitem {inventaire}, \hyperpage{21}
+    \subitem {maxPdv}, \hyperpage{21}
+    \subitem {niveau}, \hyperpage{21}
+    \subitem {nom\_pers}, \hyperpage{21}
+    \subitem {pdv}, \hyperpage{21}
+    \subitem {statut}, \hyperpage{21}
+    \subitem {textures\_joueur}, \hyperpage{22}
+    \subitem {trigger}, \hyperpage{22}
+    \subitem {vitesse}, \hyperpage{22}
+    \subitem {vitesse\_actif}, \hyperpage{22}
+    \subitem {xp}, \hyperpage{22}
+  \item {joystick\_button\_down}
+    \subitem {event.c}, \hyperpage{190}
+  \item {joystick\_button\_up}
+    \subitem {event.c}, \hyperpage{191}
+  \item {joystick\_stick}
+    \subitem {event.c}, \hyperpage{192}
 
   \indexspace
 
   \item {keyDown}
-    \subitem {event.c}, \hyperpage{190}
+    \subitem {event.c}, \hyperpage{193}
   \item {keyUp}
-    \subitem {event.c}, \hyperpage{191}
+    \subitem {event.c}, \hyperpage{194}
   \item {KNIGHT}
-    \subitem {monstres.h}, \hyperpage{345}
+    \subitem {monstres.h}, \hyperpage{348}
 
   \indexspace
 
   \item {LARGEUR\_ENTITE}
     \subitem {affichage.h}, \hyperpage{99}
   \item {levelup}
-    \subitem {personnage.c}, \hyperpage{371}
-    \subitem {personnage.h}, \hyperpage{388}
-  \item {list}, \hyperpage{21}
-    \subitem {aff}, \hyperpage{21}
-    \subitem {ajout}, \hyperpage{21}
-    \subitem {del}, \hyperpage{22}
-    \subitem {ec}, \hyperpage{22}
-    \subitem {flag}, \hyperpage{22}
-    \subitem {nb\_elem}, \hyperpage{22}
+    \subitem {personnage.c}, \hyperpage{374}
+    \subitem {personnage.h}, \hyperpage{391}
+  \item {list}, \hyperpage{22}
+    \subitem {aff}, \hyperpage{23}
+    \subitem {ajout}, \hyperpage{23}
+    \subitem {del}, \hyperpage{23}
+    \subitem {ec}, \hyperpage{23}
+    \subitem {flag}, \hyperpage{23}
+    \subitem {nb\_elem}, \hyperpage{23}
   \item {liste}
-    \subitem {lobjet\_t}, \hyperpage{25}
+    \subitem {lobjet\_t}, \hyperpage{26}
     \subitem {t\_l\_aff}, \hyperpage{36}
   \item {liste\_animations}
     \subitem {affichage.c}, \hyperpage{95}
-    \subitem {affichage.h}, \hyperpage{151}
+    \subitem {affichage.h}, \hyperpage{152}
   \item {liste\_base\_coffres}
-    \subitem {coffres.c}, \hyperpage{168}
-    \subitem {coffres.h}, \hyperpage{176}
-  \item {liste\_base\_coffres\_s}, \hyperpage{22}
-    \subitem {nb\_coffre}, \hyperpage{23}
-    \subitem {tab}, \hyperpage{23}
-  \item {liste\_base\_monstres}
-    \subitem {monstres.c}, \hyperpage{341}
-    \subitem {monstres.h}, \hyperpage{350}
-  \item {liste\_base\_monstres\_t}, \hyperpage{23, 24}
-    \subitem {nb\_monstre}, \hyperpage{23}
+    \subitem {coffres.c}, \hyperpage{171}
+    \subitem {coffres.h}, \hyperpage{179}
+  \item {liste\_base\_coffres\_s}, \hyperpage{24}
+    \subitem {nb\_coffre}, \hyperpage{24}
     \subitem {tab}, \hyperpage{24}
+  \item {liste\_base\_monstres}
+    \subitem {monstres.c}, \hyperpage{344}
+    \subitem {monstres.h}, \hyperpage{353}
+  \item {liste\_base\_monstres\_t}, \hyperpage{25}
+    \subitem {nb\_monstre}, \hyperpage{25}
+    \subitem {tab}, \hyperpage{25}
   \item {liste\_base\_sort}
-    \subitem {sorts.c}, \hyperpage{398}
-    \subitem {sorts.h}, \hyperpage{405}
+    \subitem {sorts.c}, \hyperpage{401}
+    \subitem {sorts.h}, \hyperpage{408}
   \item {liste\_coffres}
     \subitem {t\_map}, \hyperpage{38}
   \item {liste\_collisions}
     \subitem {t\_map}, \hyperpage{38}
   \item {liste\_monstres}
     \subitem {t\_map}, \hyperpage{38}
-  \item {liste\_objet.c}, \hyperpage{230}
-    \subitem {afficher\_liste\_objet}, \hyperpage{231}
-    \subitem {afficher\_textures\_equipe}, \hyperpage{231}
-    \subitem {afficher\_textures\_sac}, \hyperpage{232}
-    \subitem {creer\_liste\_objet}, \hyperpage{233}
-    \subitem {creer\_liste\_objet\_equipe}, \hyperpage{234}
-    \subitem {creer\_liste\_objet\_vide}, \hyperpage{234}
-    \subitem {creer\_textures\_objets}, \hyperpage{235}
-    \subitem {detruire\_liste\_objet}, \hyperpage{236}
-    \subitem {effacer\_liste\_objet}, \hyperpage{236}
-    \subitem {objets}, \hyperpage{238}
-    \subitem {placer\_objet\_sac}, \hyperpage{237}
-  \item {liste\_objet.h}, \hyperpage{238}
-    \subitem {afficher\_liste\_objet}, \hyperpage{240}
-    \subitem {afficher\_textures\_equipe}, \hyperpage{240}
-    \subitem {afficher\_textures\_sac}, \hyperpage{241}
-    \subitem {creer\_liste\_objet}, \hyperpage{242}
-    \subitem {creer\_liste\_objet\_equipe}, \hyperpage{243}
-    \subitem {creer\_liste\_objet\_vide}, \hyperpage{243}
-    \subitem {creer\_textures\_objets}, \hyperpage{244}
-    \subitem {detruire\_liste\_objet}, \hyperpage{245}
-    \subitem {effacer\_liste\_objet}, \hyperpage{245}
-    \subitem {objets}, \hyperpage{247}
-    \subitem {placer\_objet\_sac}, \hyperpage{246}
+  \item {liste\_objet.c}, \hyperpage{233}
+    \subitem {afficher\_liste\_objet}, \hyperpage{234}
+    \subitem {afficher\_textures\_equipe}, \hyperpage{234}
+    \subitem {afficher\_textures\_sac}, \hyperpage{235}
+    \subitem {creer\_liste\_objet}, \hyperpage{236}
+    \subitem {creer\_liste\_objet\_equipe}, \hyperpage{237}
+    \subitem {creer\_liste\_objet\_vide}, \hyperpage{237}
+    \subitem {creer\_textures\_objets}, \hyperpage{238}
+    \subitem {detruire\_liste\_objet}, \hyperpage{239}
+    \subitem {effacer\_liste\_objet}, \hyperpage{239}
+    \subitem {objets}, \hyperpage{241}
+    \subitem {placer\_objet\_sac}, \hyperpage{240}
+  \item {liste\_objet.h}, \hyperpage{241}
+    \subitem {afficher\_liste\_objet}, \hyperpage{243}
+    \subitem {afficher\_textures\_equipe}, \hyperpage{243}
+    \subitem {afficher\_textures\_sac}, \hyperpage{244}
+    \subitem {creer\_liste\_objet}, \hyperpage{245}
+    \subitem {creer\_liste\_objet\_equipe}, \hyperpage{246}
+    \subitem {creer\_liste\_objet\_vide}, \hyperpage{246}
+    \subitem {creer\_textures\_objets}, \hyperpage{247}
+    \subitem {detruire\_liste\_objet}, \hyperpage{248}
+    \subitem {effacer\_liste\_objet}, \hyperpage{248}
+    \subitem {objets}, \hyperpage{250}
+    \subitem {placer\_objet\_sac}, \hyperpage{249}
   \item {liste\_sorts}
     \subitem {t\_map}, \hyperpage{38}
   \item {liste\_vide}
-    \subitem {listes.c}, \hyperpage{257}
-    \subitem {listes.h}, \hyperpage{277}
+    \subitem {listes.c}, \hyperpage{260}
+    \subitem {listes.h}, \hyperpage{280}
   \item {liste\_zone\_tp}
     \subitem {t\_map}, \hyperpage{39}
   \item {listeDeTextures}
     \subitem {affichage.c}, \hyperpage{95}
-    \subitem {affichage.h}, \hyperpage{151}
+    \subitem {affichage.h}, \hyperpage{152}
   \item {lister\_animations}
     \subitem {affichage.c}, \hyperpage{75}
-    \subitem {affichage.h}, \hyperpage{132}
-  \item {listes.c}, \hyperpage{247}
-    \subitem {afficher\_liste}, \hyperpage{248}
-    \subitem {ajout\_droit}, \hyperpage{249}
-    \subitem {ajout\_gauche}, \hyperpage{250}
-    \subitem {detruire\_liste}, \hyperpage{250}
-    \subitem {en\_queue}, \hyperpage{251}
-    \subitem {en\_tete}, \hyperpage{252}
-    \subitem {hors\_liste}, \hyperpage{254}
-    \subitem {init\_liste}, \hyperpage{256}
-    \subitem {liste\_vide}, \hyperpage{257}
-    \subitem {modif\_elt}, \hyperpage{258}
-    \subitem {oter\_elt}, \hyperpage{259}
-    \subitem {precedent}, \hyperpage{260}
-    \subitem {selectionner\_element}, \hyperpage{261}
-    \subitem {suivant}, \hyperpage{262}
-    \subitem {taille\_liste}, \hyperpage{263}
-    \subitem {valeur\_elt}, \hyperpage{264}
-    \subitem {vider\_liste}, \hyperpage{265}
-  \item {listes.h}, \hyperpage{266}
-    \subitem {afficher\_liste}, \hyperpage{268}
-    \subitem {ajout\_droit}, \hyperpage{269}
-    \subitem {ajout\_gauche}, \hyperpage{270}
-    \subitem {detruire\_liste}, \hyperpage{270}
-    \subitem {en\_queue}, \hyperpage{271}
-    \subitem {en\_tete}, \hyperpage{272}
-    \subitem {hors\_liste}, \hyperpage{274}
-    \subitem {init\_liste}, \hyperpage{276}
-    \subitem {liste\_vide}, \hyperpage{277}
-    \subitem {modif\_elt}, \hyperpage{278}
-    \subitem {oter\_elt}, \hyperpage{279}
-    \subitem {precedent}, \hyperpage{280}
-    \subitem {selectionner\_element}, \hyperpage{281}
-    \subitem {suivant}, \hyperpage{282}
-    \subitem {taille\_liste}, \hyperpage{283}
-    \subitem {valeur\_elt}, \hyperpage{284}
-    \subitem {vider\_liste}, \hyperpage{285}
-  \item {lobjet\_t}, \hyperpage{24, 25}
-    \subitem {liste}, \hyperpage{25}
-    \subitem {nb}, \hyperpage{25}
+    \subitem {affichage.h}, \hyperpage{133}
+  \item {listes.c}, \hyperpage{250}
+    \subitem {afficher\_liste}, \hyperpage{251}
+    \subitem {ajout\_droit}, \hyperpage{252}
+    \subitem {ajout\_gauche}, \hyperpage{253}
+    \subitem {detruire\_liste}, \hyperpage{253}
+    \subitem {en\_queue}, \hyperpage{254}
+    \subitem {en\_tete}, \hyperpage{255}
+    \subitem {hors\_liste}, \hyperpage{257}
+    \subitem {init\_liste}, \hyperpage{259}
+    \subitem {liste\_vide}, \hyperpage{260}
+    \subitem {modif\_elt}, \hyperpage{261}
+    \subitem {oter\_elt}, \hyperpage{262}
+    \subitem {precedent}, \hyperpage{263}
+    \subitem {selectionner\_element}, \hyperpage{264}
+    \subitem {suivant}, \hyperpage{265}
+    \subitem {taille\_liste}, \hyperpage{266}
+    \subitem {valeur\_elt}, \hyperpage{267}
+    \subitem {vider\_liste}, \hyperpage{268}
+  \item {listes.h}, \hyperpage{269}
+    \subitem {afficher\_liste}, \hyperpage{271}
+    \subitem {ajout\_droit}, \hyperpage{272}
+    \subitem {ajout\_gauche}, \hyperpage{273}
+    \subitem {detruire\_liste}, \hyperpage{273}
+    \subitem {en\_queue}, \hyperpage{274}
+    \subitem {en\_tete}, \hyperpage{275}
+    \subitem {hors\_liste}, \hyperpage{277}
+    \subitem {init\_liste}, \hyperpage{279}
+    \subitem {liste\_vide}, \hyperpage{280}
+    \subitem {modif\_elt}, \hyperpage{281}
+    \subitem {oter\_elt}, \hyperpage{282}
+    \subitem {precedent}, \hyperpage{283}
+    \subitem {selectionner\_element}, \hyperpage{284}
+    \subitem {suivant}, \hyperpage{285}
+    \subitem {taille\_liste}, \hyperpage{286}
+    \subitem {valeur\_elt}, \hyperpage{287}
+    \subitem {vider\_liste}, \hyperpage{288}
+  \item {lobjet\_t}, \hyperpage{25}
+    \subitem {liste}, \hyperpage{26}
+    \subitem {nb}, \hyperpage{26}
   \item {logo\_passer}
-    \subitem {event.c}, \hyperpage{191}
-    \subitem {event.h}, \hyperpage{198}
+    \subitem {event.c}, \hyperpage{194}
+    \subitem {event.h}, \hyperpage{201}
   \item {LONGUEUR\_ENTITE}
     \subitem {affichage.h}, \hyperpage{99}
 
   \indexspace
 
   \item {main}
-    \subitem {main.c}, \hyperpage{288}
-    \subitem {test\_affichage.c}, \hyperpage{407}
-    \subitem {test\_inventaire.c}, \hyperpage{409}
-    \subitem {test\_liste\_objet.c}, \hyperpage{413}
-    \subitem {test\_listes.c}, \hyperpage{415}
-    \subitem {test\_map.c}, \hyperpage{417}
-    \subitem {test\_monstres.c}, \hyperpage{419}
-    \subitem {test\_personnage.c}, \hyperpage{421}
-    \subitem {test\_SDL.c}, \hyperpage{425}
-  \item {main.c}, \hyperpage{286}
-    \subitem {afficher\_intro}, \hyperpage{288}
-    \subitem {main}, \hyperpage{288}
-    \subitem {SDL\_MAIN\_HANDLED}, \hyperpage{287}
+    \subitem {main.c}, \hyperpage{291}
+    \subitem {test\_inventaire.c}, \hyperpage{411}
+    \subitem {test\_liste\_objet.c}, \hyperpage{415}
+    \subitem {test\_listes.c}, \hyperpage{417}
+    \subitem {test\_personnage.c}, \hyperpage{420}
+    \subitem {test\_SDL.c}, \hyperpage{424}
+  \item {main.c}, \hyperpage{289}
+    \subitem {afficher\_intro}, \hyperpage{291}
+    \subitem {main}, \hyperpage{291}
+    \subitem {SDL\_MAIN\_HANDLED}, \hyperpage{290}
   \item {maj\_statistiques}
-    \subitem {personnage.c}, \hyperpage{372}
-    \subitem {personnage.h}, \hyperpage{389}
+    \subitem {personnage.c}, \hyperpage{375}
+    \subitem {personnage.h}, \hyperpage{392}
   \item {manette}
-    \subitem {event.c}, \hyperpage{194}
-    \subitem {event.h}, \hyperpage{199}
+    \subitem {event.c}, \hyperpage{197}
+    \subitem {event.h}, \hyperpage{202}
   \item {map}
-    \subitem {map.c}, \hyperpage{298}
-    \subitem {map.h}, \hyperpage{305}
-  \item {map.c}, \hyperpage{290}
-    \subitem {afficher\_zone\_tp}, \hyperpage{291}
-    \subitem {charger\_map}, \hyperpage{291}
-    \subitem {detruire\_map}, \hyperpage{292}
-    \subitem {hors\_map\_monstre}, \hyperpage{294}
-    \subitem {init\_sousbuffer}, \hyperpage{294}
-    \subitem {map}, \hyperpage{298}
-    \subitem {taille\_ecran\_cases}, \hyperpage{295}
-    \subitem {texture\_map}, \hyperpage{295}
-    \subitem {tp\_joueurs}, \hyperpage{296}
-    \subitem {transition}, \hyperpage{296}
-  \item {map.h}, \hyperpage{298}
-    \subitem {charger\_map}, \hyperpage{300}
-    \subitem {detruire\_map}, \hyperpage{301}
-    \subitem {init\_sousbuffer}, \hyperpage{302}
-    \subitem {map}, \hyperpage{305}
-    \subitem {TAILLE\_CASE}, \hyperpage{299}
-    \subitem {texture\_map}, \hyperpage{303}
-    \subitem {tp\_joueurs}, \hyperpage{304}
-    \subitem {transition}, \hyperpage{304}
+    \subitem {map.c}, \hyperpage{301}
+    \subitem {map.h}, \hyperpage{308}
+    \subitem {test\_inventaire.c}, \hyperpage{414}
+  \item {map.c}, \hyperpage{293}
+    \subitem {afficher\_zone\_tp}, \hyperpage{294}
+    \subitem {charger\_map}, \hyperpage{294}
+    \subitem {detruire\_map}, \hyperpage{295}
+    \subitem {hors\_map\_monstre}, \hyperpage{297}
+    \subitem {init\_sousbuffer}, \hyperpage{297}
+    \subitem {map}, \hyperpage{301}
+    \subitem {taille\_ecran\_cases}, \hyperpage{298}
+    \subitem {texture\_map}, \hyperpage{298}
+    \subitem {tp\_joueurs}, \hyperpage{299}
+    \subitem {transition}, \hyperpage{299}
+  \item {map.h}, \hyperpage{301}
+    \subitem {charger\_map}, \hyperpage{303}
+    \subitem {detruire\_map}, \hyperpage{304}
+    \subitem {init\_sousbuffer}, \hyperpage{305}
+    \subitem {map}, \hyperpage{308}
+    \subitem {TAILLE\_CASE}, \hyperpage{302}
+    \subitem {texture\_map}, \hyperpage{306}
+    \subitem {tp\_joueurs}, \hyperpage{307}
+    \subitem {transition}, \hyperpage{307}
   \item {marcher\_monstre}
-    \subitem {monstres.c}, \hyperpage{334}
+    \subitem {monstres.c}, \hyperpage{337}
   \item {maxPdv}
-    \subitem {joueur\_t}, \hyperpage{19}
-  \item {menus.c}, \hyperpage{305}
-    \subitem {afficher\_inventaire}, \hyperpage{306}
-    \subitem {afficher\_inventaire\_manette}, \hyperpage{307}
-    \subitem {afficher\_menu\_accueil}, \hyperpage{308}
-    \subitem {afficher\_menu\_accueil\_manette}, \hyperpage{309}
-    \subitem {afficher\_menu\_pause}, \hyperpage{310}
-    \subitem {afficher\_menu\_pause\_manette}, \hyperpage{311}
-    \subitem {creer\_inventaire\_j2}, \hyperpage{312}
-    \subitem {draw\_rect\_epaisseur}, \hyperpage{313}
-    \subitem {init\_text\_menus}, \hyperpage{314}
-    \subitem {text\_accueil}, \hyperpage{315}
-    \subitem {text\_inventaire1}, \hyperpage{315}
-    \subitem {text\_inventaire2}, \hyperpage{315}
-    \subitem {text\_pause}, \hyperpage{315}
-  \item {menus.h}, \hyperpage{315}
-    \subitem {afficher\_inventaire}, \hyperpage{317}
-    \subitem {afficher\_inventaire\_manette}, \hyperpage{317}
-    \subitem {afficher\_menu\_accueil}, \hyperpage{318}
-    \subitem {afficher\_menu\_accueil\_manette}, \hyperpage{319}
-    \subitem {afficher\_menu\_pause}, \hyperpage{320}
-    \subitem {afficher\_menu\_pause\_manette}, \hyperpage{321}
-    \subitem {creer\_inventaire\_j2}, \hyperpage{322}
-    \subitem {init\_text\_menus}, \hyperpage{323}
-    \subitem {text\_accueil}, \hyperpage{323}
-    \subitem {text\_inventaire1}, \hyperpage{323}
-    \subitem {text\_inventaire2}, \hyperpage{324}
-    \subitem {text\_pause}, \hyperpage{324}
+    \subitem {joueur\_t}, \hyperpage{21}
+  \item {menus.c}, \hyperpage{308}
+    \subitem {afficher\_inventaire}, \hyperpage{309}
+    \subitem {afficher\_inventaire\_manette}, \hyperpage{310}
+    \subitem {afficher\_menu\_accueil}, \hyperpage{311}
+    \subitem {afficher\_menu\_accueil\_manette}, \hyperpage{312}
+    \subitem {afficher\_menu\_pause}, \hyperpage{313}
+    \subitem {afficher\_menu\_pause\_manette}, \hyperpage{314}
+    \subitem {creer\_inventaire\_j2}, \hyperpage{315}
+    \subitem {draw\_rect\_epaisseur}, \hyperpage{316}
+    \subitem {init\_text\_menus}, \hyperpage{317}
+    \subitem {text\_accueil}, \hyperpage{318}
+    \subitem {text\_inventaire1}, \hyperpage{318}
+    \subitem {text\_inventaire2}, \hyperpage{318}
+    \subitem {text\_pause}, \hyperpage{318}
+  \item {menus.h}, \hyperpage{318}
+    \subitem {afficher\_inventaire}, \hyperpage{320}
+    \subitem {afficher\_inventaire\_manette}, \hyperpage{320}
+    \subitem {afficher\_menu\_accueil}, \hyperpage{321}
+    \subitem {afficher\_menu\_accueil\_manette}, \hyperpage{322}
+    \subitem {afficher\_menu\_pause}, \hyperpage{323}
+    \subitem {afficher\_menu\_pause\_manette}, \hyperpage{324}
+    \subitem {creer\_inventaire\_j2}, \hyperpage{325}
+    \subitem {init\_text\_menus}, \hyperpage{326}
+    \subitem {text\_accueil}, \hyperpage{326}
+    \subitem {text\_inventaire1}, \hyperpage{326}
+    \subitem {text\_inventaire2}, \hyperpage{327}
+    \subitem {text\_pause}, \hyperpage{327}
   \item {modif\_affichage\_rect}
     \subitem {affichage.c}, \hyperpage{76}
-    \subitem {affichage.h}, \hyperpage{133}
+    \subitem {affichage.h}, \hyperpage{134}
   \item {modif\_elt}
-    \subitem {listes.c}, \hyperpage{258}
-    \subitem {listes.h}, \hyperpage{278}
+    \subitem {listes.c}, \hyperpage{261}
+    \subitem {listes.h}, \hyperpage{281}
   \item {modification\_inventaire}
-    \subitem {test\_inventaire.c}, \hyperpage{410}
-  \item {modification\_personnage}
-    \subitem {test\_personnage.c}, \hyperpage{422}
+    \subitem {test\_inventaire.c}, \hyperpage{412}
   \item {MONSTRE\_ATTAQUE}
-    \subitem {monstres.h}, \hyperpage{345}
+    \subitem {monstres.h}, \hyperpage{348}
   \item {monstre\_attaque}
-    \subitem {monstres.c}, \hyperpage{335}
+    \subitem {monstres.c}, \hyperpage{338}
   \item {MONSTRE\_BLESSE}
-    \subitem {monstres.h}, \hyperpage{345}
+    \subitem {monstres.h}, \hyperpage{348}
   \item {MONSTRE\_EN\_GARDE}
-    \subitem {monstres.h}, \hyperpage{345}
+    \subitem {monstres.h}, \hyperpage{348}
   \item {monstre\_en\_garde}
-    \subitem {monstres.c}, \hyperpage{336}
+    \subitem {monstres.c}, \hyperpage{339}
   \item {MONSTRE\_MARCHER}
-    \subitem {monstres.h}, \hyperpage{345}
+    \subitem {monstres.h}, \hyperpage{348}
   \item {MONSTRE\_PAUSE}
-    \subitem {monstres.h}, \hyperpage{345}
+    \subitem {monstres.h}, \hyperpage{348}
   \item {monstre\_s}, \hyperpage{26}
-    \subitem {action}, \hyperpage{26}
-    \subitem {attaque}, \hyperpage{26}
-    \subitem {collision}, \hyperpage{26}
-    \subitem {duree}, \hyperpage{26}
-    \subitem {gainXp}, \hyperpage{26}
-    \subitem {orientation}, \hyperpage{26}
+    \subitem {action}, \hyperpage{27}
+    \subitem {attaque}, \hyperpage{27}
+    \subitem {collision}, \hyperpage{27}
+    \subitem {duree}, \hyperpage{27}
+    \subitem {gainXp}, \hyperpage{27}
+    \subitem {orientation}, \hyperpage{27}
     \subitem {pdv}, \hyperpage{27}
     \subitem {texture}, \hyperpage{27}
-    \subitem {type}, \hyperpage{27}
-    \subitem {vitesse}, \hyperpage{27}
-  \item {monstre\_t}, \hyperpage{27}
-  \item {monstres.c}, \hyperpage{324}
-    \subitem {action\_monstre}, \hyperpage{326}
-    \subitem {agro\_knight}, \hyperpage{327}
-    \subitem {agro\_monstre}, \hyperpage{328}
-    \subitem {agro\_witcher}, \hyperpage{328}
-    \subitem {ajouter\_monstre}, \hyperpage{329}
-    \subitem {ajouter\_monstre\_cb}, \hyperpage{330}
-    \subitem {charger\_base\_monstre}, \hyperpage{331}
-    \subitem {creer\_monstre}, \hyperpage{331}
-    \subitem {detruire\_liste\_base\_monstres}, \hyperpage{332}
-    \subitem {detruire\_monstre}, \hyperpage{332}
-    \subitem {detruire\_monstre\_cb}, \hyperpage{332}
-    \subitem {fuir\_joueur}, \hyperpage{333}
-    \subitem {liste\_base\_monstres}, \hyperpage{341}
-    \subitem {marcher\_monstre}, \hyperpage{334}
-    \subitem {monstre\_attaque}, \hyperpage{335}
-    \subitem {monstre\_en\_garde}, \hyperpage{336}
-    \subitem {nom\_monstre\_to\_type\_monstre}, \hyperpage{337}
-    \subitem {orienter\_monstre}, \hyperpage{337}
-    \subitem {orienter\_monstre\_vers\_joueur}, \hyperpage{338}
-    \subitem {ronde\_monstre}, \hyperpage{339}
-    \subitem {rush\_joueur}, \hyperpage{340}
-  \item {monstres.h}, \hyperpage{341}
-    \subitem {action\_monstre}, \hyperpage{345}
-    \subitem {action\_monstre\_t}, \hyperpage{344}
-    \subitem {ajouter\_monstre\_cb}, \hyperpage{346}
-    \subitem {charger\_base\_monstre}, \hyperpage{347}
-    \subitem {creer\_monstre}, \hyperpage{348}
-    \subitem {detruire\_liste\_base\_monstres}, \hyperpage{348}
-    \subitem {detruire\_monstre\_cb}, \hyperpage{349}
-    \subitem {DISTANCE\_AGRO}, \hyperpage{343}
-    \subitem {DUREE\_MONSTRE\_ATTAQUE}, \hyperpage{344}
-    \subitem {DUREE\_MONSTRE\_BLESSE}, \hyperpage{344}
-    \subitem {DUREE\_MONSTRE\_EN\_GARDE}, \hyperpage{344}
-    \subitem {DUREE\_MONSTRE\_MARCHER}, \hyperpage{344}
-    \subitem {DUREE\_MONSTRE\_PAUSE}, \hyperpage{344}
-    \subitem {DUREE\_RUSH\_OU\_FUITE}, \hyperpage{344}
-    \subitem {KNIGHT}, \hyperpage{345}
-    \subitem {liste\_base\_monstres}, \hyperpage{350}
-    \subitem {MONSTRE\_ATTAQUE}, \hyperpage{345}
-    \subitem {MONSTRE\_BLESSE}, \hyperpage{345}
-    \subitem {MONSTRE\_EN\_GARDE}, \hyperpage{345}
-    \subitem {MONSTRE\_MARCHER}, \hyperpage{345}
-    \subitem {MONSTRE\_PAUSE}, \hyperpage{345}
-    \subitem {nom\_monstre\_to\_type\_monstre}, \hyperpage{349}
-    \subitem {RUSH\_OU\_FUITE}, \hyperpage{345}
-    \subitem {TYPE\_MONSTRE\_INCONNU}, \hyperpage{345}
-    \subitem {type\_monstre\_t}, \hyperpage{345}
-    \subitem {WITCHER}, \hyperpage{345}
+    \subitem {type}, \hyperpage{28}
+    \subitem {vitesse}, \hyperpage{28}
+  \item {monstres.c}, \hyperpage{327}
+    \subitem {action\_monstre}, \hyperpage{329}
+    \subitem {agro\_knight}, \hyperpage{330}
+    \subitem {agro\_monstre}, \hyperpage{331}
+    \subitem {agro\_witcher}, \hyperpage{331}
+    \subitem {ajouter\_monstre}, \hyperpage{332}
+    \subitem {ajouter\_monstre\_cb}, \hyperpage{333}
+    \subitem {charger\_base\_monstre}, \hyperpage{334}
+    \subitem {creer\_monstre}, \hyperpage{334}
+    \subitem {detruire\_liste\_base\_monstres}, \hyperpage{335}
+    \subitem {detruire\_monstre}, \hyperpage{335}
+    \subitem {detruire\_monstre\_cb}, \hyperpage{335}
+    \subitem {fuir\_joueur}, \hyperpage{336}
+    \subitem {liste\_base\_monstres}, \hyperpage{344}
+    \subitem {marcher\_monstre}, \hyperpage{337}
+    \subitem {monstre\_attaque}, \hyperpage{338}
+    \subitem {monstre\_en\_garde}, \hyperpage{339}
+    \subitem {nom\_monstre\_to\_type\_monstre}, \hyperpage{340}
+    \subitem {orienter\_monstre}, \hyperpage{340}
+    \subitem {orienter\_monstre\_vers\_joueur}, \hyperpage{341}
+    \subitem {ronde\_monstre}, \hyperpage{342}
+    \subitem {rush\_joueur}, \hyperpage{343}
+  \item {monstres.h}, \hyperpage{344}
+    \subitem {action\_monstre}, \hyperpage{348}
+    \subitem {action\_monstre\_t}, \hyperpage{347}
+    \subitem {ajouter\_monstre\_cb}, \hyperpage{349}
+    \subitem {charger\_base\_monstre}, \hyperpage{350}
+    \subitem {creer\_monstre}, \hyperpage{351}
+    \subitem {detruire\_liste\_base\_monstres}, \hyperpage{351}
+    \subitem {detruire\_monstre\_cb}, \hyperpage{352}
+    \subitem {DISTANCE\_AGRO}, \hyperpage{346}
+    \subitem {DUREE\_MONSTRE\_ATTAQUE}, \hyperpage{347}
+    \subitem {DUREE\_MONSTRE\_BLESSE}, \hyperpage{347}
+    \subitem {DUREE\_MONSTRE\_EN\_GARDE}, \hyperpage{347}
+    \subitem {DUREE\_MONSTRE\_MARCHER}, \hyperpage{347}
+    \subitem {DUREE\_MONSTRE\_PAUSE}, \hyperpage{347}
+    \subitem {DUREE\_RUSH\_OU\_FUITE}, \hyperpage{347}
+    \subitem {KNIGHT}, \hyperpage{348}
+    \subitem {liste\_base\_monstres}, \hyperpage{353}
+    \subitem {MONSTRE\_ATTAQUE}, \hyperpage{348}
+    \subitem {MONSTRE\_BLESSE}, \hyperpage{348}
+    \subitem {MONSTRE\_EN\_GARDE}, \hyperpage{348}
+    \subitem {MONSTRE\_MARCHER}, \hyperpage{348}
+    \subitem {MONSTRE\_PAUSE}, \hyperpage{348}
+    \subitem {nom\_monstre\_to\_type\_monstre}, \hyperpage{352}
+    \subitem {RUSH\_OU\_FUITE}, \hyperpage{348}
+    \subitem {TYPE\_MONSTRE\_INCONNU}, \hyperpage{348}
+    \subitem {type\_monstre\_t}, \hyperpage{348}
+    \subitem {WITCHER}, \hyperpage{348}
   \item {MORT}
-    \subitem {boss.h}, \hyperpage{157}
+    \subitem {boss.h}, \hyperpage{160}
   \item {mouseButtonDown}
-    \subitem {event.c}, \hyperpage{192}
+    \subitem {event.c}, \hyperpage{195}
   \item {mouseButtonUp}
-    \subitem {event.c}, \hyperpage{193}
+    \subitem {event.c}, \hyperpage{196}
   \item {multipli\_taille}
     \subitem {t\_aff}, \hyperpage{35}
   \item {multiplicateur\_x}
     \subitem {affichage.c}, \hyperpage{95}
-    \subitem {affichage.h}, \hyperpage{151}
+    \subitem {affichage.h}, \hyperpage{152}
   \item {multiplicateur\_y}
     \subitem {affichage.c}, \hyperpage{95}
-    \subitem {affichage.h}, \hyperpage{151}
+    \subitem {affichage.h}, \hyperpage{152}
 
   \indexspace
 
@@ -1463,384 +1450,382 @@
   \item {N\_T\_MARCHER\_BOUCLIER2}
     \subitem {affichage.h}, \hyperpage{101}
   \item {nb}
-    \subitem {lobjet\_t}, \hyperpage{25}
+    \subitem {lobjet\_t}, \hyperpage{26}
   \item {nb\_coffre}
-    \subitem {liste\_base\_coffres\_s}, \hyperpage{23}
+    \subitem {liste\_base\_coffres\_s}, \hyperpage{24}
   \item {nb\_elem}
-    \subitem {list}, \hyperpage{22}
+    \subitem {list}, \hyperpage{23}
   \item {NB\_FPS}
     \subitem {affichage.h}, \hyperpage{101}
   \item {nb\_monstre}
-    \subitem {liste\_base\_monstres\_t}, \hyperpage{23}
+    \subitem {liste\_base\_monstres\_t}, \hyperpage{25}
   \item {NB\_SPRITE\_JOUEUR}
     \subitem {affichage.h}, \hyperpage{101}
   \item {NB\_TYPE\_OBJ}
-    \subitem {objet.h}, \hyperpage{355}
+    \subitem {objet.h}, \hyperpage{358}
   \item {nb\_valeurs}
     \subitem {t\_l\_aff}, \hyperpage{36}
   \item {new\_joueur}
-    \subitem {personnage.c}, \hyperpage{372}
-    \subitem {personnage.h}, \hyperpage{389}
+    \subitem {personnage.c}, \hyperpage{375}
+    \subitem {personnage.h}, \hyperpage{392}
   \item {next\_frame\_animation}
     \subitem {affichage.c}, \hyperpage{76}
-    \subitem {affichage.h}, \hyperpage{133}
+    \subitem {affichage.h}, \hyperpage{134}
   \item {next\_frame\_indice}
     \subitem {affichage.c}, \hyperpage{77}
-    \subitem {affichage.h}, \hyperpage{134}
+    \subitem {affichage.h}, \hyperpage{135}
   \item {next\_frame\_joueur}
     \subitem {affichage.c}, \hyperpage{78}
-    \subitem {affichage.h}, \hyperpage{135}
+    \subitem {affichage.h}, \hyperpage{136}
   \item {next\_frame\_x}
     \subitem {affichage.c}, \hyperpage{79}
-    \subitem {affichage.h}, \hyperpage{136}
+    \subitem {affichage.h}, \hyperpage{137}
   \item {next\_frame\_x\_indice}
     \subitem {affichage.c}, \hyperpage{80}
-    \subitem {affichage.h}, \hyperpage{137}
+    \subitem {affichage.h}, \hyperpage{138}
   \item {next\_frame\_y}
     \subitem {affichage.c}, \hyperpage{81}
-    \subitem {affichage.h}, \hyperpage{138}
+    \subitem {affichage.h}, \hyperpage{139}
   \item {next\_frame\_y\_indice}
     \subitem {affichage.c}, \hyperpage{82}
-    \subitem {affichage.h}, \hyperpage{139}
+    \subitem {affichage.h}, \hyperpage{140}
   \item {niveau}
-    \subitem {joueur\_t}, \hyperpage{20}
-    \subitem {objet\_t}, \hyperpage{28}
+    \subitem {joueur\_t}, \hyperpage{21}
+    \subitem {objet\_t}, \hyperpage{29}
   \item {nom}
-    \subitem {objet\_t}, \hyperpage{28}
+    \subitem {objet\_t}, \hyperpage{29}
   \item {nom\_coffre}
-    \subitem {base\_coffre\_s}, \hyperpage{9}
+    \subitem {base\_coffre\_s}, \hyperpage{11}
   \item {nom\_coffre\_to\_type\_coffre}
-    \subitem {coffres.c}, \hyperpage{167}
-    \subitem {coffres.h}, \hyperpage{175}
+    \subitem {coffres.c}, \hyperpage{170}
+    \subitem {coffres.h}, \hyperpage{178}
   \item {nom\_monstre}
-    \subitem {base\_monstre\_s}, \hyperpage{10}
+    \subitem {base\_monstre\_s}, \hyperpage{13}
   \item {nom\_monstre\_to\_type\_monstre}
-    \subitem {monstres.c}, \hyperpage{337}
-    \subitem {monstres.h}, \hyperpage{349}
+    \subitem {monstres.c}, \hyperpage{340}
+    \subitem {monstres.h}, \hyperpage{352}
   \item {nom\_pers}
-    \subitem {joueur\_t}, \hyperpage{20}
+    \subitem {joueur\_t}, \hyperpage{21}
   \item {NORD\_1}
-    \subitem {definition\_commun.h}, \hyperpage{181}
+    \subitem {definition\_commun.h}, \hyperpage{184}
   \item {NORD\_2}
-    \subitem {definition\_commun.h}, \hyperpage{182}
+    \subitem {definition\_commun.h}, \hyperpage{185}
   \item {NORD\_EST\_2}
-    \subitem {definition\_commun.h}, \hyperpage{182}
+    \subitem {definition\_commun.h}, \hyperpage{185}
   \item {NORD\_OUEST\_2}
-    \subitem {definition\_commun.h}, \hyperpage{182}
+    \subitem {definition\_commun.h}, \hyperpage{185}
 
   \indexspace
 
-  \item {objet.c}, \hyperpage{350}
-    \subitem {afficher\_objet}, \hyperpage{351}
-    \subitem {creer\_objet}, \hyperpage{352}
-    \subitem {detruire\_objet}, \hyperpage{353}
-  \item {objet.h}, \hyperpage{354}
-    \subitem {afficher\_objet}, \hyperpage{356}
-    \subitem {amulette}, \hyperpage{356}
-    \subitem {arme}, \hyperpage{356}
-    \subitem {bouclier}, \hyperpage{356}
-    \subitem {consommable}, \hyperpage{356}
-    \subitem {creer\_objet}, \hyperpage{356}
-    \subitem {detruire\_objet}, \hyperpage{357}
-    \subitem {NB\_TYPE\_OBJ}, \hyperpage{355}
-    \subitem {protection}, \hyperpage{356}
-    \subitem {quete}, \hyperpage{356}
-    \subitem {t\_item}, \hyperpage{355}
-  \item {objet\_t}, \hyperpage{28, 29}
-    \subitem {attaque}, \hyperpage{28}
-    \subitem {defense}, \hyperpage{28}
-    \subitem {id}, \hyperpage{28}
-    \subitem {niveau}, \hyperpage{28}
-    \subitem {nom}, \hyperpage{28}
+  \item {objet.c}, \hyperpage{353}
+    \subitem {afficher\_objet}, \hyperpage{354}
+    \subitem {creer\_objet}, \hyperpage{355}
+    \subitem {detruire\_objet}, \hyperpage{356}
+  \item {objet.h}, \hyperpage{357}
+    \subitem {afficher\_objet}, \hyperpage{359}
+    \subitem {amulette}, \hyperpage{359}
+    \subitem {arme}, \hyperpage{359}
+    \subitem {bouclier}, \hyperpage{359}
+    \subitem {consommable}, \hyperpage{359}
+    \subitem {creer\_objet}, \hyperpage{359}
+    \subitem {detruire\_objet}, \hyperpage{360}
+    \subitem {NB\_TYPE\_OBJ}, \hyperpage{358}
+    \subitem {protection}, \hyperpage{359}
+    \subitem {quete}, \hyperpage{359}
+    \subitem {t\_item}, \hyperpage{358}
+  \item {objet\_t}, \hyperpage{28}
+    \subitem {attaque}, \hyperpage{29}
+    \subitem {defense}, \hyperpage{29}
+    \subitem {id}, \hyperpage{29}
+    \subitem {niveau}, \hyperpage{29}
+    \subitem {nom}, \hyperpage{29}
     \subitem {texture}, \hyperpage{29}
     \subitem {texture\_src}, \hyperpage{29}
     \subitem {type}, \hyperpage{29}
-    \subitem {vitesse}, \hyperpage{29}
+    \subitem {vitesse}, \hyperpage{30}
   \item {objet\_test}
-    \subitem {test\_inventaire.c}, \hyperpage{412}
+    \subitem {test\_inventaire.c}, \hyperpage{414}
   \item {objets}
-    \subitem {liste\_objet.c}, \hyperpage{238}
-    \subitem {liste\_objet.h}, \hyperpage{247}
+    \subitem {liste\_objet.c}, \hyperpage{241}
+    \subitem {liste\_objet.h}, \hyperpage{250}
   \item {orient\_att}
-    \subitem {statut\_s}, \hyperpage{32}
+    \subitem {statut\_s}, \hyperpage{33}
   \item {orient\_dep}
     \subitem {statut\_s}, \hyperpage{33}
   \item {orientation}
-    \subitem {coffre\_s}, \hyperpage{15}
-    \subitem {monstre\_s}, \hyperpage{26}
+    \subitem {coffre\_s}, \hyperpage{17}
+    \subitem {monstre\_s}, \hyperpage{27}
   \item {orienter\_monstre}
-    \subitem {monstres.c}, \hyperpage{337}
+    \subitem {monstres.c}, \hyperpage{340}
   \item {orienter\_monstre\_vers\_joueur}
-    \subitem {monstres.c}, \hyperpage{338}
+    \subitem {monstres.c}, \hyperpage{341}
   \item {orienter\_sort\_vers\_joueur}
-    \subitem {sorts.c}, \hyperpage{397}
-    \subitem {sorts.h}, \hyperpage{404}
+    \subitem {sorts.c}, \hyperpage{400}
+    \subitem {sorts.h}, \hyperpage{407}
   \item {oter\_elt}
-    \subitem {listes.c}, \hyperpage{259}
-    \subitem {listes.h}, \hyperpage{279}
+    \subitem {listes.c}, \hyperpage{262}
+    \subitem {listes.h}, \hyperpage{282}
   \item {OUEST\_1}
-    \subitem {definition\_commun.h}, \hyperpage{181}
+    \subitem {definition\_commun.h}, \hyperpage{184}
   \item {OUEST\_2}
-    \subitem {definition\_commun.h}, \hyperpage{182}
+    \subitem {definition\_commun.h}, \hyperpage{185}
   \item {OUT\_OF\_MEM}
-    \subitem {code\_erreur.h}, \hyperpage{160}
+    \subitem {code\_erreur.h}, \hyperpage{163}
   \item {OUVERT}
-    \subitem {coffres.h}, \hyperpage{170}
+    \subitem {coffres.h}, \hyperpage{173}
 
   \indexspace
 
   \item {PATH\_SPELL\_BOSS}
-    \subitem {sorts.h}, \hyperpage{400}
+    \subitem {sorts.h}, \hyperpage{403}
   \item {PATH\_SPELL\_WITCHER}
-    \subitem {sorts.h}, \hyperpage{401}
+    \subitem {sorts.h}, \hyperpage{404}
   \item {pdv}
-    \subitem {base\_monstre\_s}, \hyperpage{11}
-    \subitem {boss\_s}, \hyperpage{13}
-    \subitem {joueur\_t}, \hyperpage{20}
+    \subitem {base\_monstre\_s}, \hyperpage{13}
+    \subitem {boss\_s}, \hyperpage{16}
+    \subitem {joueur\_t}, \hyperpage{21}
     \subitem {monstre\_s}, \hyperpage{27}
   \item {perso\_principal}
-    \subitem {test\_inventaire.c}, \hyperpage{412}
-    \subitem {test\_personnage.c}, \hyperpage{423}
-  \item {personnage.c}, \hyperpage{358}
-    \subitem {afficher\_statistiques}, \hyperpage{359}
-    \subitem {charger\_sauvegarde\_joueur}, \hyperpage{360}
-    \subitem {check\_repertoire\_jeux}, \hyperpage{361}
-    \subitem {copy}, \hyperpage{362}
-    \subitem {creer\_joueur}, \hyperpage{362}
-    \subitem {creer\_sauvegarde\_json}, \hyperpage{363}
-    \subitem {detruire\_joueur}, \hyperpage{364}
-    \subitem {distance\_joueur}, \hyperpage{365}
-    \subitem {distance\_x\_joueur}, \hyperpage{366}
-    \subitem {distance\_y\_joueur}, \hyperpage{367}
-    \subitem {entite\_en\_collision}, \hyperpage{368}
-    \subitem {entite\_subit\_attaque}, \hyperpage{368}
-    \subitem {environnement\_joueurs}, \hyperpage{369}
-    \subitem {gain\_xp}, \hyperpage{370}
-    \subitem {levelup}, \hyperpage{371}
-    \subitem {maj\_statistiques}, \hyperpage{372}
-    \subitem {new\_joueur}, \hyperpage{372}
-    \subitem {sauv\_existe}, \hyperpage{373}
-    \subitem {save\_path}, \hyperpage{374}
-    \subitem {stoper\_mouvement\_joueurs}, \hyperpage{373}
-    \subitem {zone\_en\_dehors\_hitbox}, \hyperpage{374}
-  \item {personnage.h}, \hyperpage{375}
-    \subitem {action\_t}, \hyperpage{378}
-    \subitem {afficher\_statistiques}, \hyperpage{378}
-    \subitem {ATTAQUE}, \hyperpage{378}
-    \subitem {ATTAQUE\_CHARGEE}, \hyperpage{378}
-    \subitem {ATTAQUE\_OU\_CHARGER}, \hyperpage{378}
-    \subitem {BLOQUER}, \hyperpage{378}
-    \subitem {byte}, \hyperpage{378}
-    \subitem {CHARGER}, \hyperpage{378}
-    \subitem {charger\_sauvegarde\_joueur}, \hyperpage{379}
-    \subitem {check\_repertoire\_jeux}, \hyperpage{380}
-    \subitem {creer\_joueur}, \hyperpage{381}
-    \subitem {creer\_sauvegarde\_json}, \hyperpage{382}
-    \subitem {detruire\_joueur}, \hyperpage{382}
-    \subitem {distance\_joueur}, \hyperpage{383}
-    \subitem {distance\_x\_joueur}, \hyperpage{384}
-    \subitem {distance\_y\_joueur}, \hyperpage{385}
-    \subitem {DUREE\_ATTAQUE}, \hyperpage{377}
-    \subitem {DUREE\_ATTAQUE\_CHARGEE}, \hyperpage{377}
-    \subitem {DUREE\_ATTAQUE\_OU\_CHARGEE}, \hyperpage{377}
-    \subitem {DUREE\_BLOQUER}, \hyperpage{377}
-    \subitem {DUREE\_JOUEUR\_BLESSE}, \hyperpage{377}
-    \subitem {DUREE\_SOIN}, \hyperpage{377}
-    \subitem {environnement\_joueurs}, \hyperpage{386}
-    \subitem {gain\_xp}, \hyperpage{387}
-    \subitem {J\_BLESSE}, \hyperpage{378}
-    \subitem {levelup}, \hyperpage{388}
-    \subitem {maj\_statistiques}, \hyperpage{389}
-    \subitem {new\_joueur}, \hyperpage{389}
-    \subitem {RIEN}, \hyperpage{378}
-    \subitem {save\_path}, \hyperpage{391}
-    \subitem {SOIN}, \hyperpage{378}
-    \subitem {stoper\_mouvement\_joueurs}, \hyperpage{390}
-    \subitem {TAILLE\_PERSONNAGE}, \hyperpage{377}
-    \subitem {TAILLE\_TRIGGER}, \hyperpage{378}
-    \subitem {zone\_en\_dehors\_hitbox}, \hyperpage{391}
+    \subitem {test\_inventaire.c}, \hyperpage{414}
+    \subitem {test\_personnage.c}, \hyperpage{422}
+  \item {personnage.c}, \hyperpage{361}
+    \subitem {afficher\_statistiques}, \hyperpage{362}
+    \subitem {charger\_sauvegarde\_joueur}, \hyperpage{363}
+    \subitem {check\_repertoire\_jeux}, \hyperpage{364}
+    \subitem {copy}, \hyperpage{365}
+    \subitem {creer\_joueur}, \hyperpage{365}
+    \subitem {creer\_sauvegarde\_json}, \hyperpage{366}
+    \subitem {detruire\_joueur}, \hyperpage{367}
+    \subitem {distance\_joueur}, \hyperpage{368}
+    \subitem {distance\_x\_joueur}, \hyperpage{369}
+    \subitem {distance\_y\_joueur}, \hyperpage{370}
+    \subitem {entite\_en\_collision}, \hyperpage{371}
+    \subitem {entite\_subit\_attaque}, \hyperpage{371}
+    \subitem {environnement\_joueurs}, \hyperpage{372}
+    \subitem {gain\_xp}, \hyperpage{373}
+    \subitem {levelup}, \hyperpage{374}
+    \subitem {maj\_statistiques}, \hyperpage{375}
+    \subitem {new\_joueur}, \hyperpage{375}
+    \subitem {sauv\_existe}, \hyperpage{376}
+    \subitem {save\_path}, \hyperpage{377}
+    \subitem {stoper\_mouvement\_joueurs}, \hyperpage{376}
+    \subitem {zone\_en\_dehors\_hitbox}, \hyperpage{377}
+  \item {personnage.h}, \hyperpage{378}
+    \subitem {action\_t}, \hyperpage{381}
+    \subitem {afficher\_statistiques}, \hyperpage{381}
+    \subitem {ATTAQUE}, \hyperpage{381}
+    \subitem {ATTAQUE\_CHARGEE}, \hyperpage{381}
+    \subitem {ATTAQUE\_OU\_CHARGER}, \hyperpage{381}
+    \subitem {BLOQUER}, \hyperpage{381}
+    \subitem {byte}, \hyperpage{381}
+    \subitem {CHARGER}, \hyperpage{381}
+    \subitem {charger\_sauvegarde\_joueur}, \hyperpage{382}
+    \subitem {check\_repertoire\_jeux}, \hyperpage{383}
+    \subitem {creer\_joueur}, \hyperpage{384}
+    \subitem {creer\_sauvegarde\_json}, \hyperpage{385}
+    \subitem {detruire\_joueur}, \hyperpage{385}
+    \subitem {distance\_joueur}, \hyperpage{386}
+    \subitem {distance\_x\_joueur}, \hyperpage{387}
+    \subitem {distance\_y\_joueur}, \hyperpage{388}
+    \subitem {DUREE\_ATTAQUE}, \hyperpage{380}
+    \subitem {DUREE\_ATTAQUE\_CHARGEE}, \hyperpage{380}
+    \subitem {DUREE\_ATTAQUE\_OU\_CHARGEE}, \hyperpage{380}
+    \subitem {DUREE\_BLOQUER}, \hyperpage{380}
+    \subitem {DUREE\_JOUEUR\_BLESSE}, \hyperpage{380}
+    \subitem {DUREE\_SOIN}, \hyperpage{380}
+    \subitem {environnement\_joueurs}, \hyperpage{389}
+    \subitem {gain\_xp}, \hyperpage{390}
+    \subitem {J\_BLESSE}, \hyperpage{381}
+    \subitem {levelup}, \hyperpage{391}
+    \subitem {maj\_statistiques}, \hyperpage{392}
+    \subitem {new\_joueur}, \hyperpage{392}
+    \subitem {RIEN}, \hyperpage{381}
+    \subitem {save\_path}, \hyperpage{394}
+    \subitem {SOIN}, \hyperpage{381}
+    \subitem {stoper\_mouvement\_joueurs}, \hyperpage{393}
+    \subitem {TAILLE\_PERSONNAGE}, \hyperpage{380}
+    \subitem {TAILLE\_TRIGGER}, \hyperpage{381}
+    \subitem {zone\_en\_dehors\_hitbox}, \hyperpage{394}
   \item {place\_rect\_center\_from\_point}
     \subitem {affichage.c}, \hyperpage{83}
-    \subitem {affichage.h}, \hyperpage{140}
+    \subitem {affichage.h}, \hyperpage{141}
   \item {placer\_objet\_sac}
-    \subitem {liste\_objet.c}, \hyperpage{237}
-    \subitem {liste\_objet.h}, \hyperpage{246}
+    \subitem {liste\_objet.c}, \hyperpage{240}
+    \subitem {liste\_objet.h}, \hyperpage{249}
   \item {placer\_texture}
     \subitem {affichage.c}, \hyperpage{84}
-    \subitem {affichage.h}, \hyperpage{141}
+    \subitem {affichage.h}, \hyperpage{142}
   \item {point}, \hyperpage{30}
     \subitem {x}, \hyperpage{30}
     \subitem {y}, \hyperpage{30}
   \item {point\_in\_rect}
     \subitem {affichage.c}, \hyperpage{85}
   \item {precedent}
-    \subitem {listes.c}, \hyperpage{260}
-    \subitem {listes.h}, \hyperpage{280}
+    \subitem {listes.c}, \hyperpage{263}
+    \subitem {listes.h}, \hyperpage{283}
   \item {pred}
-    \subitem {element}, \hyperpage{16}
+    \subitem {element}, \hyperpage{18}
   \item {PRINCIPAL}
-    \subitem {boss.h}, \hyperpage{158}
+    \subitem {boss.h}, \hyperpage{161}
   \item {PROFIL\_FERME}
-    \subitem {coffres.h}, \hyperpage{171}
+    \subitem {coffres.h}, \hyperpage{174}
   \item {PROFIL\_OUVERT}
-    \subitem {coffres.h}, \hyperpage{171}
+    \subitem {coffres.h}, \hyperpage{174}
   \item {protection}
-    \subitem {objet.h}, \hyperpage{356}
+    \subitem {objet.h}, \hyperpage{359}
 
   \indexspace
 
   \item {quete}
-    \subitem {objet.h}, \hyperpage{356}
+    \subitem {objet.h}, \hyperpage{359}
 
   \indexspace
 
   \item {ramasser\_objet}
-    \subitem {inventaire.c}, \hyperpage{219}
-    \subitem {inventaire.h}, \hyperpage{228}
+    \subitem {inventaire.c}, \hyperpage{222}
+    \subitem {inventaire.h}, \hyperpage{231}
   \item {rect\_centre}
     \subitem {affichage.c}, \hyperpage{85}
-    \subitem {affichage.h}, \hyperpage{142}
+    \subitem {affichage.h}, \hyperpage{143}
   \item {rect\_centre\_rect}
     \subitem {affichage.c}, \hyperpage{86}
-    \subitem {affichage.h}, \hyperpage{143}
+    \subitem {affichage.h}, \hyperpage{144}
   \item {rect\_centre\_rect\_x}
     \subitem {affichage.c}, \hyperpage{87}
-    \subitem {affichage.h}, \hyperpage{144}
+    \subitem {affichage.h}, \hyperpage{145}
   \item {rect\_centre\_rect\_y}
     \subitem {affichage.c}, \hyperpage{88}
-    \subitem {affichage.h}, \hyperpage{144}
+    \subitem {affichage.h}, \hyperpage{145}
   \item {rect\_centre\_x}
     \subitem {affichage.c}, \hyperpage{88}
-    \subitem {affichage.h}, \hyperpage{145}
+    \subitem {affichage.h}, \hyperpage{146}
   \item {rect\_centre\_y}
     \subitem {affichage.c}, \hyperpage{89}
-    \subitem {affichage.h}, \hyperpage{146}
+    \subitem {affichage.h}, \hyperpage{147}
   \item {rect\_correct\_texture}
     \subitem {affichage.c}, \hyperpage{90}
-    \subitem {affichage.h}, \hyperpage{147}
+    \subitem {affichage.h}, \hyperpage{148}
   \item {rect\_ecran\_to\_rect\_map}
     \subitem {affichage.c}, \hyperpage{91}
   \item {rects\_egal\_x}
     \subitem {affichage.c}, \hyperpage{91}
-    \subitem {affichage.h}, \hyperpage{148}
+    \subitem {affichage.h}, \hyperpage{149}
   \item {rects\_egal\_y}
     \subitem {affichage.c}, \hyperpage{92}
-    \subitem {affichage.h}, \hyperpage{149}
+    \subitem {affichage.h}, \hyperpage{150}
   \item {RenderHPBar}
-    \subitem {interface.c}, \hyperpage{208}
-    \subitem {interface.h}, \hyperpage{210}
+    \subitem {interface.c}, \hyperpage{211}
+    \subitem {interface.h}, \hyperpage{213}
   \item {rendu\_principal}
-    \subitem {definition\_commun.h}, \hyperpage{184}
-    \subitem {init\_close.c}, \hyperpage{206}
-    \subitem {test\_SDL.c}, \hyperpage{427}
+    \subitem {definition\_commun.h}, \hyperpage{187}
+    \subitem {init\_close.c}, \hyperpage{209}
+    \subitem {test\_SDL.c}, \hyperpage{426}
   \item {RIEN}
-    \subitem {personnage.h}, \hyperpage{378}
+    \subitem {personnage.h}, \hyperpage{381}
   \item {ronde\_monstre}
-    \subitem {monstres.c}, \hyperpage{339}
+    \subitem {monstres.c}, \hyperpage{342}
   \item {running}
-    \subitem {definition\_commun.h}, \hyperpage{184}
-    \subitem {init\_close.c}, \hyperpage{207}
+    \subitem {definition\_commun.h}, \hyperpage{187}
+    \subitem {init\_close.c}, \hyperpage{210}
   \item {rush\_joueur}
-    \subitem {monstres.c}, \hyperpage{340}
+    \subitem {monstres.c}, \hyperpage{343}
   \item {RUSH\_OU\_FUITE}
-    \subitem {monstres.h}, \hyperpage{345}
+    \subitem {monstres.h}, \hyperpage{348}
 
   \indexspace
 
   \item {sac}
-    \subitem {inventaire\_t}, \hyperpage{17}
-    \subitem {test\_inventaire.c}, \hyperpage{412}
+    \subitem {inventaire\_t}, \hyperpage{19}
+    \subitem {test\_inventaire.c}, \hyperpage{414}
   \item {sauv\_existe}
-    \subitem {personnage.c}, \hyperpage{373}
+    \subitem {personnage.c}, \hyperpage{376}
   \item {SAVE\_PATH}
-    \subitem {definition\_commun.h}, \hyperpage{180}
+    \subitem {definition\_commun.h}, \hyperpage{183}
   \item {save\_path}
-    \subitem {personnage.c}, \hyperpage{374}
-    \subitem {personnage.h}, \hyperpage{391}
+    \subitem {personnage.c}, \hyperpage{377}
+    \subitem {personnage.h}, \hyperpage{394}
   \item {SDL\_ERREUR}
-    \subitem {code\_erreur.h}, \hyperpage{160}
+    \subitem {code\_erreur.h}, \hyperpage{163}
   \item {SDL\_MAIN\_HANDLED}
-    \subitem {main.c}, \hyperpage{287}
+    \subitem {main.c}, \hyperpage{290}
   \item {selectionner\_element}
-    \subitem {listes.c}, \hyperpage{261}
-    \subitem {listes.h}, \hyperpage{281}
+    \subitem {listes.c}, \hyperpage{264}
+    \subitem {listes.h}, \hyperpage{284}
   \item {SOIN}
-    \subitem {personnage.h}, \hyperpage{378}
+    \subitem {personnage.h}, \hyperpage{381}
   \item {SOMMEIL}
-    \subitem {boss.h}, \hyperpage{157}
+    \subitem {boss.h}, \hyperpage{160}
   \item {sort\_s}, \hyperpage{30}
-    \subitem {collision}, \hyperpage{30}
-    \subitem {degat}, \hyperpage{30}
+    \subitem {collision}, \hyperpage{31}
+    \subitem {degat}, \hyperpage{31}
     \subitem {texture}, \hyperpage{31}
     \subitem {type}, \hyperpage{31}
-  \item {sort\_t}, \hyperpage{31}
-  \item {sorts.c}, \hyperpage{392}
-    \subitem {action\_sort}, \hyperpage{393}
-    \subitem {ajouter\_sort}, \hyperpage{393}
-    \subitem {ajouter\_sort\_cb}, \hyperpage{394}
-    \subitem {creer\_sort\_monstre}, \hyperpage{395}
-    \subitem {detruire\_sort}, \hyperpage{396}
-    \subitem {detruire\_sort\_cb}, \hyperpage{396}
-    \subitem {init\_liste\_base\_sort}, \hyperpage{397}
-    \subitem {liste\_base\_sort}, \hyperpage{398}
-    \subitem {orienter\_sort\_vers\_joueur}, \hyperpage{397}
-  \item {sorts.h}, \hyperpage{399}
-    \subitem {action\_sort}, \hyperpage{401}
-    \subitem {ajouter\_sort\_cb}, \hyperpage{402}
-    \subitem {CONVERTIR\_RADIANT\_DEGREE}, \hyperpage{400}
-    \subitem {creer\_sort\_monstre}, \hyperpage{402}
-    \subitem {detruire\_sort\_cb}, \hyperpage{403}
-    \subitem {init\_liste\_base\_sort}, \hyperpage{404}
-    \subitem {liste\_base\_sort}, \hyperpage{405}
-    \subitem {orienter\_sort\_vers\_joueur}, \hyperpage{404}
-    \subitem {PATH\_SPELL\_BOSS}, \hyperpage{400}
-    \subitem {PATH\_SPELL\_WITCHER}, \hyperpage{401}
-    \subitem {SP\_BOSS\_BALL}, \hyperpage{401}
-    \subitem {SP\_BOSS\_GROUP}, \hyperpage{401}
-    \subitem {SP\_BOSS\_SPLIT}, \hyperpage{401}
-    \subitem {SP\_WITCHER}, \hyperpage{401}
-    \subitem {type\_sort\_t}, \hyperpage{401}
+  \item {sorts.c}, \hyperpage{395}
+    \subitem {action\_sort}, \hyperpage{396}
+    \subitem {ajouter\_sort}, \hyperpage{396}
+    \subitem {ajouter\_sort\_cb}, \hyperpage{397}
+    \subitem {creer\_sort\_monstre}, \hyperpage{398}
+    \subitem {detruire\_sort}, \hyperpage{399}
+    \subitem {detruire\_sort\_cb}, \hyperpage{399}
+    \subitem {init\_liste\_base\_sort}, \hyperpage{400}
+    \subitem {liste\_base\_sort}, \hyperpage{401}
+    \subitem {orienter\_sort\_vers\_joueur}, \hyperpage{400}
+  \item {sorts.h}, \hyperpage{402}
+    \subitem {action\_sort}, \hyperpage{404}
+    \subitem {ajouter\_sort\_cb}, \hyperpage{405}
+    \subitem {CONVERTIR\_RADIANT\_DEGREE}, \hyperpage{403}
+    \subitem {creer\_sort\_monstre}, \hyperpage{405}
+    \subitem {detruire\_sort\_cb}, \hyperpage{406}
+    \subitem {init\_liste\_base\_sort}, \hyperpage{407}
+    \subitem {liste\_base\_sort}, \hyperpage{408}
+    \subitem {orienter\_sort\_vers\_joueur}, \hyperpage{407}
+    \subitem {PATH\_SPELL\_BOSS}, \hyperpage{403}
+    \subitem {PATH\_SPELL\_WITCHER}, \hyperpage{404}
+    \subitem {SP\_BOSS\_BALL}, \hyperpage{404}
+    \subitem {SP\_BOSS\_GROUP}, \hyperpage{404}
+    \subitem {SP\_BOSS\_SPLIT}, \hyperpage{404}
+    \subitem {SP\_WITCHER}, \hyperpage{404}
+    \subitem {type\_sort\_t}, \hyperpage{404}
   \item {sous\_rendu}
-    \subitem {init\_close.c}, \hyperpage{207}
+    \subitem {init\_close.c}, \hyperpage{210}
   \item {SP\_BOSS\_BALL}
-    \subitem {sorts.h}, \hyperpage{401}
+    \subitem {sorts.h}, \hyperpage{404}
   \item {SP\_BOSS\_GROUP}
-    \subitem {sorts.h}, \hyperpage{401}
+    \subitem {sorts.h}, \hyperpage{404}
   \item {SP\_BOSS\_SPLIT}
-    \subitem {sorts.h}, \hyperpage{401}
+    \subitem {sorts.h}, \hyperpage{404}
   \item {SP\_WITCHER}
-    \subitem {sorts.h}, \hyperpage{401}
+    \subitem {sorts.h}, \hyperpage{404}
   \item {statut}
-    \subitem {joueur\_t}, \hyperpage{20}
+    \subitem {joueur\_t}, \hyperpage{21}
   \item {statut\_s}, \hyperpage{31}
     \subitem {action}, \hyperpage{32}
     \subitem {animation}, \hyperpage{32}
     \subitem {bouclier\_equipe}, \hyperpage{32}
     \subitem {duree}, \hyperpage{32}
     \subitem {duree\_anim}, \hyperpage{32}
-    \subitem {en\_mouvement}, \hyperpage{32}
-    \subitem {orient\_att}, \hyperpage{32}
+    \subitem {en\_mouvement}, \hyperpage{33}
+    \subitem {orient\_att}, \hyperpage{33}
     \subitem {orient\_dep}, \hyperpage{33}
     \subitem {texture\_prec}, \hyperpage{33}
     \subitem {vrai\_zone\_collision}, \hyperpage{33}
     \subitem {zone\_colision}, \hyperpage{33}
   \item {stoper\_mouvement\_joueurs}
-    \subitem {personnage.c}, \hyperpage{373}
-    \subitem {personnage.h}, \hyperpage{390}
-  \item {struct}, \hyperpage{33}
+    \subitem {personnage.c}, \hyperpage{376}
+    \subitem {personnage.h}, \hyperpage{393}
   \item {succ}
-    \subitem {element}, \hyperpage{16}
+    \subitem {element}, \hyperpage{19}
   \item {SUD\_1}
-    \subitem {definition\_commun.h}, \hyperpage{181}
+    \subitem {definition\_commun.h}, \hyperpage{184}
   \item {SUD\_2}
-    \subitem {definition\_commun.h}, \hyperpage{182}
+    \subitem {definition\_commun.h}, \hyperpage{185}
   \item {SUD\_EST\_2}
-    \subitem {definition\_commun.h}, \hyperpage{182}
+    \subitem {definition\_commun.h}, \hyperpage{185}
   \item {SUD\_OUEST\_2}
-    \subitem {definition\_commun.h}, \hyperpage{182}
+    \subitem {definition\_commun.h}, \hyperpage{185}
   \item {suivant}
-    \subitem {listes.c}, \hyperpage{262}
-    \subitem {listes.h}, \hyperpage{282}
+    \subitem {listes.c}, \hyperpage{265}
+    \subitem {listes.h}, \hyperpage{285}
 
   \indexspace
 
@@ -1854,11 +1839,11 @@
     \subitem {texture}, \hyperpage{35}
     \subitem {width}, \hyperpage{35}
   \item {t\_direction\_1}
-    \subitem {definition\_commun.h}, \hyperpage{181}
+    \subitem {definition\_commun.h}, \hyperpage{184}
   \item {t\_direction\_2}
-    \subitem {definition\_commun.h}, \hyperpage{181}
+    \subitem {definition\_commun.h}, \hyperpage{184}
   \item {t\_item}
-    \subitem {objet.h}, \hyperpage{355}
+    \subitem {objet.h}, \hyperpage{358}
   \item {t\_l\_aff}, \hyperpage{36}
     \subitem {liste}, \hyperpage{36}
     \subitem {nb\_valeurs}, \hyperpage{36}
@@ -1880,97 +1865,79 @@
   \item {t\_texture\_perso}
     \subitem {affichage.h}, \hyperpage{101}
   \item {tab}
-    \subitem {liste\_base\_coffres\_s}, \hyperpage{23}
-    \subitem {liste\_base\_monstres\_t}, \hyperpage{24}
+    \subitem {liste\_base\_coffres\_s}, \hyperpage{24}
+    \subitem {liste\_base\_monstres\_t}, \hyperpage{25}
   \item {TAILLE\_CASE}
-    \subitem {map.h}, \hyperpage{299}
+    \subitem {map.h}, \hyperpage{302}
   \item {taille\_case}
     \subitem {t\_map}, \hyperpage{39}
   \item {taille\_ecran\_cases}
-    \subitem {map.c}, \hyperpage{295}
+    \subitem {map.c}, \hyperpage{298}
   \item {taille\_liste}
-    \subitem {listes.c}, \hyperpage{263}
-    \subitem {listes.h}, \hyperpage{283}
+    \subitem {listes.c}, \hyperpage{266}
+    \subitem {listes.h}, \hyperpage{286}
   \item {TAILLE\_PERSONNAGE}
-    \subitem {personnage.h}, \hyperpage{377}
+    \subitem {personnage.h}, \hyperpage{380}
   \item {TAILLE\_TRIGGER}
-    \subitem {personnage.h}, \hyperpage{378}
-  \item {test\_affichage.c}, \hyperpage{406}
-    \subitem {compteur}, \hyperpage{407}
-    \subitem {FENETRE\_LARGEUR}, \hyperpage{407}
-    \subitem {FENETRE\_LONGUEUR}, \hyperpage{407}
-    \subitem {main}, \hyperpage{407}
-    \subitem {test\_map}, \hyperpage{407}
-  \item {test\_inventaire.c}, \hyperpage{407}
-    \subitem {clean\_suite}, \hyperpage{408}
-    \subitem {compteur}, \hyperpage{411}
-    \subitem {equipe}, \hyperpage{411}
-    \subitem {FENETRE\_LARGEUR}, \hyperpage{411}
-    \subitem {FENETRE\_LONGUEUR}, \hyperpage{411}
-    \subitem {generation\_inventaire}, \hyperpage{408}
-    \subitem {init\_suite}, \hyperpage{409}
-    \subitem {main}, \hyperpage{409}
-    \subitem {modification\_inventaire}, \hyperpage{410}
-    \subitem {objet\_test}, \hyperpage{412}
-    \subitem {perso\_principal}, \hyperpage{412}
-    \subitem {sac}, \hyperpage{412}
-    \subitem {test\_map}, \hyperpage{412}
-  \item {test\_liste\_objet.c}, \hyperpage{412}
+    \subitem {personnage.h}, \hyperpage{381}
+  \item {test\_inventaire.c}, \hyperpage{409}
+    \subitem {clean\_suite}, \hyperpage{410}
     \subitem {compteur}, \hyperpage{413}
+    \subitem {equipe}, \hyperpage{413}
     \subitem {FENETRE\_LARGEUR}, \hyperpage{413}
-    \subitem {FENETRE\_LONGUEUR}, \hyperpage{414}
-    \subitem {main}, \hyperpage{413}
-    \subitem {test\_map}, \hyperpage{414}
-  \item {test\_listes.c}, \hyperpage{414}
-    \subitem {afficher\_int}, \hyperpage{415}
+    \subitem {FENETRE\_LONGUEUR}, \hyperpage{413}
+    \subitem {generation\_inventaire}, \hyperpage{410}
+    \subitem {init\_suite}, \hyperpage{410}
+    \subitem {main}, \hyperpage{411}
+    \subitem {map}, \hyperpage{414}
+    \subitem {modification\_inventaire}, \hyperpage{412}
+    \subitem {objet\_test}, \hyperpage{414}
+    \subitem {perso\_principal}, \hyperpage{414}
+    \subitem {sac}, \hyperpage{414}
+  \item {test\_liste\_objet.c}, \hyperpage{414}
     \subitem {compteur}, \hyperpage{415}
     \subitem {FENETRE\_LARGEUR}, \hyperpage{415}
-    \subitem {FENETRE\_LONGUEUR}, \hyperpage{415}
+    \subitem {FENETRE\_LONGUEUR}, \hyperpage{416}
     \subitem {main}, \hyperpage{415}
     \subitem {test\_map}, \hyperpage{416}
-  \item {test\_map}
-    \subitem {test\_affichage.c}, \hyperpage{407}
-    \subitem {test\_inventaire.c}, \hyperpage{412}
-    \subitem {test\_liste\_objet.c}, \hyperpage{414}
-    \subitem {test\_listes.c}, \hyperpage{416}
-    \subitem {test\_map.c}, \hyperpage{418}
-    \subitem {test\_personnage.c}, \hyperpage{423}
-  \item {test\_map.c}, \hyperpage{416}
+  \item {test\_listes.c}, \hyperpage{416}
+    \subitem {afficher\_int}, \hyperpage{417}
     \subitem {compteur}, \hyperpage{417}
     \subitem {FENETRE\_LARGEUR}, \hyperpage{417}
     \subitem {FENETRE\_LONGUEUR}, \hyperpage{417}
     \subitem {main}, \hyperpage{417}
     \subitem {test\_map}, \hyperpage{418}
-  \item {test\_monstres.c}, \hyperpage{418}
-    \subitem {main}, \hyperpage{419}
-  \item {test\_personnage.c}, \hyperpage{419}
-    \subitem {clean\_suite}, \hyperpage{420}
-    \subitem {compteur}, \hyperpage{423}
-    \subitem {creation\_personnage}, \hyperpage{420}
-    \subitem {FENETRE\_LARGEUR}, \hyperpage{423}
-    \subitem {FENETRE\_LONGUEUR}, \hyperpage{423}
-    \subitem {init\_suite}, \hyperpage{421}
-    \subitem {main}, \hyperpage{421}
-    \subitem {modification\_personnage}, \hyperpage{422}
-    \subitem {perso\_principal}, \hyperpage{423}
-    \subitem {test\_map}, \hyperpage{423}
-  \item {test\_SDL.c}, \hyperpage{424}
-    \subitem {clean\_suite}, \hyperpage{425}
-    \subitem {FENETRE\_LARGEUR}, \hyperpage{427}
-    \subitem {FENETRE\_LONGUEUR}, \hyperpage{427}
-    \subitem {fenetre\_Principale}, \hyperpage{427}
-    \subitem {init\_suite}, \hyperpage{425}
-    \subitem {main}, \hyperpage{425}
-    \subitem {rendu\_principal}, \hyperpage{427}
-    \subitem {test\_SDL\_close}, \hyperpage{426}
-    \subitem {test\_SDL\_init}, \hyperpage{426}
+  \item {test\_map}
+    \subitem {test\_liste\_objet.c}, \hyperpage{416}
+    \subitem {test\_listes.c}, \hyperpage{418}
+    \subitem {test\_personnage.c}, \hyperpage{422}
+  \item {test\_personnage.c}, \hyperpage{418}
+    \subitem {clean\_suite}, \hyperpage{419}
+    \subitem {compteur}, \hyperpage{421}
+    \subitem {creation\_personnage}, \hyperpage{419}
+    \subitem {FENETRE\_LARGEUR}, \hyperpage{421}
+    \subitem {FENETRE\_LONGUEUR}, \hyperpage{422}
+    \subitem {init\_suite}, \hyperpage{420}
+    \subitem {main}, \hyperpage{420}
+    \subitem {perso\_principal}, \hyperpage{422}
+    \subitem {test\_map}, \hyperpage{422}
+  \item {test\_SDL.c}, \hyperpage{422}
+    \subitem {clean\_suite}, \hyperpage{423}
+    \subitem {FENETRE\_LARGEUR}, \hyperpage{425}
+    \subitem {FENETRE\_LONGUEUR}, \hyperpage{425}
+    \subitem {fenetre\_Principale}, \hyperpage{425}
+    \subitem {init\_suite}, \hyperpage{423}
+    \subitem {main}, \hyperpage{424}
+    \subitem {rendu\_principal}, \hyperpage{426}
+    \subitem {test\_SDL\_close}, \hyperpage{424}
+    \subitem {test\_SDL\_init}, \hyperpage{425}
   \item {test\_SDL\_close}
-    \subitem {test\_SDL.c}, \hyperpage{426}
+    \subitem {test\_SDL.c}, \hyperpage{424}
   \item {test\_SDL\_init}
-    \subitem {test\_SDL.c}, \hyperpage{426}
+    \subitem {test\_SDL.c}, \hyperpage{425}
   \item {text\_accueil}
-    \subitem {menus.c}, \hyperpage{315}
-    \subitem {menus.h}, \hyperpage{323}
+    \subitem {menus.c}, \hyperpage{318}
+    \subitem {menus.h}, \hyperpage{326}
   \item {TEXT\_ATTAQUE}
     \subitem {affichage.h}, \hyperpage{101}
   \item {TEXT\_ATTAQUE\_CHARGEE}
@@ -1979,13 +1946,13 @@
     \subitem {affichage.h}, \hyperpage{101}
   \item {text\_copier\_position}
     \subitem {affichage.c}, \hyperpage{93}
-    \subitem {affichage.h}, \hyperpage{149}
+    \subitem {affichage.h}, \hyperpage{150}
   \item {text\_inventaire1}
-    \subitem {menus.c}, \hyperpage{315}
-    \subitem {menus.h}, \hyperpage{323}
+    \subitem {menus.c}, \hyperpage{318}
+    \subitem {menus.h}, \hyperpage{326}
   \item {text\_inventaire2}
-    \subitem {menus.c}, \hyperpage{315}
-    \subitem {menus.h}, \hyperpage{324}
+    \subitem {menus.c}, \hyperpage{318}
+    \subitem {menus.h}, \hyperpage{327}
   \item {text\_map}
     \subitem {t\_map}, \hyperpage{39}
   \item {TEXT\_MARCHER}
@@ -1993,20 +1960,20 @@
   \item {TEXT\_MARCHER\_BOUCLIER}
     \subitem {affichage.h}, \hyperpage{101}
   \item {text\_pause}
-    \subitem {menus.c}, \hyperpage{315}
-    \subitem {menus.h}, \hyperpage{324}
+    \subitem {menus.c}, \hyperpage{318}
+    \subitem {menus.h}, \hyperpage{327}
   \item {text\_sol}
     \subitem {t\_map}, \hyperpage{39}
   \item {texture}
-    \subitem {boss\_s}, \hyperpage{13}
-    \subitem {coffre\_s}, \hyperpage{15}
+    \subitem {boss\_s}, \hyperpage{16}
+    \subitem {coffre\_s}, \hyperpage{17}
     \subitem {monstre\_s}, \hyperpage{27}
     \subitem {objet\_t}, \hyperpage{29}
     \subitem {sort\_s}, \hyperpage{31}
     \subitem {t\_aff}, \hyperpage{35}
   \item {texture\_map}
-    \subitem {map.c}, \hyperpage{295}
-    \subitem {map.h}, \hyperpage{303}
+    \subitem {map.c}, \hyperpage{298}
+    \subitem {map.h}, \hyperpage{306}
   \item {texture\_prec}
     \subitem {statut\_s}, \hyperpage{33}
   \item {texture\_src}
@@ -2014,104 +1981,104 @@
   \item {texture\_superposition}
     \subitem {t\_map}, \hyperpage{39}
   \item {texture\_temp}
-    \subitem {boss\_s}, \hyperpage{13}
+    \subitem {boss\_s}, \hyperpage{16}
   \item {textures\_joueur}
-    \subitem {joueur\_t}, \hyperpage{20}
+    \subitem {joueur\_t}, \hyperpage{22}
   \item {TOUCHE\_BAS}
-    \subitem {event.h}, \hyperpage{196}
+    \subitem {event.h}, \hyperpage{199}
   \item {TOUCHE\_CONSOMMABLE}
-    \subitem {event.h}, \hyperpage{196}
+    \subitem {event.h}, \hyperpage{199}
   \item {TOUCHE\_DROITE}
-    \subitem {event.h}, \hyperpage{196}
+    \subitem {event.h}, \hyperpage{199}
   \item {TOUCHE\_ECHAP}
-    \subitem {event.h}, \hyperpage{196}
+    \subitem {event.h}, \hyperpage{199}
   \item {TOUCHE\_GAUCHE}
-    \subitem {event.h}, \hyperpage{196}
+    \subitem {event.h}, \hyperpage{199}
   \item {TOUCHE\_HAUT}
-    \subitem {event.h}, \hyperpage{196}
+    \subitem {event.h}, \hyperpage{199}
   \item {TOUCHE\_TAB}
-    \subitem {event.h}, \hyperpage{196}
+    \subitem {event.h}, \hyperpage{199}
   \item {tout\_ramasser}
-    \subitem {inventaire.c}, \hyperpage{220}
-    \subitem {inventaire.h}, \hyperpage{229}
+    \subitem {inventaire.c}, \hyperpage{223}
+    \subitem {inventaire.h}, \hyperpage{232}
   \item {tp\_joueurs}
-    \subitem {map.c}, \hyperpage{296}
-    \subitem {map.h}, \hyperpage{304}
+    \subitem {map.c}, \hyperpage{299}
+    \subitem {map.h}, \hyperpage{307}
   \item {transition}
-    \subitem {map.c}, \hyperpage{296}
-    \subitem {map.h}, \hyperpage{304}
+    \subitem {map.c}, \hyperpage{299}
+    \subitem {map.h}, \hyperpage{307}
   \item {trigger}
-    \subitem {joueur\_t}, \hyperpage{20}
+    \subitem {joueur\_t}, \hyperpage{22}
   \item {tx}
     \subitem {affichage.c}, \hyperpage{95}
-    \subitem {affichage.h}, \hyperpage{151}
+    \subitem {affichage.h}, \hyperpage{152}
   \item {ty}
     \subitem {affichage.c}, \hyperpage{95}
-    \subitem {affichage.h}, \hyperpage{151}
+    \subitem {affichage.h}, \hyperpage{152}
   \item {type}
-    \subitem {base\_sort\_s}, \hyperpage{12}
-    \subitem {boss\_s}, \hyperpage{14}
-    \subitem {coffre\_s}, \hyperpage{15}
-    \subitem {monstre\_s}, \hyperpage{27}
+    \subitem {base\_sort\_s}, \hyperpage{14}
+    \subitem {boss\_s}, \hyperpage{16}
+    \subitem {coffre\_s}, \hyperpage{18}
+    \subitem {monstre\_s}, \hyperpage{28}
     \subitem {objet\_t}, \hyperpage{29}
     \subitem {sort\_s}, \hyperpage{31}
   \item {type\_boss\_1\_t}
-    \subitem {boss.h}, \hyperpage{158}
+    \subitem {boss.h}, \hyperpage{160}
   \item {type\_coffre\_t}
-    \subitem {coffres.h}, \hyperpage{171}
+    \subitem {coffres.h}, \hyperpage{174}
   \item {TYPE\_MONSTRE\_INCONNU}
-    \subitem {monstres.h}, \hyperpage{345}
+    \subitem {monstres.h}, \hyperpage{348}
   \item {type\_monstre\_t}
-    \subitem {monstres.h}, \hyperpage{345}
+    \subitem {monstres.h}, \hyperpage{348}
   \item {type\_sort\_t}
-    \subitem {sorts.h}, \hyperpage{401}
+    \subitem {sorts.h}, \hyperpage{404}
   \item {types\_erreur}
-    \subitem {code\_erreur.h}, \hyperpage{160}
+    \subitem {code\_erreur.h}, \hyperpage{163}
 
   \indexspace
 
   \item {update\_frame\_texture}
-    \subitem {affichage.c}, \hyperpage{93}
+    \subitem {affichage.c}, \hyperpage{94}
 
   \indexspace
 
   \item {valeur}
-    \subitem {element}, \hyperpage{16}
+    \subitem {element}, \hyperpage{19}
   \item {valeur\_elt}
-    \subitem {listes.c}, \hyperpage{264}
-    \subitem {listes.h}, \hyperpage{284}
+    \subitem {listes.c}, \hyperpage{267}
+    \subitem {listes.h}, \hyperpage{287}
   \item {vider\_liste}
-    \subitem {listes.c}, \hyperpage{265}
-    \subitem {listes.h}, \hyperpage{285}
+    \subitem {listes.c}, \hyperpage{268}
+    \subitem {listes.h}, \hyperpage{288}
   \item {vitesse}
-    \subitem {base\_monstre\_s}, \hyperpage{11}
-    \subitem {joueur\_t}, \hyperpage{20}
-    \subitem {monstre\_s}, \hyperpage{27}
-    \subitem {objet\_t}, \hyperpage{29}
+    \subitem {base\_monstre\_s}, \hyperpage{13}
+    \subitem {joueur\_t}, \hyperpage{22}
+    \subitem {monstre\_s}, \hyperpage{28}
+    \subitem {objet\_t}, \hyperpage{30}
   \item {vitesse\_actif}
-    \subitem {joueur\_t}, \hyperpage{20}
+    \subitem {joueur\_t}, \hyperpage{22}
   \item {vrai}
-    \subitem {definition\_commun.h}, \hyperpage{181}
+    \subitem {definition\_commun.h}, \hyperpage{184}
   \item {vrai\_zone\_collision}
     \subitem {statut\_s}, \hyperpage{33}
 
   \indexspace
 
   \item {warning}
-    \subitem {code\_erreur.h}, \hyperpage{159}
+    \subitem {code\_erreur.h}, \hyperpage{162}
   \item {width}
     \subitem {t\_aff}, \hyperpage{35}
     \subitem {t\_map}, \hyperpage{39}
   \item {WITCHER}
-    \subitem {monstres.h}, \hyperpage{345}
+    \subitem {monstres.h}, \hyperpage{348}
 
   \indexspace
 
   \item {x}
     \subitem {point}, \hyperpage{30}
   \item {xp}
-    \subitem {boss\_s}, \hyperpage{14}
-    \subitem {joueur\_t}, \hyperpage{21}
+    \subitem {boss\_s}, \hyperpage{16}
+    \subitem {joueur\_t}, \hyperpage{22}
 
   \indexspace
 
@@ -2125,8 +2092,8 @@
   \item {zone\_colision}
     \subitem {statut\_s}, \hyperpage{33}
   \item {zone\_en\_dehors\_hitbox}
-    \subitem {personnage.c}, \hyperpage{374}
-    \subitem {personnage.h}, \hyperpage{391}
+    \subitem {personnage.c}, \hyperpage{377}
+    \subitem {personnage.h}, \hyperpage{394}
   \item {zone\_tp}, \hyperpage{40}
     \subitem {dest}, \hyperpage{40}
     \subitem {id\_map}, \hyperpage{40}
