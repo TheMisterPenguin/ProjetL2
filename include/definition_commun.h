@@ -15,8 +15,6 @@
 /** \endcond */
 #include "code_erreur.h"
 
-#include "code_erreur.h"
-
 #ifdef DEBUG
     #define DEBUG_TP
     #define _DEBUG_COLLISION
