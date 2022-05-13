@@ -86,6 +86,12 @@ char * dirs_bldsnd_exist_or_create(char **_logPath, char **_savePath){
     char *logPath = NULL;
     char *savePath = NULL;
 
+    char *saveDir_auto = NULL;
+    char *saveDir_0 = NULL;
+    char *saveDir_1 = NULL;
+    char *saveDir_2 = NULL;
+
+
 
     dirPath = get_path_to_save_folder(homePath);
 
@@ -94,19 +100,43 @@ char * dirs_bldsnd_exist_or_create(char **_logPath, char **_savePath){
 
     callocate(logPath , sizeof(char), strlen(dirPath) + 15);
     callocate(savePath, sizeof(char), strlen(dirPath) + 15);
+    callocate(saveDir_auto, sizeof(char), strlen(dirPath) + 30);
+    callocate(saveDir_0, sizeof(char), strlen(dirPath) + 30);
+    callocate(saveDir_1, sizeof(char), strlen(dirPath) + 30);
+    callocate(saveDir_2, sizeof(char), strlen(dirPath) + 30);
+
+
 
 #ifndef _WIN32
     sprintf(logPath , "%s/logs" , dirPath );
     sprintf(savePath, "%s/saves", dirPath);
+    sprintf(saveDir_auto, "%s/auto", savePath);
+    sprintf(saveDir_0, "%s/save_0", savePath);
+    sprintf(saveDir_1, "%s/save_1", savePath);
+    sprintf(saveDir_2, "%s/save_2", savePath);
 #else
     sprintf(logPath, "%s\\logs", dirPath);
     sprintf(savePath, "%s\\saves", dirPath);
+    sprintf(saveDir_auto, "%s\\auto", savePath);
+    sprintf(saveDir_0, "%s\\save_0", savePath);
+    sprintf(saveDir_1, "%s\\save_1", savePath);
+    sprintf(saveDir_2, "%s\\save_2", savePath);
 #endif
 
     if(create_dir(logPath) == -1) /* On créer le dossier Bloody Sanada/logs */
         erreur("Impossible de créer le répertoire de sauvegarde : %s", ERR_CREATION_REPERTOIRE_SAUVEGARDE, strerror(errno));
     if (create_dir(savePath) == -1) /* On créer le dossier Bloody Sanada/saves */
         erreur("Impossible de créer le répertoire de sauvegarde : %s", ERR_CREATION_REPERTOIRE_SAUVEGARDE, strerror(errno));
+
+    if(create_dir(saveDir_auto) == -1)
+        erreur("Impossible de créer le répertoire de sauvegarde : %s", ERR_CREATION_REPERTOIRE_SAUVEGARDE, strerror(errno));
+    if (create_dir(saveDir_0) == -1)
+        erreur("Impossible de créer le répertoire de sauvegarde : %s", ERR_CREATION_REPERTOIRE_SAUVEGARDE, strerror(errno));
+    if (create_dir(saveDir_1) == -1)
+        erreur("Impossible de créer le répertoire de sauvegarde : %s", ERR_CREATION_REPERTOIRE_SAUVEGARDE, strerror(errno));
+    if (create_dir(saveDir_2) == -1)
+        erreur("Impossible de créer le répertoire de sauvegarde : %s", ERR_CREATION_REPERTOIRE_SAUVEGARDE, strerror(errno));
+
 
     if(_logPath){
         reallocate(logPath, sizeof (char) * (strlen(logPath) + 1));
@@ -121,6 +151,12 @@ char * dirs_bldsnd_exist_or_create(char **_logPath, char **_savePath){
     }
     else 
         free(savePath);
+
+    free(saveDir_auto);
+    free(saveDir_0);
+    free(saveDir_1);
+    free(saveDir_2);
+
 
     return (dirPath);
 }
