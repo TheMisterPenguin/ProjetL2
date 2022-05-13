@@ -56,19 +56,19 @@ extern char *save_path; /**<Le répertoire complet de sauvegarde du jeu*/
 }
 
 #define log_debug(message, ...) {       \
+    char *t = get_current_time();       \
+    if(logFile){                        \
+        fprintf(logFile, "(%s)[DEBUG] " message "\n", t, ##__VA_ARGS__); \
+        fflush(logFile);                \
+    }                                   \
     if(debug){                          \
         printf("\033[0;92m");           \
         printf("\e[40m");               \
-        char *t = get_current_time();   \
         printf("(%s)[DEBUG] ", t);      \
-        if(logFile){                    \
-            fprintf(logFile, "(%s)[DEBUG] " message "\n", t, ##__VA_ARGS__); \
-            fflush(logFile);            \
-        }                               \
-        free(t);                        \
         printf(message "\n", ##__VA_ARGS__); \
         fflush(stdout);                 \
     }                                   \
+    free(t);  \
 }
 
 #endif
