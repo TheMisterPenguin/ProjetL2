@@ -92,8 +92,6 @@ typedef struct joueur_s {
     inventaire_t * inventaire; /**<Inventaire du joueur*/
 }joueur_t;
 
-extern char save_path[500]; /**<Le répertoire complet de sauvegarde du jeu*/
-
 /**
  * \fn void stoper_mouvement_joueurs(joueur_t ** joueurs)
  * \brief Stop le mouvement des joueurs en jeu
