@@ -3,8 +3,6 @@
 #include <personnage.h>
 #include <affichage.h>
 #include <json-c/json.h>
-#include <sys/stat.h>
-#include <errno.h>
 #include <string.h>
 #include <code_erreur.h>
 #include <inventaire.h>
@@ -14,13 +12,7 @@
 #include <coffres.h>
 #include <map.h>
 
-#ifndef _WIN32
-	#include <pwd.h>
-	#include <unistd.h>
-#else
-	#include <direct.h>
-	#include <windows.h>
-#endif
+
 
 
 /**
@@ -38,44 +30,10 @@ static void copy(const byte * origin, byte *out, size_t size){
 		out[i] = origin[i];
 }
 
-char save_path[500];
-
-void check_repertoire_jeux(){
-	struct stat stats;
-
-	#ifndef _WIN32
-	struct passwd *pw = getpwuid(getuid());
-	sprintf(save_path, "%s/%s", pw->pw_dir, SAVE_PATH); /* On récupère le répertoire home */
-	#else
-	char *home = getenv("HOMEPATH");
-	sprintf(save_path, "%s\\AppData\\Local\\%s", home ,SAVE_PATH);
-	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Répertoire de sauvegarde : %s", save_path);
-	#endif
-
-	stat(save_path, &stats);
-	if (S_ISDIR(stats.st_mode)){ /* Si le repertoire existe */
-		SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Le répertoire de sauvegarde existe déja !\n");
-		return;
-	}
-
-	/* On créer le répertoire */
-
-	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Création du répertoire de sauvegarde...\n");
-	#ifdef _WIN32
-		int err = mkdir(save_path);
-	#else
-		int err = mkdir(save_path, S_IRWXU);
-	#endif
-
-	if (!err)
-		erreur("Impossible de créer le répertoire de sauvegarde : %s", ERR_CREATION_REPERTOIRE_SAUVEGARDE , strerror(errno))
-		
-	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Répertoire de sauvegarde créé !\n");
-}
 
 void creer_sauvegarde_json(joueur_t *j){
 
-	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Création du fichier de sauvegarde...\n");
+	log_info( "Création du fichier de sauvegarde...\n");
 
 	/* Object JSON principal */
 	json_object *sauvegarde = json_object_new_object();
@@ -141,7 +99,7 @@ void creer_sauvegarde_json(joueur_t *j){
 
 	free(path);
 
-	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Fichier de sauvegarde créé !\n");
+	log_info( "Fichier de sauvegarde créé !\n");
 }
 
 bool sauv_existe(char *nom_sauv){
@@ -153,7 +111,7 @@ bool sauv_existe(char *nom_sauv){
 
 joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj, joueur_t *joueurs[], unsigned short int nb_joueurs){
 
-	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Chargement de la sauvegarde...\n");
+	log_info( "Chargement de la sauvegarde...\n");
 
 	/* On récupère la sauvegarde */
 	json_object *sauvegarde = json_object_from_file(nom_sauv);
@@ -291,12 +249,15 @@ joueur_t *charger_sauvegarde_joueur(char *nom_sauv, char * f_src_obj, joueur_t *
     tp_joueurs(map, json_object_get_int(x_map), json_object_get_int(y_map), &j, 1);
 
 
-	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Chargement de la sauvegarde réussi !");
+	log_info( "Chargement de la sauvegarde réussi !");
 
 	return j;
 }
 
 joueur_t *new_joueur(const char* nom, int num_j, char * f_src_obj){
+	
+	log_info("Création du joueur %d...", num_j + 1);
+
 	byte *trig = calloc(TAILLE_TRIGGER, sizeof(byte));
   
 	joueur_t *j = creer_joueur(nom, 0, 0, 100, 50, 10, 10, 1, trig, NORD_1, faux, num_j, f_src_obj);
