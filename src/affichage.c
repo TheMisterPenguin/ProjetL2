@@ -171,6 +171,8 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
         return NULL;
     }
 
+    log_debug("Création de la texture à partir du fichier : '%s', adresse : %p", nom_fichier, texture);
+
     /* Chargement de la texture dans une surface */
     if(nom_fichier != NULL){
         chargement = SDL_LoadBMP(nom_fichier);
@@ -256,6 +258,45 @@ err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu){
             return SDL_RenderCopy(rendu,texture->texture, texture->frame_anim, texture->aff_fenetre);
         else
             return SDL_RenderCopy(rendu, texture->texture, NULL, texture->aff_fenetre);
+    }
+
+    return AUCUNE_ERREUR;
+}
+
+err_t afficher_texture_shadow(t_aff *texture, SDL_Renderer *rendu){
+    if(texture != NULL){
+        int retour = 0;
+        SDL_Rect temp;
+
+        SDL_SetTextureBlendMode(texture->texture, SDL_BLENDMODE_BLEND);
+        SDL_SetTextureColorMod(texture->texture, 0, 0, 0);
+        SDL_SetTextureAlphaMod(texture->texture, 128);
+        temp = *(texture->aff_fenetre);
+        temp.x += 4;
+        temp.y -= 4;
+
+        if(texture->frame_anim != NULL){
+            retour = SDL_RenderCopy(rendu, texture->texture, texture->frame_anim, &temp);
+
+            SDL_SetTextureColorMod(texture->texture, 255, 255, 255);
+            SDL_SetTextureAlphaMod(texture->texture, 255);
+
+            if(retour)
+                return (retour);
+
+            return (SDL_RenderCopy(rendu, texture->texture, texture->frame_anim, texture->aff_fenetre));
+        }
+            
+        else {
+            retour = SDL_RenderCopy(rendu, texture->texture, NULL, &temp);
+
+            SDL_SetTextureColorMod(texture->texture, 255, 255, 255);
+            SDL_SetTextureAlphaMod(texture->texture, 255);
+
+            if (retour)
+                return (retour);
+            return SDL_RenderCopy(rendu, texture->texture, NULL, texture->aff_fenetre);
+        }
     }
 
     return AUCUNE_ERREUR;
@@ -467,7 +508,7 @@ void afficher_coffres(list * liste_coffre){
     en_tete(liste_coffre);
     while(!hors_liste(liste_coffre)){
         coffre = valeur_elt(liste_coffre);
-        afficher_texture(coffre->texture ,rendu_principal);
+        afficher_texture_shadow(coffre->texture ,rendu_principal);
         suivant(liste_coffre);
     }
 }

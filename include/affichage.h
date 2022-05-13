@@ -184,6 +184,8 @@ extern t_aff *creer_texture(const char *nom_fichier, const int taille_t_x, const
  */
 extern err_t afficher_texture(t_aff *texture, SDL_Renderer *rendu);
 
+
+extern err_t afficher_texture_shadow(t_aff *texture, SDL_Renderer *rendu);
 /**
  * \fn void next_frame_y(t_aff *texture);
  * \brief Fonction qui positionne la texture au sprite d'après sur l'axe des y

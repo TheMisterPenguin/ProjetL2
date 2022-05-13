@@ -289,7 +289,7 @@ int main(int argc, char** argv)
   
         /* On coud le joueur1 */
         if(texture_temp1)
-            afficher_texture(texture_temp1, rendu_principal);
+            afficher_texture_shadow(texture_temp1, rendu_principal);
 
         if(map->texture_superposition)
             afficher_texture(map->texture_superposition, rendu_principal);
