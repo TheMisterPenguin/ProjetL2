@@ -132,6 +132,8 @@ SDL_Rect taille_ecran_cases(){
 t_map * charger_map(const char * const nom_map){
     t_map *m = NULL;
 
+    log_info("Chargement de la map...")
+
     json_object *JSON_fichier = json_object_from_file(nom_map);
     json_object *JSON_id_map =         NULL;
     json_object *JSON_texture_map =    NULL;

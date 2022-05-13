@@ -35,7 +35,7 @@ void afficher_menu_pause(joueur_t *joueur[], char * f_src_objet, unsigned short 
 
     int debut, fin; /* le temps pour calculer les performances */
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Affichage du menu pause");
+    log_info( "Affichage du menu pause");
 
     if (!text_pause){
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors du chargement du menu pause");
@@ -74,7 +74,7 @@ void afficher_menu_pause(joueur_t *joueur[], char * f_src_objet, unsigned short 
             {
             case SDL_QUIT:
 
-                SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Détection de la fermeture de la fenêtre\n");
+                log_info( "Détection de la fermeture de la fenêtre\n");
                 fermer_programme(EXIT_SUCCESS);
             case SDL_KEYDOWN:
                 if (lastEvent.key.keysym.sym == SDLK_ESCAPE){
@@ -95,7 +95,6 @@ void afficher_menu_pause(joueur_t *joueur[], char * f_src_objet, unsigned short 
                     return;
                 }
                 if(SDL_PointInRect(&coord_souris, &boutton_quitter)){
-                    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Fermeture du programme ...\n");
                     fermer_programme(EXIT_SUCCESS);
                 }
                 if (SDL_PointInRect(&coord_souris, &boutton_sauvegarder)){
@@ -146,7 +145,7 @@ void afficher_inventaire(joueur_t * joueur, SDL_KeyCode touche_inventaire)
     int debut, fin; /* le temps pour calculer les performances */
     t_aff *text_inventaire = NULL;
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Affichage de l'inventaire");
+    log_info( "Affichage de l'inventaire");
 
     //affiche la bonne texture de l'inventaire selon le joueur
     if(touche_inventaire == SDLK_TAB)
@@ -223,15 +222,15 @@ void afficher_inventaire(joueur_t * joueur, SDL_KeyCode touche_inventaire)
         {
             switch (lastEvent.type){
             case SDL_QUIT:
-                SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Détection de la fermeture de la fenêtre\n");
+                log_info( "Détection de la fermeture de la fenêtre\n");
                 fermer_programme(EXIT_SUCCESS);
             case SDL_KEYDOWN:
                 if(lastEvent.key.keysym.sym == touche_inventaire){
-                    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "On quitte l'inventaire\n");
+                    log_info( "On quitte l'inventaire\n");
                     return;
                 }
                 if(lastEvent.key.keysym.sym == SDLK_ESCAPE){
-                    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "On quitte l'inventaire\n");
+                    log_info( "On quitte l'inventaire\n");
                     return;
                 }
                 break;
@@ -304,7 +303,7 @@ void afficher_menu_accueil(int * nb_joueur){
 
     int debut, fin; /* le temps pour calculer les performances */
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Affichage du menu d'accueil");
+    log_info( "Affichage du menu d'accueil");
 
     if (!text_accueil){
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Erreur lors du chargement du menu d'accueil");
@@ -343,7 +342,7 @@ void afficher_menu_accueil(int * nb_joueur){
             {
             case SDL_QUIT:
 
-                SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Détection de la fermeture de la fenêtre\n");
+                log_info( "Détection de la fermeture de la fenêtre\n");
                 fermer_programme(EXIT_SUCCESS);
             case SDL_KEYDOWN:
                 break;
@@ -359,7 +358,7 @@ void afficher_menu_accueil(int * nb_joueur){
                     return;
                 }
                 if(SDL_PointInRect(&coord_souris, &boutton_quitter)){
-                    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Fermeture du programme ...\n");
+                    log_info( "Fermeture du programme ...\n");
                     fermer_programme(EXIT_SUCCESS);
                 }
                 if (SDL_PointInRect(&coord_souris, &boutton_solo)){
@@ -454,7 +453,7 @@ void afficher_menu_pause_manette(joueur_t *joueur)
 
     int debut, fin; /* le temps pour calculer les performances */
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Affichage du menu pause");
+    log_info( "Affichage du menu pause");
 
     if (!text_pause)
     {
@@ -499,7 +498,7 @@ void afficher_menu_pause_manette(joueur_t *joueur)
             {
             case SDL_QUIT:
 
-                SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Détection de la fermeture de la fenêtre\n");
+                log_info( "Détection de la fermeture de la fenêtre\n");
                 fermer_programme(EXIT_SUCCESS);
             case SDL_JOYBUTTONDOWN :
                 switch (((SDL_JoyButtonEvent *) &lastEvent)->button){
@@ -526,7 +525,7 @@ void afficher_menu_pause_manette(joueur_t *joueur)
                             case 2:
                                     break;
                             case 3:
-                                SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Fermeture du programme ...\n");
+                                log_info( "Fermeture du programme ...\n");
                                 fermer_programme(EXIT_SUCCESS);
                                 break;
                         }
@@ -549,7 +548,7 @@ void afficher_menu_accueil_manette(int *nb_joueur)
 {
     int debut, fin; /* le temps pour calculer les performances */
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Affichage du menu d'accueil");
+    log_info( "Affichage du menu d'accueil");
 
     if (!text_accueil)
     {
@@ -591,7 +590,7 @@ void afficher_menu_accueil_manette(int *nb_joueur)
             switch (lastEvent.type)
             {
             case SDL_QUIT:
-                SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Détection de la fermeture de la fenêtre\n");
+                log_info( "Détection de la fermeture de la fenêtre\n");
                 fermer_programme(EXIT_SUCCESS);
             case SDL_JOYBUTTONDOWN:
                 switch (((SDL_JoyButtonEvent *)&lastEvent)->button)
@@ -620,7 +619,7 @@ void afficher_menu_accueil_manette(int *nb_joueur)
                         goto transition;
                         return;
                     case 2:
-                        SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Fermeture du programme ...\n");
+                        log_info( "Fermeture du programme ...\n");
                         fermer_programme(EXIT_SUCCESS);
                         break;
                     }
@@ -659,7 +658,7 @@ void afficher_inventaire_manette(joueur_t *joueur){
     int debut, fin; /* le temps pour calculer les performances */
     t_aff *text_inventaire = NULL;
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Affichage de l'inventaire");
+    log_info( "Affichage de l'inventaire");
 
     // affiche la bonne texture de l'inventaire selon le joueur
     text_inventaire = text_inventaire1;
@@ -756,13 +755,13 @@ void afficher_inventaire_manette(joueur_t *joueur){
             switch (lastEvent.type)
             {
             case SDL_QUIT:
-                SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Détection de la fermeture de la fenêtre\n");
+                log_info( "Détection de la fermeture de la fenêtre\n");
                 fermer_programme(EXIT_SUCCESS);
             case SDL_JOYBUTTONDOWN:
                 switch (((SDL_JoyButtonEvent *)&lastEvent)->button){
                     case SDL_CONTROLLER_BUTTON_B :
                     case SDL_CONTROLLER_BUTTON_BACK :
-                        SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "On quitte l'inventaire");
+                        log_info( "On quitte l'inventaire");
                         return;
                     case SDL_CONTROLLER_BUTTON_DPAD_DOWN:
                         if (selection >= 5 && selection <= 9) /* Ligne du bas */
@@ -852,7 +851,7 @@ void afficher_inventaire_manette(joueur_t *joueur){
                             selection = 11;
                         break;
                     case SDL_CONTROLLER_BUTTON_A:
-                        SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "On a selectionné le slot %d\n", selection);
+                        log_info( "On a selectionné le slot %d\n", selection);
                         if(selection < 10){
                             /* Fonction pour équiper l'item */
                             equiper_sac_slot(joueur, selection);

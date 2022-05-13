@@ -16,12 +16,9 @@
  **/
 void afficher_intro(void){
     int i;
-    
     t_aff * text = creer_texture("ressources/background/logo.bmp", -1, -1, 0, 0, 0);
 
-    /*if(! text){
-        fprintf(stderr, "Erreur lors du chargement du menu ! \n");
-    }*/
+    log_info("Affichage de l'introduction");
 
     def_texture_taille(text, FENETRE_LONGUEUR, FENETRE_LARGEUR);
 
@@ -76,6 +73,15 @@ int main(int argc, char** argv)
 
     /* On initialise le programme */
     SDL_SetMainReady();
+
+    printf("\e[40m\n\n\n");          
+
+    /* On verifie si le répertoire de sauvegarde existe */
+    save_path = dirs_bldsnd_exist_or_create(NULL, NULL);
+
+    _init_log();
+
+    log_info("Démmarage du programme");
     init();
 
     /* On créer les textures des menus */
@@ -93,16 +99,22 @@ int main(int argc, char** argv)
     else
         afficher_menu_accueil_manette(&nb_joueurs);
 
-    if(nb_joueurs == 2)
+    if(nb_joueurs == 2){
         creer_inventaire_j2();
+        log_info("Jeux multijoueur sélectionné");
+    }
+    else
+        log_info("Jeux solo sélectionné");
   
     /* On charge la base monstre*/
+    log_info("Chargement des monstres...");
     charger_base_monstre("monstres.json", &liste_base_monstres);
 
     /* On charge la base coffre*/
     charger_base_coffre("coffres.json", &liste_base_coffres);
 
     /* On initialise le tableau base_sorts */
+    log_info("Chargement des sorts ...");
     init_liste_base_sort(liste_base_monstres);
     
     /* On charge la map */
@@ -114,6 +126,8 @@ int main(int argc, char** argv)
     joueur1->pdv = 50;
     /* On créer les animations */
     init_animations();
+
+    log_info("Chargement des objets...");
 
     objets = creer_liste_objet("ressources/objet/objet.txt");
     creer_textures_objets(objets);
@@ -138,8 +152,7 @@ int main(int argc, char** argv)
                 fermer_programme(EXIT_FAILURE);
     }
 
-    /* On verifie si le répertoire de sauvegarde existe */
-    check_repertoire_jeux();
+
 
     init_sousbuffer(map, joueur1);
 
@@ -151,6 +164,8 @@ int main(int argc, char** argv)
     rect_centre_rect(&joueur1->statut->vrai_zone_collision, fenetre_finale->frame_anim);
 
     compteur = 0;
+
+    log_info("Début du jeu !");
     while (running)
     {
         debut = SDL_GetPerformanceCounter();

@@ -11,6 +11,7 @@
 
 #ifndef __H_CODE_ERREUR__
 #define __H_CODE_ERREUR__
+#include "log.h"
 
 typedef int err_t;
 
@@ -71,7 +72,7 @@ enum types_erreur
         char *msp = malloc(sizeof(char) * (500));                                             \
         char *mspbis = malloc(sizeof(char) * (500));                                          \
         sprintf(msp, msg, ##__VA_ARGS__);                                                     \
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "%s\nErreur : 0x%X\n", msp, code_erreur);  \
+        log_error("%s", msp);                                                                 \
         sprintf(mspbis, "%s\nErreur : 0x%X\n", msp, code_erreur);                             \
         SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Erreur", mspbis, NULL);               \
         free(msp);                                                                            \
@@ -88,7 +89,7 @@ enum types_erreur
         char *msp = malloc(sizeof(char) * (500));                                            \
         char *mspbis = malloc(sizeof(char) * (500));                                         \
         sprintf(msp, msg, ##__VA_ARGS__);                                                    \
-        SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION, "%s\nErreur : 0x%X\n", msp, code_erreur);  \
+        log_warn("%s", msp);                                                                 \
         sprintf(mspbis, "%s\nErreur : 0x%X\n", msp, code_erreur);                            \
         SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_WARNING, "Attention", mspbis, NULL);         \
         free(msp);                                                                           \

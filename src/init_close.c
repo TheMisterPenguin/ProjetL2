@@ -3,6 +3,7 @@
 #include <listes.h>
 #include <map.h>
 #include <event.h>
+#include <log.h>
 
 /** 
  * \file init_close.c
@@ -28,6 +29,7 @@ SDL_Rect * hors_hitbox = NULL;
 list *f_close = NULL; /**< Liste des fonctions à appeler lors de la fermeture du programme*/
 
 void fermer_programme(int code_erreur){
+    log_info("Fermeture du programme ...");
     //éviter erreurs SDL_DestroyRenderer sur les SDL_Rect provoquées par text_copier_position() 
     if(liste_animations){
         t_aff * text_anim = NULL;
@@ -50,6 +52,10 @@ void fermer_programme(int code_erreur){
 
     detruire_liste(&f_close);
 
+    printf("\n" "\e[0m\n\n");
+
+    if(logFile)
+        fclose(logFile);
     exit(code_erreur);
 }
 
@@ -60,17 +66,19 @@ void fermer_programme(int code_erreur){
  */
 static void fermer_SDL(void)
 {
-
+    log_debug("Destruction de la fenêtre");
     SDL_DestroyWindow(fenetre_Principale);
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Fenêtre principale détruite");
+    log_debug("Fenêtre détruite");
 
     SDL_Quit();
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "SDL Arrêtée");
+    log_debug( "SDL Arrêtée");
 }
 
 static void detruire_renderer(void)
 {
+    log_debug("Destruction du rendu");
     SDL_DestroyRenderer(rendu_principal);
+    log_debug("Rendu et textures détruites");
 }
 
 /**
@@ -80,12 +88,12 @@ static void detruire_renderer(void)
  */
 static void init_SDL(){
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Démarrage de la SDL");
+    log_debug("Démarrage de la SDL");
 
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS | SDL_INIT_TIMER | SDL_INIT_GAMECONTROLLER))
         erreur("Erreur lors de l'initialisation de la SDL : %s", SDL_ERREUR, SDL_GetError());
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "SDL initialisée !");
+    log_debug( "SDL initialisée !");
 
     SDL_DisplayMode m;
 
@@ -96,7 +104,7 @@ static void init_SDL(){
     FENETRE_LONGUEUR = m.w; // On récupère la largeur de l'écran
     FENETRE_LARGEUR = m.h; // On récupère la hauteur de l'écran
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Résolution de l'écran : %dx%d", FENETRE_LONGUEUR, FENETRE_LARGEUR);
+    log_info( "Résolution de l'écran : %dx%d", FENETRE_LONGUEUR, FENETRE_LARGEUR);
 
     // On crée la fenêtre principale
     fenetre_Principale = SDL_CreateWindow("Bloody Sanada", 0, 0, FENETRE_LONGUEUR, FENETRE_LARGEUR, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
@@ -104,27 +112,26 @@ static void init_SDL(){
     if(! fenetre_Principale)
         erreur("Erreur lors de la création de la fenêtre principale : %s", SDL_ERREUR, SDL_GetError());
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Fenêtre principale créée");
+    log_debug( "Fenêtre principale créée");   
 
     manette = SDL_GameControllerOpen(0);
 
     if(manette != NULL)
-        SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Manette détectée");
+        log_info( "Manette détectée")
     else
-        SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION, "Aucune manette détectée");
-
+        log_warn("Aucune manette détectée");
 }
 
 static void init_rc_commun(void){
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Création du rendu principal");
+    log_debug( "Création du rendu principal");
 
     rendu_principal =    SDL_CreateRenderer(fenetre_Principale,
                                             -1,  SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE);
     if (rendu_principal == NULL)
         erreur("Erreur lors de la création du rendu principal : %s", SDL_ERREUR, SDL_GetError());
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Rendu principal créé");
+    log_debug( "Rendu principal créé");
 }
 /**
  * \brief Fonction ajoutée à la liste de atexit() afin de libérer toute la mémoire allouée
@@ -142,19 +149,19 @@ void init_affichage(){
     if(!listeDeTextures)
         erreur("Erreur lors de l'initialisation de la liste de textures", ERREUR_LISTE);
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Liste de textures initialisée");
+    log_debug( "Liste de textures initialisée");
 
     SDL_Rect t1 = {.h = FENETRE_LARGEUR, .w = 16 * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3)};
     SDL_Rect t2 = {.w = FENETRE_LONGUEUR, .h = 16 * ((FENETRE_LONGUEUR * 0.022f) / 16 * 3)};
     ty = t2;
     tx = t1;
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Rectangle de texture initialisé");
+    log_debug( "Rectangle de texture initialisé");
 
     multiplicateur_x = (float) FENETRE_LONGUEUR / 1920;
     multiplicateur_y = (float) FENETRE_LARGEUR / 1080;
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Multiplicateur initialisés : %f, %f", multiplicateur_x, multiplicateur_y);
+    log_debug( "Multiplicateur initialisés : %f, %f", multiplicateur_x, multiplicateur_y);
 }
 
 /**
