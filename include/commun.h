@@ -22,6 +22,7 @@
 #include "interface.h"
 #include "sorts.h"
 #include "coffres.h"
+#include "utils.h"
 
 /**
  * \fn void init(void);
