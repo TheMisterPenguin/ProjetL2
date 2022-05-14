@@ -144,6 +144,10 @@ void vider_liste(list *mylist){
 }
 
 void detruire_liste(list ** liste){
+
+    if(!(*liste))
+        return;
+
     vider_liste(*liste);
 
     free((*liste)->flag);
