@@ -8,6 +8,7 @@
 #include <definition_commun.h>
 #include <macros.h>
 #include <code_erreur.h>
+#include <runtime.h>
 
 #ifndef _WIN32
 	#include <pwd.h>
@@ -19,7 +20,7 @@
 
 FILE *logFile = NULL;
 
-bool debug = faux;
+bool debug = false;
 char *save_path = NULL;
 
 
@@ -161,6 +162,22 @@ char * dirs_bldsnd_exist_or_create(char **_logPath, char **_savePath){
     return (dirPath);
 }
 
+
+void _stop_log(void) {
+    free(save_path);
+    save_path = NULL;
+
+    if (fclose(logFile)){
+        logFile = NULL;
+
+        erreur("Erreur lors de l'enregistrement du log", cerror(T_ERREUUR_FICHIER, ERREUR_FICHIER_FERMETURE))
+
+    }
+
+    printf("\n" "\e[0m\n\n");
+
+}
+
 err_t _init_log(void){
     time_t temps = time(NULL); /* On récupère le temps UNIX actuel */
     char *date = NULL;
@@ -187,8 +204,12 @@ err_t _init_log(void){
     if(!logFile)
         return EXIT_FAILURE;
     
+    ajout_droit(f_close, _stop_log);
+    printf("\e[40m\n\n\n");
+
     return EXIT_SUCCESS;
 } 
+
 
 char *get_current_time(void){
     time_t temps = time(NULL);
