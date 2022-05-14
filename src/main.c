@@ -73,16 +73,12 @@ int main(int argc, char** argv)
 
     /* On initialise le programme */
     SDL_SetMainReady();
-
-    printf("\e[40m\n\n\n");          
-
     /* On verifie si le répertoire de sauvegarde existe */
     save_path = dirs_bldsnd_exist_or_create(NULL, NULL);
 
-    _init_log();
-
-    log_info("Démmarage du programme");
     init();
+
+    execDir = get_executable_directory(*argv);
 
     /* On créer les textures des menus */
     init_text_menus();
