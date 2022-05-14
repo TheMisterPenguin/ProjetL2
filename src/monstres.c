@@ -10,6 +10,8 @@
 #include <definition_commun.h>
 #include <sorts.h>
 
+#include <utils.h>
+
 /**
  * \file monstres.c
  * \author Antoine Bruneau (Antoine.Bruneau.Etu@univ-lemans.fr)
@@ -365,8 +367,12 @@ void action_monstre(monstre_t * monstre, joueur_t * joueur){
 }
 
 void charger_base_monstre(char * chemin_fichier, liste_base_monstres_t ** liste_base_monstres){
+    char *filePath = catAlloc(execDir, chemin_fichier);
 
-    json_object *fichier = json_object_from_file(chemin_fichier);
+    json_object *fichier = json_object_from_file(filePath);
+
+    free(filePath);
+
     int nb_monstre;
 
     if(!fichier)

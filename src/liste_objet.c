@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <inventaire.h>
 #include <affichage.h>
+#include <utils.h>
 
 /**
  * \file liste_objet.c
@@ -36,7 +37,11 @@ lobjet_t * creer_liste_objet(char * fichier_src){
       return((lobjet_t *)NULL);
     }
 
-    obj = fopen(fichier_src, "r");
+    char *filePath = catAlloc(execDir, fichier_src);
+
+    obj = fopen(filePath, "r");
+
+    free(filePath);
 
     if(obj == NULL){
         fprintf( stderr, "fichier source objet inaccessible\n") ;
@@ -93,7 +98,11 @@ lobjet_t * creer_liste_objet_vide(char * fichier_src){
       return((lobjet_t *)NULL);
     }
 
-    obj = fopen(fichier_src, "r");
+    char *filePath = catAlloc(execDir, fichier_src);
+
+    obj = fopen(filePath, "r");
+
+    free(filePath);
 
     if(obj == NULL){
         fprintf( stderr, "fichier source objet inaccessible\n") ;

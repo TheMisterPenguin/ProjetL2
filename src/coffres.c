@@ -3,6 +3,7 @@
 #include <code_erreur.h>
 #include <map.h>
 #include <coffres.h>
+#include <utils.h>
 
 /**
  * \file coffres.c
@@ -17,7 +18,12 @@ liste_base_coffres_t * liste_base_coffres = NULL;
 
 void charger_base_coffre(char * chemin_fichier, liste_base_coffres_t ** liste_base_coffres){
 
-    json_object *JSON_fichier = json_object_from_file(chemin_fichier); //objet json contenant des informations de jeu
+    char *filePath = catAlloc(execDir, chemin_fichier);
+
+    json_object *JSON_fichier = json_object_from_file(filePath); //objet json contenant des informations de jeu
+
+    free(filePath);
+
     int nb_coffres;
 
     if(!JSON_fichier)

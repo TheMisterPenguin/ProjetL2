@@ -8,6 +8,8 @@
 #include <interface.h>
 #include <sorts.h>
 #include <coffres.h>
+#include <utils.h>
+#include <macros.h>
 
 /**
  * \file affichage.c
@@ -163,6 +165,7 @@ void info_texture(t_aff * texture){
 t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int taille_t_y, const int x, const int y, const float multiplicateur_taille){
     SDL_Surface * chargement = NULL;
     t_aff *texture = NULL;
+    char * filePath = NULL;
 
     texture = malloc(sizeof(t_aff));
 
@@ -171,16 +174,21 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
         return NULL;
     }
 
-    log_debug("Création de la texture à partir du fichier : '%s', adresse : %p", nom_fichier, texture);
-
     /* Chargement de la texture dans une surface */
     if(nom_fichier != NULL){
-        chargement = SDL_LoadBMP(nom_fichier);
+
+        filePath = catAlloc(execDir,nom_fichier);
+
+        log_debug("Création de la texture à partir du fichier : '%s', adresse : %p", filePath, texture);
+
+        chargement = SDL_LoadBMP(filePath);
         if(! chargement){
             warning("Erreur lors de la création de la texture : %s", ERREUR_FICHIER, SDL_GetError());
             return NULL;
         }
     
+        free(filePath);
+
         /* Copie de la ressource dans une structure SDL_Texture */
         texture->texture = SDL_CreateTextureFromSurface(rendu_principal, chargement);
         SDL_FreeSurface(chargement); 
