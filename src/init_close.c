@@ -4,6 +4,7 @@
 #include <map.h>
 #include <event.h>
 #include <log.h>
+#include <utils.h>
 
 /** 
  * \file init_close.c
@@ -52,10 +53,8 @@ void fermer_programme(int code_erreur){
 
     detruire_liste(&f_close);
 
-    printf("\n" "\e[0m\n\n");
+    free(execDir);
 
-    if(logFile)
-        fclose(logFile);
     exit(code_erreur);
 }
 
@@ -175,6 +174,10 @@ void init(){
 
     if(!f_close)
         erreur("Erreur lors de l'initialisation de la liste de fermeture", ERREUR_LISTE);
+
+    _init_log();
+
+    log_info("Démmarage du programme");
 
     init_SDL();
 
