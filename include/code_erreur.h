@@ -23,7 +23,7 @@ typedef int err_t;
  * L'utilisateur peut donc connaitre aisaiment le code d'erreur et le message correspondant.
  * Permettant au developpeur de répondre à l'erreur en question.
  */
-enum types_erreur 
+enum erreur_classique
 {
     AUCUNE_ERREUR, /**< Aucune erreur */
     SDL_ERREUR, /**< Une erreur liée à la SDL */
@@ -58,6 +58,17 @@ enum types_erreur
     ERR_CREATION_REPERTOIRE_SAUVEGARDE, /**< Une erreur liée à la création du répertoire de sauvegarde */
     ERR_RECTANGLE_TOO_BIG, /**< Une erreur liée au rectangle trop grand */
     ERREUR_JSON_CLE_NON_TROUVEE /**Une Erreur liée à l'impossibilité de trouver une clé dans un fichier JSON */
+};
+
+enum erreur_fichier {
+    ERREUR_FICHIER_NON_TROUVE,
+    ERREUR_FICHIER_NON_MODIFIABLE,
+    ERREUR_FICHIER_FERMETURE
+};
+
+enum type_erreur {
+    T_ERREUR_CLASSIQUE,
+    T_ERREUUR_FICHIER
 };
 
 /**
@@ -95,5 +106,7 @@ enum types_erreur
         free(msp);                                                                           \
         free(mspbis);                                                                        \
     }
+
+#define cerror(type, code) (type << 8) | code
 
 #endif
