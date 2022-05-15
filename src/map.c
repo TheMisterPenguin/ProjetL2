@@ -10,6 +10,8 @@
 #include <coffres.h>
 #include <personnage.h>
 #include <sorts.h>
+#include <macros.h>
+#include <utils.h>
 
 /**
  * \file map.c
@@ -131,10 +133,9 @@ SDL_Rect taille_ecran_cases(){
 
 t_map * charger_map(const char * const nom_map){
     t_map *m = NULL;
+    char * filePath = NULL;
 
-    log_info("Chargement de la map...")
-
-    json_object *JSON_fichier = json_object_from_file(nom_map);
+    json_object *JSON_fichier =        NULL;
     json_object *JSON_id_map =         NULL;
     json_object *JSON_texture_map =    NULL;
     json_object *JSON_text_superpos =  NULL;
@@ -178,7 +179,21 @@ t_map * charger_map(const char * const nom_map){
     json_object *JSON_zone_tp_coord_x= NULL;
     json_object *JSON_zone_tp_coord_y= NULL;
 
+    log_info("Chargement de la map...")
 
+    log_debug("Chargement du chemin d'accès au fichier de la map '%s'", nom_map);
+
+    callocate(filePath, sizeof(char), strlen(nom_map) + strlen(execDir) + 1);
+
+    strcat(strcat(filePath, execDir), nom_map);
+
+    log_debug("Ouverture du fichier : '%s'", filePath);
+
+    JSON_fichier = json_object_from_file(filePath);
+
+    log_debug("Fichier map chargé avec succès !");
+
+    free(filePath);
 
     /* Allocation de la mémoire pour la map */
     m = malloc(sizeof(t_map));
@@ -211,6 +226,8 @@ t_map * charger_map(const char * const nom_map){
 
     if(!m->liste_zone_tp)
         erreur("Impossible de charger la map", ERREUR_LISTE);
+
+    log_debug("Récupération des données de la map");
 
     /* Récupération des informations dans le fichier */
     if(!json_object_object_get_ex(JSON_fichier, "chest", &JSON_tbl_coffre))
@@ -254,6 +271,12 @@ t_map * charger_map(const char * const nom_map){
     m->width = json_object_get_int(JSON_width);
     m->taille_case = json_object_get_int(JSON_taille_case);
 
+    log_debug("Informations sur la map :");
+
+    log_debug("\tmap.id : %d", m->id_map);
+    log_debug("\tmap.texture_sol : %s", json_object_get_string(JSON_texture_map));
+    log_debug("\tmap.taille_cases : %dpx", m->taille_case);
+
     if(!m->text_sol)
         erreur("Impossible de charger la map : %s", ERREUR_TEXTURE, SDL_GetError());
 
@@ -285,6 +308,8 @@ t_map * charger_map(const char * const nom_map){
         valeur->y = json_object_get_int(JSON_wall_y) * m->taille_case;
         valeur->h = json_object_get_int(JSON_wall_h) * m->taille_case;
         valeur->w = json_object_get_int(JSON_wall_w) * m->taille_case;
+
+        log_debug("Ajout d'une zone de collision :: numero : %d / x : %d / y : %d / w : %d / h : %d / adresse : %p", m->liste_collisions->nb_elem + 1, valeur->x, valeur->y, valeur->w, valeur->h, valeur);
 
         ajout_droit(m->liste_collisions, valeur);
     }
@@ -480,6 +505,11 @@ void detruire_map(t_map **map, joueur_t *joueurs[], unsigned short int nb_joueur
     oter_elt(listeDeTextures);
 
     detruire_texture(&(*map)->text_map);
+
+    (*map)->texture_superposition->frame_anim = NULL;
+    selectionner_element(listeDeTextures, (*map)->texture_superposition, NULL);
+    oter_elt(listeDeTextures);
+
 
     /* Libération de la mémoire */
     free(*map);
