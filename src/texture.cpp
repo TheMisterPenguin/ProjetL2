@@ -12,7 +12,7 @@ namespace BloodySanada {
         int pixelsX, pixelsY;
     
     public:
-        Texture(const char *path_to_texture, SDL_Renderer *rendu) : Texture(std::string(path_to_texture, rendu)) {}
+        Texture(const char *path_to_texture, SDL_Renderer *rendu) : Texture(std::string(path_to_texture), rendu) {}
 
         Texture(std::string path_to_texture, SDL_Renderer *rendu){
             SDL_Surface * chargement = NULL;
@@ -29,7 +29,7 @@ namespace BloodySanada {
             }
 
             /* Copie de la ressource dans une structure SDL_Texture */
-            visual_texture = SDL_CreateTextureFromSurface(rendu_principal, chargement);
+            visual_texture = SDL_CreateTextureFromSurface(rendu, chargement);
             SDL_FreeSurface(chargement); 
             if(! visual_texture){
                 warning("Erreur lors de la création de la texture : %s", ERREUR_FICHIER, SDL_GetError());
