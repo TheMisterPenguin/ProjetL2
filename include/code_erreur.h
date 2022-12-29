@@ -97,8 +97,8 @@ enum type_erreur {
  */
 #define warning(msg, code_erreur, ...)                                                       \
     {                                                                                        \
-        char *msp = malloc(sizeof(char) * (500));                                            \
-        char *mspbis = malloc(sizeof(char) * (500));                                         \
+        char *msp = (char*)malloc(sizeof(char) * (500));                                            \
+        char *mspbis = (char*)malloc(sizeof(char) * (500));                                         \
         sprintf(msp, msg, ##__VA_ARGS__);                                                    \
         log_warn("%s", msp);                                                                 \
         sprintf(mspbis, "%s\nErreur : 0x%X\n", msp, code_erreur);                            \
