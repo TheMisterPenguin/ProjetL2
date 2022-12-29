@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
 #include <string>
 #include <utils.h>
+#include <iostream>
 
 
 namespace BloodySanada {
@@ -9,7 +10,7 @@ namespace BloodySanada {
         SDL_Texture *visual_texture;
         SDL_Rect texture_selection;
         int sizeX, sizeY;
-        int pixelsX, pixelsY;
+        int width, height;
     
     public:
         Texture(const char *path_to_texture, SDL_Renderer *rendu) : Texture(std::string(path_to_texture), rendu) {}
@@ -36,7 +37,7 @@ namespace BloodySanada {
                 throw ERREUR_FICHIER;
             }
 
-            if(SDL_QueryTexture(visual_texture, NULL, NULL, &pixelsX, &pixelsY)){
+            if(SDL_QueryTexture(visual_texture, NULL, NULL, &width, &height)){
                 warning("Erreur lors de la création de la texture : %s", ERREUR_FICHIER, SDL_GetError());
                 throw ERREUR_FICHIER;
             }   
@@ -57,5 +58,16 @@ namespace BloodySanada {
         bool changeWidth(const int width){return changeSize(width, sizeY);}
 
         bool changeHeight(const int height){return changeSize(sizeX, height);}
+
+        /* Affichage de la classe */
+        friend std::ostream& operator<<(std::ostream& os, const Texture& t){
+                os << "Texture : " << &t << ", width : " << t.width << "px, height : " << t.height << "px, trueWidth : " << t.sizeX << "IGU, trueHeight : " << t.sizeY << "IGU";
+                return os;
+            }
     };
 } // namespace BloodySanada
+
+void test(){
+    auto n = BloodySanada::Texture("test", NULL);
+    std::cout << n;
+}
