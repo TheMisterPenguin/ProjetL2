@@ -179,7 +179,7 @@ t_aff * creer_texture(const char* nom_fichier, const int taille_t_x, const int t
 
         filePath = catAlloc(execDir,nom_fichier);
 
-        log_debug("Création de la texture à partir du fichier : '%s', adresse : %p", filePath, texture);
+        log_debug("Création de la texture à partir du fichier : '%-75s', adresse : %p", filePath, texture);
 
         chargement = SDL_LoadBMP(filePath);
         if(! chargement){

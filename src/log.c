@@ -20,7 +20,7 @@
 
 FILE *logFile = NULL;
 
-bool debug = faux;
+bool debug = vrai;
 char *save_path = NULL;
 
 

@@ -309,7 +309,7 @@ t_map * charger_map(const char * const nom_map){
         valeur->h = json_object_get_int(JSON_wall_h) * m->taille_case;
         valeur->w = json_object_get_int(JSON_wall_w) * m->taille_case;
 
-        log_debug("Ajout d'une zone de collision :: numero : %d / x : %d / y : %d / w : %d / h : %d / adresse : %p", m->liste_collisions->nb_elem + 1, valeur->x, valeur->y, valeur->w, valeur->h, valeur);
+        log_debug("Ajout d'une zone de collision :: numero : %-3d / x : %-4d / y : %-4d / w : %-4d / h : %-4d / adresse : %p", m->liste_collisions->nb_elem + 1, valeur->x, valeur->y, valeur->w, valeur->h, valeur);
 
         ajout_droit(m->liste_collisions, valeur);
     }
