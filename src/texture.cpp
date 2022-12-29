@@ -1,7 +1,7 @@
 #include <SDL2/SDL.h>
 #include <string>
-#include <definition_commun.h>
 #include <utils.h>
+
 
 namespace BloodySanada {
     class Texture {
@@ -12,9 +12,9 @@ namespace BloodySanada {
         int pixelsX, pixelsY;
     
     public:
-        Texture(const char *path_to_texture) : Texture(std::string(path_to_texture)) {}
+        Texture(const char *path_to_texture, SDL_Renderer *rendu) : Texture(std::string(path_to_texture, rendu)) {}
 
-        Texture(std::string path_to_texture){
+        Texture(std::string path_to_texture, SDL_Renderer *rendu){
             SDL_Surface * chargement = NULL;
 
             /* Chargement de la texture dans une surface */
@@ -46,5 +46,16 @@ namespace BloodySanada {
             /* On désalloue la SDL_Texture*/
             SDL_DestroyTexture(visual_texture);
         }
+
+        bool changeSize(const int width, const int height){
+            sizeX = width;
+            sizeY = height;
+
+            return true;
+        }
+
+        bool changeWidth(const int width){return changeSize(width, sizeY);}
+
+        bool changeHeight(const int height){return changeSize(sizeX, height);}
     };
 } // namespace BloodySanada
