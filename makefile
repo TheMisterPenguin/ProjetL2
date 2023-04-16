@@ -5,7 +5,7 @@ include gnuL.mk
 endif
 
 
-CC = gcc # Nom du compilateur.
+CC = g++ # Nom du compilateur.
 CFLAGS =-Wall $(INCLUDE) # Options de compilation.
 ODIR = obj/# Répertoire des fichiers objets
 SRC = src/# Répertoire des fichiers sources
@@ -31,7 +31,7 @@ $(BINDIR)jeux$(EXT) : $(OBJ)
 	
 # Compilation de tout les fichiers source
 
-$(ODIR)%.o : $(SRC)%.c
+$(ODIR)%.o : $(SRC)%.cpp
 	$(CC) $(CFLAGS) -o $@ -c $< -g
 
 # Génération des tests

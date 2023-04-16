@@ -27,12 +27,12 @@ void deplacement_boss_aleatoir(boss_t * boss){
  * \todo
  */
 boss_t * creer_boss_clone(boss_t * boss, t_aff * texture){
-    boss_t * clone = malloc(sizeof(boss_t));
+    boss_t * clone = (boss_t*) malloc(sizeof(boss_t));
     clone->type = CLONE;
     clone->pdv = boss->pdv;
     clone->attaque = boss->attaque;
     clone->xp = boss->xp;
-    clone->action = RIEN;
+    clone->action = (action_boss_1_t) RIEN;
     clone->duree = 0;
     clone->collision.h = boss->collision.h;
     clone->collision.w = boss->collision.w;

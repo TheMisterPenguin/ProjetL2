@@ -1,6 +1,6 @@
 #include <SDL2/SDL.h>
 #include <string>
-#include <utils.h>
+#include <utils.hpp>
 #include <iostream>
 
 
