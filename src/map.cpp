@@ -184,7 +184,7 @@ t_map* charger_map(const char* const nom_map) {
 
     log_info("Chargement de la map...")
 
-    log_debug("Chargement du chemin d'accès au fichier de la map '%s'", nom_map);
+        log_debug("Chargement du chemin d'accès au fichier de la map '%s'", nom_map);
 
     callocate(filePath, sizeof(char), strlen(nom_map) + strlen(execDir) + 1);
 
@@ -655,11 +655,11 @@ class Map {
     unsigned int taille_case;     /**< La taille d'une case */
     unsigned int cases_x;         /**< Le nombre de cases affichées en x */
     unsigned int cases_y;         /**< Le nombre de cases affichées en y */
-    std::vector<monstre_t> *liste_monstres;          /**< La liste des monstres de la map */
-    std::vector<sort_t> *liste_sorts;                /**< La liste des sorts de la map */
-    std::vector<SDL_Rect> *liste_collisions;         /**< La liste de toutes les les collisions */
-    std::vector<coffre_t> *liste_coffres;            /**< La liste de tous les coffres */
-    std::vector<zone_tp> *liste_zone_tp;             /**<La liste des points de téléportation */
+    std::vector<monstre_t>* liste_monstres;          /**< La liste des monstres de la map */
+    std::vector<sort_t>* liste_sorts;                /**< La liste des sorts de la map */
+    std::vector<SDL_Rect>* liste_collisions;         /**< La liste de toutes les les collisions */
+    std::vector<coffre_t>* liste_coffres;            /**< La liste de tous les coffres */
+    std::vector<zone_tp>* liste_zone_tp;             /**<La liste des points de téléportation */
 
 public:
     Map(std::string nomFichierMap) {
@@ -711,7 +711,7 @@ public:
 
         log_info("Chargement de la map...")
 
-        log_debug("Chargement du chemin d'accès au fichier de la map '%s'", nomFichierMap.c_str());
+            log_debug("Chargement du chemin d'accès au fichier de la map '%s'", nomFichierMap.c_str());
 
         nomFichierMap = execDir + nomFichierMap;
 
@@ -725,9 +725,9 @@ public:
 
         // Variables JSON
         Json::Reader reader;
-        Json::Value fileData;
+        Json::Value root;
 
-        reader.parse(fichierMap, fileData);
+        reader.parse(fichierMap, root);
 
         log_debug("Parsing DONE");
 
@@ -735,7 +735,7 @@ public:
         try {
             liste_monstres = new std::vector<monstre_t>();
         }
-        catch (std::exception error){
+        catch (std::exception error) {
             erreur("Impossible de charger la map", ERREUR_LISTE, error.what());
         }
 
@@ -769,65 +769,65 @@ public:
 
         log_debug("Récupération des données de la map");
 
-        
+        // Variables JSON
+        Json::Value chests = root.get("chest", NULL);
+        if (chests == NULL)
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE);
 
-        /* Récupération des informations dans le fichier */
-        if (!json_object_object_get_ex(JSON_fichier, "chest", &JSON_tbl_coffre))
-            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+        Json::Value id = root.get("id", NULL);
+        if (id == NULL)
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE);
 
-        if (!json_object_object_get_ex(JSON_fichier, "id", &JSON_id_map))
-            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+        Json::Value file_path = root.get("file-path", NULL);
+        if (file_path == NULL)
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE);
 
-        if (!json_object_object_get_ex(JSON_fichier, "file-path", &JSON_texture_map))
-            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+        Json::Value width = root.get("width", NULL);
+        if (width == NULL)
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE);
 
-        if (!json_object_object_get_ex(JSON_fichier, "width", &JSON_width))
-            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+        Json::Value height = root.get("height", NULL);
+        if (height == NULL)
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE);
 
-        if (!json_object_object_get_ex(JSON_fichier, "height", &JSON_height))
-            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+        Json::Value tileSize = root.get("taille_case", NULL);
+        if (tileSize)
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE);
 
-        if (!json_object_object_get_ex(JSON_fichier, "taille case", &JSON_taille_case))
-            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+        Json::Value monsters = root.get("monsters", NULL);
+        if (monsters == NULL)
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE);
 
-        if (!json_object_object_get_ex(JSON_fichier, "monsters", &JSON_tbl_monstre))
-            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+        Json::Value walls = root.get("wall", NULL);
+        if (walls == NULL)
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE);
 
-        if (!json_object_object_get_ex(JSON_fichier, "wall", &JSON_tbl_wall))
-            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+        Json::Value tpZone = root.get("zones tp", NULL);
+        if(tpZone == NULL)
+            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE);
 
-        if (!json_object_object_get_ex(JSON_fichier, "zones tp", &JSON_zones_tp))
-            erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
-
-        if (!json_object_object_get_ex(JSON_fichier, "superposition", &JSON_text_superpos)) {
-            m->texture_superposition = NULL;
-        }
-        else {
-            m->texture_superposition = creer_texture(json_object_get_string(JSON_text_superpos), -1, -1, 0, 0, 1);
-        }
+        Json::Value superpositionLayer = root.get("superposition", NULL);
+        texture_superposition = superpositionLayer != NULL ? texture_superposition = creer_texture(superpositionLayer.asCString(), -1, -1, 0, 0, 1) : NULL;
 
         /* Récupération des informations */
-        m->id_map = json_object_get_int(JSON_id_map);
-        m->text_sol = creer_texture(json_object_get_string(JSON_texture_map), -1, -1, 0, 0, 1);
-        m->height = json_object_get_int(JSON_height);
-        m->width = json_object_get_int(JSON_width);
-        m->taille_case = json_object_get_int(JSON_taille_case);
+        id_map = id.asInt();
+        text_sol = creer_texture(file_path.asCString(), -1, -1, 0, 0, 1);
+        height = height.asInt();
+        width = width.asInt();
+        taille_case = tileSize.asInt();
 
         log_debug("Informations sur la map :");
 
-        log_debug("\tmap.id : %d", m->id_map);
-        log_debug("\tmap.texture_sol : %s", json_object_get_string(JSON_texture_map));
-        log_debug("\tmap.taille_cases : %dpx", m->taille_case);
+        log_debug("\tmap.id : %d", id_map);
+        log_debug("\tmap.texture_sol : %s", file_path.asCString());
+        log_debug("\tmap.taille_cases : %dpx", taille_case);
 
-        if (!m->text_sol)
+        if (!text_sol)
             erreur("Impossible de charger la map : %s", ERREUR_TEXTURE, SDL_GetError());
 
         // Génération des collisions de la carte
-        for (unsigned int i = 0; i < json_object_array_length(JSON_tbl_wall); i++) {
-            JSON_object_wall = json_object_array_get_idx(JSON_tbl_wall, i);
-
-            if (!JSON_object_wall)
-                erreur("Impossible de charger la map : %s", ERREUR_FICHIER, json_util_get_last_err());
+        for (auto wall : walls) {
+            
 
             if (!json_object_object_get_ex(JSON_object_wall, "x", &JSON_wall_x))
                 erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
