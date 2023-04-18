@@ -663,59 +663,13 @@ class Map {
 
 public:
     Map(std::string nomFichierMap) {
-        void* filePath = NULL;
-
-        json_object* JSON_fichier = NULL;
-        json_object* JSON_id_map = NULL;
-        json_object* JSON_texture_map = NULL;
-        json_object* JSON_text_superpos = NULL;
-        json_object* JSON_width = NULL;
-        json_object* JSON_height = NULL;
-        json_object* JSON_taille_case = NULL;
-        json_object* JSON_tbl_monstre = NULL;
-        json_object* JSON_tbl_coffre = NULL;
-
-        json_object* JSON_objet_monstre = NULL;
-        json_object* objet_json = NULL;
-        json_object* JSON_nom_monstre = NULL;
-        json_object* JSON_position = NULL;
-        json_object* JSON_position2 = NULL;
-        json_object* JSON_x = NULL;
-        json_object* JSON_y = NULL;
-        json_object* x2 = NULL;
-        json_object* y2 = NULL;
-        json_object* nom_coffre = NULL;
-        json_object* id_cle = NULL;
-        json_object* id_loot = NULL;
-
-        monstre_t* inserer = NULL;
-        coffre_t* nv_coffre = NULL;
-
-        json_object* JSON_tbl_wall = NULL;
-        json_object* JSON_object_wall = NULL;
-        json_object* JSON_wall_x = NULL;
-        json_object* JSON_wall_y = NULL;
-        json_object* JSON_wall_h = NULL;
-        json_object* JSON_wall_w = NULL;
-
-        json_object* JSON_zones_tp = NULL;
-        json_object* JSON_zone_tp = NULL;
-        json_object* JSON_zone_tp_x = NULL;
-        json_object* JSON_zone_tp_y = NULL;
-        json_object* JSON_zone_tp_h = NULL;
-        json_object* JSON_zone_tp_w = NULL;
-        json_object* JSON_zone_tp_dest = NULL;
-        json_object* JSON_zone_tp_coords = NULL;
-        json_object* JSON_zone_tp_coord_x = NULL;
-        json_object* JSON_zone_tp_coord_y = NULL;
-
         log_info("Chargement de la map...")
 
-            log_debug("Chargement du chemin d'accès au fichier de la map '%s'", nomFichierMap.c_str());
+        log_debug("Chargement du chemin d'accès au fichier de la map '%s'", nomFichierMap.c_str());
 
         nomFichierMap = execDir + nomFichierMap;
 
-        log_debug("Ouverture du fichier : '%s'", filePath);
+        log_debug("Ouverture du fichier : '%s'", nomFichierMap.c_str());
 
         std::ifstream fichierMap(nomFichierMap);
 
@@ -802,8 +756,8 @@ public:
         if (walls == NULL)
             erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE);
 
-        Json::Value tpZone = root.get("zones tp", NULL);
-        if(tpZone == NULL)
+        Json::Value tpZones = root.get("zones tp", NULL);
+        if(tpZones == NULL)
             erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE);
 
         Json::Value superpositionLayer = root.get("superposition", NULL);
@@ -827,97 +781,64 @@ public:
 
         // Génération des collisions de la carte
         for (auto wall : walls) {
-            
+            // On récupère les attributs du mur
 
-            if (!json_object_object_get_ex(JSON_object_wall, "x", &JSON_wall_x))
-                erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+            SDL_Rect collision = {
+                .x = wall["x"].asInt(),
+                .y = wall["y"].asInt(),
+                .w = wall["w"].asInt(),
+                .h = wall["h"].asInt(),
+            };
 
-            if (!json_object_object_get_ex(JSON_object_wall, "y", &JSON_wall_y))
-                erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+            log_debug("Ajout d'une zone de collision :: numero : %-3d / x : %-4d / y : %-4d / w : %-4d / h : %-4d", liste_collisions->size() + 1, collision.x, collision.y, collision.w, collision.h);
 
-            if (!json_object_object_get_ex(JSON_object_wall, "h", &JSON_wall_h))
-                erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
-
-            if (!json_object_object_get_ex(JSON_object_wall, "w", &JSON_wall_w))
-                erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
-
-            SDL_Rect* valeur = (SDL_Rect*) malloc(sizeof(SDL_Rect));
-
-            if (!valeur)
-                erreur("Impossible de charger la map", OUT_OF_MEM);
-
-            valeur->x = json_object_get_int(JSON_wall_x) * m->taille_case;
-            valeur->y = json_object_get_int(JSON_wall_y) * m->taille_case;
-            valeur->h = json_object_get_int(JSON_wall_h) * m->taille_case;
-            valeur->w = json_object_get_int(JSON_wall_w) * m->taille_case;
-
-            log_debug("Ajout d'une zone de collision :: numero : %-3d / x : %-4d / y : %-4d / w : %-4d / h : %-4d / adresse : %p", m->liste_collisions->nb_elem + 1, valeur->x, valeur->y, valeur->w, valeur->h, valeur);
-
-            ajout_droit(m->liste_collisions, valeur);
+            liste_collisions->push_back(collision);
         }
 
         // Génération des monstres
-        for (unsigned int i = 0; i < json_object_array_length(JSON_tbl_monstre); i++) {
-            JSON_objet_monstre = json_object_array_get_idx(JSON_tbl_monstre, i);
+        for(auto monster : monsters){
+            Json::Value monsterType = monster["type"];
+            Json::Value position = monster["position"];
+            Json::Value x = position[0];
+            Json::Value y = position[1];
 
-            if (!JSON_objet_monstre)
-                erreur("Impossible de charger la map : %s", ERREUR_FICHIER, json_util_get_last_err())
 
-                if (!json_object_object_get_ex(JSON_objet_monstre, "type", &JSON_nom_monstre))
-                    erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+            monstre_t *inserer = creer_monstre(liste_base_monstres, monsterType.asCString(), x.asInt(), y.asInt(), *this);
 
-            if (!json_object_object_get_ex(JSON_objet_monstre, "position", &JSON_position))
-                erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
+            liste_monstres->push_back(*inserer);
+            liste_collisions->push_back(inserer->collision);
 
-            JSON_x = json_object_array_get_idx(JSON_position, 0);
-            JSON_y = json_object_array_get_idx(JSON_position, 1);
-
-            if (!JSON_x)
-                erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
-
-            if (!JSON_y)
-                erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
-
-            inserer = creer_monstre(liste_base_monstres, json_object_get_string(JSON_nom_monstre), json_object_get_int(JSON_x), json_object_get_int(JSON_y), m);
-
-            if (!inserer)
-                erreur("Erreur lors de la création du monstre : le monstre \"%s\" n'existe pas !", ERREUR_MAP, json_object_get_string(JSON_nom_monstre));
-
-            ajout_droit(m->liste_monstres, inserer);
-            en_queue(m->liste_collisions);
-            ajout_droit(m->liste_collisions, &(inserer->collision));
+            free(inserer);
         }
 
         // Génération des coffres
-        for (unsigned int i = 0; i < json_object_array_length(JSON_tbl_coffre); i++) {
-            objet_json = json_object_array_get_idx(JSON_tbl_coffre, i);
+        for(auto chest : chests){
+            Json::Value chestType = chest["type"];
+            Json::Value keyId = chest["id_cle"];
+            Json::Value lootId = chest["id_loot"];
+            Json::Value chestPosition = chest["position"];
 
-            nom_coffre = json_object_object_get(objet_json, "type");
-            id_cle = json_object_object_get(objet_json, "id_cle");
-            id_loot = json_object_object_get(objet_json, "id_loot");
-            JSON_position2 = json_object_object_get(objet_json, "position");
+            Json::Value chestX = chestPosition[0];
+            Json::Value chestY = chestPosition[1];
 
-            x2 = json_object_array_get_idx(JSON_position2, 0);
-            y2 = json_object_array_get_idx(JSON_position2, 1);
-
-            nv_coffre = creer_coffre(json_object_get_int(id_cle), json_object_get_int(id_loot), liste_base_coffres, json_object_get_string(nom_coffre), json_object_get_int(x2) * m->taille_case, json_object_get_int(y2) * m->taille_case, m);
-            ajout_droit(m->liste_coffres, nv_coffre);
-            en_queue(m->liste_collisions);
+            coffre_t *nv_coffre = creer_coffre(keyId.asInt(), lootId.asInt(), liste_base_coffres, chestType.asCString(), chestX.asInt() * taille_case, chestY.asInt() * taille_case, *this);
 
             // sprite des coffres de profile de 2*3 mais hitbox de 2*2, on baisse la hitbox d'une case pour faire correspondre au sprite
             if (nv_coffre->type == PROFIL_FERME || nv_coffre->type == PROFIL_OUVERT) {
                 (nv_coffre->collision.y) += TAILLE_CASE;
             }
 
-            ajout_droit(m->liste_collisions, &(nv_coffre->collision));
+            liste_coffres->push_back(*nv_coffre);
+            liste_collisions->push_back(nv_coffre->collision);
+
+            free(nv_coffre);
         }
 
-        for (unsigned int i = 0; i < json_object_array_length(JSON_zones_tp); i++) {
-            JSON_zone_tp = json_object_array_get_idx(JSON_zones_tp, i);
+        for(auto tpZone : tpZones){
 
             /* Récupération des informations de la zone de TP */
-            if (!JSON_zone_tp)
-                erreur("Impossible de charger la map : %s", ERREUR_FICHIER, json_util_get_last_err());
+            Json::Value x = tpZone["x"];
+            
 
             if (!json_object_object_get_ex(JSON_zone_tp, "x", &JSON_zone_tp_x))
                 erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
