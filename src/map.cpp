@@ -835,10 +835,12 @@ public:
         }
 
         for(auto tpZone : tpZones){
-
             /* Récupération des informations de la zone de TP */
             Json::Value x = tpZone["x"];
-            
+            Json::Value y = tpZone["y"];
+            Json::Value w = tpZone["w"];
+            Json::Value h = tpZone["h"];
+
 
             if (!json_object_object_get_ex(JSON_zone_tp, "x", &JSON_zone_tp_x))
                 erreur("Impossible de charger la map : %s", ERREUR_JSON_CLE_NON_TROUVEE, json_util_get_last_err());
